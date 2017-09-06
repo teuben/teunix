@@ -1,0 +1,19 @@
+MPSE = My Portable Shell Environment
+
+The idea is to have a CVS tree off your HOME directory that contains
+all your portable stuff, and you make symlinks into this tree, change
+the path etc.
+This is very much in development, as of Feb 23, 2005.
+
+
+to install:
+  cd $HOME
+  cvs -d :pserver:pteuben@cvs.astro.umd.edu:/home/cvsroot co -d Env pjt/Env
+
+potential commands (but careful overwritting old ones)
+
+cd Env
+cp dotcshrc ../.cshrc		(or cat >>)
+cp dotemacs ../.emacs
+(cd ..; ln -s Env/emacs)
+(cd ..; ln -s Env/bin)

@@ -1,0 +1,27 @@
+#! /bin/csh -f
+#
+#  emacs client interface, also keeps a log in /tmp/$USER
+#
+#  command in emacs: (server-start)
+#
+# TODO:   turn it into python
+#
+set date=`date +%Y-%m-%d_%H:%M:%S`
+
+set dir=$HOME/.ec
+
+if (! -d $dir) then
+  mkdir $dir
+  chmod 700 $dir
+endif
+
+set log=$dir/emacsclient.log
+
+emacsclient --no-wait $*
+
+if ($status == 0) then
+ if ($#argv > 0) then
+  echo $date `pwd` $* >> $log
+  chmod 600 $log
+ endif
+endif

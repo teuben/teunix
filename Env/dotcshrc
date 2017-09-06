@@ -1,0 +1,12 @@
+#
+# MPSE = My Portable Shell Environment
+#
+
+unset autologout
+
+set path=(. ~/bin ~/Env/bin /sbin /usr/sbin $path)
+rehash
+
+foreach f (~/Env/aliases ~/.aliases.Local) 
+  if (-e $f)  source $f
+end

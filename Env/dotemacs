@@ -1,0 +1,71 @@
+;      $Id :$
+
+; Start up font lock mode on everything
+(global-font-lock-mode t)
+
+; Start the server
+(server-start)
+
+; Set the colorization to the maximum
+(setq-default font-lock-maximum-decoration 3)
+
+(set-foreground-color "green")
+(set-background-color "black")
+
+;;
+(when window-system
+  ;; enable wheelmouse support by default
+  (mwheel-install)
+  ;; use extended compound-text coding for X clipboard
+  (set-selection-coding-system 'compound-text-with-extensions))
+
+;; always end a file with a newline
+(setq require-final-newline t)
+
+
+;; add glish
+(autoload 'glish-mode "glish-mode")
+(setq auto-mode-alist (append '(("\\.g\\(p\\)?$" . glish-mode))
+  			         auto-mode-alist))
+
+;; Set up the keyboard so the delete key on both the regular keyboard
+;; and the keypad delete the character under the cursor and to the right
+;; under X, instead of the default, backspace behavior.
+(global-set-key [delete] 'delete-char)
+(global-set-key [kp-delete] 'delete-char)
+
+;; pjt micro-emacs GOTO-LINE
+;;(global-unset-key [M-g])
+;;(global-set-key [ESC g] 'goto-line)
+
+;;(global-set-key "\C-cl" 'goto-line)
+
+; Do not consult headers in vc (because owner name can differ from user name).
+(setq vc-consult-headers nil)
+
+
+;; a few other useful things
+
+;;(global-set-key "\C-cr" 'rmail)
+(global-set-key "\C-cl" 'goto-line)
+(setq-default comment-start "#")
+(global-set-key "\C-c;" 'comment-region)
+(global-set-key "\C-cm" 'set-mark-command)
+(global-set-key "\C-ck" 'kill-rectangle)
+(global-set-key "\C-cy" 'yank-rectangle)
+(global-set-key "\C-cc" 'copy-region-as-kill)
+(global-set-key "\C-c+" 'calendar)
+(global-unset-key "\C-xi")
+(global-set-key "\C-xib" 'insert-buffer)
+(global-set-key "\C-xif" 'insert-file)
+(global-set-key "\C-cib" 'insert-buffer)
+(global-set-key "\C-cif" 'insert-file)
+
+
+;; http://desktopaid.sourceforge.net/
+(setq load-path (cons "/home/teuben/emacs/" load-path))
+;(autoload 'dta-hook-up "desktopaid.elc" "Desktop Aid" t)
+;(dta-hook-up)
+
+(require 'doxygen)
+(require 'planner)
