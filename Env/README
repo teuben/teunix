@@ -1,4 +1,4 @@
-MPSE = My Portable Shell Environment
+# MPSE = My Portable Shell Environment
 
 The idea is to have a gittree off your HOME directory that contains
 all your portable stuff, and you make symlinks into this tree, change
@@ -16,3 +16,27 @@ cp dotcshrc ../.cshrc		(or cat >>)
 cp dotemacs ../.emacs
 (cd ..; ln -s Env/emacs)
 (cd ..; ln -s Env/bin)
+
+
+
+
+##  2018:
+
+From your home directory:
+
+1. add this to your .bashrc (linux) or .bash_profile (mac)
+
+   if [ -f ~/teunix/Env/aliases.sh ]; then
+       . ~/teunix/Env/aliases.sh
+   fi
+
+2. add this to your .cshrc file
+
+   if ( -e ~/teunix/Env/aliases.csh ) then
+      source ~/teunix/Env/aliases.csh
+   endif
+
+
+2. emacs: make sure there is no existing .emacs file
+
+   ln -s teunix/Env/dotemacs .emacs
