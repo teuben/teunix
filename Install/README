@@ -1,1 +1,10 @@
 Typical install stories on different unix systems
+
+Naming convention:
+
+UNAME   = `uname -s`
+VERSION = [DISTRO_]
+    check /etc/issue or /etc/redhat_version
+    
+
+UNAME_VERSIO
