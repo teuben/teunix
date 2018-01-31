@@ -81,3 +81,4 @@ alias        cvsi='cvs commit'
 #if ($?TMP) unsetenv TMP
 
 
+export PATH=~/teunix/Env/bin:$PATH
