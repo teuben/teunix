@@ -1,6 +1,6 @@
 # common aliases accross all my machines
 
-alias teunix 'cd ~/teunix; git pull'
+alias teunix '(cd ~/teunix; git pull)'
 
 alias Env 'echo Env version=`cat ~/Env/VERSION`'
 setenv Env '$HOME/Env'
