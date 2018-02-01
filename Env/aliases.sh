@@ -66,6 +66,12 @@ alias dgrep="grep \!* ~/.du/du.*"
 alias svnq='svn status --show-updates'
 alias   em='emacs -nw'
 
+# python
+alias    i=ipython
+alias    j='jupyter notebook'
+
+alias    o=open
+
 #### stuff removed here
 
 

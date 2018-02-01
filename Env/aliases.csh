@@ -69,6 +69,13 @@ alias gvl ghostview -landscape
 alias cvsq 'cvs -n -q update'
 alias cvsi 'cvs commit'
 alias svnq 'svn status --show-updates'
+alias em   'emacs -nw'
+
+# python
+alias i  ipython
+alias j  'jupyter notebook'
+
+alias o  'open'
 
 # astromake
 
