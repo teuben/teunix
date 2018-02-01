@@ -1,0 +1,39 @@
+#! /bin/csh -f
+#
+#  this emulates the mac 'open' command, which figures out fromthe
+#  file how to 'display' a file
+#
+#  gnome-open   kde-open    xdg-open
+
+
+if (-e /usr/bin/nemo) then
+   set n = /usr/bin/nemo
+else
+   set n = nautilus
+endif
+
+
+if ($#argv > 0) then
+  if (-d "$1") then
+    if (-d $1/logtable && -e $1/table.dat) then
+      echo OPEN: casaviewer $1    
+      casaviewer $1
+    else
+      echo OPEN: $n "$1"
+      $n "$1"
+    endif
+  else
+    set e=$1:e
+    # work around evince bug (was fixed by june 2014)
+    if ($e == "ps~" || $e == "PS~") then
+       gv $*
+    else
+       echo OPEN: xdg-open "$*"    
+       xdg-open "$*"
+    endif
+  endif
+else
+  $n .
+endif
+
+
