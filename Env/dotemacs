@@ -23,11 +23,6 @@
 (setq require-final-newline t)
 
 
-;; add glish
-(autoload 'glish-mode "glish-mode")
-(setq auto-mode-alist (append '(("\\.g\\(p\\)?$" . glish-mode))
-  			         auto-mode-alist))
-
 ;; Set up the keyboard so the delete key on both the regular keyboard
 ;; and the keypad delete the character under the cursor and to the right
 ;; under X, instead of the default, backspace behavior.
@@ -67,5 +62,24 @@
 ;(autoload 'dta-hook-up "desktopaid.elc" "Desktop Aid" t)
 ;(dta-hook-up)
 
-(require 'doxygen)
-(require 'planner)
+;;(require 'doxygen)
+;;(require 'planner)
+
+
+(setq fortran-do-indent 2)
+(setq fortran-if-indent 2)
+(setq fortran-structure-indent 2)
+(setq fortran-blink-matching-if  t)
+
+;; tcsh indention issue in 24.4
+;; http://emacs.stackexchange.com/questions/6051/fixing-forced-indentation-in-shell-script-mode-for-tcsh
+(add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
+
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+;;  useful to load in packages such as markdown
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
