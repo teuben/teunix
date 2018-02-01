@@ -1,6 +1,6 @@
 # common aliases accross all my machines
-# alias ec  'emacsclient --no-wait'
-# $Id: aliases,v 1.12 2017/05/05 01:44:11 pteuben Exp $
+
+alias teunix 'cd ~/teunix; git pull'
 
 alias Env 'echo Env version=`cat ~/Env/VERSION`'
 setenv Env '$HOME/Env'
