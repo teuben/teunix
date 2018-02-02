@@ -1,6 +1,9 @@
 # High Sierra (10.13.2)
 
-Received brand new spanking MacBook Pro to try out. Has 2 USB-C on the left and right.
+Received brand new spanking MacBook Pro to try out. Has 2 USB-C on the left and right. That might be nice, but
+you have to click it in really hard (until you hear the click) to get the connection. Not easy to get out,
+small, and slippery hands will cause problems.
+
 
 ## Install
 
@@ -22,9 +25,9 @@ Here's stuff I did:
 
    a. brew install cvs cmake tkdiff gcc
    b. brew install gcc    [also does gfortran]
+      Potential problem:   /usr/bin/gcc and /usr/local/bin/gfortran ???
 
 7. CASA - now the pre-release is available for high sierra
 
-administrative things are in **/usr/local/Homebrew**, 
-and you will find it's executables in /usr/local/bin, etc.etc. So no need to update your **$PATH**.
+8. sublime editor :  https://www.sublimetext.com/
 
