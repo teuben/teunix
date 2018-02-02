@@ -17,6 +17,8 @@
 	branch = auto
 	ui = true
 [alias]
+	q  = status -uno
+	i  = config --list
 	ci = commit
 	co = checkout
 	st = status
