@@ -3,7 +3,8 @@
 #  this emulates the mac 'open' command, which figures out fromthe
 #  file how to 'display' a file
 #
-#  gnome-open   kde-open    xdg-open
+#  linux:   gnome-open   kde-open    xdg-open
+#  darmin:  /usr/bin/open
 
 
 if ( -e /usr/bin/dolphin) then
@@ -30,8 +31,13 @@ if ($#argv > 0) then
     if ($e == "ps~" || $e == "PS~") then
        gv $*
     else
-       echo OPEN: xdg-open "$*"    
-       xdg-open "$*"
+       if (-e /usr/bin/open) then
+           # must be on mac ...
+           /usr/bin/open "$*"
+       else
+	   echo OPEN: xdg-open "$*"    
+           xdg-open "$*"
+       endif
     endif
   endif
 else
