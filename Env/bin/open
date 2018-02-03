@@ -6,9 +6,11 @@
 #  gnome-open   kde-open    xdg-open
 
 
-if (-e /usr/bin/nemo) then
+if ( -e /usr/bin/dolphin) then
+   set n = /usr/bin/dolphin
+else if ( -e /usr/bin/nemo) then
    set n = /usr/bin/nemo
-else
+else 
    set n = nautilus
 endif
 
