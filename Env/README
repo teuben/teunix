@@ -1,36 +1,26 @@
 # MPSE = My Portable Shell Environment
 
-The idea is to have a gittree off your HOME directory that contains
-all your portable stuff, and you make symlinks into this tree, change
-the path etc.
+The idea is to have the **teunix** directory off your **$HOME**
+directory that contains all your portable stuff, and you make symlinks
+into this tree.
 
 
-to install:
+## Install
+
+To install, grab a copy
+
   cd $HOME
   git clone https://github.com/teuben/teunix
 
-potential commands (but careful overwritting old ones)
+and do some surgery from your home directory:
 
-cd Env
-cp dotcshrc ../.cshrc		(or cat >>)
-cp dotemacs ../.emacs
-(cd ..; ln -s Env/emacs)
-(cd ..; ln -s Env/bin)
-
-
-
-
-##  2018:
-
-From your home directory:
-
-1. add this to your .bashrc (linux) or .bash_profile (mac)
+1a. (sh) add this to your .bashrc (linux) or .bash_profile (darwin)
 
    if [ -f ~/teunix/Env/aliases.sh ]; then
        . ~/teunix/Env/aliases.sh
    fi
 
-2. add this to your .cshrc file
+1b. (csh) add this to your .cshrc file
 
    if ( -e ~/teunix/Env/aliases.csh ) then
       source ~/teunix/Env/aliases.csh
@@ -40,3 +30,9 @@ From your home directory:
 2. emacs: make sure there is no existing .emacs file
 
    ln -s teunix/Env/dotemacs .emacs
+
+3. github:
+
+   ln -s teunix/Env/dotgitconfig .gitconfig
+
+   If you're not me, better copy and edit your credentials!   
