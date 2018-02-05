@@ -1,0 +1,15 @@
+In this directory I place small project bound scripts that set up my
+shell for that project. Like the "astroload" system, this means you 
+sometimes need to understand that certain packages or projects together
+might fail (e.g. due to PATH and/or LD_LIBRARY_PATH) settings.
+
+The only rule there is that the command
+
+	rc name
+
+means there should be a file ~/rc/name.rc, such that
+
+	source ~/rc/name.rc
+
+is successfull. This also implies you pick a shell. There is no
+restriction to csh or sh.
