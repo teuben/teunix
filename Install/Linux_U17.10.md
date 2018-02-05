@@ -12,3 +12,8 @@ a lot of 'widgets'. How is one then to port such an environment to another machi
        kstart plasmashell
 
 2. bla.
+
+## Linux for Development
+
+* https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
+  * https://github.com/sojharo/mangi-script/
