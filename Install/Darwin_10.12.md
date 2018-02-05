@@ -53,3 +53,20 @@ Here is my favorite list
 ## MacPorts
 
    No experience yet, since I'm running just brew for now.  See also my 10.13 comments.
+
+
+## Links
+
+Asking google "how to set up a mac for development" will give a large amount
+of solutions. My own solution is a hybrid of some of these, but here is the
+list from 2018, some of which may still exist or be useful when you read this:
+
+* https://github.com/nicolashery/mac-dev-setup
+* http://sourabhbajaj.com/mac-setup/
+* http://www.stuartellis.name/articles/mac-setup/
+* https://github.com/mathiasbynens/dotfiles
+* https://github.com/donnemartin/dev-setup
+* https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
+* https://github.com/nicolashery/mac-dev-setup
+
+
