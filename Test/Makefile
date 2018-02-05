@@ -5,6 +5,8 @@ hello:
 	@echo Hello Makefile
 
 
+all:	c fortran
+
 make:
 	@echo catch-22, the script test-make should be used
 
