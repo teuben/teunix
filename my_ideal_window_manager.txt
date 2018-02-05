@@ -1,0 +1,25 @@
+First rule of desktops:
+ "don't be fooled how it feels the first few minutes, how does it keep up when
+  you are working in multiple desktops and many windows and apps open"
+
+
+Long history of those once linux came around (lets not talk about SunOS/Solaris anymore)
+========================================================================================
+- twm
+- fvwm
+- enlightenment (used that for a while, sad it went, but it's back now)
+- xfce4 (wind up never using it, but some of my best friends use it)
+- unity (used this until 2017/18?; Ubuntu will kill it off)
+- gnome3 (i think it suck, too configurable, too hard to bootstrap, too many things die)
+- kde (this might be my next one after all)
+
+
+My Fav Features
+===============
+- mouse focus fully configurable, i prefer:
+  - focus follows mouse (after something lke 500ms delay)
+  - scrolling should be not 'natural' but classic "reverse"
+- multiple desktops
+- windows need to be able to live always on the desktop (.e.g my emacs)
+- a window should be resizeable from all sides and corners
+- screenlock should have configurable timeout (I prefer 10-20 mins)

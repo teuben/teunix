@@ -1,0 +1,34 @@
+Applications:
+-------------
+- emacs
+- tcsh (still, but bash needs to be there too)
+- vnc
+- vpn
+- latex
+- libreOffice / OpenOffice
+- python (anaconda/miniconda)
+- make/autoconf/cmake
+- c/c++/fortran compiler
+- various astro tools:
+  - ds9
+  - casa
+  - gipsy
+  - nemo
+  - miriad
+  - karma (might die soon)
+  - montage, wcstools
+  - topcat, glue, yt,
+- gimp, digikam, darktable
+- skype
+- thunderbird
+- chrome/chromium/firefox
+- rhythmbox
+
+
+
+
+
+Online tools:
+-------------
+- rss reader   (feedly)
+- github
