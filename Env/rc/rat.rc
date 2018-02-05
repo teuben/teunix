@@ -1,0 +1,16 @@
+#
+#  ADMIT with Radio Astro Tools
+#
+
+source /astromake/astromake_start
+astroload
+astroload ds9
+
+# use miniconda (2 or 3; 3 preferred in the end
+# but ADMIT's __init__.py isn't 3-friendly yet
+set path = (~/miniconda2/bin $path)
+rehash
+
+source ~/ADMIT/admit-rat/admit_start.csh
+cd $ADMIT
+

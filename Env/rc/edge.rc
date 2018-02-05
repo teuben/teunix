@@ -1,0 +1,4 @@
+#
+source ~/EDGE/edge/edge_start.csh
+cd ~/EDGE/
+
