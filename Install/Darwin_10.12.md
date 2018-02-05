@@ -54,6 +54,8 @@ Here is my favorite list
 
    No experience yet, since I'm running just brew for now.  See also my 10.13 comments.
 
+But it should be added that the CASA team uses MacPorts: https://safe.nrao.edu/wiki/bin/view/Software/CASA/CasaEnvSetupOSX1012
+
 
 ## Links
 
