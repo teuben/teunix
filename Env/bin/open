@@ -11,8 +11,10 @@ if ( -e /usr/bin/dolphin) then
    set n = /usr/bin/dolphin
 else if ( -e /usr/bin/nemo) then
    set n = /usr/bin/nemo
-else 
+else if (-e /usr/bin/nautilus) then
    set n = nautilus
+else if (-d /Applications) then
+   set n = /usr/bin/open
 endif
 
 
