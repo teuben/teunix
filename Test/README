@@ -1,0 +1,7 @@
+Here you will find some simple "hello world" type tests to confirm you
+environment is correctly set up for that test.
+
+Although methods such as autoconf and cmake will be much more
+exhaustive to test if your environment is sufficient for development,
+these examples also serve for those who have not seen some of the
+introductory material.

@@ -1,0 +1,14 @@
+#
+# TP2VIS 
+#
+
+source /astromake/astromake_start
+astroload
+astroload ds9
+astroload -v test casa
+
+
+#cd ~/TP2VIS/tp2vis
+#cd ~/TP2VIS/master/tp2vis
+cd ~/TP2VIS/tp2vis
+

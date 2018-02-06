@@ -1,0 +1,472 @@
+
+The following packages were added using:
+
+    sudo apt-get install <NAME>
+
+some are essential for development, others to sustain my old/bad habits.
+Also google around, e.g.
+  www.webupd8.org/2014/04/10-things-to-do-after-installing-ubuntu.html
+  www.noobslab.com/2014/04/thingstweeaks-to-do-after-install-of.html
+  itsfoss.com/things-to-do-after-installing-ubuntu-14-04/
+  www.enqlu.com/2014/03/things-to-do-after-installing-ubuntu.html
+
+  emacs
+  build-essential      (gcc 4.8.2)
+  gfortran
+  ruby                 (eventually to fix sshmenu - no go on that one)
+  hotssh                    (sshmenu replace?)
+  tcsh       
+  gnome-tweak-tool
+  unity-tweak-tool
+  gconf-editor           (any of these two to get auto raise)
+  geeqie               (old gqview)
+  tkcvs                  (has tkdiff as well, meld is another alternative?)
+  meld                   alternative to buggy tkdiff
+  ncftp
+  libx11-dev              (x11proto-core-dev was already installed)
+  libreadline6-dev       (useful for miriad to get the latest)
+  automake
+  kdbg
+  pdftk 
+  nautilus-open-terminal     
+  apt-file                     (e.g. "apt-file search Intrinsic.h")
+  libxt-dev
+  git-core
+  libboost-all-dev
+  valgrind
+  cpu-checker
+  psensor
+  cpufrequtils
+  libgif-dev                     (for pgplot)
+  libxaw7-dev
+  chromium-browser 
+  rapid-photo-downloader
+  gimp
+  gimp-lensfun
+  libgimp2.0-dev 
+  gimp-plugin-registry           (e.g. resynthesizer)
+  libexiv2-dev 
+  liblensfun-dev
+  jhead                              exif editor
+  pidgin
+  openssh-server                  (sudo gedit /etc/ssh/sshd_config)
+  compizconfig-settings-manager
+  rcs
+  vlc
+  rar
+  tomboy
+  libtool                         (for miriad/auto)
+  flex                           (for miriad/auto)
+  enscript
+  texlive-latex-base
+  texlive
+  texlive-publishers 
+  doxygen
+  mdbtools                          (accessing MDB)
+  basenji                              (volume indexer)
+  python-setuptools
+  python-tk                     (or did this option add tkinter???)
+  python-scipy
+  python-matplotlib
+  python-scitools
+  python-pyfits
+  python-pywcs
+  python-keyring              (for astroquery)
+  python-pandas
+  pyqt4-dev-tools                  (for glue)
+  cython
+  ipython
+  python-pip
+  swig
+  python-sympy
+  python-h5py
+
+  libhdf4-dev                   (HDF 4; for cmhog, nemo)
+  libplplot-dev 
+  libcfitsio3-dev
+  sysinfo
+  preload
+  idle                             (for tkinter????)
+  mesa-utils (has glxgears)      - goes at aout **3700**   OMG, 60 now..
+  iotop
+
+  sshfs
+  hfsprogs
+  gv
+  darktable
+  ufraw
+  dcraw
+
+  qt4-qmake
+  libqt4-dev
+  ifrit
+  grace
+  xpdf
+  wine
+  gphoto2
+  libgphoto2-dev
+  librsvg2-dev
+  libinotifytools0-dev
+  libsqlite3-dev
+
+  bonnie
+  iozone3                  (fileop,iozone,pit_server)
+  docbook2odf                 (needed an xslt interpreter)
+  xsltproc                         (aha, this was the one)
+  stellarium
+  xaw3dg-dev                   (will also install xaw3dg - for gipsy)
+  acpitool
+  nemo
+
+  digikam
+  khelpcenter4 
+  systemsettings                   (KDE System Settings)
+
+  lame                          music conversions
+  k3b				  CD writer
+  qpdfview                         trying, since my evince now doesn't do ps right....
+  imagination                     slideshow maker (makes vob)
+  photofilmstrip
+
+  inkscape
+  exfat-fuse
+  ruby-gtk2     for sshmenu    (used to be called libgtk2-ruby)
+  ruby-gnome2  (?)
+  libruby
+  ssh-askpass  (?)
+  gufw                           (graphical interface to firewall)
+  gstm
+
+  # vpn
+  openconnect
+  traceroute
+
+  # things i forgot from u13:
+
+  bcrypt
+  bison
+  cvsutils
+  ddd
+  dmg2img
+  finger
+  fityk
+  ggobi
+  gman
+  html2text
+  man2html
+  mercurial
+  mutt
+  openjpeg-tools
+  pgplot5
+  python-sklearn
+  python-scikits.statsmodels
+  rman
+  scribus
+  shutter
+  sqlite
+  sqlitebrowser
+  subversion     (svn)
+  virtualbox
+
+  xcfa     (sound conversion)
+  
+
+  nautilus-dropbox
+
+  ubuntu-restricted-extras
+  libavcodec-extra
+  youtube-dl
+
+  liblapack-dev
+  libblas-dev
+
+  icedtea-7-plugin 
+  openjdk-7-jre
+  openjdk-7-jdk       (but only if you need to develop)
+  ant                 (for developing)
+
+----
+
+if you really need Oracle's version, use this instead
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+-------
+
+sudo apt-get install libdvdread4
+sudo /usr/share/doc/libdvdread4/install-css.sh
+
+-------
+visudo /etc/sudoers
+Defaults env_reset,timestamp_timeout=30
+-----
+vipw
+	change the shell to /bin/tcsh
+==========
+
+- ctrl-alt-F1   : blank screen  ** disappeared later on **
+- glxgears way slow  (wrong device X driver)
+- load in chrome super high (flash?)
+- digikam 3.5.0 crashed a few times already .... always in saving?
+
+----------------------------------------------------------------------------
+sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt-get update
+sudo apt-get install aptik
+
+--------------------------------------
+patch /etc/hosts with old value from previous system
+----
+restarting services is new now,e.g.
+	   sudo restart ssh
+
+	   
+
+
+
+ubuntu-restricted-extras (will uninstall libavcodec53, libavutil51) 
+
+
+ 
+  skype
+  dropbox
+
+  ubuntu one
+  icetea web (for rtd and such)
+
+  gnome (w. xfce, skipped wm)
+
+  gnome-panel  (to get option back to do classic)
+
+  picasa 3.9  (via wine)
+
+
+  =openjdk java7 runtime
+  icedtea-plugin   (icetea java browser plugin)
+
+
+
+  unity-lens-askubuntu
+
+
+  pyregion ?
+  pyavm ?
+
+  Montage ?
+
+  libncurses5-dev
+
+  
+  acroread
+
+
+todo
+  - tpe
+  - javaws
+
+other:
+
+  - thunderbird plugins:   lightning, 
+
+- http://www.ubuntugeek.com/how-to-install-ubuntu-tweak-0-7-0-in-ubuntu-12-04-precise.html
+
+- http://www.ubuntugeek.com/howto-unity-with-dodge-windows-and-minimizeunminimize-behavior-in-ubuntu-12-04-precise.html
+
+
+=== skype:
+You may try running
+> apt-get install depended_packages:i386
+
+that is, for each 
+dependencies at 32 bit, install it adding :i386.
+
+For example, skype told me it needs libqt4-dbus at 32bit, I run
+> apt-get install libqt4-dbus:i386
+
+
+sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
+sudo apt-get update
+sudo apt-get install skype
+
+
+===
+
+printers.... again?
+
+https://www.astro.umd.edu/twiki/bin/view/AstroUMD/SummaryOfCurrentPrinters
+
+could perhaps copy /etc/cups ???
+
+==
+
+
+bad:    cut and paste url from chrome doesn't add the prefix http:// anymore
+
+
+
+====
+
+sudo pip install astropy
+
+# wget http://ds9.si.edu/download/pyds9/pyds9-1.7.tar.gz
+cd ~/Work/ALMAvis/radio-tools/pyds9-1.7
+sudo python setup.py install
+
+# git clone https://github.com/astropy/astropy
+# now 71MB
+sudo python setup.py install
+
+# ~/Work/ALMAvis/radio-tools
+# in: pvextractor radio_beam spectral-cube 
+sudo python setup.py install
+
+# git clone https://github.com/astropy/astroquery
+# ...No module named keyring
+#   ? needs python-keyring
+
+--
+
+# git clone https://github.com/leejjoon/pyregion/
+# may also do pyparsing
+pip install pyregion ?
+
+# 
+pip install pyAVM
+
+#
+pip install aplpy
+
+---
+
+better laptop powermanagement tools: 
+
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp tlp-rdw
+sudo tlp start
+===
+
+gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
+
+or?
+
+wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
+
+
+
+----
+
+
+sudo apt-get install flashplugin-installer
+sudo apt-get update
+sudo apt-get install adobe-flashplugin
+
+
+
+sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+
+
+# a full unity reset, in case something went nuts.
+sudo apt-get install dconf-tools
+dconf reset -f /org/compiz/
+setsid unity
+unity --reset-icons
+
+
+--
+
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+
+
+Problem:    .ps files with evince have issues 
+Problem:    digikam 3.5.0 now crashes a lot (4.0.0 also)
+
+
+==
+
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-get update
+sudo apt-get install ubuntu-tweak
+
+google-talkplugin
+fdupes
+
+
+python-nlopt
+nlopt
+calibre   (ebook)
+
+pitivi   (movie edit)
+imagination
+avidemux
+
+acroread
+
+=== 
+what doesn't work?
+ - geeqie on ps files
+ - digikam 3.5.0 crashes all the time
+ - shotwell  (0.18.x) seems to come up with a transparent screen, can't do a thing
+ ? no borders around windows is a pain
+
+
+
+sshmenu options?
+  - putty
+  - SecureCRT (commercial)
+  - Gnome-Connection-Manager  (gcm)
+  - hotssh
+  - sshm/trusty 0.4.3-2 amd64
+    command-line tool to manage your ssh servers 
+
+
+another issue:
+
+- the unity spaces (?) can sometimes hang if you do it in a certain way. can't recover.
+  reboot is needed, or you need to know the way to kill the X server or restart nautilus
+  or unity really????
+
+- evince on some PS not working (ligature?
+
+- and then suddenly the dashboard (?) search for launching applications dies.... 
+  works ok on files etc. but not apps.
+     rm ~/.cache/software-center -R
+     unity --reset &    (ah, now deprecated option)
+     unity --replace &   
+         but this forgets about the placement of windowns.... all piled up in 1, ugly
+  welll, after a reboot (or was it logout) this bug went away. 
+
+- sometimes cut and paste via mouse selection doesn't work on first time,
+- cutting and pasting not reliable, now you have to more use shift-ctr-C or so.
+
+- used to work, now, sep, expose has isues with remembering the screen view of chrome.
+  they go white.
+
+
+- crap, sometimes those default font sizes just rest themselves....
+  where is that done. this whole Unity is just full of 
+
+
+
+- then the sound control has disappeared from top bar
+
+
+sudo apt-get install dconf-editor
+
+
+dpkg -S file
+dpkg -L package
+
+
+===
+       
+screen #0:
+  dimensions:    1600x900 pixels (423x238 millimeters)
+
+
+bugs in unity:   digikam in particular doesn't register with a triangle it's starting up...
+so you could easily start up a 2nd one.
+

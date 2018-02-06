@@ -24,3 +24,6 @@ windows :-( Testing KDE on U17.10 fared better. More to come.
 3. meld is often hanging and painful to kill.
 
 
+## Links
+
+KERN (https://launchpad.net/~kernsuite and http://kernsuite.info/) has a number of radio astronomy packages available for Ubuntu 16.04

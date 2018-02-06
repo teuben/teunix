@@ -1,0 +1,137 @@
+
+comments on things i did/installed on ubuntu12.04
+
+  emacs
+  chromium-browser 
+  pidgin
+  gfortran
+  g++      
+  tcsh 
+  gnome-tweak-tool
+  gconf-editor   (any of these two to get auto raise)
+-  geeqie (old gqview)
+-  automake
+  cvs
+  tkcvs  (has tkdiff as well)
+  subversion (svn)
+  kdbg
+-  ubuntu-restricted-extras (will uninstall libavcodec53, libavutil51) 
+ ufraw
+  ncftp
+  curl (default wget is installed)
+  libx11-dev
+  x11proto-core-dev 
+ libreadline6-dev  - useful for miriad to get the latest
+
+  ipython
+  
+ 
+  skype
+  dropbox
+  tomboy
+  ubuntu one
+  icetea web (for rtd and such)
+  iotop
+  libxext-dev          2:1.3.0-3build1  (for NEMO X11 support?)
+  rcs
+  vlc
+  gimp
+  wine
+  rapid-photo-downloader
+  gnome (w. xfce, skipped wm)
+  libtool (for miriad/auto)
+  flex (for miriad/auto)
+  compizconfig-settings-manager
+  enscript
+  gnome-panel  (to get option back to do classic)
+  gv
+  picasa 3.9  (via wine)
+  guake (a terminal) - useless
+  xpdf
+  cairo  (seems to load up the machine, or is it compiz)
+  mdbtools (accessing MDB)
+  pdftk 
+  sshfs
+  sshmenu
+  =openjdk java7 runtime
+  icedtea-plugin   (icetea java browser plugin)
+  7zip
+  hfstools
+  hfsprogs
+  hfs...
+  blt    (for xplore)
+
+  preload
+  bonnie
+  iozone3  (fileop,iozone,pit_server)
+  idle (for tkinter????)
+  python-tk   (or did this option add tkinter???)
+  darktable
+  stellarium
+  unity-lens-askubuntu
+  sysinfo
+  basenji  (volume indexer)
+
+  libhdf4-dev 4.2r4-12build1   (HDF 4; for cmhog, nemo)
+  libplplot-dev 5.9.9-2ubuntu2
+  libcfitsio3-dev 3.290-1ubuntu1
+
+  docbook2odf   ??   needed an xslt interpreter
+  xsltproc           aha, this was the one
+
+-  build-essential    WOW, i wish i'd known about this. This gives:
+                     /usr/share/doc/build-essential/essential-packages-list
+  libgtk2.0-dev
+  libxml2-dev
+  liblensfun-dev
+  libgphoto2-dev
+  librsvg2-dev
+  libinotifytools0-dev
+  libsqlite3-dev
+  libexiv2-dev
+  
+- gphoto2
+-  dcraw
+
+  python-scipy
+  python-matplotlib
+  python-scitools
+  python-pyfits
+  python-pywcs
+
+  pyregion ?
+  pyavm ?
+
+  Montage ?
+
+  libncurses5-dev
+
+  qt4-qmake
+  libqt4-dev
+
+  mesa-utils (has glxgears)  - goes at aout 3700 
+  
+  grace
+  ifrit
+  pyqt4-dev-tools (for glue)
+  acroread
+
+  texlive
+  texlive-latex-base-doc
+  texlive-latex-recommended ? has mathrsfs
+  texlive-publishers ?    also has aastex :-)
+  doxygen
+
+todo
+  - tpe
+  - javaws
+
+other:
+
+  - thunderbird plugins:   lightning, 
+
+- http://www.ubuntugeek.com/how-to-install-ubuntu-tweak-0-7-0-in-ubuntu-12-04-precise.html
+
+- http://www.ubuntugeek.com/howto-unity-with-dodge-windows-and-minimizeunminimize-behavior-in-ubuntu-12-04-precise.html
+
+
