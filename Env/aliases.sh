@@ -61,10 +61,10 @@ alias p=printenv
 alias h=history
 alias htail="history | tail"
 alias hgrep="history | grep"
-alias ahgrep() {
+alias agrep="alias | grep"
+ahgrep() {
     grep -i $1 .history.*
 }
-alias agrep="alias | grep"
 ecg() {
     grep -i $1 ~/.ec/emacsclient.log
 }
