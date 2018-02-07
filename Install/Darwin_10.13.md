@@ -5,6 +5,10 @@ desk. Coincidence?   This laptop has two USB-C's on the left and two on the righ
 you have to click it in really hard (until you hear the click) to get the connection. Not easy to get out,
 small, and slippery hands will cause problems.
 
+Getting a bluetooth mouse was a good choice. The trackpad is something for experts, doesn't translate well
+between Mac and Linux. Good thing is that the middle mouse button does seem to paste with the middle mouse
+after the left mouse button has selected.
+ 
 
 ## Install
 
