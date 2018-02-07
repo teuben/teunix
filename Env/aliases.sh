@@ -2,23 +2,23 @@
 
 alias teunix='(cd ~/teunix; git pull)'
 
-alias up='cd ..'
-alias up2='cd ../..'
-alias up3='cd ../../..'
-alias up4='cd ../../../..'
-alias up5='cd ../../../../..'
-alias up6='cd ../../../../../..'
-alias up7='cd ../../../../../../..'
-alias up8='cd ../../../../../../../..'
-alias dir='ls -sF'
+alias   up='cd ..'
+alias  up2='cd ../..'
+alias  up3='cd ../../..'
+alias  up4='cd ../../../..'
+alias  up5='cd ../../../../..'
+alias  up6='cd ../../../../../..'
+alias  up7='cd ../../../../../../..'
+alias  up8='cd ../../../../../../../..'
+alias  dir='ls -sF'
 alias sdir="ls -sF | sort -rn | head"
-alias dus="du | sort -nr | head"
+alias  dus="du | sort -nr | head"
 #alias dus 'du -s *|sort -n'
-alias d='dir -l'
-alias l='ls -sFtl'
-alias dth="d -t | head"
-alias dth10="d -t | head \!* | tail"
-alias dtr="d -t | head"
+alias    d='dir -l'
+alias    l='ls -sFtl'
+alias  dth="d -t | head"
+#alias dth10="d -t | head \!* | tail"
+alias  dtr="d -t | head"
 #FIX alias adddir "source ~/bin/addmydir"
 alias adir='ar tv'
 alias cdir='cpio -itvc <'
@@ -26,12 +26,20 @@ alias cdir='cpio -itvc <'
 alias tdir='tar tvf'
 alias untar='tar xvf'
 alias detar='tar xvf'
-alias mktar='tar cvf \!*.tar \!*'
-alias mkzip='zip -r \!*.zip \!*'
+mktar() {
+    tar cvf $1.tar $1
+}
+mkzip() {
+    zip -r $1.zip $1
+}
 alias zdir='zoo -list'
-alias mkcd='mkdir -p \!*; cd \!*'
-#FIX alias cdp='source ~/rc/\!*.rc'
-#FIX alias rc= 'source ~/rc/\!*.rc'
+mkcd() {
+    mkdir -p $1 ; cd $1
+}
+rc() {
+    source ~/rc/$1.rc
+}
+    
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
@@ -53,15 +61,20 @@ alias p=printenv
 alias h=history
 alias htail="history | tail"
 alias hgrep="history | grep"
-alias ahgrep="grep -i \!* .history.*"
 alias agrep="alias | grep"
-alias ecg='grep -i \!* ~/.ec/emacsclient.log'
-#alias mailrc 'grep -i \!* ~/.mailrc'
-alias phone='grep -i \!* ~/.phone /local/pub/phone'
+ahgrep() {
+    grep -i $1 .history.*
+}
+ecg() {
+    grep -i $1 ~/.ec/emacsclient.log
+}
+phone() {
+    grep -i $1 ~/.phone /local/pub/phone
+}
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
-alias addphone='echo \!* >> ~/.phone'
-alias comment='echo \!* > /dev/null'
-alias dgrep="grep \!* ~/.du/du.*"
+#alias addphone='echo \!* >> ~/.phone'
+#alias comment='echo \!* > /dev/null'
+#alias dgrep="grep \!* ~/.du/du.*"
 #alias gv  ghostview
 #alias gvl ghostview -landscape
 alias svnq='svn status --show-updates'
