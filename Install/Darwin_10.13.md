@@ -31,5 +31,12 @@ Here's stuff I did:
 
 7. Install CASA - now the pre-release is available for high sierra as of a few days ago.
 
+   a. Note the CASA team recommends port, not brew.
+
 8. Install sublime editor :  https://www.sublimetext.com/
 
+### Install to do
+
+*.  ds9 from dmg or tgz ???
+
+*.  ssh remote access
