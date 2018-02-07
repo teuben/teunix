@@ -21,7 +21,8 @@ Here's stuff I did:
 
 3. Install libre office
 
-4. Install Xcode V9.2 (again, they need your credit card)
+4. Install Xcode V9.2 (again, they need your credit card) - there is some question if you can get away with
+   not installing the whole 2GB but just doing the "command line utilities/tools"
 
 5. Install install_PandExo (a miniconda2)
 
