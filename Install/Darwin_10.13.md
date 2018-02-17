@@ -24,7 +24,7 @@ Here's stuff I did:
 4. Install Xcode V9.2 (again, they need your credit card) - there is some question if you can get away with
    not installing the whole 2GB but just doing the "command line utilities/tools"
 
-5. Install install_PandExo (a miniconda2)
+5. Install install_PandExo (a miniconda2) as a test
 
 6. Install Homebrew (not Macports... yet)
 
@@ -40,8 +40,14 @@ Here's stuff I did:
 
 8. Install sublime editor :  https://www.sublimetext.com/
 
+9. Install a better terminal: https://www.iterm2.com/
+
 ### Install to do
 
-*.  ds9 from dmg or tgz ???
+*.  ds9 from dmg or tgz ?? pros and cons?
 
-*.  ssh remote access
+*.  ssh remote access:   System Preferences -> Sharing  -> checkbox "Remote Login" from left panel
+
+*.  Install XQuartz : https://www.xquartz.org/ - needed if you need to compile and run X.org based application
+
+
