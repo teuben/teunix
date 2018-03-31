@@ -1,65 +1,73 @@
 #! /bin/csh -f
-
-#   The examples below follow the csh syntax, and  for convenience, we'll also 
-#   assume the following commands take place in a $c2d directory.
-#   Modify for your machine appropriately.
-#   This script lives as genv/scripts/install_python
 #
-#   takes about 3-4' on a fast P4/3GHz
+#   install a Miniconda python with the right tools for sd2018
+#   This takes about 2 mins for the basic python
+# 
+#
+#   2-feb-2018  Peter Teuben      initial version written
+#
+#
+#  TODO's:
+#  - test to check if everything was installed properly and working ok
+#  - git submodules?
+#  - intel accellerated?  https://www.scivision.co/intel-distribution-for-python/
+#
 
-set c2d=`pwd`/c2d
-if (! -e $c2d) mkdir $c2d
+#   make  it work for Linux and Darwin (MacOSX)
+set uname = `uname -s`
+if ($uname == Darwin) set uname = MacOSX
 
-#	versions
-set python=2.2.3
-set numarray=1.0
-set cfitsio=2500
+#   pick the python version (2 or 3)
+set p = 3
 
-#   you may need to install your own python if you don't have root access to /usr/lib/pythonX.Y
-cd $c2d
-wget -q http://www.python.org/ftp/python/2.2.3/Python-2.2.3.tgz
-tar zxf Python-2.2.3.tgz
-cd Python-2.2.3
-setenv PYTHONROOT `pwd`
-./configure --prefix=$c2d
-make                                            # takes about a minute
-make install
-set path=($c2d/bin $path)                  # add new python to path
-rehash
-which python                                 # observe the new python location !!!
+#   set the basics
+set url  = https://repo.continuum.io/miniconda
+set file = Miniconda$p-latest-$uname-x86_64.sh
+set root = `pwd`/miniconda$p
 
-#    numarray (the new one)  1.0 is now also available
-#    numeric is the old one, Numeric-23.3.tar.gz being the last one - don't use it
-cd $c2d
-wget -q http://aleron.dl.sourceforge.net/sourceforge/numpy/numarray-1.0.tar.gz
-tar zxf numarray-1.0.tar.gz
-cd numarray-1.0
-which python                                    # just making sure where it goes
-python setup.py install
+#   ensure not to overwrite something existing
+if (-d $root) then
+  echo Cannot proceed with install, $root exists
+  exit 0
+endif
+
+#   grab the right miniconda
+if (! -e $file) then
+   if ($uname == Linux) then
+     wget $url/$file
+   else
+     curl $url/$file > $file
+   endif
+endif
+
+#  note this style install doesn't modify your local .bashrc (linux) or .bash_profile  (mac)
+bash $file -b -p $root
+
+set path = ($root/bin $path); rehash
+
+echo 'set path = ('$root'/bin $path); rehash' > sd2018_start.csh
+echo 'export PATH='$root'/bin:$PATH'          > sd2018_start.sh
+
+# other useful things 
+yes | conda install ipython numpy scipy matplotlib notebook astropy jupyter
+
+# stuff for SD2018
+
+pip install spectral_cube               # radio-beam, spectral-cube
+pip install pvextractor
+pip install image_registration          # FITS-tools, image-registration
+pip install reproject                   # astropy-healpix-0.2 reproject-0.4
+pip install aplpy
+
+# image_tools
+(git clone https://github.com/keflavich/image_tools           ; cd image_tools ;  python setup.py install)
+
+# uvcombine
+(git clone https://github.com/radio-astro-tools/uvcombine     ; cd uvcombine;    python setup.py install)
+
+# statcont
+(git clone https://github.com/radio-astro-tools/statcont;     ; cd statcont;     python setup.py install)
+
+# https://github.com/radio-astro-tools/uvcombine/issues/14  
 
 
-#    pyfits (needs numarray) - notice the hardcoded python version path !!!
-cd $c2d
-wget -q http://www.stsci.edu/resources/software_hardware/pyfits/current/pyfits.py
-cp pyfits.py $c2d/lib/python2.2/site-packages/
-
-#    cfitsio (needed by pCFITSIO)
-cd $c2d
-wget -q ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/cfitsio2500.tar.gz
-tar zxf cfitsio2500.tar.gz
-cd cfitsio
-./configure --prefix=$c2d
-make
-make install
-
-#    pCFITSIO (needs cfitsio sources, and numarray)
-cd $c2d
-wget -q http://panoramix.stsci.edu/~npirzkal/python/pcfitsio/downloads/pCFITSIO-0.99.2.tar.gz 
-tar zxf pCFITSIO-0.99.2.tar.gz
-cd pCFITSIO-0.99.2
-### alas, you can either edit setup.cfg with the value of $c2d/cfitsio
-### vi setup.cfg
-python setup.py build_ext --include-dirs=$c2d/include --library-dirs=$c2d/lib
-python setup.py install
-#  beats me why this has to be done manually
-cp pcfitsio.so ../lib/python2.2/site-packages/
