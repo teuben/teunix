@@ -33,6 +33,13 @@ typing **xcode-select --install**.
 I was quite shocked that, although it's free, I still needed to give
 Apple my credit card credentials in order to download it.
 
+### XQuarz
+
+TBD if we still need https://www.xquartz.org/
+
+
+
+
 ## homebrew
 
 It's all on https://brew.sh/  but if you're in a hurry, run this in a terminal
@@ -57,6 +64,11 @@ Here is my favorite list
 ## Other usefule programs
 
 * skype
+=======
+* CASA: they use MacPorts: https://safe.nrao.edu/wiki/bin/view/Software/CASA/CasaEnvSetupOSX1012
+
+* GILDAS: https://www.iram.fr/IRAMFR/GILDAS/gildasli2.htmla
+
 
 ## Links
 
@@ -73,3 +85,6 @@ list from 2018, some of which may still exist or be useful when you read this:
 * https://github.com/nicolashery/mac-dev-setup
 
 
+And some other
+
+*  https://superuser.com/questions/181337/is-it-safe-to-install-both-homebrew-and-macports-on-the-same-machine
