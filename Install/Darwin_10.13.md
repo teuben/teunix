@@ -42,12 +42,14 @@ Here's stuff I did:
 
 9. Install a better terminal: https://www.iterm2.com/
 
+10.  Install XQuartz : https://www.xquartz.org/ - needed if you need to compile and run X.org based application
+
+
 ### Install to do
 
 *.  ds9 from dmg or tgz ?? pros and cons?
 
 *.  ssh remote access:   System Preferences -> Sharing  -> checkbox "Remote Login" from left panel
 
-*.  Install XQuartz : https://www.xquartz.org/ - needed if you need to compile and run X.org based application
 
 
