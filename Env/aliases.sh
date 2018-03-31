@@ -32,6 +32,9 @@ alias zdir='zoo -list'
 alias mkcd='mkdir -p \!*; cd \!*'
 #FIX alias cdp='source ~/rc/\!*.rc'
 #FIX alias rc= 'source ~/rc/\!*.rc'
+rc () {
+  source ~/rc/$1.rc
+}
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
