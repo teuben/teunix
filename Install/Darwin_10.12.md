@@ -54,6 +54,9 @@ Here is my favorite list
 
    No experience yet, since I'm running just brew for now.  See also my 10.13 comments.
 
+## Other usefule programs
+
+* skype
 
 ## Links
 
