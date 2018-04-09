@@ -23,7 +23,7 @@ alias  dtr="d -t | head"
 alias adir='ar tv'
 alias cdir='cpio -itvc <'
 #alias tar 'gtar'
-alias tdir='tar tvf'
+alias  tdir='tar tvf'
 alias untar='tar xvf'
 alias detar='tar xvf'
 mktar() {
@@ -33,17 +33,15 @@ mkzip() {
     zip -r $1.zip $1
 }
 alias zdir='zoo -list'
-<<<<<<< HEAD
-alias mkcd='mkdir -p \!*; cd \!*'
 #FIX alias cdp='source ~/rc/\!*.rc'
 #FIX alias rc= 'source ~/rc/\!*.rc'
 rc () {
   source ~/rc/$1.rc
 }
 mkcd() {
-  mkdir -p $1 ; cd $1
+  mkdir -p $1
+  cd $1
 }
-
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
@@ -51,12 +49,12 @@ mkcd() {
 #alias	unmark	'unset path_\!*'
 #
 #
-alias ren='mv -i'
+alias  ren='mv -i'
 alias copy='cp -i'
-alias del='rm -i'
-alias era='rm -i'
+alias  del='rm -i'
+alias  era='rm -i'
 #
-alias print='enscript'
+alias  print='enscript'
 alias print2='enscript -r2'
 alias print1='enscript -r1 -fCourier7'
 alias printo='enscript -B  -fHelvetica15'
