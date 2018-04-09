@@ -33,8 +33,6 @@ mkzip() {
     zip -r $1.zip $1
 }
 alias zdir='zoo -list'
-#FIX alias cdp='source ~/rc/\!*.rc'
-#FIX alias rc= 'source ~/rc/\!*.rc'
 rc () {
   source ~/rc/$1.rc
 }
