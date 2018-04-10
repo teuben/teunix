@@ -4,7 +4,6 @@ Naming convention:
 
 UNAME   = `uname -s`
 VERSION = [DISTRO_]
-    check /etc/issue or /etc/redhat_version
+    check /etc/issue or /etc/redhat_version or /etc/debian_version
     
 
-UNAME_VERSIO

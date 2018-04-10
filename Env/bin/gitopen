@@ -1,6 +1,8 @@
 #! /bin/csh -f
 #
 #   I do this too often.....
+#   See also:   https://blog.tomecek.net/post/my-github-pull-request-workflow/
+#               https://blog.tomecek.net/post/efficient-git-tooling/
 
 if ($#argv > 0) then
     echo git on $1
