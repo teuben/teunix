@@ -191,7 +191,9 @@ if ($?TMP) unsetenv TMP
 
 
 alias em 'emacs -nw'
-alias muttdcopen mutt -f ~/Mail/Badminton/dcopen11
-alias muttarch   mutt -f ~/Mail/Archives
 
+
+if ( -e    ~/.local.aliases.csh ) then
+   source  ~/.local.aliases.csh
+endif
 
