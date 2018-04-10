@@ -102,3 +102,8 @@ alias        cvsi='cvs commit'
 
 
 export PATH=~/teunix/Env/bin:$PATH
+
+if [ -f ~/.local.aliases.sh ]; then
+    . ~/.local.aliases.sh
+fi
+
