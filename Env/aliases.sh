@@ -11,9 +11,9 @@ alias  up6='cd ../../../../../..'
 alias  up7='cd ../../../../../../..'
 alias  up8='cd ../../../../../../../..'
 alias  dir='ls -sF'
-alias sdir="ls -sF | sort -rn | head"
-alias  dus="du | sort -nr | head"
-#alias dus 'du -s *|sort -n'
+alias sdir="ls -sF |sort -nr | head"
+alias  dus="du     |sort -nr | head"
+alias  dut="du -s *|sort -nr | head"
 alias    d='dir -l'
 alias    l='ls -sFtl'
 alias  dth="d -t | head"
