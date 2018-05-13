@@ -23,6 +23,12 @@ windows :-( Testing KDE on U17.10 fared better. More to come.
 
 3. meld is often hanging and painful to kill.
 
+4. recently (2018) some of my chromium windows are now coming without a title bar, making it hard
+   to move the window. Even ALT-left_mouse doesn't work in those case. If there is a bit of space
+   left on the tab line, those can be used to pick up the window and move it.
+
+5. Sometimes the pop-ups from the left task bar become pop-unders, like "Always on Bottom".
+
 
 ## Links
 
