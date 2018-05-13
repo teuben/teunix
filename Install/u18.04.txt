@@ -1,0 +1,699 @@
+
+
+apt-get install -y python-software-properties software-properties-common
+
+
+
+Kubuntu 18.04 has gcc-7, but this does not work when compiling gyrfalcON, one needs gcc-5:
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 40
+sudo update-alternatives --config gcc
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 40
+sudo update-alternatives --config g++
+
+In debian 9.4 (stretch) default is gcc-6, so do in su mode:
+echo "deb http://ftp.us.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list.d/unstable.list
+apt-get update
+apt-get install -t unstable gcc-5
+apt-get install -t unstable g++-5
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 40
+sudo update-alternatives --config gcc
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 40
+sudo update-alternatives --config g++
+
+
+
+
+
+
+===== U16 below
+Installed May 14, 2016; on Lenovo T530
+
+tcsh
+chromium-browser    (google chrome was done via a tarball in /opt/google)
+emacs
+darktable
+digikam   ('ubuntu software didn't even see this') ->   apt install digikam just worked
+software-center
+ipython
+postr   - good flickr uploader
+tkcvs
+indicator-keylock
+python-appindicator
+python-notify
+build-essential  (gcc 5.3.1)
+gfortran
+cmake
+ruby
+pidgin
+
+ubuntu-restricted-extras (still some headers MS fonts, missing)
+youtube-dl
+geeqie               (old gqview)
+cvsutils
+meld                   alternative to buggy tkdiff
+openssh-server                  (sudo gedit /etc/ssh/sshd_config)
+
+ Reminder how to clone your old system ssh settings so multiple versions
+  will remember the hostname
+
+==>   don't forget to edit /etc/ssh/ssh_config :
+      ForwardX11 yes
+      ForwardX11Trusted yes
+
+
+* libavcodec-extra     ->  N/A
+unity-tweak-tool
+gconf-editor           (any of these two to get auto raise)
+
+
+
+
+
+
+Also google around, e.g.
+  www.webupd8.org/2014/04/10-things-to-do-after-installing-ubuntu.html
+  www.noobslab.com/2014/04/thingstweeaks-to-do-after-install-of.html
+  itsfoss.com/things-to-do-after-installing-ubuntu-14-04/
+  www.enqlu.com/2014/03/things-to-do-after-installing-ubuntu.html
+
+
+===>>> below here i'm wokring from the u14.10 list, anything with = i didn't do yet
+       
+
+
+ncftp
+=  libx11-dev              (x11proto-core-dev was already installed)
+libreadline6-dev       (useful for miriad to get the latest)
+automake
+kdbg     
+pdftk 
+*  nautilus-open-terminal     ---> has been obsoleted
+apt-file                     (e.g. "apt-file search Intrinsic.h")
+=  libxt-dev          (was already done via others)
+git-core
+=  libboost-all-dev
+valgrind
+cpu-checker
+psensor
+cpufrequtils
+=  libgif-dev                     (for pgplot; but it seemed to build in NEMO ok)
+libxaw7-dev                    (also for karma)
+nmap
+
+indicator-cpufreq
+=  pepperflashplugin-nonfree   (after that, run:   "update-pepperflashplugin-nonfree --install")
+rapid-photo-downloader
+gimp
+gimp-lensfun
+libgimp2.0-dev 
+gimp-plugin-registry           (e.g. resynthesizer)
+libexiv2-dev 
+liblensfun-dev
+jhead                              exif editor
+
+=  synaptic   (if you like something else to install packages from)
+
+compizconfig-settings-manager
+rcs
+vlc
+rar
+tomboy
+=  libtool                         (for miriad/auto)
+=  flex                           (for miriad/auto)
+enscript
+texlive-latex-base
+texlive
+texlive-publishers 
+doxygen
+mdbtools                          (accessing MDB)
+=  basenji                              (volume indexer)
+
+=  glmark2   (X11 benchmark)
+
+python-setuptools
+python-tk                     (or did this option add tkinter???)
+python-scipy
+python-matplotlib
+python-scitools
+python-pyfits
+python-pywcs
+python-keyring              (for astroquery)
+python-pandas
+pyqt4-dev-tools                  (for glue)
+pyside-tools                   (??? needed ???)
+cython
+ipython
+python-pip
+swig
+python-sympy
+python-h5py
+python-appindicator     (sshplus needs it)
+python-sklearn
+python-scikits.statsmodels
+python-nltk
+
+gnome-system-tools     (useful for shares with windows;  command: users-admin)
+
+
+libhdf4-dev                   (HDF 4; for cmhog, nemo)
+libplplot-dev 
+libcfitsio3-dev
+sysinfo
+preload
+idle                             (for tkinter????)
+mesa-utils (has glxgears)      - goes at aout **3700**   OMG, 60 now.. still 60 in U14.10
+=  iotop
+=  ifstat
+
+sshfs
+hfsprogs
+=  gv     (didn't trigger anything)
+darktable
+ufraw
+dcraw
+
+qt4-qmake
+libqt4-dev
+ifrit
+grace
+=  xpdf
+=  wine
+  gphoto2
+  libgphoto2-dev
+  librsvg2-dev
+  libinotifytools0-dev
+libsqlite3-dev
+
+  bonnie
+  iozone3                  (fileop,iozone,pit_server)
+=  docbook2odf                 (needed an xslt interpreter)
+=  xsltproc                         (aha, this was the one)   
+stellarium
+xaw3dg-dev                   (will also install xaw3dg - for gipsy)
+acpitool
+nemo                    (the file manager)
+
+
+
+lame                          music conversions
+k3b				  CD writer
+     qpdfview                         trying, since my evince now doesn't do ps right....
+imagination                     slideshow maker (makes vob)
+    ?  photofilmstrip                doesn't exist anymore?
+
+
+exfat-fuse                 (needed for Nikon big disks)
+=  ruby-gtk2     for sshmenu    (used to be called libgtk2-ruby)
+=  ruby-gnome2  (?)
+=  libruby
+ssh-askpass       (?)
+  gufw                           (graphical interface to firewall)
+  gstm
+  hotssh               (sshmenu replace?) now use sshplus
+
+
+  # vpn
+openconnect
+traceroute    
+
+  # things i forgot from u13:
+
+=  bcrypt
+=  bison
+
+ddd
+dmg2img
+finger
+fityk
+ggobi
+gman
+html2text
+man2html
+mercurial
+=  mutt                    (local only; just for browsing local mailfolders)
+openjpeg-tools
+pgplot5
+rman
+inkscape
+scribus
+shutter
+sqlite
+sqlitebrowser
+subversion     (svn)
+virtualbox
+
+  xcfa     (sound conversion)
+  
+
+nautilus-dropbox   (this will also download dropbox :-)
+
+
+  liblapack-dev       (for casa-core?)
+  libblas-dev
+
+*  icedtea-7-plugin         (this failed)
+  openjdk-7-jre
+=  openjdk-7-jdk       (but only if you need to develop)
+ant                 (for developing - will result in java)
+
+xdot
+dia
+
+gnudatalanguage (GDL)
+
+----
+
+if you really need Oracle's version, use this instead
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+-------
+
+sudo apt-get install libdvdread4
+sudo /usr/share/doc/libdvdread4/install-css.sh
+
+-------
+visudo /etc/sudoers
+Defaults env_reset,timestamp_timeout=30
+-----
+vipw
+	change the shell to /bin/tcsh
+==========
+
+- ctrl-alt-F1   : blank screen  ** disappeared later on **
+- glxgears way slow  (wrong device X driver)
+- load in chrome super high (flash?)
+- digikam 3.5.0 crashed a few times already .... always in saving?
+
+----------------------------------------------------------------------------
+sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt-get update
+sudo apt-get install aptik
+
+--------------------------------------
+patch /etc/hosts with old value from previous system
+----
+restarting services is new now,e.g.
+	   sudo restart ssh
+
+	   
+
+= docker
+  a new app, voted as the best new thing on the block
+= zbackup
+= okular (alternative PDF reader, can also add comments)
+
+
+ubuntu-restricted-extras (will uninstall libavcodec53, libavutil51) 
+gtk-recordmydesktop
+
+ 
+  skype --> issues with 32bit -> sudo dpkg --add-architecture i386 etc.etc.
+dropbox   
+
+  ubuntu one
+  icetea web (for rtd and such)
+
+  gnome (w. xfce, skipped wm)
+
+=  gnome-panel  (to get option back to do classic)
+
+  picasa 3.9  (via wine)
+=  picapy (doesn't seem that useful compared to the online versions)
+
+   	  sudo apt-get install wine winetricks
+	  cd ~/ &amp;&amp; wget http://dl.google.com/picasa/picasa39-setup.exe
+	  WINEARCH=win32 winecfg
+	  wine ~/picasa39-setup.exe
+	  WINEARCH=win32 winetricks -q ie6
+
+
+  =openjdk java7 runtime
+  icedtea-plugin   (icetea java browser plugin)
+
+
+
+  unity-lens-askubuntu
+
+
+  pyregion ?
+  pyavm ?
+
+  Montage ?
+
+libncurses5-dev    
+= libncurses5:i386    (for mem if you haven't recompiled it for 64bit)
+
+  
+  acroread
+
+   sound-juicer   - to rip cd into mp3
+
+todo
+  - tpe
+  - javaws
+
+other:
+
+  - thunderbird plugins:   lightning, 
+
+- http://www.ubuntugeek.com/how-to-install-ubuntu-tweak-0-7-0-in-ubuntu-12-04-precise.html
+
+- http://www.ubuntugeek.com/howto-unity-with-dodge-windows-and-minimizeunminimize-behavior-in-ubuntu-12-04-precise.html 
+
+
+=== skype:
+You may try running
+> apt-get install depended_packages:i386
+
+that is, for each 
+dependencies at 32 bit, install it adding :i386.
+
+For example, skype told me it needs libqt4-dbus at 32bit, I run
+> apt-get install libqt4-dbus:i386
+
+
+sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
+sudo apt-get update
+sudo apt-get install skype
+
+
+===
+
+printers.... again?
+
+https://www.astro.umd.edu/twiki/bin/view/AstroUMD/SummaryOfCurrentPrinters
+
+could perhaps copy /etc/cups ???
+
+====
+
+sudo pip install astropy
+
+# wget http://ds9.si.edu/download/pyds9/pyds9-1.7.tar.gz
+cd ~/Work/ALMAvis/radio-tools/pyds9-1.7
+sudo python setup.py install
+
+# git clone https://github.com/astropy/astropy
+# now 71MB
+sudo python setup.py install
+
+# ~/Work/ALMAvis/radio-tools
+# in: pvextractor radio_beam spectral-cube 
+sudo python setup.py install
+
+# git clone https://github.com/astropy/astroquery
+# ...No module named keyring
+#   ? needs python-keyring
+
+--
+
+# git clone https://github.com/leejjoon/pyregion/
+# may also do pyparsing
+pip install pyregion ?
+
+# 
+pip install pyAVM
+
+#
+pip install aplpy
+
+---
+
+better laptop powermanagement tools: 
+
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp tlp-rdw
+sudo tlp start
+===
+
+gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
+
+or?
+
+wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
+
+
+
+----
+
+
+=sudo apt-get install flashplugin-installer
+=sudo apt-get update
+=sudo apt-get install adobe-flashplugin
+==== thse don't seem to work in U14.10 anymore????
+
+
+
+=sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+
+
+# a full unity reset, in case something went nuts.
+sudo apt-get install dconf-tools
+dconf reset -f /org/compiz/
+setsid unity
+unity --reset-icons
+
+
+--
+
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+
+
+Problem:    .ps files with evince have issues 
+Problem:    digikam 3.5.0 now crashes a lot (4.0.0 also)
+
+
+==
+
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-get update
+sudo apt-get install ubuntu-tweak
+-> didn't work anymore (feb 2016), grab .DEB from website is ok too
+
+=?google-talkplugin
+=fdupes
+
+
+python-nlopt
+nlopt
+= calibre   (ebook)
+
+= pitivi   (movie edit)
+= imagination
+= avidemux     (video editor)
+
+=?acroread
+
+=== 
+what doesn't work?
+ - geeqie on ps files
+ - digikam 3.5.0 crashes all the time
+ - shotwell  (0.18.x) seems to come up with a transparent screen, can't do a thing
+ ? no borders around windows is a pain when you use black windows,
+       need a grey in it.
+
+
+
+sshmenu options?
+  - putty
+  - SecureCRT (commercial)
+  - Gnome-Connection-Manager  (gcm)
+  - hotssh
+  - sshm/trusty 0.4.3-2 amd64
+    command-line tool to manage your ssh servers 
+
+
+another issue:
+
+- the unity spaces (?) can sometimes hang if you do it in a certain way. can't recover.
+  reboot is needed, or you need to know the way to kill the X server or restart nautilus
+  or unity really????
+
+- evince on some PS not working (ligature?
+  ** seems fixed on 14.10 **
+
+- and then suddenly the dashboard (?) search for launching applications dies.... 
+  works ok on files etc. but not apps.
+     rm ~/.cache/software-center -R
+     unity --reset &    (ah, now deprecated option)
+     unity --replace &   
+         but this forgets about the placement of windowns.... all piled up in 1, ugly
+  welll, after a reboot (or was it logout) this bug went away. 
+
+- sometimes cut and paste via mouse selection doesn't work on first time,
+- cutting and pasting not reliable, now you have to more use shift-ctr-C or so.
+
+- used to work, now, sep, expose has isues with remembering the screen view of chrome.
+  they go white.
+  ** so far, fixed on 14.10, but i saw it once on thunderbird **
+
+
+- crap, sometimes those default font sizes just rest themselves....
+  where is that done. this whole Unity is just full of shit
+
+
+
+- then the sound control has disappeared from top bar
+  ** dconf got it back, accidentally deleted?
+  at least rhytmbox can be controlled again, that died on 14.04
+
+
+===
+
+package reminders:
+
+dpkg -S file                 which package owns that file
+dpkg -L package              list what files the package gives
+
+
+===
+     
+screen #0:
+  dimensions:    1600x900 pixels (423x238 millimeters)
+
+
+bugs in unity:   digikam in particular doesn't register with a triangle it's starting up...
+so you could easily start up a 2nd one.
+
+
+==
+
+the NUMIX theme:
+
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+
+sudo apt-get install numix-gtk-theme
+sudo apt-get install numix-icon-theme
+sudo apt-get install numix-icon-theme-circle
+sudo apt-get install numix-plymouth-theme
+sudo apt-get install numix-wallpaper-aurora
+
+
+==
+
+darktable development:    http://www.darktable.org/install/#ubuntu
+
+intltool
+libatk1.0-dev
+libcairo2-dev 
+libsoup2.4-dev
+librsvg2-dev
+libcurl4-gnutls-dev
+ libjpeg-dev
+libtiff4-dev    ->   libtiff5-dev 
+liblcms2-dev
+
+
+there may be more, but that's what I needed
+
+http://sourceforge.net/p/darktable/mailman/message/32261517/
+
+
+
+flash?
+
+apt-get install flashplugin-installer
+    claims it's there
+
+
+
+
+sudo add-apt-repository ppa:atareao/atareao
+
+sudo apt-get update && sudo apt-get install my-weather-indicator
+
+
+glxgears:   dec 7, 2014:    79 frames in 5.0 seconds = 15.644 FPS    (still, slow)
+156 frames in 5.0 seconds = 30.993 FPS    after compiz was restarted
+
+
+
+
+Aggrevating issues:
+------------------
+
+1)  (hard to explain)     focus follows mouse doesn't work 100% of the time, especially when screens are
+    	     		  switched and you have to run in and out of a window to get the focus back wheree
+			  you want it.
+
+2)  (intermittend)	  notably the software updater is stuck to the left bar, it doesn't want to open
+    			  only way to remove from bar, open fresh
+
+3)  (one time?)           pidgin randomly put a 'b' in the text. so weird
+
+4)  (intermittend)        started recently in chrome: after some backspaces, no more input allowed.
+
+5)  ? 			  suspend doesn't work - but i just upgraded kernel and didn't restart
+
+6)  window focus          probably more feature than bug, but annoying:    if an app has mulitple windows,
+                          and it spreads over multiple screens, focus into the other cannot be done.
+                          Also if one window even just leaks into another screen, it's also messed up
+			  getting focus.
+
+
+5-feb:
+?) expanding a photo in google chrome now hangs the machine.  Didn't try chromium.   Did see a new chrome
+   update today. will need to test it.
+
+?) chrome now goes to a mode where text input just doesn' twork anymore. 
+   usually after some fast backspaces?
+
+
+
+
+
+---
+
+sometimes when you reboot, the fonts are smaller or bigger.
+
+
+----
+
+for the new rapid-photo-downloader (old 0.4 is broken now using selections)
+
+
+sudo apt-get install python3-pip
+etc.
+http://www.damonlynch.net/rapid/download.html
+
+
+git-cvs
+zeitgeist
+zeitgeist-explorer
+grive2  (via 
+  sudo add-apt-repository ppa:nilarimogard/webupd8
+  sudo apt-get update
+  sudo apt-get install grive
+
+# do not disturb notifications  http://askubuntu.com/questions/769948/is-there-a-dont-disturb-option-to-temporarily-hide-notifications-like-on-mac
+sudo apt-add-repository  ppa:vlijm/nonotifs
+sudo apt-get update
+sudo apt-get install nonotifs
+
+
+xtightvncviewer      # this one cuts and pasts accross ok.
+
+diodon - clipboard manager
+7zip 
+gparted
+
+calibre
+screenruler
+
+#? spyder - python IDE
+
+libfftw3-3-dev
