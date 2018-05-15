@@ -157,7 +157,6 @@ if (-e ~/cvs/cvsrc) source ~/cvs/cvsrc
 alias starlab 'source /home/teuben/cvs/manybody/starlab/starlab_start'
 # nemo
 alias nemo 'astroload nemo; unalias nemo'
-alias testnemo 'source /home/test/teuben/nemo/nemo/nemo_end; source /home/test/teuben/nemo/nemo/nemo_start'
 
 alias addld 'setenv LD_LIBRARY_PATH \!*:$LD_LIBRARY_PATH'
 
@@ -177,15 +176,15 @@ alias idl56 'source ~/.idlrc56; unalias idl; echo IDL now loaded with odd time'
 alias xmovie 'source ~/movies/lib/source_me; unalias xmovie'
 alias genv 'unalias genv; source /home/teuben/sirtf/genv/genv.rc'
 
-alias 7 'cd /home/teuben7'
 
 # always point home....
 setenv CVSROOT   :pserver:pteuben@cvs.astro.umd.edu:/home/cvsroot
 setenv CVSEDITOR mem
 setenv CVS_RSH   ssh
 alias  cvsq      'cvs -n -q update'
+alias  cvsi      'cvs commit'
 
-#  on Sebok's ssystem?
+#  on Sebok's system?
 if ($?TMPDIR) unsetenv TMPDIR
 if ($?TMP) unsetenv TMP
 
