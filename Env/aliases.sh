@@ -96,12 +96,20 @@ export    CVS_RSH=ssh
 alias        cvsq='cvs -n -q update'
 alias        cvsi='cvs commit'
 
-#  on Sebok's ssystem?
+#  on Sebok's system?
 #if ($?TMPDIR) unsetenv TMPDIR
 #if ($?TMP) unsetenv TMP
 
 
-export PATH=~/teunix/Env/bin:$PATH
+export PATH=~/bin:~/teunix/Env/bin:$PATH
+
+
+for d in /astromake ~/astromake ; do
+    if [ -f $d/astromake_start.sh ]; then
+	echo ASTROMAKE: $d
+	. $d/astromake_start.sh
+    fi
+done
 
 if [ -f ~/.local.aliases.sh ]; then
     . ~/.local.aliases.sh
