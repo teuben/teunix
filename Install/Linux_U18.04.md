@@ -1,12 +1,17 @@
-# Linux  Ubuntu 17.10
+# Linux  Ubuntu 18.04 LTS
 
-This was my first KDE test version. I gave up on Gnome3. One nuisance was the large
-amount of work needed to set up my preferred environemnt, needing to adjust and add
+This is going to be my attempt to use KDE for real. I already gave up on Gnome3 after
+Unity was going to be abandoned. It has gotten more and more issues anyways.
+In gnome one nuisance was the large amount of work needed to set up my preferred environment,
+needing to adjust and add
 a lot of 'widgets'. How is one then to port such an environment to another machine?
+KDE is not a lot better, but seems more manageable.
 
 ## My KDE Setup
 
-KDE can be confusing, because settings appear in different places (menus/applications....)
+KDE can be confusing, because settings appear in different places (menus/applications....). Some of this
+work is painful if you have to repeat it many times, so it would be nice to have a programmatic way
+to do this for a virgin account.
 
 1. Configure Desktop (under the triple-bar in top right default widget)
 2. Add Widgets (in various places)
@@ -26,6 +31,8 @@ KDE can be confusing, because settings appear in different places (menus/applica
    1.  Workspace Theme
    2.  Application Style
    3.  Desktop Behavior
+       * Screen Locking
+       	 
        * Virtual Desktops
        	 * Desktops  :  6 desktops, in 2 rows
 	 * Switching :  - do not wrap around
@@ -51,4 +58,4 @@ KDE can be confusing, because settings appear in different places (menus/applica
 ## Linux for Development
 
 * https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
-  * https://github.com/sojharo/mangi-script/
+  * https://github.com/sojharo/mangi-script/    This does a lot, but isn't really my taste.
