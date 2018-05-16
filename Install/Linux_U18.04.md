@@ -1,8 +1,11 @@
-# Linux  Ubuntu 17.10
+# Linux  Ubuntu 18.04 LTS
 
-This was my first KDE test version. I gave up on Gnome3. One nuisance was the large
-amount of work needed to set up my preferred environemnt, needing to adjust and add
+This is going to be my attempt to use KDE for real. I already gave up on Gnome3 after
+Unity was going to be abandoned. It has gotten more and more issues anyways.
+In gnome one nuisance was the large amount of work needed to set up my preferred environment,
+needing to adjust and add
 a lot of 'widgets'. How is one then to port such an environment to another machine?
+KDE is not a lot better, but seems more manageable.
 
 ## My KDE Setup
 
