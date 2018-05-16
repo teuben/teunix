@@ -1,6 +1,22 @@
+apt install meld tkcvs emacs25 tcsh git htop
+sudo apt-get install wget unzip curl
 
 
 apt-get install -y python-software-properties software-properties-common
+
+->  python-software-properties seems to have been removed
+
+git clone https://github.com/sojharo/mangi-script
+sudo mangi-script/my_ubuntu_setup.sh
+
+
+dropbox
+spectacle (a screenshot tool)
+
+baobab - diskusage GUI
+k4dirstat - diskusage GUI
+----
+
 
 
 
@@ -36,30 +52,30 @@ sudo update-alternatives --config g++
 ===== U16 below
 Installed May 14, 2016; on Lenovo T530
 
-tcsh
+=tcsh
 chromium-browser    (google chrome was done via a tarball in /opt/google)
-emacs
-darktable
-digikam   ('ubuntu software didn't even see this') ->   apt install digikam just worked
+=emacs
+=darktable
+=digikam   ('ubuntu software didn't even see this') ->   apt install digikam just worked
 software-center
-ipython
+=ipython
 postr   - good flickr uploader
-tkcvs
+=tkcvs
 indicator-keylock
 python-appindicator
 python-notify
-build-essential  (gcc 5.3.1)
-gfortran
-cmake
+=build-essential  (gcc 5.3.1)
+=gfortran
+=cmake
 ruby
 pidgin
 
 ubuntu-restricted-extras (still some headers MS fonts, missing)
-youtube-dl
-geeqie               (old gqview)
-cvsutils
-meld                   alternative to buggy tkdiff
-openssh-server                  (sudo gedit /etc/ssh/sshd_config)
+=youtube-dl
+=geeqie               (old gqview)
+=cvsutils
+=meld                   alternative to buggy tkdiff
+=openssh-server                  (sudo gedit /etc/ssh/sshd_config)
 
  Reminder how to clone your old system ssh settings so multiple versions
   will remember the hostname
@@ -89,28 +105,28 @@ Also google around, e.g.
        
 
 
-ncftp
+= ncftp
 =  libx11-dev              (x11proto-core-dev was already installed)
-libreadline6-dev       (useful for miriad to get the latest)
-automake
-kdbg     
-pdftk 
+=libreadline6-dev       (useful for miriad to get the latest)
+=automake
+=kdbg     
+pdftk    *** not in U18
 *  nautilus-open-terminal     ---> has been obsoleted
-apt-file                     (e.g. "apt-file search Intrinsic.h")
+= apt-file                     (e.g. "apt-file search Intrinsic.h")
 =  libxt-dev          (was already done via others)
 git-core
 =  libboost-all-dev
-valgrind
+= valgrind
 cpu-checker
 psensor
 cpufrequtils
 =  libgif-dev                     (for pgplot; but it seemed to build in NEMO ok)
-libxaw7-dev                    (also for karma)
+= libxaw7-dev                    (also for karma)
 nmap
 
 indicator-cpufreq
-=  pepperflashplugin-nonfree   (after that, run:   "update-pepperflashplugin-nonfree --install")
-rapid-photo-downloader
+pepperflashplugin-nonfree   (after that, run:   "update-pepperflashplugin-nonfree --install")
+= rapid-photo-downloader
 gimp
 gimp-lensfun
 libgimp2.0-dev 
@@ -119,24 +135,24 @@ libexiv2-dev
 liblensfun-dev
 jhead                              exif editor
 
-=  synaptic   (if you like something else to install packages from)
+synaptic   (if you like something else to install packages from)
 
 compizconfig-settings-manager
 rcs
 vlc
 rar
 tomboy
-=  libtool                         (for miriad/auto)
-=  flex                           (for miriad/auto)
+libtool                         (for miriad/auto)
+flex                           (for miriad/auto)
 enscript
 texlive-latex-base
 texlive
 texlive-publishers 
 doxygen
 mdbtools                          (accessing MDB)
-=  basenji                              (volume indexer)
+basenji                              (volume indexer)
 
-=  glmark2   (X11 benchmark)
+glmark2   (X11 benchmark)
 
 python-setuptools
 python-tk                     (or did this option add tkinter???)
@@ -170,13 +186,12 @@ sysinfo
 preload
 idle                             (for tkinter????)
 mesa-utils (has glxgears)      - goes at aout **3700**   OMG, 60 now.. still 60 in U14.10
-=  iotop
-=  ifstat
+iotop
+ifstat
 
 sshfs
 hfsprogs
-=  gv     (didn't trigger anything)
-darktable
+gv     (didn't trigger anything)
 ufraw
 dcraw
 
@@ -184,8 +199,8 @@ qt4-qmake
 libqt4-dev
 ifrit
 grace
-=  xpdf
-=  wine
+xpdf
+wine
   gphoto2
   libgphoto2-dev
   librsvg2-dev
@@ -194,8 +209,8 @@ libsqlite3-dev
 
   bonnie
   iozone3                  (fileop,iozone,pit_server)
-=  docbook2odf                 (needed an xslt interpreter)
-=  xsltproc                         (aha, this was the one)   
+docbook2odf                 (needed an xslt interpreter)
+xsltproc                         (aha, this was the one)   
 stellarium
 xaw3dg-dev                   (will also install xaw3dg - for gipsy)
 acpitool
@@ -211,23 +226,23 @@ imagination                     slideshow maker (makes vob)
 
 
 exfat-fuse                 (needed for Nikon big disks)
-=  ruby-gtk2     for sshmenu    (used to be called libgtk2-ruby)
-=  ruby-gnome2  (?)
-=  libruby
+ruby-gtk2     for sshmenu    (used to be called libgtk2-ruby)
+ruby-gnome2  (?)
+libruby
 ssh-askpass       (?)
   gufw                           (graphical interface to firewall)
   gstm
   hotssh               (sshmenu replace?) now use sshplus
 
 
-  # vpn
-openconnect
+#  vpn
+= openconnect
 traceroute    
 
   # things i forgot from u13:
 
-=  bcrypt
-=  bison
+bcrypt
+bison
 
 ddd
 dmg2img
@@ -238,7 +253,7 @@ gman
 html2text
 man2html
 mercurial
-=  mutt                    (local only; just for browsing local mailfolders)
+mutt                    (local only; just for browsing local mailfolders)
 openjpeg-tools
 pgplot5
 rman
@@ -261,7 +276,7 @@ nautilus-dropbox   (this will also download dropbox :-)
 
 *  icedtea-7-plugin         (this failed)
   openjdk-7-jre
-=  openjdk-7-jdk       (but only if you need to develop)
+  openjdk-7-jdk       (but only if you need to develop)
 ant                 (for developing - will result in java)
 
 xdot
@@ -307,9 +322,9 @@ restarting services is new now,e.g.
 
 	   
 
-= docker
+ docker
   a new app, voted as the best new thing on the block
-= zbackup
+ zbackup
 = okular (alternative PDF reader, can also add comments)
 
 
@@ -325,10 +340,10 @@ dropbox
 
   gnome (w. xfce, skipped wm)
 
-=  gnome-panel  (to get option back to do classic)
+  gnome-panel  (to get option back to do classic)
 
   picasa 3.9  (via wine)
-=  picapy (doesn't seem that useful compared to the online versions)
+  picapy (doesn't seem that useful compared to the online versions)
 
    	  sudo apt-get install wine winetricks
 	  cd ~/ &amp;&amp; wget http://dl.google.com/picasa/picasa39-setup.exe
@@ -337,7 +352,7 @@ dropbox
 	  WINEARCH=win32 winetricks -q ie6
 
 
-  =openjdk java7 runtime
+  openjdk java7 runtime
   icedtea-plugin   (icetea java browser plugin)
 
 
@@ -351,7 +366,7 @@ dropbox
   Montage ?
 
 libncurses5-dev    
-= libncurses5:i386    (for mem if you haven't recompiled it for 64bit)
+libncurses5:i386    (for mem if you haven't recompiled it for 64bit)
 
   
   acroread
@@ -448,14 +463,14 @@ wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 ----
 
 
-=sudo apt-get install flashplugin-installer
-=sudo apt-get update
-=sudo apt-get install adobe-flashplugin
+sudo apt-get install flashplugin-installer
+sudo apt-get update
+sudo apt-get install adobe-flashplugin
 ==== thse don't seem to work in U14.10 anymore????
 
 
 
-=sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
 
 
 # a full unity reset, in case something went nuts.
@@ -489,13 +504,13 @@ sudo apt-get install ubuntu-tweak
 
 python-nlopt
 nlopt
-= calibre   (ebook)
+ calibre   (ebook)
 
-= pitivi   (movie edit)
-= imagination
-= avidemux     (video editor)
+ pitivi   (movie edit)
+ imagination
+ avidemux     (video editor)
 
-=?acroread
+ acroread
 
 === 
 what doesn't work?
