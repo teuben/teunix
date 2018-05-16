@@ -58,4 +58,4 @@ to do this for a virgin account.
 ## Linux for Development
 
 * https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
-  * https://github.com/sojharo/mangi-script/
+  * https://github.com/sojharo/mangi-script/    This does a lot, but isn't really my taste.
