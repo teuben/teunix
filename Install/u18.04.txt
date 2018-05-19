@@ -1,14 +1,19 @@
-apt install meld tkcvs emacs25 tcsh git htop
-sudo apt-get install wget unzip curl
+* increase lifetime of sudo:
+     sudo visudo
+     -> Defaults        env_reset,timestamp_timeout=30
 
 
-apt-get install -y python-software-properties software-properties-common
+* install basic tools
 
-->  python-software-properties seems to have been removed
+sudo apt install meld tkcvs emacs25 tcsh git htop gitk
+sudo apt install wget unzip curl
+sudo apt install software-properties-common
+sudo apt install python3-software-properties
 
+??
 git clone https://github.com/sojharo/mangi-script
 sudo mangi-script/my_ubuntu_setup.sh
-
+  
 
 dropbox
 spectacle (a screenshot tool)
