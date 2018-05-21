@@ -43,7 +43,13 @@ to do this for a virgin account.
        	 *  Mouse
 	    - no need to do Reverse Scrolling (Mac calls this natural scrolling)
 	    - Single Click to open files and folders
-	   
+   5.  Power Management
+       * Energy Saving : on my laptop they did not get properly populated at all, that was bad.
+       	 -  Dim Screen    1-5 min
+	 -  Screen Energy Saving
+	 -  Suspend session
+	 
+       
 
 
 ## issues
@@ -54,6 +60,8 @@ to do this for a virgin account.
        kstart plasmashell
 
 2. application menu issues I had under 17.10 with chrome and thunderbird were bad.
+
+3. the directory .local/share/akonadi can get pretty big
 
 ## Linux for Development
 
