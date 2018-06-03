@@ -717,3 +717,11 @@ screenruler
 #? spyder - python IDE
 
 libfftw3-3-dev
+
+
+Dropbox:  https://www.linuxbabe.com/ubuntu/install-dropbox-ubuntu-18-04
+
+Chrome:   https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-18-04-lts
+
+sudo nano /etc/apt/sources.list.d/google-chrome.list
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
