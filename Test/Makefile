@@ -17,3 +17,7 @@ c:
 fortran:
 	gfortran -o test-f test-f.f
 	./test-f
+
+java:
+	javac hello.java
+	java hello
