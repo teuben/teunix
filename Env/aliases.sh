@@ -84,6 +84,7 @@ alias   em='emacs -nw'
 alias    i=ipython
 alias    j='jupyter notebook'
 
+alias    m='more'
 alias    o=open
 
 #### stuff removed here
