@@ -10,7 +10,7 @@ if ($#argv == 0) then
    echo "Usage:  $0 [-n] dirname(s)"
    echo ""
    echo "This script will find all nasty files MAC's tar program seem to hide in your tree"
-   echo 'Currently:  .DS_Store and ._* files'
+   echo 'Currently:  .DS_Store __MACOSX and ._* files'
    echo 'Please tell your MAC friends to install a real tar, e.g. gnu tar'
    echo 'E.g. "brew install gnu-tar"'
    echo 'Options: '
@@ -19,7 +19,7 @@ if ($#argv == 0) then
 endif
 
 #  by default show files and delete them
-set fargs = (-print -delete)
+set fargs = (-print -exec rm -rf '{}' \;)
 
 #  loop over all directories
 foreach dir ($*)
@@ -27,7 +27,8 @@ foreach dir ($*)
     set fargs = (-print)
     continue
   endif
-  echo DIR: $dir
+  echo DIR1: $dir
   find $dir -name .DS_Store $fargs
   find $dir -name ._\*      $fargs
+  find $dir -name __MACOSX  $fargs
 end  
