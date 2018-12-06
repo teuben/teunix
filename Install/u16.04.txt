@@ -225,7 +225,7 @@ nautilus-dropbox   (this will also download dropbox :-)
 
 *  icedtea-7-plugin         (this failed)
   openjdk-7-jre
-=  openjdk-7-jdk       (but only if you need to develop)
+=  openjdk-7-jdk       (but only if you need to develop; so you get javac as well)
 ant                 (for developing - will result in java)
 
 xdot

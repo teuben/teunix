@@ -45,6 +45,7 @@ alias ren mv -i
 alias copy cp -i
 alias del rm -i
 alias era rm -i
+alias zap rm -rf
 #
 alias print  'genscript'
 alias print2 'genscript -r2'
