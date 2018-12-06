@@ -9,6 +9,7 @@ sudo apt install meld tkcvs emacs25 tcsh git htop gitk
 sudo apt install wget unzip curl
 sudo apt install software-properties-common
 sudo apt install python3-software-properties
+sudo apt install exfat-fuse
 
 ??
 git clone https://github.com/sojharo/mangi-script
@@ -20,11 +21,9 @@ spectacle (a screenshot tool)
 
 baobab - diskusage GUI
 k4dirstat - diskusage GUI
+
+
 ----
-
-
-
-
 Kubuntu 18.04 has gcc-7, but this does not work when compiling gyrfalcON, one needs gcc-5:
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60
@@ -48,14 +47,11 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 40
 sudo update-alternatives --config g++
+----
 
 
 
 
-
-
-===== U16 below
-Installed May 14, 2016; on Lenovo T530
 
 =tcsh
 chromium-browser    (google chrome was done via a tarball in /opt/google)
@@ -91,8 +87,6 @@ ubuntu-restricted-extras (still some headers MS fonts, missing)
 
 
 * libavcodec-extra     ->  N/A
-unity-tweak-tool
-gconf-editor           (any of these two to get auto raise)
 
 
 
@@ -132,7 +126,7 @@ nmap
 indicator-cpufreq
 pepperflashplugin-nonfree   (after that, run:   "update-pepperflashplugin-nonfree --install")
 = rapid-photo-downloader
-gimp
+=gimp
 gimp-lensfun
 libgimp2.0-dev 
 gimp-plugin-registry           (e.g. resynthesizer)
@@ -230,7 +224,7 @@ imagination                     slideshow maker (makes vob)
     ?  photofilmstrip                doesn't exist anymore?
 
 
-exfat-fuse                 (needed for Nikon big disks)
+
 ruby-gtk2     for sshmenu    (used to be called libgtk2-ruby)
 ruby-gnome2  (?)
 libruby
