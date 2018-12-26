@@ -53,3 +53,4 @@ Here's stuff I did:
 
 
 
+system_profiler SPPowerDataType
