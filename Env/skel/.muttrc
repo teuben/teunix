@@ -1,0 +1,49 @@
+bind  attach   <Enter>  view-mailcap
+bind  attach   <Return> view-mailcap
+bind  attach    v       view-attach
+bind  index    <Backspace> previous-page
+bind  index    \cH      previous-page
+bind  index     ,       next-unread-mailbox
+bind  index     x       sync-mailbox
+bind  index     y       change-folder
+bind  pager    \cH      previous-page
+bind  pager    <Up>     previous-line
+bind  pager    <Down>   next-line
+
+macro index     c \
+      "<change-folder>?<toggle-mailboxes>" \
+      "show incoming mailbox list"
+macro index    <Tab> \
+      "<change-folder>$MAIL\n" \
+      "open Inbox ($MAIL)"
+macro index     H \
+      ":set index_format=\"%3C %Z %-18.18L  %{%a %b %d %l:%M%p} (%3l) %s\"\n" \
+      "display hour in message index"
+macro index     Y \
+      ":set index_format=\"%3C %Z %-18.18L  %{%a %b %d %Y} (%3l) %s\"\n" \
+      "display year in message index"
+
+color attachment green          default
+color error      red            default
+color hdrdefault red            default
+color indicator  brightyellow   blue
+color markers    black          green
+color quoted     magenta        default
+color search     brightyellow   black
+color status     brightblue     yellow
+color header     brightred      default         "^Subject:"
+color body       cyan           default         "(ftp|http|https)://[^ ]+"
+
+unhdr_order *
+hdr_order   From: To: Cc: Date: Subject:
+ignore      *
+unignore    From: To: Cc: Date: Subject:
+
+set  index_format  = "%3C %Z %-18.18L  %[%a %b %d %l:%M%p] (%4l) %s"
+set  pager_format  = " %C/%m: %-22.22n  %s"
+set status_format  = "-%r-%v: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?\
+%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Box:%b?%?l? %l?]%> (%P) "
+
+set folder      = ~/mail
+set mbox        = =mbox
+set sleep_time  = 0

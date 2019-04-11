@@ -1,0 +1,41 @@
+Welcome to UMD Astronomy computing!
+
+For general computing questions or to report hardware/software problems,
+please send an e-mail message to help@astro.umd.edu.
+
+Below are a few notes regarding your account settings. For general information
+on department computing, see the computing TWiki:
+
+  http://www.astro.umd.edu/cgi-bin/twiki/view/AstroUMD
+
+
+**** Home directories ****
+Disk space on all department-maintained Linux workstations (over 100 in all)
+is networked together and accessible to each. Your home directory normally
+resides on a disk attached to the computer at your desk, which is automatically
+accessed by other computers when logging in remotely. In addition---or if you
+have no assigned workstation---all users are allotted limited space (5 GB) on
+the main department server, earth, in the directory /a/$USER. This space is
+available on the network as /n/a/$USER (where $USER is your login username) and
+is also used as your home directory on department servers (earth, gaia).
+
+
+**** Changing your login shell ****
+
+By default accounts use tcsh for their login shell. If you prefer another
+shell (e.g., bash, zsh), run 'chsh'; for example, to switch to bash:
+
+  chsh -s /bin/bash
+
+
+**** Customizing login files ****
+
+A basic set of login files are provided in your home directory for tcsh
+(.tcshrc, .tcsh_alias, .tcsh_local, .login) as well as for bash
+(.bashrc, .bash_alias, .bash_local, .bash_login). It is recommended to add
+any personal additions to .tcsh_local and/or .bash_local. The default contents
+of these files are available in /local/skel.
+
+
+Note that for changes to any of these settings to take effect, you must logout
+from your account and login again.

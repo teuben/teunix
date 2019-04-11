@@ -1,0 +1,17 @@
+# Aliases.
+alias d='cd'
+alias df='df --si'
+alias du='du --si'
+alias g='grep'
+alias h='history'
+alias l='less'
+alias lsl='ls -lL'
+alias pop='popd'
+alias push='pushd'
+alias v='vim'
+alias vdiff='gvimdiff -R'
+
+# Functions.
+hgrep()  { history | grep "$@" | head -n -1; }
+ok()     { okular "$@" >& /dev/null & }
+vgrep()  { vim $(grep -l "$@"); }

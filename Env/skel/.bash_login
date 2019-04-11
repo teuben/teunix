@@ -1,0 +1,9 @@
+source ~/.bashrc
+PS1="${PS1%) }\\\$ "
+
+if [[ "$TTY" == console || "$TTY" == tty1 ]]; then
+  echo -n "Start graphical X session? [y] "; read ok
+  if [[ -z "$ok" || "$ok" == y || "$ok" == Y ]]; then
+    ssh-agent startx -- -auth &> ~/.xerrors
+  fi
+fi

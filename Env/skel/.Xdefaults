@@ -1,0 +1,14 @@
+XTerm*vt100.translations:	#override \
+       ~Shift <KeyPress> Prior: insert()\n\
+       ~Shift <KeyPress> Next: insert()\n\
+       ~Shift <KeyPress> Home: insert()\n\
+       ~Shift <KeyPress> End: insert()\n\
+	Shift <KeyPress> Prior: scroll-back(1,page)\n\
+	Shift <KeyPress> Next: scroll-forw(1,page)\n\
+	Shift <KeyPress> Home: scroll-back(100,page)\n\
+	Shift <KeyPress> End: scroll-forw(100,page)
+XTerm*scrollBar:	true
+XTerm*saveLines:	1024
+XTerm*borderColor:	gold
+XTerm*backingStore:	always
+XTerm*charClass:	33-126:48

@@ -1,0 +1,93 @@
+# @astro.umd.edu account name---same as your login username.
+USER=`whoami`
+
+# Mail directory and mailboxes---set as desired.
+# Non-absolute paths are relative to $MAILDIR.
+#
+# NOTE: if you use POP/IMAP to read mail, don't change DEFAULT.
+#
+# Bulk mail is not personally addressed (to $USER@astro.umd.edu).
+# Junk mail is probable spam.
+#
+MAILDIR=$HOME/mail
+DEFAULT=/var/mail/$USER
+BULK=bulk
+JUNK=junk
+#
+LOGFILE=$MAILDIR/procmail.log
+
+# To forward a *copy* of all incoming mail---sans probable spam---to your
+# @umd.edu account, uncomment the following (customize username if needed).
+#COPYUSER=$USER
+
+# Headers containing these keywords are exempt from spam filtering.
+# Keywords are extended regular expressions; separate them by '|' characters.
+# Uncomment and customize the following example to enable this feature.
+#KEYWORDS="ImportantTopic|Secret.*Rabbit.*Code[1-9]"
+
+
+####################################################
+##  Nothing below here should need to be changed. ##
+####################################################
+
+
+# Do not change SHELL; cf. http://pm-doc.sourceforge.net/doc/#always_set_shell
+# Preserve headers; cf. https://support.google.com/mail/answer/175365
+SHELL=/bin/sh
+FORMAIL=/usr/bin/formail
+SENDER=`$FORMAIL -c -x Return-Path`
+SENDMAILFLAGS="-oi -f $SENDER"
+
+# Remove duplicate messages.
+:0 Wh: $MAILDIR/msgid.lock
+| $FORMAIL -D 1024 $MAILDIR/msgid.cache
+
+# Extract header fields.
+:0
+* ^To:\/.*
+{ TO="$MATCH" }
+#
+:0
+* ^Date:\/.*
+{ DATE="$MATCH" }
+#
+:0
+* ^From:\/.*
+{ FROM="$MATCH" }
+
+# Log message details.
+LOGABSTRACT=yes
+LOG="
+To: $TO $DATE
+From$FROM (sender)
+"
+
+# Check for whitelisted keywords if KEYWORDS is set.
+# Filter all non-whitelisted messages with SpamAssassin.
+:0 wf
+* KEYWORDS ?? ^$
+| /usr/bin/spamc
+:0 Ewf
+* $ ![^a-z0-9]($KEYWORDS)(\$|[^a-z0-9])
+| /usr/bin/spamc
+
+# Probable spam.
+:0:
+* ^X-Spam-Flag: YES
+$JUNK
+
+# Forward a copy if COPYUSER is set (attempt to prevent forwarding loops).
+COPYDOMAIN=umd.edu
+:0 c
+* COPYUSER ?? .
+* $ !$COPYUSER[^@]*@[^@]*$COPYDOMAIN
+! $COPYUSER@$COPYDOMAIN
+
+# Bulk mail (not personally addressed).
+:0:
+* !? ( $FORMAIL -zxTo: -zxCc: | grep -Fqi $USER@astro.umd.edu )
+$BULK
+
+# All other messages to inbox.
+:0:
+$DEFAULT

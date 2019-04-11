@@ -1,0 +1,70 @@
+# System setup.
+if (-f /etc/csh.cshrc) source /etc/csh.cshrc
+
+# Non-interactive environment.
+unsetenv MAILCHECK
+setenv EDITOR  "vim"
+setenv ENV     "$HOME/.bashrc"
+setenv MANPATH "/local/share/man:/usr/share/man"
+setenv PAGER   "less"
+#
+setenv LESS -iFMRX
+setenv LESS_TERMCAP_so `printf "\033[01;44;33m"`
+setenv LESS_TERMCAP_se `printf "\033[0m"`
+setenv LESS_TERMCAP_us `printf "\033[1;35m"`
+setenv LESS_TERMCAP_ue `printf "\033[0m"`
+#
+unset autologout
+set   history=256
+set   path=($HOME/bin /local/bin /usr/bin /bin /local/sbin /usr/sbin /sbin .)
+#
+umask 027
+limit coredump 0
+if ($?DISPLAY && ! $?XAUTHORITY) then
+  setenv XAUTHORITY "$HOME/.Xauthority"
+endif
+
+# Distinguish interactive and non-interactive shells.
+if ($?tty || ! $?term) then
+  if ("$tty" == "" || ! $?term) unset prompt
+endif
+
+# Fancy prompt for interactive shells.
+if ($?prompt) then
+  if ("$prompt" == "") then
+    unset prompt
+  else
+    setenv HOST `hostname -s`
+    set prompt="%~ %m% "
+    set prompt0="%m% "
+
+    switch ($TERM)
+      case "":
+      case dumb:
+      case unknown:
+        export TERM ansi
+	breaksw
+
+      case xterm*:
+      case linux*:
+	if (! $?tty) set tty=`tty | cut -d/ -f3-`
+	alias xtitle 'printf "\033]0;${HOST}[${tty}]:${cwd}\007"'
+	alias xprompt 'set prompt="%{`xtitle`%}$prompt0"'
+	alias cd    'cd    \!* ; xprompt'
+	alias popd  'popd  \!* ; xprompt'
+	alias pushd 'pushd \!* ; xprompt'
+	xprompt
+	breaksw
+    endsw
+
+    set ec="^`stty -a | grep -qF 'erase = ^?' && echo '?' || echo 'h'`"
+    stty intr '^c' susp '^z' eof '^d' erase "$ec" kill '^u'
+    unset ec
+  endif
+endif
+
+# Aliases and local customizations.
+foreach rc (.tcsh_alias .tcsh_local)
+  if (-f ~/$rc) source ~/$rc
+end
+unset rc

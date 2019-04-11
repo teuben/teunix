@@ -1,0 +1,8 @@
+# Local environment.
+#export NAME=...
+
+# Local aliases.
+#alias cmd='...'
+
+# Local functions.
+#fn() { ... }
