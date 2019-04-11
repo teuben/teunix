@@ -86,7 +86,7 @@ alias    i=ipython
 alias    j='jupyter notebook'
 
 alias    m='more'
-alias    o=open
+alias    o='open'
 
 #### stuff removed here
 
