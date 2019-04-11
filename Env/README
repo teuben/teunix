@@ -36,3 +36,8 @@ and do some surgery from your home directory:
    ln -s teunix/Env/dotgitconfig .gitconfig
 
    If you're not me, better copy and edit your credentials!   
+
+
+##  skel
+
+Added here, since these are the skeleton files the astro.umd.edu cluster uses.
