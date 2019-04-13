@@ -46,6 +46,7 @@ Added here, since these are the skeleton files the astro.umd.edu cluster uses.
 
 There are many others who have shared their dotfile management system, here are a few I ran into and I'd like to take ideas from:
 
+0. https://dotfiles.github.io/
 1. https://github.com/twpayne/chezmoi
 2. https://opensource.com/article/19/3/move-your-dotfiles-version-control
 
