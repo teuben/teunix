@@ -41,3 +41,11 @@ and do some surgery from your home directory:
 ##  skel
 
 Added here, since these are the skeleton files the astro.umd.edu cluster uses.
+
+## other
+
+There are many others who have shared their dotfile management system, here are a few I ran into and I'd like to take ideas from:
+
+1. https://github.com/twpayne/chezmoi
+2. https://opensource.com/article/19/3/move-your-dotfiles-version-control
+
