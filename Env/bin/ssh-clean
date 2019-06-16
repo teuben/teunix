@@ -1,0 +1,14 @@
+#! /bin/csh -f
+#
+#
+
+if ($#argv > 0) then
+  foreach ip ($*)
+    ssh-keygen -f "$HOME/.ssh/known_hosts" -R $ip
+  end
+else
+  echo solve Host key verification failures, and remove .ssh/known_hosts entries
+  echo Usage:
+  echo "    $0  hostname"
+endif
+
