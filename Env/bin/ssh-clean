@@ -1,5 +1,10 @@
 #! /bin/csh -f
 #
+# reminder how to remove an entry from the known_hosts file
+#
+# Use ssh-copy-id (perhaps after a one-time ssh-keygen) to copy keys to remote hosts
+# for subsquent password-less entry
+
 #
 
 if ($#argv > 0) then
