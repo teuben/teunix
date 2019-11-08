@@ -1,0 +1,6 @@
+#! /bin/bash
+#
+#   find all git repos on this machine
+#
+
+locate .git/refs/heads/master|sed s,.git/refs/heads/master,,
