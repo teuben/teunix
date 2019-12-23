@@ -1,0 +1,45 @@
+#! /bin/csh -f 
+#  
+#  Helper script to convert out CVS modules into GIT
+#  You will need to apt install git-cvs for this to work
+
+set mc = ${1}
+set mg = ${1}
+
+set cvsroot = /data3/teuben/cvsroot
+
+if (-d $mg) then
+   echo module $mg appears to already exist
+   exit 0
+endif
+
+if (-e $mg.tar) then
+   echo CHEATING, using $mg.tar
+   tar xf $mg.tar
+else
+   echo CVSIMPORT
+   time git cvsimport -a -k -d $cvsroot -A author-conv-file.txt -C $mg $mc
+endif
+cd $mg
+git remote add origin https://github.com/teuben/$mg
+git remote -v
+##git push origin master
+##git push -u origin master
+git push --mirror  origin
+# git fetch
+git branch --set-upstream-to=origin/master master
+
+# make sure you get things like README.md and .gitignore in case it was not empty yet
+git pull
+
+# now the final big push
+git push
+
+
+
+#
+# git remote add origin  https://github.com/teuben/pgplot
+# git remote -v
+# git push origin master
+#
+
