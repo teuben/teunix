@@ -40,6 +40,11 @@ mkcd() {
   mkdir -p $1
   cd $1
 }
+use() {
+  for f in $(cat ~/.use); do
+     grep -i $1 $f
+  done
+}
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
@@ -90,6 +95,8 @@ alias    o='open'
 
 #### stuff removed here
 
+# tmux (screen doesn't support -CC)
+function tsh  { ssh -X $1 -t "tmux -CC attach -t $2 || tmux -CC new -s $2"; }
 
 # always point home....
 export    CVSROOT=:pserver:pteuben@cvs.astro.umd.edu:/home/cvsroot
