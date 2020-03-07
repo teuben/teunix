@@ -34,16 +34,20 @@ mkzip() {
 }
 alias zdir='zoo -list'
 rc () {
-  source ~/rc/$1.rc
+    source ~/rc/$1.rc
 }
 mkcd() {
-  mkdir -p $1
-  cd $1
+    mkdir -p $1
+    cd $1
 }
 use() {
-  for f in $(cat ~/.use); do
-     grep -i $1 $f
-  done
+    for f in $(cat ~/.use); do
+	if [ ! $2 ]; then
+	    grep -i $1 $f
+	else
+	    grep -i $1 $f | grep -i $2
+	fi
+    done
 }
 #
 #alias	go	'cd  $path_\!*'
