@@ -1,4 +1,4 @@
-# common aliases accross all my machines
+# for bash and zsh 
 
 alias teunix='(cd ~/teunix; git pull)'
 
