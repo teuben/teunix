@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+#
+#
+#    this is a simple replacement of "wget <somefile>"
+#    that by default uses caching and making a symlink
+#    to the cache
+
+
+cdir=$HOME/.wget-cache
+
+if [ ! -d $cdir ]; then
+    echo Creating $cdir
+    mkdir $cdir
+    echo Created by $0 > $cdir/README
+fi
+
+
+for url in $*; do
+    file=$(basename $url)    
+    if [ -e $file ]; then
+	echo $file already exists, skipping
+	continue
+    fi
+    if [ ! -e $cdir/$file ]; then
+	wget $url -O $cdir/$file
+    fi
+    if [ -e $cdir/$file ]; then
+	echo Creating symlink to $cdir/$file
+	ln -s $cdir/$file
+	continue
+    fi
+done
