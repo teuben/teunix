@@ -6,7 +6,9 @@
 [credential]
 	helper = cache --timeout 100000
 [core]
-	editor = vi
+	editor = mem
+[diff]
+	tool = meld
 [merge]
 	tool = meld
 [push]
@@ -34,7 +36,7 @@ ls = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green)
 lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat    # a verbose ls, shows changed files too
 
 # some resets without explanation
-r = reset
+r  = reset
 r1 = reset HEAD^
 r2 = reset HEAD^^
 rh = reset --hard
@@ -61,3 +63,22 @@ lb = log --graph --simplify-by-decoration
 lba = !git lb --all 
 h = !git --no-pager log --graph -n 15
 a = !git --no-pager la -n 15
+
+# Show the diff between the latest commit and the current state
+d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+# Pull in remote changes for the current repository and all its submodules
+p = !"git pull; git submodule foreach git pull origin master"
+
+# Checkout a pull request from origin (of a github repository)
+pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[hub]
+	protocol = https
