@@ -653,3 +653,13 @@ Chrome:   https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-18-04-lt
 
 sudo nano /etc/apt/sources.list.d/google-chrome.list
 deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+
+
+
+todo
+
+rman test
+= x2goclient
+= zsync
+
