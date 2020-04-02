@@ -4,15 +4,17 @@ This description is currently being revised, as I modify it from 18.04 to 20.04
 
 Before we start, there are two ways to install U20:  fresh  and updating from U18. My
 experience has always been that the former is more stable. More than often weird things happen
-when you upgrade.
+when you upgrade. I've heard this from multiple sources.
 
 Secondly, installing a desktop based OS is getting pretty involved, and taking the better
-part of the day. Why?
+part of the day. This is hard, many people keep thus running on their OS version for a longer
+than should be needed time.
 
 1. Install a few hundred packages
 2. Install and configure the various KDE components
 3. Install plugins for various apps (firefox, thunderbird, gimp, ....)
-3. Setting up your personal shell
+4. Setting up your personal shell (and other dotfiles)
+5. Install 3rd party applications (zoom, slack, ..)
 
 
 ## My KDE Setup
@@ -23,37 +25,37 @@ to do this for a virgin account.
 
 
 1. Configure Desktop (right click)
-    Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
-    Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
+      Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
+      Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
 2. Window Management
-     Window Behavior
-       Focus -> Focus follows mouse (mouse precedence)
-       Raising Windows -> Raise on hover
+       Window Behavior
+           Focus -> Focus follows mouse (mouse precedence)
+           Raising Windows -> Raise on hover
 3. Workspace Bahavior
-     General Behavior
-       ? click behavior (single or double)
-     Desktop Effect
-     Screen Edges
-       - TR:   Present windows current desktop
-       - BR:   Present windows all desktops
-       - TL:   Desktop Grid
-     Screen Locking
-       only after waking from sleep
-       allow unlocking wihtouth password for 65"
-     Virtual Desktop
-        6 desktops in 2 rows
-        navigation *do not* wrap around
-        show on-screen display when switching
+       General Behavior
+           ? click behavior (single or double)
+       Desktop Effect
+       Screen Edges
+           - TR:   Present windows current desktop
+           - BR:   Present windows all desktops
+           - TL:   Desktop Grid
+       Screen Locking
+           only after waking from sleep
+           allow unlocking wihtouth password for 65"
+       Virtual Desktop
+           6 desktops in 2 rows
+           navigation *do not* wrap around
+           show on-screen display when switching
 4. Power Management
-     Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-       -  Dim Screen    1-5 min (was default)
-       -  Screen Energy Saving
-       -  Suspend session
+       Energy Saving : on my laptop they did not get properly populated at all, that was bad.
+           -  Dim Screen    1-5 min (was default)
+           -  Screen Energy Saving
+           -  Suspend session
 
 
 - Task Manager (on bottom bar) may need some tinkering:
-  - grouping of tasks	 
-  - tasks per desktop?
+      - grouping of tasks	 
+      - tasks per desktop?
 
 TO BE SOLVED:
 
