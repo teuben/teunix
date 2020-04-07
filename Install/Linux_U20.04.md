@@ -1,10 +1,10 @@
 # Linux  Ubuntu 20.04 LTS
 
-This description is currently being revised, as I modify it from 18.04 to 20.04
+This description is currently being revised, as I plan to transition from 18.04 to 20.04
 
 Before we start, there are two ways to install U20:  fresh  and updating from U18. My
 experience has always been that the former is more stable. More than often weird things happen
-when you upgrade. I've heard this from multiple sources.
+when you upgrade. I've heard this from multiple sources. YMMV.
 
 Secondly, installing a desktop based OS is getting pretty involved, and taking the better
 part of the day. This is hard, many people keep thus running on their OS version for a longer
@@ -15,6 +15,46 @@ than should be needed time.
 3. Install plugins for various apps (firefox, thunderbird, gimp, ....)
 4. Setting up your personal shell (and other dotfiles)
 5. Install 3rd party applications (zoom, slack, ..)
+
+## What packages are there?
+
+The following commands make a listing which I frequency consult via grep:
+
+      apt-cache search  .  > apt-cache0.list
+      apt-cache pkgnames   > apt-cache1.list
+
+## Why I don't like GNOME3
+
+I don't know, I simply can't get used to it. On Ubuntu they make it look like the old Unity desktop, which at one time I
+did get used to and almost liked, and now GNOME3 has the shell extensions, something very simular to the KDE widgets. But:
+
+1. By default shell extensions are not enabled
+2. To enable, you need to install "gnome-tweaks"
+3. Within the "gnome-tweaks" there are a few that can be enables, but the bulk goes via a firefox/chrome plugin!
+4. https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+5. To connect the desktop with that extension, you need to install "chrome-gnome-shell"
+6. In firefox/chrome there is now a little gnome foot icon, which is the entry point to maintaining your extensions.
+   You can search through (as of this writing) 124 pages of 10 extensions per page...  But pick current version only,
+   and it's only 13 pages. Uninstalling and confuring is annoying too.  You do that best from the Tweaks->Extensions tool.
+
+This overly complex workflow really does not make me feel warm and
+fuzzy. I tried it again with 20.04, because last time I tried this it
+was very frustrating to see that the majority of extensions simply
+didn't work (author maintenance issues perhaps). I had the same experience again. The first two a red ERROR came up, go
+figure where the message is. The third one seems to work, so at least my workflow is ok.
+
+Compare this to KDE, none of these 6 steps are needed. Simply
+right-click to "install widget" (although for newcomers the installion
+of a widget is arguably non-intuitive).
+
+### My favorite tuning:
+
+1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
+2. Tweaks -> Workspaces : 4 (static)
+3. Tweaks -> Top Bar -> Clock: Weekday / Date / Seconds
+4. Settings -> Appearance -> Light (there is NO contrast top bar and top window edge)
+5. Settings -> Appearance -> Dock : Icon size 32 (default is too big)
+
 
 
 ## My KDE Setup
@@ -123,6 +163,19 @@ OLD STUFF
 * https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
   * https://github.com/sojharo/mangi-script/    This does a lot, but isn't really my taste.
 
+## Thunderbird
+
+your_name@gmail.com
+imap.gmail.com SSL 993
+smtp.gmail.com SSL 465
+
+calendar: 2 add-ons:  Lightning and Google Provider
+
+## GNOME/KDE
+
+GNOME3 uses:  dash (ubuntu dock on the side), dock, message tray (top bar)
+
+KDE uses: panel, latte dock (mac lookalike), 
 
 ## Install
 
