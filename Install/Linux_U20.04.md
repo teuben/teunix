@@ -71,21 +71,38 @@ to do this for a virgin account.
        Window Behavior
            Focus -> Focus follows mouse (mouse precedence)
            Raising Windows -> Raise on hover
+x. Plasma Style
+
+x. Application Style
+       Application Style
+       WINDOW Decorations
+            Theme
+	    Titlebar Buttons
+	        - put applicATION MENU TOP LEFT
+
 3. Workspace Bahavior
        General Behavior
-           ? click behavior (single or double)
+           click behavior : single
        Desktop Effect
+           Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
        Screen Edges
            - TR:   Present windows current desktop
            - BR:   Present windows all desktops
            - TL:   Desktop Grid
        Screen Locking
            only after waking from sleep
-           allow unlocking wihtouth password for 65"
+           allow unlocking withouth password for 65"
        Virtual Desktop
            6 desktops in 2 rows
            navigation *do not* wrap around
            show on-screen display when switching
+4. Shortcuts
+       Global Shortcuts
+           Kwin 
+               Switch One Desktop Down
+               Switch One Desktop Left
+               Switch One Desktop Right
+               Switch One Desktop Up
 4. Power Management
        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -99,11 +116,15 @@ to do this for a virgin account.
 
 TO BE SOLVED:
 
-- the meta key doesn't open for typing and app name
+- the meta key doesn't open for typing and app name  (search) 
+  but then it suddenly worked when in KWin ?  was the bug fixed ?x
+
+https://github.com/shalva97/kde-configuration-files/
+
+https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 
 
-
-OLD STUFF
+OLD STUFF....
 
    
 2. Add Widgets (in various places)
@@ -112,7 +133,7 @@ OLD STUFF
    * Window Decorations -> Buttons
      - Application Menu drag it to TL  [DUBIOUS NOW IF THAT"S USEFUL, BUT IT DOES CUT DOWN ON VERTICAL SPACE]
    * Desktop Effects
-   * Screen Edges
+   * Screen Edges (hot corners)
      - TR:   Present windows current desktop
      - BR:   Present windows all desktops
      - TL:   Desktop Grid
