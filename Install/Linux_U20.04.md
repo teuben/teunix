@@ -123,6 +123,15 @@ https://github.com/shalva97/kde-configuration-files/
 
 https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 
+SAVING YOUR SESSION
+- there is no good tool, there is kwriteconfig5/kreadconfig5
+- best is to save ?
+     ~/.config/kdeconnect  -R
+     ~/.config/k*rc
+     ~/.kde/share/config
+     ~/.kde/share/apps
+     ~/local/share
+
 
 OLD STUFF....
 
