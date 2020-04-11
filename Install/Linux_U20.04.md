@@ -64,23 +64,24 @@ work is painful if you have to repeat it many times, so it would be nice to have
 to do this for a virgin account.
 
 
-1. Configure Desktop (right click)
+A. Configure Desktop (right click)
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
-2. Window Management
-       Window Behavior
-           Focus -> Focus follows mouse (mouse precedence)
-           Raising Windows -> Raise on hover
-x. Plasma Style
 
-x. Application Style
+B. System Settings
+
+   (Appearence)
+1. Global Theme
+2. Plasma Style
+3. Application Style
        Application Style
-       WINDOW Decorations
+       Window Decorations
             Theme
 	    Titlebar Buttons
-	        - put applicATION MENU TOP LEFT
+	        - put application menu top left
 
-3. Workspace Bahavior
+   (Workspace)
+1. Workspace Bahavior
        General Behavior
            click behavior : single
        Desktop Effect
@@ -96,13 +97,29 @@ x. Application Style
            6 desktops in 2 rows
            navigation *do not* wrap around
            show on-screen display when switching
-4. Shortcuts
+       Activities
+           ->make a new activity
+   
+   
+2. Window Management
+       Window Behavior
+           Focus -> Focus follows mouse (mouse precedence)
+           Raising Windows -> Raise on hover
+       Task Switcher
+       KWin Scripts
+       Window Rules
+       
+3. Shortcuts
        Global Shortcuts
            Kwin 
                Switch One Desktop Down
                Switch One Desktop Left
                Switch One Desktop Right
                Switch One Desktop Up
+
+   (Hardware)
+1. Input Devices
+
 4. Power Management
        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -116,8 +133,6 @@ x. Application Style
 
 TO BE SOLVED:
 
-- the meta key doesn't open for typing and app name  (search) 
-  but then it suddenly worked when in KWin ?  was the bug fixed ?x
 
 https://github.com/shalva97/kde-configuration-files/
 
