@@ -1,21 +1,24 @@
 # Linux  Ubuntu 20.04 LTS
 
-To be released April 23, 2020.
+To be released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version.
 
 ## Summary
 
-Nice things:
+Nice things (for most of these you need extra packages)
 
 1. dolphin finally integrates Google Drive
 2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
-3. krunner (like finder on a mac) also searches for browser tabs, really useful
+3. krunner (like the Finder on a mac) also searches for browser tabs, really useful
 4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
-5. lots of nice widgets, which i still need to optimize life around
-6. zoom and skype work (but need to pay attention to install packages before, see below)
+5. the latte dock is something I'll try out, looks very functional, but can it coexist?
+6. lots of nice widgets, which i still need to optimize life around
+7. zoom and skype work (but need to pay attention to install packages before, see below)
+
+What I don't like:
+
+1. the growth of apps via snap. Fills your df and wasts diskspace.
 
 ## Details
-
-This description is currently being revised, as I plan to transition from 18.04 to 20.04
 
 Before we start, there are two ways to install U20:  fresh  and updating from U18. My
 experience has always been that the former is more stable. More than often weird things happen
@@ -25,7 +28,7 @@ Secondly, installing a desktop based OS is getting pretty involved, and taking t
 part of the day. This is hard, many people keep thus running on their OS version for a longer
 than should be needed time.
 
-1. Install a few hundred packages
+1. Install a few hundred packages  (see the very rough list in u20.04.txt)
 2. Install and configure the various KDE components
 3. Install plugins for various apps (firefox, thunderbird, gimp, ....)
 4. Setting up your personal shell (and other dotfiles)
@@ -37,6 +40,11 @@ The following commands make a listing which I frequency consult via grep:
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
+
+First install a few very essential packages
+
+      sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
+
 
 ## Why I don't like GNOME3
 
@@ -66,11 +74,6 @@ of a widget is arguably non-intuitive).
 
 ### My favorite tuning:
 
-First install a few very essential packages
-
-  sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
-
-
 
 1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
 2. Tweaks -> Workspaces : 4 (static)
@@ -89,6 +92,9 @@ to do this for a virgin account. Unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen....
 
 
+
+
+
 A. Configure Desktop (right click)
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
@@ -96,7 +102,7 @@ A. Configure Desktop (right click)
 
 B. System Settings
 
-   (Appearence)
+(Appearence)
 1. Global Theme
 2. Plasma Style
 3. Application Style
@@ -106,7 +112,7 @@ B. System Settings
 	    Titlebar Buttons
 	        - put application menu top left (hit Apply after each action)
 
-   (Workspace)
+(Workspace)
 1. Workspace Bahavior
        General Behavior
            click behavior : single
@@ -148,12 +154,12 @@ B. System Settings
                Switch One Desktop Right
                Switch One Desktop Up
 
-   (Personlization)
+(Personlization)
 7. Online Accounts
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will hang.
 
-   (Hardware)
+(Hardware)
 1. Input Devices
       Mouse - make sure scrolling is not inverted (or natural as some call it)
       Touchpad
@@ -185,7 +191,7 @@ B. System Settings
 
 
 
-TO BE SOLVED:
+TO BE RESOLVED:
 
 https://github.com/shalva97/kde-configuration-files/
 
@@ -226,7 +232,10 @@ DIGITAL CLOCK CONFIGURE
 
 DOLPHIN
    - Network
-     my google drive doesn't show up now.
+     google drive now shows up - be sure to first install kio-gdrive and
+     open a browser tab in google drive
+
+LATTE DOCK
 
 OLD STUFF....
 
@@ -286,8 +295,13 @@ Here is what I have now (Mar 31)
 
 zoom:   pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
 	https://zoom.us/download
-	dpkg -i zoom_amd64.deb 
+	sudo dpkg -i zoom_amd64.deb 
 
 skype:  pre-install:   sudo apt install gnome-keyring
 	then get the deb file from https://www.skype.com/en/get-skype/
-	and dpkg -i skypeforlinux-64.deb
+	sudo dpkg -i skypeforlinux-64.deb
+
+slack:  pre-install:   sudo apt install libappindicator3-1
+	https://slack.com/downloads/linux
+	sudo dpkg -i slack-desktop-4.4.2-amd64.deb
+	(getting all of your slack accounts back.....)

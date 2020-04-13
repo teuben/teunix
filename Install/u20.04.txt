@@ -12,6 +12,10 @@ sudo apt install plasma-widgets-addons kio-gdrive openssh-server -y
 git clone https://github.com/sojharo/mangi-script
 sudo mangi-script/my_ubuntu_setup.sh
 
+The new mac lookalike
+= latte-dock
+After installing you need to start it, from there on it restarts itself?
+
 = rapid-photo-downloader 
 
 dropbox
