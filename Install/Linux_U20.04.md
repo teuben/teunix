@@ -82,7 +82,7 @@ B. System Settings
        Window Decorations
             Theme
 	    Titlebar Buttons
-	        - put application menu top left
+	        - put application menu top left (hit Apply after each action)
 
    (Workspace)
 1. Workspace Bahavior
@@ -91,7 +91,7 @@ B. System Settings
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
-	   Fall Apart
+	   Fall Apart (can be distracting)
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
@@ -99,7 +99,7 @@ B. System Settings
 	   - TM:   Krunner
                    https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 	   	   this will enable krunning to find tabs in mozilla
-	   Switch desktop on edge:  Only when moving windows
+	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
            only after waking from sleep
        Virtual Desktop
@@ -167,61 +167,21 @@ SAVING YOUR SESSION
      ~/.kde/share/apps
      ~/local/share
 
+ADDING WIDGETS : have a field day, here are my favorites
+
 
 OLD STUFF....
-
-   
-2. Add Widgets (in various places)
-3. Activities (not to be confused with multiple desktops as displayed in the Pager)
-4. Window Manager Settings (from top left "More Actions->")
-   * Window Decorations -> Buttons
-     - Application Menu drag it to TL  [DUBIOUS NOW IF THAT"S USEFUL, BUT IT DOES CUT DOWN ON VERTICAL SPACE]
-   * Desktop Effects
-   * Screen Edges (hot corners)
-     - TR:   Present windows current desktop
-     - BR:   Present windows all desktops
-     - TL:   Desktop Grid
-   * Focus:
-     * click "focus follows mouse - ...." (setting 4/6)  CHECK
-     * raise on hover, delayed by 750ms
-5. From the System Settings there are:
-   1.  Workspace Theme
-   2.  Application Style
-   3.  Desktop Behavior
-       * Screen Locking
-       	 
-       * Virtual Desktops
-       	 * Desktops  :  6 desktops, in 2 rows
-	 * Switching :  - do not wrap around
-	     	        - cube animation [MAYBE CUTE]
-	                - enter the 4 ctrl-alt up/down/left/right arrows = [ANNOYING MANUAL LABOR]
-   4.  Hardware
-       * Input Devices
-       	 *  Mouse
-	    - no need to do Reverse Scrolling (Mac calls this natural scrolling)
-	    - Single Click to open files and folders
-   5.  Power Management
-       * Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-       	 -  Dim Screen    1-5 min
-	 -  Screen Energy Saving
-	 -  Suspend session
-	 
-       
-
-
-## issues
 
 1. sometimes loose the KDE window manager. It can be restarted from
    the commandline with
 
        kstart plasmashell
 
-2. application menu issues I had under 17.10 with chrome and thunderbird were bad.
-
 3. the directory .local/share/akonadi can get pretty big, this is for finding files (like the finder on Mac)
    but the "locate" command does functionally something very similar.
 
-   ->  is this now baloo in 20.04 ??
+   ->  is this now baloo in 20.04 ??   some poeple also complain about this, isn't "locate" sufficient ?
+   also, krunning has some searching, where does it get it from
 
 ## Linux for Development
 
