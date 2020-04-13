@@ -2,15 +2,17 @@
 
 To be released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version.
 
+The online formatting is also still messed up.
+
 ## Summary
 
 Nice things (for most of these you need extra packages)
 
-1. dolphin finally integrates Google Drive
+1. dolphin (the file browser) finally integrates Google Drive
 2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
 3. krunner (like the Finder on a mac) also searches for browser tabs, really useful
 4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
-5. the latte dock is something I'll try out, looks very functional, but can it coexist?
+5. the latte dock is something I'm trying out, looks very functional, but can it coexist?
 6. lots of nice widgets, which i still need to optimize life around
 7. zoom and skype work (but need to pay attention to install packages before, see below)
 
@@ -72,7 +74,7 @@ Compare this to KDE, none of these 6 steps are needed. Simply
 right-click to "install widget" (although for newcomers the installion
 of a widget is arguably non-intuitive).
 
-### My favorite tuning:
+### My favorite tuning in GNOME3:
 
 
 1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
@@ -85,10 +87,15 @@ of a widget is arguably non-intuitive).
 
 ## My KDE Setup
 
+I've been using this since Ubuntu 18.04, and beginning to like it, as more
+things now actually work.
+
 KDE can be confusing too, because settings appear in different places
 (menus/applications....). Some of this work is painful if you have to
 repeat it many times, so it would be nice to have a programmatic way
-to do this for a virgin account. Unlike in GNOME, changing a setting is
+to do this for a virgin account.
+
+Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen....
 
 
@@ -236,6 +243,9 @@ DOLPHIN
      open a browser tab in google drive
 
 LATTE DOCK
+     apt install latte-dock
+     dock settings:
+          - auto-hide   otherwise it's annoying,but I overlay it on the default task manager panel
 
 OLD STUFF....
 
