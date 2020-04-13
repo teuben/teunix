@@ -1,5 +1,20 @@
 # Linux  Ubuntu 20.04 LTS
 
+To be released April 23, 2020.
+
+## Summary
+
+Nice things:
+
+1. dolphin finally integrates Google Drive
+2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
+3. krunner (like finder on a mac) also searches for browser tabs, really useful
+4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
+5. lots of nice widgets, which i still need to optimize life around
+6. zoom and skype work (but need to pay attention to install packages before, see below)
+
+## Details
+
 This description is currently being revised, as I plan to transition from 18.04 to 20.04
 
 Before we start, there are two ways to install U20:  fresh  and updating from U18. My
@@ -51,6 +66,12 @@ of a widget is arguably non-intuitive).
 
 ### My favorite tuning:
 
+First install a few very essential packages
+
+  sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
+
+
+
 1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
 2. Tweaks -> Workspaces : 4 (static)
 3. Tweaks -> Top Bar -> Clock: Weekday / Date / Seconds
@@ -70,6 +91,7 @@ not applied until you hit the Apply button on each screen....
 
 A. Configure Desktop (right click)
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
+           it seems picking a background has to be done for each screen (if > 1 screen attached)
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
 
 B. System Settings
@@ -129,6 +151,7 @@ B. System Settings
    (Personlization)
 7. Online Accounts
       make a google account, this will give you access to google Drive etc.
+      make sure you first login the browers to Drive, otherwise your Browser window will hang.
 
    (Hardware)
 1. Input Devices
@@ -177,7 +200,29 @@ SAVING YOUR SESSION
      ~/local/share
 
 ADDING WIDGETS : have a field day, here are my favorites
+  NOTE1:  autoraisinb focus could be making it harder than it should
+  NOTE2:  already existing widgets on the screen are market with a blue dot (1)
+  - Analog Clock in top right corner, add the seconds hand
+  
 
+ROOT:
+  If you are an admin, it might be useful to inherit this from your old ubuntu,
+  or set them now:
+  - "sudo" with longer retention
+     /etc/sudoers:         edit this with: sudo visudo 
+           Defaults        env_reset,timestamp_timeout=3600
+  - "ssh identity"
+        copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
+
+
+
+DIGITAL CLOCK CONFIGURE
+  Appearance:
+    show date
+    show seconds
+    Date format:   Custom:     ddd MMM d   (e.g. Mon Apr 13)
+  Calendar:
+    Show Week numbers
 
 DOLPHIN
    - Network
@@ -207,8 +252,17 @@ your_name@gmail.com
 imap.gmail.com SSL 993
 smtp.gmail.com SSL 465
 
-calendar: 2 add-ons:  Lightning and Google Provider
+calendar: 2 add-ons are needed:  Lightning and Google Provider
 
+  NOTE:   if you have an active $HOME/.thunderbird tree, you can
+          symlink ("ln -s") and/or copy ("cp -a") it, and all settings (including add-ons)
+	  seem to transfer
+
+## ssh
+
+  Copy (or symlink) your $HOME/.ssh tree.
+  Keep your aliases (e.g. "ssh chara" in the config file)
+  
 ## GNOME/KDE
 
 GNOME3 uses:  dash (ubuntu dock on the side), dock, message tray (top bar)
@@ -227,3 +281,13 @@ Here is what I have now (Mar 31)
      OS Type: 64-bit
      Processors: 8 × Intel® Core™ i7-8550U CPU @ 1.80GHz
      Memory: 15.3 GiB of RAM
+
+## 3rd party apps:
+
+zoom:   pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
+	https://zoom.us/download
+	dpkg -i zoom_amd64.deb 
+
+skype:  pre-install:   sudo apt install gnome-keyring
+	then get the deb file from https://www.skype.com/en/get-skype/
+	and dpkg -i skypeforlinux-64.deb
