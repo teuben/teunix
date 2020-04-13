@@ -143,6 +143,14 @@ B. System Settings
            -  Screen Energy Saving
            -  Suspend session
 
+6. KDE Connect
+       Set your phone on the same network, see it show up in the list, select and "Request pair"
+       - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
+       - Set up a file system to share if you want to see them on the laptop
+7. Printers
+
+
+
 
 - Task Manager (on bottom bar) may need some tinkering:
       Appearance
@@ -152,8 +160,9 @@ B. System Settings
       	  - show tasks for all desktops
       - resize it a bit, it's too tall for my taste
 
-TO BE SOLVED:
 
+
+TO BE SOLVED:
 
 https://github.com/shalva97/kde-configuration-files/
 
@@ -169,6 +178,10 @@ SAVING YOUR SESSION
 
 ADDING WIDGETS : have a field day, here are my favorites
 
+
+DOLPHIN
+   - Network
+     my google drive doesn't show up now.
 
 OLD STUFF....
 
