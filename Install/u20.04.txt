@@ -1,15 +1,12 @@
-* increase lifetime of sudo:
-     sudo visudo
-     -> Defaults        env_reset,timestamp_timeout=30
-
 
 * install basic tools
 
-sudo apt install meld tkcvs emacs25 tcsh git htop gitk
-sudo apt install wget unzip curl
-sudo apt install software-properties-common
-sudo apt install python3-software-properties
+sudo apt install meld tkcvs emacs tcsh git htop gitk -y
+sudo apt install wget unzip curl -y
+# ?? sudo apt install software-properties-common -y
+# ?? sudo apt install python3-software-properties
 sudo apt install exfat-fuse
+sudo apt install plasma-widgets-addons kio-gdrive openssh-server -y
 
 ??
 git clone https://github.com/sojharo/mangi-script
@@ -18,7 +15,7 @@ sudo mangi-script/my_ubuntu_setup.sh
 = rapid-photo-downloader 
 
 dropbox
-spectacle (a screenshot tool) - now comes with U20
+# spectacle (a screenshot tool) - now comes with U20
 
 =baobab - diskusage GUI
 =k4dirstat - diskusage GUI
@@ -86,7 +83,7 @@ python-notify
  Reminder how to clone your old system ssh settings so multiple versions
   will remember the hostname
 
-==>   don't forget to edit /etc/ssh/ssh_config :
+==>   don't forget to edit /etc/ssh/ssh_config : (or in your own ~/.ssh/config)
       ForwardX11 yes
       ForwardX11Trusted yes
 
@@ -321,6 +318,7 @@ sudo apt-get install aptik
 
 --------------------------------------
 patch /etc/hosts with old value from previous system
+      (can also put these in your ~/.ssh/config)
 ----
 restarting services is new now,e.g.
 	   sudo restart ssh
@@ -368,7 +366,9 @@ dropbox
   pyregion ?
   pyavm ?
 
-  Montage ?
+=montage
+=saods9
+=xpa-tools
 
 = libncurses5-dev    
 libncurses5:i386    (for mem if you haven't recompiled it for 64bit)
@@ -405,6 +405,11 @@ For example, skype told me it needs libqt4-dbus at 32bit, I run
 sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
 sudo apt-get update
 sudo apt-get install skype
+
+or go to:
+https://www.skype.com/en/get-skype/
+get the deb package,install it, but first
+sudo apt install gnome-keyring
 
 
 ===
@@ -663,3 +668,5 @@ rman test
 = x2goclient
 = zsync
 
+micro-emacs
+https://github.com/torvalds/uemacs
