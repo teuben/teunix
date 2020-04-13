@@ -25,8 +25,10 @@ The following commands make a listing which I frequency consult via grep:
 
 ## Why I don't like GNOME3
 
-I don't know, I simply can't get used to it. On Ubuntu they make it look like the old Unity desktop, which at one time I
-did get used to and almost liked, and now GNOME3 has the shell extensions, something very simular to the KDE widgets. But:
+I don't know, I simply can't get used to it. On Ubuntu they make it
+look like the old Unity desktop, which at one time I did get used to
+and almost liked, and now GNOME3 has the shell extensions, something
+very simular to the KDE widgets. But:
 
 1. By default shell extensions are not enabled
 2. To enable, you need to install "gnome-tweaks"
@@ -59,9 +61,11 @@ of a widget is arguably non-intuitive).
 
 ## My KDE Setup
 
-KDE can be confusing, because settings appear in different places (menus/applications....). Some of this
-work is painful if you have to repeat it many times, so it would be nice to have a programmatic way
-to do this for a virgin account.
+KDE can be confusing too, because settings appear in different places
+(menus/applications....). Some of this work is painful if you have to
+repeat it many times, so it would be nice to have a programmatic way
+to do this for a virgin account. Unlike in GNOME, changing a setting is
+not applied until you hit the Apply button on each screen....
 
 
 A. Configure Desktop (right click)
@@ -86,13 +90,18 @@ B. System Settings
            click behavior : single
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
+	   Magic Lamp (vs. squash)
+	   Fall Apart
        Screen Edges
+           - TL:   Desktop Grid
            - TR:   Present windows current desktop
            - BR:   Present windows all desktops
-           - TL:   Desktop Grid
+	   - TM:   Krunner
+                   https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
+	   	   this will enable krunning to find tabs in mozilla
+	   Switch desktop on edge:  Only when moving windows
        Screen Locking
            only after waking from sleep
-           allow unlocking withouth password for 65"
        Virtual Desktop
            6 desktops in 2 rows
            navigation *do not* wrap around
@@ -117,8 +126,16 @@ B. System Settings
                Switch One Desktop Right
                Switch One Desktop Up
 
+   (Personlization)
+7. Online Accounts
+      make a google account, this will give you access to google Drive etc.
+
    (Hardware)
 1. Input Devices
+      Mouse - make sure scrolling is not inverted (or natural as some call it)
+      Touchpad
+          Tapping:  tap-to-click
+	  make sure not to invert scrolling
 
 4. Power Management
        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
@@ -128,15 +145,18 @@ B. System Settings
 
 
 - Task Manager (on bottom bar) may need some tinkering:
-      - grouping of tasks	 
-      - tasks per desktop?
+      Appearance
+	  ?  i don't understand what max.rows and the checked item do ??
+      Behavior
+          - grouping of tasks -> 
+      	  - show tasks for all desktops
+      - resize it a bit, it's too tall for my taste
 
 TO BE SOLVED:
 
 
 https://github.com/shalva97/kde-configuration-files/
 
-https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 
 SAVING YOUR SESSION
 - there is no good tool, there is kwriteconfig5/kreadconfig5
