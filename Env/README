@@ -37,7 +37,10 @@ and do some surgery from your home directory:
 
    If you're not me, better copy and edit your credentials!   
 
+4. path:
 
+   ln -s teunix/Env/bin
+   
 ##  skel
 
 Added here, since these are the skeleton files the astro.umd.edu cluster uses.
