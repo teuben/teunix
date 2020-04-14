@@ -1,11 +1,16 @@
 #! /usr/bin/env python
 #
 # print some abstract of the global key shortcuts in KDE
+# 14-apr-2020   Created for KDE 5.18       - Peter Teuben
 #
 # another option is to use KDE native tools, e.g.
 #   kreadconfig5 --file ~/.config/kglobalshortcutsrc --group kded5  --key 'Show System Activity'
+# but there are many problems with this approach.
 #
-
+# Some refs:
+#    https://community.linuxmint.com/tutorial/view/47
+#    https://docs.kde.org/trunk5/en/applications/fundamentals/kbd.html
+#    https://defkey.com/kde-plasma-shortcuts
 
 import os, sys
 
