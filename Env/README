@@ -42,6 +42,10 @@ and do some surgery from your home directory:
 
 Added here, since these are the skeleton files the astro.umd.edu cluster uses.
 
+## Interactive of Login shell
+
+Unix makes a difference between an **interactive** and **login** shell, as there are many ways to start a terminal.
+
 ## other
 
 There are many others who have shared their dotfile management system, here are a few I ran into and I'd like to take ideas from:
