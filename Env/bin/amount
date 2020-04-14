@@ -1,0 +1,99 @@
+#! /bin/csh -f
+#
+# wrapper for commands like:     sshfs chara:/chara /n/chara
+# you will need a file 'fstab' in /n
+# with your favorite entries like
+#         /grus    grus.astro.umd.edu
+#
+#
+# Created:     29-oct-2005     Peter Teuben
+
+#  in principle your root of mountpoints could be changed (not tested yet)
+set root=/n
+
+# on my laptop machine i need this...
+setenv LD_LIBRARY_PATH /usr/local/lib
+
+
+if ($#argv == 0) then
+  echo "Usage: $0 [-u] [-a] $root/disk"
+  echo "   You also need a file $root/fstab"
+  echo "   with entries like"
+  echo "/diskname     machine"
+  echo ""
+  echo "   Options:"
+  echo "   -u        umount all mounts"
+  echo "   -a        mount all entries from fstab"
+  echo "   /n/disk   mount /disk in /n"
+  exit 0
+endif
+
+
+foreach dir ($*)
+
+    if (X$dir == X-u) then
+#	foreach dir (`mount | grep ^sshfs | awk '{print $3}'`)
+	foreach dir (`mount | grep  sshfs | awk '{print $3}'`)
+	    echo Umount-ing $dir
+	    fusermount -u $dir
+	end
+	exit 0
+    endif
+
+    if (X$dir == X-a) then
+	foreach dir (`grep  ^/ $root/fstab | awk '{print $1}'`)
+	    amount $root/$dir
+	end
+	exit 0
+    endif
+
+    set hdir=$dir:h
+    set tdir=$dir:t
+
+    #echo H=$hdir
+    #echo T=$tdir
+
+    if ($root/ != $hdir) then  
+	echo WARNING: $root is the assumed root, you are using $hdir
+    endif
+    
+    set log=/tmp/amount$$.log
+
+    #   first make sure that if just the directory exists, it hadn't been mounted already
+    if (-e $dir) then
+	# echo $dir exists, OK
+	cd $dir
+	set ls=(`ls`)
+	if ($#ls > 0) then
+	    echo $dir : already mounted
+	    exit 0
+	endif
+    endif
+
+    #   make sure it's in my /n/fstab file
+
+    grep -w ^/$tdir $root/fstab > $log
+    set n=(`cat $log | wc -l`)
+    if ($n > 1) then
+	echo Too many matches:
+	cat $log
+	exit 0
+    endif
+
+    if ($n == 0) then
+	echo No matches
+	exit 0
+    endif
+
+    if (! -e $dir) mkdir $dir
+
+    set rem=(`awk '{printf("%s:%s\n",$2,$1)}' $log`)
+    echo Mounting $dir : rem: $rem
+    echo sshfs $rem $dir
+    sshfs $rem $dir
+
+end
+
+
+rm -f $log
+
