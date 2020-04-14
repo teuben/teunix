@@ -1,11 +1,16 @@
 #! /usr/bin/env python
 #
-#   print some abstract of the global key shortcuts in KDE
+# print some abstract of the global key shortcuts in KDE
+#
+# another option is to use KDE native tools, e.g.
+#   kreadconfig5 --file ~/.config/kglobalshortcutsrc --group kded5  --key 'Show System Activity'
+#
 
 
 import os, sys
 
 friendly = '_k_friendly_name'
+title = ''
 fname = os.environ['HOME'] + '/.config/kglobalshortcutsrc'
 
 lines = open(fname).readlines()
@@ -20,6 +25,8 @@ for line in lines:
         print("%-70s %s" % ('#',group))
         continue
     if word[0] == friendly:
+        title = word[1]
+        print("%-70s     %s" % ('#',title))        
         continue
     if len(word) < 2:
         # print("Warning %s (%d)" % (word[0], len(word)))
