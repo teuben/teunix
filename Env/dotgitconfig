@@ -82,3 +82,5 @@ pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
 	smudge = git-lfs smudge -- %f
 [hub]
 	protocol = https
+[cola]
+	spellcheck = false
