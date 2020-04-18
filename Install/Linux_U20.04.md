@@ -2,29 +2,36 @@
 
 To be released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version.
 
-The online formatting is also still messed up.
+*The online formatting is also still messed up.*
+
+The command
+
+        sudo apt update && sudo apt full-upgrade
+	
+should do a full upgrade once the beta goes to LTS.	
 
 ## Summary
 
-Nice things (for most of these you need extra packages)
+Nice things (for some of these you need extra packages)
 
 1. dolphin (the file browser) finally integrates Google Drive
 2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
-3. krunner (like the Finder on a mac) also searches for browser tabs, really useful
+3. krunner (like the Finder on a mac) also searches for browser tabs, really useful for heavy browser usage
 4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
 5. the latte dock is something I'm trying out, looks very functional, but can it coexist?
 6. lots of nice widgets, which i still need to optimize life around
-7. zoom and skype work (but need to pay attention to install packages before, see below)
+7. digital clock: timezones, clipboard timestamps, 
+7. zoom, skype, and slack work (but need to pay attention to install packages before, see below)
 
 What I don't like:
 
-1. the growth of apps via snap. Fills your df and wasts diskspace.
+1. more and more apps come via snap. Fills your mount table and wasts diskspace. (df -xsquashfs)
 
 ## Details
 
 Before we start, there are two ways to install U20:  fresh  and updating from U18. My
 experience has always been that the former is more stable. More than often weird things happen
-when you upgrade. I've heard this from multiple sources. YMMV.
+when you upgrade (most likely your dotfiles). I've heard this from multiple sources. YMMV. 
 
 Secondly, installing a desktop based OS is getting pretty involved, and taking the better
 part of the day. This is hard, many people keep thus running on their OS version for a longer
@@ -102,25 +109,26 @@ not applied until you hit the Apply button on each screen....
 
 
 
-A. Configure Desktop (right click)
+  A. Configure Desktop (right click)
+  
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
 
-B. System Settings
+  B. System Settings
 
-(Appearence)
-1. Global Theme
-2. Plasma Style
-3. Application Style
-       Application Style
-       Window Decorations
-            Theme
-	    Titlebar Buttons
+     (Appearence)
+     1. Global Theme
+     2. Plasma Style
+     3. Application Style
+          Application Style
+            Window Decorations
+              Theme
+	      Titlebar Buttons
 	        - put application menu top left (hit Apply after each action)
 
-(Workspace)
-1. Workspace Bahavior
+     (Workspace)
+     1. Workspace Bahavior
        General Behavior
            click behavior : single
        Desktop Effect
@@ -145,15 +153,16 @@ B. System Settings
            ->make a new activity
    
    
-2. Window Management
+     2. Window Management
        Window Behavior
            Focus -> Focus follows mouse (mouse precedence)
            Raising Windows -> Raise on hover
        Task Switcher
        KWin Scripts
+           +MinimizeAll (useful to have a button to minimize all windows)
        Window Rules
        
-3. Shortcuts
+     3. Shortcuts
        Global Shortcuts
            Kwin 
                Switch One Desktop Down
@@ -161,40 +170,39 @@ B. System Settings
                Switch One Desktop Right
                Switch One Desktop Up
 
-(Personlization)
-7. Online Accounts
+     (Personlization)
+     7. Online Accounts
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will hang.
 
-(Hardware)
-1. Input Devices
-      Mouse - make sure scrolling is not inverted (or natural as some call it)
-      Touchpad
+     (Hardware)
+     1. Input Devices
+       Mouse - make sure scrolling is not inverted (or natural as some call it)
+       Touchpad
           Tapping:  tap-to-click
 	  make sure not to invert scrolling
 
-4. Power Management
-       Energy Saving : on my laptop they did not get properly populated at all, that was bad.
+     4. Power Management
+        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
            -  Screen Energy Saving
            -  Suspend session
 
-6. KDE Connect
-       Set your phone on the same network, see it show up in the list, select and "Request pair"
-       - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
-       - Set up a file system to share if you want to see them on the laptop
-7. Printers
+     6. KDE Connect
+        Set your phone on the same network, see it show up in the list, select and "Request pair"
+        - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
+        - Set up a file system to share if you want to see them on the laptop
+     7. Printers
 
 
 
-
-- Task Manager (on bottom bar) may need some tinkering:
-      Appearance
+     - Task Manager (on bottom bar) may need some tinkering:
+       Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
-      Behavior
+       Behavior
           - grouping of tasks -> 
       	  - show tasks for all desktops
-      - resize it a bit, it's too tall for my taste
+       - resize it a bit, it's too tall for my taste
 
 
 
@@ -204,18 +212,21 @@ https://github.com/shalva97/kde-configuration-files/
 
 
 SAVING YOUR SESSION
-- there is no good tool, there is kwriteconfig5/kreadconfig5
-- best is to save ?
-     ~/.config/kdeconnect  -R
-     ~/.config/k*rc
-     ~/.kde/share/config
-     ~/.kde/share/apps
-     ~/local/share
+
+  - there is no good tool, there is kwriteconfig5/kreadconfig5
+  - best is to save ?
+  
+       ~/.config/kdeconnect  -R
+       ~/.config/k*rc
+       ~/.kde/share/config
+       ~/.kde/share/apps
+       ~/local/share
 
 ADDING WIDGETS : have a field day, here are my favorites
-  NOTE1:  autoraisinb focus could be making it harder than it should
-  NOTE2:  already existing widgets on the screen are market with a blue dot (1)
-  - Analog Clock in top right corner, add the seconds hand
+
+    NOTE1:  autoraising focus could be making it harder than it should
+    NOTE2:  already existing widgets on the screen are market with a blue dot (1)
+           - Analog Clock in top right corner, add the seconds hand
   
 
 ROOT:
@@ -230,19 +241,26 @@ ROOT:
 
 
 DIGITAL CLOCK CONFIGURE
-  Appearance:
-    show date
-    show seconds
-    Date format:   Custom:     ddd MMM d   (e.g. Mon Apr 13)
-  Calendar:
-    Show Week numbers
+
+    Appearance:
+      show date
+      show seconds
+      display TZ as TZ city (not code)
+      Date format:   Custom:     ddd MMM d   (e.g. Mon Apr 13)
+    Calendar:
+      Show Week numbers
+    Time Zones:
+      pick your favorite cities
+      +switch TZ with mouse wheel (very useful!!)
 
 DOLPHIN
-   - Network
-     google drive now shows up - be sure to first install kio-gdrive and
-     open a browser tab in google drive
+
+     Network
+         google drive now shows up - be sure to first install kio-gdrive and
+         open a browser tab in google drive
 
 LATTE DOCK
+
      apt install latte-dock
      dock settings:
           - auto-hide   otherwise it's annoying,but I overlay it on the default task manager panel
@@ -259,6 +277,34 @@ OLD STUFF....
 
    ->  is this now baloo in 20.04 ??   some poeple also complain about this, isn't "locate" sufficient ?
    also, krunning has some searching, where does it get it from
+
+## Get New ...
+
+In quite a few places new "things" can be loaded into KDE. Overwhelming and fun. You often see them in the
+lower right corner of a setting that can be tailored by adding new ones. Here's a list as I encountered them,
+but you can also get access to them via the Discover -> Plasma Addons program (there are 18 in that list):
+
+1. Add Widget -> Get New Widgets (***)
+2. Configure Desktop -> Get New Wallpapers (***)
+3. System Settings -> Global Theme -> Get New Global Themes [breeze]
+4. System Settings -> Plasma Style -> Get New Plasma Styles [breeze]
+5. System Settings -> Application Style -> Application Style -> Configure GNOME/GTK Application Style -> Download New Stles
+6. System Settings -> Application Style -> Window Decorations -> Get New Window Decorations [breeze]
+7. System Settings -> Colors -> Get New Color Schemes [Breeze]
+8. System Settings -> Fonts -> Font Management -> Get New Fonts 
+9. System Settings -> Icons -> Icons -> Get New Icons [Breeze]
+10. System Settings -> Icons -> Emoticons -> Get New Emoticons [Breeze]
+11. System Settings -> Cursors -> Get New Cursors [Breeze]
+12. System Settings -> Workspace Behavior -> Desktop Effects -> Get New Desktop Effects 
+13. System Settings -> Window Management -> Task Switcher -> Get New Task Switchers [Breeze]
+14. System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
+15. System Settings -> Startup and Shutdown -> Login Screen (SDDM) -> Get New Login Screens [Breeze -> Sugar Candy]
+16. System Settings -> Startup and Shutdown -> Splash Screen -> Get New Splash Screens [breeze -> ???]
+17. System Settings -> Regional Settings -> Language -> Add languages (BUG: flashing when clicked)
+
+
+A word on tinkering here: For the current Kubuntu the basic default setting for
+most are called Breeze. There are probably 10^18 different combinations, if not more.
 
 ## Linux for Development
 
@@ -286,14 +332,35 @@ calendar: 2 add-ons are needed:  Lightning and Google Provider
 
 GNOME3 uses:  dash (ubuntu dock on the side), dock, message tray (top bar)
 
-KDE uses: panel, latte dock (mac lookalike), 
+KDE uses: panel, latte dock (mac lookalike),
+
+## GIMP 2.10.18
+
+Not in color, and too few icons (they were grouped by default)
+
+      Edit -> Preferences -> Theme             Dark  or Light
+      Edit -> Preferences -> Icon theme        Color or Legacy  (can change icon size)
+      Edit -> Preferences -> Toolbox           +show active bruch   -use tool groups
+                       
+
+## DOLPHIN
+
+Now adds a new open to the existing one.  When working in many windows etc. this is not usefuk.
+
+      Settings -> Configure Dolphin -> Startup -> [-]Open new folders in tabs
+
+## firefox
+
+Install a container for firefox:   https://www.mozilla.org/en-US/firefox/facebookcontainer/
+
+https://www.mozilla.org/en-US/firefox/facebookcontainer/
 
 ## Install
 
 Here is what I have now (Mar 31)
 
      Operating System: Kubuntu 20.04
-     KDE Plasma Version: 5.18.3
+     KDE Plasma Version: 5.18.4
      KDE Frameworks Version: 5.68.0
      Qt Version: 5.12.5
      Kernel Version: 5.4.0-21-generic
@@ -303,15 +370,54 @@ Here is what I have now (Mar 31)
 
 ## 3rd party apps:
 
-zoom:   pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
-	https://zoom.us/download
-	sudo dpkg -i zoom_amd64.deb 
+zoom:
 
-skype:  pre-install:   sudo apt install gnome-keyring
-	then get the deb file from https://www.skype.com/en/get-skype/
-	sudo dpkg -i skypeforlinux-64.deb
+        pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
+        https://zoom.us/download
+        sudo dpkg -i zoom_amd64.deb 
+	cp -a $OLDHOME/.zoom ~/
+	cp -a $OLDHOME/.config/zoomus.conf ~/.config
+	
+skype:
 
-slack:  pre-install:   sudo apt install libappindicator3-1
-	https://slack.com/downloads/linux
-	sudo dpkg -i slack-desktop-4.4.2-amd64.deb
-	(getting all of your slack accounts back.....)
+        pre-install:   sudo apt install gnome-keyring
+        then get the deb file from https://www.skype.com/en/get-skype/
+        sudo dpkg -i skypeforlinux-64.deb
+        and maybe
+        sudo apt-get -f install
+
+slack:
+
+        pre-install:   sudo apt install libappindicator3-1
+        https://slack.com/downloads/linux
+        sudo dpkg -i slack-desktop-4.4.2-amd64.deb
+        (getting all of your slack accounts back.....)
+	cp -a $OLDHOME/.config/Slack ~/.config
+
+
+If the dependencies did not succeed, try
+
+        sudo apt-get -f install
+
+## printers
+
+This can be complicated. If you have an old working one, copy the cups tree (/etc/cups)
+Then simply
+
+	service cup restart
+
+and it should work. Otherwise manually add the local and network printers.
+
+
+## BETA issues (some are upstream issues)
+
+- the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
+- gwenview loads very slow
+- k4dirstat crashes
+- System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
+- System Settings -> Regional Settings -> Language -> Add languages (BUG: flashing when clicked)
+- there was a weird problem with snap, server restarting, subsequent install would hang. this just disappeared in time.
+- I had my 2nd screen being hyjacked by another computer, but kubuntu kept it live. I had an app on that 2nd screen, but there
+  is no way to move it to another screen.. You can move desktop and activity, but not screen.
+- the command 'more $HOME/.bash<TAB>' does not complete properly, instead it will change to \$HOME and thus becomes useless
+  this is a know bash upstream problem
