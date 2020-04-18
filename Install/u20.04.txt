@@ -75,7 +75,8 @@ python-notify
 =gfortran
 =cmake
 =ruby
-=pidgin
+=pidgin   (yakyak is perhaps another option, but it uses snap)
+=grip
 
 =ubuntu-restricted-extras (still some headers MS fonts, missing)
 =youtube-dl
@@ -262,6 +263,7 @@ mercurial
 openjpeg-tools
 = pgplot5
 = rman
+= mandoc (like rman?)
 inkscape
 scribus
 shutter
@@ -672,5 +674,19 @@ rman test
 = x2goclient
 = zsync
 
-micro-emacs
-https://github.com/torvalds/uemacs
+micro-emacs :    https://github.com/torvalds/uemacs
+
+
+-
+
+Kwin Scripts:  Hide Inactive Borders - when de-activating, it does not get the borders back.
+kquitapp5 plasmashell; kstart5 plasmashell
+
+
+-
+
+neofetch
+krdc      (kde; a more persistent vnc viewer)
+remmina   (gnome)
+kdevelop
+
