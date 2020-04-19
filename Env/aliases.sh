@@ -1,4 +1,4 @@
-# for bash and zsh 
+# for bash and zsh
 
 alias teunix='(cd ~/teunix; git pull)'
 
@@ -26,6 +26,7 @@ alias cdir='cpio -itvc <'
 alias  tdir='tar tvf'
 alias untar='tar xvf'
 alias detar='tar xvf'
+
 mktar() {
     tar cvf $1.tar $1
 }
@@ -40,6 +41,8 @@ mkcd() {
     mkdir -p $1
     cd $1
 }
+
+
 use() {
     for f in $(cat ~/.use); do
 	if [ ! $2 ]; then
@@ -49,6 +52,7 @@ use() {
 	fi
     done
 }
+
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
@@ -62,10 +66,12 @@ alias  del='rm -i'
 alias  era='rm -i'
 alias  zap='rm -rf'
 #
-alias  print='enscript'
+
+# alias  print='enscript'      # this causes zsh to complain
 alias print2='enscript -r2'
 alias print1='enscript -r1 -fCourier7'
 alias printo='enscript -B  -fHelvetica15'
+
 #
 alias p=printenv
 alias h=history
@@ -103,7 +109,8 @@ alias    o='open'
 function tsh  { ssh -X $1 -t "tmux -CC attach -t $2 || tmux -CC new -s $2"; }
 
 # always point home....
-export    CVSROOT=:pserver:pteuben@cvs.astro.umd.edu:/home/cvsroot
+#export   CVSROOT=:pserver:pteuben@cvs.astro.umd.edu:/home/cvsroot
+export    CVSROOT=:ext:teuben@cvs.astro.umd.edu:/home/cvsroot
 export  CVSEDITOR=mem
 export    CVS_RSH=ssh
 alias        cvsq='cvs -n -q update'
@@ -113,9 +120,7 @@ alias        cvsi='cvs commit'
 #if ($?TMPDIR) unsetenv TMPDIR
 #if ($?TMP) unsetenv TMP
 
-
 export PATH=~/bin:~/teunix/Env/bin:$PATH
-
 
 for d in /astromake ~/astromake ; do
     if [ -f $d/astromake_start.sh ]; then
