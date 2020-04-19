@@ -1,4 +1,9 @@
-# for bash and zsh
+# for bash and zsh (zsh needs a dummy shopt)
+
+# bash has shopt
+# zsh has setopt
+#shopt -s expand_aliases
+shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
 
