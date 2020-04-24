@@ -37,7 +37,7 @@ Secondly, installing a desktop based OS is getting pretty involved, and taking t
 part of the day. This is hard, many people keep thus running on their OS version for a longer
 than should be needed time.
 
-1. Install a few hundred packages  (see the very rough list in u20.04.txt)
+1. Install a few hundred packages  (see my very rough list in u20.04.txt)
 2. Install and configure the various KDE components
 3. Install plugins for various apps (firefox, thunderbird, gimp, ....)
 4. Setting up your personal shell (and other dotfiles)
@@ -49,10 +49,14 @@ The following commands make a listing which I frequency consult via grep:
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
+      dpkg --list          > dpkg0.list
 
 First install a few very essential packages
 
       sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
+
+Every now and then I add another version to dpkgN.list.. Usually kubunty starts just
+below 2000 packages, and this soon grows to between 3000 and 4000 for me.
 
 
 ## Why I don't like GNOME3
@@ -60,11 +64,14 @@ First install a few very essential packages
 I don't know, I simply can't get used to it. On Ubuntu they make it
 look like the old Unity desktop, which at one time I did get used to
 and almost liked, and now GNOME3 has the shell extensions, something
-very simular to the KDE widgets. But:
+very simular to the KDE widgets. Our work environment is Centos7, where
+GNOME3 looks very different from the one on Ubuntu. I did give it a
+try again this time, so this is what I ran into:
 
-1. By default shell extensions are not enabled
+
+1. By default shell extensions are not enabled (yes, the minimalistic approach)
 2. To enable, you need to install "gnome-tweaks"
-3. Within the "gnome-tweaks" there are a few that can be enables, but the bulk goes via a firefox/chrome plugin!
+3. Within the "gnome-tweaks" there are a few that can be enabled, but the bulk goes via a firefox/chrome plugin!
 4. https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
 5. To connect the desktop with that extension, you need to install "chrome-gnome-shell"
 6. In firefox/chrome there is now a little gnome foot icon, which is the entry point to maintaining your extensions.
@@ -72,10 +79,7 @@ very simular to the KDE widgets. But:
    and it's only 13 pages. Uninstalling and confuring is annoying too.  You do that best from the Tweaks->Extensions tool.
 
 This overly complex workflow really does not make me feel warm and
-fuzzy. I tried it again with 20.04, because last time I tried this it
-was very frustrating to see that the majority of extensions simply
-didn't work (author maintenance issues perhaps). I had the same experience again. The first two a red ERROR came up, go
-figure where the message is. The third one seems to work, so at least my workflow is ok.
+fuzzy. To install a browser plugin to enhance the desktop? 
 
 Compare this to KDE, none of these 6 steps are needed. Simply
 right-click to "install widget" (although for newcomers the installion
@@ -83,6 +87,8 @@ of a widget is arguably non-intuitive).
 
 ### My favorite tuning in GNOME3:
 
+For the record, here are a few things I tried and liked. Not sure if our Centos7 can
+be tuned this way.
 
 1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
 2. Tweaks -> Workspaces : 4 (static)
@@ -95,19 +101,16 @@ of a widget is arguably non-intuitive).
 ## My KDE Setup
 
 I've been using this since Ubuntu 18.04, and beginning to like it, as more
-things now actually work.
+things now actually work. 
 
-KDE can be confusing too, because settings appear in different places
-(menus/applications....). Some of this work is painful if you have to
-repeat it many times, so it would be nice to have a programmatic way
-to do this for a virgin account.
+KDE can be confusing too, because some settings appear in different
+places if you switch a version of KDE. Some of this work is painful if
+you have to repeat it many times, so it would be nice to have a
+programmatic way to do this for a virgin account. You can also copy
+the correct files in your ~/.config tree.
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen....
-
-
-
-
 
   A. Configure Desktop (right click)
   
@@ -165,10 +168,11 @@ not applied until you hit the Apply button on each screen....
      3. Shortcuts
        Global Shortcuts
            Kwin 
-               Switch One Desktop Down
-               Switch One Desktop Left
-               Switch One Desktop Right
-               Switch One Desktop Up
+               Switch One Desktop Down -> Ctrl-Alt-Down
+               Switch One Desktop Left    Ctrl-Alt-Left
+               Switch One Desktop Right   Ctrl-Alt-Right
+               Switch One Desktop Up      Ctrl-Alt-Up
+	       Toggle Present Windows (Current Desktop) -> Meta+D
 
      (Personlization)
      7. Online Accounts
@@ -309,13 +313,13 @@ most are called Breeze. There are probably 10^18 different combinations, if not 
 ## Linux for Development
 
 * https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
-  * https://github.com/sojharo/mangi-script/    This does a lot, but isn't really my taste.
+* https://github.com/sojharo/mangi-script/    This does a lot, but isn't really my taste.
 
 ## Thunderbird
 
-your_name@gmail.com
-imap.gmail.com SSL 993
-smtp.gmail.com SSL 465
+    your_name@gmail.com
+    imap.gmail.com SSL 993
+    smtp.gmail.com SSL 465
 
 calendar: 2 add-ons are needed:  Lightning and Google Provider
 
@@ -325,8 +329,8 @@ calendar: 2 add-ons are needed:  Lightning and Google Provider
 
 ## ssh
 
-  Copy (or symlink) your $HOME/.ssh tree.
-  Keep your aliases (e.g. "ssh chara" in the config file)
+*  Copy (or symlink) your $HOME/.ssh tree.
+*  Keep your aliases (e.g. "ssh chara" in the config file)
   
 ## GNOME/KDE
 
@@ -375,8 +379,8 @@ zoom:
         pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
         https://zoom.us/download
         sudo dpkg -i zoom_amd64.deb 
-	cp -a $OLDHOME/.zoom ~/
-	cp -a $OLDHOME/.config/zoomus.conf ~/.config
+        cp -a $OLDHOME/.zoom ~/
+        cp -a $OLDHOME/.config/zoomus.conf ~/.config
 	
 skype:
 
@@ -392,7 +396,7 @@ slack:
         https://slack.com/downloads/linux
         sudo dpkg -i slack-desktop-4.4.2-amd64.deb
         (getting all of your slack accounts back.....)
-	cp -a $OLDHOME/.config/Slack ~/.config
+        cp -a $OLDHOME/.config/Slack ~/.config
 
 
 If the dependencies did not succeed, try
@@ -404,20 +408,65 @@ If the dependencies did not succeed, try
 This can be complicated. If you have an old working one, copy the cups tree (/etc/cups)
 Then simply
 
-	service cup restart
+        service cup restart
 
 and it should work. Otherwise manually add the local and network printers.
+
+## icons
+
+Okular complaints about 'Icon theme "Numix-Circle-Light" not found' - maybe a relic of my old setup?
+Google search suggested this:
+
+     sudo add-apt-repository ppa:numix/ppa
+     sudo apt update
+     sudo apt install numix-icon-theme-circle
+
+but after this I got "Icon theme "gnome" not found.". go figure. Turns out, this was a side-effect of me
+trying out the "McMojave-circle" Icons. Going back to good old Breeze resolved it.
+
+## OnlyOffice
+
+Although LibreOffice (formerly OpenOffice) is the default on Ubuntu, another option is OnlyOffice, now at version 5.5
+Debian package are on https://www.onlyoffice.com/download-desktop.aspx e.g.
+https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
+
+      sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
+      sudo apt-get -f install
+
+that should also resolve any missing package OO needed.
+
+## Things to do after you have installed
+
+The linux media are full of stories with "N things do do after install"....
+
+* https://www.omgubuntu.co.uk/2020/04/things-to-do-after-installing-ubuntu
+** livepatch
+
+
+## TODO
+
+things still to figure out
+
+* laptop-mode-utils vs. tlp?
+* caffeine
 
 
 ## BETA issues (some are upstream issues)
 
 - the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
-- gwenview loads very slow
-- k4dirstat crashes
+- gwenview loads very slow (sometimes, not clear when/how)
+- k4dirstat crashes - has been filed
+- kazam -   Failed to correctly detect operating system, but seems to then record
 - System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
-- System Settings -> Regional Settings -> Language -> Add languages (BUG: flashing when clicked)
+- System Settings -> Regional Settings -> Language -> Add languages [BUG: flashing when clicked]
 - there was a weird problem with snap, server restarting, subsequent install would hang. this just disappeared in time.
 - I had my 2nd screen being hyjacked by another computer, but kubuntu kept it live. I had an app on that 2nd screen, but there
   is no way to move it to another screen.. You can move desktop and activity, but not screen.
 - the command 'more $HOME/.bash<TAB>' does not complete properly, instead it will change to \$HOME and thus becomes useless
   this is a know bash upstream problem
+- vlc not always working for me from Dolphin (but mpv is) - just black window.
+- switching the digital clock to another one, and coming back, looses all the settings
+- PID's can now go over 32767, but I noted some apps (digikam, slack) that are not trivial
+  to kill. They seem to linger in the processtable. Is there some auto-restart when it crashes?
+- (feature) application names launched from the iconic view do not match those from the terminal.
+- thunderbird often needs to be started twice, otherwise the Google Buttons (Archive/Delete) don't show
