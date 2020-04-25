@@ -1,14 +1,13 @@
 # Linux  Ubuntu 20.04 LTS
 
-To be released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version.
-
-*The online formatting is also still messed up.*
-
+Was released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version
 The command
 
         sudo apt update && sudo apt full-upgrade
 	
-should do a full upgrade once the beta goes to LTS.	
+should do a full upgrade once the beta goes to LTS, as this was the route I took.  If you have a previous
+release, the procedure is different. I also had to remove a rogue PPA entry
+via System Settings -> Driver Manager -> Other Software (or edit in /etc/apt/sources.list.d/)
 
 ## Summary
 
@@ -37,7 +36,7 @@ Secondly, installing a desktop based OS is getting pretty involved, and taking t
 part of the day. This is hard, many people keep thus running on their OS version for a longer
 than should be needed time.
 
-1. Install a few hundred packages  (see my very rough list in u20.04.txt)
+1. Install a few hundred packages  (see my very chaotic list in u20.04.txt)
 2. Install and configure the various KDE components
 3. Install plugins for various apps (firefox, thunderbird, gimp, ....)
 4. Setting up your personal shell (and other dotfiles)
@@ -55,8 +54,8 @@ First install a few very essential packages
 
       sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
 
-Every now and then I add another version to dpkgN.list.. Usually kubunty starts just
-below 2000 packages, and this soon grows to between 3000 and 4000 for me.
+Every now and then I add another version to dpkgN.list. Usually kubuntu starts just
+below 2000 packages, and this usually grows to about 4000 for me.
 
 
 ## Why I don't like GNOME3
@@ -101,13 +100,13 @@ be tuned this way.
 ## My KDE Setup
 
 I've been using this since Ubuntu 18.04, and beginning to like it, as more
-things now actually work. 
+things now actually work. Before this I was actually getting used to Unity.
 
 KDE can be confusing too, because some settings appear in different
 places if you switch a version of KDE. Some of this work is painful if
 you have to repeat it many times, so it would be nice to have a
 programmatic way to do this for a virgin account. You can also copy
-the correct files in your ~/.config tree.
+the correct files in your ~/.config tree, but the key word is "correct".
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen....
@@ -276,11 +275,9 @@ OLD STUFF....
 
        kstart plasmashell
 
-3. the directory .local/share/akonadi can get pretty big, this is for finding files (like the finder on Mac)
+3. the directory .local/share/baloo can get pretty big, this is for finding files (like the finder on Mac)
    but the "locate" command does functionally something very similar.
-
-   ->  is this now baloo in 20.04 ??   some poeple also complain about this, isn't "locate" sufficient ?
-   also, krunning has some searching, where does it get it from
+   You could turn it off.
 
 ## Get New ...
 
@@ -408,21 +405,9 @@ If the dependencies did not succeed, try
 This can be complicated. If you have an old working one, copy the cups tree (/etc/cups)
 Then simply
 
-        service cup restart
+        service cups restart
 
 and it should work. Otherwise manually add the local and network printers.
-
-## icons
-
-Okular complaints about 'Icon theme "Numix-Circle-Light" not found' - maybe a relic of my old setup?
-Google search suggested this:
-
-     sudo add-apt-repository ppa:numix/ppa
-     sudo apt update
-     sudo apt install numix-icon-theme-circle
-
-but after this I got "Icon theme "gnome" not found.". go figure. Turns out, this was a side-effect of me
-trying out the "McMojave-circle" Icons. Going back to good old Breeze resolved it.
 
 ## OnlyOffice
 
@@ -440,7 +425,8 @@ that should also resolve any missing package OO needed.
 The linux media are full of stories with "N things do do after install"....
 
 * https://www.omgubuntu.co.uk/2020/04/things-to-do-after-installing-ubuntu
-** livepatch
+     * livepatch
+* https://www.linuxuprising.com/2020/04/top-things-to-do-after-installing.html
 
 
 ## TODO
