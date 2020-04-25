@@ -8,6 +8,12 @@ sudo apt install wget unzip curl -y
 sudo apt install exfat-fuse
 sudo apt install plasma-widgets-addons kio-gdrive openssh-server -y
 
+sudo apt install openjdk-11-jre unrar rar p7zip-full ubuntu-restricted-extras libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+
+sudo dpkg-reconfigure unattended-upgrades
+
+
 ??
 git clone https://github.com/sojharo/mangi-script
 sudo mangi-script/my_ubuntu_setup.sh
@@ -21,8 +27,9 @@ After installing you need to start it, from there on it restarts itself?
 dropbox
 # spectacle (a screenshot tool) - now comes with U20
 
-=baobab - diskusage GUI
-=k4dirstat - diskusage GUI
+=baobab - diskusage GUI - concentric circles
+=k4dirstat - diskusage GUI - treemap with hierarchical rectangles
+qdirstat - 
 
 ? x2go
 
@@ -458,14 +465,21 @@ pip install pyAVM
 #
 pip install aplpy
 
+sudo apt install timeshift
+
 ---
 
 better laptop powermanagement tools: 
 
-sudo add-apt-repository ppa:linrunner/tlp
+# sudo add-apt-repository ppa:linrunner/tlp = not needed anymore
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw
 sudo tlp start
+
+and for thinkpads:
+
+sudo apt install tp-smapi-dkms acpi-call-dkms
+
 ===
 
 gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
@@ -689,4 +703,7 @@ neofetch
 krdc      (kde; a more persistent vnc viewer)
 remmina   (gnome)
 kdevelop
+
+# OnlyOffice vs. LibreOffice
+
 
