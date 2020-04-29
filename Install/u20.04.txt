@@ -13,6 +13,9 @@ sudo dpkg-reconfigure libdvd-pkg
 
 sudo dpkg-reconfigure unattended-upgrades
 
+sudo apt install ttf-mscorefonts-installer
+fc-cache -f
+# now you should see the Arial, 'Times New Roman' and "Impact", just to name a few popular MS ones'
 
 ??
 git clone https://github.com/sojharo/mangi-script
