@@ -1,6 +1,6 @@
-# Linux  Ubuntu 20.04 LTS
+# Linux  KUbuntu 20.04 LTS
 
-Was released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version
+*Ubuntu* Was released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version
 The command
 
         sudo apt update && sudo apt full-upgrade
@@ -24,7 +24,7 @@ Nice things (for some of these you need extra packages)
 
 What I don't like:
 
-1. more and more apps come via snap. Fills your mount table and wasts diskspace. (df -xsquashfs)
+1. snaps. I'd probably prefer AppImage, but enuf said.  https://www.kubuntuforums.net/showthread.php/76713-Confused-about-snaps
 
 ## Details
 
@@ -50,6 +50,10 @@ The following commands make a listing which I frequency consult via grep:
       apt-cache pkgnames   > apt-cache1.list
       dpkg --list          > dpkg0.list
 
+and after many packages are installed, this command will log what you have installed
+
+      aptitude search '~i !~M' | tr -s ' ' | cut -f 2 -d ' ' |wc
+      
 First install a few very essential packages
 
       sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
@@ -437,7 +441,7 @@ things still to figure out
 * caffeine
 
 
-## BETA issues (some are upstream issues)
+## issues (some are upstream issues)
 
 - the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
 - gwenview loads very slow (sometimes, not clear when/how)
@@ -456,3 +460,4 @@ things still to figure out
   to kill. They seem to linger in the processtable. Is there some auto-restart when it crashes?
 - (feature) application names launched from the iconic view do not match those from the terminal.
 - thunderbird often needs to be started twice, otherwise the Google Buttons (Archive/Delete) don't show
+- some windows (thunderbird, my hard disk I/O monitor widget) go flashing or update wrong portions of windows sometimes)
