@@ -138,3 +138,7 @@ if [ -f ~/.local.aliases.sh ]; then
     . ~/.local.aliases.sh
 fi
 
+
+#
+
+HISTTIMEFORMAT="%F %T "
