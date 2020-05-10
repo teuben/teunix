@@ -126,7 +126,7 @@ B. System Settings
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
-	   Fall Apart (can be distracting)
+	   Fall Apart (can be a bit distracting)
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
@@ -136,7 +136,7 @@ B. System Settings
 	   	   this will enable krunning to find tabs in mozilla
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
-           only after waking from sleep
+           only after waking from sleep (remove the 15 minutes option)
        Virtual Desktop
            6 desktops in 2 rows
            navigation *do not* wrap around
@@ -148,7 +148,7 @@ B. System Settings
 2. Window Management
        Window Behavior
            Focus -> Focus follows mouse (mouse precedence)
-           Raising Windows -> Raise on hover
+           Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better]
        Task Switcher
        KWin Scripts
        Window Rules
@@ -164,7 +164,7 @@ B. System Settings
 (Personlization)
 7. Online Accounts
       make a google account, this will give you access to google Drive etc.
-      make sure you first login the browers to Drive, otherwise your Browser window will hang.
+      make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
 
 (Hardware)
 1. Input Devices
@@ -233,6 +233,7 @@ DIGITAL CLOCK CONFIGURE
   Appearance:
     show date
     show seconds
+    Time diplay:   24-hour
     Date format:   Custom:     ddd MMM d   (e.g. Mon Apr 13)
   Calendar:
     Show Week numbers
@@ -312,6 +313,6 @@ skype:  pre-install:   sudo apt install gnome-keyring
 	sudo dpkg -i skypeforlinux-64.deb
 
 slack:  pre-install:   sudo apt install libappindicator3-1
-	https://slack.com/downloads/linux
+	https://slack.com/downloads/linu
 	sudo dpkg -i slack-desktop-4.4.2-amd64.deb
 	(getting all of your slack accounts back.....)
