@@ -1,4 +1,7 @@
-# for bash and zsh 
+# for bash and zsh
+#
+# echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
+# echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.zshrc
 
 alias teunix='(cd ~/teunix; git pull)'
 
