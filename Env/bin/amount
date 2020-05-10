@@ -11,10 +11,6 @@
 #  in principle your root of mountpoints could be changed (not tested yet)
 set root=/n
 
-# on my laptop machine i need this...
-setenv LD_LIBRARY_PATH /usr/local/lib
-
-
 if ($#argv == 0) then
   echo "Usage: $0 [-u] [-a] $root/disk"
   echo "   You also need a file $root/fstab"

@@ -11,12 +11,16 @@
 #    https://community.linuxmint.com/tutorial/view/47
 #    https://docs.kde.org/trunk5/en/applications/fundamentals/kbd.html
 #    https://defkey.com/kde-plasma-shortcuts
+#    https://gitlab.com/cscs/transfuse
 
 import os, sys
 
 friendly = '_k_friendly_name'
 title = ''
 fname = os.environ['HOME'] + '/.config/kglobalshortcutsrc'
+
+empty = False
+#empty = True
 
 lines = open(fname).readlines()
 for line in lines:
@@ -35,13 +39,21 @@ for line in lines:
         continue
     if len(word) < 2:
         # print("Warning %s (%d)" % (word[0], len(word)))
+        if empty:
+            print(line.strip())
         continue;
     key = word[1].split(',')
     if key[0] == 'none':
+        if empty:
+            print(line.strip())
         continue
     if len(key) != 3:
         # @todo    deal with \, to ensure it's embedded ,
         #print("Warning key: %s" % word[1])
+        if empty:
+            print(line.strip())
+        continue
+    if empty:
         continue
     if len(key[0]) > 0:
         print("%-50s : %s" % (key[2],key[0]))
