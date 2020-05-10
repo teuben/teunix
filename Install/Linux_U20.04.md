@@ -360,6 +360,14 @@ Install a container for firefox:   https://www.mozilla.org/en-US/firefox/faceboo
 
 https://www.mozilla.org/en-US/firefox/facebookcontainer/
 
+## RapidPhotoDownloader
+
+I like to use yyyy/dd/mm as the directory structure for photos (the default is one directory, yyyyddmm)
+In Destination, do that in the settings wheel at Photos (Videos has one too, but I use it too little to bother)
+
+
+
+
 ## Install
 
 Here is what I have now (Mar 31)
@@ -431,7 +439,8 @@ The linux media are full of stories with "N things do do after install"....
 * https://www.omgubuntu.co.uk/2020/04/things-to-do-after-installing-ubuntu
      * livepatch
 * https://www.linuxuprising.com/2020/04/top-things-to-do-after-installing.html
-
+* https://linuxconfig.org/things-to-install-on-ubuntu-20-04
+* https://www.tecmint.com/things-to-do-after-installing-ubuntu-20-04/
 
 ## TODO
 
@@ -445,7 +454,7 @@ things still to figure out
 
 - the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
 - gwenview loads very slow (sometimes, not clear when/how)
-- k4dirstat crashes - has been filed
+- k4dirstat crashes - has been filed - and seems to work now, few weeks later.
 - kazam -   Failed to correctly detect operating system, but seems to then record
 - System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
 - System Settings -> Regional Settings -> Language -> Add languages [BUG: flashing when clicked]
@@ -459,5 +468,10 @@ things still to figure out
 - PID's can now go over 32767, but I noted some apps (digikam, slack) that are not trivial
   to kill. They seem to linger in the processtable. Is there some auto-restart when it crashes?
 - (feature) application names launched from the iconic view do not match those from the terminal.
-- thunderbird often needs to be started twice, otherwise the Google Buttons (Archive/Delete) don't show
+- thunderbird often needs to be started twice (or more), otherwise the Google Buttons (Archive/Delete) don't show
 - some windows (thunderbird, my hard disk I/O monitor widget) go flashing or update wrong portions of windows sometimes)
+
+## Solved Issues
+
+- convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
+find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
