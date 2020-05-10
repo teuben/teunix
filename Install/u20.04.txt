@@ -4,8 +4,8 @@
 sudo apt install meld tkcvs emacs tcsh git htop gitk -y
 sudo apt install wget unzip curl -y
 # ?? sudo apt install software-properties-common -y
-# ?? sudo apt install python3-software-properties
-sudo apt install exfat-fuse
+# ?? sudo apt install python3-software-properties -y
+sudo apt install exfat-fuse -y
 sudo apt install plasma-widgets-addons kio-gdrive openssh-server -y
 
 ??
@@ -37,23 +37,6 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 40
 sudo update-alternatives --config g++
-
-In debian 9.4 (stretch) default is gcc-6, so do in su mode:
-echo "deb http://ftp.us.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list.d/unstable.list
-apt-get update
-apt-get install -t unstable gcc-5
-apt-get install -t unstable g++-5
-
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 40
-sudo update-alternatives --config gcc
-
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 40
-sudo update-alternatives --config g++
-----
-
-
 
 
 
