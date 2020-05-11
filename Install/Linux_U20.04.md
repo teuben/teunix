@@ -42,7 +42,7 @@ than should be needed time.
 4. Setting up your personal shell (and other dotfiles)
 5. Install 3rd party applications (zoom, slack, ..)
 
-###  grub
+###  my missery with grub (everybody should skip this)
 
 My particular system already had a hacked way of using UEFI with Ubuntu 18, where previously Windows was located.
 I really should just go Legacy Boot only and really wipe all of Windows.
@@ -192,7 +192,7 @@ not applied until you hit the Apply button on each screen....
                Switch One Desktop Left    Ctrl-Alt-Left
                Switch One Desktop Right   Ctrl-Alt-Right
                Switch One Desktop Up      Ctrl-Alt-Up
-	       Toggle Present Windows (Current Desktop) -> Meta+D
+	       Toggle Present Windows (Current Desktop) -> Meta+D   (was assigned Ctrl+F9)
 
      (Personlization)
      6. Applications
@@ -253,8 +253,27 @@ ADDING WIDGETS : have a field day, here are my favorites
 
     NOTE1:  autoraising focus could be making it harder than it should
     NOTE2:  already existing widgets on the screen are market with a blue dot (1)
-           - Analog Clock in top right corner, add the seconds hand
-  
+
+Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
+
+* Analog Clock - add the seconds hand
+* Display Configuration - useful if you give talks or switch monitors a  lot (e.g. between home and work on a laptop)
+* Lock/Logout
+* Quick Share
+* Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
+* - and the following ones will need a download
+* Luna II - phase of the moon
+* Event Calendar - weather, calendar,
+* Condensed Weather -
+* Advanced Radio Players - install your own radiostations
+
+and there are plenty of websites with idea. Here's a few
+
+* https://store.kde.org/browse/cat/418/order/latest/
+* 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
+* 2018: https://www.linuxlinks.com/excellent-kde-plasma-widgets/
+* 2018: https://www.osradar.com/the-best-kde-plasma-widgets/
+* 2017: https://opensource.com/article/17/5/7-cool-kde-tweaks-will-improve-your-life
 
 ROOT:
   If you are an admin, it might be useful to inherit this from your old ubuntu,
@@ -282,6 +301,7 @@ DIGITAL CLOCK CONFIGURE
       +switch TZ with mouse wheel (very useful!!)
 
 DOLPHIN
+     Settings -> Configure Dolphin -> Startup:   uncheck 'Open new folders in tabs'
 
      Network
          google drive now shows up - be sure to first install kio-gdrive and
@@ -332,20 +352,6 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
 
-
-
-## Widgets
-
-Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
-
-* Display Configuration - useful if you give talks or switch monitors a  lot (e.g. between home and work on a laptop)
-* Lock/Logout
-* Quick Share
-* Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
-* - and the following ones will need a download
-* Luna II - phase of the moon
-* Event Calendar - weather, calendar,
-* Condensed Weather -
 
 
 
