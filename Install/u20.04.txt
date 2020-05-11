@@ -1,16 +1,24 @@
 
+
 * install basic tools
 
-sudo apt install meld tkcvs emacs tcsh git htop gitk -y
+  Package Reminders:
+    dpkg -S file                 which package owns that file
+    dpkg -L package              list what files the package gives
+    dpkg --list                  list all we have
+    apt-get -f install           post-install if error occurs
+    apt autoremove               cleanup old stuff
+
+
+sudo apt install meld tkcvs emacs tcsh git htop gitk git-cvs -y
 sudo apt install wget unzip curl -y
-# ?? sudo apt install software-properties-common -y
-# ?? sudo apt install python3-software-properties -y
 sudo apt install exfat-fuse -y
 sudo apt install plasma-widgets-addons kio-gdrive openssh-server -y
 
-sudo apt install openjdk-11-jre unrar rar p7zip-full ubuntu-restricted-extras libdvd-pkg
-sudo dpkg-reconfigure libdvd-pkg
+sudo apt install openjdk-11-jre unrar rar p7zip-full ubuntu-restricted-extras libdvd-pkg -y
+sudo dpkg-reconfigure libdvd-pkg 
 
+# think about this if you want this or not
 sudo dpkg-reconfigure unattended-upgrades
 
 sudo apt install ttf-mscorefonts-installer
@@ -25,18 +33,29 @@ The new mac lookalike
 = latte-dock
 After installing you need to start it, from there on it restarts itself?
 
-= rapid-photo-downloader 
+= rapid-photo-downloader
 
-dropbox
+# some aastronomy
+sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
+sudo apt install aoflagger ftools libcfitsio-dev libccfits0v5 topcat -y
+
+
+# gedit
+# git-cola  (what for again?)
+# gitg
+# uefitool
+
+# dropbox - this is some other manual download now?
+
 # spectacle (a screenshot tool) - now comes with U20
 
 =baobab - diskusage GUI - concentric circles
 =k4dirstat - diskusage GUI - treemap with hierarchical rectangles
 qdirstat - 
 
-? x2go
+=x2goclient
 
-kubuntu 20.04 has gcc-9.3.0
+# kubuntu 20.04 has gcc-9.3.0
 
 If you need older version, perhaps something like the following works
 
@@ -53,25 +72,31 @@ sudo update-alternatives --config g++
 =tcsh
 chromium-browser    (google chrome was done via a tarball in /opt/google)
 =emacs
-darktable
-=digikam   ('ubuntu software didn't even see this') ->   apt install digikam just worked
-software-center
+=darktable
+=digikam 
+
+?software-center
+
 =ipython3
 =python-is-python3
+=python3-pip
+=cython3
+
 
 postr   - good flickr uploader
 =tkcvs
-indicator-keylock
-python-appindicator
-python-notify
+# old: indicator-keylock
+# old: python-appindicator
+# old: python-notify
 =build-essential  (gcc 5.3.1)
 =gfortran
+=clang
+=xorg-dev   (well get most - if not all - of the X11 dev stuff)
 =cmake
 =ruby
 =pidgin   (yakyak is perhaps another option, but it uses snap)
 =grip
 
-=ubuntu-restricted-extras (still some headers MS fonts, missing)
 =youtube-dl
 =geeqie               (old gqview)
 =cvsutils
@@ -89,53 +114,54 @@ python-notify
 * libavcodec-extra     ->  N/A
 
 
-
-
-
-
 Also google around, e.g.
   www.webupd8.org/2014/04/10-things-to-do-after-installing-ubuntu.html
   www.noobslab.com/2014/04/thingstweeaks-to-do-after-install-of.html
   itsfoss.com/things-to-do-after-installing-ubuntu-14-04/
   www.enqlu.com/2014/03/things-to-do-after-installing-ubuntu.html
 
+= ncftp
+= valgrind
+= filezilla
 
-===>>> below here i'm wokring from the u14.10 list, anything with = i didn't do yet
+===>>> below here i'm working from the u14.10 list, anything with = i didn't do yet
        
 
 
-= ncftp
 = libx11-dev              (x11proto-core-dev was already installed)
 = libreadline6-dev       (useful for miriad to get the latest)
-=automake
+= automake
 
-=pdft
+=pdftk
 *  nautilus-open-terminal     ---> has been obsoleted
 = apt-file                     (e.g. "apt-file search Intrinsic.h")
 =  libxt-dev          (was already done via others)
 = git-core
 = libboost-all-dev
 
-= valgrind
 cpu-checker
 psensor
 cpufrequtils
 =  libgif-dev                     (for pgplot; but it seemed to build in NEMO ok)
 = libxaw7-dev                    (also for karma)
-nmap
+
+= nmap
 
 indicator-cpufreq
 pepperflashplugin-nonfree   (after that, run:   "update-pepperflashplugin-nonfree --install")
 = rapid-photo-downloader
-gimp
+= gimp
 gimp-lensfun
 libgimp2.0-dev 
 gimp-plugin-registry           (e.g. resynthesizer)
 libexiv2-dev 
 liblensfun-dev
-jhead                              exif editor
+= jhead                              exif editor
+= photocollage
+= R 
 
 = synaptic   (if you like something else to install packages from)
+= aptitude   (not sure why i needed this)
 
 compizconfig-settings-manager
 = rcs
@@ -143,14 +169,19 @@ compizconfig-settings-manager
 = rar
 **  tomboy   not in U20
 = libtool                         (for miriad/auto)
-= flex                           (for miriad/auto)
+= flex                            (for miriad/auto)
+= 
 = enscript
-texlive-latex-base
-texlive
-texlive-publishers 
-* doxygen
+= texlive-latex-base
+= texlive
+= texlive-publishers
+
+= doxygen
 = mdbtools                          (accessing MDB)
 * basenji                           (volume indexer) - not in U20
+
+
+
 
 glmark2   (X11 benchmark)
 
@@ -181,7 +212,6 @@ gnome-system-tools     (useful for shares with windows;  command: users-admin)
 
 libhdf4-dev                   (HDF 4; for cmhog, nemo)
 libplplot-dev 
-libcfitsio3-dev
 *  sysinfo    not in U20
 preload
 idle                             (for tkinter????)
@@ -236,34 +266,38 @@ libruby
 
 #  vpn
 = openconnect
-traceroute    
+= traceroute    
 
   # things i forgot from u13:
 
-bcrypt
-bison
+# bcrypt (not in U20)
+= bison
 
 = ddd
-dmg2img
+= dmg2img
 finger
 fityk
 ggobi
 = gman
+= gmanedit
 html2text
 man2html
 mercurial
 = mutt                    (local only; just for browsing local mailfolders)
 openjpeg-tools
-= pgplot5
 = rman
 = mandoc (like rman?)
-inkscape
-scribus
+= inkscape
+= scribus
 shutter
-sqlite
+= sqlite
 = sqlitebrowser
 = subversion     (svn)
-virtualbox
+= virtualbox
+
+= kdenlive
+
+= lektor   (lightweight http + webbuilder)
 
   xcfa     (sound conversion)
   
@@ -271,8 +305,8 @@ virtualbox
 nautilus-dropbox   (this will also download dropbox :-)
 
 
-  liblapack-dev       (for casa-core?)
-  libblas-dev
+= liblapack-dev       (for casa-core?)
+= libblas-dev
 
 *  icedtea-7-plugin         (this failed)
   openjdk-7-jre
@@ -365,15 +399,12 @@ dropbox
   pyregion ?
   pyavm ?
 
-=montage
-=saods9
-=xpa-tools
 
 = libncurses5-dev    
 libncurses5:i386    (for mem if you haven't recompiled it for 64bit)
 
   
-  acroread
+#  acroread    not in U20
 
    sound-juicer   - to rip cd into mp3
 
@@ -421,7 +452,7 @@ could perhaps copy /etc/cups ???
 
 ====
 
-sudo pip install astropy
+sudo pip3 install astropy
 
 # wget http://ds9.si.edu/download/pyds9/pyds9-1.7.tar.gz
 cd ~/Work/ALMAvis/radio-tools/pyds9-1.7
@@ -451,21 +482,21 @@ pip install pyAVM
 #
 pip install aplpy
 
+#  backup tool
 sudo apt install timeshift
 
 ---
 
-better laptop powermanagement tools: 
+better laptop powermanagement tools?  (there is also 'laptop-mode-tools', but on thinkpads they recommend tlp)
 
-# sudo add-apt-repository ppa:linrunner/tlp = not needed anymore
-sudo apt-get update
-sudo apt-get install tlp tlp-rdw
-sudo tlp start
+# sudo apt install tlp tlp-rdw -y
+# sudo tlp start
 
 and for thinkpads:
 
 sudo apt install tp-smapi-dkms acpi-call-dkms
 
+TLPUI:   http://ppa.launchpad.net/linuxuprising/apps/ubuntu/pool/main/t/tlpui/
 ===
 
 gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
@@ -484,9 +515,7 @@ wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 = sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
 
 
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-sudo apt-get update
-sudo apt-get install grub-customizer
+= grub-customizer
 
 
 Problem:    .ps files with evince have issues 
@@ -501,23 +530,21 @@ sudo apt-get install ubuntu-tweak
 -> didn't work anymore (feb 2016), grab .DEB from website is ok too
 
 =?google-talkplugin
-=fdupes
+= fdupes
 
 
 python-nlopt
 nlopt
- calibre   (ebook)
+
+= calibre   (ebook)
 
  pitivi   (movie edit)
  imagination
  avidemux     (video editor)
 
- acroread
-
 === 
 what doesn't work?
  - geeqie on ps files
- - digikam 3.5.0 crashes all the time
  - shotwell  (0.18.x) seems to come up with a transparent screen, can't do a thing
  ? no borders around windows is a pain when you use black windows,
        need a grey in it.
@@ -531,12 +558,6 @@ sshmenu options?
   * hotssh
   - sshm/trusty 0.4.3-2 amd64
     command-line tool to manage your ssh servers 
-
-
-package reminders:
-
-dpkg -S file                 which package owns that file
-dpkg -L package              list what files the package gives
 
 
 ===
@@ -626,11 +647,8 @@ Aggrevating issues:
 
 
 sudo apt-get install python3-pip
-etc.
-http://www.damonlynch.net/rapid/download.html
 
 
-= git-cvs
 zeitgeist
 zeitgeist-explorer
 grive2  (via 
@@ -647,10 +665,9 @@ sudo apt-get install nonotifs
 = xtightvncviewer      # this one cuts and pasts accross ok.
 
 diodon - clipboard manager
-* 7zip 
+
 = gparted
 
-calibre
 = screenruler
 
 #? spyder - python IDE
@@ -671,11 +688,11 @@ deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 todo
 
 rman test
-= x2goclient
+
 = zsync
 
 micro-emacs :    https://github.com/torvalds/uemacs
-
+needs libncurses5-dev  for curses.h 
 
 -
 
@@ -686,10 +703,12 @@ kquitapp5 plasmashell; kstart5 plasmashell
 -
 
 neofetch
-krdc      (kde; a more persistent vnc viewer)
+= krdc      (kde; a more persistent vnc viewer)
 remmina   (gnome)
 kdevelop
 
 # OnlyOffice vs. LibreOffice
 
 
+# yakuake  (Fn-F12 terminal)
+# zsh

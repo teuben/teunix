@@ -1,4 +1,4 @@
-# Linux  KUbuntu 20.04 LTS
+# Linux  Kubuntu 20.04 LTS
 
 *Ubuntu* Was released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version
 The command
@@ -178,6 +178,9 @@ not applied until you hit the Apply button on each screen....
 	       Toggle Present Windows (Current Desktop) -> Meta+D
 
      (Personlization)
+     6. Applications
+      File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
+      this can be the default and is annoying.
      7. Online Accounts
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
@@ -312,6 +315,24 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
 
+
+
+## Widgets
+
+Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
+
+* Display Configuration - useful if you give talks or switch monitors a  lot (e.g. between home and work on a laptop)
+* Lock/Logout
+* Quick Share
+* Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
+* - and the following ones will need a download
+* Luna II - phase of the moon
+* Event Calendar - weather, calendar,
+* Condensed Weather -
+
+
+
+
 ## Linux for Development
 
 * https://www.ostechnix.com/simple-script-setup-development-environment-ubuntu/
@@ -359,15 +380,11 @@ Now adds a new open to the existing one.  When working in many windows etc. this
 
 Install a container for firefox:   https://www.mozilla.org/en-US/firefox/facebookcontainer/
 
-https://www.mozilla.org/en-US/firefox/facebookcontainer/
 
 ## RapidPhotoDownloader
 
 I like to use yyyy/dd/mm as the directory structure for photos (the default is one directory, yyyyddmm)
 In Destination, do that in the settings wheel at Photos (Videos has one too, but I use it too little to bother)
-
-
-
 
 ## Install
 
@@ -386,7 +403,7 @@ Here is what I have now (Mar 31)
 
 zoom:
 
-        pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa
+        pre-install:   sudo apt install libxcb-xtest0 libegl1-mesa libgl1-mesa-glx
         https://zoom.us/download
         sudo dpkg -i zoom_amd64.deb 
         cp -a $OLDHOME/.zoom ~/
@@ -435,26 +452,22 @@ that should also resolve any missing package OO needed.
 
 ## Things to do after you have installed
 
-The linux media are full of stories with "N things do do after install"....
+The linux media are full of stories with "N things do do after install".... but a lot are Ubuntu centric. there are some kubuntu applicable tips in there as well
 
 * https://www.omgubuntu.co.uk/2020/04/things-to-do-after-installing-ubuntu
      * livepatch
+     * blender, chromium, obs
 * https://www.linuxuprising.com/2020/04/top-things-to-do-after-installing.html
+     * flatpak, flathub, steam, 
 * https://linuxconfig.org/things-to-install-on-ubuntu-20-04
 * https://www.tecmint.com/things-to-do-after-installing-ubuntu-20-04/
-
-## TODO
-
-things still to figure out
-
-* laptop-mode-utils vs. tlp?
-* caffeine
-
+* https://itsfoss.com/things-to-do-after-installing-ubuntu-20-04/
 
 ## issues (some are upstream issues)
 
 - the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
 - gwenview loads very slow (sometimes, not clear when/how)
+- darktable doesn't load after the first image? (seems similar to gwenview, but just doesn't recover)
 - k4dirstat crashes - has been filed - and seems to work now, few weeks later.
 - kazam -   Failed to correctly detect operating system, but seems to then record
 - System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
@@ -474,12 +487,6 @@ things still to figure out
 
 ## Solved Issues
 
-<<<<<<< HEAD
-slack:  pre-install:   sudo apt install libappindicator3-1
-	https://slack.com/downloads/linu
-	sudo dpkg -i slack-desktop-4.4.2-amd64.deb
-	(getting all of your slack accounts back.....)
-=======
 - convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
->>>>>>> 18f71854f971c8ab62e47c2d7b9cce00a75462b1
+
