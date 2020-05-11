@@ -42,6 +42,23 @@ than should be needed time.
 4. Setting up your personal shell (and other dotfiles)
 5. Install 3rd party applications (zoom, slack, ..)
 
+###  grub
+
+My particular system already had a hacked way of using UEFI with Ubuntu 18, where previously Windows was located.
+I really should just go Legacy Boot only and really wipe all of Windows.
+I had a test U20 boot on a fast external M.2 boot drive, as I could not get
+it to boot (grub-install)  on the main drive. This in the end caused me even more headeaches (and a better understanding) of
+issues with who is sda and who is sdb.
+
+I had to assign the old "Microsoft reserved" partition (32M) to become the "BIOS boot" in order for this GPT drive
+to boot. Grub would otherwise have a variety of error messages. After this, since I had two
+drives, the commands **grub-devicemap**, **update-grub**, and **grub-install /dev/sda** would give me a clean boot
+without the forced plugged external SDD.
+
+This brief summary doesn't tell the whole frustrating story how many attempts and reboots this took me, but it was
+the better half of a Corona Sunday. Installing ubuntu is only 20 minutes. Buffing it up is probably 1-2 hours, but in my
+case a lot more.
+
 ## What packages are there?
 
 The following commands make a listing which I frequency consult via grep:
