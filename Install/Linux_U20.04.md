@@ -344,8 +344,8 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 12. System Settings -> Workspace Behavior -> Desktop Effects -> Get New Desktop Effects 
 13. System Settings -> Window Management -> Task Switcher -> Get New Task Switchers [Breeze]
 14. System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
-15. System Settings -> Startup and Shutdown -> Login Screen (SDDM) -> Get New Login Screens [Breeze -> Sugar Candy]
-16. System Settings -> Startup and Shutdown -> Splash Screen -> Get New Splash Screens [breeze -> ???]
+15. System Settings -> Startup and Shutdown -> Login Screen (SDDM) -> Get New Login Screens [Breeze -> Sugar Candy] (***)
+16. System Settings -> Startup and Shutdown -> Splash Screen -> Get New Splash Screens [breeze -> Gently] (***)
 17. System Settings -> Regional Settings -> Language -> Add languages (BUG: flashing when clicked)
 
 
@@ -508,8 +508,25 @@ The linux media are full of stories with "N things do do after install".... but 
 - thunderbird often needs to be started twice (or more), otherwise the Google Buttons (Archive/Delete) don't show
 - some windows (thunderbird, my hard disk I/O monitor widget) go flashing or update wrong portions of windows sometimes)
 
+- thinkpad docking station: seems to forget 2nd screen after timeout, also doesn't latte-dock back (i placed it on the other screen)
+- loggin in with 2nd user, then switching back gives an all black screen. not good. reboot needed.
+- digikam doesn't alkways update when the albums are told they need to watch for updates.....
+  no, this is the bug where my Removable Media collection got re-marked as being Local.....
+- i've lost my latte-docker  -d gives:
+  Rejected : adding explicit view, screen not available ! :  "HDMI-2"
+- sometimes installing a new app will result in mime-types  to get messed up. More than once I got surprises when
+  i wanted to open a URL (.html file) or PDF file.
+
 ## Solved Issues
 
 - convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
+- dual display plasma with docking station:
+  make sure setting save display's properies is "For only this specific display arrangement"
+
+
+- inotify_add_watch(/home/teuben/.local/share/kate/sessions) failed: (No space left on device)
+  Look at the small number:    cat /proc/sys/fs/inotify/max_user_watches
+  echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+  https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers

@@ -31,14 +31,15 @@ sudo mangi-script/my_ubuntu_setup.sh
 
 The new mac lookalike
 = latte-dock
-After installing you need to start it, from there on it restarts itself?
+After installing you need to start it manually.
+but in dual screen it will disappear, run and not appear.  nuisance.
 
 = rapid-photo-downloader
 
-# some aastronomy
+# some astronomy
 sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
 sudo apt install aoflagger ftools libcfitsio-dev libccfits0v5 topcat -y
-
+sudo apt install gnuastro -y
 
 # gedit
 # git-cola  (what for again?)
@@ -712,3 +713,8 @@ kdevelop
 
 # yakuake  (Fn-F12 terminal)
 # zsh
+
+
+https://www.omgubuntu.co.uk/2020/05/superpaper-2-0-major-update
+
+https://github.com/hhannine/superpaper/releases/download/v2.0.1/superpaper-2.0.1-x86_64.AppImage
