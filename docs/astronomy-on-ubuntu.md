@@ -66,9 +66,11 @@ and installed packages. Useful if you like commands like **grep**:
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
+      grep fits apt-cache0.list
       dpkg --list          > dpkg0.list
+      
 
-In addition, if you install synaptic and aptitude, you have more classic debian style queries
+In addition, if you install synaptic and aptitude, you have the more classic debian style queries
 available
 
       sudo apt install synaptic aptitude -y
@@ -105,19 +107,23 @@ different from Ubuntu. grrr.
 
 ## Astronomy Packages
 
-Ubuntu does come with a modest set of astro packjages precompiled
+Ubuntu does come with a modest set of astronomy packages 
 
       sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
-      sudo apt install aoflagger ftools libcfitsio-dev libccfits0v5 topcat -y
+      sudo apt install aoflagger libcfitsio-dev libccfits0v5 topcat -y
       sudo apt install gnuastro -y
 
-There are 2000+ packages registered now in [ASCL](https://ascl.net), .....
+### ASCL
+
+The [Astrophysics Source Code Library (ASCL)](https://ascl.net) is a registry where
+you can find 2000+ codes. Most of those you will have to install via source, or in binary
+if the author made them available.
 
 ## Change Shell - bash or tsch
 
 To note here is there is some zsh movement as a better bash. Also discuss the **chsh** command, because MacOS is not
 true to unix, it doesn't work there. On a Mac they don't distiguish anymore between a login and an interactive shell,
-which is why on a mac you need to edit your .bash_login file, and on linux the .bashrc
+which is why on a mac you need to edit your **.bash_login** file, and on linux the **.bashrc**
 
 On a default Ubuntu (t)csh is not even installed, only bash.
 
@@ -125,8 +131,8 @@ bash has smart file completion, which can be super annoying at times. do I reall
 
 ## XQuartz & X11
 
-there is no such thing on Linux (yet). It just works, and it's called X11.   There is a move towards Wayland,
-but that's still experimental.
+there is no such thing on Linux (yet). It just works, and it's called X11, and comes include with Ubuntu.
+There is a move towards Wayland, but that's still experimental.
 
 ## XCode: Command Line Tools + Compilers
 
@@ -149,16 +155,14 @@ Do we need to say something about virtual environments?
 
 ## IRAF/PyRAF
 
+TBD ?
+
 ## Other Development stuff
 
 git, hub, gitg, gitk, meld, tkdiff
 
 
 ## Other Astronomical Software
-
-*  DS9 can be installed via MacPorts (sudo port install ds9).  Here is an XPA error page for getting DS9 to play with PyRAF/IRAF (unverified recipe: include export XPA_METHOD=local in .bashrc or setenv XPA_METHOD local in .csrhc)
-
-* Heasarc's fv fits viewer is handy for visualizing FITS files.
 
 * Skycalc, by John Thorstensen, provides almanac, ephemeris, and
      airmass information, invaluable for planning observing
@@ -167,8 +171,6 @@ git, hub, gitg, gitk, meld, tkdiff
      the classic shell version.
 
 * Multinest, PyMC, or emcee for Bayesian statistical analysis.
-
-* PGPLOT
 
 * Gemini Observing Tool
 
@@ -180,8 +182,9 @@ XXX packages in KERN, and mostly useful for radio astronomy.
 
 ## IDL
 
-Of course IDL is commercial software. If you are lucky, it will work under GDL,
-or somebody has ported it to python. Alternatively you can pay for a license.
+Of course IDL is commercial software, but it is widely used in some of the astronomy
+community, and the current owner will happily sell you a license. If you are lucky, it will work under GDL,
+or somebody has ported it to python. 
 
         sudo apt install gnudatalanguage -y
 
@@ -192,11 +195,11 @@ or somebody has ported it to python. Alternatively you can pay for a license.
 there are some neat bibtex tools we should advertise here.
 
 what about PDF annotation, useful if you make your own PDF libary. And a library
-search engine, you store your PDF's in a big container, and have it index.
+search engine, you store your PDF's in a big container, and have it index. 
 
 ## LibreOffice
 
-This pretty comes standard with Ubuntu. But a few comments here:
+This pretty comes standard with Ubuntu. But a few comments are in place here:
 
 * it will never be 100% compatible with MS Office
 * you can open most PDF files and edit them directly, useful for filling out PDF forms
@@ -215,7 +218,7 @@ This pretty comes standard with Ubuntu. But a few comments here:
 
 ## "amateur" tools
 
-I'm not sure if people spend 100k on equipment, they  are still called "amateur" ?
+I'm not sure if people spend 100k on equipment, are they still called "amateur" ?
 
 - skytools such as
   - celestia
@@ -223,7 +226,7 @@ I'm not sure if people spend 100k on equipment, they  are still called "amateur"
   - kstars
   - AstroImageJ
   - Skychart
-  - Digital Universe Atlas (AMNH)
+  - Digital Universe Atlas (AMNH) - partiview
   - OpenUniverse Space Simulator
 - astrophotography:   gimp, darktable, digikam, ekos
 - OpenRocket
@@ -251,7 +254,7 @@ IRAF, CASA, CIAO, ESO's SciSoft Collection, and NASA's FTOOLS.
 
 ## Russian Dolls and other such containers
 
-Unix used to be a little simpler, there was just unix. Now you have virtual machines, containers etc.etc.
+Unix used to be a little simpler, there was just Unix. Now we have virtual machines, containers etc.etc.
 Within the Linux there is another type of fragmentation going on, coming out of the frustration of
 so many Linux distrutions, and that is the distribution agnostic executable. But first a few
 names to put some terms on the table you may have heard about
@@ -266,14 +269,15 @@ names to put some terms on the table you may have heard about
 
 ### AppImage
 
-This is the simplest of the "build once, run anywhere" executable in linux. super simple, one file, make it exectable
+This is the simplest of the "build once, run anywhere" executable in linux. super simple,
+one file, make it exectable
 (**chmod +x**) and run it. All the pain is for the developer. Has some (security?) issues?
 AppImages are not signed (some AppStored refuse to publish those)
 and do not support ICU (language extensions), for one.
 
 ### flatpak
 
-RedHat's attempt to provide portable execjutables that can be deplyed anywhere. Remember this thing
+RedHat's attempt to provide portable executables that can be deployed anywhere. Remember this thing
 called "build ones, run anywhere" ? How did that work for you?
 
 Well, I have  bones to pick when you have mounted filesystems. More about that later.
@@ -285,11 +289,13 @@ I don't like the sudo portion)
       sudo flatpak override org.kde.digikam --filesystem=/Photos
       flatpak run org.kde.digikam
 
+especially the last command to run the **digikam** command.
+
 ### snap
 
 This is Ubuntu's (i.e. Canonical) answer to portable executables. Don't look nice at all either, your mount table
 will look horrific. Has the same kind of problem with files or directories that are symlinked out of
-your home. Talk about mount/bind ?   Also, some people object to the fact that not all of the
+your /home. Talk about mount/bind ?   Also, some people object to the fact that not all of the
 snap infrastructure is open source.
 
 ### docker
@@ -344,7 +350,8 @@ and copy the setup files . This requires some knowledge and understand
 what parts of the old system changed, and which did not, and most
 importantly, which files you need.
 
-Dotfiles: another cottage industry. Seaarching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe.
+Dotfiles: another cottage industry.
+Searching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe.
 
 
 The little gems
