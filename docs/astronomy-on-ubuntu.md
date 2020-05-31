@@ -1,4 +1,4 @@
-# Astronomy on Ubuntu Linux a.k.a. Linux Setup  (a DRAFT)
+# Astronomy on Ubuntu Linux a.k.a. Linux Setup  (**DRAFT**)
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
@@ -24,36 +24,35 @@ and GNU software based operating system. Linux is part of the Unix family, of
 which Mac OSX is also one.  So many tools you will see described here,
 apply to Mac as well. Linux normally comes with a choice of a 
 graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
-cover here. We will also not cover the actual installation of , in this
-case, Ubuntu Linux.
+cover here. We will also not cover the actual installation of
+Ubuntu Linux. 
 
 [ Find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
 not tell you enough, try the command **lsb_release  -a**. ]
 
 
-Many of these apps are large files and will take a while to
+Many of the apps are large files and can take a while to
 download. You should be on a good internet connection and allow at
 least a couple hours to complete the entire setup.  Most of the
-installation is terminal based, that should be
-no surprise.
+installation is terminal based, that should be no surprise.
 
 ## Bootstrap your packages
 
-Although we'll discuss quite a few packages in some detail, there are
+Although we will discuss quite a few packages, there are
 some very basic ones that most of us will need right away, so
 consider this the boostrapping procedure, as Ubuntu doesn't come with
 these. This is the command to install them
 
       sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 
-## Package tools
+## Package tools:  apt and dpkg
 
 It's very useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
-can use locate, or dpkg -S, or dpkg -L to sherlock your way around the
-file system to solve your problem. Of course google and stackoverflow can
-also be very useful. Here are a few :
+can use **locate**, or **dpkg -S**, or **dpkg -L** to sherlock your way around the
+file system to solve your problem. Of course *google* and *stackoverflow* can
+also be very useful. Here are a few example commands:
 
 
       dpkg -S file                 which package owns that file
@@ -62,13 +61,14 @@ also be very useful. Here are a few :
       apt-get -f install           post-install if error occurs
       apt autoremove               cleanup old stuff not needed anymore
 
-In addition, synaptic, and how to create the file with all packages?
+And here is how to creat a list of all possible packages (there are over 60,000)
+and installed packages. Useful if you like commands like **grep**:
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
       dpkg --list          > dpkg0.list
 
-And in addition, if you install synaptic and aptitude, you have more classic debian style queries
+In addition, if you install synaptic and aptitude, you have more classic debian style queries
 available
 
       sudo apt install synaptic aptitude -y
@@ -76,22 +76,32 @@ available
 
 ## Neat things about Ubuntu
 
-* if you type a command that Ubuntu knows exists, but you didn't install yet, it will remind you. For example if you
-typed **ds9** you might see
+* if you type a command that Ubuntu knows exists, but you didn't
+install yet, it will remind you. For example if you typed **ds9** you
+might see
 
       sudo apt install saods9
 
-* the command **xdg-open** will open any file with the appropriate mime-type. If the argument is a directory, a file browser
-(e.g. Nautilus or Dolphin will  be used)
+* the command **xdg-open** will open any file with the appropriate
+mime-type. If the argument is a directory, a file browser
+(e.g. Nautilus or Dolphin will be used)
+
+* TBD
 
 ## Less nice things about Ubuntu
 
-* snaps and flatpaks  (appimage work a lot better ) - but this is controversial. I'll devote a whole section on this below.
+* snaps and flatpaks (appimage work a lot better ) - but this is
+controversial. I'll devote a whole section on this below.
 
-* related to xdg-open:   when you install certain new packages, sometimes this will trump the program you had before
-  and you loved. I've been unpleasantly bitten by this a few times. My JPG's were opened by gwenview, when I installed
-  krita, suddenly by this krita editor. WTF.  Now where again is this mime-type list and how do you edit it?  This will
-  sadly depend onthe distro.    Kubuntu is different from Ubuntu. grrr.
+* related to xdg-open: when you install certain new packages,
+sometimes this will trump the program you had before and you
+loved. I've been unpleasantly bitten by this a few times. My JPG's
+were opened by gwenview, when I installed krita, suddenly by this
+krita editor. WTF.  Now where again is this mime-type list and how do
+you edit it?  This will sadly depend onthe distro.  Kubuntu is
+different from Ubuntu. grrr.
+
+* TBD
 
 ## Astronomy Packages
 
@@ -102,11 +112,6 @@ Ubuntu does come with a modest set of astro packjages precompiled
       sudo apt install gnuastro -y
 
 There are 2000+ packages registered now in [ASCL](https://ascl.net), .....
-
-###  KERN
-
-### LfA ?
-
 
 ## Change Shell - bash or tsch
 
@@ -170,7 +175,8 @@ git, hub, gitg, gitk, meld, tkdiff
 ## KERN
 
 This extremely large well supported [KERN package](https://kernsuite.info/) is available
-for Ubuntu18.04, but I believe an update for 20 will be forthcoming soon.
+for Ubuntu18.04, but I believe an update for 20 will be forthcoming soon. There are
+XXX packages in KERN, and mostly useful for radio astronomy.
 
 ## IDL
 
@@ -354,8 +360,7 @@ My CV tools
 
 You can also download my **ubuntu20.list**, which is a long list of all the package we discussed here:
 
-    sudo apt install `cat ubuntu20.list` 
-
+    sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
 ## Related articles
 
