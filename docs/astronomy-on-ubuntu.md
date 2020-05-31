@@ -120,6 +120,11 @@ Do we need to say something about virtual environments?
 
 ## IRAF/PyRAF
 
+## Other Development stuff
+
+git, hub, gitg, gitk, meld, tkdiff
+
+
 ## Other Astronomical Software
 
 *  DS9 can be installed via MacPorts (sudo port install ds9).  Here is an XPA error page for getting DS9 to play with PyRAF/IRAF (unverified recipe: include export XPA_METHOD=local in .bashrc or setenv XPA_METHOD local in .csrhc)
