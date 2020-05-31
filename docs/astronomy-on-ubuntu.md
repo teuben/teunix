@@ -1,16 +1,17 @@
-# Astronomy on Ubuntu Linux a.k.a. Linux Setup
+# Astronomy on Ubuntu Linux a.k.a. Linux Setup  (a DRAFT)
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
 a whole section is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
-Is **Linux** so much easier that we don't need one?   It used to be really involved,
-but recently I started from scratch with an Ubuntu 20.04LTS (supported
-for 5 years!). You could also argue Linux is used more by geeky types who know
+Is **Linux** so much easier to set up that we don't need one?  I do remember the times
+this was really involved, but not so much anymore.
+Recently I started from scratch with a spanking new Ubuntu 20.04LTS.
+You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
-going to change that here!
+going to change that here! 
 
-*We could start the same way as the Mac Setup page does, which brings to mind we could bash a bit, no pun intended*:
+*Following in the steps of the Mac Setup page:*
 
 If you're a scientist with a new Linux computer, read on. This page
 assumes you want to write scripts, reduce data, plot results, work
@@ -19,11 +20,12 @@ not a tutorial. We will point out some salient differences how things
 work on a Mac.
 
 As a brief introduction: Linux is a catch-all name for a linux kernel
-and GNU based operating system. Linux is part of the Unix family, of
-which Mac OSX is also.  So many tools you will see described here,
-apply to Mac as well. It normally comes with a choice of a few
-graphical interfaces (e.g. GNOME, KDE,XFCE, ....), which we will not
-cover here.
+and GNU software based operating system. Linux is part of the Unix family, of
+which Mac OSX is also one.  So many tools you will see described here,
+apply to Mac as well. Linux normally comes with a choice of a 
+graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
+cover here. We will also not cover the actual installation of , in this
+case, Ubuntu Linux.
 
 [ Find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
@@ -32,15 +34,14 @@ not tell you enough, try the command **lsb_release  -a**. ]
 
 Many of these apps are large files and will take a while to
 download. You should be on a good internet connection and allow at
-least a couple hours to complete the entire setup.
-
-One last thing, most of the installation if terminal based, that should be
+least a couple hours to complete the entire setup.  Most of the
+installation is terminal based, that should be
 no surprise.
 
 ## Bootstrap your packages
 
 Although we'll discuss quite a few packages in some detail, there are
-some very very basic ones that most of us will need right away, so
+some very basic ones that most of us will need right away, so
 consider this the boostrapping procedure, as Ubuntu doesn't come with
 these. This is the command to install them
 
@@ -48,13 +49,30 @@ these. This is the command to install them
 
 ## Package tools
 
+It's very useful to know a few shortcuts about your package
+manager. When you compile a program and find that it needs a file, you
+can use locate, or dpkg -S, or dpkg -L to sherlock your way around the
+file system to solve your problem. Of course google and stackoverflow can
+also be very useful. Here are a few :
+
+
       dpkg -S file                 which package owns that file
       dpkg -L package              list what files the package gives
-      dpkg --list                  list all we have
+      dpkg --list                  list all packages we have
       apt-get -f install           post-install if error occurs
-      apt autoremove               cleanup old stuff
+      apt autoremove               cleanup old stuff not needed anymore
 
-In addition
+In addition, synaptic, and how to create the file with all packages?
+
+      apt-cache search  .  > apt-cache0.list
+      apt-cache pkgnames   > apt-cache1.list
+      dpkg --list          > dpkg0.list
+
+And in addition, if you install synaptic and aptitude, you have more classic debian style queries
+available
+
+      sudo apt install synaptic aptitude -y
+      aptitude search '~i !~M' 
 
 ## Neat things about Ubuntu
 
@@ -63,11 +81,13 @@ typed **ds9** you might see
 
       sudo apt install saods9
 
-* the command **xdg-open** will open a file with the appropriate mime-type
+* the command **xdg-open** will open any file with the appropriate mime-type. If the argument is a directory, a file browser
+(e.g. Nautilus or Dolphin will  be used)
 
 ## Less nice things about Ubuntu
 
-* snaps and flatpaks  (appimage work a lot better ) - but this is controversial
+* snaps and flatpaks  (appimage work a lot better ) - but this is controversial. I'll devote a whole section on this below.
+
 * related to xdg-open:   when you install certain new packages, sometimes this will trump the program you had before
   and you loved. I've been unpleasantly bitten by this a few times. My JPG's were opened by gwenview, when I installed
   krita, suddenly by this krita editor. WTF.  Now where again is this mime-type list and how do you edit it?  This will
@@ -75,7 +95,7 @@ typed **ds9** you might see
 
 ## Astronomy Packages
 
-Ubuntu does come with a modest set of tools precompiled
+Ubuntu does come with a modest set of astro packjages precompiled
 
       sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
       sudo apt install aoflagger ftools libcfitsio-dev libccfits0v5 topcat -y
@@ -83,11 +103,15 @@ Ubuntu does come with a modest set of tools precompiled
 
 There are 2000+ packages registered now in [ASCL](https://ascl.net), .....
 
+###  KERN
+
+### LfA ?
+
 
 ## Change Shell - bash or tsch
 
 To note here is there is some zsh movement as a better bash. Also discuss the **chsh** command, because MacOS is not
-true to linux, it doesn't work there. On a Mac they don't distiguish anymore between a login and an interactive shell,
+true to unix, it doesn't work there. On a Mac they don't distiguish anymore between a login and an interactive shell,
 which is why on a mac you need to edit your .bash_login file, and on linux the .bashrc
 
 On a default Ubuntu (t)csh is not even installed, only bash.
@@ -110,11 +134,11 @@ be me guest and head over to https://docs.brew.sh/Homebrew-on-Linux
 
 ## Python
 
-* native ubuntu
-* miniconda
-* anaconda
-* AstroConda (is that still viable?)
-* Python (install from source)
+* native ubuntu (apt install)
+* miniconda - a smaller version
+* anaconda - a full version
+* AstroConda (is that still viable?) - IRAF/pyiraf
+* Python (install from source) - nobody does that anymore
 
 Do we need to say something about virtual environments?
 
@@ -143,10 +167,17 @@ git, hub, gitg, gitk, meld, tkdiff
 
 * Gemini Observing Tool
 
+## KERN
+
+This extremely large well supported [KERN package](https://kernsuite.info/) is available
+for Ubuntu18.04, but I believe an update for 20 will be forthcoming soon.
+
 ## IDL
 
-IDL is commercial software. If you are lucky, it will work under GDL,
+Of course IDL is commercial software. If you are lucky, it will work under GDL,
 or somebody has ported it to python. Alternatively you can pay for a license.
+
+        sudo apt install gnudatalanguage -y
 
 ## LaTex
 
@@ -156,6 +187,14 @@ there are some neat bibtex tools we should advertise here.
 
 what about PDF annotation, useful if you make your own PDF libary. And a library
 search engine, you store your PDF's in a big container, and have it index.
+
+## LibreOffice
+
+This pretty comes standard with Ubuntu. But a few comments here:
+
+* it will never be 100% compatible with MS Office
+* you can open most PDF files and edit them directly, useful for filling out PDF forms
+* there are several other open source MS Office clones. (list them?)
 
 ## Other tools
 
@@ -200,17 +239,52 @@ PyFITS, PyWCS, VOTable, NOVAS, and astrolib.coords. In addition, the
 repositories also contain SciPy, CosmoloPy, APLPy, PyEphem, and
 NASA's OSCAAR software that are installable via apt-get.
 
-Also recognizing the vast amount of legacy FORTRAN software for
-astronomy, our repositories contain both GFortran and G95 to allow you
-to run almost all of them. GFortran is installed by default while G95
-is available via apt-get.
-
 In particular, we are looking for people highly familiar with Debian
 packaging who are willing to create binary and source packages for
 IRAF, CASA, CIAO, ESO's SciSoft Collection, and NASA's FTOOLS.
 
+## Russian Dolls and other such containers
 
-## PJT stuff to be organized
+Unix used to be simple. Just unix. Now you have virtual machines, containers etc.etc.
+Within the Linux there is another type of fragmentation going on. But first a few
+names to put some terms on the table you may have heard about
+
+* appimage
+* flatpak
+* snap
+* docker
+* virtual machine (VirtualBox, ....)
+* kubernetes
+
+
+### appimage
+
+This is the simplest of the "build once, run anywhere" executable in linux. super simple, make it exectable
+(**chmod +x**) and it just runs. All the pain is for the developer. Has some (security?) issues?
+
+### flatpak
+
+RedHat's attempt to provide portable execjutables that can be deplyed anywhere. Remember this thing
+called "build ones, run anywhere" ? How did that work for you?
+
+Well, I have  bones to pick when you have lots of mounted filesystems. More about that when my bloodpressure
+is down. But just to give an example, this is your life now?
+
+### snap
+
+This is Ubuntu's (i.e. Canonical) answer to portable executables. Don't look nice at all, your mount table
+will look horrific. Has the same kind of problem with files or directories that are symlinked out of
+your home. Talk about mount/bind ?
+
+### docker
+
+Out of scope for this paper?
+
+### kubernetes
+
+Out of scope for this paper?
+
+## old PJT stuff to be organized
 
 Although I have been using Linux for Astronomy for 25 years now, the
 community has made enormous strides in making it easy to use astronomy
@@ -230,7 +304,7 @@ well.
 
 
 Then you need to know about at least three different ways how the
-community deals with portability: snaps,flatpaks and appimages. This
+community deals with portability: snaps, flatpaks and appimages. This
 is a new thing very peculiar to Linux, and in my opinion a very sad
 development, because of it's side-effects on your
 system. However, opinions vary widely, and there are strong
@@ -256,11 +330,6 @@ importantly, which files you need.
 
 Dotfiles: another cottage industry. Seaarching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe.
 
-It's instrumental to know a few shortcuts about your package
-manager. When you compile a program and find that it needs a file, you
-can use locate, or dpkg -S, or dpkg -L to sherlock your way around the
-system to solve your problem. Of course google and stackoverflow can
-also be very useful.
 
 The little gems
 
