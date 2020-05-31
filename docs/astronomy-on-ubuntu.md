@@ -2,7 +2,7 @@
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
-a whole section is dedicated to
+a section is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
 Is **Linux** so much easier to set up that we don't need one?  I do remember the times
 this was really involved, but not so much anymore.
