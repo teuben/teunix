@@ -1,0 +1,95 @@
+# here is my full list
+#     sudo apt install $(grep -v ^# ubuntu20.list) -y
+#
+# - bootstrap 
+git 
+emacs 
+tcsh 
+wget 
+curl 
+unzip 
+openssh-server
+#
+build-essential
+gfortran
+clang
+xorg-dev
+cmake
+automake
+libtool
+flex
+bison
+#  legacy
+rcs
+cvs
+subversion
+mercurial
+
+# grip
+#
+gnuastro
+saods9
+xpa-tools
+pgplot5
+montage 
+aladin 
+aoflagger 
+ftools-fv
+ftools-pow
+libcfitsio-dev 
+libccfits0v5 
+topcat
+gnuastro
+#
+texlive
+texlive-latex-base
+texlive-publishers
+#
+pdftk
+
+#
+meld
+tkcvs
+gitk
+gitg
+git-cola
+
+#
+openjdk-11-jre
+# Arial, 'Times New Roman' and "Impact", just to name a few popular MS ones'
+ttf-mscorefonts-installer
+
+
+#
+x2goclient
+# vnc stuff
+# vpn stuff
+
+#
+ipython3
+python-is-python3
+python3-pip
+cython3
+
+
+sshfs
+hfsutils
+hfsplus
+# 
+openconnect
+traceroute
+
+
+# inkscape
+# scribus
+sqlitebrowser
+xtightvncviewer
+screenruler
+#
+liblapack-dev
+libblas-dev
+
+graphviz
+gnudatalanguage
+
+# record your desktop ?
