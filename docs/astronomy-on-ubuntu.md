@@ -129,6 +129,10 @@ On a default Ubuntu (t)csh is not even installed, only bash.
 
 bash has smart file completion, which can be super annoying at times. do I really need to explain?
 
+Dotfiles: another cottage industry.
+Searching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe. But
+if you install Unix regularly, it is probably useful to have a mechanism to get your dotfiles organized.
+
 ## XQuartz & X11
 
 there is no such thing on Linux (yet). It just works, and it's called X11, and comes include with Ubuntu.
@@ -180,6 +184,19 @@ This extremely large well supported [KERN package](https://kernsuite.info/) is a
 for Ubuntu18.04, but I believe an update for 20 will be forthcoming soon. There are
 XXX packages in KERN, and mostly useful for radio astronomy.
 
+Here is the example how you get started in Ubuntu 18.04
+
+        sudo apt-get install software-properties-common
+        sudo add-apt-repository -s ppa:kernsuite/kern-5
+        sudo apt-add-repository multiverse
+        sudo apt-add-repository restricted
+        sudo apt-get update
+
+After which you are ready to install some packages, for example meqtrees:
+
+        sudo apt-get install meqtrees
+                
+
 ## IDL
 
 Of course IDL is commercial software, but it is widely used in some of the astronomy
@@ -203,7 +220,7 @@ This pretty comes standard with Ubuntu. But a few comments are in place here:
 
 * it will never be 100% compatible with MS Office
 * you can open most PDF files and edit them directly, useful for filling out PDF forms
-* there are several other open source MS Office clones. (list them?)
+* there are several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice
 
 ## Other tools
 
@@ -350,8 +367,8 @@ and copy the setup files . This requires some knowledge and understand
 what parts of the old system changed, and which did not, and most
 importantly, which files you need.
 
-Dotfiles: another cottage industry.
-Searching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe.
+ convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
+find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
 
 The little gems
@@ -372,6 +389,34 @@ Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
 
 ADS tools to set up my bibtex files?
 My CV tools
+
+## SSH
+
+Copy (or symlink) your $HOME/.ssh tree.
+*  Keep your aliases (e.g. "ssh chara" in the .ssh/config file)
+  
+Don't forget to edit /etc/ssh/ssh_config : (or in your own ~/.ssh/config)
+
+      # ssh -X or -Y not needed
+      ForwardX11 yes
+      ForwardX11Trusted yes
+      
+      # pesky server tthat time you out
+      TCPKeepAlive yes
+      ServerAliveInterval 60
+
+      # examples of aliases
+      Host lab
+          Hostname lab002.astro.umd.edu
+      Host aws0
+          Hostname ec2-52-14-202-62.us-east-2.compute.amazonaws.com
+          User ubuntu
+          IdentityFile ~/.ssh/nemo123.pem
+      Host gbt
+          Hostname fourier
+          ProxyCommand ssh ssh.cv.nrao.edu -W %h:%p
+          User pteuben
+
 
 ## Quick Install
 
