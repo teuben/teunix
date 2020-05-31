@@ -245,36 +245,46 @@ IRAF, CASA, CIAO, ESO's SciSoft Collection, and NASA's FTOOLS.
 
 ## Russian Dolls and other such containers
 
-Unix used to be simple. Just unix. Now you have virtual machines, containers etc.etc.
-Within the Linux there is another type of fragmentation going on. But first a few
+Unix used to be a little simpler, there was just unix. Now you have virtual machines, containers etc.etc.
+Within the Linux there is another type of fragmentation going on, coming out of the frustration of
+so many Linux distrutions, and that is the distribution agnostic executable. But first a few
 names to put some terms on the table you may have heard about
 
 * appimage
 * flatpak
 * snap
 * docker
-* virtual machine (VirtualBox, ....)
+* virtual machine (VirtualBox, VMware, KVM, ....)
 * kubernetes
 
 
-### appimage
+### AppImage
 
-This is the simplest of the "build once, run anywhere" executable in linux. super simple, make it exectable
-(**chmod +x**) and it just runs. All the pain is for the developer. Has some (security?) issues?
+This is the simplest of the "build once, run anywhere" executable in linux. super simple, one file, make it exectable
+(**chmod +x**) and run it. All the pain is for the developer. Has some (security?) issues?
+AppImages are not signed (some AppStored refuse to publish those)
+and do not support ICU (language extensions), for one.
 
 ### flatpak
 
 RedHat's attempt to provide portable execjutables that can be deplyed anywhere. Remember this thing
 called "build ones, run anywhere" ? How did that work for you?
 
-Well, I have  bones to pick when you have lots of mounted filesystems. More about that when my bloodpressure
-is down. But just to give an example, this is your life now?
+Well, I have  bones to pick when you have mounted filesystems. More about that later.
+But just to give an example, this is what I had to do the other day (I may find a better way,
+I don't like the sudo portion)
+
+      flatpak install flathub org.kde.digikam
+      flatpak install flathub flatseal           
+      sudo flatpak override org.kde.digikam --filesystem=/Photos
+      flatpak run org.kde.digikam
 
 ### snap
 
-This is Ubuntu's (i.e. Canonical) answer to portable executables. Don't look nice at all, your mount table
+This is Ubuntu's (i.e. Canonical) answer to portable executables. Don't look nice at all either, your mount table
 will look horrific. Has the same kind of problem with files or directories that are symlinked out of
-your home. Talk about mount/bind ?
+your home. Talk about mount/bind ?   Also, some people object to the fact that not all of the
+snap infrastructure is open source.
 
 ### docker
 
