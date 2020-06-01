@@ -301,7 +301,7 @@ and do not support ICU (language extensions), for one.
 
 ### flatpak
 
-RedHat's attempt to provide portable executables that can be deployed anywhere. Remember this thing
+This is RedHat's attempt to provide portable executables that can be deployed anywhere. Remember this thing
 called "build ones, run anywhere" ? How did that work for you?
 
 Well, I have  bones to pick when you have mounted filesystems. More about that later.
@@ -310,15 +310,19 @@ I don't like the sudo portion)
 
       sudo apt install flatpak
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-for both of these you will need admin permission.
-
       flatpak install flathub org.kde.digikam
-      flatpak install flathub flatseal           
-      sudo flatpak override org.kde.digikam --filesystem=/Photos
+      
+after which you can run it as follow
+
       flatpak run org.kde.digikam
 
-especially the last command to run the **digikam** command.
+This runs digikam in a container, so by default you don't see much of what's outside of this. You have
+limited access to folders (/home and /media being the exception).
+
+
+      flatpak install flathub flatseal           
+      sudo flatpak override org.kde.digikam --filesystem=/Photos
+
 
 ### snap
 
