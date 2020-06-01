@@ -392,10 +392,20 @@ My CV tools
 
 ## SSH
 
-Copy (or symlink) your $HOME/.ssh tree.
-*  Keep your aliases (e.g. "ssh chara" in the .ssh/config file)
+One way to do rewmote computing is via ssh, one terminal at a time (more persistency
+via screen/tmux or vnc/x2go)
+
+      ssh-keygen
+      ssh-copy-id 192.168.1.110
+      
+after which you can
+
+      ssh 192.168.1.110
+
+to connect to that remote server.
   
-Don't forget to edit /etc/ssh/ssh_config : (or in your own ~/.ssh/config)
+Don't forget to edit /etc/ssh/ssh_config  (or in your own ~/.ssh/config). Here is an example to make
+your ssh commands a little more compact to use:
 
       # ssh -X or -Y not needed
       ForwardX11 yes
@@ -417,6 +427,24 @@ Don't forget to edit /etc/ssh/ssh_config : (or in your own ~/.ssh/config)
           ProxyCommand ssh ssh.cv.nrao.edu -W %h:%p
           User pteuben
 
+
+### sshfs
+
+Once you have established an easy ssh connection to your server, you could learn how to NSF mount
+drives, but this requires admin (root) permissions. Perhaps an easier way is to use ssh again using
+the sshfs protocol. Here is an example
+
+      mkdir -p $HOME/mnt/data3
+      sshfs 192.168.1.110:/data3 $HOME/mnt/data3
+
+to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
+
+      fusermount -u $HOME/mnt/data3
+
+### x2go
+
+Excellent way, uses ssh, compresses much better than vnc. But needs the remote to have the x2go server
+installed. In that sense , vnc is easier to use, just a bit slower.
 
 ## Quick Install
 
