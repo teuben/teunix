@@ -214,7 +214,11 @@ or somebody has ported it to python.
 there are some neat bibtex tools we should advertise here.
 
 what about PDF annotation, useful if you make your own PDF libary. And a library
-search engine, you store your PDF's in a big container, and have it index. 
+search engine, you store your PDF's in a big container, and have it index.
+
+Overleaf is heavily used by a lot of astronomers. But did you know you can keep
+a local copy on your own system using git? And even make local changes and push them
+back to overleaf? It's always a good idea to have a 2nd backup.
 
 ## LibreOffice
 
@@ -303,6 +307,9 @@ called "build ones, run anywhere" ? How did that work for you?
 Well, I have  bones to pick when you have mounted filesystems. More about that later.
 But just to give an example, this is what I had to do the other day (I may find a better way,
 I don't like the sudo portion)
+
+      sudo apt install flatpak
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
       flatpak install flathub org.kde.digikam
       flatpak install flathub flatseal           
