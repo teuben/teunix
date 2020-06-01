@@ -120,14 +120,16 @@ be tuned this way.
 
 ## My KDE Setup
 
-I've been using this since Ubuntu 18.04, and beginning to like it, as more
-things now actually work. Before this I was actually getting used to Unity.
+I've only been using KDE since Ubuntu 18.04, and now beginning to like it, as more
+things now actually work. Before this I was actually getting used to Unity, but a few
+mall annoying things were unstable.
 
-KDE can be confusing too, because some settings appear in different
+KDE can be confusing, for one, some settings appear in different
 places if you switch a version of KDE. Some of this work is painful if
 you have to repeat it many times, so it would be nice to have a
 programmatic way to do this for a virgin account. You can also copy
 the correct files in your ~/.config tree, but the key word is "correct".
+This appears to be a moving target.
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen....
