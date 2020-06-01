@@ -457,13 +457,13 @@ one you don't need.
 ## Related articles
 
 * [Setting up Python for Astronomy
-  ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)
+  ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)   - 2014
 
 * [Setup a New Mac for Astronomy
-  ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy)
+  ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
 
 * [What operating systems do astronomers use
-  ](https://www.astrobetter.com/blog/2011/12/20/os-apt-astronomers/)
+  ](https://www.astrobetter.com/blog/2011/12/20/os-apt-astronomers/) - 2011
 
 * [What Operating Systems Do AstroBetter Readers Use?
-  ](https://www.astrobetter.com/blog/2011/12/28/astrobetter-operating-systems)
+  ](https://www.astrobetter.com/blog/2011/12/28/astrobetter-operating-systems) - 2011
