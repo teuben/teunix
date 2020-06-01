@@ -165,6 +165,8 @@ TBD ?
 
 git, hub, gitg, gitk, meld, tkdiff
 
+what about all the *-dev packages
+
 
 ## Other Astronomical Software
 
@@ -220,11 +222,12 @@ This pretty comes standard with Ubuntu. But a few comments are in place here:
 
 * it will never be 100% compatible with MS Office
 * you can open most PDF files and edit them directly, useful for filling out PDF forms
-* there are several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice
+* there are several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office.
 
 ## Other tools
 
-* gedit      
+* gedit
+* sublime, atom
 * aspell and aspell-dict-en
 * R
 * gimp
@@ -454,7 +457,7 @@ one you don't need.
 
     sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
-## Related articles
+## References
 
 * [Setting up Python for Astronomy
   ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)   - 2014
@@ -467,3 +470,6 @@ one you don't need.
 
 * [What Operating Systems Do AstroBetter Readers Use?
   ](https://www.astrobetter.com/blog/2011/12/28/astrobetter-operating-systems) - 2011
+
+* [AlternativeTo: Crowdsourced Softeware Recommendations
+  ](https://alternativeto.net)
