@@ -448,7 +448,9 @@ installed. In that sense , vnc is easier to use, just a bit slower.
 
 ## Quick Install
 
-You can also download my **ubuntu20.list**, which is a long list of all the package we discussed here:
+You can also download my **ubuntu20.list**, which is a long list of all the package we discussed here,
+and install everything in one long download. You could always inspect this file and comment out the
+one you don't need.
 
     sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
