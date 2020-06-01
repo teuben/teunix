@@ -311,6 +311,8 @@ I don't like the sudo portion)
       sudo apt install flatpak
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+for both of these you will need admin permission.
+
       flatpak install flathub org.kde.digikam
       flatpak install flathub flatseal           
       sudo flatpak override org.kde.digikam --filesystem=/Photos
