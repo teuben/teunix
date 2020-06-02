@@ -466,13 +466,11 @@ one you don't need.
 
     sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
+or if you want to be really don't want to select and have enough disk space, try this
+
+    sudo apt install astro-all
+
 ## References
-
-* [Setting up Python for Astronomy
-  ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)   - 2014
-
-* [Setup a New Mac for Astronomy
-  ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
 
 * [What operating systems do astronomers use
   ](https://www.astrobetter.com/blog/2011/12/20/os-apt-astronomers/) - 2011
@@ -480,5 +478,14 @@ one you don't need.
 * [What Operating Systems Do AstroBetter Readers Use?
   ](https://www.astrobetter.com/blog/2011/12/28/astrobetter-operating-systems) - 2011
 
+* [Setting up Python for Astronomy
+  ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)   - 2014
+
+* [Setup a New Mac for Astronomy
+  ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
+
 * [AlternativeTo: Crowdsourced Softeware Recommendations
   ](https://alternativeto.net)
+
+* [Debian Astro
+  ](https://blends.debian.org/astro/)
