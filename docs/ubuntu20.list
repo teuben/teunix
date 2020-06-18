@@ -76,9 +76,11 @@ python3-astropy
 python3-astropy-affiliated
 python-astropy-doc
 astropy-utils
-#
+#                   R
+r-base
+#                   IDL
 gnudatalanguage
-#
+#                   connectivity and other filesystems
 sshfs
 hfsutils
 hfsplus
