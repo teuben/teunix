@@ -113,6 +113,11 @@ krita editor. WTF.  Now where again is this mime-type list and how do
 you edit it?  This will sadly depend onthe distro.  Kubuntu is
 different from Ubuntu. grrr.
 
+* 32 bit applications are on the way out: increasingly it will become
+harder to add this support in an 64-bit OS. There are still some popular
+astronomy legacy applications (e.g. karma) that have not been converted.
+
+
 * ...
 
 ## Astronomy Packages
@@ -425,7 +430,7 @@ LibreOffice (and competitors now around too)
 Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
 
-ADS tools to set up my bibtex files?
+ADS tools to set up my bibtex files?  (bibmanager?)
 My CV tools
 
 ## SSH
