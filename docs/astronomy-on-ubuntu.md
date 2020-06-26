@@ -1,22 +1,20 @@
-# Astronomy on Ubuntu Linux a.k.a. Linux Setup  (**DRAFT**)
+# Astronomy on Ubuntu Linux (**DRAFT**)
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
-a section is dedicated to
+a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
-Is **Linux** so much easier to set up that we don't need one?  I do remember the times
+Is **Linux** so much easier to set up that we don't need one?  There were the times
 this was really involved, but not so much anymore.
-Recently I started from scratch with a spanking new Ubuntu 20.04LTS.
+Recently a spanking new Ubuntu 20.04LTS came out.
 You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
-going to change that here! 
+going to change that here!!
 
-*Loosely following the steps of the Mac Setup page:*
-
-If you're a scientist with a new Linux computer, read on. This page
-assumes you want to write scripts, reduce data, plot results, work
-with LaTeX, and give presentations, among other handy things. This is
-not a tutorial. We will point out some salient differences where things
+So, if you're a scientist with a new Linux computer, read on. 
+This page assumes you want to write scripts, reduce data, plot results, work
+with LaTeX, and give presentations, among other handy things. This is however
+not a tutorial. We will also point out some salient differences where things
 work differently on a Mac.
 
 As a brief introduction: Linux is a catch-all name for a linux kernel
@@ -24,9 +22,9 @@ and GNU software based operating system. Linux is part of the Unix family, of
 which Mac OSX is also one.  Therefor many tools you will see described here,
 apply to Mac as well. Linux normally comes with a choice of a 
 graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
-cover here, and keep the description agnostic to your GUI choice.
-We will also not cover the actual installation of Ubuntu Linux, and assume you
-have done this.
+cover here, and we keep the description agnostic to your GUI choice.
+We will also not cover the actual installation of Ubuntu Linux,
+and assume you have done this.
 
 [ Find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
@@ -54,7 +52,8 @@ work with astronomical software.
 
 It is useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
-can use **locate**, or **dpkg -S**, or **dpkg -L** to sherlock your way around the
+can use commands such as **locate**,
+or **dpkg -S**, or **dpkg -L** to sherlock your way around the
 file system to solve your problem. Of course *google* and *stackoverflow* can
 also be very useful. Here are a few example commands:
 
@@ -86,6 +85,17 @@ available
 Depending if you use Kubuntu or Ubuntu, there are different GUI tools to install software:
 Discover for Kubuntu, and XXX for Ubuntu.
 
+### Alternative package managers?
+
+If you come from a Mac, you may like certain packages that are available via **brew**. 
+This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
+
+Another alternative methods to install applications not availble through the regular
+channels are **FlatPak** and **snap**, which we cover in more detail below.
+
+By using alternate app channels, you can effectively make the official version hidden,
+and can come with restrictions.
+
 ## Neat things about Ubuntu
 
 * if you type a command that Ubuntu knows exists, but you didn't
@@ -103,13 +113,14 @@ mime-type. If the argument is a directory, a file browser
 ## Less nice things about Ubuntu
 
 * snaps and flatpaks (appimage work a lot better ) - but this is
-controversial. I'll devote a whole section on this below.
+controversial. I'll devote a whole section on these universal binaries
+below.
 
 * related to xdg-open: when you install certain new packages,
 sometimes this will bump the program you had before and you
 loved. I've been unpleasantly bitten by this a few times. My JPG's
 were opened by gwenview, when I installed krita, suddenly by this
-krita editor. WTF.  Now where again is this mime-type list and how do
+krita editor. Now where again is this mime-type list and how do
 you edit it?  This will sadly depend onthe distro.  Kubuntu is
 different from Ubuntu. grrr.
 
@@ -122,53 +133,63 @@ astronomy legacy applications (e.g. karma) that have not been converted.
 
 ## Astronomy Packages
 
-Ubuntu does come with a modest set of astronomy packages 
+Ubuntu does come with a modest set of astronomy packages. Here are some of our favorites:
 
-      sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
-      sudo apt install aoflagger libcfitsio-dev libccfits0v5 topcat -y
+      sudo apt install montage aladin saods9 xpa-tools topcat  -y
+      sudo apt install libcfitsio-dev libccfits0v5 pgplot5 -y
       sudo apt install gnuastro -y
+
+or if you want to adopt the whole astro debian blend
+
+      sudo apt install astro-all
+
+which will consume about 3DB, but gets you everything and then some.
 
 ### ASCL
 
 The [Astrophysics Source Code Library (ASCL)](https://ascl.net) is a registry where
-you can find 2000+ codes. Most of those you will have to install via source, or in binary
-if the author made them available.
+you can find 2000+ codes listed from (peer reviewed) papers.
+Most of those you will have to install via source.
 
 ## Change Shell - bash or tsch
 
-To note here is there is some zsh movement as a better bash. Also discuss the **chsh** command, because MacOS is not
-true to unix, it doesn't work there. On a Mac they don't distiguish anymore between a login and an interactive shell,
-which is why on a mac you need to edit your **.bash_login** file, and on linux the **.bashrc**
+Most systems come with a default shell called **bash**, but some die
+hards might like to stick to (t)csh, or if you look into the future, maybe adopt
+**zsh** (as a *better bash*).  The **chsh** command will do this for
+you, but MacOS is not always true to unix, it doesn't work there.  On
+a Mac they don't distiguish anymore between a login and an interactive
+shell, which is why on a mac you need to edit your **.bash_login**
+file, and on linux the **.bashrc**
 
-On a default Ubuntu (t)csh is not even installed, only bash.
+On a default Ubuntu (t)csh is not installed, only bash.
 
 bash has smart file completion, which can be super annoying at times. do I really need to explain?
+
+### Dotfiles
 
 Dotfiles: another cottage industry.
 Searching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe. But
 if you install Unix regularly, it is probably useful to have a mechanism to get your dotfiles organized.
 
-## XQuartz & X11
-
-there is no such thing on Linux (yet). It just works, and it's called X11, and comes include with Ubuntu.
-There is a move towards Wayland, but that's still experimental.
-
-## XCode: Command Line Tools + Compilers
-
-there is no such think on Linux. It just works, and it's part of the
-packaging system. No need for Xcode, or Port, or Brew. It's all in the same packaging system.
-
-One thing to note: there is a **brew** version for linux now. I personally don't quite understand why
-you would want to do that, but if there is something in brew that cannot be found somewhere else,
-be me guest and head over to https://docs.brew.sh/Homebrew-on-Linux
 
 ## Python
 
+Python is so widely used in many project, that we spend a small section on it here.
+
+Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
+A safe bet is to refer to **python3** and **ipython3** explicitly.
+
 * native ubuntu (apt install)
 * miniconda - a smaller version
-* anaconda - a full version
+* anaconda - a full version, including astropy
 * AstroConda (is that still viable?) - IRAF/pyiraf
 * Python (install from source) - nobody does that anymore
+
+If you prefer to use the native Ubuntu version:
+
+      sudo apt install python-is-python3 ipython3 python3-pip -y
+      sudo apt install python-matplotlib python-scipy python-scitools -y
+      sudo apt install python3-astropy python3-astropy-affiliated -y
 
 Do we need to say something about virtual environments?
 
@@ -184,7 +205,7 @@ but what about R. they usually have a lot of packages you need.
 
 ##  Julia
 
-too early for julia
+too early for julia?
 
 ## IRAF/PyRAF
 
@@ -193,7 +214,7 @@ TBD ?
 ## Other Development stuff
 
 Developing software and writing papers, collaborative or not, is very useful with one
-of the modern Content Management Systems (CMS), and git is probably the main contender these
+of the modern Content Management Systems (CMS), and **git** is probably the main contender these
 days.
 
       sudo apt install git hub gitg gitk meld tkdiff -y
@@ -203,8 +224,15 @@ and if you need to need some legacy ones, try
       sudo apt install rcs cvs subversion mercurial -y
 
 
-
 ### what about all the *-dev packages
+
+If you develop your own code, or compile from scratch, you will undoubtedly need the development packages
+for the libraries you will need to link with.  It has been tradition that the runtime and development
+are in separate packages. On debian based systems they are often labeled with **-dev**, but on redhat
+with **-devel**.  Here are a few common ones used in astronomy, pick your favorites:
+
+      sudo apt install wcslib-dev libfftw-dev libcfitsio-dev libgsl-dev xorg-dev -y
+      sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
 
 
 ## Other Astronomical Software
@@ -252,6 +280,7 @@ or somebody has ported it to python.  Otherwise, $$$.
 Pretty straightforward here:
 
       sudo apt install texlive texlive-latex-base texlive-publishers -y
+      sudo apt install texlive-bibtex-extra bibtexconv
 
 there are some neat bibtex organizing tools we should advertise here too. 
 
@@ -268,7 +297,8 @@ Some agencies have strict font requirements.  The MS fonts library is freely ava
       sudo apt install ttf-mscorefonts-installer -y
       fc-cache -f
 
-this will give you "Arial", "Times New Roman", and "Impact", to name a few. Also useful for LibreOffice.
+this will give you "Arial", "Times New Roman", and "Impact", to name a few.
+Also useful for LibreOffice.
 
 ## Publishing: LibreOffice
 
@@ -308,12 +338,12 @@ I'm not sure if people spend 100k on equipment, are they still called "amateur" 
 
 ## others
 
-is ESO SciSoft still active ?
+is ESO SciSoft still active ? nope. all gone.
 
 
 
 
-## Russian Dolls and other such containers
+## Universal Binaries, Russian Dolls and other such containers
 
 Unix used to be a little simpler, there was just Unix. Now we have virtual machines, containers etc.etc.
 Within the Linux there is another type of fragmentation going on, coming out of the frustration of
@@ -377,11 +407,13 @@ Useful to know it exists, but out of scope for this paper?
 
 ### virtual machines
 
-Probably VirtualBox is the way to go. If you head over to osboxes.org, there are a large number
-of images ready to be used, saving you the sometimes painful process in VirtualBox to ingest an iso
+Probably **virtualbox** is the way to go. If you head over to https://osboxes.org, there are a large number
+of images ready to be used, saving you the sometimes painful process in VirtualBox to ingest an ISO
 image.
 
       sudo apt install virtualbox
+
+The package **gnome-boxes** provides another virtual machine environment.
 
 ### Kubernetes
 
@@ -517,8 +549,20 @@ these are about XXX (300?) packages in 3GB.
 * [Setup a New Mac for Astronomy
   ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
 
-* [AlternativeTo: Crowdsourced Softeware Recommendations
+* [AlternativeTo: Crowdsourced Software Recommendations
   ](https://alternativeto.net)
 
 * [Debian Astro
   ](https://blends.debian.org/astro/)
+
+
+## Ack
+
+I wish to thank Marc Pound and Ollie Streicher for checking their own
+Ubuntu and Debian systems, and making sure I wasn't lying too much
+since I stuck to Kubuntu.
+
+A version of this document was also maintained on
+https://teuben.github.io/teunix or
+https://github.com/teuben/teunix/docs/
+(fix the links)
