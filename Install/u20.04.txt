@@ -176,6 +176,8 @@ compizconfig-settings-manager
 = texlive-latex-base
 = texlive
 = texlive-publishers
+= texlive-bibtex-extra
+bibmanager : https://bibmanager.readthedocs.io/en/latest/
 
 = doxygen
 = mdbtools                          (accessing MDB)
