@@ -720,3 +720,20 @@ kdevelop
 https://www.omgubuntu.co.uk/2020/05/superpaper-2-0-major-update
 
 https://github.com/hhannine/superpaper/releases/download/v2.0.1/superpaper-2.0.1-x86_64.AppImage
+
+
+# following https://www.youtube.com/watch?v=oFN3nEppRdU
+# on making your screen look like a mac (why would you want it? because you can!)
+
+First copy you essential dot files to a Backup/
+cp -al .config .kde .local  Backup
+
+Now install qt5-kvantum, e.g. from the discover store (or compile yourself)
+
+settings:
+
+- global theme : McMhoi LAF - pick  dark -> Apply
+- plasma style :   should show the M style now
+- app style :L      kvantum 
+
+dark
