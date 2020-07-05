@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+#
+#    this converts a PDF to a PDF/A (archivable PDF) as required by some NSF rule
+#    There are also commercial/free websites that do this, see e.g.
+#    https://docupub.com/pdfconvert/
+
+url=https://docupub.com/pdfconvert/
+
+pdf=$1
+out=$pdf.pdf
+
+gs -dPDFA -dBATCH -dNOPAUSE -dUseCIEColor -sProcessColorModel=DeviceCMYK -sDEVICE=pdfwrite -sPDFACompatibilityPolicy=1 \
+   -sOutputFile=$out $pdf
+
+echo $out written. If this is not compliant, check e.g. $url
