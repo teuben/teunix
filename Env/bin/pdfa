@@ -3,6 +3,8 @@
 #    this converts a PDF to a PDF/A (archivable PDF) as required by some NSF rule
 #    There are also commercial/free websites that do this, see e.g.
 #    https://docupub.com/pdfconvert/
+#
+#    after John Whelan's posting in FB Astronomers - 2019
 
 url=https://docupub.com/pdfconvert/
 
