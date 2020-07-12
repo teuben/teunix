@@ -517,7 +517,8 @@ The linux media are full of stories with "N things do do after install".... but 
   Rejected : adding explicit view, screen not available ! :  "HDMI-2"
 - sometimes installing a new app will result in mime-types  to get messed up. More than once I got surprises when
   i wanted to open a URL (.html file) or PDF file.
-- gimp now refused to load a 2nd image,   
+- when firefox gets updated, it refused to continue, wants to restart, but that never works, and you have to remember to
+  Restore Previous Session
 
 ## Solved Issues
 
