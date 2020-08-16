@@ -5,5 +5,9 @@ Naming convention:
 UNAME   = `uname -s`
 VERSION = [DISTRO_]
     check /etc/issue or /etc/redhat_version or /etc/debian_version
+    check /etc/os-release
     
 
+Reference materials to sites that discuss issues across platforms:
+
+https://heasarc.gsfc.nasa.gov/lheasoft/issues.html    Mac and Linux, ds9, 
