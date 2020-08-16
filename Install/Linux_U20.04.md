@@ -1,7 +1,6 @@
 # Linux  Kubuntu 20.04 LTS
 
-*Ubuntu* Was released April 23, 2020. This is my draft writeup, check back around May 1 for a more "final" version
-The command
+*Ubuntu* Was released April 23, 2020. This is my writeup, which I continue to change as new issues pop up.
 
       sudo apt update && sudo apt full-upgrade
 	
@@ -19,7 +18,7 @@ Support fir 20.04 LTS will be until April 2025 (2030 if you count security updat
 
 Nice things (for some of these you need extra packages)
 
-1. dolphin (the file browser) finally integrates Google Drive
+1. dolphin (the file browser) finally integrates Google Drive for me
 2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
 3. krunner (like the Finder on a mac) also searches for browser tabs, really useful for heavy browser usage
 4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
@@ -31,6 +30,7 @@ Nice things (for some of these you need extra packages)
 What I don't like:
 
 1. snaps. I'd probably prefer AppImage, but enuf said.  https://www.kubuntuforums.net/showthread.php/76713-Confused-about-snaps
+2. flatpak. Same, all these issues with living in a container.
 
 ## Details
 
@@ -75,7 +75,7 @@ The following commands make a listing which I frequency consult via grep:
 
 and after many packages are installed, this command will log what you have installed
 
-      aptitude search '~i !~M' | tr -s ' ' | cut -f 2 -d ' ' |wc
+      aptitude search '~i !~M'  | tr -s ' ' | cut -f 2 -d ' ' |wc
       
 First install a few very essential packages
 
@@ -240,7 +240,6 @@ not applied until you hit the Apply button on each screen....
        - resize it a bit, it's too tall for my taste
 
 
-
 TO BE RESOLVED:
 
 https://github.com/shalva97/kde-configuration-files/
@@ -256,6 +255,8 @@ SAVING YOUR SESSION
        ~/.kde/share/config
        ~/.kde/share/apps
        ~/local/share
+
+  - Using "cp -al " to make hard links to a backup directory
 
 ADDING WIDGETS : have a field day, here are my favorites
 
@@ -359,9 +360,6 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 
 A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
-
-
-
 
 
 ## Linux for Development
@@ -496,9 +494,9 @@ The linux media are full of stories with "N things do do after install".... but 
 
 ## issues (some are upstream issues)
 
-- the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min)
 - gwenview loads very slow (sometimes, not clear when/how)
-- darktable doesn't load after the first image? (seems similar to gwenview, but just doesn't recover)
+- darktable doesn't load after the first image? (seems similar to gwenview, but just doesn't recover) -
+  running it via strace seems to work
 - k4dirstat crashes - has been filed - and seems to work now, few weeks later.
 - kazam -   Failed to correctly detect operating system, but seems to then record
 - System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
@@ -507,7 +505,7 @@ The linux media are full of stories with "N things do do after install".... but 
 - I had my 2nd screen being hyjacked by another computer, but kubuntu kept it live. I had an app on that 2nd screen, but there
   is no way to move it to another screen.. You can move desktop and activity, but not screen.
 - the command 'more $HOME/.bash<TAB>' does not complete properly, instead it will change to \$HOME and thus becomes useless
-  this is a know bash upstream problem
+  this is a know bash upstream problem - can be fixed with another setting
 - vlc not always working for me from Dolphin (but mpv is) - just black window.
 - switching the digital clock to another one, and coming back, looses all the settings
 - PID's can now go over 32767, but I noted some apps (digikam, slack) that are not trivial
@@ -517,6 +515,7 @@ The linux media are full of stories with "N things do do after install".... but 
 - some windows (thunderbird, my hard disk I/O monitor widget) go flashing or update wrong portions of windows sometimes)
 
 - thinkpad docking station: seems to forget 2nd screen after timeout, also doesn't latte-dock back (i placed it on the other screen)
+  also sometimes will lock all of linux, and reboot is needed
 - loggin in with 2nd user, then switching back gives an all black screen. not good. reboot needed.
 - digikam doesn't alkways update when the albums are told they need to watch for updates.....
   no, this is the bug where my Removable Media collection got re-marked as being Local.....
@@ -524,15 +523,22 @@ The linux media are full of stories with "N things do do after install".... but 
   Rejected : adding explicit view, screen not available ! :  "HDMI-2"
 - sometimes installing a new app will result in mime-types  to get messed up. More than once I got surprises when
   i wanted to open a URL (.html file) or PDF file.
+<<<<<<< HEAD
 - sticky windows from digikam (typically when the editor saved an image) . 7.0.0-beta3 flatpak. not sure if 6.4 does it.
+=======
+- when firefox gets updated, it refused to continue, wants to restart, but that never works, and you have to remember to
+  Restore Previous Session
+>>>>>>> c3429d81f80045b76f92f8bd5abd9878d549beb7
 
 ## Solved Issues
 
+- the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min) [solved itself]
 - convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
 - dual display plasma with docking station:
-  make sure setting save display's properies is "For only this specific display arrangement"
+  make sure setting save display's properies is "For only this specific display arrangement" -
+  still not solved
 
 
 - inotify_add_watch(/home/teuben/.local/share/kate/sessions) failed: (No space left on device)

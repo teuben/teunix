@@ -17,14 +17,16 @@ with LaTeX, and give presentations, among other handy things. This is however
 not a tutorial. We will also point out some salient differences where things
 work differently on a Mac.
 
-As a brief introduction: Linux is a catch-all name for a linux kernel
+As a brief introduction: Linux is the catch-all name for a linux kernel
 and GNU software based operating system. Linux is part of the Unix family, of
 which Mac OSX is also one.  Therefor many tools you will see described here,
 apply to Mac as well. Linux normally comes with a choice of a 
 graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
 cover here, and we keep the description agnostic to your GUI choice.
 We will also not cover the actual installation of Ubuntu Linux,
-and assume you have done this.
+and assume you have done this. Within the Ubuntu family, there is also Kubuntu,
+Xubuntu, Lubuntu etc. Again, we keep our discussion agnostic to which flavor
+you use.
 
 [ Find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
@@ -41,12 +43,12 @@ installation is terminal based, that should be no surprise.
 Although we will discuss quite a few packages, there are
 some very basic ones that most of us will need right away, so
 consider this the boostrapping procedure, as Ubuntu doesn't even
-come with these. This is the command to install them
+come with these. This is the command to install these
 
       sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 
-you can get away without emacs, but the others are often needed when you
-work with astronomical software.
+you can get away without emacs if that's not your editor of choice.
+The others are often needed when you work with astronomical software.
 
 ## Package tools:  apt and dpkg
 
@@ -65,8 +67,7 @@ also be very useful. Here are a few example commands:
       apt autoremove               cleanup old stuff not needed anymore
 
 And here is how to create a list of all possible packages (there are over 60,000)
-and installed packages. Useful if you like commands like **grep** to search for things
-and the usual GUI tools let you down:
+and installed packages. Useful if you like commands like **grep** to search for things:
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
@@ -93,8 +94,8 @@ This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
 Another alternative methods to install applications not availble through the regular
 channels are **FlatPak** and **snap**, which we cover in more detail below.
 
-By using alternate app channels, you can effectively make the official version hidden,
-and can come with restrictions.
+By using such alternate app channels, you can effectively make the official
+version hidden, and can come with additional restrictions.
 
 ## Neat things about Ubuntu
 
@@ -143,7 +144,7 @@ or if you want to adopt the whole astro debian blend
 
       sudo apt install astro-all
 
-which will consume about 3DB, but gets you everything and then some.
+which will consume about 2xx packages in 3GB. This will get you everything and then some.
 
 ### ASCL
 
@@ -153,7 +154,7 @@ Most of those you will have to install via source.
 
 ## Change Shell - bash or tsch
 
-Most systems come with a default shell called **bash**, but some die
+Ubuntu comes with a default shell called **bash**, but some die
 hards might like to stick to (t)csh, or if you look into the future, maybe adopt
 **zsh** (as a *better bash*).  The **chsh** command will do this for
 you, but MacOS is not always true to unix, it doesn't work there.  On
@@ -161,20 +162,21 @@ a Mac they don't distiguish anymore between a login and an interactive
 shell, which is why on a mac you need to edit your **.bash_login**
 file, and on linux the **.bashrc**
 
-On a default Ubuntu (t)csh is not installed, only bash.
+In bash directory completion can be very annoying if you use environment variables,
+you could consider adding the following to your .basrc file:
 
-bash has smart file completion, which can be super annoying at times. do I really need to explain?
+      shopt -s direxpand
 
 ### Dotfiles
 
-Dotfiles: another cottage industry.
-Searching in github for ditfiles gives you > 100 thousands. Talk about reinventing the universe. But
-if you install Unix regularly, it is probably useful to have a mechanism to get your dotfiles organized.
-
+Dotfiles: this is quite a cottage industry.
+Searching in github for dotfiles gives you over 100 thousands repositories. Talk about reinventing the universe. But
+if you install Unix regularly, it is probably useful to have a mechanism to get your dotfiles organized. Roll your
+own, or steal some ideas from the many on github.
 
 ## Python
 
-Python is so widely used in many project, that we spend a small section on it here.
+Python is so widely used in many projects, that we spend a small section on it here.
 
 Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
 A safe bet is to refer to **python3** and **ipython3** explicitly.
@@ -198,18 +200,9 @@ PyFITS, PyWCS, VOTable, NOVAS, and astrolib.coords.
 CosmoloPy, APLPy, PyEphem, and
 NASA's OSCAAR software that are installable via apt-get.
 
-
 ## R
 
 but what about R. they usually have a lot of packages you need.
-
-##  Julia
-
-too early for julia?
-
-## IRAF/PyRAF
-
-TBD ?
 
 ## Other Development stuff
 
@@ -250,8 +243,9 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
 ## KERN
 
 This extremely large well supported [KERN package](https://kernsuite.info/) is available
-for Ubuntu18.04, but I believe an update for 20 will be forthcoming soon. There are
-XXX packages in KERN, and mostly useful for radio astronomy.
+for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
+XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
+the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
 
 Here is the example how you get started in Ubuntu 18.04
 
@@ -268,16 +262,17 @@ After which you are ready to install some packages, for example meqtrees:
 ## IDL
 
 Of course IDL is commercial software, but it is widely used in some of the astronomy
-community, and the current owner will happily sell you a license. If you are lucky, it will work under GDL
+community, and the current owner will happily sell you a license for linux.
+If you are lucky, your IDL scripts will work under GDL
 
         sudo apt install gnudatalanguage -y
 
-or somebody has ported it to python.  Otherwise, $$$.
+or perhaps somebody has ported it to python.
 
 
 ## Publishing: LaTex
 
-Pretty straightforward here:
+Widely used in astronomy, and pretty straightforward to install:
 
       sudo apt install texlive texlive-latex-base texlive-publishers -y
       sudo apt install texlive-bibtex-extra bibtexconv
@@ -313,7 +308,6 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 * gedit - is this the easy way not to offend emacs or vim users ?
 * sublime, atom - code editors - not in ubuntu
 * aspell and aspell-dict-en
-* R - lot of packages here, is there an easy name that grabs a lot
 * gimp
 * xfig and GraphicsMagick
 * dia
@@ -338,15 +332,13 @@ I'm not sure if people spend 100k on equipment, are they still called "amateur" 
 
 ## others
 
-is ESO SciSoft still active ? nope. all gone.
-
-
+ESO SciSoft is gone.  LfA (Linux for Astronomy) is also gone.
 
 
 ## Universal Binaries, Russian Dolls and other such containers
 
 Unix used to be a little simpler, there was just Unix. Now we have virtual machines, containers etc.etc.
-Within the Linux there is another type of fragmentation going on, coming out of the frustration of
+Within Linux there is another type of fragmentation going on, coming out of the frustration of
 so many Linux distrutions, and that is the distribution agnostic executable. But first a few
 names to put some terms on the table you may have heard about
 
@@ -354,7 +346,7 @@ names to put some terms on the table you may have heard about
 * flatpak
 * snap
 * docker
-* virtual machine (VirtualBox, VMware, KVM, ....)
+* virtual machine (VirtualBox, VMware, gnome boxes, KVM, qemu, ....)
 * kubernetes
 
 
@@ -364,14 +356,15 @@ This is the simplest of the "build once, run anywhere" executable in linux. supe
 one file, make it exectable
 (**chmod +x**) and run it. All the pain is for the developer. Has some (security?) issues?
 AppImages are not signed (some AppStored refuse to publish those)
-and do not support ICU (language extensions), for one.
+and do not support ICU (language extensions), for one. So unclear how long they will survive,
+but if you find an appimage, it will be the easiest to use.
 
 ### flatpak
 
 This is RedHat's attempt to provide portable executables that can be deployed anywhere. Remember this thing
 called "build once, run anywhere" ? How did that work for you?
 
-Well, I have  bones to pick when you have mounted filesystems. More about that later.
+Well, I have  bones to pick when you have mounted filesystems. More about that below.
 But just to give an example, this is what I had to do the other day (I may find a better way,
 I don't like the sudo portion)
 
@@ -507,9 +500,11 @@ your ssh commands a little more compact to use:
 
 ### sshfs
 
-Once you have established an easy ssh connection to your server, you could learn how to NSF mount
+Once you have established an ssh connection to your server, you could learn how to NSF mount
 drives, but this requires admin (root) permissions. Perhaps an easier way is to use ssh again using
-the sshfs protocol. Here is an example
+the **sshfs** protocol. Here is an example
+
+      sudo apt install sshfs fuse
 
       mkdir -p $HOME/mnt/data3
       sshfs 192.168.1.110:/data3 $HOME/mnt/data3
@@ -518,10 +513,27 @@ to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
 
       fusermount -u $HOME/mnt/data3
 
+### vnc
+
+VNC is the classic way to view a remote desktop in linux. Your server needs vncserver, you local host
+needs vncviewer and vncpasswd. An alternative is the **tightvnc** version
+
+      sudo apt install xtightvncviewer tightvncserver -y
+
+### krdc
+
+What about krdc?
+
 ### x2go
 
 Excellent way, uses ssh, compresses much better than vnc. But needs the remote to have the x2go server
 installed. In that sense , vnc is easier to use, just a bit slower.
+
+### teamviewer
+
+Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
+This will be a manual install, it does not come with Ubuntu. I used
+https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 
 ## Quick Install
 
@@ -551,6 +563,9 @@ these are about XXX (300?) packages in 3GB.
 * [Setup a New Mac for Astronomy
   ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
 
+* [Setup a New Ubuntu for Astronomy
+  ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Ubuntu+for+Astronomy) - TBD
+
 * [AlternativeTo: Crowdsourced Software Recommendations
   ](https://alternativeto.net)
 
@@ -562,7 +577,8 @@ these are about XXX (300?) packages in 3GB.
 
 I wish to thank Marc Pound and Ollie Streicher for checking their own
 Ubuntu and Debian systems, and making sure I wasn't lying too much
-since I stuck to Kubuntu.
+since I stuck to Kubuntu. This draft is the precursor to the Astrobetter Wiki
+version on setting up your (Ubuntu) Linux.
 
 A version of this document was also maintained on
 https://teuben.github.io/teunix or

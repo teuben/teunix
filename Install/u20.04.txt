@@ -25,6 +25,7 @@ sudo apt install ttf-mscorefonts-installer
 fc-cache -f
 # now you should see the Arial, 'Times New Roman' and "Impact", just to name a few popular MS ones'
 
+
 ??
 git clone https://github.com/sojharo/mangi-script
 sudo mangi-script/my_ubuntu_setup.sh
@@ -71,7 +72,10 @@ sudo update-alternatives --config g++
 
 
 =tcsh
-chromium-browser    (google chrome was done via a tarball in /opt/google)
+chromium-browser    (google chrome was done via a tarball in /opt/google) - now snap?
+ OR:    
+     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+     sudo dpkg -i google-chrome-stable_current_amd64.deb
 =emacs
 =darktable
 =digikam 
@@ -96,7 +100,8 @@ postr   - good flickr uploader
 =cmake
 =ruby
 =pidgin   (yakyak is perhaps another option, but it uses snap)
-=grip
+=grip     (not needed anymore, okular can present .md files much easier)
+=cproto   (in case you have too many K&R C code)
 
 =youtube-dl
 =geeqie               (old gqview)
@@ -222,6 +227,9 @@ idle                             (for tkinter????)
 = iotop
 = ifstat
 
+# if you want to mount remote disks
+sudo apt install libnfs-utils  nfs-common
+
 = sshfs
 = hfsprogs
 = gv 
@@ -297,6 +305,7 @@ shutter
 = sqlitebrowser
 = subversion     (svn)
 = virtualbox
+  (virtualbox extension pack from  https://www.virtualbox.org/wiki/Downloads
 
 = kdenlive
 
