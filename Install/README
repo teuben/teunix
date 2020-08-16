@@ -6,6 +6,8 @@ UNAME   = `uname -s`
 VERSION = [DISTRO_]
     check /etc/issue or /etc/redhat_version or /etc/debian_version
     check /etc/os-release
+    check the command:  hostnamectl
+    check the command:  lsb_release -a
     
 
 Reference materials to sites that discuss issues across platforms:
