@@ -2,6 +2,8 @@
 #
 # echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
 # echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.zshrc
+
+#  bash only
 shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
@@ -125,6 +127,9 @@ alias        cvsi='cvs commit'
 #if ($?TMP) unsetenv TMP
 
 export PATH=~/bin:~/teunix/Env/bin:$PATH
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH=$HOME/.cargo/bin:$PATH
+fi
 
 for d in /astromake ~/astromake ; do
     if [ -f $d/astromake_start.sh ]; then
