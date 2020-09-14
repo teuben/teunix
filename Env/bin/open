@@ -4,7 +4,13 @@
 #  file how to 'display' a file
 #
 #  linux:   gnome-open   kde-open    xdg-open
-#  darmin:  /usr/bin/open
+#  darwin:  /usr/bin/open
+#
+#  On debian/ubuntu some useful commands:
+#        xdg-settings get default-web-browser
+#        xdg-mime query default x-scheme-handler/http
+#        xdg-settings set default-web-browser brave-browser-beta.desktop
+#        ~/.config/mimeapps.list
 
 unsetenv LD_LIBRARY_PATH
 
