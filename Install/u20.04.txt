@@ -346,6 +346,10 @@ sudo /usr/share/doc/libdvdread4/install-css.sh
 visudo /etc/sudoers
 Defaults env_reset,timestamp_timeout=30
 -----
+visudo /etc/systemd/system.conf
+DefaultTimeoutStopSec=5s
+----
+
 vipw
 	change the shell to /bin/tcsh
 ==========
