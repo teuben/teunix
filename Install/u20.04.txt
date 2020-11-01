@@ -55,6 +55,7 @@ sudo apt install gnuastro -y
 qdirstat - 
 
 =x2goclient
+? teamviewer
 
 # kubuntu 20.04 has gcc-9.3.0
 
@@ -140,8 +141,13 @@ Also google around, e.g.
 = git-core
 = libboost-all-dev
 
-cpu-checker
+= groff-base
+= groff             groff -man -Tpdf bench.5 > bench.cpu-checker
+
+     
+
 psensor
+pdf
 cpufrequtils
 =  libgif-dev                     (for pgplot; but it seemed to build in NEMO ok)
 = libxaw7-dev                    (also for karma)
