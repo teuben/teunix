@@ -1,0 +1,15 @@
+#HOSTSLOCAL
+#   this is hosts.local, edit, append it to /etc/hosts or where ever appropriate
+#   e.g.
+#      sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local hosts; sudo cp hosts /etc
+#   note this can be re-applied if you changed the hosts.local
+#
+192.168.1.2    xps     xps13
+192.168.1.3    chrome  pixel
+192.168.1.4    x1y     x1y4 
+192.168.1.5    g6      phone   android
+192.168.1.6    t530
+192.168.1.7    t480
+192.168.1.8    mac 
+#
+129.2.15.45    chara chara.astro.umd.edu
