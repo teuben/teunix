@@ -5,6 +5,8 @@
 #  command in emacs: (server-start)
 #
 # TODO:   turn it into python
+#         use "realpath" to make one argument - but doesn't exist on mac
+#         or "readlink -f" will work on mac
 #
 set date=`date +%Y-%m-%d_%H:%M:%S`
 

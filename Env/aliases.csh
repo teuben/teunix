@@ -1,4 +1,6 @@
-# common aliases accross all my machines
+# tcsh and csh
+#
+# echo 'if ( -e ~/teunix/Env/aliases.csh ) source ~/teunix/Env/aliases.csh' >> ~/.cshrc
 
 alias teunix '(cd ~/teunix; git pull)'
 
@@ -189,7 +191,6 @@ alias  cvsi      'cvs commit'
 #  on Sebok's system?
 if ($?TMPDIR) unsetenv TMPDIR
 if ($?TMP) unsetenv TMP
-
 
 alias em 'emacs -nw'
 

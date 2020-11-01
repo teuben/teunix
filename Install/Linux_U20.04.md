@@ -2,11 +2,17 @@
 
 *Ubuntu* Was released April 23, 2020. This is my writeup, which I continue to change as new issues pop up.
 
-        sudo apt update && sudo apt full-upgrade
+      sudo apt update && sudo apt full-upgrade
 	
 should do a full upgrade once the beta goes to LTS, as this was the route I took.  If you have a previous
 release, the procedure is different. I also had to remove a rogue PPA entry
 via System Settings -> Driver Manager -> Other Software (or edit in /etc/apt/sources.list.d/)
+
+The point release has an easier upgrade path from earlier released:
+
+      sudo do-release-upgrade -c
+
+Support fir 20.04 LTS will be until April 2025 (2030 if you count security updates), that's pretty impressive.
 
 ## Summary
 
@@ -284,6 +290,9 @@ ROOT:
   - "sudo" with longer retention
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
+  - faster booting	   
+     /etc/systemd/system.conf
+           DefaultTimeoutStopSec=5s
   - "ssh identity"
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
 
@@ -388,9 +397,9 @@ KDE uses: panel, latte dock (mac lookalike),
 
 Not in color, and too few icons (they were grouped by default)
 
-      Edit -> Preferences -> Theme             Dark  or Light
-      Edit -> Preferences -> Icon theme        Color or Legacy  (can change icon size)
-      Edit -> Preferences -> Toolbox           +show active bruch   -use tool groups
+      Edit -> Preferences -> Interface -> Theme             Dark  or Light
+      Edit -> Preferences -> Interface -> Icon theme        Color or Legacy  (can change icon size)
+      Edit -> Preferences -> Interface -> Toolbox           +show active bruch   -use tool groups
                        
 
 ## DOLPHIN
@@ -517,8 +526,12 @@ The linux media are full of stories with "N things do do after install".... but 
   Rejected : adding explicit view, screen not available ! :  "HDMI-2"
 - sometimes installing a new app will result in mime-types  to get messed up. More than once I got surprises when
   i wanted to open a URL (.html file) or PDF file.
+- sticky windows from digikam (typically when the editor saved an image) . 7.0.0-beta3 flatpak. not sure if 6.4 does it.
 - when firefox gets updated, it refused to continue, wants to restart, but that never works, and you have to remember to
   Restore Previous Session
+
+- tail: inotify cannot be used, reverting to polling: Too many open files
+
 
 ## Solved Issues
 
@@ -535,3 +548,4 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   Look at the small number:    cat /proc/sys/fs/inotify/max_user_watches
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
   https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
+

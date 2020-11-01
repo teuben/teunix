@@ -456,6 +456,8 @@ Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
 
 ADS tools to set up my bibtex files?  (bibmanager?)
+   texlive-bibtex-extra
+
 My CV tools
 
 ## SSH
