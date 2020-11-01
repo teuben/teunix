@@ -1,7 +1,7 @@
 #HOSTSLOCAL
 #   this is hosts.local, edit, append it to /etc/hosts or where ever appropriate
 #   e.g.
-#      sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local hosts; sudo cp hosts /etc
+#      sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc
 #   note this can be re-applied if you changed the hosts.local
 #
 192.168.1.2    xps     xps13
