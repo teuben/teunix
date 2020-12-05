@@ -42,7 +42,8 @@ Here's stuff I did:
 
 9. Install a better terminal: https://www.iterm2.com/
 
-10.  Install XQuartz : https://www.xquartz.org/ - needed if you need to compile and run X.org based application
+10.  Install XQuartz : https://www.xquartz.org/ - needed if you need to compile and run X.org based application.
+    I believe this installs the all important /opt/X11 tree
 
 
 ### Install to do

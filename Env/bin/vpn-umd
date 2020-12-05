@@ -1,0 +1,12 @@
+#! /bin/csh -f
+#
+#  see also: https://www.astro.umd.edu/twiki/bin/view/AstroUMD/HowToUseVPN
+
+echo '======================================='
+echo 'sudo openconnect vpn.umd.edu'
+echo 'GROUP: [UMD|UMD-Wireless|UMapps]:UMD'
+echo 'Username:teuben.all'
+echo 'Password:'
+echo '======================================='
+
+sudo openconnect vpn.umd.edu

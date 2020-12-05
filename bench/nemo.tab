@@ -1,0 +1,17 @@
+#    /usr/bin/time $NEMO/src/scripts/nemo.bench
+#    $NEMO/docs/install_nemo.sh opt=0
+inferno    32.59user 0.94system 0:33.58elapsed 99%CPU
+dante      31.27user 0.97system 0:32.33elapsed 99%CPU 
+algol      48.99user 2.05system 0:51.05elapsed 100%CPU
+chara      35.04user 1.70system 0:36.81elapsed 99%CPU
+aurora     21.40user 0.79system 0:22.19elapsed 100%CPU 
+geminid    21.12user 1.56system 0:22.65elapsed 100%CPU  
+#sdp       
+#kraken
+yorp20     69.13user 4.07system 1:13.20elapsed 100%CPU 
+terra      29.31user 3.05system 0:32.42elapsed 99%CPU
+#
+t530       34.89user 1.40system 0:36.29elapsed 100%CPU
+t480       54.38user 3.41system 1:01.20elapsed 94%CPU
+x1y4       22.99user 1.61system 0:24.88elapsed 98%CPU 
+xps13      14.97user 1.28system 0:16.30elapsed 99%CPU 

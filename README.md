@@ -11,7 +11,9 @@ In 2018 Ubuntu switched to GNOME3, but I decided to switch to KDE,
 since I cannot get used to GNOME3.
 
 This repo is purely put together for my own sanity, but you may find
-interesting and useful scripts and shell aliases in here.
+interesting and useful scripts and shell aliases in here. If you google around
+you will find hundreds and hundreds of sites that have nice ways to maintain
+your dotfiles.
 
 If you need help with your version of Unix, or with Photography, I could
 be persuaded, for a small fee of course.

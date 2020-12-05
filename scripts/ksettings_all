@@ -1,0 +1,66 @@
+#! /usr/bin/env python
+#
+# print some abstract of the global key shortcuts in KDE
+# 14-apr-2020   Created for KDE 5.18       - Peter Teuben
+#
+# another option is to use KDE native tools, e.g.
+#   kreadconfig5 --file ~/.config/kglobalshortcutsrc --group kded5  --key 'Show System Activity'
+# but there are many problems with this approach.
+#
+# Some refs:
+#    https://community.linuxmint.com/tutorial/view/47
+#    https://docs.kde.org/trunk5/en/applications/fundamentals/kbd.html
+#    https://defkey.com/kde-plasma-shortcuts
+#    https://gitlab.com/cscs/transfuse
+
+import os, sys
+
+friendly = '_k_friendly_name'
+title = ''
+fname = os.environ['HOME'] + '/.config/kglobalshortcutsrc'
+
+empty = False
+#empty = True
+
+lines = open(fname).readlines()
+for line in lines:
+    line = line.strip()
+    word = line.split('=')
+    if len(line) == 0:
+        continue
+    #print("LINE: %s (%d)" % (line,len(line)))
+    if line[0] == '[':
+        group = line[1:-1]    # @todo fix the brittle -2
+        print("%-70s %s" % ('#',group))
+        continue
+    if word[0] == friendly:
+        title = word[1]
+        print("%-70s     %s" % ('#',title))        
+        continue
+    if len(word) < 2:
+        # print("Warning %s (%d)" % (word[0], len(word)))
+        if empty:
+            print(line.strip())
+        continue;
+    key = word[1].split(',')
+    if key[0] == 'none':
+        if empty:
+            print(line.strip())
+        continue
+    if len(key) != 3:
+        # @todo    deal with \, to ensure it's embedded ,
+        #print("Warning key: %s" % word[1])
+        if empty:
+            print(line.strip())
+        continue
+    if empty:
+        continue
+    if len(key[0]) > 0:
+        print("%-50s : %s" % (key[2],key[0]))
+    else:
+        print("%-50s : [%s]" % (key[2],key[1]))
+        
+
+
+
+

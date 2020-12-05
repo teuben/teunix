@@ -1,0 +1,10 @@
+# in QAC/test:   OMP_NUM_THREADS=1 make sky4z-bench1
+# 6.7181577675947208 8.8287259010533798 -24.720115661621094 31.100028991699219 79551.971752297715 0.939436
+# 5.8807340538948054 7.705096874227821 -20.720354080200195 27.191093444824219 69635.755146266558 0.930926 
+subaru    34.95user 7.55system 1:11.96elapsed 59%CPU
+vislab1   55.89user 9.36system 1:47.47elapsed 60%CPU
+yorp20    68.83user 10.74system 1:54.95elapsed 69%CPU    
+xps13     16.53user 2.56system 0:25.58elapsed 74%CPU    
+t480      40.64user 11.65system 1:47.83elapsed 48%CPU 
+sdp       55.54user 9.15system 1:18.84elapsed 82%CPU 
+# x1y4 - something weird, dus'nt run yet

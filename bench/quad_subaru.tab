@@ -1,0 +1,18 @@
+# NEMO/src/tutor/bench6:      make bench6 ONT="1 2 3 4 5 6 7 8 9 10 11 12" | grep CPU
+# has 6 cores, 2 MT/core
+ 1 24.82user 0.00system 0:24.82elapsed 99%CPU
+ 2 25.03user 0.00system 0:12.52elapsed 199%CPU
+ 3 25.18user 0.00system 0:08.39elapsed 299%CPU
+ 4 25.25user 0.00system 0:06.31elapsed 399%CPU
+ 5 25.42user 0.00system 0:05.08elapsed 499%CPU
+ 6 25.33user 0.00system 0:04.22elapsed 599%CPU
+ 7 25.51user 0.00system 0:03.65elapsed 698%CPU
+ 8 25.89user 0.00system 0:03.24elapsed 799%CPU
+ 9 25.78user 0.00system 0:02.87elapsed 895%CPU
+10 26.27user 0.00system 0:02.63elapsed 998%CPU
+11 26.58user 0.00system 0:02.43elapsed 1092%CPU
+12 26.66user 0.00system 0:02.29elapsed 1162%CPU
+13 24.59user 0.00system 0:02.28elapsed 1078%CPU
+14 24.59user 0.00system 0:02.39elapsed 1027%CPU
+15 24.59user 0.00system 0:02.43elapsed 1011%CPU
+16 24.59user 0.00system 0:02.20elapsed 1115%CPU

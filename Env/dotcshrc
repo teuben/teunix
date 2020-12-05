@@ -5,6 +5,9 @@
 unset autologout
 
 set path=(. ~/bin ~/Env/bin /sbin /usr/sbin $path)
+if (-d $HOME/.cargo/bin) then
+  set path=($HOME/.cargo/bin $path)
+endif
 rehash
 
 foreach f (~/Env/aliases ~/.aliases.Local) 

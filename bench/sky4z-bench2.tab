@@ -1,0 +1,9 @@
+# in QAC/test:   OMP_NUM_THREADS=1 make sky4z-bench2
+subaru   389.33user 21.22system 7:43.66elapsed 88%CPU 
+vislab1  628.88user 29.20system 12:07.75elapsed 90%CPU
+yorp20   811.25user 29.12system 15:26.75elapsed 90%CPU 
+xps13    249.59user 9.10system 4:26.28elapsed 97%CPU
+t480     489.17user 20.38system 9:01.16elapsed 94%CPU 
+sdp      661.07user 26.75system 11:39.54elapsed 98%CPU
+# x1y4 - something weird, dus'nt run yet
+
