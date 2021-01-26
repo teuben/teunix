@@ -42,8 +42,8 @@ installation is terminal based, that should be no surprise.
 
 Although we will discuss quite a few packages, there are
 some very basic ones that most of us will need right away, so
-consider this the boostrapping procedure, as Ubuntu doesn't even
-come with these. This is the command to install these
+consider this the boostrapping procedure, as Ubuntu doesn't 
+come with these anymore. Here is the command:
 
       sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 
@@ -288,12 +288,16 @@ back to overleaf? It's always a good idea to have a 2nd backup. Under the top le
 a document, you will find the **git** link (not the github).
 
 Some agencies have strict font requirements.  The MS fonts library is freely available for this:
-
+     
       sudo apt install ttf-mscorefonts-installer -y
       fc-cache -f
 
 this will give you "Arial", "Times New Roman", and "Impact", to name a few.
 Also useful for LibreOffice.
+
+Bibtex:  managing your references?  see for example https://bibmanager.readthedocs.io/en/latest/
+
+      pip install bibmanager
 
 ## Publishing: LibreOffice
 
@@ -306,6 +310,7 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 ## Other tools
 
 * gedit - is this the easy way not to offend emacs or vim users ?
+* mg - microscopic GNU Emacs-style editor (micro-emacs?)
 * sublime, atom - code editors - not in ubuntu
 * aspell and aspell-dict-en
 * gimp
@@ -534,6 +539,17 @@ installed. In that sense , vnc is easier to use, just a bit slower.
 Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
 This will be a manual install, it does not come with Ubuntu. I used
 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+
+### Online help vs. Offline help
+
+The unix *man* and *info* command give a lot of help. But if you are offline, this can be a problem.
+One tool that solves this is "zeal"
+
+      sudo apt install zeal
+
+After installation, you will need to select from a large set of *Docsets* which ones you like to
+install locally. Pick your poison.
+
 
 ## Quick Install
 
