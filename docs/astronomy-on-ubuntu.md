@@ -160,7 +160,7 @@ hards might like to stick to (t)csh, or if you look into the future, maybe adopt
 you, but MacOS is not always true to unix, it doesn't work there.  On
 a Mac they don't distiguish anymore between a login and an interactive
 shell, which is why on a mac you need to edit your **.bash_login**
-file, and on linux the **.bashrc**
+file, and on linux the **.bashrc**. 
 
 In bash directory completion can be very annoying if you use environment variables,
 you could consider adding the following to your .basrc file:
@@ -300,8 +300,8 @@ Also useful for LibreOffice.
 This actually comes standard with Ubuntu. But maybe a few comments are in place here:
 
 * it will never be 100% compatible with MS Office
-* you can open most PDF files and edit them directly, useful for filling out PDF forms
-* there are several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office.
+* you can open most PDF files and edit them directly, useful for filling out PDF forms. 
+* there are actually several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office, Collabora Office, FreeOffice 2021, SoftMakerOffice 2021
 
 ## Other tools
 
@@ -548,6 +548,30 @@ or if you want to be really don't want to select and have enough disk space, try
     sudo apt install astro-all
 
 these are about XXX (300?) packages in 3GB.
+
+## Privacy?
+
+This article does not deal with [privacy](https://www.privacytools.io/), but it
+is good to be aware that different distros deal with this in different ways.
+In general, Linux is a good OS that is concerned about this.  
+
+
+## Summary of tools
+
+The names of the tools are not always obvious for somebody coming from
+another OS (or even between Gnome based and KDE based linux). So here
+are some popular ones:
+
+* Emacs (editor)
+* Gnome Terminal or Konsole (terminals)
+* Peek (GIF recording)
+* Kdenlive (Video editing)
+* GIMP (Photo editing)
+* Darktable (RAW Photo editing)
+* FFMPEG (Converting videos etc)
+* ImageMagick (Converting and resizing images)
+* LibreOffice (Spreadsheets, Presentations, etc.)
+* Evince or Okular (PDF reading and annotating)
 
 ## References
 
