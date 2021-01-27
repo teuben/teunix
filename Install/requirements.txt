@@ -1,0 +1,8 @@
+# my favorite tools:    pip install -r requirements.txt
+astromartini
+astropy
+bibmanager
+gala
+galpy
+pynbody
+
