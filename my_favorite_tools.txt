@@ -1,7 +1,7 @@
 Applications:
 -------------
 - emacs
-- tcsh (still, but bash needs to be there too)
+- tcsh (still, but bash needs to be there too, and now zsh)
 - vnc
 - vpn
 - latex
@@ -19,8 +19,8 @@ Applications:
   - montage, wcstools
   - topcat, glue, yt,
 - gimp, digikam, darktable
-- skype
-- thunderbird
+- skype (zoom too)
+- thunderbird 
 - chrome/chromium/firefox
 - rhythmbox
 
