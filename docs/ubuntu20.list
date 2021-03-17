@@ -51,6 +51,7 @@ texlive-latex-base
 texlive-publishers
 ttf-mscorefonts-installer
 pdftk
+pandoc
 #                   git
 gitk
 gitg

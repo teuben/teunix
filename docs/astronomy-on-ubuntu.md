@@ -42,8 +42,8 @@ installation is terminal based, that should be no surprise.
 
 Although we will discuss quite a few packages, there are
 some very basic ones that most of us will need right away, so
-consider this the boostrapping procedure, as Ubuntu doesn't even
-come with these. This is the command to install these
+consider this the boostrapping procedure, as Ubuntu doesn't 
+come with these anymore. Here is the command:
 
       sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 
@@ -160,7 +160,7 @@ hards might like to stick to (t)csh, or if you look into the future, maybe adopt
 you, but MacOS is not always true to unix, it doesn't work there.  On
 a Mac they don't distiguish anymore between a login and an interactive
 shell, which is why on a mac you need to edit your **.bash_login**
-file, and on linux the **.bashrc**
+file, and on linux the **.bashrc**. 
 
 In bash directory completion can be very annoying if you use environment variables,
 you could consider adding the following to your .basrc file:
@@ -288,24 +288,29 @@ back to overleaf? It's always a good idea to have a 2nd backup. Under the top le
 a document, you will find the **git** link (not the github).
 
 Some agencies have strict font requirements.  The MS fonts library is freely available for this:
-
+     
       sudo apt install ttf-mscorefonts-installer -y
       fc-cache -f
 
 this will give you "Arial", "Times New Roman", and "Impact", to name a few.
 Also useful for LibreOffice.
 
+Bibtex:  managing your references?  see for example https://bibmanager.readthedocs.io/en/latest/
+
+      pip install bibmanager
+
 ## Publishing: LibreOffice
 
 This actually comes standard with Ubuntu. But maybe a few comments are in place here:
 
 * it will never be 100% compatible with MS Office
-* you can open most PDF files and edit them directly, useful for filling out PDF forms
-* there are several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office.
+* you can open most PDF files and edit them directly, useful for filling out PDF forms. 
+* there are actually several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office, Collabora Office, FreeOffice 2021, SoftMakerOffice 2021
 
 ## Other tools
 
 * gedit - is this the easy way not to offend emacs or vim users ?
+* mg - microscopic GNU Emacs-style editor (micro-emacs?)
 * sublime, atom - code editors - not in ubuntu
 * aspell and aspell-dict-en
 * gimp
@@ -535,6 +540,17 @@ Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for ac
 This will be a manual install, it does not come with Ubuntu. I used
 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 
+### Online help vs. Offline help
+
+The unix *man* and *info* command give a lot of help. But if you are offline, this can be a problem.
+One tool that solves this is "zeal"
+
+      sudo apt install zeal
+
+After installation, you will need to select from a large set of *Docsets* which ones you like to
+install locally. Pick your poison.
+
+
 ## Quick Install
 
 You can also download my **ubuntu20.list**, which is a long list of all the package we discussed here,
@@ -548,6 +564,30 @@ or if you want to be really don't want to select and have enough disk space, try
     sudo apt install astro-all
 
 these are about XXX (300?) packages in 3GB.
+
+## Privacy?
+
+This article does not deal with [privacy](https://www.privacytools.io/), but it
+is good to be aware that different distros deal with this in different ways.
+In general, Linux is a good OS that is concerned about this.  
+
+
+## Summary of tools
+
+The names of the tools are not always obvious for somebody coming from
+another OS (or even between Gnome based and KDE based linux). So here
+are some popular ones:
+
+* Emacs (editor)
+* Gnome Terminal or Konsole (terminals)
+* Peek (GIF recording)
+* Kdenlive (Video editing)
+* GIMP (Photo editing)
+* Darktable (RAW Photo editing)
+* FFMPEG (Converting videos etc)
+* ImageMagick (Converting and resizing images)
+* LibreOffice (Spreadsheets, Presentations, etc.)
+* Evince or Okular (PDF reading and annotating)
 
 ## References
 
