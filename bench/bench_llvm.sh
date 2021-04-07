@@ -1,10 +1,16 @@
 #! /bin/bash
 #
-# a good parallel benchmark compiling the LLVM compiler
+# a real-life parallel benchmark compiling the LLVM compiler
+# don't know if it's good.  It seems to self-regulate how many cores
+# are used, but on an 8 core laptop I've seen 10 cc1plus invocations.
+#
 # See also https://www.anandtech.com/show/16594/intel-3rd-gen-xeon-scalable-review/10
 #
+# Might need:     sudo apt install cmake ninja-build
+#
 # Some of my samples:
-#  lma /tmp   
+#  lma /tmp   17282.38user 1240.64system    5:15.81elapsed 5865%CPU
+#  xps /home  28592.89user 1059.91system 1:03:58elapsed     772%CPU
 
 refresh=0
 local=0
