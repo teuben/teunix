@@ -1,5 +1,8 @@
 #! /bin/bash
 #
+# a good parallel benchmark compiling the LLVM compiler
+# See also https://www.anandtech.com/show/16594/intel-3rd-gen-xeon-scalable-review/10
+#
 
 refresh=0
 local=0
@@ -40,6 +43,7 @@ if [ $refresh = 1 ]; then
 	  -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;lldb;compiler-rt;lld" \
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
     /usr/bin/time cmake --build .
+    exit 0
 else
     echo refresh=0   No method as published in https://www.anandtech.com/show/16594/intel-3rd-gen-xeon-scalable-review/10
 fi
@@ -55,6 +59,7 @@ if [ $local = 1 ]; then
 	  -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;lldb;compiler-rt;lld" \
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
     /usr/bin/time cmake --build .
+    exit 0
 else
     echo local=0 no full git locally
 fi
@@ -69,6 +74,7 @@ if [ -e $tgz ]; then
 	  -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;lldb;compiler-rt;lld" \
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
     time cmake --build .
+    exit 0
 else
     echo No tgz=$tgz  
 fi
