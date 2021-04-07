@@ -4,19 +4,30 @@
 refresh=0
 local=0
 tgz=llvm-project.tar.gz
+git=0
 
 #             simple keyword=value command line parser for bash - don't make any changing below
 for arg in $*; do
   export $arg
 done
 
+if [ $git = 1 ]; then
+    git clone https://github.com/llvm/llvm-project.git
+    cd llvm-project
+    git checkout release/11.x
+    mkdir ./build
+    cd ..
+    tar zcf llvm-project.tar.gz llvm-project
+else
+    echo git=0  no clean git made
+fi
 
 if [ $refresh = 1 ]; then
 
     git clone https://github.com/llvm/llvm-project.git
     cd llvm-project
     git checkout release/11.x
-    mkdir ./build
+    mkdir build
     cd ..
     mkdir llvm-project-tmpfs
     sudo mount -t tmpfs -o size=10G,mode=1777 tmpfs ./llvm-project-tmpfs
@@ -34,7 +45,8 @@ if [ $local = 1 ]; then
     git clone https://github.com/llvm/llvm-project.git
     cd llvm-project
     git checkout release/11.x
-    mkdir ./build
+    mkdir build
+    cd build
     #
     cmake -G Ninja \
 	  -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;lldb;compiler-rt;lld" \
