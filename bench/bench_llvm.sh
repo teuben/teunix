@@ -17,7 +17,10 @@ if [ $git = 1 ]; then
     git checkout release/11.x
     mkdir ./build
     cd ..
+    echo Creating llvm-project.tar.gz 
     tar zcf llvm-project.tar.gz llvm-project
+    echo Done. llvm-project.tar.gz created
+    exit 0
 else
     echo git=0  no clean git made
 fi
