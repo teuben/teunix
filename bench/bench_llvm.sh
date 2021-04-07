@@ -3,6 +3,8 @@
 # a good parallel benchmark compiling the LLVM compiler
 # See also https://www.anandtech.com/show/16594/intel-3rd-gen-xeon-scalable-review/10
 #
+# Some of my samples:
+#  lma /tmp   
 
 refresh=0
 local=0
@@ -15,6 +17,7 @@ for arg in $*; do
 done
 
 if [ $git = 1 ]; then
+    
     git clone https://github.com/llvm/llvm-project.git
     cd llvm-project
     git checkout release/11.x
@@ -24,12 +27,13 @@ if [ $git = 1 ]; then
     tar zcf llvm-project.tar.gz llvm-project
     echo Done. llvm-project.tar.gz created
     exit 0
+    
 else
     echo git=0  no clean git made
 fi
 
 if [ $refresh = 1 ]; then
-
+    
     git clone https://github.com/llvm/llvm-project.git
     cd llvm-project
     git checkout release/11.x
@@ -44,11 +48,13 @@ if [ $refresh = 1 ]; then
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
     /usr/bin/time cmake --build .
     exit 0
+    
 else
     echo refresh=0   No method as published in https://www.anandtech.com/show/16594/intel-3rd-gen-xeon-scalable-review/10
 fi
 
 if [ $local = 1 ]; then
+    
     git clone https://github.com/llvm/llvm-project.git
     cd llvm-project
     git checkout release/11.x
@@ -60,12 +66,15 @@ if [ $local = 1 ]; then
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
     /usr/bin/time cmake --build .
     exit 0
+    
 else
     echo local=0 no full git locally
 fi
 
 
 if [ -e $tgz ]; then
+    
+    echo Found $tgz
     tar zxf llvm-project.tar.gz 
     cd llvm-project
     mkdir build
@@ -73,8 +82,9 @@ if [ -e $tgz ]; then
     cmake -G Ninja \
 	  -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;lldb;compiler-rt;lld" \
 	  -DCMAKE_BUILD_TYPE=Release ../llvm
-    time cmake --build .
+    /usr/bin/time cmake --build .
     exit 0
+    
 else
     echo No tgz=$tgz  
 fi
