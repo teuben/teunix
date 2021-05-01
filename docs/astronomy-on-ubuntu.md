@@ -282,6 +282,8 @@ there are some neat bibtex organizing tools we should advertise here too.
 what about PDF annotation, useful if you make your own PDF libary. I use okular, but that's
 KDE centric. And a PDF library search engine, you store your PDF's in a big container, and have it indexed.
 
+Xournal is a program where you can also add a signature file to a PDF.
+
 Overleaf is heavily used by a lot of astronomers. But did you know you can keep
 a local copy on your own system using git? And even make local changes and push them
 back to overleaf? It's always a good idea to have a 2nd backup. Under the top left MENU button for
@@ -318,6 +320,8 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 * dia
 * imagemagic
 * xv, geeqie, ...
+* IDE/editors: Eclipse, VSCode, Geany, PyCharm, Atom, Emacs, Vim
+* backup tools:   rsync, unison
 
 ## "amateur" tools
 
@@ -351,7 +355,8 @@ names to put some terms on the table you may have heard about
 * flatpak
 * snap
 * docker
-* virtual machine (VirtualBox, VMware, gnome boxes, KVM, qemu, ....)
+* virtual machine (VirtualBox, VMware, gnome boxes, KVM, qemu, Sosumi)
+* machine emulators (darling (for macOS), wine (for Windows), dosbox (for DOS))
 * kubernetes
 
 
@@ -417,6 +422,14 @@ The package **gnome-boxes** provides another virtual machine environment.
 
 Useful to know it exists, but out of scope for this paper?
 
+## Startup Files
+
+In addition to you .bashrc (or .cahrc etc.) there are other tools to keep your shell environment organized.
+One is the **direnv** command, which allows you to keep project specific environment variables.
+
+Another is my own, the *rc* alias, which depends on an ~/rc/PROJECT.rc file in which you place your
+own project dependant commands. This also serves as a *self-documenting*
+
 ## old PJT stuff to be organized
 
 
@@ -464,6 +477,8 @@ Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
 
 ADS tools to set up my bibtex files?  (bibmanager?)
    texlive-bibtex-extra
+
+ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
 
 My CV tools
 
@@ -541,6 +556,35 @@ installed. In that sense , vnc is easier to use, just a bit slower.
 Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
 This will be a manual install, it does not come with Ubuntu. I used
 https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+
+### Compressing files
+
+1. .gz  (gzip, gunzip, tar ztvf)
+1. .bz2 (bzip2)
+1. .tar (tar)
+1. .rar (rar)
+2. .xz  (tar tvf)
+3. .7z  (7z, p7zip, 7zz)
+3. .zip (unzip)
+4. .fz  (funpack,fpack)
+4. .lz4 (unlz4)
+
+## A Whole New World
+
+You can replace all major components of your desktop environment with others, and get
+a very new look and feeling. Many online articles describe them. Here's just one of
+those. We leave is as an excersize for the reader to fill in the gaps
+
+1. launcher/search tool:   Albert  https://albertlauncher.github.io/installing/
+2. terminal:   Tilix
+3. shell:   fish
+4. browser:  brave with DuckDuckGo as default search engine
+4. editor:
+4. IDE:
+5. faster loads:   "sudo apt install preload"
+
+
+
 
 ### Online help vs. Offline help
 
