@@ -459,6 +459,8 @@ Grip (to preview your MD files)
 LibreOffice (and competitors now around too)
 Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
+  xournal
+  PDFtk
 
 ADS tools to set up my bibtex files?  (bibmanager?)
    texlive-bibtex-extra
