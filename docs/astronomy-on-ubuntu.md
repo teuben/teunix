@@ -46,10 +46,12 @@ some very basic ones that most of us will need right away, so
 consider this the boostrapping procedure, as Ubuntu doesn't 
 come with these anymore. Here is the command:
 
-      sudo apt install git emacs tcsh wget curl unzip openssh-server -y
+      sudo apt install  git emacs tcsh wget curl unzip openssh-server -y
 
 you can get away without emacs if that's not your editor of choice.
 The others are often needed when you work with astronomical software.
+
+? should we add the basic gcc/gfortran compilers ?
 
 ## Package tools:  apt and dpkg
 
@@ -61,11 +63,12 @@ file system to solve your problem. Of course *google* and *stackoverflow* can
 also be very useful. Here are a few example commands:
 
 
+      dpkg --list                  list all packages you have
       dpkg -S file                 which package owns that file
       dpkg -L package              list what files the package gives
-      dpkg --list                  list all packages you have
       apt-get -f install           post-install if errors occur
       apt autoremove               cleanup old stuff not needed anymore
+      apt autoclean
 
 And here is how to create a list of all possible packages (there are over 60,000)
 and installed packages. Useful if you like commands like **grep** to search for things:
@@ -144,11 +147,33 @@ Ubuntu does come with a modest set of astronomy packages. Here are some of our f
       sudo apt install libcfitsio-dev libccfits0v5 pgplot5 -y
       sudo apt install gnuastro -y
 
-or if you want to adopt the whole astro debian blend
+### astro debian blend
+
+If you want to adopt the whole astro debian blend
 
       sudo apt install astro-all
 
 which will consume about 2xx packages in 3GB. This will get you everything and then some.
+
+### KERN
+
+This extremely large well supported [KERN package](https://kernsuite.info/) is available
+for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
+XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
+the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
+
+Here is the example how you get started in Ubuntu 18.04
+
+        sudo apt-get install software-properties-common
+        sudo add-apt-repository -s ppa:kernsuite/kern-5
+        sudo apt-add-repository multiverse
+        sudo apt-add-repository restricted
+        sudo apt-get update
+
+After which you are ready to install some packages, for example meqtrees:
+
+        sudo apt-get install meqtrees
+
 
 ### ASCL
 
@@ -168,14 +193,17 @@ a Mac they don't distiguish anymore between a login and an interactive
 shell, which is why on a Mac you need to edit your **.bash_login**
 file, and on linux the **.bashrc**. 
 
-In bash directory completion can be very annoying if you use environment variables,
+In **bash** directory completion can be very annoying if you use environment variables,
 you could consider adding the following to your **.bashrc** file:
 
       shopt -s direxpand
 
 ### Dotfiles
 
-Dotfiles: this is quite a cottage industry.
+Unix stores a lot of application defaults and setup files in files (and directories) that
+are hidden from view by starting the filename with a . ; hence the name dotfiles.
+
+Dotfile appear to be quite a cottage industry.
 Searching in github for dotfiles gives you over 100 thousands repositories. Seriously?
 Talk about reinventing the multiverse. But
 if you setup your Unix accounts regularly,
@@ -237,7 +265,7 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
       sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
 
 sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
-would be **hdf5-devel**
+would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based systems.
 
 ## Other Astronomical Software
 
@@ -251,24 +279,6 @@ would be **hdf5-devel**
 
 * Gemini Observing Tool
 
-## KERN
-
-This extremely large well supported [KERN package](https://kernsuite.info/) is available
-for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
-XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
-the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
-
-Here is the example how you get started in Ubuntu 18.04
-
-        sudo apt-get install software-properties-common
-        sudo add-apt-repository -s ppa:kernsuite/kern-5
-        sudo apt-add-repository multiverse
-        sudo apt-add-repository restricted
-        sudo apt-get update
-
-After which you are ready to install some packages, for example meqtrees:
-
-        sudo apt-get install meqtrees
                 
 ## IDL
 
@@ -368,6 +378,7 @@ names to put some terms on the table you may have heard about
 * flatpak
 * snap
 * docker
+* podman
 * virtual machine (VirtualBox, VMware, gnome boxes, KVM, qemu, Sosumi)
 * machine emulators (darling (for macOS), wine (for Windows), dosbox (for DOS))
 * kubernetes
@@ -445,18 +456,17 @@ own project dependant commands. This also serves as a *self-documenting*
 
 I use the following bash alias :
 
-      use() {
-        if [ ! -e ~/.use ]; then
-          return
-        fi
-        for f in $(cat ~/.use); do
-          if [ ! $2 ]; then
-            grep -i $1 $f
-          else
-            grep -i $1 $f | grep -i $2
-          fi
-        done
-      }
+    rc () {
+      if [ ! $1 ]; then
+        echo No project listed, known ones are:
+        cd ~/rc
+        ls *.rc | sed s/.rc//g
+      elif [ ! $2 ]; then
+        source ~/rc/$1.rc
+      else
+        more ~/rc/$1.rc
+      fi
+    }
 
 ## old PJT stuff to be organized
 
