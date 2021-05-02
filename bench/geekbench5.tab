@@ -9,9 +9,10 @@ sdp        547  3909
 kraken     779  5769
 yorp20     441  7931
 #
+
 t530      ~700
 t480      ~900
-x1y4     ~1000
+x1y4     ~1100
 xps13     1468  4265
 #
 #
@@ -21,6 +22,7 @@ i7-11700K                                            ~1800
 
 amd epyc 7763 - cinebench world record  113,631
 intel xeon platinum 8380                 74,630
+
 
 AMD Ryzen 9 5950X 3400 MHz (16 cores)                ~2280
 11th Gen Intel Core i5-11400 2593 MHz (6 cores)      ~2260

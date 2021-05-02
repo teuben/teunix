@@ -6,12 +6,12 @@ a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
 Is **Linux** so much easier to set up that we don't need one?  There were the times
 this was really involved, but not so much anymore.
-Recently a spanking new Ubuntu 20.04LTS came out.
+Recently a spanking new Ubuntu 20.04LTS came out, good for 2 years until the next LTS.
 You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
 going to change that here!!
 
-So, if you're a scientist with a new Linux computer, read on. 
+So, if you're a scientist with a new Linux computer, read on.  
 This page assumes you want to write scripts, reduce data, plot results, work
 with LaTeX, and give presentations, among other handy things. This is however
 not a tutorial. We will also point out some salient differences where things
@@ -25,7 +25,7 @@ graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
 cover here, and we keep the description agnostic to your GUI choice.
 We will also not cover the actual installation of Ubuntu Linux,
 and assume you have done this. Within the Ubuntu family, there is also Kubuntu,
-Xubuntu, Lubuntu etc. Again, we keep our discussion agnostic to which flavor
+Xubuntu, Lubuntu etc. Again, we keep our discussion agnostic to which (GUI) flavor
 you use.
 
 [ Find out which version of Linux you have. You can either look at the
@@ -36,7 +36,8 @@ not tell you enough, try the command **lsb_release  -a**. ]
 Many of the apps are large files and can take a while to
 download. You should be on a good internet connection and allow at
 least a couple hours to complete the entire setup.  Most of the
-installation is terminal based, that should be no surprise.
+installation covered here is terminal based, that should be no surprise,
+though GUI alternatives exist. 
 
 ## Bootstrap your packages
 
@@ -91,8 +92,9 @@ Discover for Kubuntu, and XXX for Ubuntu.
 If you come from a Mac, you may like certain packages that are available via **brew**. 
 This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
 
-Another alternative methods to install applications not availble through the regular
-channels are **FlatPak** and **snap**, which we cover in more detail below.
+Another alternative methods to install applications not available through the regular
+channels are **FlatPak** and **snap**, which we cover in more detail below,
+as well as the AppImage style of programs.
 
 By using such alternate app channels, you can effectively make the official
 version hidden, and can come with additional restrictions.
@@ -107,13 +109,14 @@ might see
 
 * the command **xdg-open** will open any file with the appropriate
 mime-type. If the argument is a directory, a file browser
-(e.g. Nautilus or Dolphin will be used)
+(e.g. Nautilus or Dolphin will be used). On a Mac you will find a
+similar command, aptly called **open**
 
 * ...
 
 ## Less nice things about Ubuntu
 
-* snaps and flatpaks (appimage work a lot better ) - but this is
+* snaps and flatpaks (appimage works a lot better ) - but this is
 controversial. I'll devote a whole section on these universal binaries
 below.
 
@@ -122,12 +125,13 @@ sometimes this will bump the program you had before and you
 loved. I've been unpleasantly bitten by this a few times. My JPG's
 were opened by gwenview, when I installed krita, suddenly by this
 krita editor. Now where again is this mime-type list and how do
-you edit it?  This will sadly depend onthe distro.  Kubuntu is
+you edit it?  This will sadly depend on the distro.  Kubuntu is
 different from Ubuntu. grrr.
 
 * 32 bit applications are on the way out: increasingly it will become
 harder to add this support in an 64-bit OS. There are still some popular
-astronomy legacy applications (e.g. karma) that have not been converted.
+astronomy legacy applications (e.g. karma) that have not been converted,
+and probably never will (if only we had the source code).
 
 
 * ...
@@ -150,28 +154,32 @@ which will consume about 2xx packages in 3GB. This will get you everything and t
 
 The [Astrophysics Source Code Library (ASCL)](https://ascl.net) is a registry where
 you can find 2000+ codes listed from (peer reviewed) papers.
-Most of those you will have to install via source.
+Most of those you will have to install via source. ASCL has a pretty good search
+tool to find related codes. You can also find ASCL codes via papers, for example
+if you look at CGS at (provide link)
 
 ## Change Shell - bash or tsch
 
 Ubuntu comes with a default shell called **bash**, but some die
 hards might like to stick to (t)csh, or if you look into the future, maybe adopt
 **zsh** (as a *better bash*).  The **chsh** command will do this for
-you, but MacOS is not always true to unix, it doesn't work there.  On
+you, but MacOS is not always true to Unix, it doesn't work there.  On
 a Mac they don't distiguish anymore between a login and an interactive
-shell, which is why on a mac you need to edit your **.bash_login**
+shell, which is why on a Mac you need to edit your **.bash_login**
 file, and on linux the **.bashrc**. 
 
 In bash directory completion can be very annoying if you use environment variables,
-you could consider adding the following to your .basrc file:
+you could consider adding the following to your **.bashrc** file:
 
       shopt -s direxpand
 
 ### Dotfiles
 
 Dotfiles: this is quite a cottage industry.
-Searching in github for dotfiles gives you over 100 thousands repositories. Talk about reinventing the universe. But
-if you install Unix regularly, it is probably useful to have a mechanism to get your dotfiles organized. Roll your
+Searching in github for dotfiles gives you over 100 thousands repositories. Seriously?
+Talk about reinventing the multiverse. But
+if you setup your Unix accounts regularly,
+it is probably useful to have a mechanism to get your dotfiles organized. Roll your
 own, or steal some ideas from the many on github.
 
 ## Python
@@ -216,6 +224,7 @@ and if you need to need some legacy ones, try
 
       sudo apt install rcs cvs subversion mercurial -y
 
+should cover the official **gh** command.
 
 ### what about all the *-dev packages
 
@@ -227,6 +236,8 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
       sudo apt install wcslib-dev libfftw-dev libcfitsio-dev libgsl-dev xorg-dev -y
       sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
 
+sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
+would be **hdf5-devel**
 
 ## Other Astronomical Software
 
@@ -262,12 +273,13 @@ After which you are ready to install some packages, for example meqtrees:
 ## IDL
 
 Of course IDL is commercial software, but it is widely used in some of the astronomy
-community, and the current owner will happily sell you a license for linux.
+community, and the current owner will happily sell you a $$$ license for linux.
 If you are lucky, your IDL scripts will work under GDL
 
         sudo apt install gnudatalanguage -y
 
-or perhaps somebody has ported it to python.
+or perhaps somebody has ported it to python.  The idlastro (sp?) library is well
+supported.
 
 
 ## Publishing: LaTex
@@ -307,7 +319,8 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 
 * it will never be 100% compatible with MS Office
 * you can open most PDF files and edit them directly, useful for filling out PDF forms. 
-* there are actually several other open source MS Office clones. E.g. OnlyOffice, G Suite, OpenOffice, WPS Office, Collabora Office, FreeOffice 2021, SoftMakerOffice 2021
+* there are actually several other open source MS Office clones.
+  E.g. OnlyOffice, G Suite, OpenOffice, WPS Office, Collabora Office, FreeOffice 2021, SoftMakerOffice 2021
 
 ## Other tools
 
@@ -325,7 +338,7 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 
 ## "amateur" tools
 
-I'm not sure if people spend 100k on equipment, are they still called "amateur" ?
+I'm not sure if people who spend 100k on equipment are still called "amateur" ?
 
 - skytools such as
   - celestia
@@ -363,16 +376,17 @@ names to put some terms on the table you may have heard about
 ### AppImage
 
 This is the simplest of the "build once, run anywhere" executable in linux. super simple,
-one file, make it exectable
+download one file, make it exectable
 (**chmod +x**) and run it. All the pain is for the developer. Has some (security?) issues?
 AppImages are not signed (some AppStored refuse to publish those)
 and do not support ICU (language extensions), for one. So unclear how long they will survive,
-but if you find an appimage, it will be the easiest to use.
+but if you find an appimage, it will be the easiest to use. A popular program of
+which you can often find pre-released in this format is Digikam (a photoshop type program).
 
 ### flatpak
 
 This is RedHat's attempt to provide portable executables that can be deployed anywhere. Remember this thing
-called "build once, run anywhere" ? How did that work for you?
+called "build once, run anywhere" ? How did that work out for you?
 
 Well, I have  bones to pick when you have mounted filesystems. More about that below.
 But just to give an example, this is what I had to do the other day (I may find a better way,
@@ -382,13 +396,12 @@ I don't like the sudo portion)
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       flatpak install flathub org.kde.digikam
       
-after which you can run it as follow
+after which you can run it as follows
 
       flatpak run org.kde.digikam
 
 This runs digikam in a container, so by default you don't see much of what's outside of this. You have
 limited access to folders (/home and /media being the exception).
-
 
       flatpak install flathub flatseal           
       sudo flatpak override org.kde.digikam --filesystem=/Photos
@@ -416,7 +429,7 @@ image.
 
       sudo apt install virtualbox
 
-The package **gnome-boxes** provides another virtual machine environment.
+The package **gnome-boxes** provides another virtual machine environment. Does it require Gnome ???
 
 ### Kubernetes
 
@@ -429,6 +442,21 @@ One is the **direnv** command, which allows you to keep project specific environ
 
 Another is my own, the *rc* alias, which depends on an ~/rc/PROJECT.rc file in which you place your
 own project dependant commands. This also serves as a *self-documenting*
+
+I use the following bash alias :
+
+      use() {
+        if [ ! -e ~/.use ]; then
+          return
+        fi
+        for f in $(cat ~/.use); do
+          if [ ! $2 ]; then
+            grep -i $1 $f
+          else
+            grep -i $1 $f | grep -i $2
+          fi
+        done
+      }
 
 ## old PJT stuff to be organized
 
@@ -472,6 +500,8 @@ Grip (to preview your MD files)
 LibreOffice (and competitors now around too)
 Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
+  xournal
+  PDFtk
 
 ADS tools to set up my bibtex files?  (bibmanager?)
    texlive-bibtex-extra
@@ -582,12 +612,13 @@ those. We leave is as an excersize for the reader to fill in the gaps
 5. faster loads:   "sudo apt install preload"
 
 
+My take on this:  it's never 100% the same, so why bother.
 
 
 ### Online help vs. Offline help
 
 The unix *man* and *info* command give a lot of help. But if you are offline, this can be a problem.
-One tool that solves this is "zeal"
+A neat tool that solves this is "zeal"
 
       sudo apt install zeal
 
@@ -603,7 +634,7 @@ one you don't need and then run it. Thare are some sparing comments in the file:
 
     sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
-or if you want to be really don't want to select and have enough disk space, try this
+or if you don't want to select and have enough disk space, try this
 
     sudo apt install astro-all
 
@@ -657,14 +688,12 @@ are some popular ones:
   ](https://blends.debian.org/astro/)
 
 
-## Ack
+## Acknowledgements
 
 I wish to thank Marc Pound and Ollie Streicher for checking their own
 Ubuntu and Debian systems, and making sure I wasn't lying too much
 since I stuck to Kubuntu. This draft is the precursor to the Astrobetter Wiki
 version on setting up your (Ubuntu) Linux.
 
-A version of this document was also maintained on
-https://teuben.github.io/teunix or
-https://github.com/teuben/teunix/docs/
-(fix the links)
+If you read this elsewhere, a version of this document is also maintained on
+https://github.com/teuben/teunix/blob/master/docs/astronomy-on-ubuntu.md
