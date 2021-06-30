@@ -152,7 +152,7 @@ fi
 
 for d in /astromake ~/astromake ; do
     if [ -f $d/astromake_start.sh ]; then
-	echo ASTROMAKE: $d
+	# echo ASTROMAKE: $d
 	. $d/astromake_start.sh
     fi
 done
