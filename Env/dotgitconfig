@@ -11,6 +11,10 @@
 	tool = meld
 [merge]
 	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+# "$MERGED"
+#        keepBackup = false
 [push]
 	default = simple
 [color]
