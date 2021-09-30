@@ -21,6 +21,7 @@
 [alias]
 	q  = status -uno
 	i  = config --list
+	l  = log --name-only
 	ci = commit
 	co = checkout
 	st = status
@@ -56,7 +57,6 @@ sa = stash apply
 ss = stash save
 
 # log related - thanks to @mwd410
-l = log 
 lh = log --graph
 la = !git lh --date-order --all 2> /dev/null
 lb = log --graph --simplify-by-decoration
