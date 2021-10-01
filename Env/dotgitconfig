@@ -84,3 +84,5 @@ pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
 	protocol = https
 [cola]
 	spellcheck = false
+[pull]
+	rebase = false
