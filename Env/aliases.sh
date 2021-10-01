@@ -16,6 +16,8 @@ alias  up5='cd ../../../../..'
 alias  up6='cd ../../../../../..'
 alias  up7='cd ../../../../../../..'
 alias  up8='cd ../../../../../../../..'
+alias  cdd='cd ~/Downloads'
+alias  cdp='cd ~/Pictures'
 alias  dir='ls -sF'
 alias sdir="ls -sF |sort -nr | head"
 alias  dus="du     |sort -nr | head"
@@ -32,6 +34,17 @@ alias cdir='cpio -itvc <'
 alias  tdir='tar tvf'
 alias untar='tar xvf'
 alias detar='tar xvf'
+# nemoinp is a NEMO command line calculator
+alias    ni='nemoinp'
+
+push() {
+    git commit -m upd $1
+    git push
+}
+
+mt() {
+    ls -l $1; more $1
+}
 
 mktar() {
     tar cvf $1.tar $1
@@ -41,14 +54,20 @@ mkzip() {
 }
 alias zdir='zoo -list'
 rc () {
-    source ~/rc/$1.rc
+    if [ ! $1 ]; then
+	echo No project listed, known ones are:
+	cd ~/rc
+	ls *.rc | sed s/.rc//g
+    elif [ ! $2 ]; then
+         source ~/rc/$1.rc
+    else
+	 more ~/rc/$1.rc
+    fi
 }
 mkcd() {
     mkdir -p $1
     cd $1
 }
-
-
 use() {
     for f in $(cat ~/.use); do
 	if [ ! $2 ]; then
@@ -133,7 +152,7 @@ fi
 
 for d in /astromake ~/astromake ; do
     if [ -f $d/astromake_start.sh ]; then
-	echo ASTROMAKE: $d
+	# echo ASTROMAKE: $d
 	. $d/astromake_start.sh
     fi
 done

@@ -11,6 +11,10 @@
 	tool = meld
 [merge]
 	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+# "$MERGED"
+#        keepBackup = false
 [push]
 	default = simple
 [color]
@@ -21,6 +25,7 @@
 [alias]
 	q  = status -uno
 	i  = config --list
+	l  = log --name-only
 	ci = commit
 	co = checkout
 	st = status
@@ -56,7 +61,6 @@ sa = stash apply
 ss = stash save
 
 # log related - thanks to @mwd410
-l = log 
 lh = log --graph
 la = !git lh --date-order --all 2> /dev/null
 lb = log --graph --simplify-by-decoration

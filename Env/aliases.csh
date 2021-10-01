@@ -1,6 +1,10 @@
 # tcsh and csh
 #
 # echo 'if ( -e ~/teunix/Env/aliases.csh ) source ~/teunix/Env/aliases.csh' >> ~/.cshrc
+#
+# set prompt   = '%B%n@%m:%~\n%T %#%b'          # example that worked on 6.20
+# set prompt   = '%n@%m:%~\n%T %# '             # needed for 6.21 to prevent jumping with up-arrow
+# set prompt   = '%B%n@%m:%~ @%T %#%b '         # -ibid- remove the newline also fixed problem
 
 alias teunix '(cd ~/teunix; git pull)'
 
