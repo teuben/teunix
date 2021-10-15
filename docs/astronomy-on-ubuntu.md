@@ -22,11 +22,14 @@ and GNU software based operating system. Linux is part of the Unix family, of
 which Mac OSX is also one.  Therefor many tools you will see described here,
 apply to Mac as well. Linux normally comes with a choice of a 
 graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
-cover here, and we keep the description agnostic to your GUI choice.
+cover here, and we keep the description agnostic to your Desktop GUI choice.
 We will also not cover the actual installation of Ubuntu Linux,
 and assume you have done this. Within the Ubuntu family, there is also Kubuntu,
 Xubuntu, Lubuntu etc. Again, we keep our discussion agnostic to which (GUI) flavor
-you use.
+you use. One word of caution:  it may be tempting to tinker with your
+desktop to make it look like you're on a Mac or Windows. In one example
+of using the McMojave, my application menu for ds9 (and maybe other apps) was
+gone. Not a good move.
 
 [ Find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
@@ -235,6 +238,11 @@ What about  PyRAF, AstroPy,
 PyFITS, PyWCS, VOTable, NOVAS, and astrolib.coords. 
 CosmoloPy, APLPy, PyEphem, and
 NASA's OSCAAR software that are installable via apt-get.
+
+Difference between conda and pip.  Also mention the "pip install -e ." method, as opposed to
+the "python setup.py install" method, as developer or as user.
+
+Using jupyter notebooks is now the
 
 ## R
 
@@ -467,6 +475,21 @@ I use the following bash alias :
         more ~/rc/$1.rc
       fi
     }
+	
+## Pandemic
+
+During the 2020+ pandemic we all learned communications were now channeled through
+a large number of apps, depending on the preference of the group. 
+
+1. zoom
+2. google meet (formerly google chat)
+3. microsoft teams
+4. skype
+5. slack
+6. discord
+7. webex
+
+
 
 ## old PJT stuff to be organized
 
@@ -515,6 +538,16 @@ Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
 
 ADS tools to set up my bibtex files?  (bibmanager?)
    texlive-bibtex-extra
+
+Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
+    sudo apt install ttf-mscorefonts-installer
+but still i don't the all import calibri
+
+    mkdir ~/.fonts
+    wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+
+See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-in-linux-office-suites.html
+
 
 ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
 
@@ -650,11 +683,62 @@ or if you don't want to select and have enough disk space, try this
 
 these are about XXX (300?) packages in 3GB.
 
+## Maintenance
+
+As time progresses, you will notice your root partition might fill up, and you don't want this to
+get to close to 0. A program such as **bleachbit** can help with this. Here are a few additional
+comments.
+
+### Slackspace on ext4
+
+If you were using a filesystem like ext4, it has a rather large default slackspace that root reserved. Try and
+setting it smaller, or even to 0:
+
+      sudo ... /dev/ -m 0
+	  
+### Remove unused programs by snap / flatpak
+
+
+
+      snap list
+	  snap remove yakyak
+
+and
+
+      flatpak list
+	  flatpak remove org.freedesktop.Platform
+
+### Applications that cache
+
+Check the size of your cache directories:
+
+	  du -s /var/cache/apt /var/log ~/.cache
+	  
+The apt cache can be cleaned using:
+
+      sudo apt update
+      sudo apt clean
+      sudo apt autoremove
+      sudo apt autoclean
+	  
+For me the 	~/.cache/pip is always huge, but your browser also tend to leave a lot of files here. 
+cleanup as you see fit.   Also note depending how you partitioned your drive space, these cache
+may be on different disks.
+
+      pip cache purge
+	  
+Keeping old kernels around can easily accumulate disk space. 
+
+
+      sudo apt autoremove --purge
+	  
+	  sudo purge-old-kernels
+
 ## Privacy?
 
 This article does not deal with [privacy](https://www.privacytools.io/), but it
 is good to be aware that different distros deal with this in different ways.
-In general, Linux is a good OS that is concerned about this.  
+In general, Linux is a good OS that is concerned about this.
 
 
 ## Summary of tools
