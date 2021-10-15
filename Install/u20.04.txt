@@ -8,7 +8,8 @@
     dpkg --list                  list all we have
     apt-get -f install           post-install if error occurs
     apt autoremove               cleanup old stuff
-
+    apt clean
+    apt autoremove --purge
 
 sudo apt install meld tkcvs emacs tcsh git htop gitk git-cvs -y
 sudo apt install wget unzip curl -y
@@ -88,6 +89,7 @@ chromium-browser    (google chrome was done via a tarball in /opt/google) - now 
 =python3-pip
 =cython3
 
+=bleachbit        cleanup package
 
 postr   - good flickr uploader
 =tkcvs
@@ -509,7 +511,7 @@ sudo apt install timeshift
 
 ---
 
-better laptop powermanagement tools?  (there is also 'laptop-mode-tools', but on thinkpads they recommend tlp)
+better laptop battery powermanagement tools?  (there is also 'laptop-mode-tools', but on thinkpads they recommend tlp)
 
 # sudo apt install tlp tlp-rdw -y
 # sudo tlp start
@@ -519,6 +521,16 @@ and for thinkpads:
 sudo apt install tp-smapi-dkms acpi-call-dkms
 
 TLPUI:   http://ppa.launchpad.net/linuxuprising/apps/ubuntu/pool/main/t/tlpui/
+
+
+Slimbook is the gui:
+
+sudo add-apt-repository ppa:slimbook/slimbook
+sudo apt update
+sudo apt install slimbookbattery
+# And to remove:
+# sudo add-apt-repository --remove ppa:slimbook/slimbook
+# sudo apt remove --autoremove slimbookbattery
 ===
 
 gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
@@ -714,12 +726,25 @@ rman test
 = zsync
 
 micro-emacs :    https://github.com/torvalds/uemacs
-needs libncurses5-dev  for curses.h 
+needs libncurses5-dev  for curses.h
+
+micro-emacs also in:  sudo apt install mg
 
 -
 
 Kwin Scripts:  Hide Inactive Borders - when de-activating, it does not get the borders back.
 kquitapp5 plasmashell; kstart5 plasmashell
+-
+check HD health etc.
+
+sudo apt install smartmontools
+sudo smartctl -i /dev/sda
+sudo apt install libatasmart-bin
+sudo smartctl --quietmode=errorsonly --all /dev/sda
+
+sudo apt install nvme-cli
+sudo nvme smart-log /dev/nvme0
+sudo smartctl -a /dev/nvme0
 
 
 -
@@ -756,3 +781,16 @@ settings:
 - app style :L      kvantum 
 
 dark
+
+https://www.howtoforge.com/how-to-check-ssd-hdd-health-in-linux/
+apt-get install smartmontools -y
+systemctl start smartd
+systemctl status smartd
+sudo smartctl -s on /dev/sda
+sudo smartctl -i /dev/sda
+sudo smartctl -t short -a /dev/sda
+
+
+sudo apt-cache policy
+sudo grep -Erh ^deb /etc/apt/sources.list*
+inxi -r
