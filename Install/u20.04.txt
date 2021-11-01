@@ -338,6 +338,8 @@ ant                 (for developing - will result in java)
 = graphviz  (dot, for admit)
 = gnudatalanguage (GDL)
 
+= xvfb (for casa6)
+
 ----
 
 if you really need Oracle's version, use this instead
