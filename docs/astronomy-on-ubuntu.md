@@ -11,11 +11,14 @@ You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
 going to change that here!!
 
-So, if you're a scientist with a new Linux computer, read on.  
+So, if you're a scientist with a new Linux computer, read on.
 This page assumes you want to write scripts, reduce data, plot results, work
 with LaTeX, and give presentations, among other handy things. This is however
 not a tutorial. We will also point out some salient differences where things
 work differently on a Mac.
+
+If you have used Ubuntu for a while, this might be a nice checklist to see
+if you have been missing out on some cool tools.
 
 As a brief introduction: Linux is the catch-all name for a linux kernel
 and GNU software based operating system. Linux is part of the Unix family, of
@@ -95,7 +98,8 @@ Discover for Kubuntu, and XXX for Ubuntu.
 
 ### Alternative package managers?
 
-If you come from a Mac, you may like certain packages that are available via **brew**. 
+[Package Managers](https://itsfoss.com/package-manager) used to be tied to the Linux Distribution.
+But if you come from a Mac, you may like certain packages that are available via **brew**. 
 This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
 
 Another alternative methods to install applications not available through the regular
@@ -487,8 +491,10 @@ a large number of apps, depending on the preference of the group.
 4. skype
 5. slack
 6. discord
-7. webex
+7. --virtual world--
+8. webex
 
+and maybe more, but these are the ones I've used at least ones.
 
 
 ## old PJT stuff to be organized
@@ -530,7 +536,7 @@ Latex/Bibtex
 Gimp, xfig, dia, ...
 Grip (to preview your MD files)
     grip will download a lot of python3 stuff
-LibreOffice (and competitors now around too)
+LibreOffice (and competitors now around too; see earlier list)
 Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
   xournal
@@ -553,9 +559,23 @@ ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the
 
 My CV tools
 
-## SSH
+## Remote Computing
 
-One way to do rewmote computing is via ssh, one terminal at a time (more persistency
+I love remote computing, but over the years certain implementations
+have made the classic X11 based copy and paste a bit more
+cumbersome. If you are used to the simple  "left click select and copy via middle click paste",
+this will not always work, in fact there are situations where even using a cumbersome clipboard
+does not work anymore (e.g. SciServer). Blame it on russian dolls?
+
+My benchmark is double left click a word in one window (it selects it, use triple left click to select the whole line)
+and middle click to paste. This is efficient!
+
+Even within Linux, certain apps now involve more elaborate ways to copy and paste.
+
+
+## ssh
+
+One way to do remote computing is via ssh, one terminal at a time (more persistency
 via screen/tmux or vnc/x2go)
 
       ssh-keygen
