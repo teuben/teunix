@@ -13,5 +13,8 @@
 192.168.1.8    mac    mac103
 192.168.1.9    rach   
 192.168.1.104  rach104
-#
+# 10-jan-2022: chara not on worl-IP anymore
 129.2.15.45    chara chara.astro.umd.edu
+129.2.14.56    lma   lma.astro.umd.edu
+129.2.14.89    ursa  ursa.astro.umd.edu
+129.2.14.5     terra terra.astro.umd.edu
