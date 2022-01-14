@@ -16,6 +16,8 @@ FILES and their final locations:
 If your distribution uses sudo instead of PolicyKit's pkexec, change the argument --pkexec-openconnect to --sudo-openconnect.
 (i didn't need that)
 
+See also https://github.com/dlenski/gp-saml-gui/blob/master/README.md for info on gp-saml-gui and installation guidelines.
+
 Then to start/run/status....
 
      systemctl --user daemon-reload
