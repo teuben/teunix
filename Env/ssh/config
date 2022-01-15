@@ -1,0 +1,145 @@
+#   ~/.ssh/config
+#
+TCPKeepAlive yes
+ServerAliveInterval 60
+
+ForwardX11 yes
+ForwardX11Trusted yes
+
+Host astro
+     Hostname terra.astro.umd.edu
+
+Host ursa
+     Hostname ursa.astro.umd.edu
+     
+Host chara
+     #ProxyCommand ssh ursa.astro.umd.edu nc sgra.astro.umd.edu 22    # works
+     #ProxyCommand ssh ursa.astro.umd.edu ssh sgra.astro.umd.edu      # bash: SSH-2.0-OpenSSH_8.2p1: command not found
+     ProxyCommand ssh ursa.astro.umd.edu -W %h:%p                     # works
+
+Host sgra
+     # Hostname chara.astro.umd.edu
+     #ProxyCommand ssh ursa.astro.umd.edu nc sgra.astro.umd.edu 22    # works
+     #ProxyCommand ssh ursa.astro.umd.edu ssh sgra.astro.umd.edu      # bash: SSH-2.0-OpenSSH_8.2p1: command not found
+     ProxyCommand ssh ursa.astro.umd.edu -W %h:%p                     # works
+
+Host lma
+     Hostname lma.astro.umd.edu
+
+Host lab
+     Hostname lab002.astro.umd.edu
+
+Host nemo
+     Hostname 192.168.1.101
+#Host nemo-wifi
+#     Hostname 192.168.1.104
+
+Host syn
+     Hostname 192.168.1.104
+
+# UMASS
+Host cln
+     ProxyCommand ssh lpad.astro.umass.edu nc cln.astro.umass.edu 22
+
+# LMT
+Host merlot
+     Hostname 187.248.54.231
+     User     lmtslr
+
+Host lmt
+     Hostname 187.248.54.231
+     User     lmtslr
+
+Host malt
+     Hostname malt
+     ProxyCommand ssh lmtslr@187.248.54.231 -W %h:%p
+     User lmtslr 
+
+Host slrtac
+     Hostname malt
+     ProxyCommand ssh lmtslr@187.248.54.231 -W %h:%p
+     User lmtslr 
+
+# INAOE - frontend
+Host inaoe
+    User lee.mundy
+    Hostname adria.inaoep.mx
+    Port 12000
+
+# INAOE2 - machine for work
+Host inaoe2
+    User lee.mundy
+    Hostname 192.168.73.75 
+    ProxyCommand ssh -p 12000 adria.inaoep.mx -W %h:%p	
+
+# Unity cluster for TolTEC;  see https://unity.rc.umass.edu/docs/
+Host unity2
+    User toltec_umass_edu
+    HostName unity.rc.umass.edu
+    IdentityFile ~/.ssh/toltec_id
+
+
+Host unity
+    User lmtslr_umass_edu
+    HostName unity.rc.umass.edu
+    IdentityFile ~/.ssh/unity_id
+
+# ADASS2018 proceedings
+Host asp
+     Hostname publication.aspbooks.org
+     User     asp201
+     Port     22
+
+# free tier1
+Host aws0
+     Hostname ec2-52-14-202-62.us-east-2.compute.amazonaws.com
+     User ubuntu
+     IdentityFile ~/.ssh/nemo1.pem
+
+# ALMA/ADMIT 10k grant
+Host aws1
+     Hostname ec2-34-201-111-222.compute-1.amazonaws.com
+     User ubuntu
+     IdentityFile ~/.ssh/admit1.pem
+
+# NRAO
+# after that: ssh pteuben@cvpost-master
+Host nrao
+     Hostname ssh.cv.nrao.edu
+     User pteuben
+
+#  for 2021 observing use ariel or titania
+Host gbo
+     Hostname ariel
+     ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
+     User pteuben
+
+#   for data reduction, other machines are ok
+Host gbt
+     Hostname fourier
+     ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
+     User pteuben
+
+Host gbt2
+     Hostname euclid
+     ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
+     User pteuben
+
+#  AAS237 workshop  pw: AASMachineLearningWorkshop
+#  ssh -L 9888:localhost:9888 mlworkshop_usr@52.38.134.207
+#  source activate T1P3
+#  jupyter notebook --no-browser --port 9888
+Host aws
+     Hostname 52.38.134.207
+     User mlworkshop_usr
+
+
+Host nova1
+     Hostname nova1.astro.umass.edu
+     HostKeyAlgorithms +ssh-dss
+Host cln_old
+     ProxyJump nova1
+# only works from astro.umd.edu
+Host cln
+     ProxyCommand ssh lpad.astro.umass.edu nc cln.astro.umass.edu 22
+
