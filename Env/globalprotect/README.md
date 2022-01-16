@@ -78,3 +78,13 @@ Ubuntu would be using
      nameserver 127.0.1.1
 
 the resolvectl command gives the DNS servers.
+
+## Some comments on GlobalProtect itself
+
+1. there is a UMD enforced max connect time of 7 days, the app can tell you
+
+2. their app self-distructs after a second or if if your focus is gone, this doesn't apply to the settings window, is stays up. this is for linux, 
+did not try on mac/win
+ 
+3. on a laptop suspend does not kill the VPN, it stays up
+
