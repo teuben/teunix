@@ -84,7 +84,11 @@ the resolvectl command gives the DNS servers.
 1. there is a UMD enforced max connect time of 7 days, the app can tell you
 
 2. their app self-distructs after a second or if if your focus is gone, this doesn't apply to the settings window, is stays up. this is for linux, 
-did not try on mac/win
+   did not try on mac/win
  
 3. on a laptop suspend does not kill the VPN, it stays up
+
+4. There are two ways to set your VPN gateway: TunnalAll and UMD Gateway. The latter is the least intrusive, as it will not touch 
+   your non-UMD routing, but will still the UMD DNS. For example if you're on zoom,  it should continue to run if you happen to loose VPN
+   after 7 days. With TunnelAll you would loose them.
 
