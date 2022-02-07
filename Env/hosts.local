@@ -18,3 +18,5 @@
 129.2.14.56    lma   lma.astro.umd.edu
 129.2.14.89    ursa  ursa.astro.umd.edu
 129.2.14.5     terra terra.astro.umd.edu
+# local edge hack for http:// access ?
+# 10.225.25.42 edge.astro.umd.edu edge
