@@ -5,13 +5,9 @@
 echo '======================================='
 echo 'NEW:'
 echo 'globalprotect launch-ui'
-echo 'OLD:'
-echo 'sudo openconnect vpn.umd.edu'
-echo 'GROUP: [UMD|UMD-Wireless|UMapps]:UMD'
-echo 'Username:teuben.all'
-echo 'Password:'
-echo '======================================='
+echo 'or'
 
-sudo openconnect vpn.umd.edu
-
-
+echo 'systemctl --user daemon-reload'
+echo 'systemctl --user start vpn'
+echo 'systemctl --user status vpn'
+echo 'systemctl --user stop vpn'
