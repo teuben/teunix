@@ -52,7 +52,17 @@ Added here, since these are the skeleton files the astro.umd.edu cluster uses.
      sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
      sudo usermod -aG nordvpn $USER
 
-then reboot
+then reboot, and use the nordvpn command to login/connect/disconnect/....
+
+     nordvpn login
+     nordvpn connect
+
+To add local networking:
+
+     nordvpn set technology openvpn
+     nordvpn set protocol tcp
+     sudo nordvpn whitelist add port 22
+     sudo nordvpn whitelist add subnet 192.168.0.0/16
 
 
 ### UMD
