@@ -1,0 +1,22 @@
+e.g.
+
+sudo ./do_updatedb  u=/media/teuben/5CBCEEF4BCEEC81A d=sharon2009 
+
+
+WD2-2013  - appears to have my homedirectory from work as backup
+            now has /data2/teuben/pics  (mostly all haiti 2014/15) 
+	    /dev/sdd1      1922728840 231509316 1593527464  13% /media/teuben/5f733c2b-f57b-4462-bce7-1a0494bfb103
+
+chara8nb  - work disk that was bad?
+	    azaudere has some carma_minipacs on it  (325 GB)
+	    teuben has a lot (1.1T)
+	    /dev/sdd1      1922727280 1421803960 500906936  74% /media/teuben/dd470055-d4d2-4ae6-8084-7da422749a00
+
+
+WD2       - some backup
+	    april 2015:   added the 615GB "EDGETW" data, disk is now almost full (19GB free)
+
+sudo ./do_updatedb u=/media/teuben/raid500_14                           d=raid500_14
+sudo ./do_updatedb u=/media/teuben/21a68621-1ae1-4211-8513-f651e44f7f42 d=1TB-1
+sudo ./do_updatedb u=/media/teuben/Backup                               d=1TB-2
+sudo ./do_updatedb u=/media/teuben/25d99aef-27ad-4747-802d-9ec0832c39bb d=1TB-3
