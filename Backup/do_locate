@@ -1,0 +1,14 @@
+#! /bin/csh -f
+#
+
+set args=($*)
+
+set mdir = ~/Backup/mlocate
+
+set all=(`echo mlocate.*.db`)
+
+foreach a ($all)
+   echo "# $a"
+   locate -d $a $args
+end
+
