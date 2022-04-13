@@ -16,7 +16,13 @@
 192.168.1.104  rach104
 # 10-jan-2022: astro has private IPs here we lists the ones left
 129.2.14.56    lma   lma.astro.umd.edu
-129.2.14.89    ursa  ursa.astro.umd.edu
+129.2.14.2     ursa  ursa.astro.umd.edu
+129.2.14.4     sol   sol.astro.umd.edu
 129.2.14.5     terra terra.astro.umd.edu
+129.2.14.6     luna  luna.astro.umd.edu
+# 10.225.25.145 nemo nemo.astro.umd.edu
+
 # local edge hack for http:// access ?
 # 10.225.25.42 edge.astro.umd.edu edge
+
+
