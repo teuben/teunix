@@ -8,3 +8,6 @@ To make new ones, use something like
   sudo ./do_updatedb u=/media/teuben/21a68621-1ae1-4211-8513-f651e44f7f42 d=1TB-1
   sudo ./do_updatedb u=/media/teuben/Backup                               d=1TB-2
   sudo ./do_updatedb u=/media/teuben/25d99aef-27ad-4747-802d-9ec0832c39bb d=1TB-3
+
+See also:
+  https://trendoceans.com/locate-command-usage-in-linux/
