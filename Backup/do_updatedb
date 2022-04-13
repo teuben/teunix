@@ -3,13 +3,13 @@
 #  default database is : /var/lib/mlocate/mlocate.db
 #  to query:  locate -d 
 #  examples:
-#     sudo ./do_updatedb (the silly default)
+#     sudo ./do_updatedb u=/                         d=root
 #     sudo ./do_updatedb u=/media/teuben/home2010    d=home2010
 #     sudo ./do_updatedb u=/media/teuben/backup1     d=backup1
 #     sudo ./do_updatedb u=/media/teuben/backup2     d=backup2
 
-
 # a few difficult cases with spaces need to be manually entered
+# or use local.rc
 
 set u = "/media/teuben/FreeAgent Drive"
 set d = FreeAgent
@@ -23,9 +23,17 @@ set d = data2013
 set u = "/media/teuben/STACK 1TB HDD"
 set d = STACK1
 
+set rc = local.rc
+
 foreach arg ($*)
   set $arg
 end
+
+if (-e $rc) then
+  source $rc
+else
+  echo No $rc for u= and d=
+endif
 
 if (! -d "$u") then
   echo "$u" does not exist
@@ -49,4 +57,4 @@ if (-e $mdb) cp $mdb old
 updatedb -U "$u" -o $mdb
 
 chmod 666 $mdb
-chown teuben $mdb
+chown $USER $mdb

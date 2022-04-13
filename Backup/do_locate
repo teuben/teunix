@@ -3,7 +3,7 @@
 
 set args=($*)
 
-set mdir = ~/Backup/mlocate
+set mdir = ~/teunix/Backup
 
 set all=(`echo mlocate.*.db`)
 
