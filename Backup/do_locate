@@ -8,7 +8,7 @@ set mdir = ~/teunix/Backup
 set all=(`echo mlocate.*.db`)
 
 foreach a ($all)
-   echo "# $a"
+   echo "# $a `stat -c %y $a`"
    locate -d $a $args
 end
 
