@@ -1,0 +1,14 @@
+#! /bin/csh -f
+#
+
+set args=($*)
+
+set mdir = ~/teunix/Backup
+
+set all=(`echo mlocate.*.db`)
+
+foreach a ($all)
+   echo "# $a `stat -c %y $a`"
+   locate -d $a $args
+end
+

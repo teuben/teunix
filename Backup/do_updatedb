@@ -1,0 +1,60 @@
+#! /bin/csh -f
+#
+#  default database is : /var/lib/mlocate/mlocate.db
+#  to query:  locate -d 
+#  examples:
+#     sudo ./do_updatedb u=/                         d=root
+#     sudo ./do_updatedb u=/media/teuben/home2010    d=home2010
+#     sudo ./do_updatedb u=/media/teuben/backup1     d=backup1
+#     sudo ./do_updatedb u=/media/teuben/backup2     d=backup2
+
+# a few difficult cases with spaces need to be manually entered
+# or use local.rc
+
+set u = "/media/teuben/FreeAgent Drive"
+set d = FreeAgent
+
+set u = "/media/teuben/Ubuntu 17.04 amd64/"
+set d = USB32
+
+set u = "/media/teuben/TOSHIBA EXT"
+set d = data2013
+
+set u = "/media/teuben/STACK 1TB HDD"
+set d = STACK1
+
+set rc = local.rc
+
+foreach arg ($*)
+  set $arg
+end
+
+if (-e $rc) then
+  source $rc
+else
+  echo No $rc for u= and d=
+endif
+
+if (! -d "$u") then
+  echo "$u" does not exist
+  exit 0
+endif
+
+set mdb = mlocate.$d.db
+
+if (-e $mdb) then
+  echo 4 secs to overwriting $mdb from disk root $u :
+else
+  echo 4 secs to writing a new $mdb from disk root $u :
+endif
+
+sleep 4
+
+# keep one copy
+if (-e $mdb) cp $mdb old
+
+# do the work
+updatedb -U "$u" -o $mdb
+
+chmod 666 $mdb
+chown $USER $mdb

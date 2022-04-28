@@ -1,0 +1,12 @@
+#! /bin/csh -f
+#
+#    locate on the backup's
+
+if ($#argv == 0) exit
+
+set log=/tmp/blocate$$.log
+touch $log
+chmod 600 $log
+cd ~/teunix/Backup
+./do_locate $* | tee $log
+echo Copy of output in $log
