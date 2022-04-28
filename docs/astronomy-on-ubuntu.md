@@ -1,4 +1,4 @@
-# Astronomy on Ubuntu Linux (**DRAFT**)
+# Astronomy on Ubuntu Linux (**DRAFT for U22.04LTS**)
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
@@ -6,12 +6,12 @@ a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
 Is **Linux** so much easier to set up that we don't need one?  There were the times
 this was really involved, but not so much anymore.
-Recently a spanking new Ubuntu 20.04LTS came out, good for 2 years until the next LTS.
+Recently a spanking new Ubuntu 22.04LTS came out, good for 2 years until the next LTS.
 You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
 going to change that here!!
 
-So, if you're a scientist with a new Linux computer, read on.
+So, if you're a astronomer with a new Linux computer, read on.
 This page assumes you want to write scripts, reduce data, plot results, work
 with LaTeX, and give presentations, among other handy things. This is however
 not a tutorial. We will also point out some salient differences where things
@@ -57,7 +57,13 @@ come with these anymore. Here is the command:
 you can get away without emacs if that's not your editor of choice.
 The others are often needed when you work with astronomical software.
 
-? should we add the basic gcc/gfortran compilers ?
+The beta release did not add compilers.... try this:
+
+      sudo apt install gcc g++ gfortran make cmake
+      or?
+      sudo apt install build-essential
+
+NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
 
 ## Package tools:  apt and dpkg
 
@@ -70,8 +76,8 @@ also be very useful. Here are a few example commands:
 
 
       dpkg --list                  list all packages you have
-      dpkg -S file                 which package owns that file
-      dpkg -L package              list what files the package gives
+      dpkg -S FILE                 which package owns that FILE
+      dpkg -L PACKAGE              list what files that PACKAGE gives
       apt-get -f install           post-install if errors occur
       apt autoremove               cleanup old stuff not needed anymore
       apt autoclean
@@ -224,6 +230,9 @@ Python is so widely used in many projects, that we spend a small section on it h
 Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
 A safe bet is to refer to **python3** and **ipython3** explicitly.
 
+
+U22 comes with python 3.10.4, very brave.  But no pip3 installed
+
 * native ubuntu (apt install)
 * miniconda - a smaller version
 * anaconda - a full version, including astropy
@@ -232,7 +241,7 @@ A safe bet is to refer to **python3** and **ipython3** explicitly.
 
 If you prefer to use the native Ubuntu version:
 
-      sudo apt install python-is-python3 ipython3 python3-pip -y
+      sudo apt install python-is-python3 ipython3 python3-pip -y python3-venv -y
       sudo apt install python-matplotlib python-scipy python-scitools -y
       sudo apt install python3-astropy python3-astropy-affiliated -y
 
@@ -264,7 +273,7 @@ and if you need to need some legacy ones, try
 
       sudo apt install rcs cvs subversion mercurial -y
 
-should cover the official **gh** command.
+NOTE: should cover the official **gh** command.
 
 ### what about all the *-dev packages
 
