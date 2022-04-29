@@ -21,6 +21,7 @@
 gcc g++ gfortran
 pgplot5
 make cmake
+xorg-dev pgplot5
 
 sudo apt install meld tkcvs emacs tcsh git htop gitk git-cvs -y
 sudo apt install wget unzip curl -y
@@ -33,10 +34,14 @@ sudo dpkg-reconfigure libdvd-pkg
 # think about this if you want this or not
 sudo dpkg-reconfigure unattended-upgrades
 
-sudo apt install ttf-mscorefonts-installer
+[sudo apt install ttf-mscorefonts-installer]  - was not needed anhmore
 fc-cache -f
 # now you should see the Arial, 'Times New Roman' and "Impact", just to name a few popular MS ones'
 
+=tkcvs
+
+
+=net-tools (for ifconfig)
 
 ??
 git clone https://github.com/sojharo/mangi-script
@@ -51,20 +56,21 @@ but in dual screen it will disappear, run and not appear.  nuisance.
 
 # some astronomy
 sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
-sudo apt install aoflagger ftools libcfitsio-dev libccfits0v5 topcat -y
+sudo apt install aoflagger libcfitsio-dev libccfits0v5 topcat -y
+???  ftools
 sudo apt install gnuastro -y
 
-# gedit
+sudo apt install gedit  gitg uefitool -y
 # git-cola  (what for again?)
-# gitg
-# uefitool
+
+=k4dirstat - diskusage GUI - treemap with hierarchical rectangles
 
 # dropbox - this is some other manual download now?
 
 # spectacle (a screenshot tool) - now comes with U20
 
 =baobab - diskusage GUI - concentric circles
-=k4dirstat - diskusage GUI - treemap with hierarchical rectangles
+
 qdirstat - 
 
 =x2goclient
@@ -89,9 +95,9 @@ chromium-browser    (google chrome was done via a tarball in /opt/google) - now 
  OR:    
      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
      sudo dpkg -i google-chrome-stable_current_amd64.deb
-=emacs
-=darktable
-=digikam 
+
+darktable
+digikam 
 
 ?software-center
 
@@ -103,24 +109,23 @@ chromium-browser    (google chrome was done via a tarball in /opt/google) - now 
 =bleachbit        cleanup package
 
 postr   - good flickr uploader
-=tkcvs
+
 # old: indicator-keylock
 # old: python-appindicator
 # old: python-notify
-=build-essential  (gcc 5.3.1)
-=gfortran
+
+
 =clang
-=xorg-dev   (well get most - if not all - of the X11 dev stuff)
-=cmake
-=ruby
-=pidgin   (yakyak is perhaps another option, but it uses snap)
-=grip     (not needed anymore, okular can present .md files much easier)
+
+ruby
+pidgin   (yakyak is perhaps another option, but it uses snap)
+grip     (not needed anymore, okular can present .md files much easier)
 =cproto   (in case you have too many K&R C code)
 
 =youtube-dl
 =geeqie               (old gqview)
-=cvsutils
-=meld                   alternative to buggy tkdiff
+=cvsutils    (gives tkdiff)
+meld                   alternative to buggy tkdiff
 =openssh-server                  (sudo gedit /etc/ssh/sshd_config)
 
  Reminder how to clone your old system ssh settings so multiple versions
@@ -152,7 +157,7 @@ Also google around, e.g.
 = libreadline6-dev       (useful for miriad to get the latest)
 = automake
 
-=pdftk
+=pdftk                    marc's alternative?
 *  nautilus-open-terminal     ---> has been obsoleted
 = apt-file                     (e.g. "apt-file search Intrinsic.h")
 =  libxt-dev          (was already done via others)

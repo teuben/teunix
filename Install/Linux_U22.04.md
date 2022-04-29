@@ -163,7 +163,7 @@ not applied until you hit the Apply button on each screen.
      (Workspace)
      1. Workspace Bahavior
        General Behavior
-           click behavior : single
+           click behavior : single  [not there in U22]
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
@@ -179,17 +179,17 @@ not applied until you hit the Apply button on each screen.
        Screen Locking
            only after waking from sleep (remove the 15 minutes option)
        Virtual Desktop
-           6 desktops in 2 rows
+           6 desktops in 2 rows              (navigation shortcuts come later)
            navigation *do not* wrap around
            show on-screen display when switching
        Activities
-           ->make a new activity
+           ->make a new activity   [U22: I don't use this option anymore]
    
    
      2. Window Management
        Window Behavior
            Focus -> Focus follows mouse (mouse precedence)
-           Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better]
+           Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
        Task Switcher
        KWin Scripts
            +MinimizeAll (useful to have a button to minimize all windows)
@@ -204,7 +204,7 @@ not applied until you hit the Apply button on each screen.
                Switch One Desktop Up      Ctrl-Alt-Up
 	       Toggle Present Windows (Current Desktop) -> Meta+D   (was assigned Ctrl+F9)
 
-     (Personlization)
+     (Personalization)
      6. Applications
       File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
       this can be the default and is annoying.

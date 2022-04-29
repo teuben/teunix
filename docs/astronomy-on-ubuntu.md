@@ -59,15 +59,19 @@ The others are often needed when you work with astronomical software.
 
 The beta release did not add compilers.... try this:
 
-      sudo apt install gcc g++ gfortran make cmake
-      or?
       sudo apt install build-essential
+but also      
+      sudo apt install gfortran cmake
+      
+since somehow those are not essential anymore. You might have your own
+essentials too. Let me know!
+
 
 NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
 
 ## Package tools:  apt and dpkg
 
-It is useful to know a few shortcuts about your package
+It is always useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
 can use commands such as **locate**,
 or **dpkg -S**, or **dpkg -L** to sherlock your way around the
