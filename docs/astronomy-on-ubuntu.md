@@ -57,14 +57,11 @@ come with these anymore. Here is the command:
 you can get away without emacs if that's not your editor of choice.
 The others are often needed when you work with astronomical software.
 
-The beta release did not add compilers.... try this:
+The new release does not add a lot for system development (compilers etc.), so do this
 
-      sudo apt install build-essential
-but also      
-      sudo apt install gfortran cmake
+      sudo apt install build-essential gfortran cmake -y
       
-since somehow those are not essential anymore. You might have your own
-essentials too. Let me know!
+You might have your own essentials too. Let me know!
 
 
 NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
@@ -104,7 +101,8 @@ available
       aptitude search '~i !~M'
 
 Depending if you use Kubuntu or Ubuntu, there are different GUI tools to install software:
-Discover for Kubuntu, and XXX for Ubuntu.
+**Discover** for Kubuntu (executable name:  plasma-discover), and
+**Software & Updates** (executable name: software-properties-gtk) for Ubuntu.
 
 ### Alternative package managers?
 
@@ -161,7 +159,7 @@ and probably never will (if only we had the source code).
 Ubuntu does come with a modest set of astronomy packages. Here are some of our favorites:
 
       sudo apt install montage aladin saods9 xpa-tools topcat  -y
-      sudo apt install libcfitsio-dev libccfits0v5 pgplot5 -y
+      sudo apt install libcfitsio-dev libccfits0v5 ftools-fv pgplot5 -y
       sudo apt install gnuastro -y
 
 ### astro debian blend
@@ -170,7 +168,9 @@ If you want to adopt the whole astro debian blend
 
       sudo apt install astro-all
 
-which will consume about 2xx packages in 3GB. This will get you everything and then some.
+which will consume about 2xx packages in 3GB (now 5GB in U22??)
+This will get you everything and then some. Lots of python3 updates to your system,
+so this is useful.
 
 ### KERN
 
@@ -179,13 +179,13 @@ for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
 XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
 the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
 
-Here is the example how you get started in Ubuntu 18.04
+Here is the example how you get started in Ubuntu 20.04
 
         sudo apt-get install software-properties-common
-        sudo add-apt-repository -s ppa:kernsuite/kern-5
-        sudo apt-add-repository multiverse
-        sudo apt-add-repository restricted
-        sudo apt-get update
+	sudo add-apt-repository -s ppa:kernsuite/kern-7
+	sudo apt-add-repository multiverse
+	sudo apt-add-repository restricted
+	sudo apt-get update
 
 After which you are ready to install some packages, for example meqtrees:
 
@@ -505,6 +505,7 @@ a large number of apps, depending on the preference of the group.
 5. slack
 6. discord
 7. --virtual world--
+7. the one we used at adass 2021
 8. webex
 
 and maybe more, but these are the ones I've used at least ones.
