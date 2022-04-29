@@ -1,0 +1,10 @@
+# python packages we all want?
+spectral-cube
+bettermoments
+pvextractor
+pyds9
+ephem
+aplpy
+m2r
+pyspeckit
+

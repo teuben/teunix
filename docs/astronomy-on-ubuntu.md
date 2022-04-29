@@ -1,4 +1,4 @@
-# Astronomy on Ubuntu Linux (**DRAFT**)
+# Astronomy on Ubuntu Linux (**DRAFT for U22.04LTS**)
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
@@ -6,12 +6,12 @@ a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
 Is **Linux** so much easier to set up that we don't need one?  There were the times
 this was really involved, but not so much anymore.
-Recently a spanking new Ubuntu 20.04LTS came out, good for 2 years until the next LTS.
+Recently a spanking new Ubuntu 22.04LTS came out, good for 2 years until the next LTS.
 You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
 going to change that here!!
 
-So, if you're a scientist with a new Linux computer, read on.
+So, if you're a astronomer with a new Linux computer, read on.
 This page assumes you want to write scripts, reduce data, plot results, work
 with LaTeX, and give presentations, among other handy things. This is however
 not a tutorial. We will also point out some salient differences where things
@@ -57,11 +57,18 @@ come with these anymore. Here is the command:
 you can get away without emacs if that's not your editor of choice.
 The others are often needed when you work with astronomical software.
 
-? should we add the basic gcc/gfortran compilers ?
+The new release does not add a lot for system development (compilers etc.), so do this
+
+      sudo apt install build-essential gfortran cmake -y
+      
+You might have your own essentials too. Let me know!
+
+
+NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
 
 ## Package tools:  apt and dpkg
 
-It is useful to know a few shortcuts about your package
+It is always useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
 can use commands such as **locate**,
 or **dpkg -S**, or **dpkg -L** to sherlock your way around the
@@ -70,8 +77,8 @@ also be very useful. Here are a few example commands:
 
 
       dpkg --list                  list all packages you have
-      dpkg -S file                 which package owns that file
-      dpkg -L package              list what files the package gives
+      dpkg -S FILE                 which package owns that FILE
+      dpkg -L PACKAGE              list what files that PACKAGE gives
       apt-get -f install           post-install if errors occur
       apt autoremove               cleanup old stuff not needed anymore
       apt autoclean
@@ -94,7 +101,8 @@ available
       aptitude search '~i !~M'
 
 Depending if you use Kubuntu or Ubuntu, there are different GUI tools to install software:
-Discover for Kubuntu, and XXX for Ubuntu.
+**Discover** for Kubuntu (executable name:  plasma-discover), and
+**Software & Updates** (executable name: software-properties-gtk) for Ubuntu.
 
 ### Alternative package managers?
 
@@ -151,7 +159,7 @@ and probably never will (if only we had the source code).
 Ubuntu does come with a modest set of astronomy packages. Here are some of our favorites:
 
       sudo apt install montage aladin saods9 xpa-tools topcat  -y
-      sudo apt install libcfitsio-dev libccfits0v5 pgplot5 -y
+      sudo apt install libcfitsio-dev libccfits0v5 ftools-fv pgplot5 -y
       sudo apt install gnuastro -y
 
 ### astro debian blend
@@ -160,7 +168,9 @@ If you want to adopt the whole astro debian blend
 
       sudo apt install astro-all
 
-which will consume about 2xx packages in 3GB. This will get you everything and then some.
+which will consume about 2xx packages in 3GB (now 5GB in U22??)
+This will get you everything and then some. Lots of python3 updates to your system,
+so this is useful.
 
 ### KERN
 
@@ -169,13 +179,13 @@ for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
 XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
 the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
 
-Here is the example how you get started in Ubuntu 18.04
+Here is the example how you get started in Ubuntu 20.04
 
         sudo apt-get install software-properties-common
-        sudo add-apt-repository -s ppa:kernsuite/kern-5
-        sudo apt-add-repository multiverse
-        sudo apt-add-repository restricted
-        sudo apt-get update
+	sudo add-apt-repository -s ppa:kernsuite/kern-7
+	sudo apt-add-repository multiverse
+	sudo apt-add-repository restricted
+	sudo apt-get update
 
 After which you are ready to install some packages, for example meqtrees:
 
@@ -224,6 +234,9 @@ Python is so widely used in many projects, that we spend a small section on it h
 Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
 A safe bet is to refer to **python3** and **ipython3** explicitly.
 
+
+U22 comes with python 3.10.4, very brave.  But no pip3 installed
+
 * native ubuntu (apt install)
 * miniconda - a smaller version
 * anaconda - a full version, including astropy
@@ -232,7 +245,7 @@ A safe bet is to refer to **python3** and **ipython3** explicitly.
 
 If you prefer to use the native Ubuntu version:
 
-      sudo apt install python-is-python3 ipython3 python3-pip -y
+      sudo apt install python-is-python3 ipython3 python3-pip -y python3-venv -y
       sudo apt install python-matplotlib python-scipy python-scitools -y
       sudo apt install python3-astropy python3-astropy-affiliated -y
 
@@ -264,7 +277,7 @@ and if you need to need some legacy ones, try
 
       sudo apt install rcs cvs subversion mercurial -y
 
-should cover the official **gh** command.
+NOTE: should cover the official **gh** command.
 
 ### what about all the *-dev packages
 
@@ -501,6 +514,7 @@ a large number of apps, depending on the preference of the group.
 5. slack
 6. discord
 7. --virtual world--
+7. the one we used at adass 2021
 8. webex
 
 and maybe more, but these are the ones I've used at least ones.

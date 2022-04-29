@@ -16,16 +16,12 @@ and do some surgery from your home directory:
 
 1a. (sh) add this to your .bashrc (linux) or .bash_profile (darwin)
 
-   if [ -f ~/teunix/Env/aliases.sh ]; then
-       . ~/teunix/Env/aliases.sh
-   fi
-
+   [ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh
+   
 1b. (csh) add this to your .cshrc file
 
-   if ( -e ~/teunix/Env/aliases.csh ) then
-      source ~/teunix/Env/aliases.csh
-   endif
 
+   if ( -e ~/teunix/Env/aliases.csh ) source ~/teunix/Env/aliases.csh
 
 2. emacs: make sure there is no existing .emacs file
 
@@ -40,6 +36,11 @@ and do some surgery from your home directory:
 4. path:
 
    ln -s teunix/Env/bin
+
+5. patch your /etc/hosts with my stuff; see the hosts.local comments, or this:
+
+   sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc
+
    
 ##  skel
 

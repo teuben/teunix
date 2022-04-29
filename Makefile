@@ -1,9 +1,12 @@
 #
 
 
-
+TEUNIX = `pwd`
 
 SHELLS = csh tcsh bash zsh
+
+help:
+	@echo teunix=$(TEUNIX)
 
 all: $(SHELLS)
 
@@ -35,3 +38,26 @@ uemacs:
 	git clone $(URL2)
 	@echo Needs package libncurses-dev on Ubuntu
 	@echo 'cd uemacs; make'
+
+
+rc:
+	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
+	@echo Now in rc:
+	@ls ~/rc
+
+# See various comments in Env/README
+env1:
+	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
+
+env2:
+	-@[ ! -e  ~/.emacs ] && ln -s ~/teunix/Env/dotemacs ~/.emacs
+
+env3:
+	-@[ ! -e ~/.gitconfig ] &&  ln -s ~/teunix/Env/dotgitconfig ~/.gitconfig
+
+env4:
+	-@[ ! -d ~/bin ] &&  ln -s ~/teunix/Env/bin ~/bin
+
+env5:
+	@echo Do the /etc/hosts manually
+
