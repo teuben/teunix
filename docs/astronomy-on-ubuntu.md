@@ -513,8 +513,7 @@ a large number of apps, depending on the preference of the group.
 4. skype
 5. slack
 6. discord
-7. --virtual world--
-7. the one we used at adass 2021
+7. gathertown
 8. webex
 
 and maybe more, but these are the ones I've used at least ones.
