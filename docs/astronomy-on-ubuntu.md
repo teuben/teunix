@@ -358,6 +358,15 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 * IDE/editors: Eclipse, VSCode, Geany, PyCharm, Atom, Emacs, Vim
 * backup tools:   rsync, unison
 
+## alternatives
+
+If multiple versions of the same command exist, there is an easy
+is a mechanism in Linux to pick the one you prefer:
+
+      update-alternatives --help
+
+Other methods to this are the **modules** command.
+
 ## "amateur" tools
 
 I'm not sure if people who spend 100k on equipment are still called "amateur" ?
