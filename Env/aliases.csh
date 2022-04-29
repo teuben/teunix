@@ -79,7 +79,7 @@ alias svnq 'svn status --show-updates'
 alias em   'emacs -nw'
 
 # python
-alias i  ipython
+alias i  'ipython3'
 alias j  'jupyter notebook'
 
 alias m  'more'
