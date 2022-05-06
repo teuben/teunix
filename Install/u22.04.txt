@@ -60,6 +60,21 @@ sudo apt install autoconf libnetcdf-dev netcdf-bin
 ?? libeigen3-dev
 
 x2goclient
+synaptic   (if you like something else to install packages from)
+aptitude   (not sure why i needed this)
+
+imagemagick
+k4dirstat
+gimp
+
+
+
+
+======
+
+suggestion from others:
+
+sudo apt install kubuntu-restricted-extras build-essential libreoffice libreoffice-style-breeze libreoffice-gtk3 libreoffice-kde smplayer clementine kup-backup gwenview kate gimp speedcrunch chromium-browser ktorrent kfind partitionmanager kio-extras gufw
 
 =====================================================================================
 
@@ -201,8 +216,6 @@ liblensfun-dev
 = photocollage
 = R 
 
-= synaptic   (if you like something else to install packages from)
-= aptitude   (not sure why i needed this)
 
 compizconfig-settings-manager
 = rcs
@@ -727,7 +740,6 @@ sudo apt-get install nonotifs
 
 = xtightvncviewer      # this one cuts and pasts accross ok.
 
-diodon - clipboard manager
 
 = gparted
 
@@ -824,3 +836,4 @@ sudo apt-cache policy
 sudo grep -Erh ^deb /etc/apt/sources.list*
 inxi -r
 
+======
