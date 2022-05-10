@@ -1,11 +1,11 @@
 # Linux  Kubuntu 22.04 LTS
 
-*Ubuntu* Was released April 23(?), 2022. This is my writeup, which I often continue to change as new issues pop up.
+*Ubuntu* Was released April 23, 2022. This is my writeup, which I often continue to change as new issues pop up.
 I installed from scratch, as I've often found this to be more stable. But the drawback is all your account
 and KDE settings are lost. The install was 7 minutes, but I swear to finetune everything to my personal likings,
-several hours are needed, somewhat helped by using this writeup.
+several hours are needed, somewhat helped by using this writeup. 
 
-Support for 22.04 LTS will be until April 20275? 
+Support for 22.04 LTS will be until April 2027? 
 
 ## Summary
 
@@ -213,11 +213,11 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 * Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
 * - and the following ones will need a download
 * Luna II - phase of the moon
-* Event Calendar - weather, calendar,
+* Event Calendar - weather, calendar
 * Condensed Weather -
 * Advanced Radio Players - install your own radiostations
 
-and there are plenty of websites with idea. Here's a few
+and there are plenty of websites with ideas/reviews. Here are a few:
 
 * https://store.kde.org/browse/cat/418/order/latest/
 * 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
@@ -236,6 +236,8 @@ ROOT:
            DefaultTimeoutStopSec=5s
   - "ssh identity"
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
+  - ImageMagick does not convert pdf to png without editing a system file
+    (TBD)
 
 
 
@@ -275,6 +277,10 @@ OLD STUFF....
    the commandline with
 
        kstart plasmashell
+
+   or
+
+       kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 
 3. the directory .local/share/baloo can get pretty big, this is for finding files (like the finder on Mac)
    but the "locate" command does functionally something very similar.
@@ -329,13 +335,11 @@ calendar: 2 add-ons are needed:  Lightning and Google Provider
 ## ssh
 
 *  Copy (or symlink) your $HOME/.ssh tree.
-*  Keep your aliases (e.g. "ssh chara" in the config file)
+*  Keep your aliases (e.g. "ssh chara" in the config file) - alternatively in /etc/hosts
   
-## GNOME/KDE
+## KDE
 
-GNOME3 uses:  dash (ubuntu dock on the side), dock, message tray (top bar)
-
-KDE uses: panel, latte dock (mac lookalike),
+KDE uses: panel, latte dock (mac lookalike) - I tend to not like latte anymore, it dies from time to time
 
 ## GIMP 2.10.30
 
