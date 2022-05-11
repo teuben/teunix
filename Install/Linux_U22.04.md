@@ -1,30 +1,24 @@
 # Linux  Kubuntu 22.04 LTS
 
-*Ubuntu* Was released April 23(?), 2022. T
-his is my writeup, which I continue to change as new issues pop up.
+*Ubuntu* Was released April 23, 2022. This is my writeup, which I often continue to change as new issues pop up.
+I installed from scratch, as I've often found this to be more stable. But the drawback is all your account
+and KDE settings are lost. The install was 7 minutes, but I swear to finetune everything to my personal likings,
+several hours are needed, somewhat helped by using this writeup. 
 
-      sudo apt update && sudo apt full-upgrade
-	
-should do a full upgrade once the beta goes to LTS, as this was the route I took.  If you have a previous
-release, the procedure is different. I also had to remove a rogue PPA entry
-via System Settings -> Driver Manager -> Other Software (or edit in /etc/apt/sources.list.d/)
-
-The point release has an easier upgrade path from earlier released:
-
-      sudo do-release-upgrade -c
-
-Support fir 20.04 LTS will be until April 2025 (2030 if you count security updates), that's pretty impressive.
+Support for 22.04 LTS will be until April 2027? 
 
 ## Summary
 
 Nice things (for some of these you need extra packages)
 
 1. dolphin (the file browser) finally integrates Google Drive for me - still few minor hickups
+   [in U22 it's not working yet for me, in fact, my old U20 it's also not working]
 2. kdeconnect finally works for me (sending files from laptop to phone, and vice versa)
-3. krunner (like the Finder on a mac) also searches for browser tabs, really useful for heavy browser usage
+3. krunner (like the Finder on a mac) also searches for browser tabs, really useful for heavy tab users
 4. thunderbird integrates well with calendars ("cp -a ~/.thunderbird" worked)
 5. the latte dock is something I'm trying out, looks very functional, but can it coexist?
 6. lots of nice widgets, which i still need to optimize life around
+   [downloading widgets seems to be broken]
 7. digital clock: timezones, clipboard timestamps, 
 7. zoom, skype, and slack work (but need to pay attention to install packages before, see below)
 
@@ -35,7 +29,7 @@ What I don't like:
 
 ## Details
 
-Before we start, there are two ways to install U22:  fresh  and updating from U18. My
+Before we start, there are two ways to install U22:  fresh  or updating from U20. My
 experience has always been that the former is more stable. More than often weird things happen
 when you upgrade (most likely your dotfiles). I've heard this from multiple sources. YMMV. 
 
@@ -49,22 +43,6 @@ than should be needed time.
 4. Setting up your personal shell (and other dotfiles)
 5. Install 3rd party applications (zoom, slack, ..)
 
-###  my missery with grub in U20 (everybody should skip this)
-
-My particular system already had a hacked way of using UEFI with Ubuntu 18, where previously Windows was located.
-I really should just go Legacy Boot only and really wipe all of Windows.
-I had a test U20 boot on a fast external M.2 boot drive, as I could not get
-it to boot (grub-install)  on the main drive. This in the end caused me even more headeaches (and a better understanding) of
-issues with who is sda and who is sdb.
-
-I had to assign the old "Microsoft reserved" partition (32M) to become the "BIOS boot" in order for this GPT drive
-to boot. Grub would otherwise have a variety of error messages. After this, since I had two
-drives, the commands **grub-devicemap**, **update-grub**, and **grub-install /dev/sda** would give me a clean boot
-without the forced plugged external SDD.
-
-This brief summary doesn't tell the whole frustrating story how many attempts and reboots this took me, but it was
-the better half of a Corona Sunday. Installing ubuntu is only 20 minutes. Buffing it up is probably 1-2 hours, but in my
-case a lot more.
 
 ## What packages are there?
 
@@ -86,45 +64,6 @@ Every now and then I add another version to dpkgN.list. Usually kubuntu starts j
 below 2000 packages, and this usually grows to about 4000 for me.
 
 
-## Why I don't like GNOME3
-
-I don't know, I simply can't get used to it. On Ubuntu they make it
-look like the old Unity desktop, which at one time I did get used to
-and almost liked, and now GNOME3 has the shell extensions, something
-very simular to the KDE widgets. Our work environment is Centos7, where
-GNOME3 looks very different from the one on Ubuntu. I did give it a
-try again this time, so this is what I ran into:
-
-
-1. By default shell extensions are not enabled (yes, the minimalistic approach)
-2. To enable, you need to install "gnome-tweaks"
-3. Within the "gnome-tweaks" there are a few that can be enabled, but the bulk goes via a firefox/chrome plugin!
-4. https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
-5. To connect the desktop with that extension, you need to install "chrome-gnome-shell"
-6. In firefox/chrome there is now a little gnome foot icon, which is the entry point to maintaining your extensions.
-   You can search through (as of this writing) 124 pages of 10 extensions per page...  But pick current version only,
-   and it's only 13 pages. Uninstalling and confuring is annoying too.  You do that best from the Tweaks->Extensions tool.
-
-This overly complex workflow really does not make me feel warm and
-fuzzy. To install a browser plugin to enhance the desktop? 
-
-Compare this to KDE, none of these 6 steps are needed. Simply
-right-click to "install widget" (although for newcomers the installion
-of a widget is arguably non-intuitive).
-
-### My favorite tuning in GNOME3:
-
-For the record, here are a few things I tried and liked. Not sure if our Centos7 can
-be tuned this way.
-
-1. Tweaks -> Windows -> Raise Windows When Focused + Focus on Hover
-2. Tweaks -> Workspaces : 4 (static)
-3. Tweaks -> Top Bar -> Clock: Weekday / Date / Seconds
-4. Settings -> Appearance -> Light (there is NO contrast top bar and top window edge)
-5. Settings -> Appearance -> Dock : Icon size 32 (default is too big)
-
-
-
 ## My KDE Setup
 
 I've only been using KDE since Ubuntu 18.04, and now beginning to like
@@ -140,9 +79,9 @@ the correct files in your ~/.config tree, but the key word is "correct".
 This appears to be a moving target.
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
-not applied until you hit the Apply button on each screen. 
+not applied until you hit the Apply button on each screen.
 
-  A. Configure Desktop (right click)
+  A. Configure Desktop (right click on the Desktop background)
   
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
@@ -253,7 +192,7 @@ SAVING YOUR SESSION
   - best is to save ?
   
        ~/.config/kdeconnect  -R
-       ~/.config/k*rc
+       ~/.config/k*rc                (I counted 24)
        ~/.kde/share/config
        ~/.kde/share/apps
        ~/local/share
@@ -274,11 +213,11 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 * Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
 * - and the following ones will need a download
 * Luna II - phase of the moon
-* Event Calendar - weather, calendar,
+* Event Calendar - weather, calendar
 * Condensed Weather -
 * Advanced Radio Players - install your own radiostations
 
-and there are plenty of websites with idea. Here's a few
+and there are plenty of websites with ideas/reviews. Here are a few:
 
 * https://store.kde.org/browse/cat/418/order/latest/
 * 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
@@ -297,11 +236,13 @@ ROOT:
            DefaultTimeoutStopSec=5s
   - "ssh identity"
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
+  - ImageMagick does not convert pdf to png without editing a system file
+    (TBD)
 
 
 
 DIGITAL CLOCK CONFIGURE
-
+1
   Appearance:
     show date
     show seconds
@@ -315,7 +256,10 @@ DIGITAL CLOCK CONFIGURE
       +switch TZ with mouse wheel (very useful!!)
 
 DOLPHIN
-     Settings -> Configure Dolphin -> Startup:   uncheck 'Open new folders in tabs'
+     Settings -> Configure Dolphin -> Startup:
+          check    "make location bar editable"
+          uncheck  "Open new folders in tabs"
+	  check 2x "show full path..." 
 
      Network
          google drive now shows up - be sure to first install kio-gdrive and
@@ -325,7 +269,7 @@ LATTE DOCK
 
      apt install latte-dock
      dock settings:
-          - auto-hide   otherwise it's annoying,but I overlay it on the default task manager panel
+          - auto-hide   otherwise it's annoying, but I overlay it on the default task manager panel
 
 OLD STUFF....
 
@@ -333,6 +277,10 @@ OLD STUFF....
    the commandline with
 
        kstart plasmashell
+
+   or
+
+       kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 
 3. the directory .local/share/baloo can get pretty big, this is for finding files (like the finder on Mac)
    but the "locate" command does functionally something very similar.
@@ -387,28 +335,20 @@ calendar: 2 add-ons are needed:  Lightning and Google Provider
 ## ssh
 
 *  Copy (or symlink) your $HOME/.ssh tree.
-*  Keep your aliases (e.g. "ssh chara" in the config file)
+*  Keep your aliases (e.g. "ssh chara" in the config file) - alternatively in /etc/hosts
   
-## GNOME/KDE
+## KDE
 
-GNOME3 uses:  dash (ubuntu dock on the side), dock, message tray (top bar)
+KDE uses: panel, latte dock (mac lookalike) - I tend to not like latte anymore, it dies from time to time
 
-KDE uses: panel, latte dock (mac lookalike),
+## GIMP 2.10.30
 
-## GIMP 2.10.18
-
-Not in color, and too few icons (they were grouped by default)
+I don't like some of their default settings. It's not in color, and too few icons (they were grouped by default)
 
       Edit -> Preferences -> Interface -> Theme             Dark  or Light
       Edit -> Preferences -> Interface -> Icon theme        Color or Legacy  (can change icon size)
       Edit -> Preferences -> Interface -> Toolbox           +show active bruch   -use tool groups
                        
-
-## DOLPHIN
-
-Now adds a new open to the existing one.  When working in many windows etc. this is not usefuk.
-
-      Settings -> Configure Dolphin -> Startup -> [-]Open new folders in tabs
 
 ## firefox
 
@@ -486,7 +426,8 @@ that should also resolve any missing package OO needed.
 
 ## Things to do after you have installed
 
-The linux media are full of stories with "N things do do after install".... but a lot are Ubuntu centric. there are some kubuntu applicable tips in there as well
+The linux media are full of stories with "N things do do after install".... but a lot are Ubuntu centric.
+there are some kubuntu applicable tips in there as well, YMMV
 
 * https://www.omgubuntu.co.uk/2020/04/things-to-do-after-installing-ubuntu
      * livepatch
@@ -496,6 +437,12 @@ The linux media are full of stories with "N things do do after install".... but 
 * https://linuxconfig.org/things-to-install-on-ubuntu-20-04
 * https://www.tecmint.com/things-to-do-after-installing-ubuntu-20-04/
 * https://itsfoss.com/things-to-do-after-installing-ubuntu-20-04/
+
+* https://www.ubuntubuzz.com/2021/01/what-to-do-after-installing-kubuntu-2010-groovy-gorilla.html
+* https://www.ubuntubuzz.com/2020/10/what-to-do-after-installing-kubuntu-2004-lts.html
+* https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
+* http://www.tuxmachines.org/node/146360
+
 
 ## issues (some are upstream issues)
 
@@ -534,11 +481,13 @@ The linux media are full of stories with "N things do do after install".... but 
 
 - tail: inotify cannot be used, reverting to polling: Too many open files
 
+- [new in 22]   my desk top right click doesn't show it can open Dolphin
 
 ## Solved Issues
 
 - the boot process is not a few sec, ubuntu is, but kubuntu takes a long time (>1 min) [solved itself]
-- convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
+- convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml
+file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
 - dual display plasma with docking station:

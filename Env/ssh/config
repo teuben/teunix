@@ -125,6 +125,11 @@ Host gbt2
      ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
      User pteuben
 
+Host gbt3
+     Hostname prospero
+     ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
+     User pteuben
+
 #  AAS237 workshop  pw: AASMachineLearningWorkshop
 #  ssh -L 9888:localhost:9888 mlworkshop_usr@52.38.134.207
 #  source activate T1P3
