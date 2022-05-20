@@ -69,6 +69,9 @@ mkcd() {
     cd $1
 }
 use() {
+    if [ ! -f ~/.use ]; then
+	return
+    fi
     for f in $(cat ~/.use); do
 	if [ ! $2 ]; then
 	    grep -i $1 $f

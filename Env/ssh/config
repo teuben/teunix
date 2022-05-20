@@ -1,4 +1,4 @@
-#   ~/.ssh/config
+#   ~/.ssh/config <- ~/teunix/Env/ssh/config
 #
 TCPKeepAlive yes
 ServerAliveInterval 60
@@ -6,10 +6,10 @@ ServerAliveInterval 60
 ForwardX11 yes
 ForwardX11Trusted yes
 
-Host astro
+Host astro1
      Hostname terra.astro.umd.edu
 
-Host ursa
+Host astro2
      Hostname ursa.astro.umd.edu
      
 Host chara
