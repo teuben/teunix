@@ -1,0 +1,13 @@
+#! /bin/csh -f
+#
+#   I do this too often.....
+#   See also:   https://blog.tomecek.net/post/my-github-pull-request-workflow/
+#               https://blog.tomecek.net/post/efficient-git-tooling/
+
+foreach gc ($*)
+    set gc1=$gc:h
+    set dir=$gc1:h
+    echo "### DIR: $dir"
+    (cd $dir ; git status -uno )
+end
+
