@@ -5,7 +5,7 @@ I installed from scratch, as I've often found this to be more stable. But the dr
 and KDE settings are lost. The install was 7 minutes, but I swear to finetune everything to my personal likings,
 several hours are needed, somewhat helped by using this writeup.
 
-Support for 22.04 LTS will be until April 20275? 
+Support for 22.04 LTS will be until April 2027.
 
 ## Summary
 
