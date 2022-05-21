@@ -16,6 +16,8 @@
     apt autoremove               cleanup old stuff
     apt clean
     apt autoremove --purge
+    apt list --all-versions vlc
+    apt install vlc=3.0
 
 # newly done April 29, 2022
 
@@ -68,14 +70,15 @@ k4dirstat
 gimp
 
 
-a new way to install 3rd party tools?    deb-get
+# deb-get: a cool new way to install 3rd party tools!
 
 curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 sudo deb-get update
+sudo deb-get list
+# and examples:
 sudo deb-get install microsoft-edge-stable
 sudo deb-get upgrade
 sudo deb-get search firefox
-sudo deb-get list
 sudo deb-get remove <name of application>
 sudo deb-get purge <name of application>
 sudo deb-get clean
