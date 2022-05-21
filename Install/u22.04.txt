@@ -70,6 +70,8 @@ gimp
 
 a new way to install 3rd party tools?    deb-get
 
+https://www.tomshardware.com/how-to/install-linux-apps-with-deb-get
+
 curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 sudo deb-get update
 sudo deb-get install microsoft-edge-stable
