@@ -23,6 +23,15 @@
 sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 sudo apt install build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev -y
 
+
+# update KDE to 5.25.beta
+sudo add-apt-repository ppa:kubuntu-ppa/beta && sudo apt full-upgrade -y
+# now reboot
+
+# update KDE to 5.25
+sudo add-apt-repository ppa:kubuntu-ppa/backports && sudo apt-get full-upgrade -y
+# now reboot
+
 # less essential
 
 sudo apt install clang 
