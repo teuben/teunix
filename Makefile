@@ -36,7 +36,8 @@ URL2 = https://github.com/torvalds/uemacs
 
 uemacs:
 	git clone $(URL2)
-	@echo Needs package libncurses-dev on Ubuntu
+	@echo "Needs package libncurses-dev on Ubuntu"
+	@echo "              ncurses-devel on Fedora"
 	@echo 'cd uemacs; make'
 
 
@@ -59,5 +60,10 @@ env4:
 	-@[ ! -d ~/bin ] &&  ln -s ~/teunix/Env/bin ~/bin
 
 env5:
+	-@mkdir -p ~/.ssh
+	ln -s ~/teunix/Env/ssh/config ~/.ssh/config
+
+
+env9:
 	@echo Do the /etc/hosts manually
 
