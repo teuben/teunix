@@ -5,8 +5,18 @@ TEUNIX = `pwd`
 
 SHELLS = csh tcsh bash zsh
 
+# Ubuntu (22) packages we absolute need to bootstrap teunix
+UP = git emacs tcsh wget curl unzip openssh-server \
+     build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
+     meld tkcvs htop gitg gitk git-cvs \
+     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
+     plasma-widgets-addons kio-gdrive
+
 help:
 	@echo teunix=$(TEUNIX)
+
+apt:
+	sudo apt install $(UP) -y
 
 all: $(SHELLS)
 
@@ -47,6 +57,9 @@ rc:
 	@ls ~/rc
 
 # See various comments in Env/README
+
+env:   env1 env2 env3 env4 rc
+
 env1:
 	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
 
