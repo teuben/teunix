@@ -48,7 +48,7 @@ least a couple hours to complete the entire setup.  Most of the
 installation covered here is terminal based, that should be no surprise,
 though GUI alternatives exist.
 
-## Window managers
+## 1. Window managers
 
 Although I don't want to cover the choice of window managers (there are
 several options), your daily life will probably depend more on this choice than
@@ -56,15 +56,17 @@ on the choice of the Linux distribution. Equally so, I spend a considerable
 time of my online life in an editor, which is not something I will discuss
 here either.
 
-distro:     redhat/fedora,   debian/ubuntu/
-window manager:     kde, gnome, xfce, ...
-editor:             emacs, vim, kate, sublime
+      distro:             redhat/fedora,   debian/ubuntu/
+      window manager:     kde, gnome, xfce, ...
+      editor:             emacs, vim, kate, sublime
 
 Since the apps are "all the same", the choice of distribution or window manager
 is hardly relevant. LibreOffice and Gimp work all the same.
 
+## 2. Packages
 
-## Bootstrap your packages
+
+### Bootstrap your packages
 
 Although we will discuss a few packages, there are
 some very basic ones that most of us will need right away.
@@ -72,10 +74,11 @@ Here is my favorite command to boostrap:
 
       sudo apt install  git emacs tcsh wget curl unzip openssh-server -y
 
-you can get away without emacs if that's not your editor of choice.
+you can get away without emacs if that's not your editor of choice, as **vim**
+always comes installed with any Linux distro.
 The others are often needed when you work with astronomical software.
 
-The new release does not add a lot for system development (compilers etc.), so do this
+A new release does not add a lot for system development (compilers etc.), so do this
 
       sudo apt install build-essential gfortran cmake -y
       
@@ -84,7 +87,7 @@ You might have your own essentials too. Let me know!
 
 NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
 
-## Package tools:  apt and dpkg
+### Package tools:  apt and dpkg
 
 It is always useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
@@ -112,15 +115,15 @@ and installed packages. Useful if you like commands like **grep** to search for 
       grep fits dpkg0.list
       
 
-In addition, if you install synaptic and aptitude, you have the more classic debian style queries
+In addition, if you install **synaptic** and **aptitude**, you have the more classic debian style queries
 available
 
       sudo apt install synaptic aptitude -y
       aptitude search '~i !~M'
 
 Depending if you use Kubuntu or Ubuntu, there are different GUI tools to install software:
-**Discover** for Kubuntu (executable name:  plasma-discover), and
-**Software & Updates** (executable name: software-properties-gtk) for Ubuntu.
+*Discover* for Kubuntu (executable name:  **plasma-discover**), and
+*Software & Updates* (executable name: **software-properties-gtk**) for Ubuntu.
 
 ### Alternative package managers?
 
@@ -129,52 +132,13 @@ But if you come from a Mac, you may like certain packages that are available via
 This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
 
 Another alternative methods to install applications not available through the regular
-channels are **FlatPak** and **snap**, which we cover in more detail below,
-as well as the AppImage style of programs.
+channels are *FlatPak* and *snap*, which we cover in more detail below,
+as well as the *AppImage* style of programs.
 
 By using such alternate app channels, you can effectively make the official
 version hidden, and can come with additional restrictions.
 
-## The Good and the Bad about Ubuntu
-
-### Neat things 
-
-* if you type a command that Ubuntu knows exists, but you didn't
-install yet, it will remind you. For example if you typed **ds9** you
-might see
-
-      sudo apt install saods9 
-
-* the command **xdg-open** will open any file with the appropriate
-mime-type. If the argument is a directory, a file browser
-(e.g. Nautilus or Dolphin will be used). On a Mac you will find a
-similar command, aptly called **open**
-
-* ...
-
-### Less nice things 
-
-* snaps and flatpaks (arguably appimage as well) - but this is
-controversial. I'll devote a whole section on these universal binaries
-below.
-
-* related to xdg-open: when you install certain new packages,
-sometimes this will bump the program you had before and you
-loved. I've been unpleasantly bitten by this a few times. My JPG's
-were opened by gwenview, when I installed krita, suddenly by this
-krita editor. Now where again is this mime-type list and how do
-you edit it?  This will sadly depend on the distro.  Kubuntu is
-different from Ubuntu. grrr.
-
-* 32 bit applications are on the way out: increasingly it will become
-harder to add this support in an 64-bit OS. There are still some popular
-astronomy legacy applications (e.g. karma) that have not been converted,
-and probably never will (if only we had the source code).
-
-
-* ...
-
-## Astronomy Packages
+## 3. Astronomy Packages
 
 Ubuntu does come with a modest set of astronomy packages. Here are some of my favorites:
 
@@ -186,7 +150,7 @@ Ubuntu does come with a modest set of astronomy packages. Here are some of my fa
 
 If you want to adopt the whole *astro debian blend*
 
-      sudo apt install astro-all
+      sudo apt install astro-all -y
 
 which will consume about 2xx packages in 3GB (now 5GB in U22??)
 This will get you everything and then some. Lots of python3 updates to your system,
@@ -202,10 +166,10 @@ the previously mentioned debian astro blend.  *(there is a conflict with casacor
 Here is the example how you get started in Ubuntu 20.04
 
         sudo apt-get install software-properties-common
-	sudo add-apt-repository -s ppa:kernsuite/kern-7
-	sudo apt-add-repository multiverse
-	sudo apt-add-repository restricted
-	sudo apt-get update
+        sudo add-apt-repository -s ppa:kernsuite/kern-7
+        sudo apt-add-repository multiverse
+        sudo apt-add-repository restricted
+        sudo apt-get update
 
 After which you are ready to install some packages, for example meqtrees:
 
@@ -250,10 +214,51 @@ Most of those you will have to install via source. ASCL has a pretty good search
 tool to find related codes. You can also find ASCL codes via papers, for example
 if you look at CGS at (provide link)
 
-## Change Shell - tsch, bash or zsh?
+
+## 4. The Good and the Bad about Ubuntu
+
+### Neat things 
+
+* if you type a command that Ubuntu knows exists, but you didn't
+install yet, it will remind you. For example if you typed **ds9** you
+might see
+
+      sudo apt install saods9 
+
+* the command **xdg-open** will open any file with the appropriate
+mime-type. If the argument is a directory, a file browser
+(e.g. Nautilus or Dolphin will be used). On a Mac you will find a
+similar command, aptly called **open**
+
+* ...
+
+### Less nice things 
+
+* snaps and flatpaks (arguably appimage as well) - but this is
+controversial. I'll devote a whole section on these universal binaries
+below.
+
+* related to xdg-open: when you install certain new packages,
+sometimes this will bump the program you had before and you
+loved. I've been unpleasantly bitten by this a few times. My JPG's
+were opened by gwenview, when I installed krita, suddenly by this
+krita editor. Now where again is this mime-type list and how do
+you edit it?  This will sadly depend on the distro.  Kubuntu is
+different from Ubuntu. grrr.
+
+* 32 bit applications are on the way out: increasingly it will become
+harder to add this support in an 64-bit OS. There are still some popular
+astronomy legacy applications (e.g. *karma*) that have not been converted,
+and probably never will (if only we had the source code).
+
+
+* ...
+
+
+## 5. Change Shell - tsch, bash or zsh?
 
 Ubuntu comes with a default shell called **bash**, but some die
-hards might like to stick to (t)csh, or if you look into the future, maybe adopt
+hards might like to stick to **(t)csh**, or maybe adopt
 **zsh** (as a *better bash*).  The **chsh** command will do this for
 you, but MacOS is not always true to Unix, it doesn't work there.  On
 a Mac they don't distiguish between a login and an interactive
@@ -266,12 +271,16 @@ environment variables, you could consider adding the following to your
 
       shopt -s direxpand
 
-## Software Versioning
+## 6. Software Versioning
 
-The **module** command, if implemented, allows users to load a
+The **module** command, if installed, allows users to load a
 specific version of specific software. This is done in run-time. It is
 a very popular tool on large data centers and supercomputers. The
 command **module avail** should then list what is available.
+
+      sudo apt install environment-modules -y
+      add.modules
+      module avail
 
 Most distributions also have a method by which certain tools (e.g. the compiler)
 can be defaulted to another version. To use the example of the compiler, the default
@@ -288,14 +297,14 @@ The command **update-alternatives --list** should give the list what you current
 ### Dotfiles
 
 Unix stores a lot of application defaults and setup files in files (and directories) that
-are hidden from view by starting the filename with a . ; hence the name dotfiles.
+are hidden from view by starting the name with a . ; hence the name dotfiles.
 
 Dotfile management appears to be quite a cottage industry.
 Searching in github for dotfiles gives you over 100 thousands repositories. Seriously?
 Talk about reinventing the multiverse. But
 if you setup your Unix accounts regularly,
 it is probably useful to have a mechanism to get your dotfiles organized. Roll your
-own, or steal some ideas from the many on github.
+own, or steal some ideas from one of the many on github.
 
 ### Startup Files or Dotfiles
 
@@ -321,7 +330,7 @@ I use the following bash function for this
     }
 	
 
-## Remote Computing
+## 7. Remote Computing
 
 I love remote computing, but over the years certain implementations
 have made the classic X11 based copy and paste a bit more
@@ -436,7 +445,7 @@ This will be a manual install, it does not come with Ubuntu. I used
      wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
      sudo dpkg -i teamviewer_amd64.deb
 
-## Python
+## 8. Python
 
 Python is so widely used in many projects, that we spend a small section on it here.
 
@@ -444,13 +453,13 @@ Although python2 is deprecated, the commands python or ipython sometimes still r
 A safe bet is to refer to **python3** and **ipython3** explicitly. Debian, Redhat and Anaconda
 have different default behaviors.
 
-U22 comes with python 3.10.4, very brave.  But no pip3 installed
+U22 comes with python 3.10.4.  But no pip3 gets installed by default.
 
-There are several ways to install/use *python*:
+Summarizing some methods to install/use *python*:
 
 * native ubuntu (apt install)
 * miniconda - a smaller version, manual install
-* anaconda - a full version, including astropy
+* anaconda - a full version, including astropy (this is my own preferred way)
 * AstroConda (is that still viable?) - IRAF/pyiraf
 * Python (install from source) - nobody does that anymore
 
@@ -472,11 +481,11 @@ the "python setup.py install" method, as developer or as user.
 
 Using jupyter notebooks has become very popular to showcase software examples.
 
-## R
+### R
 
 but what about R. they usually have a lot of packages you need.
 
-## IDL
+### IDL
 
 Of course IDL is commercial software, but it is widely used in some of the astronomy
 community, and the current IDL owner will happily sell you a $$$ license for linux.
@@ -488,7 +497,7 @@ of
 or perhaps somebody has ported it to python.  The idlastro (sp?) library is well
 supported.
 
-## Commercial vs. OpenSource
+## 9. Commercial vs. OpenSource
 
 The most common commercial applications have open source alternatives:
 
@@ -505,7 +514,7 @@ The most common commercial applications have open source alternatives:
 See also https://www.opensourcealternative.to/ for an expanded version of this
 
 
-## Other Development stuff
+## 10. More Development stuff
 
 Developing software and writing papers, collaborative or not, is very useful with one
 of the modern Content Management Systems (CMS), and **git** is probably the main contender these
@@ -535,9 +544,9 @@ sadly there is no standard on the basename.  For example on redhat based system 
 would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based systems.
 
                 
+## 11. Publishing
 
-
-## Publishing: LaTex
+### Publishing: LaTex
 
 Widely used in astronomy, and pretty straightforward to install:
 
@@ -551,7 +560,7 @@ KDE centric. And a PDF library search engine, you store your PDF's in a big cont
 
 Xournal is a program where you can also add a signature file to a PDF.
 
-Overleaf is heavily used by a lot of astronomers. But did you know you can keep
+Overleaf is heavily used in astronomy. But did you know you can keep
 a local copy on your own system using git? And even make local changes and push them
 back to overleaf? It's always a good idea to have a 2nd backup. Under the top left MENU button for
 a document, you will find the **git** link (not the github).
@@ -568,7 +577,7 @@ Bibtex:  managing your references?  see for example https://bibmanager.readthedo
 
       pip install bibmanager
 
-## Publishing: LibreOffice
+### Publishing: LibreOffice
 
 This actually comes standard with Ubuntu. But maybe a few comments are in place here:
 
@@ -650,6 +659,10 @@ after which you can run it as follows
 
       flatpak run org.kde.digikam
 
+instead of just
+
+      digikam
+
 This runs digikam in a container, so by default you don't see much of what's outside of this. You have
 limited access to folders (/home and /media being the exception).
 
@@ -657,7 +670,7 @@ limited access to folders (/home and /media being the exception).
       sudo flatpak override org.kde.digikam --filesystem=/Photos
 
 Now it should be said that if you use the GUI approach, you are better off. No need to remember nasty
-ways to run digikam to flatpak, but you do need to understand all the flatseal issues.
+ways to run digikam to flatpak, but you do need to understand all the flatseal peculiarities.
 
 
 ### snap
@@ -679,7 +692,7 @@ image.
 
       sudo apt install virtualbox
 
-The package **gnome-boxes** provides another virtual machine environment. Does it require Gnome ???
+The package **gnome-boxes** provides another virtual machine environment. 
 
 ### Kubernetes
 
@@ -765,83 +778,26 @@ and can be an effective way to clean up your drive space.
 
 
 
-# old stuff to be organized
-
-
-In this article/blog I would like to cover how to set up your Ubuntu
-system for professional astronomy. This is a moving target So this
-writeup is for the 2020 version of Ubuntu. Althugh I use the kubuntu
-flavor, the details do not differ if yu use Ubuntu, or Xubuntu, or any
-of the close derivatives.  Any other debian based system should also
-(mostly) work, but the translation to a RedHat based system, for
-example we use Centos at work, is a different story.  If there is
-enough interest, I could be persuaded to try and write that up as
-well.
-
-
-Communications:
-Browsers:   firefox      chrome, chromium
-Slack
-Skype
-Zoom
-Yakyak (an example of a snap)
-
-I will not cover what to do when you have an old/existing system, and
-you have two options: overlay the new on the old, or make a new one,
-and copy the setup files . This requires some knowledge and understand
-what parts of the old system changed, and which did not, and most
-importantly, which files you need.
-
- convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
-find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
-
-See a fix in LMTOY/etc/policy.xml 
-
-The big things:
-
-Compilers (but also python, R, julia etc.)   [idl -> gdl]
-Useful tools that exist as binary
-Latex/Bibtex
-Gimp, xfig, dia, ...
-Grip (to preview your MD files)
-    grip will download a lot of python3 stuff
-    okular works well enough
-LibreOffice (and competitors now around too; see earlier list)
-Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
-  (acroread is pretty useless, libreoffice does open PDF files)
-  xournal
-  PDFtk   <-   pdftk-java
-Also useful to combine many PDFs into a single PDF.
-
-Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
-
-    sudo apt install ttf-mscorefonts-installer
-    
-but still i don't the all import calibri
-
-    mkdir ~/.fonts
-    wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
-
-See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-in-linux-office-suites.html
-
-
-ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
-
-My CV tools?
 
 ## Miscellaneous
 
 ### parallel computing
 
 For "old" single core programs there is a great solution on modern multi-core systems to run
-such programs in parallel, assuming you need to run
+such programs in parallel, assuming you need to run a whole series of them, not depending on
+each other
 
       sudo apt install parallel -y
 
+Create a text file with the commands to run, one per line, and then
 
+      parallel -j 4 < run1.txt
+
+will then use up to 4 processors to process all the lines as separate commands
+by the shell.
+The **make** program has a similar flag, but is arguably
+a little harder to use for this simple example.
       
-The gnu **parallel** program 
-
 ### Bundling and Compressing Files
 
 1. .gz  (gzip, gunzip, tar ztvf)
@@ -915,3 +871,68 @@ version on setting up your (Ubuntu) Linux.
 
 If you read this elsewhere, a version of this document is also maintained on
 https://github.com/teuben/teunix/blob/master/docs/astronomy-on-ubuntu.md
+
+
+# -- old stuff to be organized --
+
+
+In this article/blog I would like to cover how to set up your Ubuntu
+system for professional astronomy. This is a moving target So this
+writeup is for the 2020 version of Ubuntu. Althugh I use the kubuntu
+flavor, the details do not differ if yu use Ubuntu, or Xubuntu, or any
+of the close derivatives.  Any other debian based system should also
+(mostly) work, but the translation to a RedHat based system, for
+example we use Centos at work, is a different story.  If there is
+enough interest, I could be persuaded to try and write that up as
+well.
+
+
+Communications:
+Browsers:   firefox      chrome, chromium
+Slack
+Skype
+Zoom
+Yakyak (an example of a snap)
+
+I will not cover what to do when you have an old/existing system, and
+you have two options: overlay the new on the old, or make a new one,
+and copy the setup files . This requires some knowledge and understand
+what parts of the old system changed, and which did not, and most
+importantly, which files you need.
+
+ convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
+find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
+
+See a fix in LMTOY/etc/policy.xml 
+
+The big things:
+
+Compilers (but also python, R, julia etc.)   [idl -> gdl]
+Useful tools that exist as binary
+Latex/Bibtex
+Gimp, xfig, dia, ...
+Grip (to preview your MD files)
+    grip will download a lot of python3 stuff
+    okular works well enough
+LibreOffice (and competitors now around too; see earlier list)
+Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
+  (acroread is pretty useless, libreoffice does open PDF files)
+  xournal
+  PDFtk   <-   pdftk-java
+Also useful to combine many PDFs into a single PDF.
+
+Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
+
+    sudo apt install ttf-mscorefonts-installer
+    
+but still i don't the all import calibri
+
+    mkdir ~/.fonts
+    wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+
+See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-in-linux-office-suites.html
+
+
+ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
+
+My CV tools?
