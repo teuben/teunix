@@ -497,24 +497,8 @@ of
 or perhaps somebody has ported it to python.  The idlastro (sp?) library is well
 supported.
 
-## 9. Commercial vs. OpenSource
 
-The most common commercial applications have open source alternatives:
-
-     # COM         # ORG
-     IDL           gdl
-     matlab        octave
-     mathematica   octave, maxima
-     photoshop     gimp
-     lightroom     darktable
-     Office365     LibreOffice
-     MS Publisher  scribus
-     CorelDraw     inkscape
-
-See also https://www.opensourcealternative.to/ for an expanded version of this
-
-
-## 10. More Development stuff
+## 9. More Development stuff
 
 Developing software and writing papers, collaborative or not, is very useful with one
 of the modern Content Management Systems (CMS), and **git** is probably the main contender these
@@ -544,7 +528,7 @@ sadly there is no standard on the basename.  For example on redhat based system 
 would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based systems.
 
                 
-## 11. Publishing
+## 10. Publishing
 
 ### Publishing: LaTex
 
@@ -586,7 +570,7 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 * there are actually several other open source MS Office clones.
   E.g. OnlyOffice, G Suite, OpenOffice, WPS Office, Collabora Office, FreeOffice 2021, SoftMakerOffice 2021
 
-## Other tools
+## 11. Other tools
 
 The names of the tools are not always obvious for somebody coming from
 another OS (or even between Gnome based and KDE based linux). So here
@@ -603,18 +587,34 @@ are some popular ones:
 * backup tools:   rsync, unison
 * video editing: kdenlive, ffmpeg, peek
 
+### Commercial vs. OpenSource
+
+The most common commercial applications have open source alternatives:
+
+     # COM         # ORG
+     IDL           gdl
+     matlab        octave
+     mathematica   octave, maxima
+     photoshop     gimp
+     lightroom     darktable
+     Office365     LibreOffice
+     MS Publisher  scribus
+     CorelDraw     inkscape
+
+See also https://www.opensourcealternative.to/ for an expanded version of this
+
 
 ## alternatives
 
-If multiple versions of the same command exist, there is an easy
+If multiple versions of the same command exist (e.g. the gnu compiler), there is a
 is a mechanism in Linux to pick the one you prefer:
 
       update-alternatives --help
 
-Other methods to this are the **modules** command.
+Other methods to this are the **module** command, if thats installed and enabled.
 
 
-## Universal Binaries, Russian Dolls and other such containers
+## 12. Universal Binaries, Russian Dolls and other such containers
 
 Unix used to be a little simpler, there was just Unix. Now we have virtual machines, containers etc.etc.
 Within Linux there is another type of fragmentation going on, coming out of the frustration of
@@ -698,7 +698,7 @@ The package **gnome-boxes** provides another virtual machine environment.
 
 Useful to know it exists, but out of scope for this paper?
 
-## Pandemic
+## 13. Pandemic: communications
 
 During the 2020+ pandemic we all learned communications were now channeled through
 a growing number of apps, depending on the preference of the group. 
@@ -714,7 +714,7 @@ a growing number of apps, depending on the preference of the group.
 
 and maybe more, but these are the ones I've used at least ones.
 
-## Maintenance: keeping your disk space in check
+## 14. Maintenance: keeping your disk space in check
 
 As time progresses, you will notice your root partition might fill up, and you don't want this to
 get to close to 0. A program such as **bleachbit** can help with this. Here are a few additional
@@ -779,7 +779,7 @@ and can be an effective way to clean up your drive space.
 
 
 
-## Miscellaneous
+## 99. Miscellaneous
 
 ### parallel computing
 
@@ -823,7 +823,7 @@ After installation, you will need to select from a large set of *Docsets* which 
 install locally. Pick your poison.
 
 
-## Quick Install
+## 99. Quick Install
 
 You can also download my **ubuntu20.list**, which is a long list of all the package we discussed here,
 and install everything in one long download. You could always inspect this file and comment out the
@@ -838,7 +838,7 @@ or if you don't want to select and have enough disk space, try this
 these are about XXX (300?) packages in 3GB.
 
 
-## References
+## 99. References
 
 * [What operating systems do astronomers use
   ](https://www.astrobetter.com/blog/2011/12/20/os-apt-astronomers/) - 2011
