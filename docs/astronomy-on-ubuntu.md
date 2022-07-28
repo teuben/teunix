@@ -18,7 +18,7 @@ not a tutorial. We will also point out some salient differences where things
 work differently on a Mac.
 
 If you have used Ubuntu for a while, this might be a nice checklist to see
-if you have been missing out on some cool tools.
+if you have been missing out on some new cool tools.
 
 As a brief introduction: Linux is the catch-all name for a linux kernel
 and GNU software based operating system. Linux is part of the Unix family, of
@@ -135,7 +135,9 @@ as well as the AppImage style of programs.
 By using such alternate app channels, you can effectively make the official
 version hidden, and can come with additional restrictions.
 
-## Neat things about Ubuntu
+## The Good and the Bad about Ubuntu
+
+### Neat things 
 
 * if you type a command that Ubuntu knows exists, but you didn't
 install yet, it will remind you. For example if you typed **ds9** you
@@ -150,9 +152,9 @@ similar command, aptly called **open**
 
 * ...
 
-## Less nice things about Ubuntu
+### Less nice things 
 
-* snaps and flatpaks (appimage works a lot better ) - but this is
+* snaps and flatpaks (arguably appimage as well) - but this is
 controversial. I'll devote a whole section on these universal binaries
 below.
 
@@ -174,7 +176,7 @@ and probably never will (if only we had the source code).
 
 ## Astronomy Packages
 
-Ubuntu does come with a modest set of astronomy packages. Here are some of our favorites:
+Ubuntu does come with a modest set of astronomy packages. Here are some of my favorites:
 
       sudo apt install montage aladin saods9 xpa-tools topcat  -y
       sudo apt install libcfitsio-dev libccfits0v5 ftools-fv pgplot5 -y
@@ -182,7 +184,7 @@ Ubuntu does come with a modest set of astronomy packages. Here are some of our f
 
 ### astro debian blend
 
-If you want to adopt the whole astro debian blend
+If you want to adopt the whole *astro debian blend*
 
       sudo apt install astro-all
 
@@ -192,10 +194,10 @@ so this is useful.
 
 ### KERN
 
-This extremely large well supported [KERN package](https://kernsuite.info/) is available
-for Ubuntu20.04.   There are
+This extremely large well supported [KERN package](https://kernsuite.info/) is now available
+for Ubuntu20.04, but not yet for U22.  There are
 XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
-the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
+the previously mentioned debian astro blend.  *(there is a conflict with casacore-data)*
 
 Here is the example how you get started in Ubuntu 20.04
 
@@ -207,7 +209,7 @@ Here is the example how you get started in Ubuntu 20.04
 
 After which you are ready to install some packages, for example meqtrees:
 
-        sudo apt-get install meqtrees python3-casacore
+        sudo apt-get install meqtrees 
 
 ### ASCL
 
@@ -223,29 +225,32 @@ Ubuntu comes with a default shell called **bash**, but some die
 hards might like to stick to (t)csh, or if you look into the future, maybe adopt
 **zsh** (as a *better bash*).  The **chsh** command will do this for
 you, but MacOS is not always true to Unix, it doesn't work there.  On
-a Mac they don't distiguish anymore between a login and an interactive
+a Mac they don't distiguish between a login and an interactive
 shell, which is why on a Mac you need to edit your **.bash_login**
-file, and on linux the **.bashrc**. 
+file, and on linux the **.bashrc**. anaconda knows about this!
 
-In **bash** directory completion can be very annoying if you use environment variables,
-you could consider adding the following to your **.bashrc** file:
+In **bash** directory completion can be very annoying if you use
+environment variables, you could consider adding the following to your
+**.bashrc** file:
 
       shopt -s direxpand
 
-## Versioning
+## Software Versioning
 
-The **module** command, if implemented, allows users to load a specific version of
-specific software. This is done in run-time. It is a very popular tool on large
-data centers. The command **module avail** should then list what is available.
+The **module** command, if implemented, allows users to load a
+specific version of specific software. This is done in run-time. It is
+a very popular tool on large data centers and supercomputers. The
+command **module avail** should then list what is available.
 
 Most distributions also have a method by which certain tools (e.g. the compiler)
 can be defaulted to another version. To use the example of the compiler, the default
 C compiler, gcc, might be version 11, and by using gcc-12 you can try out a newer
 release.   But using the XXX command the default C compile can be made to point to
-gcc-12 instead of gcc-11. Interesting detail: on Ubuntu gcc-12 is used,
+gcc-12 instead of gcc-11, but only an admin can do this.
+Interesting detail: on Ubuntu gcc-12 is used,
 on RedHat it is gcc12, no dash here.
 
-Look at /etc/alternatives and you get an idea of the mess .
+Look at /etc/alternatives and you get an idea of the mess.
 
 The command **update-alternatives --list** should give the list what you currently have.
 
@@ -254,7 +259,7 @@ The command **update-alternatives --list** should give the list what you current
 Unix stores a lot of application defaults and setup files in files (and directories) that
 are hidden from view by starting the filename with a . ; hence the name dotfiles.
 
-Dotfile appear to be quite a cottage industry.
+Dotfile management appears to be quite a cottage industry.
 Searching in github for dotfiles gives you over 100 thousands repositories. Seriously?
 Talk about reinventing the multiverse. But
 if you setup your Unix accounts regularly,
@@ -271,13 +276,15 @@ have different default behaviors.
 
 U22 comes with python 3.10.4, very brave.  But no pip3 installed
 
+There are several ways to install/use *python*:
+
 * native ubuntu (apt install)
 * miniconda - a smaller version, manual install
 * anaconda - a full version, including astropy
 * AstroConda (is that still viable?) - IRAF/pyiraf
 * Python (install from source) - nobody does that anymore
 
-If you prefer to use the native Ubuntu version:
+If you prefer to use the native Ubuntu version, these should be useful:
 
       sudo apt install python-is-python3 ipython3 python3-pip -y python3-venv -y
       sudo apt install python-matplotlib python-scipy python-scitools -y
@@ -293,25 +300,54 @@ NASA's OSCAAR software that are installable via apt-get.
 Difference between conda and pip.  Also mention the "pip install -e ." method, as opposed to
 the "python setup.py install" method, as developer or as user.
 
-Using jupyter notebooks is now the
+Using jupyter notebooks has become very popular to showcase software examples.
 
 ## R
 
 but what about R. they usually have a lot of packages you need.
 
+## IDL
+
+Of course IDL is commercial software, but it is widely used in some of the astronomy
+community, and the current IDL owner will happily sell you a $$$ license for linux.
+If you are lucky, your IDL scripts will work under GDL, an open source version
+of
+
+        sudo apt install gnudatalanguage -y
+
+or perhaps somebody has ported it to python.  The idlastro (sp?) library is well
+supported.
+
+## Commercial vs. OpenSource
+
+The most common commercial applications have open source alternatives:
+
+     # COM         # ORG
+     IDL           gdl
+     matlab        octave
+     mathematica   octave, maxima
+     photoshop     gimp
+     lightroom     darktable
+     Office365     LibreOffice
+     MS Publisher  scribus
+     CorelDraw     inkscape
+
+See also https://www.opensourcealternative.to/ for an expanded version of this
+
+
 ## Other Development stuff
 
 Developing software and writing papers, collaborative or not, is very useful with one
 of the modern Content Management Systems (CMS), and **git** is probably the main contender these
-days.
+days. If you use *Overleaf*, you can use their git interface as well.
 
       sudo apt install git hub gitg gitk meld tkdiff -y
 
-and if you need to need some legacy ones, try
+and if you need to need some legacy CMS, try
 
       sudo apt install rcs cvs subversion mercurial -y
 
-NOTE: should cover the official **gh** command.
+NOTE: should cover the official **gh** (github desktop) command.
 
 ### what about all the *-dev packages
 
@@ -323,7 +359,6 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
       sudo apt install wcslib-dev libfftw3-dev libcfitsio-dev libgsl-dev xorg-dev -y
       sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
 
-      Note: libfftw-dev vs. libfftw3-dev (U20)
 
 
 sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
@@ -342,16 +377,6 @@ would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based sys
 * Gemini Observing Tool
 
                 
-## IDL
-
-Of course IDL is commercial software, but it is widely used in some of the astronomy
-community, and the current owner will happily sell you a $$$ license for linux.
-If you are lucky, your IDL scripts will work under GDL
-
-        sudo apt install gnudatalanguage -y
-
-or perhaps somebody has ported it to python.  The idlastro (sp?) library is well
-supported.
 
 
 ## Publishing: LaTex
@@ -396,17 +421,21 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 
 ## Other tools
 
-* gedit - is this the easy way not to offend emacs or vim users ?
-* mg - microscopic GNU Emacs-style editor (micro-emacs?)
-* sublime, atom - code editors - not in ubuntu (atom now deprecated)
-* aspell and aspell-dict-en
-* gimp
-* xfig and GraphicsMagick
-* dia
-* imagemagick
-* xv, geeqie, ...
-* IDE/editors: Eclipse, VSCode, Geany, PyCharm, Atom, Emacs, Vim
+The names of the tools are not always obvious for somebody coming from
+another OS (or even between Gnome based and KDE based linux). So here
+are some popular ones:
+
+
+* editors: vim, emacs, gedit, mg, sublime, atom
+* IDE/editors: Eclipse, VSCode, Geany, PyCharm
+* spell checking: aspell and aspell-dict-en
+* photo editing/organizing: gimp, krita, darktable, digikam, imagemagick
+* pdf tools:  xournal, pdftk, okular, evince
+* making diagrams: dia, xfig and GraphicsMagick
+* image viewers: geeqie, gwenview
 * backup tools:   rsync, unison
+* video editing: kdenlive, ffmpeg, peek
+
 
 ## alternatives
 
@@ -432,6 +461,8 @@ I'm not sure if people who spend 100k on equipment are still called "amateur" ?
 - astrophotography:   gimp, darktable, digikam, ekos
 - OpenRocket
 - http://www.distroastro.org/   (mate based)
+- fitscli (fits liberator), pixinsight
+
 
 ## others
 
@@ -464,6 +495,7 @@ AppImages are not signed (some AppStored refuse to publish those)
 and do not support ICU (language extensions), for one. So unclear how long they will survive,
 but if you find an appimage, it will be the easiest to use. A popular program of
 which you can often find pre-released in this format is Digikam (a photoshop type program).
+They can fill up your /tmp space.
 
 ### flatpak
 
@@ -517,15 +549,16 @@ The package **gnome-boxes** provides another virtual machine environment. Does i
 
 Useful to know it exists, but out of scope for this paper?
 
-## Startup Files
+## Startup Files or Dotfiles
 
-In addition to you .bashrc (or .cahrc etc.) there are other tools to keep your shell environment organized.
+In addition to you .bashrc (or .cshrc etc.) there are other tools to keep your shell environment organized.
 One is the **direnv** command, which allows you to keep project specific environment variables.
 
 Another is my own, the *rc* alias, which depends on an ~/rc/PROJECT.rc file in which you place your
-own project dependant commands. This also serves as a *self-documenting*
+own project dependant commands. This also serves as a *self-documenting* reminder what the heck you
+are doing
 
-I use the following bash alias :
+I use the following bash function for this
 
     rc () {
       if [ ! $1 ]; then
@@ -542,13 +575,13 @@ I use the following bash alias :
 ## Pandemic
 
 During the 2020+ pandemic we all learned communications were now channeled through
-a large number of apps, depending on the preference of the group. 
+a growing number of apps, depending on the preference of the group. 
 
 1. zoom
 2. google meet (formerly google chat)
 3. microsoft teams
 4. skype (anybody still use this?)
-5. slack
+5. slack (starting to charge)
 6. discord
 7. gathertown
 8. webex
@@ -556,7 +589,7 @@ a large number of apps, depending on the preference of the group.
 and maybe more, but these are the ones I've used at least ones.
 
 
-## old PJT stuff to be organized
+# old stuff to be organized
 
 
 In this article/blog I would like to cover how to set up your Ubuntu
@@ -586,7 +619,7 @@ importantly, which files you need.
  convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
-See a fix in LMTOY/etc
+See a fix in LMTOY/etc/policy.xml 
 
 The big things:
 
@@ -629,9 +662,10 @@ does not work anymore (e.g. SciServer). Blame it on russian dolls?
 My benchmark is double left click a word in one window (it selects it, use triple left click to select the whole line)
 and middle click to paste. This is efficient!
 
-Even within Linux, certain apps now involve more elaborate ways to copy and paste.
+Even within Linux, certain apps now involve more elaborate ways to copy and paste. The classic left mouse select
+(single, double or triple click) for Copy and middle mouse button for Paste does not always work. Some applications
+now require a keyboard prefix using *Ctrl* or *Ctrl+Shift*. 
 
-x2goclient
 
 ## ssh
 
@@ -654,7 +688,7 @@ your ssh commands a little more compact to use:
       ForwardX11 yes
       ForwardX11Trusted yes
       
-      # pesky server tthat time you out
+      # pesky servers that time you out
       TCPKeepAlive yes
       ServerAliveInterval 60
 
@@ -688,19 +722,29 @@ to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
 
 ### VPN
 
-Many academic institutions now require a VPN (often with 2FA) for a
+Many academic institutions now require a VPN (often with 2FA) for
 more secure network access.  For example at UMD we use *Palo Alto Networks*
 **globalprotect**, for which an Ubuntu 20.04 version is available on
 https://terpware.umd.edu/Linux/Title/4010
 
       sudo dpkg -i GlobalProtect_UI_deb-6.0.0.1-44.deb
 
+Be aware that VPN can disable your local home net, and perhaps your networked printers as well.
+NordVPN advertises a solution for this. viz.
+
+      nordvpn set technology openvpn
+      nordvpn set protocol tcp
+      sudo nordvpn whitelist add port 22
+      sudo nordvpn whitelist add subnet 192.168.0.0/16
+
 ### vnc
 
-VNC is the classic way to view a remote desktop in linux. Your server needs vncserver, you local host
-needs vncviewer and vncpasswd. An alternative is the **tightvnc** version
+VNC is the classic way to view a remote desktop in linux. Your server needs **vncserver**, you local host
+needs **vncviewer** and **vncpasswd**. An alternative is the **tightvnc** version
 
       sudo apt install xtightvncviewer tightvncserver -y
+
+An alternative to VNC for persistent sessions is **screen** and **tmux**
 
 ### krdc
 
@@ -708,8 +752,8 @@ What about krdc?
 
 ### x2go
 
-Excellent way, uses ssh, compresses much better than vnc. But needs the remote to have the x2go server
-installed. In that sense , vnc is easier to use, just a bit slower.
+Excellent way, uses ssh, compresses much better than *vnc*. But needs the remote to have the *x2go* server
+installed. In that sense, *vnc* is easier to use, just a bit slower.
 
      sudo apt install x2goclient
 
@@ -721,7 +765,7 @@ This will be a manual install, it does not come with Ubuntu. I used
      wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
      sudo dpkg -i teamviewer_amd64.deb
 
-### Compressing files
+### Bundling and Compressing Files
 
 1. .gz  (gzip, gunzip, tar ztvf)
 1. .bz2 (bzip2)
@@ -732,29 +776,13 @@ This will be a manual install, it does not come with Ubuntu. I used
 3. .zip (unzip)
 4. .fz  (funpack,fpack)
 4. .lz4 (unlz4)
-
-## A Whole New World
-
-You can replace all major components of your desktop environment with others, and get
-a very new look and feeling. Many online articles describe them. Here's just one of
-those. We leave is as an excersize for the reader to fill in the gaps
-
-1. launcher/search tool:   Albert  https://albertlauncher.github.io/installing/
-2. terminal:   Tilix
-3. shell:   fish
-4. browser:  brave with DuckDuckGo as default search engine
-4. editor:
-4. IDE:
-5. faster loads:   "sudo apt install preload"
-
-
-My take on this:  it's never 100% the same, so why bother.
+5. .jar (jar)
 
 
 ### Online help vs. Offline help
 
-The unix *man* and *info* command give a lot of help. But if you are offline, this can be a problem.
-A neat tool that solves this is "zeal"
+The unix *man* and *info* command give a lot of help, but if you are offline, it can be a problem
+finding reminders on your favoite esoteric tools. A neat program that solves some of this is **zeal**
 
       sudo apt install zeal
 
@@ -785,27 +813,25 @@ comments.
 ### Slackspace on ext4
 
 If you were using a filesystem like ext4, it has a rather large default slackspace that root reserved. Try and
-setting it smaller, or even to 0:
+setting it smaller, or even to 0. For example,
 
-      sudo ... /dev/ -m 0
+      sudo tune2fs -m 0 /dev/nvme0n1p2
 	  
 ### Remove unused programs by snap / flatpak
 
-
-
       snap list
-	  snap remove yakyak
+      snap remove yakyak
 
 and
 
       flatpak list
-	  flatpak remove org.freedesktop.Platform
+      flatpak remove org.freedesktop.Platform
 
 ### Applications that cache
 
 Check the size of your cache directories:
 
-	  du -s /var/cache/apt /var/log ~/.cache
+      du -s /var/cache/apt /var/log ~/.cache
 	  
 The apt cache can be cleaned using:
 
@@ -814,7 +840,7 @@ The apt cache can be cleaned using:
       sudo apt autoremove
       sudo apt autoclean
 	  
-For me the 	~/.cache/pip is always huge, but your browser also tend to leave a lot of files here. 
+For me the ~/.cache/pip is always huge, but your browser also tend to leave a lot of files here. 
 cleanup as you see fit.   Also note depending how you partitioned your drive space, these cache
 may be on different disks.
 
@@ -823,6 +849,7 @@ may be on different disks.
 Keeping old kernels around can easily accumulate disk space. 
 
       sudo apt autoremove --purge
+      
       sudo apt install byobu
       sudo purge-old-kernels
 
@@ -832,23 +859,6 @@ This article does not deal with [privacy](https://www.privacytools.io/), but it
 is good to be aware that different distros deal with this in different ways.
 In general, Linux is a good OS that is concerned about this.
 
-
-## Summary of tools
-
-The names of the tools are not always obvious for somebody coming from
-another OS (or even between Gnome based and KDE based linux). So here
-are some popular ones:
-
-* Emacs (editor)
-* Gnome Terminal or Konsole (terminals)
-* Peek (GIF recording)
-* Kdenlive (Video editing)
-* GIMP (Photo editing)
-* Darktable (RAW Photo editing)
-* FFMPEG (Converting videos etc)
-* ImageMagick (Converting and resizing images)
-* LibreOffice (Spreadsheets, Presentations, etc.)
-* Evince or Okular (PDF reading and annotating)
 
 ## References
 
@@ -876,7 +886,7 @@ are some popular ones:
 
 ## Acknowledgements
 
-I wish to thank Marc Pound and Ollie Streicher for checking their own
+I wish to thank Marc Pound and Ole Streicher for checking their own
 Ubuntu and Debian systems, and making sure I wasn't lying too much
 since I stuck to Kubuntu. This draft is the precursor to the Astrobetter Wiki
 version on setting up your (Ubuntu) Linux.
