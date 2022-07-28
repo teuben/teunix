@@ -73,7 +73,7 @@ Host inaoe2
     ProxyCommand ssh -p 12000 adria.inaoep.mx -W %h:%p	
 
 # Unity cluster for TolTEC;  see https://unity.rc.umass.edu/docs/
-Host unity2
+Host unity-tt
     User toltec_umass_edu
     HostName unity.rc.umass.edu
     IdentityFile ~/.ssh/toltec_id
@@ -83,6 +83,13 @@ Host unity
     User lmtslr_umass_edu
     HostName unity.rc.umass.edu
     IdentityFile ~/.ssh/unity_id
+
+Host unity2
+    User lmthelpdesk_umass_edu
+    HostName unity.rc.umass.edu
+    IdentityFile ~/.ssh/unity_id
+
+
 
 # ADASS2018 proceedings
 Host asp
