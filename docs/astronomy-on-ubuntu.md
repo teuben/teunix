@@ -510,7 +510,7 @@ a large number of apps, depending on the preference of the group.
 1. zoom
 2. google meet (formerly google chat)
 3. microsoft teams
-4. skype
+4. skype (anybody still use this?)
 5. slack
 6. discord
 7. gathertown
