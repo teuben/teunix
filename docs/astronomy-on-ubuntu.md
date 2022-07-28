@@ -38,19 +38,37 @@ gone. Not a good move.
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
 not tell you enough, try the command **lsb_release  -a**. ]
 
+[ Many of your desktop settings can be in a series of environment variables starting with XDG_,
+e.g. $XDG_CURRENT_DESKTOP
+
 
 Many of the apps are large files and can take a while to
 download. You should be on a good internet connection and allow at
 least a couple hours to complete the entire setup.  Most of the
 installation covered here is terminal based, that should be no surprise,
-though GUI alternatives exist. 
+though GUI alternatives exist.
+
+## Window managers
+
+Although I don't want to cover the choice of window managers (there are
+several options), your daily life will probably depend more on this choice than
+on the choice of the Linux distribution. Equally so, I spend a considerable
+time of my online life in an editor, which is not something I will discuss
+here either.
+
+distro:     redhat/fedora,   debian/ubuntu/
+window manager:     kde, gnome, xfce, ...
+editor:             emacs, vim, kate, sublime
+
+Since the apps are "all the same", the choice of distribution or window manager
+is hardly relevant. LibreOffice and Gimp work all the same.
+
 
 ## Bootstrap your packages
 
-Although we will discuss quite a few packages, there are
-some very basic ones that most of us will need right away, so
-consider this the boostrapping procedure, as Ubuntu doesn't 
-come with these anymore. Here is the command:
+Although we will discuss a few packages, there are
+some very basic ones that most of us will need right away.
+Here is my favorite command to boostrap:
 
       sudo apt install  git emacs tcsh wget curl unzip openssh-server -y
 
@@ -200,7 +218,7 @@ Most of those you will have to install via source. ASCL has a pretty good search
 tool to find related codes. You can also find ASCL codes via papers, for example
 if you look at CGS at (provide link)
 
-## Change Shell - bash or tsch
+## Change Shell - tsch, bash or zsh?
 
 Ubuntu comes with a default shell called **bash**, but some die
 hards might like to stick to (t)csh, or if you look into the future, maybe adopt
@@ -214,6 +232,23 @@ In **bash** directory completion can be very annoying if you use environment var
 you could consider adding the following to your **.bashrc** file:
 
       shopt -s direxpand
+
+## Versioning
+
+The **module** command, if implemented, allows users to load a specific version of
+specific software. This is done in run-time. It is a very popular tool on large
+data centers. The command **module avail** should then list what is available.
+
+Most distributions also have a method by which certain tools (e.g. the compiler)
+can be defaulted to another version. To use the example of the compiler, the default
+C compiler, gcc, might be version 11, and by using gcc-12 you can try out a newer
+release.   But using the XXX command the default C compile can be made to point to
+gcc-12 instead of gcc-11. Interesting detail: on Ubuntu gcc-12 is used,
+on RedHat it is gcc12, no dash here.
+
+Look at /etc/alternatives and you get an idea of the mess .
+
+The command **update-alternatives --list** should give the list what you currently have.
 
 ### Dotfiles
 
@@ -286,7 +321,7 @@ for the libraries you will need to link with.  It has been tradition that the ru
 are in separate packages. On debian based systems they are often labeled with **-dev**, but on redhat
 with **-devel**.  Here are a few common ones used in astronomy, pick your favorites:
 
-      sudo apt install wcslib-dev libfftw-dev libcfitsio-dev libgsl-dev xorg-dev -y
+      sudo apt install wcslib-dev libfftw3-dev libcfitsio-dev libgsl-dev xorg-dev -y
       sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
 
 sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
@@ -774,7 +809,7 @@ Keeping old kernels around can easily accumulate disk space.
 
       sudo apt autoremove --purge
 	  
-	  sudo purge-old-kernels
+      sudo purge-old-kernels
 
 ## Privacy?
 
