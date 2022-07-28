@@ -48,37 +48,38 @@ least a couple hours to complete the entire setup.  Most of the
 installation covered here is terminal based, that should be no surprise,
 though GUI alternatives exist.
 
-## 1. Window managers
+## 1. Window managers, and what not to cover
 
 Although I don't want to cover the choice of window managers (there are
-several options), your daily life will probably depend more on this choice than
+several good options), your daily life will probably depend more on this choice than
 on the choice of the Linux distribution. Equally so, I spend a considerable
 time of my online life in an editor, which is not something I will discuss
 here either.
 
-      distro:             redhat/fedora,   debian/ubuntu/
+      distro:             redhat/fedora,   debian/ubuntu/, ...
       window manager:     kde, gnome, xfce, ...
-      editor:             emacs, vim, kate, sublime
+      editor:             emacs, vim, kate, sublime, ...
 
-Since the apps are "all the same", the choice of distribution or window manager
-is hardly relevant. LibreOffice and Gimp work all the same.
+Since the apps are "all the same", the choice of distro or window manager
+is hardly relevant.
+
 
 ## 2. Packages
 
 
 ### Bootstrap your packages
 
-Although we will discuss a few packages, there are
+Although we will discuss a few astronomy related packages, there are
 some very basic ones that most of us will need right away.
-Here is my favorite command to boostrap:
+Here is my favorite command to boostrap on Ubuntu:
 
       sudo apt install  git emacs tcsh wget curl unzip openssh-server -y
 
 you can get away without emacs if that's not your editor of choice, as **vim**
 always comes installed with any Linux distro.
-The others are often needed when you work with astronomical software.
 
-A new release does not add a lot for system development (compilers etc.), so do this
+A new release does not add a lot for system development (compilers etc.) either,
+so to this:
 
       sudo apt install build-essential gfortran cmake -y
       
@@ -93,13 +94,14 @@ It is always useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
 can use commands such as **locate**,
 or **dpkg -S**, or **dpkg -L** to sherlock your way around the
-file system to solve your problem. Of course *google* and *stackoverflow* can
+file system to solve your problem what's missing.
+Of course *google* and *stackoverflow* can
 also be very useful. Here are a few example commands:
 
 
       dpkg --list                  list all packages you have
       dpkg -S FILE                 which package owns that FILE
-      dpkg -L PACKAGE              list what files that PACKAGE gives
+      dpkg -L PACKAGE              list what files that PACKAGE has installed
       apt-get -f install           post-install if errors occur
       apt autoremove               cleanup old stuff not needed anymore
       apt autoclean
@@ -109,7 +111,7 @@ and installed packages. Useful if you like commands like **grep** to search for 
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
-      dpkg --list          > dpkg0.list
+      dpkg --list          > dpkg0.list 
       
       grep fits apt-cache0.list
       grep fits dpkg0.list
