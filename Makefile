@@ -51,14 +51,14 @@ uemacs:
 	@echo 'cd uemacs; make'
 
 
-rc:
+rc:  ~/rc
 	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
 	@echo Now in rc:
 	@ls ~/rc
 
 # See various comments in Env/README
 
-env:   env1 env2 env3 env4 rc
+env:   env1 env2 env3 env4 env5 env6 rc
 
 env1:
 	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
@@ -73,10 +73,16 @@ env4:
 	-@[ ! -d ~/bin ] &&  ln -s ~/teunix/Env/bin ~/bin
 
 env5:
+<<<<<<< HEAD
 	-@mkdir -p ~/.ssh
 	ln -s ~/teunix/Env/ssh/config ~/.ssh/config
 
 
 env9:
+=======
+	-@[ ! -d ~/.ssh ] &&  ln -s ~/teunix/Env/ssh/config ~/.ssh/config
+
+env6:
+>>>>>>> 006f46d505b65101795654a83383d088d2de21f6
 	@echo Do the /etc/hosts manually
 

@@ -141,7 +141,7 @@ version hidden, and can come with additional restrictions.
 install yet, it will remind you. For example if you typed **ds9** you
 might see
 
-      sudo apt install saods9
+      sudo apt install saods9 
 
 * the command **xdg-open** will open any file with the appropriate
 mime-type. If the argument is a directory, a file browser
@@ -193,7 +193,7 @@ so this is useful.
 ### KERN
 
 This extremely large well supported [KERN package](https://kernsuite.info/) is available
-for Ubuntu18.04, a version for Ubuntu20.04 is forthcoming soon. There are
+for Ubuntu20.04.   There are
 XXX packages in KERN, and mostly useful for radio astronomy. Some overlap with
 the previously mentioned debian astro blend.  *do they conflict or overwrite each other* ???
 
@@ -207,8 +207,7 @@ Here is the example how you get started in Ubuntu 20.04
 
 After which you are ready to install some packages, for example meqtrees:
 
-        sudo apt-get install meqtrees
-
+        sudo apt-get install meqtrees python3-casacore
 
 ### ASCL
 
@@ -267,13 +266,13 @@ own, or steal some ideas from the many on github.
 Python is so widely used in many projects, that we spend a small section on it here.
 
 Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
-A safe bet is to refer to **python3** and **ipython3** explicitly.
-
+A safe bet is to refer to **python3** and **ipython3** explicitly. Debian, Redhat and Anaconda
+have different default behaviors.
 
 U22 comes with python 3.10.4, very brave.  But no pip3 installed
 
 * native ubuntu (apt install)
-* miniconda - a smaller version
+* miniconda - a smaller version, manual install
 * anaconda - a full version, including astropy
 * AstroConda (is that still viable?) - IRAF/pyiraf
 * Python (install from source) - nobody does that anymore
@@ -323,6 +322,9 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
 
       sudo apt install wcslib-dev libfftw3-dev libcfitsio-dev libgsl-dev xorg-dev -y
       sudo apt install libhdf5-dev hdf5-tools libboost-dev libsqlite3-dev -y
+
+      Note: libfftw-dev vs. libfftw3-dev (U20)
+
 
 sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
 would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based systems.
@@ -396,12 +398,12 @@ This actually comes standard with Ubuntu. But maybe a few comments are in place 
 
 * gedit - is this the easy way not to offend emacs or vim users ?
 * mg - microscopic GNU Emacs-style editor (micro-emacs?)
-* sublime, atom - code editors - not in ubuntu
+* sublime, atom - code editors - not in ubuntu (atom now deprecated)
 * aspell and aspell-dict-en
 * gimp
 * xfig and GraphicsMagick
 * dia
-* imagemagic
+* imagemagick
 * xv, geeqie, ...
 * IDE/editors: Eclipse, VSCode, Geany, PyCharm, Atom, Emacs, Vim
 * backup tools:   rsync, unison
@@ -545,7 +547,7 @@ a large number of apps, depending on the preference of the group.
 1. zoom
 2. google meet (formerly google chat)
 3. microsoft teams
-4. skype
+4. skype (anybody still use this?)
 5. slack
 6. discord
 7. gathertown
@@ -584,6 +586,7 @@ importantly, which files you need.
  convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
 
+See a fix in LMTOY/etc
 
 The big things:
 
@@ -593,14 +596,13 @@ Latex/Bibtex
 Gimp, xfig, dia, ...
 Grip (to preview your MD files)
     grip will download a lot of python3 stuff
+    okular works well enough
 LibreOffice (and competitors now around too; see earlier list)
 Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
   xournal
-  PDFtk
+  PDFtk   <-   pdftk-java
 
-ADS tools to set up my bibtex files?  (bibmanager?)
-   texlive-bibtex-extra
 
 Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
     sudo apt install ttf-mscorefonts-installer
@@ -629,6 +631,7 @@ and middle click to paste. This is efficient!
 
 Even within Linux, certain apps now involve more elaborate ways to copy and paste.
 
+x2goclient
 
 ## ssh
 
@@ -683,6 +686,15 @@ to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
 
       fusermount -u $HOME/mnt/data3
 
+### VPN
+
+Many academic institutions now require a VPN (often with 2FA) for a
+more secure network access.  For example at UMD we use *Palo Alto Networks*
+**globalprotect**, for which an Ubuntu 20.04 version is available on
+https://terpware.umd.edu/Linux/Title/4010
+
+      sudo dpkg -i GlobalProtect_UI_deb-6.0.0.1-44.deb
+
 ### vnc
 
 VNC is the classic way to view a remote desktop in linux. Your server needs vncserver, you local host
@@ -699,11 +711,15 @@ What about krdc?
 Excellent way, uses ssh, compresses much better than vnc. But needs the remote to have the x2go server
 installed. In that sense , vnc is easier to use, just a bit slower.
 
+     sudo apt install x2goclient
+
 ### teamviewer
 
 Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
 This will be a manual install, it does not come with Ubuntu. I used
-https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+
+     wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+     sudo dpkg -i teamviewer_amd64.deb
 
 ### Compressing files
 
@@ -806,9 +822,8 @@ may be on different disks.
 	  
 Keeping old kernels around can easily accumulate disk space. 
 
-
       sudo apt autoremove --purge
-	  
+      sudo apt install byobu
       sudo purge-old-kernels
 
 ## Privacy?
