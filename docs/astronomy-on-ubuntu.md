@@ -209,7 +209,38 @@ Here is the example how you get started in Ubuntu 20.04
 
 After which you are ready to install some packages, for example meqtrees:
 
-        sudo apt-get install meqtrees 
+        sudo apt-get install meqtrees
+
+### Other Astronomical Software
+
+* Skycalc, by John Thorstensen, provides almanac, ephemeris, and
+     airmass information, invaluable for planning observing
+     runs. Jskycalc is the new graphical version that runs on any
+     platform, and has an AstroBetter walkthrough. Also available as
+     the classic shell version.
+
+* Multinest, PyMC, or emcee for Bayesian statistical analysis.
+
+* Gemini Observing Tool
+
+### "amateur" tools
+
+I'm not sure if people who spend 100k on equipment are still called "amateur" ?
+
+- skytools such as
+  - celestia
+  - stellarium
+  - kstars
+  - AstroImageJ
+  - Skychart
+  - Digital Universe Atlas (AMNH) - partiview
+  - OpenUniverse Space Simulator
+- astrophotography:   gimp, darktable, digikam, ekos
+- OpenRocket
+- http://www.distroastro.org/   (mate based)
+- fitscli (fits liberator), pixinsight
+
+
 
 ### ASCL
 
@@ -265,6 +296,145 @@ Talk about reinventing the multiverse. But
 if you setup your Unix accounts regularly,
 it is probably useful to have a mechanism to get your dotfiles organized. Roll your
 own, or steal some ideas from the many on github.
+
+### Startup Files or Dotfiles
+
+In addition to you .bashrc (or .cshrc etc.) there are other tools to keep your shell environment organized.
+One is the **direnv** command, which allows you to keep project specific environment variables.
+
+Another is my own, the *rc* alias, which depends on an ~/rc/PROJECT.rc file in which you place your
+own project dependant commands. This also serves as a *self-documenting* reminder what the heck you
+are doing
+
+I use the following bash function for this
+
+    rc () {
+      if [ ! $1 ]; then
+        echo No project listed, known ones are:
+        cd ~/rc
+        ls *.rc | sed s/.rc//g
+      elif [ ! $2 ]; then
+        source ~/rc/$1.rc
+      else
+        more ~/rc/$1.rc
+      fi
+    }
+	
+
+## Remote Computing
+
+I love remote computing, but over the years certain implementations
+have made the classic X11 based copy and paste a bit more
+cumbersome. If you are used to the simple  "left click select and copy via middle click paste",
+this will not always work, in fact there are situations where even using a cumbersome clipboard
+does not work anymore (e.g. SciServer). Blame it on russian dolls?
+
+My benchmark is double left click a word in one window (it selects it, use triple left click to select the whole line)
+and middle click to paste. This is efficient!
+
+Even within Linux, certain apps now involve more elaborate ways to copy and paste. The classic left mouse select
+(single, double or triple click) for Copy and middle mouse button for Paste does not always work. Some applications
+now require a keyboard prefix using *Ctrl* or *Ctrl+Shift*. 
+
+
+### ssh
+
+One way to do remote computing is via ssh, one terminal at a time (more persistency
+via screen/tmux or vnc/x2go)
+
+      ssh-keygen
+      ssh-copy-id 192.168.1.110
+      
+after which you can
+
+      ssh 192.168.1.110
+
+to connect to that remote server.
+  
+Don't forget to edit /etc/ssh/ssh_config  (or in your own ~/.ssh/config). Here is an example to make
+your ssh commands a little more compact to use:
+
+      # ssh -X or -Y not needed
+      ForwardX11 yes
+      ForwardX11Trusted yes
+      
+      # pesky servers that time you out
+      TCPKeepAlive yes
+      ServerAliveInterval 60
+
+      # examples of aliases
+      Host lab
+          Hostname lab002.astro.umd.edu
+      Host aws0
+          Hostname ec2-52-14-202-62.us-east-2.compute.amazonaws.com
+          User ubuntu
+          IdentityFile ~/.ssh/nemo123.pem
+      Host gbt
+          Hostname fourier
+          ProxyCommand ssh ssh.cv.nrao.edu -W %h:%p
+          User pteuben
+
+
+### sshfs
+
+Once you have established an ssh connection to your server, you could learn how to NSF mount
+drives, but this requires admin (root) permissions. Perhaps an easier way is to use ssh again using
+the **sshfs** protocol. Here is an example
+
+      sudo apt install sshfs fuse
+
+      mkdir -p $HOME/mnt/data3
+      sshfs 192.168.1.110:/data3 $HOME/mnt/data3
+
+to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
+
+      fusermount -u $HOME/mnt/data3
+
+### VPN
+
+Many academic institutions now require a VPN (often with 2FA) for
+more secure network access.  For example at UMD we use *Palo Alto Networks*
+**globalprotect**, for which an Ubuntu 20.04 version is available on
+https://terpware.umd.edu/Linux/Title/4010
+
+      sudo dpkg -i GlobalProtect_UI_deb-6.0.0.1-44.deb
+
+Be aware that VPN can disable your local home net, and perhaps your networked printers as well.
+NordVPN advertises a solution for this. viz.
+
+      nordvpn set technology openvpn
+      nordvpn set protocol tcp
+      sudo nordvpn whitelist add port 22
+      sudo nordvpn whitelist add subnet 192.168.0.0/16
+
+### vnc
+
+VNC is the classic way to view a remote desktop in linux. Your server needs **vncserver**, you local host
+needs **vncviewer** and **vncpasswd**. An alternative is the **tightvnc** version
+
+      sudo apt install xtightvncviewer tightvncserver -y
+
+An alternative to VNC for persistent sessions is **screen** and **tmux**
+
+### x2go
+
+Excellent way, uses ssh, compresses much better than *vnc*. But needs the remote to have the *x2go* server
+installed. In that sense, *vnc* is easier to use, just a bit slower.
+
+     sudo apt install x2goclient
+
+### krdc
+
+What about krdc?
+
+
+### teamviewer
+
+Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
+This will be a manual install, it does not come with Ubuntu. I used
+
+     wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+     sudo dpkg -i teamviewer_amd64.deb
 
 ## Python
 
@@ -364,18 +534,6 @@ with **-devel**.  Here are a few common ones used in astronomy, pick your favori
 sadly there is no standard on the basename.  For example on redhat based system the HDF5 library package name
 would be **hdf5-devel** compared to the name **libhdf5-dev** in debian based systems.
 
-## Other Astronomical Software
-
-* Skycalc, by John Thorstensen, provides almanac, ephemeris, and
-     airmass information, invaluable for planning observing
-     runs. Jskycalc is the new graphical version that runs on any
-     platform, and has an AstroBetter walkthrough. Also available as
-     the classic shell version.
-
-* Multinest, PyMC, or emcee for Bayesian statistical analysis.
-
-* Gemini Observing Tool
-
                 
 
 
@@ -445,28 +603,6 @@ is a mechanism in Linux to pick the one you prefer:
       update-alternatives --help
 
 Other methods to this are the **modules** command.
-
-## "amateur" tools
-
-I'm not sure if people who spend 100k on equipment are still called "amateur" ?
-
-- skytools such as
-  - celestia
-  - stellarium
-  - kstars
-  - AstroImageJ
-  - Skychart
-  - Digital Universe Atlas (AMNH) - partiview
-  - OpenUniverse Space Simulator
-- astrophotography:   gimp, darktable, digikam, ekos
-- OpenRocket
-- http://www.distroastro.org/   (mate based)
-- fitscli (fits liberator), pixinsight
-
-
-## others
-
-ESO SciSoft is gone.  LfA (Linux for Astronomy) is also gone.
 
 
 ## Universal Binaries, Russian Dolls and other such containers
@@ -549,29 +685,6 @@ The package **gnome-boxes** provides another virtual machine environment. Does i
 
 Useful to know it exists, but out of scope for this paper?
 
-## Startup Files or Dotfiles
-
-In addition to you .bashrc (or .cshrc etc.) there are other tools to keep your shell environment organized.
-One is the **direnv** command, which allows you to keep project specific environment variables.
-
-Another is my own, the *rc* alias, which depends on an ~/rc/PROJECT.rc file in which you place your
-own project dependant commands. This also serves as a *self-documenting* reminder what the heck you
-are doing
-
-I use the following bash function for this
-
-    rc () {
-      if [ ! $1 ]; then
-        echo No project listed, known ones are:
-        cd ~/rc
-        ls *.rc | sed s/.rc//g
-      elif [ ! $2 ]; then
-        source ~/rc/$1.rc
-      else
-        more ~/rc/$1.rc
-      fi
-    }
-	
 ## Pandemic
 
 During the 2020+ pandemic we all learned communications were now channeled through
@@ -587,6 +700,69 @@ a growing number of apps, depending on the preference of the group.
 8. webex
 
 and maybe more, but these are the ones I've used at least ones.
+
+## Maintenance: keeping your disk space in check
+
+As time progresses, you will notice your root partition might fill up, and you don't want this to
+get to close to 0. A program such as **bleachbit** can help with this. Here are a few additional
+comments.
+
+### Slackspace on ext4
+
+If you were using a filesystem like ext4, it has a rather large default slackspace that root reserved. Try and
+setting it smaller, or even to 0. For example,
+
+      sudo tune2fs -m 0 /dev/nvme0n1p2
+
+Since the default is 5%, for a 1TB drive this releases 50GB to the user, probably you!
+	  
+### Remove unused programs by snap / flatpak
+
+      snap list
+      snap remove yakyak
+
+and
+
+      flatpak list
+      flatpak remove org.freedesktop.Platform
+
+### Applications that cache
+
+Check the size of your cache directories:
+
+      du -s /var/cache/apt /var/log ~/.cache
+	  
+The apt cache can be cleaned using:
+
+      sudo apt update
+      sudo apt clean
+      sudo apt autoremove
+      sudo apt autoclean
+	  
+For me the ~/.cache/pip is always huge, but your browser also tend to leave a lot of files here. 
+cleanup as you see fit.   Also note depending how you partitioned your drive space, these cache
+may be on different disks.
+
+      pip cache purge
+	  
+Keeping old kernels around can easily accumulate disk space. 
+
+      sudo apt autoremove --purge
+      
+      sudo apt install byobu
+      sudo purge-old-kernels
+
+Apart from standard Unix tools like find to check for large files, for example to find files larger than 1GB:
+
+      find $HOME -size +1G -exec ls -l '{}' \;
+
+there are some cool graphical applications to check which directories and files take up the most
+space. **k4dirstat**,  **qdirstat** and **baobab** use a treemapping style visualization to show the disk usage
+and can be an effective way to clean up your drive space.
+
+      sudo apt install k4dirstat qdirstat baobab -y
+
+
 
 
 # old stuff to be organized
@@ -635,10 +811,12 @@ Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
   (acroread is pretty useless, libreoffice does open PDF files)
   xournal
   PDFtk   <-   pdftk-java
-
+Also useful to combine many PDFs into a single PDF.
 
 Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
+
     sudo apt install ttf-mscorefonts-installer
+    
 but still i don't the all import calibri
 
     mkdir ~/.fonts
@@ -649,121 +827,20 @@ See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-i
 
 ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
 
-My CV tools
+My CV tools?
 
-## Remote Computing
+## Miscellaneous
 
-I love remote computing, but over the years certain implementations
-have made the classic X11 based copy and paste a bit more
-cumbersome. If you are used to the simple  "left click select and copy via middle click paste",
-this will not always work, in fact there are situations where even using a cumbersome clipboard
-does not work anymore (e.g. SciServer). Blame it on russian dolls?
+### parallel computing
 
-My benchmark is double left click a word in one window (it selects it, use triple left click to select the whole line)
-and middle click to paste. This is efficient!
+For "old" single core programs there is a great solution on modern multi-core systems to run
+such programs in parallel, assuming you need to run
 
-Even within Linux, certain apps now involve more elaborate ways to copy and paste. The classic left mouse select
-(single, double or triple click) for Copy and middle mouse button for Paste does not always work. Some applications
-now require a keyboard prefix using *Ctrl* or *Ctrl+Shift*. 
+      sudo apt install parallel -y
 
 
-## ssh
-
-One way to do remote computing is via ssh, one terminal at a time (more persistency
-via screen/tmux or vnc/x2go)
-
-      ssh-keygen
-      ssh-copy-id 192.168.1.110
       
-after which you can
-
-      ssh 192.168.1.110
-
-to connect to that remote server.
-  
-Don't forget to edit /etc/ssh/ssh_config  (or in your own ~/.ssh/config). Here is an example to make
-your ssh commands a little more compact to use:
-
-      # ssh -X or -Y not needed
-      ForwardX11 yes
-      ForwardX11Trusted yes
-      
-      # pesky servers that time you out
-      TCPKeepAlive yes
-      ServerAliveInterval 60
-
-      # examples of aliases
-      Host lab
-          Hostname lab002.astro.umd.edu
-      Host aws0
-          Hostname ec2-52-14-202-62.us-east-2.compute.amazonaws.com
-          User ubuntu
-          IdentityFile ~/.ssh/nemo123.pem
-      Host gbt
-          Hostname fourier
-          ProxyCommand ssh ssh.cv.nrao.edu -W %h:%p
-          User pteuben
-
-
-### sshfs
-
-Once you have established an ssh connection to your server, you could learn how to NSF mount
-drives, but this requires admin (root) permissions. Perhaps an easier way is to use ssh again using
-the **sshfs** protocol. Here is an example
-
-      sudo apt install sshfs fuse
-
-      mkdir -p $HOME/mnt/data3
-      sshfs 192.168.1.110:/data3 $HOME/mnt/data3
-
-to mount the remote directory in $HOME/mnt/data3.   And to umount it, use
-
-      fusermount -u $HOME/mnt/data3
-
-### VPN
-
-Many academic institutions now require a VPN (often with 2FA) for
-more secure network access.  For example at UMD we use *Palo Alto Networks*
-**globalprotect**, for which an Ubuntu 20.04 version is available on
-https://terpware.umd.edu/Linux/Title/4010
-
-      sudo dpkg -i GlobalProtect_UI_deb-6.0.0.1-44.deb
-
-Be aware that VPN can disable your local home net, and perhaps your networked printers as well.
-NordVPN advertises a solution for this. viz.
-
-      nordvpn set technology openvpn
-      nordvpn set protocol tcp
-      sudo nordvpn whitelist add port 22
-      sudo nordvpn whitelist add subnet 192.168.0.0/16
-
-### vnc
-
-VNC is the classic way to view a remote desktop in linux. Your server needs **vncserver**, you local host
-needs **vncviewer** and **vncpasswd**. An alternative is the **tightvnc** version
-
-      sudo apt install xtightvncviewer tightvncserver -y
-
-An alternative to VNC for persistent sessions is **screen** and **tmux**
-
-### krdc
-
-What about krdc?
-
-### x2go
-
-Excellent way, uses ssh, compresses much better than *vnc*. But needs the remote to have the *x2go* server
-installed. In that sense, *vnc* is easier to use, just a bit slower.
-
-     sudo apt install x2goclient
-
-### teamviewer
-
-Teamviewer is another remote desktop viewer, much like x2go and vnc. Free for academic use.
-This will be a manual install, it does not come with Ubuntu. I used
-
-     wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-     sudo dpkg -i teamviewer_amd64.deb
+The gnu **parallel** program 
 
 ### Bundling and Compressing Files
 
@@ -804,61 +881,6 @@ or if you don't want to select and have enough disk space, try this
 
 these are about XXX (300?) packages in 3GB.
 
-## Maintenance
-
-As time progresses, you will notice your root partition might fill up, and you don't want this to
-get to close to 0. A program such as **bleachbit** can help with this. Here are a few additional
-comments.
-
-### Slackspace on ext4
-
-If you were using a filesystem like ext4, it has a rather large default slackspace that root reserved. Try and
-setting it smaller, or even to 0. For example,
-
-      sudo tune2fs -m 0 /dev/nvme0n1p2
-	  
-### Remove unused programs by snap / flatpak
-
-      snap list
-      snap remove yakyak
-
-and
-
-      flatpak list
-      flatpak remove org.freedesktop.Platform
-
-### Applications that cache
-
-Check the size of your cache directories:
-
-      du -s /var/cache/apt /var/log ~/.cache
-	  
-The apt cache can be cleaned using:
-
-      sudo apt update
-      sudo apt clean
-      sudo apt autoremove
-      sudo apt autoclean
-	  
-For me the ~/.cache/pip is always huge, but your browser also tend to leave a lot of files here. 
-cleanup as you see fit.   Also note depending how you partitioned your drive space, these cache
-may be on different disks.
-
-      pip cache purge
-	  
-Keeping old kernels around can easily accumulate disk space. 
-
-      sudo apt autoremove --purge
-      
-      sudo apt install byobu
-      sudo purge-old-kernels
-
-## Privacy?
-
-This article does not deal with [privacy](https://www.privacytools.io/), but it
-is good to be aware that different distros deal with this in different ways.
-In general, Linux is a good OS that is concerned about this.
-
 
 ## References
 
@@ -886,7 +908,7 @@ In general, Linux is a good OS that is concerned about this.
 
 ## Acknowledgements
 
-I wish to thank Marc Pound and Ole Streicher for checking their own
+I wish to thank Marc Pound and Ole Streicher for suggestions and checking their own
 Ubuntu and Debian systems, and making sure I wasn't lying too much
 since I stuck to Kubuntu. This draft is the precursor to the Astrobetter Wiki
 version on setting up your (Ubuntu) Linux.
