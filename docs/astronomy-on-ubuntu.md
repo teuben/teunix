@@ -231,13 +231,13 @@ own, or steal some ideas from the many on github.
 Python is so widely used in many projects, that we spend a small section on it here.
 
 Although python2 is deprecated, the commands python or ipython sometimes still refer to version 2.
-A safe bet is to refer to **python3** and **ipython3** explicitly.
-
+A safe bet is to refer to **python3** and **ipython3** explicitly. Debian, Redhat and Anaconda
+have different default behaviors.
 
 U22 comes with python 3.10.4, very brave.  But no pip3 installed
 
 * native ubuntu (apt install)
-* miniconda - a smaller version
+* miniconda - a smaller version, manual install
 * anaconda - a full version, including astropy
 * AstroConda (is that still viable?) - IRAF/pyiraf
 * Python (install from source) - nobody does that anymore
