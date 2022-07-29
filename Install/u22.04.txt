@@ -61,6 +61,7 @@ sudo apt install tkcvs net-tools ncftp
 sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
 sudo apt install aoflagger libcfitsio-dev libccfits0v5 ftools-fv topcat -y
 sudo apt install gnuastro -y
+#   how about stilts, the cli of topcat, and perhaps also jython-stilts
 
 
 sudo apt install ipython3 python-is-python3 python3-pip cython3 swig
