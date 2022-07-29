@@ -58,7 +58,9 @@ rc:  ~/rc
 
 # See various comments in Env/README
 
-env:   env1 env2 env3 env4 env5 env6 rc
+env:   env0 env1 env2 env3 env4 env5 env6 env9 rc
+
+env0: apt-cache0.list apt-cache1.list dpkg0.list
 
 env1:
 	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
@@ -73,16 +75,22 @@ env4:
 	-@[ ! -d ~/bin ] &&  ln -s ~/teunix/Env/bin ~/bin
 
 env5:
-<<<<<<< HEAD
 	-@mkdir -p ~/.ssh
 	ln -s ~/teunix/Env/ssh/config ~/.ssh/config
 
-
-env9:
-=======
+env6:
 	-@[ ! -d ~/.ssh ] &&  ln -s ~/teunix/Env/ssh/config ~/.ssh/config
 
-env6:
->>>>>>> 006f46d505b65101795654a83383d088d2de21f6
+env9:
 	@echo Do the /etc/hosts manually
 
+
+
+apt-cache0.list:
+	apt-cache search  .  > apt-cache0.list
+
+apt-cache1.list:
+	apt-cache pkgnames   > apt-cache1.list
+
+dpkg0.list:
+	dpkg --list          > dpkg0.list
