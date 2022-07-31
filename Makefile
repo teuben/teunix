@@ -12,6 +12,14 @@ UP = git emacs tcsh wget curl unzip openssh-server \
      wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
      plasma-widgets-addons kio-gdrive
 
+
+URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
+URL2 = https://github.com/torvalds/uemacs
+URL3 = https://github.com/astroumd/sysadmin
+
+
+
+
 help:
 	@echo teunix=$(TEUNIX)
 
@@ -38,10 +46,6 @@ zsh:
 
 foo:
 	@test -f $(HOME)/.foo && echo You have a 
-
-
-URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
-URL2 = https://github.com/torvalds/uemacs
 
 
 uemacs:
@@ -94,3 +98,6 @@ apt-cache1.list:
 
 dpkg0.list:
 	dpkg --list          > dpkg0.list
+
+sysadmin:
+	git clone $(URL3)
