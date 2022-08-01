@@ -864,3 +864,9 @@ sudo grep -Erh ^deb /etc/apt/sources.list*
 inxi -r
 
 ======
+
+fits liberator (4.0) - now on linux
+apt install libvips libappindicator3-1
+wget ... app001.deb from NOIRlab
+
+
