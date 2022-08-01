@@ -66,6 +66,7 @@ is hardly relevant.
 
 ## 2. Packages
 
+This is now getting seriously complicated:   apt, snap, flatpak, AppImage, npm, pypi (pip/conda), and even brew.
 
 ### Bootstrap your packages
 
@@ -83,14 +84,11 @@ so to this:
 
       sudo apt install build-essential gfortran cmake -y
       
-You might have your own essentials too. Let me know!
-
-
-NOTE: Comes with gcc 11.2.  Could also suggest to install clang (which covers C/C+) 
+NOTE: U22 comes with gcc 11.2. 
 
 ### Package tools:  apt and dpkg
 
-It is always useful to know a few shortcuts about your package
+It is useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
 can use commands such as **locate**,
 or **dpkg -S**, or **dpkg -L** to sherlock your way around the
@@ -123,22 +121,24 @@ available
       sudo apt install synaptic aptitude -y
       aptitude search '~i !~M'
 
-Depending if you use Kubuntu or Ubuntu, there are different GUI tools to install software:
-*Discover* for Kubuntu (executable name:  **plasma-discover**), and
-*Software & Updates* (executable name: **software-properties-gtk**) for Ubuntu.
+Depending on what flavor of Ubuntu you use, there are different GUI tools to install software. For
+example, 
+*Discover* for Kubuntu (executable name: **plasma-discover**), and
+*Software & Updates* (executable name: **software-properties-gtk**) for classic Ubuntu.
 
 ### Alternative package managers?
 
 [Package Managers](https://itsfoss.com/package-manager) used to be tied to the Linux Distribution.
-But if you come from a Mac, you may like certain packages that are available via **brew**. 
-This is now available on Linux via https://docs.brew.sh/Homebrew-on-Linux
+Even on a Mac, you may like certain packages that are available via **brew**, as Xcode
+does not provide a typical astrocomputing environment. It turns out, *Homebrew* can
+also be installed on Linux: https://docs.brew.sh/Homebrew-on-Linux
 
 Another alternative methods to install applications not available through the regular
 channels are *FlatPak* and *snap*, which we cover in more detail below,
 as well as the *AppImage* style of programs.
 
 By using such alternate app channels, you can effectively make the official
-version hidden, and can come with additional restrictions.
+version hidden, though can come with some restrictions.
 
 ## 3. Astronomy Packages
 
@@ -177,17 +177,6 @@ After which you are ready to install some packages, for example meqtrees:
 
         sudo apt-get install meqtrees
 
-### Other Astronomical Software
-
-* Skycalc, by John Thorstensen, provides almanac, ephemeris, and
-     airmass information, invaluable for planning observing
-     runs. Jskycalc is the new graphical version that runs on any
-     platform, and has an AstroBetter walkthrough. Also available as
-     the classic shell version.
-
-* Multinest, PyMC, or emcee for Bayesian statistical analysis.
-
-* Gemini Observing Tool
 
 ### "amateur" tools
 
@@ -201,20 +190,22 @@ I'm not sure if people who spend 100k on equipment are still called "amateur" ?
   - Skychart
   - Digital Universe Atlas (AMNH) - partiview
   - OpenUniverse Space Simulator
-- astrophotography:   gimp, darktable, digikam, ekos
+- astrophotography:
+  - gimp, darktable, digikam, ekos
+  - fitscli (fits liberator)
+  - pixinsight
 - OpenRocket
 - http://www.distroastro.org/   (mate based)
-- fitscli (fits liberator), pixinsight
 
 
 
 ### ASCL
 
 The [Astrophysics Source Code Library (ASCL)](https://ascl.net) is a registry where
-you can find 2000+ codes listed from (peer reviewed) papers.
+you can find 2000+ (and growing) codes listed from (peer reviewed) papers.
 Most of those you will have to install via source. ASCL has a pretty good search
 tool to find related codes. You can also find ASCL codes via papers, for example
-if you look at CGS at (provide link)
+if you look at CGS at https://ui.adsabs.harvard.edu/abs/2019ascl.soft04003T
 
 
 ## 4. The Good and the Bad about Ubuntu
@@ -256,6 +247,11 @@ and probably never will (if only we had the source code).
 
 * ...
 
+### Ugly?
+
+There is no ugly! Though the existence of many flavors of Linux,
+and desktop environments are often quoted as keeping Linux from
+becoming dominating in personal computing.
 
 ## 5. Change Shell - tsch, bash or zsh?
 
@@ -283,6 +279,10 @@ command **module avail** should then list what is available.
       sudo apt install environment-modules -y
       add.modules
       module avail
+
+An an example of use:
+
+      module load mpi/2021.3.0 
 
 Most distributions also have a method by which certain tools (e.g. the compiler)
 can be defaulted to another version. To use the example of the compiler, the default
@@ -833,11 +833,14 @@ one you don't need and then run it. Thare are some sparing comments in the file:
 
     sudo apt install  $(grep -v ^# ubuntu20.list) -y
 
-or if you don't want to select and have enough disk space, try this
+## 99. Future
 
-    sudo apt install astro-all
+What can we expect from Linux, where is it going in the next 5-10 years. Linux is now an established
+operating system for nearly 30 years. Here are a few things going on and on the horizon:
 
-these are about XXX (300?) packages in 3GB.
+* Replacing X11 with Wayland, a from the grounds up re-design.
+
+* systemd and home directories.
 
 
 ## 99. References
