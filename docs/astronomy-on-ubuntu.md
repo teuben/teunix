@@ -851,6 +851,9 @@ operating system for nearly 30 years. Here are a few things going on and on the 
 * [What Operating Systems Do AstroBetter Readers Use?
   ](https://www.astrobetter.com/blog/2011/12/28/astrobetter-operating-systems) - 2011
 
+* [Guide to astrophysical software
+  ](https://astroph.wordpress.com/glossaries/guide-to-astrophysical-software/) - 2011
+
 * [Setting up Python for Astronomy
   ](https://www.astrobetter.com/wiki/Python+Setup+for+Astronomy)   - 2014
 
