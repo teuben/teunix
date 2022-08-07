@@ -1,4 +1,4 @@
-# Astronomy on Ubuntu Linux (**DRAFT for U22.04LTS**)
+# Astronomy on Ubuntu Linux 
 
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
@@ -50,23 +50,25 @@ though GUI alternatives exist.
 
 ## 1. Window managers, and what not to cover
 
-Although I don't want to cover the choice of window managers (there are
-several good options), your daily life will probably depend more on this choice than
-on the choice of the Linux distribution. Equally so, I spend a considerable
-time of my online life in an editor, which is not something I will discuss
-here either.
+This is not the place to discuss your choice of a window manager (there
+are several good options), your daily mouse interactions will probably depend more
+on this choice than on the choice of the Linux distribution. Equally
+so, I spend a considerable time of my online life in an editor (emacs
+for me), but I will not discuss the choice of editors either.
 
       distro:             redhat/fedora,   debian/ubuntu/, ...
       window manager:     kde, gnome, xfce, ...
       editor:             emacs, vim, kate, sublime, ...
 
-Since the apps are "all the same", the choice of distro or window manager
-is hardly relevant.
+Since the apps are "all the same", the choice of distro or window
+manager should be hardly relevant.
 
 
 ## 2. Packages
 
-This is now getting seriously complicated:   apt, snap, flatpak, AppImage, npm, pypi (pip/conda), and even brew.
+This is now getting seriously complicated: apt, snap, flatpak,
+AppImage, npm, pypi (pip/conda), and even brew, are all ways to get
+new software on your system.
 
 ### Bootstrap your packages
 
@@ -859,6 +861,9 @@ operating system for nearly 30 years. Here are a few things going on and on the 
 
 * [Setup a New Mac for Astronomy
   ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy) - 2016
+
+* [Setting up a Mac for Development
+  ](https://dev.to/w3cj/setting-up-a-mac-for-development-3g4c) - 2022
 
 * [Setup a New Ubuntu for Astronomy
   ](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Ubuntu+for+Astronomy) - TBD
