@@ -6,7 +6,7 @@ a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
 Is **Linux** so much easier to set up that we don't need one?  There were the times
 this was really involved, but not so much anymore.
-Recently a spanking new Ubuntu 22.04LTS came out, good for 2 years until the next LTS.
+Recently a spanking new Ubuntu 22.04LTS (Long Term Support) came out, good for 2 years until the next LTS.
 You could also argue Linux is used more by geeky types who know
 a lot of what's going on in the trenches, and they don't bother writing it up.  We are
 going to change that here!!
