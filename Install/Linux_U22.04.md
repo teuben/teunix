@@ -66,6 +66,11 @@ below 2000 packages, and this usually grows to about 4000 for me.
 
 ## My KDE Setup
 
+Before you do anything, get the PlasmaConfigSaver from the widget
+store. Whatever you do, this way you can save a configuration and
+easily come back to it, or build on top of that.  This should be
+standard part of KDE.
+
 I've only been using KDE since Ubuntu 18.04, and now beginning to like
 it, as more things now actually work the way I like it.  Before this I
 was actually getting used to Unity, but a few mall annoying things
@@ -119,6 +124,7 @@ not applied until you hit the Apply button on each screen.
            only after waking from sleep (remove the 15 minutes option)
        Virtual Desktop
            6 desktops in 2 rows              (navigation shortcuts come later)
+	       -> give the desktop unique names/numbers such that taskbar can identify
            navigation *do not* wrap around
            show on-screen display when switching
        Activities
@@ -153,6 +159,7 @@ not applied until you hit the Apply button on each screen.
 
      (Hardware)
      1. Input Devices
+       Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
        Mouse - make sure scrolling is not inverted (or natural as some call it)
        Touchpad
           Tapping:  tap-to-click
@@ -173,12 +180,14 @@ not applied until you hit the Apply button on each screen.
 
 
      - Task Manager (on bottom bar) may need some tinkering:
+       (the currrent default is the "Icons-only Task Manager")
        Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
        Behavior
           - grouping of tasks -> 
-      	  - show tasks for all desktops
+      	  - show only tasks -> from current activity
        - resize it a bit, it's too tall for my taste
+       - clicked grouped tasks:  ->   Shows textual list
 
 
 TO BE RESOLVED:
@@ -499,4 +508,18 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   Look at the small number:    cat /proc/sys/fs/inotify/max_user_watches
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
   https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
+
+## Homebrew
+
+Preconditions (do this anyways, to easy the sudo needed in step 2)
+
+      sudo apt install build-essential procps curl file git
+
+then this one liner will do:
+
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+
+and to put in your bash shell for all future sessions
+
+      echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
 

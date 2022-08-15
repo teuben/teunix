@@ -72,6 +72,10 @@ To add local networking:
 
 Unix makes a difference between an **interactive** and **login** shell, as there are many ways to start a terminal.
 
+## accounts
+
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure
+
 ## other
 
 There are many others who have shared their dotfile management system, here are a few I ran into and I'd like to take ideas from:
