@@ -642,7 +642,7 @@ AppImages are not signed (some AppStored refuse to publish those)
 and do not support ICU (language extensions), for one. So unclear how long they will survive,
 but if you find an appimage, it will be the easiest to use. A popular program of
 which you can often find pre-released in this format is Digikam (a photoshop type program).
-They can fill up your /tmp space.
+Potential drawback: they can fill up your /tmp space.
 
 ### flatpak
 
