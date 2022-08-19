@@ -1,0 +1,14 @@
+#! /bin/bash
+#
+#
+
+export TMPDIR=$HOME/tmp
+dir=$HOME/AppImages
+
+ls -1 $dir
+
+if [ -z "$1" ]; then
+    exit 0
+elif [ -e "$dir/$1" ]; then
+    /usr/bin/time $dir/$1
+fi
