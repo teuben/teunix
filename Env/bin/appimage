@@ -6,9 +6,11 @@ export TMPDIR=$HOME/tmp
 dir=$HOME/AppImages
 
 ls -1 $dir
+app=$1
+shift
 
-if [ -z "$1" ]; then
+if [ -z "$app" ]; then
     exit 0
-elif [ -e "$dir/$1" ]; then
-    /usr/bin/time $dir/$1
+elif [ -e "$dir/$app" ]; then
+    /usr/bin/time $dir/$app $*
 fi
