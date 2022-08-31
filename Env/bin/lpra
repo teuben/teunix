@@ -1,0 +1,14 @@
+#! /bin/bash
+#
+#     printing for lazy laptop lusers
+#
+
+export PRINTER=bima2
+host=terra.astro.umd.edu
+host=lma.astro.umd.edu
+
+for f in $*; do
+   scp $f ${host}:/tmp ; ssh $host lpr -P$PRINTER /tmp/$f; ssh $host lpq -P$PRINTER; ssh $host rm /tmp/$f
+done
+
+echo "lpr: Using $PRINTER on $host"
