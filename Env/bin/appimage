@@ -5,11 +5,13 @@
 if [ -z "$TMPDIR" ]; then
     export TMPDIR=$HOME/tmp
 fi
-adir=$HOME/AppImages
 
-
-if [ ! -d $adir ]; then
-    echo "Warning: $adir does not exist, put your AppImage files in here"
+if [ -d $HOME/AppImages ]; then
+    adir=$HOME/AppImages
+elif [ -d $ASTROMAKE/AppImages ]; then
+    adir=$ASTROMAKE/AppImages
+else
+    echo "Warning: No suitable AppImages directory found"
     exit 0
 fi
 
