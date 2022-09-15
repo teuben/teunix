@@ -82,7 +82,7 @@ you can get away without emacs if that's not your editor of choice, as **vim**
 always comes installed with any Linux distro.
 
 A new release does not add a lot for system development (compilers etc.) either,
-so to this:
+so do this:
 
       sudo apt install build-essential gfortran cmake -y
       
@@ -107,7 +107,7 @@ also be very useful. Here are a few example commands:
       apt autoclean
 
 And here is how to create a list of all possible packages (there are over 60,000)
-and installed packages. Useful if you like commands like **grep** to search for things:
+and installed packages, good for *grep*-ing.
 
       apt-cache search  .  > apt-cache0.list
       apt-cache pkgnames   > apt-cache1.list
@@ -158,7 +158,7 @@ If you want to adopt the whole *astro debian blend*
 
 which will consume about 2xx packages in 3GB (now 5GB in U22??)
 This will get you everything and then some. Lots of python3 updates to your system,
-so this is useful.
+so this could be useful.
 
 ### KERN
 
@@ -286,17 +286,17 @@ An an example of use:
 
       module load mpi/2021.3.0 
 
-Most distributions also have a method by which certain tools (e.g. the compiler)
-can be defaulted to another version. To use the example of the compiler, the default
-C compiler, gcc, might be version 11, and by using gcc-12 you can try out a newer
-release.   But using the XXX command the default C compile can be made to point to
-gcc-12 instead of gcc-11, but only an admin can do this.
-Interesting detail: on Ubuntu gcc-12 is used,
-on RedHat it is gcc12, no dash here.
+Most distributions also have a method by which certain tools (e.g. the
+compiler) can be defaulted to another version. To use the example of
+the compiler, the default C compiler, gcc, might be version 11, and by
+using gcc-12 you can try out a newer release.  But using the
+**update-alternatives** command the default C compile can be made to
+point to gcc-12 instead of gcc-11, but only an admin can do this.
+Interesting detail: on Ubuntu **gcc-12** is used, on RedHat it is **gcc12**,
+no dash there.
 
 Look at /etc/alternatives and you get an idea of the mess.
 
-The command **update-alternatives --list** should give the list what you currently have.
 
 ### Dotfiles
 
@@ -390,7 +390,7 @@ your ssh commands a little more compact to use:
 
 ### sshfs
 
-Once you have established an ssh connection to your server, you could learn how to NSF mount
+Once you have established an ssh connection to your server, you could learn how to NFS mount
 drives, but this requires admin (root) permissions. Perhaps an easier way is to use ssh again using
 the **sshfs** protocol. Here is an example
 
@@ -608,16 +608,6 @@ The most common commercial applications have open source alternatives:
 See also https://www.opensourcealternative.to/ for an expanded version of this
 
 
-## alternatives
-
-If multiple versions of the same command exist (e.g. the gnu compiler), there is a
-is a mechanism in Linux to pick the one you prefer:
-
-      update-alternatives --help
-
-Other methods to this are the **module** command, if thats installed and enabled.
-
-
 ## 12. Universal Binaries, Russian Dolls and other such containers
 
 Unix used to be a little simpler, there was just Unix. Now we have virtual machines, containers etc.etc.
@@ -644,7 +634,8 @@ AppImages are not signed (some AppStored refuse to publish those)
 and do not support ICU (language extensions), for one. So unclear how long they will survive,
 but if you find an appimage, it will be the easiest to use. A popular program of
 which you can often find pre-released in this format is Digikam (a photoshop type program).
-Potential drawback: they can fill up your /tmp space.
+Potential drawback: they can fill up your /tmp space, which on some systems is a *tmpfs* and
+thus eats into your memory. Fix: set $TMPDIR.
 
 ### flatpak
 
@@ -711,7 +702,7 @@ a growing number of apps, depending on the preference of the group.
 2. google meet (formerly google chat)
 3. microsoft teams
 4. skype (anybody still use this?)
-5. slack (starting to charge)
+5. slack (or zulip)
 6. discord
 7. gathertown
 8. webex
@@ -731,7 +722,7 @@ setting it smaller, or even to 0. For example,
 
       sudo tune2fs -m 0 /dev/nvme0n1p2
 
-Since the default is 5%, for a 1TB drive this releases 50GB to the user, probably you!
+Since the default is 5%, for a 1TB drive this releases 50GB to the user, probably useful!
 	  
 ### Remove unused programs by snap / flatpak
 
@@ -826,6 +817,12 @@ finding reminders on your favoite esoteric tools. A neat program that solves som
 After installation, you will need to select from a large set of *Docsets* which ones you like to
 install locally. Pick your poison.
 
+Other popular help programs are tldr and cheat
+
+      sudo apt install tldr cheat
+
+though the latter who are somewhat overlapping in their coverage.
+
 
 ## 99. Quick Install
 
@@ -889,29 +886,6 @@ https://github.com/teuben/teunix/blob/master/docs/astronomy-on-ubuntu.md
 # -- old stuff to be organized --
 
 
-In this article/blog I would like to cover how to set up your Ubuntu
-system for professional astronomy. This is a moving target So this
-writeup is for the 2020 version of Ubuntu. Althugh I use the kubuntu
-flavor, the details do not differ if yu use Ubuntu, or Xubuntu, or any
-of the close derivatives.  Any other debian based system should also
-(mostly) work, but the translation to a RedHat based system, for
-example we use Centos at work, is a different story.  If there is
-enough interest, I could be persuaded to try and write that up as
-well.
-
-
-Communications:
-Browsers:   firefox      chrome, chromium
-Slack
-Skype
-Zoom
-Yakyak (an example of a snap)
-
-I will not cover what to do when you have an old/existing system, and
-you have two options: overlay the new on the old, or make a new one,
-and copy the setup files . This requires some knowledge and understand
-what parts of the old system changed, and which did not, and most
-importantly, which files you need.
 
  convert from ImageMagick doesn't convert a PDF until you modify the /etc/ImageMagick-7/policy.xml file and
 find make sure you have **<policy domain="coder" rights="read | write" pattern="PDF" />** in the policymap.
@@ -920,32 +894,29 @@ See a fix in LMTOY/etc/policy.xml
 
 The big things:
 
-Compilers (but also python, R, julia etc.)   [idl -> gdl]
-Useful tools that exist as binary
-Latex/Bibtex
-Gimp, xfig, dia, ...
 Grip (to preview your MD files)
+
     grip will download a lot of python3 stuff
     okular works well enough
-LibreOffice (and competitors now around too; see earlier list)
-Pdf tools:   mostly, how do I edit a PDF, my university/NSF often asks this
-  (acroread is pretty useless, libreoffice does open PDF files)
-  xournal
-  PDFtk   <-   pdftk-java
+    
+Pdf tools:   mostly, how do I edit a PDF, my university/NFS often asks this
+     (acroread is pretty useless, libreoffice does open PDF files)
+     xournal
+     PDFtk   <-   pdftk-java
+     
 Also useful to combine many PDFs into a single PDF.
 
 Does font substitution solve some of the importing of slides from PPT(x) to LibreOffice?
 
-    sudo apt install ttf-mscorefonts-installer
+     sudo apt install ttf-mscorefonts-installer
     
 but still i don't the all import calibri
 
-    mkdir ~/.fonts
-    wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+     mkdir ~/.fonts
+     wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-in-linux-office-suites.html
 
 
 ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
 
-My CV tools?
