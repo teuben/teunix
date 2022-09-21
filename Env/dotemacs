@@ -89,3 +89,6 @@
 ;;(global-set-key "\C-?" 'backward-delete-char)
 
 (normal-erase-is-backspace-mode 0)
+
+;; session saving
+(desktop-save-mode 1)
