@@ -89,6 +89,7 @@
 ;;(global-set-key "\C-?" 'backward-delete-char)
 
 (normal-erase-is-backspace-mode 0)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -108,3 +109,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+
+;; session saving
+(desktop-save-mode 1)
+

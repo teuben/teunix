@@ -1,4 +1,5 @@
 #   ~/.ssh/config <- ~/teunix/Env/ssh/config
+#   https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts
 #
 TCPKeepAlive yes
 ServerAliveInterval 60
@@ -26,16 +27,16 @@ Host sgra
 Host lma
      Hostname lma.astro.umd.edu
 
-Host lab
-     Hostname lab002.astro.umd.edu
-
-Host nemo
-     Hostname 192.168.1.101
+#Host nemo
+#     Hostname 192.168.1.101
 #Host nemo-wifi
 #     Hostname 192.168.1.104
 
 Host syn
      Hostname 192.168.1.104
+
+Host zaratan
+     Hostname login.zaratan.umd.edu
 
 # UMASS
 Host cln
