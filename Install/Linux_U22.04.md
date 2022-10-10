@@ -112,6 +112,7 @@ not applied until you hit the Apply button on each screen.
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
 	   Fall Apart (can be a bit distracting)
+	   Translucency
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
@@ -177,18 +178,12 @@ not applied until you hit the Apply button on each screen.
         - Set up a file system to share if you want to see them on the laptop
      7. Printers
 
-
-
-     - Task Manager (on bottom bar) may need some tinkering:
-       (the currrent default is the "Icons-only Task Manager")
-       Appearance
+     - Icons-only Task Manager Settting -> Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
-       Behavior
-          - grouping of tasks -> 
-      	  - show only tasks -> from current activity
-       - resize it a bit, it's too tall for my taste
-       - clicked grouped tasks:  ->   Shows textual list
-
+     - Icons-only Task Manager Settting -> Behavior     
+       Clicking grouped task:   Show windows side by side   [this is important]
+       Sort:                    "By Desktop"
+       Show only takss:    v    "from current activity"
 
 TO BE RESOLVED:
 
