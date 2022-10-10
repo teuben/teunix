@@ -518,3 +518,7 @@ and to put in your bash shell for all future sessions
 
       echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
 
+# Misc
+
+https://www.tecmint.com/best-remote-linux-desktop-sharing-software/
+
