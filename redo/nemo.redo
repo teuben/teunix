@@ -3,7 +3,7 @@
 set -e
 set -x
 
-alt=$1
+alt=${1:-nemo}
 git clone https://github.com/teuben/nemo $alt
 
 cd $alt
