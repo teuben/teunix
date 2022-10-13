@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -e
+set -x
+
+alt=$1
+git clone https://github.com/teuben/nemo $alt
+
+cd $alt
+./configure
+make build check bench5
