@@ -16,6 +16,8 @@
     apt autoremove               cleanup old stuff
     apt clean
     apt autoremove --purge
+    apt list --all-versions vlc
+    apt install vlc=3.0
 
 # newly done April 29, 2022
 
@@ -61,6 +63,7 @@ sudo apt install tkcvs net-tools ncftp
 sudo apt install montage aladin saods9 xpa-tools pgplot5 -y
 sudo apt install aoflagger libcfitsio-dev libccfits0v5 ftools-fv topcat -y
 sudo apt install gnuastro -y
+#   how about stilts, the cli of topcat, and perhaps also jython-stilts
 
 
 sudo apt install ipython3 python-is-python3 python3-pip cython3 swig
@@ -77,16 +80,17 @@ k4dirstat
 gimp
 
 
-a new way to install 3rd party tools?    deb-get
+# deb-get: a cool new way to install 3rd party tools!
 
 https://www.tomshardware.com/how-to/install-linux-apps-with-deb-get
 
 curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 sudo deb-get update
+sudo deb-get list
+# and examples:
 sudo deb-get install microsoft-edge-stable
 sudo deb-get upgrade
 sudo deb-get search firefox
-sudo deb-get list
 sudo deb-get remove <name of application>
 sudo deb-get purge <name of application>
 sudo deb-get clean
@@ -860,10 +864,13 @@ sudo apt-cache policy
 sudo grep -Erh ^deb /etc/apt/sources.list*
 inxi -r
 
-======
-
 
 new interesting things?
 
 zeal - documentation browser
+
+
+fits liberator (4.0) - now on linux
+apt install libvips libappindicator3-1
+wget ... app001.deb from NOIRlab
 

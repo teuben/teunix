@@ -12,6 +12,14 @@ UP = git emacs tcsh wget curl unzip openssh-server \
      wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
      plasma-widgets-addons kio-gdrive
 
+
+URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
+URL2 = https://github.com/torvalds/uemacs
+URL3 = https://github.com/astroumd/sysadmin
+
+
+
+
 help:
 	@echo teunix=$(TEUNIX)
 
@@ -40,24 +48,23 @@ foo:
 	@test -f $(HOME)/.foo && echo You have a 
 
 
-URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
-URL2 = https://github.com/torvalds/uemacs
-
-
 uemacs:
 	git clone $(URL2)
-	@echo Needs package libncurses-dev on Ubuntu
+	@echo "Needs package libncurses-dev on Ubuntu"
+	@echo "              ncurses-devel on Fedora"
 	@echo 'cd uemacs; make'
 
 
-rc:
+rc:  ~/rc
 	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
 	@echo Now in rc:
 	@ls ~/rc
 
 # See various comments in Env/README
 
-env:   env1 env2 env3 env4 rc
+env:   env0 env1 env2 env3 env4 env5 env6 env9 rc
+
+env0: apt-cache0.list apt-cache1.list dpkg0.list
 
 env1:
 	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
@@ -72,5 +79,25 @@ env4:
 	-@[ ! -d ~/bin ] &&  ln -s ~/teunix/Env/bin ~/bin
 
 env5:
+	-@mkdir -p ~/.ssh
+	ln -s ~/teunix/Env/ssh/config ~/.ssh/config
+
+env6:
+	-@[ ! -d ~/.ssh ] &&  ln -s ~/teunix/Env/ssh/config ~/.ssh/config
+
+env9:
 	@echo Do the /etc/hosts manually
 
+
+
+apt-cache0.list:
+	apt-cache search  .  > apt-cache0.list
+
+apt-cache1.list:
+	apt-cache pkgnames   > apt-cache1.list
+
+dpkg0.list:
+	dpkg --list          > dpkg0.list
+
+sysadmin:
+	git clone $(URL3)

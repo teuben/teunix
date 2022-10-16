@@ -66,6 +66,11 @@ below 2000 packages, and this usually grows to about 4000 for me.
 
 ## My KDE Setup
 
+Before you do anything, get the PlasmaConfigSaver from the widget
+store. Whatever you do, this way you can save a configuration and
+easily come back to it, or build on top of that.  This should be
+standard part of KDE.
+
 I've only been using KDE since Ubuntu 18.04, and now beginning to like
 it, as more things now actually work the way I like it.  Before this I
 was actually getting used to Unity, but a few mall annoying things
@@ -107,6 +112,7 @@ not applied until you hit the Apply button on each screen.
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
 	   Fall Apart (can be a bit distracting)
+	   Translucency
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
@@ -119,6 +125,7 @@ not applied until you hit the Apply button on each screen.
            only after waking from sleep (remove the 15 minutes option)
        Virtual Desktop
            6 desktops in 2 rows              (navigation shortcuts come later)
+	       -> give the desktop unique names/numbers such that taskbar can identify
            navigation *do not* wrap around
            show on-screen display when switching
        Activities
@@ -153,12 +160,16 @@ not applied until you hit the Apply button on each screen.
 
      (Hardware)
      1. Input Devices
+
        Keyboard -
           advanced
 	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
 	                            or:  Disabled
               position of compose key:    Right Alt				    
 	      
+
+       Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
+
        Mouse - make sure scrolling is not inverted (or natural as some call it)
        Touchpad
           Tapping:  tap-to-click
@@ -176,16 +187,12 @@ not applied until you hit the Apply button on each screen.
         - Set up a file system to share if you want to see them on the laptop
      7. Printers
 
-
-
-     - Task Manager (on bottom bar) may need some tinkering:
-       Appearance
+     - Icons-only Task Manager Settting -> Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
-       Behavior
-          - grouping of tasks -> 
-      	  - show tasks for all desktops
-       - resize it a bit, it's too tall for my taste
-
+     - Icons-only Task Manager Settting -> Behavior     
+       Clicking grouped task:   Show windows side by side   [this is important]
+       Sort:                    "By Desktop"
+       Show only takss:    v    "from current activity"
 
 TO BE RESOLVED:
 
@@ -506,6 +513,7 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
   https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
 
+
 - stupid things:  https://itsfoss.com/pending-update-firefox-ubuntu/
   1. make sure firefox isn't running
   2. sudo snap refresh
@@ -515,3 +523,23 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   # thus we do
   sudo killall firefox
   sudo snap refresh		
+
+## Homebrew
+
+Preconditions (do this anyways, to easy the sudo needed in step 2)
+
+      sudo apt install build-essential procps curl file git
+
+then this one liner will do:
+
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+
+and to put in your bash shell for all future sessions
+
+      echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
+
+# Misc
+
+https://www.tecmint.com/best-remote-linux-desktop-sharing-software/
+
+

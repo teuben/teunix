@@ -24,6 +24,7 @@ alias dus  "du | sort -nr | head"
 #alias dus 'du -s *|sort -n'
 alias d dir -l
 alias l ls -sFtl
+alias g grep
 alias dth "d -t | head"
 alias dth10 "d -t | head \!* | tail"
 alias dtr "d -t | head"

@@ -1,4 +1,5 @@
 #   ~/.ssh/config <- ~/teunix/Env/ssh/config
+#   https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts
 #
 TCPKeepAlive yes
 ServerAliveInterval 60
@@ -26,16 +27,16 @@ Host sgra
 Host lma
      Hostname lma.astro.umd.edu
 
-Host lab
-     Hostname lab002.astro.umd.edu
-
-Host nemo
-     Hostname 192.168.1.101
+#Host nemo
+#     Hostname 192.168.1.101
 #Host nemo-wifi
 #     Hostname 192.168.1.104
 
 Host syn
      Hostname 192.168.1.104
+
+Host zaratan
+     Hostname login.zaratan.umd.edu
 
 # UMASS
 Host cln
@@ -73,7 +74,7 @@ Host inaoe2
     ProxyCommand ssh -p 12000 adria.inaoep.mx -W %h:%p	
 
 # Unity cluster for TolTEC;  see https://unity.rc.umass.edu/docs/
-Host unity2
+Host unity-tt
     User toltec_umass_edu
     HostName unity.rc.umass.edu
     IdentityFile ~/.ssh/toltec_id
@@ -83,6 +84,13 @@ Host unity
     User lmtslr_umass_edu
     HostName unity.rc.umass.edu
     IdentityFile ~/.ssh/unity_id
+
+Host unity2
+    User lmthelpdesk_umass_edu
+    HostName unity.rc.umass.edu
+    IdentityFile ~/.ssh/unity_id
+
+
 
 # ADASS2018 proceedings
 Host asp

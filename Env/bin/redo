@@ -1,0 +1,25 @@
+#! /bin/bash
+#
+#    recompile one of my favorite packages
+#
+
+pkg=$1
+alt=$2
+dir=~/teunix/redo
+
+if [ -z $pkg ]; then
+    echo "no pkg to redo?"
+    ls $dir
+    exit 0
+fi
+
+script=$dir/$pkg.redo
+if [ ! -e $script ]; then
+    echo redo script $script does not exist. Available:
+    ls $dir | grep -v README | sed s,.redo,,g
+    exit 0
+fi
+
+echo doing $script $alt
+
+$script $alt

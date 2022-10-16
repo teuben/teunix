@@ -325,6 +325,10 @@ LATTE DOCK
      dock settings:
           - auto-hide   otherwise it's annoying,but I overlay it on the default task manager panel
 
+FIREFOX INTEGRATION
+
+      https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
+
 OLD STUFF....
 
 1. sometimes loose the KDE window manager. It can be restarted from
@@ -346,7 +350,7 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 2. Configure Desktop -> Get New Wallpapers (***)
 3. System Settings -> Global Theme -> Get New Global Themes [breeze]
 4. System Settings -> Plasma Style -> Get New Plasma Styles [breeze]
-5. System Settings -> Application Style -> Application Style -> Configure GNOME/GTK Application Style -> Download New Stles
+5. System Settings -> Application Style -> Application Style -> Configure GNOME/GTK Application Style -> Download New Styles
 6. System Settings -> Application Style -> Window Decorations -> Get New Window Decorations [breeze]
 7. System Settings -> Colors -> Get New Color Schemes [Breeze]
 8. System Settings -> Fonts -> Font Management -> Get New Fonts 
