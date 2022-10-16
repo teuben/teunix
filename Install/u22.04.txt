@@ -861,3 +861,9 @@ sudo grep -Erh ^deb /etc/apt/sources.list*
 inxi -r
 
 ======
+
+
+new interesting things?
+
+zeal - documentation browser
+
