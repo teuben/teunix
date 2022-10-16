@@ -3,26 +3,19 @@
 
 On the [AstroBetter WiKi](https://www.astrobetter.com/wiki/Wiki+Home)
 a page is dedicated to
-[Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy).
-Is **Linux** so much easier to set up that we don't need one?  There were the times
-this was really involved, but not so much anymore.
-Recently a spanking new Ubuntu 22.04LTS (Long Term Support) came out, good for 2 years until the next LTS.
-You could also argue Linux is used more by geeky types who know
-a lot of what's going on in the trenches, and they don't bother writing it up.  We are
-going to change that here!!
+[Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy),
+last updated in 2016 though.
 
-So, if you're a astronomer with a new Linux computer, read on.
-This page assumes you want to write scripts, reduce data, plot results, work
-with LaTeX, and give presentations, among other handy things. This is however
-not a tutorial. We will also point out some salient differences where things
-work differently on a Mac.
+This page describes something similar for Ubuntu Linux.  This is *not* a tutorial
+for Linux
 
 If you have used Ubuntu for a while, this might be a nice checklist to see
 if you have been missing out on some new cool tools.
 
-As a brief introduction: Linux is the catch-all name for a linux kernel
+**As a reminder**: Linux is the catch-all name for a linux kernel
 and GNU software based operating system. Linux is part of the Unix family, of
-which Mac OSX is also one.  Therefor many tools you will see described here,
+which Mac OSX is also one.
+Therefor many tools you will see described here,
 apply to Mac as well. Linux normally comes with a choice of a 
 graphical interface (e.g. GNOME, KDE, XFCE, ....), which we will not
 cover here, and we keep the description agnostic to your Desktop GUI choice.
