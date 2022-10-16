@@ -748,7 +748,44 @@ may be on different disks.
 	  
 Keeping old kernels around can easily accumulate disk space. 
 
-      sudo apt autoremove --purge
+See also http://www.pcworld.com/article/2863497/how-to-install-microsoft-fonts-in-linux-office-suites.html
+
+
+ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the-new-ads/
+
+My CV tools
+
+### Note taking
+
+
+For note taking **evernote** seems to be the favorite cloud based note taking app. There are
+quite a few open source alternatives, we mention just a few:
+
+joplin, xournal, trillium, gnote, cherrytree, obsidion, zim, emacs-org-mode, tomboy, 
+
+## Remote Computing
+
+I love remote computing, but over the years certain implementations
+have made the classic X11 based copy and paste a bit more
+cumbersome. If you are used to the simple  "left click select and copy via middle click paste",
+this will not always work, in fact there are situations where even using a cumbersome clipboard
+does not work anymore (e.g. SciServer). Blame it on russian dolls?
+
+My benchmark is double left click a word in one window (it selects it, use triple left click to select the whole line)
+and middle click to paste. This is efficient!
+
+Even within Linux, certain apps now involve more elaborate ways to copy and paste.
+
+
+## ssh
+
+One way to do remote computing is via ssh, one terminal at a time (more persistency
+via screen/tmux or vnc/x2go)
+
+      ssh-keygen
+      ssh-copy-id 192.168.1.110
+
+      sudo apt autoremove --purge (PJT)
       
       sudo apt install byobu
       sudo purge-old-kernels

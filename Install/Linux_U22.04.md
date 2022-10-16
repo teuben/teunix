@@ -160,7 +160,16 @@ not applied until you hit the Apply button on each screen.
 
      (Hardware)
      1. Input Devices
+
+       Keyboard -
+          advanced
+	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
+	                            or:  Disabled
+              position of compose key:    Right Alt				    
+	      
+
        Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
+
        Mouse - make sure scrolling is not inverted (or natural as some call it)
        Touchpad
           Tapping:  tap-to-click
@@ -504,6 +513,17 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
   https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
 
+
+- stupid things:  https://itsfoss.com/pending-update-firefox-ubuntu/
+  1. make sure firefox isn't running
+  2. sudo snap refresh
+  snap refresh --time
+  snap refresh --list
+
+  # thus we do
+  sudo killall firefox
+  sudo snap refresh		
+
 ## Homebrew
 
 Preconditions (do this anyways, to easy the sudo needed in step 2)
@@ -521,4 +541,5 @@ and to put in your bash shell for all future sessions
 # Misc
 
 https://www.tecmint.com/best-remote-linux-desktop-sharing-software/
+
 
