@@ -581,6 +581,14 @@ ADS, arXiv, ORCID id, https://www.astrobetter.com/blog/2018/05/28/welcome-to-the
 
 My CV tools
 
+### Note taking
+
+
+For note taking **evernote** seems to be the favorite cloud based note taking app. There are
+quite a few open source alternatives, we mention just a few:
+
+joplin, xournal, trillium, gnote, cherrytree, obsidion, zim, emacs-org-mode, tomboy, 
+
 ## Remote Computing
 
 I love remote computing, but over the years certain implementations
