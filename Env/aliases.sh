@@ -7,6 +7,7 @@
 shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
+alias diary='(cd ~/Diary/yraid; git pull)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
 
 alias   up='cd ..'
