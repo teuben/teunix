@@ -153,6 +153,12 @@ not applied until you hit the Apply button on each screen.
 
      (Hardware)
      1. Input Devices
+       Keyboard -
+          advanced
+	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
+	                            or:  Disabled
+              position of compose key:    Right Alt				    
+	      
        Mouse - make sure scrolling is not inverted (or natural as some call it)
        Touchpad
           Tapping:  tap-to-click
@@ -500,3 +506,12 @@ find make sure you have **<policy domain="coder" rights="read | write" pattern="
   echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
   https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
 
+- stupid things:  https://itsfoss.com/pending-update-firefox-ubuntu/
+  1. make sure firefox isn't running
+  2. sudo snap refresh
+  snap refresh --time
+  snap refresh --list
+
+  # thus we do
+  sudo killall firefox
+  sudo snap refresh		
