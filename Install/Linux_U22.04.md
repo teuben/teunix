@@ -112,7 +112,7 @@ not applied until you hit the Apply button on each screen.
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
 	   Fall Apart (can be a bit distracting)
-	   Translucency
+	   Translucency (nice if you want to match figures)
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
