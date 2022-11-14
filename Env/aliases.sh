@@ -4,7 +4,7 @@
 # echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.zshrc
 
 #  bash only
-shopt -s direxpand
+[[ $SHELL == *bash* ]] && shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
 alias diary='(cd ~/Diary/yraid; git pull)'
