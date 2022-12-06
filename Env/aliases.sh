@@ -40,6 +40,19 @@ alias detar='tar xvf'
 # nemoinp is a NEMO command line calculator
 alias    ni='nemoinp'
 
+sleepers() {
+    if [ ! $1 ]; then
+	_n=1
+    else
+	_n=$1
+    fi
+    if [ -e $HOME/teunix/sleepers ]; then
+	shuf -n $_n $HOME/teunix/sleepers
+    else
+	echo 'teunix: no sleepers here'
+    fi
+}
+
 push() {
     git commit -m upd $1
     git push
