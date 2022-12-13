@@ -7,4 +7,5 @@ help:
 
 upd:
 	rsync -av $(WWW)/*.txt .
+	rm -f WebStatistics.txt
 
