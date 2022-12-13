@@ -96,6 +96,9 @@ use() {
 	fi
     done
 }
+tag() {
+    ag $* ~/teunix/twiki
+}
 
 #
 #alias	go	'cd  $path_\!*'
