@@ -55,10 +55,13 @@ uemacs:
 	@echo 'cd uemacs; make'
 
 
-rc:  ~/rc
-	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
+rc:  $(HOME)/rc
 	@echo Now in rc:
-	@ls ~/rc
+	@(cd ~/rc; ls *.rc)
+
+$(HOME)/rc:
+	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
+	@touch ~/rc/none.rc
 
 # See various comments in Env/README
 
