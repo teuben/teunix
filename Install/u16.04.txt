@@ -1,4 +1,5 @@
 Installed May 14, 2016; on Lenovo T530
+Redone in a virtual box on Dec 25,2022 since T530 now can't find dlopen()
 
 tcsh
 chromium-browser    (google chrome was done via a tarball in /opt/google)
