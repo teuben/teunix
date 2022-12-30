@@ -67,6 +67,7 @@ uemacs:
 	@echo "              ncurses-devel on Fedora"
 	@echo 'cd uemacs; make'
 
+## mem:        2. install micro-emacs at ~/bin/mem
 mem:	uemacs ~/bin
 	(cd uemacs; make)
 	cp -a uemacs/em ~/bin/
