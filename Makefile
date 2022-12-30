@@ -9,8 +9,9 @@ SHELLS = csh tcsh bash zsh
 UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
-     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
-     plasma-widgets-addons kio-gdrive
+     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf
+
+UP2 = plasma-widgets-addons kio-gdrive
 
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
@@ -27,9 +28,15 @@ install:
 	@echo Some typical install notes
 	@echo teunix=$(TEUNIX)
 
-## apt:        1. My personal list of kubuntu packages I need
+## apt:        1.  My personal list of generic ubuntu packages I need
 apt:
 	sudo apt install $(UP) -y
+	@echo If you have KDE, also "make apt2"
+
+## apt2:       1k. My kubuntu addons (on regular ubuntu this would cause an avalanche)
+apt2:
+	sudo apt install $(UP2) -y
+
 
 all: $(SHELLS)
 
@@ -111,6 +118,6 @@ apt-cache1.list:
 dpkg0.list:
 	dpkg --list          > dpkg0.list
 
-## sysadmin:   9. some private sysadmin stuff
+## sysadmin:   9. some private repo sysadmin stuff
 sysadmin:
 	git clone $(URL3)
