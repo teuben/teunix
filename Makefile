@@ -67,6 +67,10 @@ uemacs:
 	@echo "              ncurses-devel on Fedora"
 	@echo 'cd uemacs; make'
 
+mem:	uemacs ~/bin
+	(cd uemacs; make)
+	cp -a uemacs/em ~/bin/
+
 ## rc:         3. bootstrap the rc files
 rc:  $(HOME)/rc
 	@echo Now in rc:
