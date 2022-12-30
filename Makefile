@@ -17,7 +17,7 @@ UP2 = plasma-widgets-addons kio-gdrive
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
 URL2 = https://github.com/torvalds/uemacs
 URL3 = https://github.com/astroumd/sysadmin
-
+URL4 = https://github.com/teuben/nemo
 
 
 ## help:       This Help
@@ -112,7 +112,10 @@ env5:
 env9:
 	@echo Do the /etc/hosts manually
 
-
+## nemo:       8. simple NEMO bootstrap install
+nemo:
+	git clone $(URL4)
+	(cd nemo; ./configure; make build check bench5)
 
 apt-cache0.list:
 	apt-cache search  .  > apt-cache0.list
