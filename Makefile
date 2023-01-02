@@ -89,7 +89,7 @@ $(HOME)/rc:
 ##                env3:  .git
 ##                env4:  ~/bin to PATH
 ##                env5:  .ssh/config
-env:   env0 env1 env2 env3 env4 env5 env9 rc
+env:   env0 env1 env2 env3 env4 env5 env6 env9 rc
 
 env0: apt-cache0.list apt-cache1.list dpkg0.list
 
@@ -108,6 +108,10 @@ env4:
 env5:
 	-@mkdir -p ~/.ssh
 	ln -s ~/teunix/Env/ssh/config ~/.ssh/config
+
+env6:
+	-@mkdir -p ~/.ipython/profile_default/startup
+	ln -s ~/teunix/Env/python/90-numpy.py ~/.ipython/profile_default/startup
 
 env9:
 	@echo Do the /etc/hosts manually
