@@ -12,4 +12,4 @@ means there should be a file ~/rc/name.rc, such that
 	source ~/rc/name.rc
 
 is successfull. This also implies you pick a shell. There is no
-restriction to csh or sh.
+restriction to csh or sh, just be consistent to what you are using.

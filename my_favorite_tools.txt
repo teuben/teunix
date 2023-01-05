@@ -1,30 +1,28 @@
 Applications:
 -------------
 - emacs
-- tcsh (still, but bash needs to be there too, and now zsh)
-- vnc
+- bash (yup, I broke up with tcsh)
+- vnc (x2go)
 - vpn
 - latex
-- libreOffice / OpenOffice
+- libreOffice 
 - python (anaconda/miniconda)
 - make/autoconf/cmake
-- c/c++/fortran compiler
+- c/c++/fortran compilers
 - various astro tools:
   - ds9
-  - casa
+  - casa, carta
   - gipsy
   - nemo
   - miriad
-  - karma (might die soon)
+  - karma (might die soon if no source)
   - montage, wcstools
   - topcat, glue, yt,
 - gimp, digikam, darktable
-- skype (zoom too)
+- zoom
 - thunderbird 
 - chrome/chromium/firefox
-- rhythmbox
-
-
+- rhythmbox (and so many others)
 
 
 

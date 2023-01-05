@@ -1,4 +1,9 @@
 Installed May 14, 2016; on Lenovo T530
+Redone in a virtual box on Dec 25,2022 since T530 now can't find dlopen()
+
+for NEMO:
+  sudo apt install tcsh emacs build-essential gfortran cmake git libx11-dev pgplot5
+  libncurses-dev
 
 tcsh
 chromium-browser    (google chrome was done via a tarball in /opt/google)
