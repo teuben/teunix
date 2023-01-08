@@ -69,8 +69,8 @@ uemacs:
 
 ## mem:        2. install micro-emacs at ~/bin/mem
 mem:	uemacs ~/bin
-	(cd uemacs; make)
-	cp -a uemacs/em ~/bin/
+	(cd uemacs; make clean; make)
+	cp -a uemacs/em ~/bin/mem
 
 ## rc:         3. bootstrap the rc files
 rc:  $(HOME)/rc
