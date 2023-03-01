@@ -100,6 +100,23 @@ tag() {
     ag $* ~/teunix/twiki
 }
 
+ggrep() {
+    if [ ! $1 ]; then
+	locate .git/config | sed s,/.git/config,,
+    else
+	locate .git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
+gfind() {
+    if [ ! $1 ]; then    
+	find . -wholename \*.git/config | sed s,/.git/config,,
+    else
+	find . -wholename \*.git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
+
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
