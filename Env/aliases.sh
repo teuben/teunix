@@ -149,7 +149,8 @@ ecg() {
     grep -i $1 ~/.ec/emacsclient.log
 }
 phone() {
-    grep -i $1 ~/.phone /local/pub/phone
+    #grep -i $1 ~/.phone /local/pub/phone
+    grep -i $1 ~/.phone /n/www/docs/people/*html
 }
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
 #alias addphone='echo \!* >> ~/.phone'
