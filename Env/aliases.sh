@@ -150,7 +150,12 @@ ecg() {
 }
 phone() {
     #grep -i $1 ~/.phone /local/pub/phone
-    grep -i $1 ~/.phone /n/www/docs/people/*html
+    if [ ! $2 ]; then
+	grep -i $1 ~/.phone /n/www/docs/people/*html
+    else
+	grep -i $1 ~/.phone /n/www/docs/people/*html | grep -i $2	
+    fi
+    
 }
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
 #alias addphone='echo \!* >> ~/.phone'
