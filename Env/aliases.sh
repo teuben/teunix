@@ -100,6 +100,23 @@ tag() {
     ag $* ~/teunix/twiki
 }
 
+ggrep() {
+    if [ ! $1 ]; then
+	locate .git/config | sed s,/.git/config,,
+    else
+	locate .git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
+gfind() {
+    if [ ! $1 ]; then    
+	find . -wholename \*.git/config | sed s,/.git/config,,
+    else
+	find . -wholename \*.git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
+
 #
 #alias	go	'cd  $path_\!*'
 #alias	mark	'set path_\!* = $cwd'
@@ -132,7 +149,13 @@ ecg() {
     grep -i $1 ~/.ec/emacsclient.log
 }
 phone() {
-    grep -i $1 ~/.phone /local/pub/phone
+    #grep -i $1 ~/.phone /local/pub/phone
+    if [ ! $2 ]; then
+	grep -i $1 ~/.phone /n/www/docs/people/*html
+    else
+	grep -i $1 ~/.phone /n/www/docs/people/*html | grep -i $2	
+    fi
+    
 }
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
 #alias addphone='echo \!* >> ~/.phone'
