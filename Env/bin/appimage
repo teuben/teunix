@@ -1,0 +1,25 @@
+#! /bin/bash
+#
+#   helper script to run AppImages
+
+if [ -z "$TMPDIR" ]; then
+    export TMPDIR=$HOME/tmp
+fi
+
+if [ -d $HOME/AppImages ]; then
+    adir=$HOME/AppImages
+elif [ -d $ASTROMAKE/AppImages ]; then
+    adir=$ASTROMAKE/AppImages
+else
+    echo "Warning: No suitable AppImages directory found"
+    exit 0
+fi
+
+app=$1
+shift
+
+if [ -z "$app" ]; then
+    ls -1 $adir
+elif [ -e "$adir/$app" ]; then
+    exec /usr/bin/time $adir/$app $*
+fi

@@ -42,7 +42,7 @@ Here's stuff I did:
 
 6. Install Homebrew (not Macports... yet)
 
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
    a. brew install cvs cmake tkdiff gcc wget
    b. brew install gcc    [also does gfortran]
@@ -69,3 +69,29 @@ Here's stuff I did:
 
 
 system_profiler SPPowerDataType
+
+## Running catalina in a virtual environment on linux
+
+Plenty of google hits on this. It's advertised as a single click install. Yeah, right, the first click of many.
+It uses a snap program called osumi. Some links below.
+
+Once it's installed (takes about 30 mins in many steps and reboots of the VM) you can type "git" to 		
+to trigger the Xcode install, which gives you a development.
+
+### Install MacOS virtual machine on Ubuntu 
+
+    https://www.youtube.com/watch?v=Fz07YhB2v60
+    https://github.com/foxlet/macOS-Simple-KVM
+
+### Sosumi: Run Mac OS on Linux with 1 Click
+
+    https://www.youtube.com/watch?v=QWZ_LjzT39k
+
+### MacOS on Linux
+    
+	https://www.youtube.com/watch?v=dMLNP6FfhkI
+	
+
+
+The last one has some more discussion on tailoring the system after it
+has been installed.

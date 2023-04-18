@@ -4,9 +4,10 @@
 # echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.zshrc
 
 #  bash only
-shopt -s direxpand
+[[ $SHELL == *bash* ]] && shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
+alias diary='(cd ~/Diary/yraid; git pull)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
 
 alias   up='cd ..'
@@ -38,6 +39,19 @@ alias untar='tar xvf'
 alias detar='tar xvf'
 # nemoinp is a NEMO command line calculator
 alias    ni='nemoinp'
+
+sleepers() {
+    if [ ! $1 ]; then
+	_n=1
+    else
+	_n=$1
+    fi
+    if [ -e $HOME/teunix/sleepers ]; then
+	shuf -n $_n $HOME/teunix/sleepers
+    else
+	echo 'teunix: no sleepers here'
+    fi
+}
 
 push() {
     git commit -m upd $1
@@ -82,6 +96,26 @@ use() {
 	fi
     done
 }
+tag() {
+    ag $* ~/teunix/twiki
+}
+
+ggrep() {
+    if [ ! $1 ]; then
+	locate .git/config | sed s,/.git/config,,
+    else
+	locate .git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
+gfind() {
+    if [ ! $1 ]; then    
+	find . -wholename \*.git/config | sed s,/.git/config,,
+    else
+	find . -wholename \*.git/config | sed s,/.git/config,, | grep $1
+    fi
+}
+
 
 #
 #alias	go	'cd  $path_\!*'
@@ -115,7 +149,13 @@ ecg() {
     grep -i $1 ~/.ec/emacsclient.log
 }
 phone() {
-    grep -i $1 ~/.phone /local/pub/phone
+    #grep -i $1 ~/.phone /local/pub/phone
+    if [ ! $2 ]; then
+	grep -i $1 ~/.phone /n/www/docs/people/*html
+    else
+	grep -i $1 ~/.phone /n/www/docs/people/*html | grep -i $2	
+    fi
+    
 }
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
 #alias addphone='echo \!* >> ~/.phone'

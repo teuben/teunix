@@ -23,7 +23,7 @@
 
 # super essential to build NEMO and uemacs
 sudo apt install git emacs tcsh wget curl unzip openssh-server -y
-sudo apt install build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev -y
+sudo apt install build-essential gfortran cmake pgplot5 xorg-dev m4 libncurses-dev -y
 
 
 # update KDE to 5.25.beta
@@ -864,10 +864,13 @@ sudo apt-cache policy
 sudo grep -Erh ^deb /etc/apt/sources.list*
 inxi -r
 
-======
+
+new interesting things?
+
+zeal - documentation browser
+
 
 fits liberator (4.0) - now on linux
 apt install libvips libappindicator3-1
 wget ... app001.deb from NOIRlab
-
 
