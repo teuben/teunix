@@ -66,10 +66,13 @@ below 2000 packages, and this usually grows to about 4000 for me.
 
 ## My KDE Setup
 
-Before you do anything, get the PlasmaConfigSaver from the widget
-store. Whatever you do, this way you can save a configuration and
-easily come back to it, or build on top of that.  This should be
-standard part of KDE.
+Before you do anything, get the PlasmaConfigSaver (but search for:
+Plasma Customization Saver, by *paju*) from the widget store. Whatever
+you do, this way you can save a configuration and easily come back to
+it, or build on top of that.  This should be standard part of KDE, but
+you will need to go and get them via "Get New Widgets" dialog. This
+widget can also import/export its settings, great if you want to share
+between computers.
 
 I've only been using KDE since Ubuntu 18.04, and now beginning to like
 it, as more things now actually work the way I like it.  Before this I
@@ -79,9 +82,8 @@ were unstable.
 KDE can be confusing, for one, some settings appear in different
 places if you switch a version of KDE. Some of this work is painful if
 you have to repeat it many times, so it would be nice to have a
-programmatic way to do this for a virgin account. You can also copy
-the correct files in your ~/.config tree, but the key word is "correct".
-This appears to be a moving target.
+programmatic way to do this for a virgin account. I don't have enough
+ex[erience yet how well PlasmaConfigSaver works between versions.
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen.
