@@ -40,7 +40,7 @@ if (! -d "$u") then
   exit 0
 endif
 
-set mdb = mlocate.$d.db
+set mdb = plocate.$d.db
 
 if (-e $mdb) then
   echo 4 secs to overwriting $mdb from disk root $u :
@@ -61,5 +61,5 @@ chown $USER $mdb
 
 # the new plocate format:
 # 00000000  00 70 6c 6f 63 61 74 65  01 00 00 00 cf fe 02 00  |.plocate........|
-# is different from the old locate format:
-# 
+# is different from the old mlocate format:
+# 00000000  00 6d 6c 6f 63 61 74 65  00 00 01 27 00 01 00 00  |.mlocate...'....|
