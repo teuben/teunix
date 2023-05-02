@@ -11,4 +11,35 @@ To make new ones, use something like
 
 See also:
   https://trendoceans.com/locate-command-usage-in-linux/
+  https://github.com/Aetf/plocate
   ~/teunix/bin/blocate
+
+## mlocate.db(5)
+
+A mlocate database starts with a file header: 8 bytes for a magic
+number ("\0mlocate" like a C literal), 4 bytes for the configuration
+block size in big endian, 1 byte for file format version (0), 1 byte
+for the 'require visibility' flag (0 or 1), 2 bytes padding, and a
+SMNUL-terminated path name of the root of the database.
+
+00000000  00 6d 6c 6f 63 61 74 65  00 00 01 27 00 01 00 00  |.mlocate...'....|
+                                   <4 bytes -> fv rv <pad>
+00000000  00 6d 6c 6f 63 61 74 65  00 00 00 27 00 01 00 00  |.mlocate...'....|
+00000000  00 6d 6c 6f 63 61 74 65  00 00 00 27 00 01 00 00  |.mlocate...'....|
+00000000  00 6d 6c 6f 63 61 74 65  00 00 01 27 00 00 00 00  |.mlocate...'....|
+
+
+The command
+
+     plocate-build  mlocate.home640.db  plocate.home640.db
+
+should (after fixing the visibility flag)
+
+     locate -d plocate.home640.db /
+
+still doesntt work
+
+# not working
+00000000  00 70 6c 6f 63 61 74 65  01 00 00 00 03 25 01 00  |.plocate.....%..|
+# working
+00000000  00 70 6c 6f 63 61 74 65  01 00 00 00 7f 7b 01 00  |.plocate.....{..|
