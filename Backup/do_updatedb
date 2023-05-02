@@ -1,4 +1,4 @@
-#! /bin/csh -f
+#! /bin/csh -fvx
 #
 #  default database is : /var/lib/mlocate/mlocate.db
 #  to query:  locate -d 
@@ -53,8 +53,13 @@ sleep 4
 # keep one copy
 if (-e $mdb) cp $mdb old
 
-# do the work
-updatedb -U "$u" -o $mdb
+# do the work, allow locate to view contents even if offline 
+updatedb -l 0 -U "$u" -o $mdb
 
 chmod 666 $mdb
 chown $USER $mdb
+
+# the new plocate format:
+# 00000000  00 70 6c 6f 63 61 74 65  01 00 00 00 cf fe 02 00  |.plocate........|
+# is different from the old locate format:
+# 

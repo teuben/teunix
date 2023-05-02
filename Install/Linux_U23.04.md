@@ -1,9 +1,11 @@
-# Linux  Kubuntu 22.04 LTS
+# Linux  Kubuntu 23.04
 
-*Ubuntu* Was released April 23, 2022. This is my writeup, which I often continue to change as new issues pop up.
+*Ubuntu* was released April 16(?), 2023. This is my writeup, which I often continue to change as new issues pop up.
 I installed from scratch, as I've often found this to be more stable. But the drawback is all your account
 and KDE settings are lost. The install was 7 minutes, but I swear to finetune everything to my personal likings,
-several hours are needed, somewhat helped by using this writeup. 
+several hours are needed, somewhat helped by using this writeup.
+
+This writeup is a clone of the one for 22.04 with minor modification where things have changed.
 
 Support for 22.04 LTS will be until April 2027.
 
@@ -29,7 +31,7 @@ What I don't like:
 
 ## Details
 
-Before we start, there are two ways to install U22:  fresh  or updating from U20. My
+Before we start, there are two ways to install U23:  fresh  or updating from a previous one. My
 experience has always been that the former is more stable. More than often weird things happen
 when you upgrade (most likely your dotfiles). I've heard this from multiple sources. YMMV. 
 
@@ -66,13 +68,10 @@ below 2000 packages, and this usually grows to about 4000 for me.
 
 ## My KDE Setup
 
-Before you do anything, get the PlasmaConfigSaver (but search for:
-Plasma Customization Saver, by *paju*) from the widget store. Whatever
-you do, this way you can save a configuration and easily come back to
-it, or build on top of that.  This should be standard part of KDE, but
-you will need to go and get them via "Get New Widgets" dialog. This
-widget can also import/export its settings, great if you want to share
-between computers.
+Before you do anything, get the PlasmaConfigSaver from the widget
+store. Whatever you do, this way you can save a configuration and
+easily come back to it, or build on top of that.  This should be
+standard part of KDE.
 
 I've only been using KDE since Ubuntu 18.04, and now beginning to like
 it, as more things now actually work the way I like it.  Before this I
@@ -82,8 +81,9 @@ were unstable.
 KDE can be confusing, for one, some settings appear in different
 places if you switch a version of KDE. Some of this work is painful if
 you have to repeat it many times, so it would be nice to have a
-programmatic way to do this for a virgin account. I don't have enough
-ex[erience yet how well PlasmaConfigSaver works between versions.
+programmatic way to do this for a virgin account. You can also copy
+the correct files in your ~/.config tree, but the key word is "correct".
+This appears to be a moving target.
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen.
@@ -93,6 +93,7 @@ not applied until you hit the Apply button on each screen.
       Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
+                                      Middle Button -> Paste -> Apply
 
   B. System Settings
 
@@ -104,12 +105,13 @@ not applied until you hit the Apply button on each screen.
             Window Decorations
               Theme
 	      Titlebar Buttons
-	        - put application menu top left (hit Apply after each action)
+?	        - put application menu top left (hit Apply after each action)
 
      (Workspace)
      1. Workspace Bahavior
        General Behavior
-           click behavior : single  [not there in U22]
+           clicking files or folders:
+	       select "Opens Them" (this will cause single click to enter directory or open file)
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
@@ -140,13 +142,13 @@ not applied until you hit the Apply button on each screen.
            Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
        Task Switcher
        KWin Scripts
-           +MinimizeAll (useful to have a button to minimize all windows)
+?           +MinimizeAll (useful to have a button to minimize all windows)
        Window Rules
        
      3. Shortcuts
        Global Shortcuts
            Kwin 
-               Switch One Desktop Down -> Ctrl-Alt-Down
+               Switch One Desktop Down -> Ctrl-Alt-Down (suggested is meta+ctrl+down)
                Switch One Desktop Left    Ctrl-Alt-Left
                Switch One Desktop Right   Ctrl-Alt-Right
                Switch One Desktop Up      Ctrl-Alt-Up
@@ -171,11 +173,13 @@ not applied until you hit the Apply button on each screen.
 	      
 
        Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
+             (this way   <Right-Alt> a ` gives à)
 
        Mouse - make sure scrolling is not inverted (or natural as some call it)
        Touchpad
           Tapping:  tap-to-click
 	  make sure not to invert scrolling
+?	  [middle mouse is missing???]
 
      4. Power Management
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
@@ -192,9 +196,10 @@ not applied until you hit the Apply button on each screen.
      - Icons-only Task Manager Settting -> Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
      - Icons-only Task Manager Settting -> Behavior     
-       Clicking grouped task:   Show windows side by side   [this is important]
+       Clicking grouped task:   Show large window previews   [this is different in U23]
+        
        Sort:                    "By Desktop"
-       Show only takss:    v    "from current activity"
+       Show only tasks:         "from current activity"
 
 TO BE RESOLVED:
 
@@ -272,7 +277,8 @@ DIGITAL CLOCK CONFIGURE
 
 DOLPHIN
      Settings -> Configure Dolphin -> Startup:
-          check    "make location bar editable"
+          uncheck  "make location bar editable"
+	  check    "show filter bar"
           uncheck  "Open new folders in tabs"
 	  check 2x "show full path..." 
 
@@ -280,7 +286,7 @@ DOLPHIN
          google drive now shows up - be sure to first install kio-gdrive and
          open a browser tab in google drive
 
-LATTE DOCK
+LATTE DOCK (not using it anymore)
 
      apt install latte-dock
      dock settings:
@@ -363,7 +369,10 @@ I don't like some of their default settings. It's not in color, and too few icon
       Edit -> Preferences -> Interface -> Theme             Dark  or Light
       Edit -> Preferences -> Interface -> Icon theme        Color or Legacy  (can change icon size)
       Edit -> Preferences -> Interface -> Toolbox           +show active bruch   -use tool groups
-                       
+
+## geeqie
+
+## gwenview
 
 ## firefox
 
