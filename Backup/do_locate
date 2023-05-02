@@ -5,7 +5,7 @@ set args=($*)
 
 set mdir = ~/teunix/Backup
 
-set all=(`echo mlocate.*.db`)
+set all=(`echo ?locate.*.db`)
 
 foreach a ($all)
    echo "# $a `stat -c %y $a`"
