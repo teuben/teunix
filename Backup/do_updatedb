@@ -40,7 +40,15 @@ if (! -d "$u") then
   exit 0
 endif
 
-set mdb = plocate.$d.db
+# @todo  use plocate or mlocate name, depending which one we have
+if (-e /usr/bin/plocate) then
+   set mdb = plocate.$d.db
+else if (-e /usr/bin/mlocate) then
+   set mdb = mlocate.$d.db
+else
+   echo Error: cannot fine plocate or mlocate
+   exit 1
+endif
 
 if (-e $mdb) then
   echo 4 secs to overwriting $mdb from disk root $u :
