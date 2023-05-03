@@ -9,4 +9,6 @@ touch $log
 chmod 600 $log
 cd ~/teunix/Backup
 ./do_locate $* | tee $log
+
 echo Copy of output in $log
+echo "number of lines: " `cat $log | grep -v ^\# | wc -l`
