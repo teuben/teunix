@@ -6,10 +6,10 @@ a page is dedicated to
 [Mac Setup](https://www.astrobetter.com/wiki/tiki-index.php?page=Setup+a+New+Mac+for+Astronomy),
 last updated in 2016 though.
 
-This page describes something similar for Ubuntu Linux.  This is *not* a tutorial
-for Linux
+This page describes something similar for Ubuntu Linux, and apart from package
+names, should translate to a lot of Linux distros, e.g. Redhet, Fedora. 
 
-If you have used Ubuntu for a while, this might be a nice checklist to see
+Even if you have used Ubuntu for a while, this might be a useful checklist to see
 if you have been missing out on some new cool tools.
 
 **As a reminder**: Linux is the catch-all name for a linux kernel
@@ -27,9 +27,9 @@ desktop to make it look like you're on a Mac or Windows. In one example
 of using the McMojave, my application menu for ds9 (and maybe other apps) was
 gone. Not a good move.
 
-[ Find out which version of Linux you have. You can either look at the
+To find out which version of Linux you have. You can either look at the
 file **/etc/issue**  or one of  **/etc/debian_version** or **/etc/redhat-release**. If that does
-not tell you enough, try the command **lsb_release  -a**. ]
+not tell you enough, try the command **lsb_release  -a**, if it was installed.
 
 [ Many of your desktop settings can be in a series of environment variables starting with XDG_,
 e.g. $XDG_CURRENT_DESKTOP
@@ -41,10 +41,10 @@ least a couple hours to complete the entire setup.  Most of the
 installation covered here is terminal based, that should be no surprise,
 though GUI alternatives exist.
 
-## 1. Window managers, and what not to cover
+## 1. Window managers, and what is not covered
 
 This is not the place to discuss your choice of a window manager (there
-are several good options), your daily mouse interactions will probably depend more
+are several good options). Your daily mouse interactions will probably depend more
 on this choice than on the choice of the Linux distribution. Equally
 so, I spend a considerable time of my online life in an editor (emacs
 for me), but I will not discuss the choice of editors either.
@@ -54,14 +54,15 @@ for me), but I will not discuss the choice of editors either.
       editor:             emacs, vim, kate, sublime, ...
 
 Since the apps are "all the same", the choice of distro or window
-manager should be hardly relevant.
-
+manager should be hardly relevant. Plus KDE on for example Ubuntu and Redhat
+should be very similar.
 
 ## 2. Packages
 
-This is now getting seriously complicated: apt, snap, flatpak,
+Package management is now getting seriously (over) complicated: apt, snap, flatpak,
 AppImage, npm, pypi (pip/conda), and even brew, are all ways to get
-new software on your system.
+new software on your system, not to mention the possibility of getting in each others
+way.
 
 ### Bootstrap your packages
 
@@ -69,10 +70,10 @@ Although we will discuss a few astronomy related packages, there are
 some very basic ones that most of us will need right away.
 Here is my favorite command to boostrap on Ubuntu:
 
-      sudo apt install  git emacs tcsh wget curl unzip openssh-server -y
+      sudo apt install git emacs tcsh wget curl unzip openssh-server -y
 
 you can get away without emacs if that's not your editor of choice, as **vim**
-always comes installed with any Linux distro.
+always comes installed with any Linux distro. **nano** is another popular option.
 
 A new release does not add a lot for system development (compilers etc.) either,
 so do this:
@@ -85,19 +86,19 @@ NOTE: U22 comes with gcc 11.2.
 
 It is useful to know a few shortcuts about your package
 manager. When you compile a program and find that it needs a file, you
-can use commands such as **locate**,
+can use linux commands such as **locate**,
 or **dpkg -S**, or **dpkg -L** to sherlock your way around the
 file system to solve your problem what's missing.
 Of course *google* and *stackoverflow* can
-also be very useful. Here are a few example commands:
-
+also be very useful online search tools. Here are a few example commands
+for debian based systems:
 
       dpkg --list                  list all packages you have
       dpkg -S FILE                 which package owns that FILE
       dpkg -L PACKAGE              list what files that PACKAGE has installed
       apt-get -f install           post-install if errors occur
       apt autoremove               cleanup old stuff not needed anymore
-      apt autoclean
+      apt autoclean                clean
 
 And here is how to create a list of all possible packages (there are over 60,000)
 and installed packages, good for *grep*-ing.
@@ -111,7 +112,7 @@ and installed packages, good for *grep*-ing.
       
 
 In addition, if you install **synaptic** and **aptitude**, you have the more classic debian style queries
-available
+available on ubuntu:
 
       sudo apt install synaptic aptitude -y
       aptitude search '~i !~M'
@@ -125,7 +126,7 @@ example,
 
 [Package Managers](https://itsfoss.com/package-manager) used to be tied to the Linux Distribution.
 Even on a Mac, you may like certain packages that are available via **brew**, as Xcode
-does not provide a typical astrocomputing environment. It turns out, *Homebrew* can
+does not provide a typical astro-computing environment. It turns out, *Homebrew* can
 also be installed on Linux: https://docs.brew.sh/Homebrew-on-Linux
 
 Another alternative methods to install applications not available through the regular
@@ -133,7 +134,8 @@ channels are *FlatPak* and *snap*, which we cover in more detail below,
 as well as the *AppImage* style of programs.
 
 By using such alternate app channels, you can effectively make the official
-version hidden, though can come with some restrictions.
+version hidden, though can come with some restrictions, giving the nature
+of sandboxing applications in such environments.
 
 ## 3. Astronomy Packages
 
