@@ -22,8 +22,9 @@
 # newly done April 29, 2022
 
 # super essential to build NEMO and uemacs
-sudo apt install git emacs tcsh wget curl unzip openssh-server -y
+sudo apt install git tcsh wget curl unzip openssh-server -y
 sudo apt install build-essential gfortran cmake pgplot5 xorg-dev m4 libncurses-dev -y
+sudo apt install emacs -y
 
 
 # update KDE to 5.25.beta
