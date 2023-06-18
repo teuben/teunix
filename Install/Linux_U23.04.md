@@ -121,12 +121,16 @@ not applied until you hit the Apply button on each screen.
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
            - BR:   Present windows all desktops
+           but now:
+           - TL:   Present windows current desktop
+           - TR:   Overview
+           - BR:   Desktop Grid
 	   - TM:   Krunner
                    https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 	   	   this will enable krunning to find tabs in mozilla
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
-           only after waking from sleep (remove the 15 minutes option)
+
        Virtual Desktop
            6 desktops in 2 rows              (navigation shortcuts come later)
 	       -> give the desktop unique names/numbers such that taskbar can identify
