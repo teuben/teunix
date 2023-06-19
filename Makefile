@@ -134,6 +134,12 @@ apt-cache1.list:
 dpkg0.list:
 	dpkg --list          > dpkg0.list
 
+
 ## sysadmin:   9. some private repo sysadmin stuff
 sysadmin:
 	git clone $(URL3)
+
+## hosts:     10. update your local /etc/hosts file (need root permission)
+hosts:
+	(cd Env; sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc)
+
