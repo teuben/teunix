@@ -28,6 +28,9 @@ install:
 	@echo Some typical install notes
 	@echo teunix=$(TEUNIX)
 
+## dpkg:       0. make a listing of the after installed packages
+dpkg: dpkg0.list
+
 ## apt:        1.  My personal list of generic ubuntu packages I need
 apt:
 	sudo apt install $(UP) -y
@@ -84,6 +87,7 @@ $(HOME)/rc:
 # See various comments in Env/README
 
 ## env:        4. Various environment patches
+##                env0:  make apt-cache0.list a dpkg0.list
 ##                env1:  aliases.sh for .bashrc
 ##                env2:  .emacs
 ##                env3:  .git
@@ -130,6 +134,12 @@ apt-cache1.list:
 dpkg0.list:
 	dpkg --list          > dpkg0.list
 
+
 ## sysadmin:   9. some private repo sysadmin stuff
 sysadmin:
 	git clone $(URL3)
+
+## hosts:     10. update your local /etc/hosts file (need root permission)
+hosts:
+	(cd Env; sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc)
+

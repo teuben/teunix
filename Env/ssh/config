@@ -156,3 +156,8 @@ Host cln_old
 Host cln
      ProxyCommand ssh lpad.astro.umass.edu nc cln.astro.umass.edu 22
 
+# kapteyn has miriad and teuben; See http://www.intra.astro.rug.nl/intranet/computing/index.html
+
+Host kapteyn
+     Hostname kapteyn.astro.rug.nl
+     User teuben

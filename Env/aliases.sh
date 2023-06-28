@@ -88,11 +88,20 @@ use() {
     if [ ! -f ~/.use ]; then
 	return
     fi
-    for f in $(cat ~/.use); do
-	if [ ! $2 ]; then
-	    grep -i $1 $f
+    for f in $(grep -v ^#  ~/.use); do
+	if [[ $f == *".gpg" ]]; then
+	    #  timeouts etc in ~/.gnupg/gpg-agent.conf
+	    if [ ! $2 ]; then
+		gpg -o - $f | grep -i $1
+	    else
+		gpg -o - $f | grep -i $1 | grep -i $2
+	    fi
 	else
-	    grep -i $1 $f | grep -i $2
+	    if [ ! $2 ]; then
+		grep -i $1 $f
+	    else
+		grep -i $1 $f | grep -i $2
+	    fi
 	fi
     done
 }
