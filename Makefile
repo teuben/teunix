@@ -20,8 +20,9 @@ URL3 = https://github.com/astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
 
 
-## help:       This Help
+## help:       This Help for given HOST
 help : Makefile
+	@echo "HOST: `hostname`"
 	@sed -n 's/^##//p' $<
 
 install:
@@ -31,14 +32,19 @@ install:
 ## dpkg:       0. make a listing of the after installed packages
 dpkg: dpkg0.list
 
-## apt:        1.  My personal list of generic ubuntu packages I need
+## apt:        1a.  My personal list of generic ubuntu packages I need
 apt:
 	sudo apt install $(UP) -y
 	@echo If you have KDE, also "make apt2"
 
-## apt2:       1k. My kubuntu addons (on regular ubuntu this would cause an avalanche)
+## apt2:       1b. My kubuntu addons (on regular ubuntu this would cause an avalanche)
 apt2:
 	sudo apt install $(UP2) -y
+
+## apt3:       1c. DIY list of URLs to download from
+apt3:
+	@echo 'This is a DIY list:'
+	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
 
 all: $(SHELLS)
@@ -143,3 +149,6 @@ sysadmin:
 hosts:
 	(cd Env; sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc)
 
+## pjt:       11. My super short reminder for my KDE desktop setup
+pjt:
+	cat README.pjt
