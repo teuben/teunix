@@ -102,10 +102,10 @@ not applied until you hit the Apply button on each screen.
      2. Plasma Style
      3. Application Style
           Application Style
-            Window Decorations
+          Window Decorations
               Theme
 	      Titlebar Buttons
-?	        - put application menu top left (hit Apply after each action)
+	        - put application menu top left (hit Apply after each action)
 
      (Workspace)
      1. Workspace Bahavior
@@ -555,3 +555,20 @@ and to put in your bash shell for all future sessions
 https://www.tecmint.com/best-remote-linux-desktop-sharing-software/
 
 
+# Experimenting with themes etc.
+
+default global theme is Kubuntu
+application style = breeze (alt: oxygen)
+plasma style = kubuntu (alt: Oxygen)
+window decoratiosn theme = breeze  (alt: plastik)
+
+# Summarizing
+
+My basic desktop:
+
+- KDE
+- focus follows mouse with auto-raise
+- single click opens files and directories
+- kdeconnect for the phone
+- krunner for desktop/browser searching
+- 3 x 2 virtual desktops, single activity
