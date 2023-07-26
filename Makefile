@@ -99,6 +99,7 @@ $(HOME)/rc:
 ##                env3:  .git
 ##                env4:  ~/bin to PATH
 ##                env5:  .ssh/config
+##
 env:   env0 env1 env2 env3 env4 env5 env6 env9 rc
 
 env0: apt-cache0.list apt-cache1.list dpkg0.list
@@ -152,3 +153,9 @@ hosts:
 ## pjt:       11. My super short reminder for my KDE desktop setup
 pjt:
 	cat README.pjt
+
+## diary:     12. My diary/yraid
+diary:
+	mkdir -p ~/Diary
+	(cd ~/Diary; git clone https://github.com/teuben/yraid)
+
