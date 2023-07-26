@@ -20,22 +20,31 @@ URL3 = https://github.com/astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
 
 
-## help:       This Help
+## help:       This Help for given HOST
 help : Makefile
+	@echo "HOST: `hostname`"
 	@sed -n 's/^##//p' $<
 
 install:
 	@echo Some typical install notes
 	@echo teunix=$(TEUNIX)
 
-## apt:        1.  My personal list of generic ubuntu packages I need
+## dpkg:       0. make a listing of the after installed packages
+dpkg: dpkg0.list
+
+## apt:        1a.  My personal list of generic ubuntu packages I need
 apt:
 	sudo apt install $(UP) -y
 	@echo If you have KDE, also "make apt2"
 
-## apt2:       1k. My kubuntu addons (on regular ubuntu this would cause an avalanche)
+## apt2:       1b. My kubuntu addons (on regular ubuntu this would cause an avalanche)
 apt2:
 	sudo apt install $(UP2) -y
+
+## apt3:       1c. DIY list of URLs to download from
+apt3:
+	@echo 'This is a DIY list:'
+	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
 
 all: $(SHELLS)
@@ -84,11 +93,13 @@ $(HOME)/rc:
 # See various comments in Env/README
 
 ## env:        4. Various environment patches
+##                env0:  make apt-cache0.list a dpkg0.list
 ##                env1:  aliases.sh for .bashrc
 ##                env2:  .emacs
 ##                env3:  .git
 ##                env4:  ~/bin to PATH
 ##                env5:  .ssh/config
+##
 env:   env0 env1 env2 env3 env4 env5 env6 env9 rc
 
 env0: apt-cache0.list apt-cache1.list dpkg0.list
@@ -130,6 +141,21 @@ apt-cache1.list:
 dpkg0.list:
 	dpkg --list          > dpkg0.list
 
+
 ## sysadmin:   9. some private repo sysadmin stuff
 sysadmin:
 	git clone $(URL3)
+
+## hosts:     10. update your local /etc/hosts file (need root permission)
+hosts:
+	(cd Env; sed -n '/HOSTSLOCAL/q;p' /etc/hosts > hosts; cat hosts.local >> hosts; sudo cp hosts /etc)
+
+## pjt:       11. My super short reminder for my KDE desktop setup
+pjt:
+	cat README.pjt
+
+## diary:     12. My diary/yraid
+diary:
+	mkdir -p ~/Diary
+	(cd ~/Diary; git clone https://github.com/teuben/yraid)
+

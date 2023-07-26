@@ -1,5 +1,5 @@
 The "blocate" command can be used like the "locate" command,
-except it loops over all mlocate.*.db files you have
+except it loops over all [m,p]locate.*.db files you have
 in this directory.
 
 To make new ones, use something like
@@ -9,6 +9,22 @@ To make new ones, use something like
   sudo ./do_updatedb u=/media/teuben/Backup                               d=1TB-2
   sudo ./do_updatedb u=/media/teuben/25d99aef-27ad-4747-802d-9ec0832c39bb d=1TB-3
 
+note that depending on the version of locate(1), it may be plocate or mlocate
+
 See also:
   https://trendoceans.com/locate-command-usage-in-linux/
+  https://github.com/Aetf/plocate
   ~/teunix/bin/blocate
+
+# [m,p]locate
+
+I tried the command
+
+     plocate-build  mlocate.home640.db  plocate.home640.db
+
+but this never worked for me, even when fixing the visiility flag....
+In the end, I kept a copy of the (old) mlocate program, so I can read the
+old mlocate*db files.
+
+plocate is the way to go, faster and better, so they say.
+

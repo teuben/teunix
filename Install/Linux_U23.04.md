@@ -7,7 +7,7 @@ several hours are needed, somewhat helped by using this writeup.
 
 This writeup is a clone of the one for 22.04 with minor modification where things have changed.
 
-Support for 22.04 LTS will be until April 2027.
+Support for 23.04 will 9 months?
 
 ## Summary
 
@@ -90,7 +90,7 @@ not applied until you hit the Apply button on each screen.
 
   A. Configure Desktop (right click on the Desktop background)
   
-      Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
+      Desktop & Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
                                       Middle Button -> Paste -> Apply
@@ -102,10 +102,10 @@ not applied until you hit the Apply button on each screen.
      2. Plasma Style
      3. Application Style
           Application Style
-            Window Decorations
+          Window Decorations
               Theme
 	      Titlebar Buttons
-?	        - put application menu top left (hit Apply after each action)
+	        - put application menu top left (hit Apply after each action)
 
      (Workspace)
      1. Workspace Bahavior
@@ -121,14 +121,21 @@ not applied until you hit the Apply button on each screen.
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
            - BR:   Present windows all desktops
+           but now:
+           - TL:   Present windows current desktop
+           - TR:   Overview
+           - BR:   Desktop Grid
 	   - TM:   Krunner
                    https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 	   	   this will enable krunning to find tabs in mozilla
+		   See also: https://community.kde.org/Plasma/Browser_Integration
+		   2023note:   
+		   
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
-           only after waking from sleep (remove the 15 minutes option)
+
        Virtual Desktop
-           6 desktops in 2 rows              (navigation shortcuts come later)
+           4 desktops in 2 rows              (navigation shortcuts come later)
 	       -> give the desktop unique names/numbers such that taskbar can identify
            navigation *do not* wrap around
            show on-screen display when switching
@@ -183,7 +190,7 @@ not applied until you hit the Apply button on each screen.
 
      4. Power Management
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-           -  Dim Screen    1-5 min (was default)
+           -  -Dim Screen    1-5 min (was default)
            -  Screen Energy Saving
            -  Suspend session
 
@@ -199,7 +206,7 @@ not applied until you hit the Apply button on each screen.
        Clicking grouped task:   Show large window previews   [this is different in U23]
         
        Sort:                    "By Desktop"
-       Show only tasks:         "from current activity"
+       Show only tasks:         (only) "from current activity"
 
 TO BE RESOLVED:
 
@@ -285,12 +292,6 @@ DOLPHIN
      Network
          google drive now shows up - be sure to first install kio-gdrive and
          open a browser tab in google drive
-
-LATTE DOCK (not using it anymore)
-
-     apt install latte-dock
-     dock settings:
-          - auto-hide   otherwise it's annoying, but I overlay it on the default task manager panel
 
 OLD STUFF....
 
@@ -473,7 +474,7 @@ there are some kubuntu applicable tips in there as well, YMMV
 - gwenview loads very slow (sometimes, not clear when/how)
 - darktable doesn't load after the first image? (seems similar to gwenview, but just doesn't recover) -
   running it via strace seems to work
-- k4dirstat crashes - has been filed - and seems to work now, few weeks later.
+- k4dirstat crashes - seems to work now, used to crash a lot
 - kazam -   Failed to correctly detect operating system, but seems to then record
 - System Settings -> Window Management -> KWin Scripts -> Get New Scripts    [BUG Hide Inactive Borders - reboot needed]
 - System Settings -> Regional Settings -> Language -> Add languages [BUG: flashing when clicked]
@@ -554,3 +555,20 @@ and to put in your bash shell for all future sessions
 https://www.tecmint.com/best-remote-linux-desktop-sharing-software/
 
 
+# Experimenting with themes etc.
+
+default global theme is Kubuntu
+application style = breeze (alt: oxygen)
+plasma style = kubuntu (alt: Oxygen)
+window decoratiosn theme = breeze  (alt: plastik)
+
+# Summarizing
+
+My basic desktop:
+
+- KDE
+- focus follows mouse with auto-raise
+- single click opens files and directories
+- kdeconnect for the phone
+- krunner for desktop/browser searching
+- 3 x 2 virtual desktops, single activity
