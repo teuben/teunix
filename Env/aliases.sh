@@ -8,6 +8,7 @@
 
 alias teunix='(cd ~/teunix; git pull)'
 alias diary='(cd ~/Diary/yraid; git pull)'
+alias yraid='(cd ~/Diary/yraid; make upd)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
 
 alias   up='cd ..'
