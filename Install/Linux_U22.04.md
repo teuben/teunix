@@ -109,7 +109,8 @@ not applied until you hit the Apply button on each screen.
      (Workspace)
      1. Workspace Bahavior
        General Behavior
-           click behavior : single  [not there in U22]
+	   select "Opens Them" (this will cause single click to enter directory or open file)
+	                        this is now the default
        Desktop Effect
            Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	   Magic Lamp (vs. squash)
