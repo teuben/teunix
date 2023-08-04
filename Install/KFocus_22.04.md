@@ -49,29 +49,30 @@ Here are the specs: https://kfocus.org/spec/spec-xe.html
 
 ## Unboxing
 
-Nothing special to report on the always exciting unboxing party. I made a few pics of the party,
+Nothing special to report on the always exciting "unboxing party". I even made a few pics of the party,
 but not really interesting to share here. Here are some impressions from the first hour:
 
-1. The laptop is light, but feels a bit cheap, certainly after using a Lenovo X1Y4, which feels more solid
+1. The laptop is light, but feels a bit cheap, certainly after using my old Lenovo X1Y4.
 
 2. ??? The motherboard is from **Insyde**. I had to hit ESC to get me in the UEFI setup (from grub), and this
-   got me into the BIOS>   There might be an easier way, maybe F11 or F12?   F1 seems to run the verbose
+   got me into the BIOS.   There might be an easier way, maybe F11 or F12?   F1 seems to run the verbose
    boot mode? The system is announced at **NV4xPZ** (e.g. on geekbench)
 
-3. ??? The SSD is a 970 EVO plus. The 2nd slot is used by the WiFi, and it short. Obvioujs question: the posted
-   4GB max disksize, is that for one slot, or does this imply I can only add 2GB in the current 80mm slot?
+3. ??? The SSD is a 970 EVO plus. The 2nd slot is used by the WiFi, and it short. Question: the posted
+   4TB max disksize, is that for one slot, or does this imply I can only add 2GB in the current 80mm slot?
+   SDD is 2000 MB/sec (as measured with hdparm)
 
 2. ??? I did have a strange crash after I set up my account, but I guess nothing important was missed, as the
-system booted fine after this.
+   system booted fine after this.
 
-3. SDD is 2000 MB/sec (hdparm)
+4. chrome is the default browser, plasma integration works, sync works, this is nice.  I was more used to firefox,
+   so this will be a battle.
 
-4. chrome as default browser, plasma integration works, sync works, this is nice.
-
-5. ??? wondering if the USB I got from them the same as the Kfocus ISO online?
+5. ??? wondering if the USB I got from them the same as the Kfocus ISO online?   I didn't have to use the USB key
+   since the system was pre-installed.
 
 6. Was nice to see the extra packages being installed (DVD software, MS Fonts, virtualbox etc.) - but it's an option
-   in one of the 10 steps you start with when setting it up.
+   in one of the 10 steps you start with when setting it up. Most of the 10 steps I did wind up skipping.
 
 7. It took exactly 30 minutes from turning the machine on, until I had my own software and preferences
    installed (teunix) and ran the nemobench5. That's impressive. OF course many hours of tuning and discovery
@@ -96,7 +97,7 @@ I do on day one. A few more will come in due time. The most important ones for m
 8. keyboard: add compose as Right-Alt, but I keep forgetting how to use it
 9. widgets:  I do add a few, but you need to Meta-D to view them, as my windows always block them.
 
-A few new things I learned from the every so helpfull and responsive kfocus staff
+A few new things I learned from the ever so helpfull and responsive kfocus staff
 
 1. The triple finger tap the same as middle-mouse pasting the selected buffer
 
@@ -104,16 +105,18 @@ A few new things I learned from the every so helpfull and responsive kfocus staf
 ## Odd Hardware Things
 
 
-1. my M720 Triathlon bluetooth mouse keeps disconnecting, and although the mouse moves on the screen,
+1. my M720 Triathlon bluetooth mouse keeps disconnecting, and although the mouse can still move on the screen,
    it cannot do anthing  like copy/paste, or pick up and move a window etc.  Solution suggested by
-   the Kfocus people was to switch to a virtual console (VC)  and back to X. THat worked.
-   In case you didn't know the trick:   ctrl-alt-F2 and then ctrl-alt-F1.
+   the Kfocus people was to switch to a virtual console (VC)  and back to X. That worked.
+   In case you didn't know the trick:   ctrl-alt-F2 and then ctrl-alt-F1.  I have some suggestions
+   to work on solving this.  TDB.
    
-2. I got the laptop with a nice embroiled logo, but it's not well done, can collect dust?
-   Nice addition is that there is *nothing* on this laptop that says Kfocus,
+2. I got the laptop with a nice embroiled logo, but it doesn't seem well done, can collect dust
+   underneath the edges that lift up a bit. Or is this normal?
+   Nice addition is that there is *nothing* on this laptop. 
    even the battery is labeled "Vendor: Notebook" with "Serial Number: 0001" and "Model: BAT"
    
-3. The screen opens to about 130 degrees, not the full 180. My lifestule is that I regularly
+3. The screen opens to about 130 degrees, not the full 180. My lifestyle is that I regularly
    lie down, knee up, and the laptop resting between stomach and knee. This often results in a
    partially collapsing screen. My xps13 is the same. Two other laptops open to 180, and don't
    suffer from this. Also the hinges are not stiff enough. That could also prevent the collapse.
@@ -121,8 +124,9 @@ A few new things I learned from the every so helpfull and responsive kfocus staf
 4. After the first boot the laptop worked fine for 6 days, but then the bluetoooth failed, and a
    reboot was needed.
    
-5. The camera was absent. No sure if I played too much with *Webcamoid*, or it was like with the
-   bluetooth. A reboot did the job.  Need more days of stability to say what's going on here.
+5. The next day the camera was absent. No sure if I played too much with *Webcamoid*, or it was like with the
+   bluetooth. A reboot did the job.  Need more days of stability to say what's going on here, same with
+   previous item. Nothing to worry unless it keeps on happening.
    
 6. ??? The battery is formally designed for 51.53Wh (though the label inside when I had the cover
    off said it was 53.35 Wh) but when the laptop arrived it was 56.42, almost
@@ -130,16 +134,17 @@ A few new things I learned from the every so helpfull and responsive kfocus staf
    not continuing, or the battery might be at 50% in 10 weeks! I will need to monitor this.
    
 7. ??? While on zoom, the colors in my image seem to vary a lot between red-ish tint and blue-ish tint.
-   Is that auto-coloring, or in the hardware.  None of my other laptops with zoom do this. And I've
-   used 4.
+   Is that auto-coloring, or a problem in the hardware?  None of my other laptops with zoom do this. And I've
+   used 4 different laptops and never change the defaults.
 
 8. The touchpad is very sensitive. Often when I type, it must accidentally hit the touchpad and
-   because I used focus follows mouse, it can switch window!
+   because I used focus follows mouse, it can switch window!  Tried setting trackpad sensitivity,
+   no good solution yet.
    
-9. Imprints of keyboard on screen. Need that cover and/or cleaning thing
+9. Imprints of keyboard on screen. Need that cover and/or cleaning thing. Very normal for laptops.
 
 10. ??? SD card was advertised as '6 in 1'  but it says '3 in 1' on the placeholder insert.
-    This insert is actually very hard to get out. The SD card sticks about half out of the
+    That insert is actually very hard to get out. The SD card sticks about half out of the
     laptop, so be careful with walking around with it.
     Website says: 1 x 6-in-1 Card Reader (MMC / RSMMC / SD / mini SD / SDHC / SDXC)
 
@@ -148,13 +153,13 @@ A few new things I learned from the every so helpfull and responsive kfocus staf
 
 12. ??? Ethernet port does not have the comforting green/orange lights to tell me what speed it's at
 
-13. ??? Sound is not very loud. but can use the *Raise Maximum Volume* on the *Audio Volume* widget
+13. ??? Sound is not very loud. but can use the *Raise Maximum Volume* on the *Audio Volume* widget 
 
 14. ??? The table on their website says there's a "Mini Display-Port 1.4", but I didn't see it. Just HDMI.
     Or is the the *USB-C with DisplayPort 1.4* on the right side, and you need an adaptor?
 
 15. Twice now I lifted the laptop by the base, and didn't touch the touchpad or mouse, and it decided
-    to logout. this was super annpying, as I lost my shell work. apps come back , even emacs remembers
+    to logout. this was super annpying, as I lost my shell sessions. apps come back , even emacs remembers
     it's sessions, but Konsole cannot.
 
 16. ??? The FlexiCharger option in the BIOS was disabled. It was suggested on the web site as a good thing,
@@ -168,7 +173,7 @@ A few new things I learned from the every so helpfull and responsive kfocus staf
 
 18. I swear I've now closed the lid a few times, and it didn't go to sleep. Lost some battery juice over it.
     This is a common experience with linux though. Sometimes it works, sometimes it doesnt.  Even the "sleep"
-    button doesn't seem to work all the time.
+    button doesn't seem to work all the time.  If it's in sleep, it seems to use about 2W. Seems a bit high.
 
 ## Odd Software things
 
