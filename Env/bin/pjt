@@ -54,6 +54,12 @@ else
     echo "OS_release:  $os (unknown)"
 fi
 
+if [ ! -z $(command -v module) ]; then
+    module list
+else
+    echo "module not available"
+fi
+
 
 if [ "$1" == dev ]; then
     echo "----------------------------------------------------------"
