@@ -1,6 +1,6 @@
 # Linux Kfocus XE Gen 2 w/ Kubuntu 22.04 LTS
 
-*Draft version 8-aug-2023*
+*Draft version 6-oct-2023*
 
 I got this pre-installed linux laptop in July 2023 from
 https://kfocus.org - though a few weeks before I had installed their
@@ -41,11 +41,24 @@ I had decided to modify two items on their default configuration options, which 
    * No TPM is used, ubuntu uses **luks**. See https://kfocus.org/wf/recovery.html#bkm_use_chroot_to
    * It should be noted that ubuntu's *vault* uses CryFS, EncFS or gocryptfs.
 2. Add a swap partition, 4GB. The system also comes with the usual (small, 512MB) EFI partition.
-3. ??? the website seems to claim one could configure the right side USB-C for power too ???
+3. Some website seems to claim one could configure the right side USB-C for power too. Not true, but you
+   can convert barrel (5.5x2.5mm) to usb-C with an $8 adaptor.
+   
 
 
 Here are the specs: https://kfocus.org/spec/spec-xe.html
 
+## Summary:
+
+After a few months of use, what's the bottom line for me?
+
+1. Super annoying that under USB-C power (even if it delivers 90W) i can only get about 70% of the performance
+   from being on 90W barrel charger.
+
+2. The speakers suck. For zoom I need to hook up something external.
+
+3. The hinges on the display are not stiff enough, they often collapse on me when doing comfy computing.
+   It doesn't help that the hinges only open to 130 deg, not 180.
 
 ## Unboxing
 
@@ -133,7 +146,9 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
 6. ??? The battery is formally designed for 51.53Wh (though the label inside when I had the cover
    off said it was 53.35 Wh) but when the laptop arrived it was 56.42, almost
    10% more. On day 5 the Last Full Charge (LFC) was 54.20.  On day 8 at 54.07.
-   I will need to monitor this.
+   I will need to monitor this, as you do expect to see a slow  decline. Here are some Last Full Charges:
+   1. Aug 1:  56.42
+   2. Sep 27:  52.29
    
 7. ??? While on zoom, the colors in my image seem to vary a lot between red-ish tint and blue-ish tint.
    Is that auto-coloring, or a problem in the hardware?  None of my other laptops with zoom do this. And I've
@@ -184,10 +199,14 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
 20. The 90W barrel charger takes XX hours to charge (seems long), and a 90W charger on the usb-C port takes
     even longer (XX hours). Compared to some other common laptops I have, this seems long/slow.
     Perhaps a good solution is a barrel-USB converter, so normal USB-c power can be used
-    chicony  A16-090P1A    19v-4.74A 90W      Tip: 5.5 x 2.5mm    5.5x3.0mm
+    chicony  A16-090P1A    19v-4.74A 90W      Tip: 5.5 x 2.5mm 
     I got a "FARSENSE USB C to DC Adapter,Barrel PD Trigger Cable(5ft) with 10 Connector Tips",
     which although on a 65W charger gives me full power, it has a voltage button which easily drops to 5.
     On a 100W charger this didn't seem to happen
+    Another even cheaper and more compact option is dedicated
+    *cablecc Type C USB-C Female Input to DC 5.5x2.5mm Power PD Charge Cable fit for Laptop 18-20V *
+    or this single *chenyang USB C to DC 20V 5.5x2.5mm PD 65W Emulator Trigger 90 Degree Angled Converter Adapter *
+    Interesting to note that a 65W power with converter in the barrel still gave me full power.
 
 ## Odd Software things
 
