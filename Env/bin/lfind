@@ -1,12 +1,15 @@
-#! /bin/csh -f
-#    find source code in the local tree and below
+#! /usr/bin/env bash
 #
-if ($#argv == 0) then
+#    find source code by filename in the local tree and below
+#
+
+
+if [ $# -eq 0 ]; then
   echo "Usage: $0 arg1 [arg2  ...]"
   echo 'Search for files *arg1* from your current working directory down'
   exit 1
-endif
+fi
 
-foreach a ($*)
+for a in $*; do
   find . -name \*$a\* -print
-end
+done
