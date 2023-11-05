@@ -40,6 +40,9 @@ alias untar='tar xvf'
 alias detar='tar xvf'
 # nemoinp is a NEMO command line calculator
 alias    ni='nemoinp'
+# micro-emacs needs to capture ^S-^Q flow, so disable it in terminal
+alias mem='stty -ixon; mem'
+
 
 sleepers() {
     if [ ! $1 ]; then
