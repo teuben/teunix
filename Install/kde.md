@@ -31,10 +31,10 @@ Typically my desktop has:
 ?	  [middle mouse is missing???]
 
 4. Power Management
-        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
+        Energy Saving : 
            -  Dim Screen    1-5 min (was default)
-           -  Screen Energy Saving (switch off after 
-           -  Suspend session:  check this off (i.e. do it manually)
+           -  Screen Energy Saving (switch off after 20 mins)
+           -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
 5. - Icons-only Task Manager Settting -> Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
