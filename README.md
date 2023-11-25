@@ -33,5 +33,5 @@ My current favorite tools are:
 * window manager: KDE/Plasma
 * linux distro: Kubuntu
 * python: anaconda3
-* git: mostly via github.com
+* git: mostly via github.com, but also 'gh'
 
