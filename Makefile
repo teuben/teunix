@@ -13,8 +13,9 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 
 UP2 = plasma-widgets-addons kio-gdrive
 
-# fedora packages (needs
-FP = pgplot pgplot-devel libXext-devel
+# fedora packages
+FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel
+FP2 = pgplot pgplot-devel 
 
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
@@ -56,9 +57,13 @@ dnf0:
 	sudo dnf upgrade --refresh
 	sudo dnf groupupdate core
 
+## dnf:       basic packages
 dnf:
 	sudo dnf install $(FP) -y
 
+## dnf1:      additional packages
+dnf1:
+	sudo dnf install $(FP1) -y
 
 all: $(SHELLS)
 
