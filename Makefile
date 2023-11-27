@@ -13,6 +13,9 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 
 UP2 = plasma-widgets-addons kio-gdrive
 
+# fedora packages (needs
+FP = pgplot pgplot-devel libXext-devel
+
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
 URL2 = https://github.com/torvalds/uemacs
@@ -46,12 +49,15 @@ apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
-dnf1:
+## dnf0:       bootstrap RPMFUSION (takes a while)
+dnf0:
 	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$$(rpm -E %fedora).noarch.rpm
 	sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$$(rpm -E %fedora).noarch.rpm
 	sudo dnf upgrade --refresh
 	sudo dnf groupupdate core
 
+dnf:
+	sudo dnf install $(FP) -y
 
 
 all: $(SHELLS)
