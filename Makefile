@@ -46,6 +46,13 @@ apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
+dnf1:
+	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf upgrade --refresh
+	sudo dnf groupupdate core
+
+
 
 all: $(SHELLS)
 
