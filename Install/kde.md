@@ -13,6 +13,8 @@ Typically my desktop has:
 
 ## My KDE Setup (short version)
 
+This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
+
 1. Workspace Bahavior
        General Behavior
            clicking files or folders:
@@ -32,9 +34,12 @@ Typically my desktop has:
 
 4. Power Management
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-           -  Dim Screen    1-5 min (was default)
+wswww           -  Dim Screen    1-5 min (was default)
            -  Screen Energy Saving (switch off after 
            -  Suspend session:  check this off (i.e. do it manually)
+
+
+	Workspace Bahavior -> Screen Locking
 
 5. - Icons-only Task Manager Settting -> Appearance
 	  ?  i don't understand what max.rows and the checked item do ??
