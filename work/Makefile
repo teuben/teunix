@@ -1,0 +1,28 @@
+# stuff I work on from time to time
+
+URL1 = https://github.com/teuben/nemo
+URL2 = https://github.com/teuben/miriad
+URL3 = https://github.com/astroumd/lmtoy
+URL4 = https://github.com/GreenbankObservatory/dysh
+
+ALL = nemo miriad lmtoy dysh
+
+## help:       This Help for given HOST
+help : Makefile
+	@echo "HOST: `hostname`"
+	@sed -n 's/^##//p' $<
+
+all:	$(ALL)
+
+nemo:
+	git clone $(URL1)
+
+miriad:
+	git clone $(URL2)
+
+lmtoy:
+	git clone $(URL3)
+
+dysh:
+	git clone $(URL4)
+
