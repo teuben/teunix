@@ -7,12 +7,17 @@ URL4 = https://github.com/GreenbankObservatory/dysh
 
 ALL = nemo miriad lmtoy dysh
 
-## help:       This Help for given HOST
+## help:       Show help
 help : Makefile
-	@echo "HOST: `hostname`"
+	@echo "ALL: $(ALL)"
 	@sed -n 's/^##//p' $<
 
+## all:        Download ALL git repos I work on
 all:	$(ALL)
+
+## clean:      Remote ALL git repos here
+clean:
+	rm -rf $(ALL)
 
 nemo:
 	git clone $(URL1)
