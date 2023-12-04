@@ -4,7 +4,7 @@
 	email = teuben@gmail.com
 	name = Peter Teuben
 [credential]
-	helper = cache --timeout 500000
+	helper = cache --timeout 5000000
 [core]
 	editor = mem
 [diff]

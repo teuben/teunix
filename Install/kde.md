@@ -33,10 +33,17 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
 ?	  [middle mouse is missing???]
 
 4. Power Management
+
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-wswww           -  Dim Screen    1-5 min (was default)
+           -  Dim Screen    1-5 min (was default)
            -  Screen Energy Saving (switch off after 
            -  Suspend session:  check this off (i.e. do it manually)
+
+        Energy Saving : 
+           -  Dim Screen    1-5 min (was default)
+           -  Screen Energy Saving (switch off after 20 mins)
+           -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
+>>>>>>> ba77f3591efd33ac782803792ab302a0c5d75d86
 
 
 	Workspace Bahavior -> Screen Locking
