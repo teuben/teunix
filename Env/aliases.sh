@@ -8,6 +8,7 @@
 
 alias teunix='(cd ~/teunix; git pull)'
 alias diary='(cd ~/Diary/yraid; git pull)'
+alias yraid='(cd ~/Diary/yraid; make upd)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
 
 alias   up='cd ..'
@@ -39,6 +40,9 @@ alias untar='tar xvf'
 alias detar='tar xvf'
 # nemoinp is a NEMO command line calculator
 alias    ni='nemoinp'
+# micro-emacs needs to capture ^S-^Q flow, so disable it in terminal
+alias mem='stty -ixon; mem'
+
 
 sleepers() {
     if [ ! $1 ]; then

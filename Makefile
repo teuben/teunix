@@ -9,9 +9,14 @@ SHELLS = csh tcsh bash zsh
 UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
-     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf
+     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
+	python-is-python3
 
 UP2 = plasma-widgets-addons kio-gdrive
+
+# fedora packages
+FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel
+FP2 = pgplot pgplot-devel 
 
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
@@ -46,6 +51,20 @@ apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
+## dnf0:       bootstrap RPMFUSION (takes a while)
+dnf0:
+	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf upgrade --refresh
+	sudo dnf groupupdate core
+
+## dnf:       basic packages
+dnf:
+	sudo dnf install $(FP) -y
+
+## dnf1:      additional packages
+dnf1:
+	sudo dnf install $(FP1) -y
 
 all: $(SHELLS)
 

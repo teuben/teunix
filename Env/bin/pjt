@@ -1,0 +1,71 @@
+#! /usr/bin/env bash
+#
+#    report my typical environment
+#
+
+os=$(uname -s)
+
+gitbv() {
+    _branch=$(cd $1;git branch --show-current)
+    _counter=$(cd $1;git rev-list --count HEAD)
+    _lastdate=$(cd $1;git log -1 --format="%at" | xargs -I{} date -d @{} +%Y/%m/%d_%H:%M:%S)
+    _branch="$(printf %-10s $_branch)"
+    _counter="$(printf %-10s $_counter)"
+    
+}
+
+echo "python:      $(which python)  - $(python --version)"
+if [ ! -z $PYTHONPATH ]; then
+    echo "PYTHONPATH:  $PYTHONPATH"
+fi
+
+
+if [ ! -z $LMTOY ]; then
+    _version=$(cat $LMTOY/VERSION)
+    gitbv $LMTOY
+    echo "LMTOY:       $LMTOY  - Version:$_version"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"
+
+fi
+
+if [ ! -z $NEMO ]; then
+    gitbv $NEMO
+    echo "NEMO:        $NEMO  - $(cat $NEMO/VERSION)"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
+
+if [ ! -z $MIR ]; then
+    gitbv $MIR
+    echo "MIR:         $MIR"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
+
+if [ ! -z $CASA_ROOT ]; then
+    echo "CASA_ROOT:   $CASA_ROOT"
+fi
+
+
+
+if [ $os == Linux ]; then
+    echo "OS_release:  $os $(lsb_release  -d)"
+elif [ $os == Darwin ]; then
+    echo "OS_release:  $os $(sw_vers -productVersion)"
+else
+    echo "OS_release:  $os (unknown)"
+fi
+
+if [ ! -z $(command -v module) ]; then
+    module list
+else
+    echo "module not available"
+fi
+
+
+if [ "$1" == dev ]; then
+    echo "----------------------------------------------------------"
+    echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+    echo "PKG_CONFIG_PATH: $PKG_CONFIG_PATH"
+    echo "PGPLOT_DIR:      $PGPLOT_DIR"
+    echo "----------------------------------------------------------"
+fi
+
