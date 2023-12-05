@@ -9,7 +9,8 @@ SHELLS = csh tcsh bash zsh
 UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
-     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf
+     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
+	python-is-python3
 
 UP2 = plasma-widgets-addons kio-gdrive
 
