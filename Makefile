@@ -16,7 +16,7 @@ UP2 = plasma-widgets-addons kio-gdrive
 
 # fedora packages
 FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel
-FP2 = pgplot pgplot-devel 
+FP1 = pgplot pgplot-devel 
 
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
