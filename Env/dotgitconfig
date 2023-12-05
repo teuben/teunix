@@ -3,7 +3,6 @@
 [user]
 	email = teuben@gmail.com
 	name = Peter Teuben
-	token = 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 
 [credential]
 	helper = cache --timeout 5000000
 [core]
