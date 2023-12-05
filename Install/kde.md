@@ -13,6 +13,8 @@ Typically my desktop has:
 
 ## My KDE Setup (short version)
 
+This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
+
 1. Workspace Bahavior
        General Behavior
            clicking files or folders:
@@ -30,12 +32,19 @@ Typically my desktop has:
      - make sure not to invert scrolling
      -  ?	  [middle mouse is missing???]
 
-4. Power Management / Screen Lock
-   -  Energy Saving : 
+4. Power Management
+
+        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
+           -  Dim Screen    1-5 min (was default)
+           -  Screen Energy Saving (switch off after 
+           -  Suspend session:  check this off (i.e. do it manually)
+
+        Energy Saving : 
            -  Dim Screen    1-5 min (was default)
            -  Screen Energy Saving (switch off after 20 mins)
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
-   - Workspace Behavior - Lock "after waking from sleep"
+
+	Workspace Bahavior -> Screen Locking
 
 5. Configure Icons-only Task Manager Settting
    - Appearance
