@@ -4,9 +4,10 @@
 	email = teuben@gmail.com
 	name = Peter Teuben
 [credential]
-	helper = cache --timeout 600000
+	helper = cache --timeout 6000000
 [core]
 	editor = mem
+	ui = auto
 [diff]
 	tool = meld
 [merge]
@@ -26,8 +27,11 @@
 	q  = status -uno
 	i  = config --list
 	l  = log --name-only
+	c  = rev-list --count HEAD
 	ci = commit
-	co = checkout
+	# co = checkout
+	# checkout will loose your modified work..... by always stashing it, there's some hope for recovery
+	co = !sh -c 'git stash; git stash apply; git checkout "$@"'
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
