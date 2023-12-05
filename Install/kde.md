@@ -8,7 +8,7 @@ Typically my desktop has:
 - single click opens files and directories
 - kdeconnect for the phone
 - krunner for desktop/browser searching
-- 3 x 2 virtual desktops, single activity
+- 3H x 2V virtual desktops, single activity
 
 
 ## My KDE Setup (short version)
@@ -27,10 +27,10 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
            Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
 
 3. Input Devices
-   Touchpad
-          Tapping:  tap-to-click
-	  make sure not to invert scrolling
-?	  [middle mouse is missing???]
+   - Touchpad
+     - Tapping:  tap-to-click
+     - make sure not to invert scrolling
+     -  ?	  [middle mouse is missing???]
 
 4. Power Management
 
@@ -44,16 +44,15 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
            -  Screen Energy Saving (switch off after 20 mins)
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
-
 	Workspace Bahavior -> Screen Locking
 
-5. - Icons-only Task Manager Settting -> Appearance
-	  ?  i don't understand what max.rows and the checked item do ??
-   - Icons-only Task Manager Settting -> Behavior     
-       Clicking grouped task:   Show large window previews   [this is different in U23]
-        
-       Sort:                    "By Desktop"
-       Show only tasks:         (only) "from current activity"
+5. Configure Icons-only Task Manager Settting
+   - Appearance
+     i don't understand what max.rows and the checked item do ??
+   - Behavior     
+       - Clicking grouped task:   Show large window previews   [this is different in U23]
+       - Sort:                    "By Desktop"
+       - Show only tasks:         (only) "from current activity"
 
 6. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds, 24-Hour Time display, Custom Date format "ddd MMM d"
