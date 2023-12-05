@@ -3,7 +3,6 @@
 [user]
 	email = teuben@gmail.com
 	name = Peter Teuben
-	token = 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 
 [credential]
 	helper = cache --timeout 5000000
 [core]
@@ -30,9 +29,9 @@
 	l  = log --name-only
 	c  = rev-list --count HEAD
 	ci = commit
-	# co = checkout
+	co = checkout
 	# checkout will loose your modified work..... by always stashing it, there's some hope for recovery
-	co = !sh -c 'git stash; git stash apply; git checkout "$@"'
+	# co = !sh -c 'git stash; git stash apply; git checkout "$@"'
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
