@@ -1,6 +1,6 @@
 # Linux Kfocus XE Gen 2 w/ Kubuntu 22.04 LTS
 
-*Draft version 6-oct-2023*
+*Draft version 9-dec-2023*
 
 I got this pre-installed linux laptop in July 2023 from
 https://kfocus.org - though a few weeks before I had installed their
@@ -33,16 +33,19 @@ like 3 lbs and offer better battery life.
    Dell also uses the Ctrl-Fn order. Apple has another key to the left of Ctrl-Fn. Even more annoying.
 
 ... bottom line, it became the XE (Gen 2).  Decided to start with 16GB and a rather small 256GB disk. If I like it,
-both will no doubt grow. And Kfocus makes it easy to do that yourself. 
+both will no doubt grow. And Kfocus makes it easy to do that yourself!
 
 I had decided to modify two items on their default configuration options, which they happily do for you:
 
 1. Did not add encryption. Until I understand how to read this disk on another laptop.
    * No TPM is used, ubuntu uses **luks**. See https://kfocus.org/wf/recovery.html#bkm_use_chroot_to
    * It should be noted that ubuntu's *vault* uses CryFS, EncFS or gocryptfs.
-2. Add a swap partition, 4GB. The system also comes with the usual (small, 512MB) EFI partition.
+2. Add a swap partition, 4GB. The system also comes with the usual (small, 512MB) EFI partition. Later
+   I found at that Firefox is a nasty memory grabber, and I often got into swapping wars where the machine
+   became unresponsive.
 3. Some website seems to claim one could configure the right side USB-C for power too. Not true, but you
-   can convert barrel (5.5x2.5mm) to usb-C with an $8 adaptor.
+   can convert barrel (5.5x2.5mm) to usb-C with an $8 adaptor. Even more odd, my 65W and the barrel adaptor
+   still gave me full compute power (see below)
    
 
 
@@ -53,20 +56,27 @@ Here are the specs: https://kfocus.org/spec/spec-xe.html
 After a few months of use, what's the bottom line for me?
 
 1. Super annoying that under USB-C power (even if it delivers 90W) i can only get about 70% of the performance
-   from being on 90W barrel charger.
+   from being on 90W barrel charger. Oddly enough a 65W charger and the barrel converter gives me full performance
+   at 4.7GHz
 
-2. The speakers suck. For zoom I need to hook up something external.
+2. The internal speakers suck. For zoom I need to hook up something external. Watching movies is also a pain.
 
 3. The hinges on the display are not stiff enough, they often collapse on me when doing comfy computing.
    It doesn't help that the hinges only open to 130 deg, not 180.
 
+
 4. The sleep mode doesn't always work, overnight the battery is empty. Only positive point to note here
    is that unlike for example Dell and Thinkpad, it will boot up right away. My others need to be on
    charge for 10 or 20 minutes as they seem to want some minimum charge before even booting.
-   I have a thinkpad on kfocus as well, it seems to sleep fine.
-
+   I have a thinkpad on kfocus as well, it seems to sleep fine and really use very few watts. On one
+   case K2 was using 7W during a sleep.
+      
 5. Several times now my desktop preferences (e.g. hot corners, power savings setting) have been reset. Did
-   this happen during an upgrade.   I have a thinkpad laptop on the kfocus as well, same issue.
+   this happen during a package update?   I have a thinkpad laptop on the kfocus as well, same issue. Never
+   seen this on regular kubuntu.
+
+6. There are still issues with the mouse or desktop. I then need to use ctrl-alt-F2 and F1 to get back to plasma.
+
 
 ## Unboxing
 
@@ -78,19 +88,19 @@ but not really interesting to share here. Here are some impressions from the fir
 2. The motherboard is from ..., the BIOS from **Insyde**. I had to hit ESC to get me in the UEFI setup (from grub), and this
    got me into the BIOS.   F2 gets you directly into the BIOS setup.  F1 seems to run the verbose
    boot mode? The system is announced at **NV4xPZ** (e.g. on geekbench)
-   BTW, the BIOS has very few options.
+   BTW, the BIOS has very few options, like very few.
 
 3. The SSD is a 970 EVO plus. The 2nd slot is used by the WiFi, and is the usual short one. The maximum disk size is whatever
    your hardware can fit on one slot.  Might have to be single sided though ???
-   SDD is 2000 MB/sec (as measured with hdparm) - website claims it should be 3500 MB/sec
+   SDD is 2000 MB/sec (as measured with hdparm) - website claims it should be 3500 MB/sec, hmmm.
 
 3. I did have a strange crash after I set up my account, but I guess nothing important was missed, as the
    system booted fine after this.
 
 4. Chrome is the default browser, plasma integration works, sync works, this is nice.  I was more used to firefox,
-   so this will be a battle. firefox default is a snap, which limits the kruler integration.
+   so this will be a battle. firefox default is a snap, which also limits the kruler integration.
 
-5. The complimentary USB is empty, better (ISO) media can be found online at https://kfocus.org/try
+5. The complimentary USB key is empty, better (ISO) media can be found online at https://kfocus.org/try
 
 6. Was nice to see the extra packages being installed (DVD software, MS Fonts, virtualbox etc.) - but it's an option
    in one of the 10 steps you start with when setting it up. Most of the 10 steps I did wind up skipping.
@@ -105,11 +115,11 @@ The next thing is tuning the desktop to my favs.
 
 ## Desktop
 
-I had already established my preferences on KDE, so a few common modifications were needed
+I had already established my own preferences on KDE, so a few common modifications were needed
 I do on day one. A few more will come in due time. The most important ones for me are:
 
 1. focus follows mouse, and auto-raise. for me the most important one. Such a time saver!
-2. virtual in a 2x2 layout (their tiny 4x1 icons on the task manager are really tiny)
+2. virtual in a 2x2 layout (their tiny 4x1 icons on the task manager are really too tiny)
 3. clicking on files opens them (the default selects them)
 4. add a few candy desktop effects (fall apart, translucency, wobbly windows, magic lamp, overview)
 5. screen edges: TL=Desktop Grid (TR and BR are already good for me)
@@ -122,7 +132,6 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
 
 1. The triple finger tap the same as middle-mouse pasting the selected buffer. Later I switched touchpad software
    and made two finger tap the middle-mouse (pasting) action.
-
 
 
 ## Odd Hardware Things
@@ -145,7 +154,7 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
    suffer from this. Also the hinges are not stiff enough. That could also prevent the collapse.
    
 4. After the first boot the laptop worked fine for 6 days, but then the bluetoooth failed, and a
-   reboot was needed.
+   reboot was needed. Hasn't happened since.
    
 5. The next day the camera was absent. No sure if I played too much with *Webcamoid*, or it was like with the
    bluetooth. A reboot did the job.  Need more days of stability to say what's going on here, same with
@@ -157,6 +166,7 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
    I will need to monitor this, as you do expect to see a slow  decline. Here are some Last Full Charges:
    1. Aug 1:  56.42
    2. Sep 27:  52.29
+   3. Dec 8: 49.14 
    
 7. ??? While on zoom, the colors in my image seem to vary a lot between red-ish tint and blue-ish tint.
    Is that auto-coloring, or a problem in the hardware?  None of my other laptops with zoom do this. And I've
@@ -176,7 +186,8 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
 11. Iris Xe graphics is listed online, this is Intel's marketing term. You might find KDE reporting it as a Mesa Intel Graphics.
     To add to the confusion, **lscpi** reported *Alder Lake-P Integrated Graphics Controller*
 
-12. Ethernet port does not have the comforting green/orange lights to tell me what speed it's at.
+12. Ethernet port does not have the comforting green/orange lights to tell me what speed it's at. Still have to test if it
+    works at 2.5Gb, one of the reasons I got this laptop.
 
 13. Sound is not very loud. but can use the *Raise Maximum Volume* on the *Audio Volume* widget, but still,
     it's underpowered. Should use my dB app on the phone.
@@ -199,22 +210,21 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
     12 screws. New pictures on website also clearly show 14 screws.
 
 18. I swear I've now closed the lid a few times, and it didn't go to sleep. Lost some battery juice over it.
-    This is a common experience with linux though. Sometimes it works, sometimes it doesnt.  Even the "sleep"
-    button doesn't seem to work all the time.  If it's in sleep, it seems to use about 2W. Seems a bit high.
+    This is a common experience with linux though. Sometimes it works, sometimes it doesnt, but this laptop
+    seems to be worse. Even the KDE "sleep" button doesn't seem to work all the time.
+    If it's in true sleep, it seems to use about 2W. Still seems a bit high.
 
-19. The keyboard is not one of those "spilling is ok" ones!! There are some that claim you can spill on them.
+19. The keyboard is **not** one of those "spilling is ok" ones!! There are some that claim you can spill on them,
+    so be careful with this one.
 
 20. The 90W barrel charger takes XX hours to charge (seems long), and a 90W charger on the usb-C port takes
     even longer (XX hours). Compared to some other common laptops I have, this seems long/slow.
     Perhaps a good solution is a barrel-USB converter, so normal USB-c power can be used
     chicony  A16-090P1A    19v-4.74A 90W      Tip: 5.5 x 2.5mm 
-    I got a "FARSENSE USB C to DC Adapter,Barrel PD Trigger Cable(5ft) with 10 Connector Tips",
-    which although on a 65W charger gives me full power, it has a voltage button which easily drops to 5.
-    On a 100W charger this didn't seem to happen
-    Another even cheaper and more compact option is dedicated
+    I tried two solutions: one converter with a small wire between them components,
     *cablecc Type C USB-C Female Input to DC 5.5x2.5mm Power PD Charge Cable fit for Laptop 18-20V *
     or this single *chenyang USB C to DC 20V 5.5x2.5mm PD 65W Emulator Trigger 90 Degree Angled Converter Adapter *
-    Interesting to note that a 65W power with converter in the barrel still gave me full power.
+    Interesting to note that a 65W power with converter in the barrel still gave me full compute power (i.e. 4.7GHz)
 
 ## Odd Software things
 
@@ -237,8 +247,8 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
 
 ## Power Management
 
-Executive summary: The peak 4.7 GHz can only be achieved via the barrel charger,
-on USB charger the peak is 4.2, on battery the peak seems to be 3.8.
+Executive summary: The peak 4.7 GHz can only be achieved via the barrel charger on the right,
+on left side USB-C charger the peak is 4.2, on battery the peak seems to be 3.8.
 Base seems to be 2.5GHz  (website says base is 2.1)
 
 This deserves a separate section, as I got solidly confused. I also
@@ -276,7 +286,7 @@ tried a few things
      sudo cpupower frequency-set -d 4000MHz -u 4000MHz
      sudo cpupower frequency-set -d 4000MHz -u 4000MHz -g performance
 
-I can go to NB5=808, 865 now, on battery. That;s up from 500-600 before.
+I can go to NB5=808, 865 now, on battery. That's up from 500-600 before.
 
 Then on K-power, some items dropped a notch, but got NB5=1192.  Increased the notch  1215..
 more of those sudo, then 1075. nuts.
@@ -296,7 +306,8 @@ for a week and at least ran into some questions. This is done using
 google desktop shared, a first for me too.  Kfocus could control
 my desktop, we tried out several optimizations.The most useful for
 me was how to add new pages to the System Monitor, notably the CPU
-frequencies from which we learned so much.
+frequencies from which we learned so much.  We tried working on that
+mousepad sensitiviy problem, but it's still plagueing me.
 
 
 ## Comparing CPUs
@@ -326,23 +337,12 @@ Both processors were released Q1/2022
                          1756/9118            1622/8410
      Geekbench6          2151/7655	      n/a
 
-CPU_USAGE  directcode  :  5.61  5.60  0.00  0.00  0.00  1718779080
-CPU_USAGE  hackcode1   :  4.94  4.94  0.00  0.00  0.00  1718779642
-CPU_USAGE  orbint      :  4.61  4.60  0.00  0.00  0.00  1718780137
-CPU_USAGE  potcode     :  5.03  5.02  0.00  0.00  0.00  1718780598
-CPU_USAGE  treecode1   :  5.59  5.58  0.00  0.00  0.00  1718781101
-NEMOBENCH5 score:   969.744
-CPU_USAGE  directcode  :  5.39  5.38  0.00  0.00  0.00  1718897868
-CPU_USAGE  gyrfalcON   :  4.88  4.87  0.00  0.00  0.00  1718898408
-CPU_USAGE  hackcode1   :  6.14  6.12  0.00  0.00  0.00  1718898896
-CPU_USAGE  orbint      :  5.28  5.27  0.00  0.00  0.00  1718899510
-CPU_USAGE  potcode     :  5.18  5.18  0.00  0.00  0.00  1718900038
-CPU_USAGE  treecode1   :  5.42  5.41  0.00  0.00  0.00  1718900556
-NEMOBENCH5 score:   929.08
-CPU_USAGE  directcode  :  5.56  5.55  0.00  0.00  0.00  1718901101
-CPU_USAGE  gyrfalcON   :  4.95  4.94  0.00  0.00  0.00  1718901658
-CPU_USAGE  hackcode1   :  4.99  4.98  0.00  0.00  0.00  1718902153
-CPU_USAGE  orbint      :  4.74  4.74  0.00  0.00  0.00  1718902652
-CPU_USAGE  potcode     :  5.24  5.23  0.00  0.00  0.00  1718903126
-CPU_USAGE  treecode1   :  5.50  5.50  0.00  0.00  0.00  1718903650
-NEMOBENCH5 score:   968.367
+
+## Bizarre Things
+
+- regularly needing the ctrl-alt-F2 and F1 switch to get control back over the mouse
+
+- one time now the active desktop would do the focus switch of windows, but could not
+  switch desktops, until I did a "restart_kde"
+
+
