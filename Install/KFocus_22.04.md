@@ -10,10 +10,10 @@ with power. More on that below.
 
 ## Hardware choice
 
-Kfocus currently has 3 laptop options, but I wanted a baseline around
+Kfocus currently had 3 laptop options when I got it, but I wanted a baseline around
 $1000, so then it's between the XE and Ir14.  Also the M2 is really a
 mobile workstation, powerful but heavy (5-7 lbs), the other two are more
-like 3 lbs.
+like 3 lbs and offer better battery life.
 
 1. Ir14 has a better screen (good for my photo editing), both are 14"
 2. XE has slightly better geekbench5 (5 is deprecated now, use geekbench6)
@@ -59,6 +59,14 @@ After a few months of use, what's the bottom line for me?
 
 3. The hinges on the display are not stiff enough, they often collapse on me when doing comfy computing.
    It doesn't help that the hinges only open to 130 deg, not 180.
+
+4. The sleep mode doesn't always work, overnight the battery is empty. Only positive point to note here
+   is that unlike for example Dell and Thinkpad, it will boot up right away. My others need to be on
+   charge for 10 or 20 minutes as they seem to want some minimum charge before even booting.
+   I have a thinkpad on kfocus as well, it seems to sleep fine.
+
+5. Several times now my desktop preferences (e.g. hot corners, power savings setting) have been reset. Did
+   this happen during an upgrade.   I have a thinkpad laptop on the kfocus as well, same issue.
 
 ## Unboxing
 
