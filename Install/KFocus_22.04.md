@@ -77,6 +77,9 @@ After a few months of use, what's the bottom line for me?
 
 6. There are still issues with the mouse or desktop. I then need to use ctrl-alt-F2 and F1 to get back to plasma.
 
+7. The ethernet port is NOT 2.5Gb, tested with USB-c dongle that does give me 281 MB/s, where the builtin
+   gave me 113 MB/s. Clearly just a 1000Mbit.
+
 
 ## Unboxing
 
