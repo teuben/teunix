@@ -1,0 +1,224 @@
+#!/usr/bin/perl
+
+# Routine to fix annoying file names by replacing non-alphanumeric characters
+# with underscores. 
+#
+# Format:  % fixfn [-h] [-r] [-c <case>] [-f] [-b] <file name list>
+#
+#  where  -r         Recurse into subdirectories
+#         -c <case>  Forces names to upper or lowercase
+#         -f         Forces overwrite in cases of name collision
+#         -b         Restricts changes to blank space only
+#         -h         Print usage summary
+#
+# 28 Oct 2002, A.C. Raugh
+#
+#==============================================================================
+
+use File::Copy;
+use Getopt::Std;
+
+# Local variables:
+
+my (@flist,$fl);   # List of files
+my (@dlist,$dl);   # List of directories
+my ($file);
+
+# Collect command line options:
+
+getopts('hrfbc:');
+
+# Make sure there are some file names to work on:
+
+if (@ARGV < 1 or $opt_h)
+  { printf "\n";
+    printf "Usage: fixfn [-h] [-r] [-c <case>] [-f] [-b] <file name list>\n";
+    printf " where -h        Displays this message\n";
+    printf "       -r        Recurses into subdirectories\n";
+    printf "       -c <case> Forces filename to the indicated";
+    printf                   " (upper or lower) case\n";
+    printf "       -f        Forces overwrite in case of name collision\n";
+    printf "       -b        Restrict changes to blank space\n";
+    die "\n";
+  }
+
+# If a forced case was indicated, turn this into an easy flag to check:
+
+if ($opt_c)
+  { if ($opt_c =~ /^[Uu]/)
+      { $opt_c = "U"; }
+    elsif ($opt_c =~ /^[Ll]/)
+      { $opt_c = "L"; }
+    else
+      { die "Please indicate case as either 'upper' or 'lower'.\n"; }
+  }
+
+# Loop through the command-line file list:
+
+$fl = $dl = 0;
+while ($file = shift(@ARGV))
+  { if (!(-e $file))
+      { printf STDERR "$file does not exist - Ignored.\n"; }
+
+    elsif (-d $file)
+      { $dlist[$dl] = $file;
+        $dl++;
+      }
+
+    else
+      { $flist[$fl] = $file;
+        $fl++;
+      }
+  }
+
+# Call the file renaming routine on the file list:
+
+foreach $file (@flist)
+  { dofile("",$file); }
+
+# Call the directory routine for each directory:
+
+foreach $file (@dlist)
+  { dodir("",$file); }
+
+# And we're done.
+
+#==============================================================================
+
+sub dodir
+
+  # Recurses down through the given directory's contents, and renames it
+  # as needed.
+
+{ my ($topdir,$subdir) = @_;    # directory to process
+  my (@flist,$fl);              # local lists for recursion
+  my (@dlist,$dl);
+  my ($file,$fname);
+  my ($fulldir,$dir);
+
+  $dir = (length($topdir)>0)? "$topdir/$subdir" : $subdir;
+
+  # We only recurse if the "-r" option was set. If that was true, we open the
+  # directory, read it, and process its contents before renaming the directory
+  # itself:
+
+  if ($opt_r)
+    { opendir (DIR, "$dir") || die "Could not open '$dir' for reading.";
+
+      $fl = $dl = 0;
+      foreach $file (readdir(DIR))
+        { next if ($file =~ /^\./);   # Skip hidden files
+
+          if (-d "$dir/$file")
+            { $dlist[$dl] = $file;
+              $dl++;
+            }
+          else
+            { $flist[$fl] = $file;
+              $fl++;
+            }
+        }
+      closedir(DIR);
+
+      # Call the file processor for each file:
+
+      foreach $file (@flist)
+        { dofile($dir,$file); }
+
+      # Call this routine recursively for each subdirectory:
+
+      foreach $file (@dlist)
+        { dodir($dir,$file); }
+
+    }
+
+  # Once we've dealt with the recursion, if any, we can rename this directory.
+  # We get the translated version of the lowest-level directory name:
+
+  $fname = translate($subdir);
+  $newdir = (length($topdir)>0)? "$topdir/$fname" : $fname;
+
+  # If the new name is the same as the old one we're done:
+
+  if ($fname eq $subdir)
+    { return $newdir; }
+
+  # Otherwise, we check for collision:
+
+  if (-e $newdir  &&  !($opt_f))
+    { printf "Directory name collision ('$dir'): '$newdir' already exists.";
+      printf "No change made.\n";
+    }
+  else
+    { move($dir,$newdir); }
+
+  # And we're done:
+
+  return $newdir;
+}
+
+#-----------------------------------------------------------------------------
+
+sub translate
+
+  # Routine to translate the input name to a new name following the options
+  # provided on the command line.
+
+{ my ($name) = $_[0];     # Input string
+  my ($newname);          # Return value
+
+  $newname = $name;
+  if ($opt_c)   # Force case
+    { if ($opt_c eq "U")
+        { $newname =~ tr/a-z/A-Z/; }
+      else
+        { $newname =~ tr/A-Z/a-z/; }
+    }
+
+  if ($opt_b)   # Change blank space only
+    { $newname =~ s/\s+/_/g; }
+
+  else          # Change all non-alphanumerics
+    { $newname =~ s/[^-A-Za-z0-9_.]/_/g; }
+
+  # Done:
+
+  return $newname;
+}
+
+#-----------------------------------------------------------------------------
+
+sub dofile
+
+  # Routine to rename a single file
+
+{ my ($dir,$file) = @_;         # Input file name and path
+  my ($newname,$newfile,$name);
+
+  # Save the current name with path:
+
+  $name = (length($dir)>0)? "$dir/$file" : $file;
+
+  # Get the new file name:
+
+  $newfile = translate($file);
+  $newname = (length($dir)>0)? "$dir/$newfile" : $newfile;
+
+  # If the new name is the same as the old one, we're done:
+
+  if ($newfile eq $file)
+    { return $newfile; }
+
+  # Otherwise we check for collision:
+
+  if (-e $newname  &&  !($opt_f))
+    { printf "File name collision ('$name'): '$newname' already exists.";
+      printf "  No change made.\n";
+    }
+  else
+    { move($name,$newname); }
+
+  # Done:
+
+  return $newname;
+}
