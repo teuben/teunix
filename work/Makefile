@@ -4,6 +4,7 @@ URL1 = https://github.com/teuben/nemo
 URL2 = https://github.com/teuben/miriad
 URL3 = https://github.com/astroumd/lmtoy
 URL4 = https://github.com/GreenbankObservatory/dysh
+URL5 = https://github.com/teuben/GBT-EDGE
 
 ALL = nemo miriad lmtoy dysh
 
@@ -31,3 +32,5 @@ lmtoy:
 dysh:
 	git clone $(URL4)
 
+GBT-EDGE:
+	git clone $(URL5)

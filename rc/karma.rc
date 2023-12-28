@@ -1,0 +1,7 @@
+# a hack
+#
+
+export KARMABASE=/astromake/opt/karma/karma-1.7.25
+
+export LD_LIBRARY_PATH=$KARMABASE/amd64_Linux_libc6.3/lib/
+export PATH=$KARMABASE/amd64_Linux_libc6.3/bin:$PATH

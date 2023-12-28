@@ -1,0 +1,3 @@
+source ~/LMT/lmtoy/lmtoy_start.sh
+#  oopsie with python
+source $LMTOY/python_start.sh
