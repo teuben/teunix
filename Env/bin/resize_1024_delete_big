@@ -1,0 +1,15 @@
+#! /bin/csh -f
+
+foreach f ($*)
+ set h=$f:h
+ set t=$f:t
+ if ($h == $t) set h=./
+ echo $f
+ set out=$h/sm_$t
+ if (-e $out) then
+     echo Skipping existing $out
+ else
+     /usr/bin/convert -quality 85 -geometry 1024x768 $f $out
+ endif
+ if ($status == 0) rm $f
+end
