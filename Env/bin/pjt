@@ -44,7 +44,11 @@ if [ ! -z $CASA_ROOT ]; then
     echo "CASA_ROOT:   $CASA_ROOT"
 fi
 
-
+if [ ! -z $DYSH ]; then
+    gitbv $DYSH
+    echo "DYSH:        $DYSH"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
 
 if [ $os == Linux ]; then
     echo "OS_release:  $os $(lsb_release  -d)"
