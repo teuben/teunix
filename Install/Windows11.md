@@ -37,12 +37,12 @@ By default WSL is not installed, so open a powershell and issue
 
       wsl --install
 
-it will be quick, just few mins. System needds to reboot sfter (really, again?). That;s another amazing deal with MS. Where
+it will be quick, just few mins. System needs to reboot after (really, again?). That's another amazing deal with MS. Where
 the heck is the reboot button.  Ah, it's ctrl-alt-del and there's a power button on screen :-)    who would have thought of
 that!
 
 After reboot, it will prompt for a new username, and password, the linux style.  It's interesting to note that installing
-Windows took so long, and installing WSL2 took maybe 2 minutes (but a reboot too).
+Windows took so long, and installing WSL2 took maybe 2 minutes (but with a reboot).
 
 
 Installing development packages was a bit confusing, but after a
