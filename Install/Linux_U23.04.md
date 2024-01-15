@@ -57,7 +57,7 @@ The following commands make a listing which I frequency consult via grep:
 and after many packages are installed, this command will log what you have installed
 
       aptitude search '~i !~M'  | tr -s ' ' | cut -f 2 -d ' ' |wc
-      
+
 First install a few very essential packages
 
       sudo apt install tcsh git emacs plasma-widgets-addons kio-gdrive openssh-server -y
@@ -190,9 +190,9 @@ not applied until you hit the Apply button on each screen.
 
      4. Power Management
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-           -  -Dim Screen    1-5 min (was default)
-           -  Screen Energy Saving
-           -  Suspend session
+           -  Dim Screen    1-5 min (was default)
+           -  Screen Energy Saving (switch off after 
+           -  Suspend session:  check this off (i.e. do it manually)
 
      6. KDE Connect
         Set your phone on the same network, see it show up in the list, select and "Request pair"
@@ -344,11 +344,22 @@ most are called Breeze. There are probably 10^18 different combinations, if not 
 
 ## Thunderbird
 
+setup of your gmail account is pretty automated now (115.3.2 when i last used it)
+
     your_name@gmail.com
     imap.gmail.com SSL 993
     smtp.gmail.com SSL 465
 
+Recall that the "All Mail" folder is effectively duplicating your disk space, so right
+click on your account and find "Subscribe" and unsubscribe to "[Gmail] All Mail" and whatever
+you don't need.
+
 calendar: 2 add-ons are needed:  Lightning and Google Provider
+
+          Lightning Calendar Tabs
+	  Provider for Google Calendar
+	  Open Google Calendar
+	  Google Chat Tab
 
   NOTE:   if you have an active $HOME/.thunderbird tree, you can
           symlink ("ln -s") and/or copy ("cp -a") it, and all settings (including add-ons)
