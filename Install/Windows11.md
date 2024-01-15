@@ -85,3 +85,7 @@ T40 - 32GB memory,  1TB disk.   1920x1200 .    i5-1235U
 Win11-Pro. (22H2) build 22621.4
 
 
+## Useful Links
+
+
+* https://learn.microsoft.com/en-us/windows/wsl/setup/environment
