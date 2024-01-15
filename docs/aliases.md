@@ -28,7 +28,7 @@ El Capitan      10.11
 Sierra          10.12
 High Sierra     10.13
 Mojave          10.14
-Catalina        10.15              oct-2019
+Catalina        10.15              oct-2019    deprecated fall-2023
 Big Sur         11                 nov-2020
 Monterey        12                 oct-2021
 Ventura         13                 oct-2022
