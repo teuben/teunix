@@ -7,8 +7,8 @@
 [[ $SHELL == *bash* ]] && shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git pull)'
-alias diary='(cd ~/Diary/yraid; git pull)'
-alias yraid='(cd ~/Diary/yraid; make upd)'
+alias yraid='(echo pull yraid;cd ~/Diary/yraid; git pull)'
+alias diary='(echo push this diary;cd ~/Diary/yraid; make upd)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
 
 alias   up='cd ..'
