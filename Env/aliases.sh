@@ -183,7 +183,7 @@ alias   em='emacs -nw'
 alias    i='ipython3'
 alias    j='jupyter notebook'
 
-alias    m='more'
+alias    m='less'
 alias    o='open'
 
 #### stuff removed here
