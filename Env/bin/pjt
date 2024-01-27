@@ -50,6 +50,12 @@ if [ ! -z $DYSH ]; then
     echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
 fi
 
+if [ ! -z $ADMIT ]; then
+    gitbv $ADMIT
+    echo "ADMIT:       $ADMIT"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
+
 if [ $os == Linux ]; then
     echo "OS_release:  $os $(lsb_release  -d)"
 elif [ $os == Darwin ]; then
