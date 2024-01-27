@@ -74,7 +74,13 @@ Comes with a navigator. Now at 2.5.1   Spyder can be launched from it.
 ### Github
 
 Nothing matches the App store now.   Just go to github desktop.   Also on desktop.github.com and download. Once logged in, and
-authenticated (2FA now), it needs to auteh
+authenticated (2FA now), it needs to authenticate
+
+### Git for Windows
+
+Software Carpentry has a procedure to use https://gitforwindowns.org:
+
+* download
 
 ### Drive for Desktop 
 
