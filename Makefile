@@ -88,18 +88,6 @@ foo:
 	@test -f $(HOME)/.foo && echo You have a 
 
 
-## uemacs:     2. micro-emacs quick source install
-uemacs:
-	git clone $(URL2)
-	@echo "Needs package libncurses-dev on Ubuntu"
-	@echo "              ncurses-devel on Fedora"
-	@echo 'cd uemacs; make'
-
-## mem:        2. install micro-emacs at ~/bin/mem
-mem:	uemacs ~/bin
-	(cd uemacs; make clean; make)
-	cp -a uemacs/em ~/bin/mem
-
 ## rc:         3. bootstrap the rc files
 rc:  $(HOME)/rc
 	@echo Now in rc:
@@ -145,6 +133,20 @@ env6:
 
 env9:
 	@echo Do the /etc/hosts manually
+
+## uemacs:     2. micro-emacs quick source install
+uemacs:
+	git clone $(URL2)
+	@echo "Needs package libncurses-dev on Ubuntu"
+	@echo "              ncurses-devel on Fedora"
+	@echo 'cd uemacs; make'
+
+## mem:        2. install micro-emacs at ~/bin/mem
+mem:	uemacs ~/bin
+	(cd uemacs; make clean; make)
+	cp -a uemacs/em ~/bin/mem
+
+
 
 ## nemo:       8. simple NEMO bootstrap install
 nemo:
