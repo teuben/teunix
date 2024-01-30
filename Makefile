@@ -148,10 +148,11 @@ mem:	uemacs ~/bin
 
 
 
-## nemo:       8. simple NEMO bootstrap install
+## nemo:       8. simple NEMO bootstrap install [YAPP=pgplot]
+YAPP = pgplot
 nemo:
 	git clone $(URL4)
-	(cd nemo; ./configure; make build check bench5)
+	(cd nemo; ./configure --with-yapp=$(YAPP); make build check bench5)
 
 apt-cache0.list:
 	apt-cache search  .  > apt-cache0.list
