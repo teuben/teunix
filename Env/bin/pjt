@@ -44,7 +44,17 @@ if [ ! -z $CASA_ROOT ]; then
     echo "CASA_ROOT:   $CASA_ROOT"
 fi
 
+if [ ! -z $DYSH ]; then
+    gitbv $DYSH
+    echo "DYSH:        $DYSH"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
 
+if [ ! -z $ADMIT ]; then
+    gitbv $ADMIT
+    echo "ADMIT:       $ADMIT"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
 
 if [ $os == Linux ]; then
     echo "OS_release:  $os $(lsb_release  -d)"
@@ -67,5 +77,9 @@ if [ "$1" == dev ]; then
     echo "PKG_CONFIG_PATH: $PKG_CONFIG_PATH"
     echo "PGPLOT_DIR:      $PGPLOT_DIR"
     echo "----------------------------------------------------------"
+    git remote -v &&
+    for branch in `git branch -r | grep -v HEAD`;do
+	echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch;
+    done | sort -r
 fi
 

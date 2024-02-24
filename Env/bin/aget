@@ -3,5 +3,5 @@
 
 for f in $*; do
   echo $f
-  scp chara.astro.umd.edu:$f .
+  scp lma.astro.umd.edu:$f .
 done

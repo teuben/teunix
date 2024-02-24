@@ -1,6 +1,7 @@
 The "blocate" command can be used like the "locate" command,
 except it loops over all [m,p]locate.*.db files you have
-in this directory.
+in this directory. plocate is the new better format, but there
+may be some old mlocate still present.
 
 To make new ones, use something like
 
@@ -18,11 +19,11 @@ See also:
 
 # [m,p]locate
 
-I tried the command
+To convert mlocate into plocate I tried the command
 
      plocate-build  mlocate.home640.db  plocate.home640.db
 
-but this never worked for me, even when fixing the visiility flag....
+but this never worked for me, even when fixing the visibility flag....
 In the end, I kept a copy of the (old) mlocate program, so I can read the
 old mlocate*db files.
 

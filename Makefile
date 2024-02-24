@@ -15,8 +15,8 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 UP2 = plasma-widgets-addons kio-gdrive
 
 # fedora packages
-FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel
-FP1 = pgplot pgplot-devel 
+FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel
+FP1 = pgplot pgplot-devel
 
 
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
@@ -88,18 +88,6 @@ foo:
 	@test -f $(HOME)/.foo && echo You have a 
 
 
-## uemacs:     2. micro-emacs quick source install
-uemacs:
-	git clone $(URL2)
-	@echo "Needs package libncurses-dev on Ubuntu"
-	@echo "              ncurses-devel on Fedora"
-	@echo 'cd uemacs; make'
-
-## mem:        2. install micro-emacs at ~/bin/mem
-mem:	uemacs ~/bin
-	(cd uemacs; make clean; make)
-	cp -a uemacs/em ~/bin/mem
-
 ## rc:         3. bootstrap the rc files
 rc:  $(HOME)/rc
 	@echo Now in rc:
@@ -146,10 +134,25 @@ env6:
 env9:
 	@echo Do the /etc/hosts manually
 
-## nemo:       8. simple NEMO bootstrap install
+## uemacs:     2. micro-emacs quick source install
+uemacs:
+	git clone $(URL2)
+	@echo "Needs package libncurses-dev on Ubuntu"
+	@echo "              ncurses-devel on Fedora"
+	@echo 'cd uemacs; make'
+
+## mem:        2. install micro-emacs at ~/bin/mem
+mem:	uemacs ~/bin
+	(cd uemacs; make clean; make)
+	cp -a uemacs/em ~/bin/mem
+
+
+
+## nemo:       8. simple NEMO bootstrap install [YAPP=pgplot]
+YAPP = pgplot
 nemo:
 	git clone $(URL4)
-	(cd nemo; ./configure; make build check bench5)
+	(cd nemo; ./configure --with-yapp=$(YAPP); make build check bench5)
 
 apt-cache0.list:
 	apt-cache search  .  > apt-cache0.list

@@ -2,14 +2,24 @@
 #
 #    locate on the backup's
 
-if ($#argv == 0) exit
+set bdir=~/teunix/Backup
+
+if ($#argv == 0) then
+    if ( ! -d $bdir) then
+        echo "$bdir does not exist"
+	exit
+    endif
+    cd $bdir
+    ls -l ?locate.*.db
+    exit
+endif
 
 #set log=/tmp/blocate$$.log
 set log=/tmp/blocate`date +%Y%m%d_%H%M%S`.log
 echo "# $*" > $log
 chmod 600 $log
-cd ~/teunix/Backup
+cd $bdir
 ./do_locate $* | tee -a $log
 
-echo Copy of output in $log
+echo "less $log"
 echo "number of lines: " `cat $log | grep -v ^\# | wc -l`
