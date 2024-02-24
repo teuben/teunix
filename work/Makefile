@@ -1,7 +1,7 @@
 # stuff I work on from time to time
 
 URL1 = https://github.com/teuben/nemo
-URL2 = https://github.com/teuben/miriad
+URL2 = https://github.com/astroumd/miriad
 URL3 = https://github.com/astroumd/lmtoy
 URL4 = https://github.com/GreenbankObservatory/dysh
 
