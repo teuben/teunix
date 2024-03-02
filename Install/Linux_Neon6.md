@@ -1,24 +1,30 @@
 # Linux  Neon (2024 notes)
 
 Neon w/ KDE6 released Feb 28, 2024. Here some install notes, cloned of U23.04
+Notable of course is that things have moved around.
 
+## Current Bugs (2-mar-2024)
 
-
+1. most (all?) of splash and login screens don't work
+2.
 
 
 ## My KDE Setup
 
+Summarizing my basic KDE desktop:
 
-KDE can be confusing, for one, some settings appear in different
-places if you switch a version of KDE. Some of this work is painful if
-you have to repeat it many times, so it would be nice to have a
-programmatic way to do this for a virgin account. You can also copy
-the correct files in your ~/.config tree, but the key word is "correct".
-This appears to be a moving target.
+- focus follows mouse with auto-raise
+- single click opens files and directories
+- two-finger tap = middle-click
+- kdeconnect for the phone
+- various screen edge actions
+- krunner for desktop/browser searching (top screen edge)
+- 3 x 2 virtual desktops, single activity
+- auto-hide task panel (seems to be buggy now)
+
 
 Also to note: during tuning, unlike in GNOME, changing a setting is
 not applied until you hit the Apply button on each screen.
-
 
 
   A. Configure Desktop (right click on the Desktop background)
@@ -26,16 +32,18 @@ not applied until you hit the Apply button on each screen.
       Desktop & Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
            it seems picking a background has to be done for each screen (if > 1 screen attached)
       Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
-                                      Middle Button -> Paste -> Apply
+                                      Middle Button -> Switch Windows -> Apply
 
   B. System Settings (the app)
+
+->   hamburger menu -> check " Highlight Changed Settings"    
 
      (Input & Output)
      1. Mouse & Touchpad
         Mouse
 	Touchpad
 ->	   - two-finger tap = middle-click
-	Screen Edges
+->	Screen Edges
 	   - TR: overview
 	   - TM: Krunner
 	   - TL: Present windows all desktops
@@ -47,7 +55,7 @@ not applied until you hit the Apply button on each screen.
              (this way   <Right-Alt> a ` gives à)
       
       7. Display & Monitor
-         -> Scale at 125% was default,but 100% was really impressive
+         -> Scale at 125% was default,but 100% was really impressive!!
 	 
       (Connected Devices)
       4. KDE Connect
@@ -57,8 +65,15 @@ not applied until you hit the Apply button on each screen.
          Colors
 	 Night Light
 	 Application Style
+	 Plasma Style
+->          -> Breeze Dark (Oxygen is buggy)
 	 Window Decorations
-	 ...
+->	    Configure Titlebar Buttons (need to widen window to see)
+	      - put application menu top left
+         ...
+	 Splash Screen   ->  nothing here yet
+	 Login Screen -> pick a nicer one
+	 Boot Splash Screen -> none seem to work
       Text & Font
       Wallpaper
 
@@ -71,10 +86,16 @@ not applied until you hit the Apply button on each screen.
            Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
          Task Switcher
 	 Desktop Effects
+           Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
+	   Magic Lamp (vs. squash)
+	   Fall Apart (can be a bit distracting)
+	   Translucency (nice if you want to match figures)
+       Screen Edges
+	 
          Window Rules
 	 KWin Scripts
 	 Virtual Desktops
-           4 desktops in 2 rows              (navigation shortcuts come later)
+->         4 desktops in 2 rows              (navigation shortcuts come later)
 	       -> give the desktop unique names/numbers such that taskbar can identify
            navigation *do not* wrap around
            show on-screen display when switching
@@ -100,18 +121,14 @@ not applied until you hit the Apply button on each screen.
 
 
 
-     - Icons-only Task Manager Settting -> Appearance  [leave as is]
-     - Icons-only Task Manager Settting -> Behavior
-       Sort:                    "By Desktop"
-     
-       Clicking grouped task:   Show large window previews   [this is different in U23]
-        
-       Show only tasks:         (only) "from current activity"
-
+->   - Icons-only Task Manager Settting -> Behavior
+         Sort:                    "By Desktop"
+         Clicking grouped task:   Show large window previews   [this is different in U23]
+         Show only tasks:         (only) "from current activity"
+       Enter edit mode:  Auto-Hide  [but sometimes this is broken and doesnt come back?]
 
 ? how to add widgets???     the right click menu doesn't ahve it anymore
-
-? titlebar buttons ???      where did this option go
+                            right click on task manager has it
 
 
 
@@ -130,6 +147,13 @@ DIGITAL CLOCK CONFIGURE
       +switch TZ with mouse wheel (very useful!!)
 
 
+DOLPHIN (kde5,    6 is different)
+     Settings -> Configure Dolphin -> Startup:
+          uncheck  "make location bar editable"
+	  check    "show filter bar"
+          uncheck  "Open new folders in tabs"
+	  check 2x "show full path..." 
+
 
 ============================================================================================================
 
@@ -141,11 +165,7 @@ OLD
      1. Global Theme
      2. Plasma Style
      3. Application Style
-          Application Style
-          Window Decorations
-              Theme
-	      Titlebar Buttons
-	        - put application menu top left (hit Apply after each action)
+   
 
      (Workspace)
      1. Workspace Bahavior
@@ -285,13 +305,6 @@ ROOT:
 
 
 
-
-DOLPHIN
-     Settings -> Configure Dolphin -> Startup:
-          uncheck  "make location bar editable"
-	  check    "show filter bar"
-          uncheck  "Open new folders in tabs"
-	  check 2x "show full path..." 
 
      Network
          google drive now shows up - be sure to first install kio-gdrive and
@@ -577,13 +590,16 @@ application style = breeze (alt: oxygen)
 plasma style = kubuntu (alt: Oxygen)
 window decoratiosn theme = breeze  (alt: plastik)
 
-# Summarizing
 
-My basic desktop:
+# grub
 
-- KDE
-- focus follows mouse with auto-raise
-- single click opens files and directories
-- kdeconnect for the phone
-- krunner for desktop/browser searching
-- 3 x 2 virtual desktops, single activity
+why no menu???
+
+1. edit /etc/default/grub with
+
+       GRUB_TIMEOUT_STYLE=menu
+       GRUB_TIMEOUT=5
+
+2. run:
+
+       sudo update-grub
