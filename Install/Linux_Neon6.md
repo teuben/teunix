@@ -127,8 +127,7 @@ not applied until you hit the Apply button on each screen.
          Show only tasks:         (only) "from current activity"
        Enter edit mode:  Auto-Hide  [but sometimes this is broken and doesnt come back?]
 
-? how to add widgets???     the right click menu doesn't ahve it anymore
-                            right click on task manager has it
+->   Adding widgets is now in the right click on task manager 
 
 
 
@@ -169,11 +168,7 @@ OLD
 
      (Workspace)
      1. Workspace Bahavior
-       Desktop Effect
-           Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
-	   Magic Lamp (vs. squash)
-	   Fall Apart (can be a bit distracting)
-	   Translucency (nice if you want to match figures)
+
        Screen Edges
            - TL:   Desktop Grid
            - TR:   Present windows current desktop
@@ -191,38 +186,13 @@ OLD
 
        Screen Locking
 
-     2. Window Management
 
-       KWin Scripts
-?           +MinimizeAll (useful to have a button to minimize all windows)
-       Window Rules
-       
-     3. Shortcuts
-       Global Shortcuts
-           Kwin 
-               Switch One Desktop Down -> Ctrl-Alt-Down (suggested is meta+ctrl+down)
-               Switch One Desktop Left    Ctrl-Alt-Left
-               Switch One Desktop Right   Ctrl-Alt-Right
-               Switch One Desktop Up      Ctrl-Alt-Up
-	       Toggle Present Windows (Current Desktop) -> Meta+D   (was assigned Ctrl+F9)
-
-     (Personalization)
-     6. Applications
-      File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
-      this can be the default and is annoying.
      7. Online Accounts
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
 
      (Hardware)
      1. Input Devices
-
-       Keyboard -
-          advanced
-	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
-	                            or:  Disabled
-              position of compose key:    Right Alt				    
-	      
 
 
      4. Power Management
@@ -235,15 +205,6 @@ OLD
         Set your phone on the same network, see it show up in the list, select and "Request pair"
         - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
         - Set up a file system to share if you want to see them on the laptop
-     7. Printers
-
-     - Icons-only Task Manager Settting -> Appearance
-	  ?  i don't understand what max.rows and the checked item do ??
-     - Icons-only Task Manager Settting -> Behavior     
-       Clicking grouped task:   Show large window previews   [this is different in U23]
-        
-       Sort:                    "By Desktop"
-       Show only tasks:         (only) "from current activity"
 
 TO BE RESOLVED:
 
@@ -262,11 +223,6 @@ SAVING YOUR SESSION
        ~/local/share
 
   - Using "cp -al " to make hard links to a backup directory
-
-ADDING WIDGETS : have a field day, here are my favorites
-
-    NOTE1:  autoraising focus could be making it harder than it should
-    NOTE2:  already existing widgets on the screen are market with a blue dot (1)
 
 Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
 
@@ -386,10 +342,6 @@ calendar: 2 add-ons are needed:  Lightning and Google Provider
 
 *  Copy (or symlink) your $HOME/.ssh tree.
 *  Keep your aliases (e.g. "ssh chara" in the config file) - alternatively in /etc/hosts
-  
-## KDE
-
-KDE uses: panel, latte dock (mac lookalike) - I tend to not like latte anymore, it dies from time to time
 
 ## GIMP 2.10.30
 
@@ -398,10 +350,6 @@ I don't like some of their default settings. It's not in color, and too few icon
       Edit -> Preferences -> Interface -> Theme             Dark  or Light
       Edit -> Preferences -> Interface -> Icon theme        Color or Legacy  (can change icon size)
       Edit -> Preferences -> Interface -> Toolbox           +show active bruch   -use tool groups
-
-## geeqie
-
-## gwenview
 
 ## firefox
 
@@ -413,18 +361,6 @@ Install a container for firefox:   https://www.mozilla.org/en-US/firefox/faceboo
 I like to use yyyy/dd/mm as the directory structure for photos (the default is one directory, yyyyddmm)
 In Destination, do that in the settings wheel at Photos (Videos has one too, but I use it too little to bother)
 
-## Install
-
-Here is what I have now (Mar 31)
-
-     Operating System: Kubuntu 20.04
-     KDE Plasma Version: 5.18.4
-     KDE Frameworks Version: 5.68.0
-     Qt Version: 5.12.5
-     Kernel Version: 5.4.0-21-generic
-     OS Type: 64-bit
-     Processors: 8 × Intel® Core™ i7-8550U CPU @ 1.80GHz
-     Memory: 15.3 GiB of RAM
 
 ## 3rd party apps:
 
