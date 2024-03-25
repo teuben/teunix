@@ -77,6 +77,7 @@ if [ "$1" == dev ]; then
     echo "PKG_CONFIG_PATH: $PKG_CONFIG_PATH"
     echo "PGPLOT_DIR:      $PGPLOT_DIR"
     echo "----------------------------------------------------------"
+    # https://gist.github.com/jasonrudolph/1810768
     git remote -v &&
     for branch in `git branch -r | grep -v HEAD`;do
 	echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch;
