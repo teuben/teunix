@@ -75,9 +75,11 @@ mkzip() {
 alias zdir='zoo -list'
 rc () {
     if [ ! $1 ]; then
-	echo No project listed, known ones are:
+	echo No project name given, known ones from ~/rc are:
 	cd ~/rc
-	ls *.rc | sed s/.rc//g
+	for rc in $(ls *.rc | sed s/.rc//g); do
+	    echo "$(printf %-10s $rc) -- $(head -1 ~/rc/$rc.rc)"
+	done
     elif [ ! $2 ]; then
          source ~/rc/$1.rc
     else
