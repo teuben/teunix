@@ -9,8 +9,8 @@ SHELLS = csh tcsh bash zsh
 UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
-     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
-	python-is-python3
+     exfat-fuse tkcvs net-tools ncftp autoconf \
+     python-is-python3
 
 UP2 = plasma-widgets-addons kio-gdrive
 
@@ -181,3 +181,10 @@ diary:
 	mkdir -p ~/Diary
 	(cd ~/Diary; git clone https://github.com/teuben/yraid)
 
+## brew:      13. Install Homebrew
+brew:
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh > brew.sh
+	bash brew.sh
+# - run these two commmands
+#    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/teuben/.bashrc
+#    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
