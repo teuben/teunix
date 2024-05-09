@@ -10,7 +10,8 @@ UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
      exfat-fuse tkcvs net-tools ncftp autoconf \
-     python-is-python3 libtirpc-dev
+     python-is-python3 libtirpc-devq
+
 
 UP2 = plasma-widgets-addons kio-gdrive
 
@@ -50,6 +51,11 @@ apt2:
 apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
+
+## apt4:       1d. Enable universe
+apt4:
+	sudo add-apt-repository universe
+	sudo apt-get update
 
 ## dnf0:       bootstrap RPMFUSION (takes a while)
 dnf0:
