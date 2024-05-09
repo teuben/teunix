@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="jph" date="1698260455" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="Wireless"}%
+---+ Title
+
+Article text.
+
+-- %USERSIG{jph - 2023-10-25}%
+
+---++ Comments
+
+%COMMENT%

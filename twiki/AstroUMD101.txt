@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="teuben" date="1714520509" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="AstroNet"}%
+---+ AstroUMD101
+
+Here we remind seasoned linux/unix users about your astroumd account:
+   1 The *README.astronet* file in your home directory gives some specific hints
+   1 Default *$SHELL* is /bin/bash, you will have received some dot-files from /local/skel
+   1 The machine *terra.astro.umd.edu* should be used for account management (passwd, chsh, etc.) - they get propagated nightly
+   1 Use the *_local* files of your dot-files for local modifications
+   1 *x2go* is our VNC, but we have an outstanding issue that it's not quite working for all mac users (linux and win OK)
+   1 We keep an [[AstroNetDirectories]] table as a reminder where things are on the filesystem
+   1 All directories (even local ones) should be addressed via the */n/diskname* construct. Although this means you can access any disk from any machine, please be careful about overloading the local NFS net traffic. Use the *df* command to check where a disk is mounted from.
+   1 Most workstations have local disks that are much better to store data on, e.g. *chara* has */chara* and <b>/chara1nb </b>(*1nb* means it is not backed up)
+-- %USERSIG{teuben - 2023-02-07}%
+
+---++ Comments
+
+%COMMENT%
