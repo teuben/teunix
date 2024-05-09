@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="teuben" date="1664911949" format="1.1" version="1.39"}%
+%META:TOPICINFO{author="teuben" date="1715086638" format="1.1" version="1.41"}%
 %META:TOPICPARENT{name="WebHome"}%
 ---+ 
 ---+ Overview
@@ -14,7 +14,7 @@ Members of the Department generally have their own machines, often both a deskto
 
 During the Fall 2019 we transitioned to a new version (Centos7) of Linux. Those used to the old system should consult the [[https://www.astro.umd.edu/transition.html][transition guide]],
 
-In 2021/22 we transitioned to Redhat8.6
+In 2021/22 we transitioned to Redhat8.6, and in 2023/24 to Redhat 9.3
 
 Here are the AstroNetDirectories, also comparing some common directories between other unix systems such as your laptop.
 ---++ Personnel
@@ -36,29 +36,29 @@ The department has a standing Astronomy Computer Committee (ACC) that sets polic
    * Olivia Dent
    * Alexander Dittmann, grad student representative
    * Marc Pound
-   * Kevin Rauch (actiing chair)
+   * Kevin Rauch (acting chair)
    * Anne Raugh
    * Xi Shao
    * Peter Teuben
    * Dennis Wellnitz
    * Mark Wolfire (rotates off)
 If you have issues, concerns, and/or ideas related to computing in our department, please contact any member of the ACC. We'll be happy to hear from you! You can also consult the mailing list in */n/list/acc*
----++ I'm new here&mdash;what do I do?
+---++ I'm new here—what do I do?
 
-The <a href="http://www.astro.umd.edu/resources/internal/deptsupport.html#computers">Department Support</a> webpage includes information such as getting a department computer account, getting a university computer account, getting a temporary wireless account, and who to see if you have questions or problems. (See also "Personnel" above.) . Remember in general your astro.umd.edu account will be different from your campus umd.edu account. Department computers for one, Campus wide things (e.g. wireless) for the other.
+The [[http://www.astro.umd.edu/resources/internal/deptsupport.html#computers][Department Support]] webpage includes information such as getting a department computer account, getting a university computer account, getting a temporary wireless account, and who to see if you have questions or problems. (See also "Personnel" above.) . Remember in general your astro.umd.edu account will be different from your campus umd.edu account. Department computers for one, Campus wide things (e.g. wireless) for the other.
 ---++ What is Linux?
 
 Linux is based on Unix and is an operating system similar to Windows and macOS. Many Windows applications, such as Microsoft Office, do not exist on Linux, but there are frequently equivalent alternatives (see [[Using Open Office]]). Most department members use Linux computers, while a significant population uses Macs, as macOS is also based on Unix. (However, the department does not currently provide support for Macs.)
 
 Many modern Linux applications include graphical user interfaces in windows. However, a lot of work is still done in Linux using text commands in a _terminal window_. These commands can be surprisingly powerful. An internet search for "Unix commands" or "Unix tutorial" should give you a good introduction to working with files and directories, printing, connecting to other machines, etc. Help for these commands can also be found by typing "man &lt;command&gt;" or "info &lt;command&gt;", as well as the "--help" option to the command. Commands that start frequently used programs include google-chrome or firefox (browsers), libreoffice ("office" software), acroread (Acrobat Reader), gimp (image editing), vi, gedit or emacs (text editing), etc. Various astronomy software packages are also available, such as iraf, idl/idlde, casa, and ds9. See also [[Software Map]].
 
-The University of Florida's astronomy department has a very good <a href="http://www.astro.ufl.edu/it/handbook/">introduction to Linux in a scientific environment</a>. Much of the material in Sections II, IV, and V is valid for our computer system as well.
+The University of Florida's astronomy department has a very good [[http://www.astro.ufl.edu/it/handbook/][introduction to Linux in a scientific environment]]. Much of the material in Sections II, IV, and V is valid for our computer system as well.
 ---++ Connecting to department computers
 
-Our computer network allows users to connect to other computers within the department using the ssh command, e.g., "ssh earth". You can also connect to department computers from <a href="http://www.astro.umd.edu/resources/internal/ssh/"> a computer at home or otherwise outside the network</a>. For more details, see [[Remote Access]]. We maintain a list of [[Public Workstations]]. You will need your astro.umd.edu account for this.The magic command to find resources on the astronet machines is *astro-admin*
+Our computer network allows users to connect to other computers within the department using the ssh command, e.g., "ssh earth". You can also connect to department computers from [[http://www.astro.umd.edu/resources/internal/ssh/][ a computer at home or otherwise outside the network]]. For more details, see [[Remote Access]]. We maintain a list of [[Public Workstations]]. You will need your astro.umd.edu account for this.The magic command to find resources on the astronet machines is *astro-admin*
 ---++ Connecting to campus wireless
 
-UMD provides wireless access points all over campus. The preferred networks to use are umd-guest or eduroam. For more information, visit the <a target="_blank" href="https://connect.umd.edu/" title="campus wireless info page">campus wireless info page</a>.
+UMD provides wireless access points all over campus. The preferred networks to use are umd-guest or eduroam. For more information, visit the <a href="https://connect.umd.edu/" target="_blank" title="campus wireless info page">campus wireless info page</a>.
 
 In brief: eduroam is the best to use, since it should also magically work when you are visiting partner universities. OIT has many resources how to do this, including a secret sauce script that does all the hard work for you. But you can probably bypass this as long as you know the following setups that are now (Jun 2022) required:<br /><br /> EAP= *PEAP* Phase2= *MSCHAPv2* domain= *wireless.umd.edu* certificate= **.pem* id= *YOUR_UMD_NAME@umd.edu* passwd= *YOUR_LDAP_PASSWD*
 
@@ -73,7 +73,7 @@ See also: https://cat.eduroam.org/ and https://cloud.securew2.com/public/76190/G
 Old user accounts pose security risks. They are also a drain on resources. Therefore, we disable all old accounts 3 months after a user has left. After 6 months the username is deleted. Files located on a public disk (/n/a, /n/b, or [[Public Workstations]]) will be deleted, or if retention of data is required, the user must make arrangements with a local user who will agree to store the data in their own account under their own username (since the old username will be deleted). Files left on a private computer can remain but will need to have permissions reset to the local user. Mail is NOT forwarded after the account is disabled (this eliminates the risk of forwarding spam).<br /><br />Exceptions to this policy may be considered, but generally will require that the user of the account in question either be on the university's payroll, or be specifically named as a participant on a currently funded grant held by a local user, and need regular access to local machines and/or data.
 
 If you have any questions, please contact the chair of the Astronomy Computer Committee.
-   * [[%PUBURLPATH%/%WEB%/%TOPIC%/digicerthighassuranceevrootca_jdk.pem][digicerthighassuranceevrootca_jdk.pem]]: digicerthighassuranceevrootca_jdk.pem
+   * [[%ATTACHURLPATH%/digicerthighassuranceevrootca_jdk.pem][digicerthighassuranceevrootca_jdk.pem]]: digicerthighassuranceevrootca_jdk.pem
 
 %META:FILEATTACHMENT{name="digicerthighassuranceevrootca_jdk.pem" attachment="digicerthighassuranceevrootca_jdk.pem" attr="" comment="" date="1654799416" path="digicerthighassuranceevrootca_jdk.pem" size="1367" user="teuben" version="1"}%
 %META:FILEATTACHMENT{name="digicertglobalrootca_jdk.cer" attachment="digicertglobalrootca_jdk.cer" attr="" comment="updated certificate October 2022" date="1664911949" path="digicertglobalrootca_jdk.cer" size="1338" user="teuben" version="1"}%

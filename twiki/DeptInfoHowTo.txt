@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="teuben" date="1666276396" format="1.1" version="1.12"}%
+%META:TOPICINFO{author="teuben" date="1693329641" format="1.1" version="1.13"}%
 %META:TOPICPARENT{name="WebHome"}%
 ---++ Department Information
 
@@ -23,7 +23,7 @@ This page contains department-specific information that doesn't fall under the o
 <span style="white-space: pre; background-color: transparent;"> </span> *Departmental Resources and Events*
    * [[Conference Rooms]]<span style="background-color: transparent;"> - Policies and A/V user guides for the department's conference rooms.</span>
    * [[PublicWorkstations]] - Names, locations and details of workstations in the department
-   * [[SummaryOfCurrentPrinters][Printers]] - Name/IPs of printers in department
+   * [[PrintingInfo]] - How to use department printers 
    * <span style="white-space: pre;">[[Weekly Events]]</span><span style="background-color: transparent;"> - The (mostly) weekly events within the department.</span>
    * [[http://carma.astro.umd.edu/wiki/][<span style="background-color: transparent;">CARMA/LMA wiki]]</span><span style="background-color: transparent;"> This is the other wiki in the department, set up and run by </span><span style="background-color: transparent;">Main.PeterTeuben</span><span style="background-color: transparent;">.</span>
    * <span style="background-color: transparent;">[[BuildingGuide]] - Ever wondered about room numbers in our buildings?</span>

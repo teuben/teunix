@@ -1,18 +1,10 @@
-%META:TOPICINFO{author="teuben" date="1588963771" format="1.1" version="1.31"}%
+%META:TOPICINFO{author="teuben" date="1697489014" format="1.1" version="1.35"}%
 %META:TOPICPARENT{name="EmailInfo"}%
----++ You old astro.umd.edu email
-
-Please note this section will disappear by Summer 2020, if not sooner. Officially astro email will not work after March 20, 3pm.
-
-   1 Create a new mail account, e.g. via _File-&gt;New-&gt;Mail Account_. Fill out the name, email address (should be <em>user</em>@astro.umd.edu, where _user_ is your username) , and password . You can opt to remember this password. Click on "Continue" for the selection of incoming and outgoing servers.
-   1 The incoming server should be *mailhost.astro.umd.edu*. Select *IMAP* unless it does not work for you as it has tighter security than POP3. IMAP port number should be *143*, and select *Start TLS*. Do not select the secure authentication button, this will not work.
-   1 The outgoing server is also *mailhost.astro.umd.edu*. For the port number, use 587 and select *Start TLS*.
-You might at some point be prompted for a password. And you might get prompted for a certificate. Just accept that, although we don't have a true certificate, and thunderbird will probably complain about that, but after that, you should be able to send and receive email. You might also have to quit thunderbird and come back in, or switch to another account and restart this new account. Some users have complained it didn't work for them, but then at some point amazingly it suddenly just worked...
-
-Please remember we don't recommend setting this up again, as your astro.umd.edu account will be remapped to the campus wide umd.edu google mail based system. Your old email probably lives in ~/Mail and ~/f. You inbox will be on /n/mail/$USER, all in mbox format.
 ---++ Your new (2020) umd email
 
-On March 20, 2020 (but now corona-delayed) your astro.umd.edu email will be remapped to your official umd.edu email. I have recently set up my thunderbird client with umd.edu, and followed the guidelines posted at https://umd.service-now.com/itsupport?id=kb_article_view&sysparm_article=KB0015113 (search for: _Use Thunderbird for UMD Email_ in case the link goes stale)
+On March 20, 2020 (but now corona-delayed) your old astro.umd.edu email was remapped to your official umd.edu email, run within the google universe. I have recently set up my (linux) thunderbird client with umd.edu, and followed the guidelines posted at https://umd.service-now.com/itsupport?id=kb_article_view&sysparm_article=KB0015113 (search for: _Use Thunderbird for UMD Email_ in case the link goes stale)
+
+Potentially useful is mozilla's own gmail setup guidelines:  https://support.mozilla.org/en-US/kb/thunderbird-and-gmail
 
 Note: do <strong>NOT </strong>enter your password on the initial setup screen, or OAuth setup will fail; wait until it asks you for it later on in the setup. Otherwise the instructions worked fine with me.
 
@@ -27,7 +19,7 @@ This is version 2 of their document, and it describes (for Win and Mac) the OAut
    1 <span style="background-color: transparent;">Gmail labels are hierchical, you will find them in e.g. Mail-Nemo-rotcur, which came from your Mail/Nemo/rotcur mailbox file (which some call a folder)</span>
    1 <span style="background-color: transparent;">There is a useful plugin for thunderbird called "Gmail Buttons", which also shows the gmail labels to an email</span>
    1 <span style="background-color: transparent;">The Archives folder works for me in UMD's gmail, but not in GMAIL itself. This is tricky, as this means in gmail it will go to "All Mail", which you want to unsubscribe from. But when you archive, it will subscribe again. Bug?</span>
-   1 <span style="background-color: transparent;"><br /></span>
+   1 
 A few items I find very useful in thunderbird:
 
    1 sort a mailbox by many things, size being one (try that in gmail)
@@ -42,7 +34,7 @@ And let's be honest, or at least let me jot down some things I don't like:
 
 And last but not least, there are a few useful plugins in Thunderbird that you might find useful:
 
-   1 Lightning:  this allows integration of calendar gmail. You can also convert an email to an event via the "message right click" -&gt; Convert to
+   1 Lightning: this allows integration of calendar gmail. You can also convert an email to an event via the "message right click" -&gt; Convert to
    1 Google Provider: this adds buttons so you can Archive and Delete more easily (i found I sometimes need ot restart thunderbird if they don't show up)
 
 -- Main.PeterTeuben - 2020-03-15

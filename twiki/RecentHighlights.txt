@@ -1,11 +1,15 @@
-%META:TOPICINFO{author="teuben" date="1668780886" format="1.1" version="1.7"}%
+%META:TOPICINFO{author="teuben" date="1692221378" format="1.1" version="1.11"}%
 %META:TOPICPARENT{name="WebHome"}%
-Here we list some recent changes. For a full list, see the automatically generated [[WebChanges][WebChanges]] list
+Here we list some of the more major recent changes. For a full list, see the automatically generated [[WebChanges]] list
 
+   * 
+   * 18-may-2023: *lab01-04* upgraded to 128GB RAM, *astra07* on order, *yorp08..13* to be decommissioned this summer; use the command *hpc-reserve* to allocate your time
+   * 28-feb-2023: a new [[Miscellaneous]] page was created, placeholder for things that don't have another good place yet
+   * 14-dec-2022: twiki-5.1.2 has been replaced by twiki-6.1.0 - authentication is not enabled yet.
    * (16-nov-2022) *astro04..06* have now replaced<strong> yorp14..16</strong> (limited rackspace if you wondered)
    * (28-oct-2022) *astro04..06* are on order, replacing *yorp14..16*, while *yorp05* was decommisioned due to hardware failures.
    * (23-oct-2022) *lab01..04* have been replaced with new faster machines, bringing them alongside the other 9 <strong>lab05..13 </strong>machines
-   * (oct-2022) If you use a certificate for eduroam wifi, you will need to download a new one. We also keep a copy [[https://www.astro.umd.edu/twiki/pub/AstroUMD/OverView/digicertglobalrootca_jdk.cer][here]]. In [[OverView][this OverView]] we discuss how to connect to the UMD wireless
+   * (oct-2022) If you use a certificate for eduroam wifi, you will need to download a new one. We also keep a copy [[%PUBURL%/AstroUMD/OverView/digicertglobalrootca_jdk.cer][here]]. In [[OverView][this OverView]] we discuss how to connect to the UMD wireless
    * (sep-2022) *yorp05* and *yorp12* are unstable and may have to be removed
    * (spring-2022) *astra01*, *astro02*, *astra03* have been added. *yorp* and *astra* are synonyms of the same login node to the yorp cluster, yorp nodes have been renumbered due to removing bad nodes
    * (fall-2021?) lab05...lab13 have been upgraded, lab01...lab04 will come later

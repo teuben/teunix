@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="teuben" date="1612286328" format="1.1" reprev="1.9" version="1.9"}%
+%META:TOPICINFO{author="teuben" date="1706838612" format="1.1" version="1.10"}%
 %META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
 ---+ Sharing your desktop remotely
 
@@ -95,4 +95,5 @@ Although x2go has two big advantages (speed and connect from laptop directly wit
    1 The session type should be KDE or XFCE, it seems GNOME is not working (to be updated)
    1 IMPORTANT: On the &lt;Media&gt; tab, make sure you disable sound support. By default it's enabled, and this can lock up your desktop.
    1 The connection can become half-working, meaning, new graphics appllications will suddenly complain it cannot open :50 (or so). We don't fully understand yet why this happens, but it usually takes a few weeks before it seems to loose itself, so as for persistence, it's ok. You can still continue to use it, just not open new X applications.
+   1 Some reports on a MAc that it's slow or not working
 -- Main.PeterTeuben - 2021-02-02

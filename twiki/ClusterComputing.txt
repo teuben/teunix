@@ -1,11 +1,11 @@
-%META:TOPICINFO{author="teuben" date="1668780984" format="1.1" version="1.16"}%
+%META:TOPICINFO{author="teuben" date="1677705083" format="1.1" version="1.18"}%
 %META:TOPICPARENT{name="HardWare"}%
 ---++ Cluster Computing
 
-A cluster is a collection of computers, often in a dedicated room, optimized for demanding computational tasks. Generally such computers have fast processors, large memory, and access to high-capacity disk storage. The Department of Astronomy has its own cluster, "yorp", and the university maintains two clusters for the campus community, "zaratan" and "deepthought2". Selecting the right computer for your problem should be done with care.
+A cluster is a collection of computers, often in a dedicated room, optimized for demanding computational tasks. Generally such computers have fast processors, large memory, and access to high-capacity disk storage. The Department of Astronomy has its own cluster, "yorp", and the university maintains a cluster for the campus community, "zaratan". Selecting the right computer for your problem should be done with care.
 
    * AstroUMD.YorpCluster - Info on using the department's compute cluster(s): *yorp*, *astra* and *lab*
-   * AstroUMD.ITComputingCluster - Info on using the University's cluster *zaratan* and the deprecated *deepthought2*
+   * AstroUMD.ITComputingCluster - Info on using the University's cluster *zaratan*
 Comparing some of current (2022) astronomy computing resources with the [[https://hpcc.umd.edu/hpcc/zaratan.html][HPC zaratan cluster]]:
 
 | *Description* | *Processor*  | *Geekbench5* | *Number of nodes* | *Cores/node* | *Total cores* | *Memory/node GB* |  *Memory/core GB* | *Scratch space per node GB* | *GPUs/node* | *Comments* |
@@ -14,9 +14,8 @@ Comparing some of current (2022) astronomy computing resources with the [[https:
 | astraN  | AMD EPYC 7313 |  1400/35000 |  6 |  32 |  192 |  256 |  8 | ???  | 0 | signup |
 | yorpN  | AMD ... |  450/8000 |  12 |  ? |  ? |  ? |  ? | ???  | 0 | signup |
 | labN  | i7-12700K  |  2000/8000 |  13 |  12 |  156 |  64 |  5.3 | ???  | 0 | signup (1/2 cores) |
-| gpuN  | Xeon E5-2687W |  600/--- |  2 |  8 |  16 |  64 |  8 | ???  | 1 | signup ; 1=test 2=run |
+| gpuN  | Xeon E5-2687W |  600/--- |  2 |  8 |  16 |  64 |  8 | ???  | 1 | signup |
 | zaratan (*)  | AMD EPYC 7763 |  1300/--- |  360 |  128 |  46080 |  512 |  4 | 750 | 0 | DLC of CPUs |
-
 Faculty can request a standard 50 kSU/year on Zaratan (1 FESU = Faculty Equivlent Service Unit). On DT2 astronomy could use 1200 kSU/month, or 14,400 kSU/year! This is almost 300 FESU's. The numbers for Zaratan are 33,333 kSU per year for 5 years, or 666 FESU's (twice the cores, and twice the speed per core).
 
 Taking our 240 cores as "representative" what we have (we probably have a few times this), this is 2100 kSU/year, or about 40 FESU! On that scale zaratan has about 8000 FESU's, or 400 MSU :-)

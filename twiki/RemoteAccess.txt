@@ -1,17 +1,24 @@
-%META:TOPICINFO{author="teuben" date="1663207289" format="1.1" version="1.8"}%
+%META:TOPICINFO{author="rauch" date="1698351426" format="1.1" reprev="1.11" version="1.11"}%
 %META:TOPICPARENT{name="WebHome"}%
 ---+ 
 ---++ Remote Access
 
-If you have an account to access the department computers, you can do so from your laptop too, connected on any network. Open a Terminal and type
+If you have an account to access the department Linux computers, you can login from your laptop or home PC, connected on any network. If you are off-campus, however, most department machines (aside from <b>astro.umd.edu </b>and *terra.astro.umd.edu*) will _not_ be visible unless you connect to campus VPN first; see HowToUseVPN. When ready to login, open a terminal window and type
 
 =ssh -XY &lt;yourAstroID&gt;@&lt;computerName&gt;.astro.umd.edu=
 
-You will be prompted for your ASTRO password. Upon entering it, you will be connected to the machine. We maintain a list of [[Public Workstations]] where you can pick your computerName from. Use the command <strong> =host-info public= </strong>for this.
+(For basic terminal logins, the -XY flags can be omitted.) You will be prompted for your ASTRO password, after which you will be connected to the machine. We maintain a list of [[Public Workstations]] where you can pick your computerName from; for the most up-to-date listing, run the command <strong> =host-info public= </strong>on any of our Linux machines.
+---++ <span style="background-color: transparent;">Login Via SSH Key<br /></span>
 
-<span style="background-color: transparent;"><br /></span>
+SSH keys provide a secure alternative way to login to your account. To add one to your account, you first create a private/public key pair on the computer (laptop or home PC) from which you will login, then add the public key to the file =~/.ssh/authorized_keys= in your ASTRO home directory. On MacOS or Linux, create a key pair by running this command in a terminal window:
 
-Here are some more resources for advanced users:
+<verbatim>ssh-keygen -t ed25519 -C <yourAstroID>@astro.umd.edu -f ~/.ssh/id_ed25519</verbatim>
+
+Set a good passphrase to protect your private key. Then login to your account as above (via password), edit the *astro* file =~/.ssh/authorized_keys= and add the *contents* of the public key file on your *laptop/PC* =~/.ssh/id_ed25519.pub= to it. The public key will be a _single_ line of text ending in =&lt;yourAstroID&gt;@astro.umd.edu=. Subsequent logins from your laptop/PC should now use the SSH key (and its passphrase) by default instead of asking for your astro account password.
+
+On Windows, you can install the [[https://www.bitvise.com][Bitvise SSH client]] and create an ECDSA key pair as described here: [[https://www.bitvise.com/getting-started-public-key-bitvise]], then add the PUBLIC key to your astro account as described in their "Upload public key" sub-section (or export the public key in OpenSSH format as explained in the "Export public key" sub-section, and install it manually as described above).
+
+---++ Resources For Advanced Users
    * [[Passwordless SSH]] - How to set up your account so you can ssh to machines without typing your password every time.
    * [[Mounting Disks Remotely Using SSH]] - A handy way of accessing files remotely without having to copy them.
    * [[Surf Securely with an SSH Tunnel]] - How to route all of your Internet traffic securely through a remote SSH server (or how to mask your IP address).

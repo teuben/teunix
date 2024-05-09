@@ -1,18 +1,19 @@
-%META:TOPICINFO{author="teuben" date="1662575767" format="1.1" reprev="1.21" version="1.21"}%
+%META:TOPICINFO{author="teuben" date="1693359674" format="1.1" version="1.22"}%
 %META:TOPICPARENT{name="SoftWare"}%
 ---+ Software Map for UMd Astronomy
 
-This is a (incomplete) list of software packages available on the machines of the Astronomy Department. When you add something, include instructions for accessing it and whether it is available on Linux, Solaris, or Windows.
+This is a (incomplete) list of software packages available on the machines of the Astronomy Department. When you add something, include instructions for accessing it and whether it is available on Linux, Mac, or Windows.
 
 ---++ General
 
-The Linux machines are running the Red Hat Enterprise 8.6 distribution. This contains most of the software you'll need to run on an everyday basis. For help, many programs accept =programname --help=, or you can look at the man pages with =man programname.=
+The Linux machines are running the Red Hat Enterprise 8.8 distribution. This contains most of the software you'll need to run on an everyday basis. For help, many programs accept ==programname --help==, or you can look at the man pages with <span> *man programname*. For some the *info programname* command is another way to get help.<br /></span>
 ---++ Local Expertise
 
 The following table lists local experts for popular applications. Generally you should consult these experts before contacting one of the system administrators for issues dealing with these particular software packages. They are happy to help!!
 
 | *Package*  | *Description*  | *Invocation* | *Local Expert(s)*  |
 | AIPS | Astronomical Image Processing System (primarily for radio astronomy) | aips | |
+| CASA | Common Astronomy Software Applications | astroload casa; casa | Main.PeterTeuben |
 | IDL | Interactive Data Language (data analysis and visualization) | idl | Main.RobOlling |
 | Mathematica | Package for symbolic computing and function visualization | mathematica | |
 | MATLAB | MATrix LABoratory (numerical and symbolic computing) | matlab | Main.AlbertoBolatto |
@@ -41,7 +42,7 @@ To load a module called "modulefile", type:<strong> module load modulefile</stro
 
 To unload a module called "modulefile" type:<strong> module unload modulefile</strong> (Example:<em> module unload openmpi-icc</em>)
 
-To replace "module1" with "module2" type:<strong> module swap module1 module2</strong> (Example:<em> module swap openmpi-icc openmpi-x86_64</em> &mdash; the module called openmpi-x86_64 is the version of openmpi that comes with Scientific Linux 6. It is compiled with gcc.)
+To replace "module1" with "module2" type:<strong> module swap module1 module2</strong> (Example:<em> module swap openmpi-icc openmpi-x86_64</em> — the module called openmpi-x86_64 is the version of openmpi that comes with Scientific Linux 6. It is compiled with gcc.)
 
 To see what modules are currently loaded type:<strong> module list </strong>
 
@@ -69,7 +70,7 @@ Unlike the old situation with Centos 5 on the yorp cluster, no system default fo
 
 ---++ Visualization Tools
    * The media player and encoder MPlayer is available via AstroMake, e.g. =astroload mplayer= See UsingMPlayer
-   * The raytracer POV-Ray is available via AstroMake, e.g. =astroload povray= on the department machines running Mandrake 10.1 
+   * The raytracer POV-Ray is available via AstroMake, e.g. =astroload povray= on the department machines running Mandrake 10.1
       * Check out the PovrayTutorial!
 
 ---++ Project-specific Software

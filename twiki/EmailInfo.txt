@@ -1,10 +1,10 @@
-%META:TOPICINFO{author="harris" date="1644783123" format="1.1" reprev="1.47" version="1.47"}%
+%META:TOPICINFO{author="harris" date="1708791917" format="1.1" reprev="1.48" version="1.48"}%
 %META:TOPICPARENT{name="DeptInfoHowTo"}%
-This page is about the UMD email (&lt;username&gt;@umd.edu). For queries related to UMD mail (Terpmail), find your answers [[https://umd.service-now.com/itsc/?id=service&service=c1bfb07f3708c20041271f9543990e85][here]]. You might find [[https://umd.service-now.com/itsc/?id=kb_article&sys_id=8c87cfe33790020041271f9543990e95][this]] to be useful as well if you want to access your umd.edu emails through gmail. Finally to further forward the umd.edu emails to Thunderbird, the procedure is given <span style="background-color: transparent;">[[Accessing Gmail With Thunderbird][here]]. The old astro.umd.edu based departemental email was retired June 1, 2020. The password for your UMD email is the LDAP password, the one you need to change every 3 or 6 months.</span>
+This page is about the UMD email (&lt;username&gt;@umd.edu). For queries related to UMD mail (Terpmail), find your answers [[https://umd.service-now.com/itsc/?id=service&service=c1bfb07f3708c20041271f9543990e85][here]]. You might find [[https://umd.service-now.com/itsc/?id=kb_article&sys_id=8c87cfe33790020041271f9543990e95][this]] to be useful as well if you want to access your umd.edu emails through gmail. Finally to further forward the umd.edu emails to Thunderbird, the procedure is given <span style="background-color: transparent;">[[Accessing Gmail With Thunderbird]]. The old astro.umd.edu based departemental email was retired June 1, 2020. The password for your UMD email is the LDAP password, the one you need to change every 3 or 6 months.</span>
 
 %TOC%
 
-<span style="color: orangered;">NEW</span><span style="color: orangered;">:</span> <a target="_blank" href="HowtosetupyourcourseemailinGooglegroups">Information on setting up class exploders with Google Groups</a> (opens in a new window).
+<span style="color: orangered;">NEW</span><span style="color: orangered;">:</span> <a href="HowtosetupyourcourseemailinGooglegroups" target="_blank">Information on setting up class exploders with Google Groups</a> (opens in a new window).
 ---++ Setting Up Email
 
 ---+++ Client-Specific Instructions

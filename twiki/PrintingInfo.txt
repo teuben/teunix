@@ -1,60 +1,13 @@
-%META:TOPICINFO{author="teuben" date="1664164778" format="1.1" reprev="1.23" version="1.23"}%
+%META:TOPICINFO{author="teuben" date="1693330823" format="1.1" reprev="1.24" version="1.24"}%
 %META:TOPICPARENT{name="HardWare"}%
 ---++ Printing Information
 ---++++ The Printers
 
-We use the [[http://www.cups.org Common Unix Printing System (CUPS)]] to manage printers on the Astronomy network. <span style="background-color: transparent;">To view available printers, see SummaryOfCurrentPrinters.<br /></span>
-
-<span style="background-color: transparent;">Better is to browse printers via [[http://localhost:631/printers]] where you may need to replace "localhost" with your actual workstation name.</span>
-
-<span style="background-color: transparent;">All our printers can be printed to from the either the Astronomy wired network _astro.umd.edu_ or the wireless network <em>umd.edu </em>(e.g. eduroam, but not? umd-guest)</span>
-
----++++ Adding Printers
----++++++ Mac Machines
-
-   1 Find the printer you want to add via SummaryOfCurrentPrinters.
-   1 Open your Mac's System Preferences and select Printers & Scanners.
-   1 Click the "+" button to add a printer and select the "IP" method.
-   1 <span style="background-color: transparent;">Under Address, enter the full address of the printer (e.g., astropmail.astro.umd.edu).</span>
-   1 Wait for the interface to autocomplete the fields.
-   1 Optionally give your printer a name (e.g., astropmail) and location (e.g., PSC 1113).
-   1 Click "Add" and the printer should be ready for your jobs.
-   1 Warning: preferably pick a printer via an IP protocol, not DNS-SD.
--- Main.MichaelKelley - 2010-03-23
-
--- Main.DerekRichardson - 2017-07-21
-
----++++++ Windows Machines
-
-As with most things 'windows' this is not the easiest process, but with a little bit of work, the network printer of your choice can be added. NOTE: These instructions are for Win 7 machines, the steps for the other windows machines are similar if not the same.
-
-1. *Start Button* -&gt; type *Control Panel* -&gt; View Devices and Printers -&gt; Add a Printer.
-
-2. In the new dialog box, Add a *Local Printer* -&gt; Next -&gt; Create a New Port: Type of Port: *Standard TCP/IP Port* -&gt; Next
-
-3. <span style="background-color: transparent;">Go to SummaryOfCurrentPrinters and find the printer of your choice. Copy the IP address (or web address) and the model of the printer you want to add. It is always best to make sure that printer make and model corresponds to what actually is the true make and model. Paste <strong>IP Address </strong>in the Add Printer Dialog Box that opens after step 2. Port name automatically gets populated by the same address. Check 'query the printer' checkbox and click Next.</span>
-
-<span style="background-color: transparent;">4. If Windows can't detect the printer, Select from list of Manufacturers and Printers. If not present in list, click on Windows Update (which might take 10-15 minutes) and then select from list. Click Next.</span>
-
-5. <span style="background-color: transparent;">You may be prompted to assign the printer a </span><span style="background-color: transparent;">Name</span><span style="background-color: transparent;">. You can use the default name, or add more info to indicate the printer location, such as Lab, Office etc. </span> _Select_ <span style="background-color: transparent;"> </span><strong style="background-color: transparent;">Yes </strong><span style="background-color: transparent;">if you want to use the printer as the default printer. </span><span style="background-color: transparent;">Click</span><span style="background-color: transparent;"> </span><span style="background-color: transparent;">Next</span><span style="background-color: transparent;"> to continue.</span>
-
-<span style="background-color: transparent;">6.</span><span style="background-color: transparent;"> Click Do </span><strong style="background-color: transparent;">NOT </strong><span style="background-color: transparent;">share the network printer -&gt; Next -&gt;Print test page -&gt; Finish</span>
-
----++++++ Linux Machines
-
-The department Linux computers are set up to print to any printer. You can use "lpr -P<em>printername" </em>or set the $PRINTER environment variable in your shell.
-
-<span style="background-color: transparent;">For personal Ubuntu machines: Add printer -&gt; Add Network Printer -&gt; Click 'Find Network Printer' -&gt; Add IP address of printer from SummaryOfCurrentPrinters and click Find -&gt; Follow prompts (options mostly selected by default) to set up connection and install required drivers until Finish</span>
-
-<span style="background-color: transparent;">When you select a protocol, be sure to pick something that uses the IP (should be a 10.225.24.x or 10.225.25.x number), and not the DNS-SD (bonjour self-discovery) protocol. They will not work with the UMD DNS, as well as can cause issues if you use VPN from home. See our </span>
----++ Printing Information
----++++ The Printers
-
-We use the [[http://www.cups.org Common Unix Printing System (CUPS)]] to manage printers on the Astronomy network. To view available printers, see SummaryOfCurrentPrinters.
+We use the [[http://www.cups.org][Common Unix Printing System (CUPS)]] to manage printers on the Astronomy network. To view available printers, see SummaryOfCurrentPrinters.
 
 Better is to browse printers via [[http://localhost:631/printers]] where you may need to replace "localhost" with your actual workstation name.
 
-All our printers can be printed to from the either the Astronomy wired network _astro.umd.edu_ or the wireless network <em>umd.edu </em>(e.g. umd-secure).
+All our printers can be printed to from the either the Astronomy wired network _astro.umd.edu_ or the wireless (eduroam) network _umd.edu_
 
 ---++++ Adding Printers
 ---++++++ Mac Machines
@@ -75,17 +28,12 @@ All our printers can be printed to from the either the Astronomy wired network _
 
 As with most things 'windows' this is not the easiest process, but with a little bit of work, the network printer of your choice can be added. NOTE: These instructions are for Win 7 machines, the steps for the other windows machines are similar if not the same.
 
-1. *Start Button* -&gt; type *Control Panel* -&gt; View Devices and Printers -&gt; Add a Printer.
+   1 Start ==&gt; Settings ==&gt; Devices ==&gt; Printers & Scanners ==&gt; Add a printer
+   1 ==&gt; The printer I want isn't listed
+   1 ==&gt; Add a printer using an IP address or hostname
+   1 ==&gt; Device type: IPP Device (or use Autodetect if that fails)
 
-2. In the new dialog box, Add a *Local Printer* -&gt; Next -&gt; Create a New Port: Type of Port: *Standard TCP/IP Port* -&gt; Next
-
-3. Go to SummaryOfCurrentPrinters and find the printer of your choice. Copy the IP address (or web address) and the model of the printer you want to add. It is always best to make sure that printer make and model corresponds to what actually is the true make and model. Paste <strong>IP Address </strong>in the Add Printer Dialog Box that opens after step 2. Port name automatically gets populated by the same address. Check 'query the printer' checkbox and click Next.
-
-4. If Windows can't detect the printer, Select from list of Manufacturers and Printers. If not present in list, click on Windows Update (which might take 10-15 minutes) and then select from list. Click Next.
-
-5. You may be prompted to assign the printer a Name. You can use the default name, or add more info to indicate the printer location, such as Lab, Office etc. _Select_ <strong>Yes </strong>if you want to use the printer as the default printer. Click Next to continue.
-
-6. Click Do <strong>NOT </strong>share the network printer -&gt; Next -&gt;Print test page -&gt; Finish
+Do not share your printer, unless you know what you are doing.
 
 ---++++++ Linux Machines
 
@@ -95,6 +43,4 @@ For personal Ubuntu machines: Add printer -&gt; Add Network Printer -&gt; Click 
 
 When you select a protocol, be sure to pick something that uses the IP (should be a 10.225.24.x or 10.225.25.x number), and not the DNS-SD (bonjour self-discovery) protocol. They will not work with the UMD DNS, as well as can cause issues if you use VPN from home. See also our HowToUseVPN page.
 
--- Main.PeterTeuben - 2022-08-29
-
--- Main.PeterTeuben - 2022-08-29
+-- Main.PeterTeuben - 2023-08-29
