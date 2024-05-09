@@ -1,0 +1,98 @@
+%META:TOPICINFO{author="teuben" date="1612286328" format="1.1" reprev="1.9" version="1.9"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+---+ Sharing your desktop remotely
+
+There are several tools to more efficiently share your remote desktop on your local laptop. The classic style "ssh -X" will not be discussed here. It's quick and dirty, but slow.
+   * *vncserver/vncclient* : the classic VNC approach (e.g. in ubuntu this is the xtightvncviewer package)
+   * <strong>x2goclient </strong>- easiest to use, no need to set up your vnc server, just connect to any astro.umd.edu machine. Clients for Linux/Mac/Win available. See the [[https://wiki.x2go.org/doku.php][x2go]] wiki, and our comments below!
+   * *krdc* (KDE on linux) - very nice if you like even more more persistency
+   * *remmina* (Gnome on linux)
+   * *teamviewer* (available for Mac/Win/Linux)- the RDP protocol will be blocked from outside access in Nov 2020, Use HowToUseVPN
+Below we will describe some of these is more detail.
+---+ 
+   * <a rel="nofollow" accesskey="e" href="https://www.astro.umd.edu/twiki/bin/edit/AstroUMD/VNCScreenSharingConnection?t=1603044284;nowysiwyg=0" title="Edit this topic text"><img width="14" alt="" src="%PUBURL%/TWiki/TWikiDocGraphics/uweb-o14.gif" height="14" border="0" /> E dit</a>
+---+ How to screen share remotely using a VNC server.
+
+Using a VNC server, you can view the local screen of a Maryland astronomy computer while working remotely on your laptop. Below are instructions for setting up a VNC server, which will allow you to connect (and disconnect, then reconnect without interruption) to a session on a Maryland server.
+
+<span style="background-color: transparent;">1) Log in to your server of choice.</span>
+<blockquote style="background-color: #fbfbfb; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+laptop% ssh -Y &lt;username&gt;@&lt;servername&gt;.astro.umd.edu
+</blockquote>
+
+2) Create a vncserver password when setting up VNC for the first time.
+<blockquote style="background-color: #fbfbfb; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+&lt;servername&gt;% vncpasswd
+
+Password:
+
+Verify:
+</blockquote>
+
+3) Start a vncserver session with a specific geometry adjusted to your monitor size.
+<blockquote style="background-color: #fbfbfb; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+&lt;servername&gt;% vncserver -geometry 1900x1180
+
+This will start a new vncserver whose name should be '1'. There are ways to change the name, just refer to 'man vncserver'). Every time you type this command, it will create a new session (named '2', '3', '4', etc). I will call this session number 'n' henceforth.
+</blockquote>
+
+4) Now that you have started it, you can check the Xvnc sessions that are running under your name and also note the session number n.
+<blockquote style="background-color: #fbfbfb; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+&lt;servername&gt;% ps ax | grep Xvnc | grep &lt;username&gt;
+</blockquote>
+
+*For MAC users:*
+
+5a) Now, on your own laptop you will need to create a vnc tunnel.
+<blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px 0px 0px 30px; background-color: #fbfbfb;">
+
+laptop% ssh -L 5901:localhost:5901 &lt;username&gt;@&lt;servername&gt;.astro.umd.edu
+
+This tunnel depends on the name of the server that you just created, so '5901' for vncserver '1' and '590n' for vncserver 'n'. Normally just one vncserver is sufficient, in which case, you will always be connecting to 5901. Also, if you skip this step, nothing will show up in the next step.
+</blockquote>
+
+5b) In the MAC Finder application, find the 'Go' menu tab and then click on 'Connect to Server&hellip;' (or simply use 'Command+K' from the keyboard).
+<blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px 0px 0px 30px; background-color: #fbfbfb;">
+
+Here the server address is vnc://localhost:5901
+
+Press 'Connect' and enter your vnc password, which was created in step 2. You should see a screen pop up that shows you the desktop of your remote machine. You might need to reconfigure a couple of things to get a nice desktop look.
+
+If you close this 'Screen Sharing' window, then your session will not be lost and you can reconnect once again by repeating step 6.
+</blockquote>
+
+*For Ubuntu users:*
+
+5) Open *Remmima Remote Desktop client* and and set up a new connection with protocol as VNC and server as &lt;servername&gt;.astro.umd.edu:n, where 'n' is the session number. Type username and password and connect.
+
+*Common for all users:*
+
+6) When you are finished, you can stop the vncserver.
+<blockquote style="background-color: #fbfbfb; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+&lt;servername&gt;% vncserver -kill :n
+
+where n is the session name (i.e. '1', '2', etc).
+
+</blockquote>
+
+---
+
+_Note_: Ubuntu users can directly open directories and files in the servers and display it on their local screen by
+
+laptop% ssh -XY &lt;username&gt;@&lt;servername&gt;.astro.umd.edu<br /><br />followed by <br /><br />&lt;servername&gt;% nautilus .
+---
+
+---+ X2GO comments
+
+Although x2go has two big advantages (speed and connect from laptop directly without the need to set up first) you should also know of a few caveats:
+
+   1 Set yourself up with an ssh key (ssh-keygen / ssh-copy-id) so you can automatically ssh into your dept. computer without asking for a password. On the "new connection" panel in X2GO there is a check button for setting up with auto login. Host:= and Login:= should be your desktop and astro user name.
+   1 The session type should be KDE or XFCE, it seems GNOME is not working (to be updated)
+   1 IMPORTANT: On the &lt;Media&gt; tab, make sure you disable sound support. By default it's enabled, and this can lock up your desktop.
+   1 The connection can become half-working, meaning, new graphics appllications will suddenly complain it cannot open :50 (or so). We don't fully understand yet why this happens, but it usually takes a few weeks before it seems to loose itself, so as for persistence, it's ok. You can still continue to use it, just not open new X applications.
+-- Main.PeterTeuben - 2021-02-02

@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="prakriti" date="1475607784" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Giving a Presentation in PSC 1136 Using Your Laptop
+   1 Connect your laptop using the VGA or HDMI cables labelled 'Front Laptop'. These are in the front of the room (usually on the floor or a table). You can also connect your laptop using VGA cable in the back of the room, labelled 'Rear Laptop'.
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main menu, find 'Front Laptop' on the upper horizontal scroll bar and press it.
+   1 Then touch 'Projector' on the second horizontal bar. Your screen should now display on the projector (which might need a short time to finish warming up).
+   1 You can select the audio source using the third horizontal scroll bar.
+   1 You can select the 'Lights' tab on the right to change the lighting in the room. Select any of the Presets or turn off all the lights.
+   1 You can optionally use a wireless mic, which is kept in the cabinet below the drawer by the room entrance. The cabinet can be opened by the key used to enter PSC 1136. The mic needs to be switched on before it can be used.
+   1 When finished, select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344326" from="Sandbox.LaptopPresentationPSC1136" to="AstroUMD.LaptopPresentationPSC1136"}%

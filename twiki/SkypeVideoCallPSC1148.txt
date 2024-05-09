@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="eric" date="1468344203" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1148AV"}%
+---+ Making a Video Call Using Skype in PSC 1148
+
+Note that the front office (PSC 1208) has a portable webcam with a USB connection that you can plug into your laptop, which is useful to transmit a presentation on the large monitor. The webcam has a remote to turn it, or you can just pick it up. On computer microphone settings, it's called a "BCC950 Conference Cam".
+
+   1 If you want to use Skype on your personal laptop, plug the table's HDMI or VGA cable into your laptop.
+   1 To use the room's camera, you will need to use the Room PC or Room Mac Mini. Log into one of those with your University directory account. Check the A/V settings on Skype. The audio 'Speakers' and 'Ringer' should be set to Crestron.
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main touchscreen menu, select your chosen input (e.g. 'Table HDMI/VGA' or 'Room PC') and an output display.
+   1 Run a Skype video call as usual.
+   1 If using the room's camera, the 'Camera' button on the CRESTRON touchscreen allows you to zoom or pan.
+   1 You can adjust the volume with a volume control on the right-bottom of the main touchscreen.
+   1 When finished, log out of the computer and select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344203" from="Sandbox.SkypeVideoCallPSC1148" to="AstroUMD.SkypeVideoCallPSC1148"}%

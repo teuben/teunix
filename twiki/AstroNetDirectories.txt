@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="teuben" date="1662563457" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="OverView"}%
+Here we list some common directories as you will find them on our AstroNet, as well as a comparison (if applicable) to your own Linux or Mac laptop.
+
+Most "network" ( */n*) are available on all machines.
+
+| *AstroNet Path*  |  *Linux Path* |  *MacOS Path* |  *Comments* | |
+| /n/a/$USER  |  /home/$USER  |  /Users/$USER  |  Users $HOME directory (though /home/$USER should also work) ||
+| /n/ftp  | ^  | ^  |  FTP directory tree ||
+| /n/www/pub  |  ^ | ^  |  misc. public (mostly web-related) items ||
+| /n/list  | ^  | ^  | department mailing lists - $list@astro.umd.edu ||
+| /n/backup | - | - | diary backup disk tree ||
+| /n/astromake |  /home/astromake | - |  AstroMake package tree ||
+
+Using *sshfs* you can in principle also mount AstroNet disks on your own Linux/Mac laptop. This is a topic for another time, you will need the real names for the directories, not just */n/disk*
+
+-- Main.PeterTeuben - 2022-08-02

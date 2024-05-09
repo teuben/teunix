@@ -1,0 +1,20 @@
+%META:TOPICINFO{author="teuben" date="1662577127" format="1.1" reprev="1.7" version="1.7"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+---+ Mounting Disks Remotely Using SSH
+
+Are you tired of copying (e.g., with scp) files back and forth between Astronomy network machines and your laptop or other device? Here's a simple way to "mount" a remote disk so that it appears like a regular directory on your device:
+
+   1 Install "sshfs" on the device (let's assume it's a laptop). On a Mac, if you have macports, simply "sudo port install sshfs" -- other platforms may have analogous installation options, or go <a target="_blank" href="http://fuse.sourceforge.net/sshfs.html" title="sshfs">here</a>. The sshfs utilitiy ("secure shell file system") is part of the FUSE project ("Filesystem in Userspace"). On ubuntu, the package name is sshfs, but it already comes installed.
+   1 Make a directory as the mountpoint for the remote disk on your laptop, for example: "sudo mkdir /mountpoint" -- replace "mountpoint" with whatever you want to call this new directory. You only need to do this once.If you want to mirror what we do at astro, use /n/mountpoint
+   1 To mount the remote disk, type "sshfs user@machine.astro.umd.edu:/disk /mountpoint", where "user" is your username on the Astronomy network, "machine" is the name of the machine where the physical disk is located (e.g., "europa" for disks on my workstation), "disk" is the name of the disk or path on that machine that you want to mount (e.g., "/europa/dcr" for my private home directory), and "mountpoint" is whatever name you used in step 2. You may want to make an alias for this command so you don't have to type it out each time.
+   1 Then "cd /mountpoint" and you're good to go! Any file browser on your system should also work with the new directory.
+   1 When you're finished using the remote disk, you can unmount via "umount /mountpoint".
+Please feel free to add your own experiences with sshfs here.
+
+On the astro.umd.edu machines disks are always available via the */n/diskname*, so a good tip is to create the */n* directory and give it your permission.This will avoid having to use *sudo* to mount/umount the disk. You can also steal some ideas from https://github.com/teuben/teunix/blob/master/Env/bin/amount and issue commands such as "*amount /n/astromake*" but this needs a patch for the new networked disks in 2022.
+
+-- Main.DerekRichardson - 2012-12-12
+
+When trying to open a file on a mounted remote disk, I was unable to open files using most mac GUI applications (textwrangler for example) if the mounted dir wasn't my home directory on the remote disk. Using sshfs - o follow_symlinks user@machine.astro.umd.edu:/disk /mountpoint seems to fix this problem for me.
+
+-- Main.JamieCohen - 2012-12-13

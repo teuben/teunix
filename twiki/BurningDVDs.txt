@@ -1,0 +1,33 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354135608" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="SoftWare"}%
+Many of the new workstations in the department (including several of the public ones) have DVD burners installed on them.  The following diretions work for DVD+R and DVD-R.  The public machines with burners (which include pluto, cygnus, and virgo) all have DVR+R drives.  Some of the machines in offices (such as thales in my office) have a DVD-R drive.  The format should only matter when burning and disks made with either should be readable on the other format drive.
+<br /><br />
+Standard blank DVD's (both the plus and minus variety) are supposed to fit 4.7 Gigabytes of data.  In practice, I have only been able to burn about 4.0 Gigs or less.  Also, these directions only work for the 2.4.x Linux kernels (which all the department machines currently use).  I have not been able to burn anything with the 2.6.x kernels (although I am one version behind so it might be fixed by now).
+<br /><br />
+To burn a disc, you must be logged in at the machine with the burner.  Do to the way permissions work for devices, a remote login will not work (unless you are also locally logged in).  It is a good idea if the data you want to burn is stored locally on the computer (/tmp often has enough room if you don't have permission to any other drive on the computer).  On machines with a fast network connection, you may be able to burn data that is on an NFS mount on a different machine.
+<br /><br />
+First, you must obtain a copy the <a href="http://fy.chalmers.se/~appro/linux/DVD+RW/">dvd+rtools</a>.  Just download, uncompress, and type make to compile.  Then make sure the growisofs program is somewhere in your path.  Or, you can get a compiled copy of it from /n/thales2/vernaleo/bin/growisofs, copy it, and put it in your path.
+<br /><br />
+Then type: <br />
+growisofs -Z /dev/scd0 -R -J PATH
+<br />Where /dev/scd0 is the address of your dvd drive and should be correct unless you have more than one scsi device and PATH is what you want to burn.
+<br /><br />
+Or if you want to burn an iso image type: <br /> growisofs -Z /dev/scd0=image.iso
+
+
+-- Main.JohnVernaleo - 22 Nov 2004
+
+<br/>
+If you're on a Linux box that has been upgraded to Mandrake 10.1, the above may not work. If you get an error like:<br/>
+"growisofs: error while loading shared libraries: libstdc++.so.3: cannot open shared object file: No such file or directory"<br/>
+try running the growisofs in /usr/bin/.<br/><br/>
+
+You will likely also need to change the address of your dvd drive. If you don't know where it is, type: 'more /etc/fstab' and look for it (the address is in the first column). For example on soho it's called /dev/hdc. So to burn a DVD I now type:<br/>
+/usr/bin/growisofs -Z /dev/hdc -R -J PATH
+
+
+-- Main.MatthewKnight - 18 May 2006
+
+Although I'm still a big fan of command line tools, you really can't beat the ease of use of the k3b graphical tool. We have it on our system and although the very first time it may be a bit overwhelming, the learning curve is not steep at all. It can copy CDs/ DVDs  as well. It can create iso images, it can burn iso images and it transparaently lets you select directories/files in a drag and drop mode to assemble the pieces to be burnt to a CD/DVD. 
+
+-- Main.PeterTeuben - 01 Jun 2007

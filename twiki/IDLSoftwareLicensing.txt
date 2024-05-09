@@ -1,0 +1,34 @@
+%META:TOPICINFO{author="shuster" date="1663213925" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="SoftwareLicensing"}%
+---++ *IDL Download, Installation, and License Activation Instructions*
+
+(<em><span style="color: #0000ff;">these steps worked to successfully install IDL 8.8.2 for Macbook on 9/1/2022</span></em> - Jason Shuster)
+
+*Step #1*: Buy a license.
+
+   * <p>Buy a license for the desired IDL product featured on the relevant Terpware page:</p> <p><a target="_blank" href="https://terpware.umd.edu/Mac/Package/4498">https://terpware.umd.edu/Mac/Package/4498</a></p>
+   * <p>As explained on the Terpware site, the order can be made by emailing:</p> <p><a target="_blank" href="mailto:order-slic@umd.edu">order-slic@umd.edu</a><br />You will then be contacted by UMD Software Licensing, and asked to provide the KFS account # to be used for making the purchase.</p>
+*Step #2*: Download IDL, and retrieve the IDL license activation code.
+
+   * <p>After you receive your order confirmation from UMD Software Licensing, you can proceed to download IDL from the same Terpware site:</p> <p><a target="_blank" href="https://terpware.umd.edu/Mac/Package/4498">https://terpware.umd.edu/Mac/Package/4498</a></p> <p>To do this, at the bottom of the Terpware page, there is a button to "sign in" where you'll be asked for your UMD credentials via the usual Central Authentication Service (CAS). Once you've signed in, you'll then see a link to download the appropriate pkg file for Mac:</p> <p>"idl882-mac.pkg"</p> <p> </p>
+   * <p>Also on the Terpware page, you should see a button that says "Get Product Key". Click on this, and keep this key for later.</p> <p>The 16-digit key should have the form:</p> <p>0000-0000-0000-0000<br />You will need to input this "activation code" during the end of the IDL installation process in order for IDL to be licensed on your computer. Without this key, IDL won't be licensed, and you won't be able to run it.</p>
+*Step #3*: Install IDL.
+
+   * <p>Install IDL on your Mac.</p> <p>There are several little things to be aware of during this installation step:<br />(1)</p> <p>If you haven't done so already, I recommend first installing "XQuartz.app" (latest version is currently 2.8.2) from this website:</p> <p><a target="_blank" href="https://www.xquartz.org/">https://www.xquartz.org/</a></p> <p>IDL will ask you where XQuartz is located during the installation process. Once XQuartz is installed, you can tell IDL to find it in the Applications/Utilities folder.<br /><br />(2)</p> <p>When you go to open the "idl882-mac.pkg" file to begin the installation, you might immediately receive an error from your Mac telling you:</p> <p>"<em>This package cannot be opened because Apple cannot check it for malicious software.</em>"</p> <p>&rarr; Thankfully, there is a help page at this website, which provides a workaround:</p> <p><a target="_blank" href="https://www.l3harrisgeospatial.com/Support/Maintenance-Detail/ArtMID/13350/ArticleID/23883/What-to-do-When-Receiving-an-Error-Saying-IDLENVI-Installer-Cant-be-Opened-on-macOS-Catalina-or-Later">https://www.l3harrisgeospatial.com/Support/Maintenance-Detail/ArtMID/13350/ArticleID/23883/What-to-do-When-Receiving-an-Error-Saying-IDLENVI-Installer-Cant-be-Opened-on-macOS-Catalina-or-Later</a><br /><br /></p> <p>The instructions from this site explain:</p> <p>"<em><span style="color: #3d85c6;">This is a warning you are receiving because of some changes Apple made beginning with the release of Catalina. We are working to resolve this issue in a future release of IDL and ENVI.<br />If you click "OK" and then access the pkg file within finder via the following steps:<br />1. Open Finder<br />2. Right-click on idl882-mac.pkg<br />3. Select Open &gt; Open With &gt; Installer (default)<br /></span></em></p> <p><em><span style="color: #3d85c6;">You may be prompted to enter your password.<br />The installer will open and you can proceed with installation. If prompted to enable "Finder" and "System Events" with warnings...</span></em>"</p> <p> </p> <p> </p>
+*Step #4*: Activate the IDL license for your computer.
+
+Once you have successfully installed IDL on your computer, the application "L3Harris License Administrator" should have popped up, asking you to choose an option regarding how you would like to license IDL for your computer.
+
+   * Click "Activate Local License".
+   * Enter in your license activation code (16-digit key with hyphens after every four digits) that you received from the Terpware site after clicking the "Get Product Key" earlier in Step #2.
+   * Click "Activate"
+And that's it! 
+
+*Step #5*: (optional)
+
+If you would like to run IDL from the command line by typing the command "idl", you can create an 'alias' as follows:
+   * Open a terminal window.
+   * <p>Open your local .zshrc file (or .bashrc file if your terminal is using bash):</p> <p><span style="font-family: monospace;">vi ~/.zshrc</span></p> <p>In your .zshrc file, you can enter in something like the following:</p> <p><span style="font-family: monospace;"># .zshrc<br /></span></p> <p><span style="font-family: monospace;"># User specific aliases and functions</span></p> <p><span style="font-family: monospace;">alias idl="/Applications/harris/idl88/bin/idl"</span></p> <p><br /><br /></p>
+After saving this .zshrc file, the next time you open a terminal, you should be able to enter "idl" at the command prompt, and an IDL session will be opened.
+
+-- Main.PeterTeuben - 2022-09-14

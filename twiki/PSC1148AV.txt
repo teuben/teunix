@@ -1,0 +1,22 @@
+%META:TOPICINFO{author="eric" date="1491511984" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="AstroUMD.ConferenceRooms"}%
+---+ A/V Guide for PSC 1148
+
+_For routine requests, contact the front office in PSC 1208 (x51508). For serious technical problems, contact the Physics Help Desk at x58582, physhelp@umd.edu._
+---++ Overview
+
+AstroUMD.OverviewPSC1148: A general overview of the A/V resources and procedures in PSC 1148.
+---++ I want to do a...
+   * AstroUMD.LaptopPresentationPSC1148: Basic instructions for giving a presentation from your laptop.
+   * VideoCallPSC1148: Making a video call using WebEx or Skype with the room's camera/microphone.
+   * AstroUMD.SkypeVideoCallPSC1148: Making a video call using Skype and the room's camera/microphone.
+   * AstroUMD.ScreenSharing: Share your computer screen with a remote party, e.g. for presentations.
+   * AstroUMD.TeleConferencePSC: Holding a teleconference with the room's phone.
+---++ Troubleshooting
+   * *No video feed from the room's camera:* Try starting (or quitting and restarting) Skype on the room computer. You can then quit Skype and use a different video program if you wish. (The capture card goes into some kind of sleep mode, and Skype seems to be the only thing that can wake it up.)
+   * <strong>Phone has no dial tone: </strong>It sometimes works to reboot the phone by unplugging it and replugging it, though the boot process takes a couple of minutes.
+   * <strong>Wireless mouse and keyboard aren't working: </strong>Make sure they're turned on. Check the CRESTRON touchscreen; it has a 'USB Source' button that controls whether the mouse and keyboard are working with the room PC or the room Mac Mini.
+   * _A reboot of the PC can sometimes fix problems._
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344148" from="Sandbox.PSC1148AV" to="AstroUMD.PSC1148AV"}%

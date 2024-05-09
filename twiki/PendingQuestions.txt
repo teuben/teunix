@@ -1,0 +1,21 @@
+%META:TOPICINFO{author="JohnVernaleo" date="1210192159" format="1.1" reprev="1.9" version="1.9"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ List of Questions about Computing
+Add your own question to this list.
+If you know the answer, write up a separate page answering it, then edit the question on this page to point to the answer.
+
+   * My several-thousand line code just started spitting on =NaN= for all sorts of numeric values.  I'm not sure why, and tracing it with the debugger sounds like a nightmare.  Any help?
+      * This question has been answered!  See FindingNaNs
+
+   * <s>Has anyone successfully configured Windows ME to send files properly to the department printers?  If so, what magic incantation did you use?</s>
+      * It is very unlikely there are any working Windows ME machines left, so this questions is probably out dated.
+      * This question has been partially answered! See WinMEPrinting Well, I was going to answer but I haven't figured out how to add a new page... and 
+
+   * <s>Why does it take 5-10 seconds to move from one page to the next?? At that rate it is faster to edit a standard webpage and upload it!</s>
+      * This is no longer the case.  Since the main server was replaced by a newer machine, the Twiki now works at a perfectly reasonable speed.
+
+   * Why is the time shown on the changes page not correspond to the actual edit time?
+      * Aha, looks like it's in UT...
+   
+   * What software licenses does the department have? I'm asking because I received the question from a student who is looking to get Starry Night...
+      * This isn't a complete answer, but I already put up a page a little while ago that at least starts to answer this.  See SoftwareLicensing for info on all the software that we have a license to (or can get one at what is sometimes a very reasonable price).  I believe that the dept. does not have any licenses that do not go through OIT (but if I'm wrong, please correct me and the page).

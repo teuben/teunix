@@ -1,0 +1,20 @@
+%META:TOPICINFO{author="adhabal" date="1505794101" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+Most of the department disks are synchronized nightly to a raid array (incrementally during the week, mirrored on Sunday). You can access this raid array on */backup/DISK_NAME* , much like (almost) any disk can be accessed from any machine using the reference */n/DISK_NAME*. Important to note also is that __not all disks are backed up to the raid__, in particular the convention is that any diskname that ends with the two letter *nb* (no backup), e.g. */grus3nb/*, are not backed up and can be used for any "<em>scratch</em>" purposes. More details can be found at BackUps.
+
+It is important to note that this style of raid backup will not preserve multiple or aged versions of your important files. This is still left open to each user to implement a good strategy. Some files (big datafiles) never need to be backed up, since they can be generated from other data via a script. Obviously that script (usually small) will be important to be backed up, perhaps with different versions. Some big data files should not be backed up, they are too big, they belong on the "nb" style scratch disks.
+
+If you have a laptop, there are several strategies to backup your data, but again, you have to take some action yourself:
+
+   1 You can copy (or rsync) your data to a departmental disk, which is then automatically saved to the raid array
+   1 For MacOS 10.6 or later you can enable Time Machine, ideally on an external hard drive
+   1 You can backup your data using standard unix commands such as *rsync* or <strong>unison </strong>to an external USB or FireWire disk.
+   1 You can use some of the open source front-ends to these commands, some have a GUI, such as flyback, others are command line drive (e.g. rsnapshot). They all have the option to incrementally save snapshots using unix hard links
+
+Links:
+
+   * Example shell script using rsync and rotating daily backups: <a href="http://danielmcgraw.com/?p=68" title="rsync script">http://danielmcgraw.com/?p=68</a>
+   * GUI frontend to rsync creating snapshots with hard links: <a href="http://code.google.com/p/flyback/" title="flyback">http://code.google.com/p/flyback/</a>
+   * Shell script to create snapshots:<a href="http://rsnapshot.org" title="rsnapshot"> http://rsnapshot.org
+
+-- Main.PeterTeuben - 2010-02-27

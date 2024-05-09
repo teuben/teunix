@@ -1,0 +1,28 @@
+%META:TOPICINFO{author="prakriti" date="1475607497" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Overview of PSC 1136's A/V
+---++ Resources
+
+*Hardware cabinet:* This black cabinet contains a rack with the room PC, a Mac Mini, electronics for driving the CRESTRON touchscreen, a UPS, etc. The front office in PSC 1208 (x51508) and the Physics Help Desk (x58582) have keys to access the cabinet.
+
+<strong>A/V input sources: </strong>The room PC and Mac Mini can be used as input sources. For personal devices, there's an HDMI/VGA cable in the floor (or on a table) in the front of the room labelled 'Front Laptop' and a VGA cable in the floor of the back of the room labelled 'Rear Laptop'. The top of the hardware cabinet has an 'Aux HDMI' input, and also a cable USB port for the PC. There's an Apple TV that can be plugged into the Aux HDMI.
+
+<strong>A/V output sources: </strong>Images from the input sources can be displayed on the projection screen, on the large monitor (55"), and/or on the small monitor on the cabinet.
+
+*Remotes and wireless devices:* There's a remote for the Apple TV, and also for the monitor (never used) and for the projector (never used). There is a wireless keyboard and mouse which works with the room PC and Mac Mini.
+
+<strong>Telephone: </strong>The Cisco phone can be used for teleconferences, although the microphone and speakers may not suffice for your needs. Here is the [[http://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cuipph/8831/9_3_3/english/user_guide/CS38_BK_U19ADA0C_00_userguide-8831/CS38_BK_U19ADA0C_00_userguide-8831_chapter_0101.html#CS38_TP_CE1FCD1B_00][phone manual]], and here are instructions for setting up a [[http://it.umd.edu/conferencing/conference_calls][conference call]]. Please do not unplug the phone from its jack.
+---++ General A/V Procedure
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 If desired, you can connect your laptop to the system using the 'Front Laptop' HDMI/ VGA cable or 'Rear Laptop' using VGA cable.
+   1 On the main menu, select an input source such as 'Front Laptop' on the upper horizontal scroll bar.
+   1 Then select one or more output sources such as 'Projector' on the second horizontal bar. If connected to a laptop, the icon changes to the image of a laptop. The third scroll bar is for selecting audio source.
+   1 The input source should now display on the output source. (This may take a few seconds, especially for the projector which might need to finish warming up.) You can repeat this process if you want to display 2+ input sources on different screens.
+   1 You can select the 'Lights' tab on the right to change the lighting in the room. Select any of the Presets or turn off all the lights.
+   1 The 'Camera' button on the CRESTRON touchscreen allows you to select the room's front or rear cameras and to zoom or pan. If there are any problems with the cameras, see the Troubleshooting section of AstroUMD.PSC1136AV.
+   1 You can adjust the volume with a volume control on the right-bottom of the main touchscreen. You can optionally use a wireless mic, which is kept in a drawer by the room entrance.
+   1 When finished, log out of the computer and select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344314" from="Sandbox.OverviewPSC1136" to="AstroUMD.OverviewPSC1136"}%

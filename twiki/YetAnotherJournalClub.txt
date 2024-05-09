@@ -1,0 +1,40 @@
+%META:TOPICINFO{author="adhabal" date="1505786829" format="1.1" version="1.14"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---+ Hot Papers on Astro-PH (HP-APH)
+
+During the Fall 2011 we are starting a new style journal club (the old style [[GradLife.Journal Club][Journal Club]] still exists), where short presentations on interesting papers from the recent literature (astro-ph etc.) are given and discussed in a very casual setting. For now, every Friday we are using espresso-hour as the starting point, and then continue the discussion in the library at 2pm. Each presentation is not to exceed 15 minutes, and we like to keep the meeting to no longer than 1/2 hour. The library has a widescreen tv, presentors can preload their PDFs on their laptop, and/or use the white board. We like to schedule two or three papers per session, and will pre-assign names, which can be swapped with others if you happen to be unavailable. Please contact the council (yajc@astro.umd.edu) if you have problems swapping your slot. In Fall 2012 we added Vox Charta (thanks Katie!)
+
+*Upcoming Papers for Consideration*: [[UpcomingYAJCPapers]] (please feel free to add your own)
+
+*Vox Charta:* http://maryland.voxcharta.org
+
+*Time and Location:* Astronomy Library, Friday's at 2pm, unless otherwise specified, right after espresso "hour".
+
+*Resources*: [[JournalResources][How to keep up with the literature]]
+
+*Schedule:*
+
+   * *Aug 30:* special inaugural meeting ; Deming ("the diamond planet")
+   * *Sep 2:* -- no YAJC meeting -- (Adelphi Mills cookout)
+   * *Sep 9*:
+   * Sep 16: JSI mini symposium : see http://jsi.astro.umd.edu/events.html
+   * Sep 23:
+   * Sep 30:
+   * Oct 7:
+   * Oct 14:
+   * Oct 21:
+   * Oct 28:
+   * Nov 4:
+   * Nov 11:
+   * Nov 18:
+   * Nov 25: (Thanksgiving Weekend)
+   * Dec 2:
+   * Dec 9:
+   * Dec 16:
+   * Dec 23:
+   * Dec 30: (Christmas Vacation)
+*Council*
+
+A council representing all of us and astrophysics can be reached at _yajc@astro.umd.edu_ if you want to vent concerns, suggest papers, swap presentors etc.etc. The file _/local/mail/yajc_ contains the emails of those on this council.
+
+-- Main.PeterTeuben - 2011-08-23

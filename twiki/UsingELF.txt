@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="teuben" date="1519446284" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+If you ever need to update your list of recipients for a TAR (Travel Request) or TES in the university ELF system, here's a small reminder, since it's not all that obvious:
+<verbatim>
+
+ Create a TAR or TES.
+ Click "Change" by the "Send To" button. A new window will open. 
+ Click "Remove All Users", then click "Add Addressee". 
+ Under "Get all groups with names like" enter "Astronomy" then click "Search". 
+ Click "Add this group". 
+ Click "OK".
+
+ Complete your TAR or TES to submit.
+
+</verbatim>
+
+is usually happens when there is a staff change. The ELF system doesn't do this automatically, but it knows who in Astronomy should be on that list.
+
+-- Main.PeterTeuben - 2018-02-23

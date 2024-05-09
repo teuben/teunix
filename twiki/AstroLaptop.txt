@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="teuben" date="1663207724" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="RemoteAccess"}%
+---+ Bringing your laptop to ASTRO/UMD
+
+UMD is nothing more than your ISP, though you will be able to print. If you have an account on astro.umd, a few more services are available.
+
+   * WiFi is eduroam or umd-guest
+   * Ethernet is on our local astronet IP: 10.225.25.xxx (ATL) or 10.225.24.xxx (PSC), anybody can connect via DHCP.
+   * Printing will work from wifi as well as ethernet, but you may need to install your own drivers
+   * Workstations (redhat 8) you can connect to via ssh. Use "ssh astro.umd.edu" as landing point
+   * Copying/Syncing files can be done via rsync or mounting disks using sshfs
+   * 
+   * 
+---+ 
+---+ User contributed notes on setting up your laptop
+   * MyUbuntu20 - notes to install Ubuntu22 - Main.PeterTeuben
+   * A few notes on [[https://github.com/teuben/teunix/blob/master/Install/Darwin_10.15.md][Darwin 10.15]] with the caveat this is not a serious production machine - Main.PeterTeuben
+
+-- Main.PeterTeuben - 2022-09-14

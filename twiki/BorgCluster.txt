@@ -1,0 +1,50 @@
+%META:TOPICINFO{author="dcr" date="1402059424" format="1.1" reprev="1.9" version="1.9"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ The Borg Cluster
+---+++ UPDATE:
+
+The Borg suffered a catastrophic failure of its RAID disk array in early 2010. As a result, the cluster was decommissioned. Some of the nodes were subsequently moved to the AstroUMD.YorpCluster, but they are all now retired. The information below pertains to the old configuration and is kept here for reference only. Some links may no longer work.
+---+++ OLD INFO:
+
+The Borg is the name of the computer cluster run by the Theory and Computation Group of the University of Maryland Astronomy Department. There is a separate, public Borg web page, http://www.astro.umd.edu/~dcr/Research/borg.html. To get an account on the Borg, contact the administrators (Derek, Graeme).
+
+This page details some configuration information about the Borg that is more appropriately kept semi-private. There is a separate page discussing BorgMaintenance.
+
+---++ Basic theory of the Borg
+
+Abstractly, the Borg consists of a head node, a disk server, networking switches, and compute nodes. The connection to the outside world is only through the head node, known as the Queen. The compute nodes have no disks, they are net-booted from the Queen. The compute nodes also mount the separate disk server via NFS.
+
+We currently run three generations of compute nodes.
+   * Generation 1 (12 active nodes) are single-processor 1Ghz AMD Athlons with 512MB RAM, in tower cases on shelves.
+   * Generation 2 are 16 dual-processor 2.1Ghz AMD Athlons with 1GB RAM, rack mounted.
+   * Generation 3 are 10 dual-processor 2.4Ghz AMD Opteron 250s (64bit) with 1GB RAM, rack mounted.
+
+---++ The Queen
+
+The Queen is the head node, it provides the only network link in or out of the cluster. It provides kernels and filesystems to netboot the compute nodes, and shares 0.5TB of (possibly backed up) disk space. It is a dual Pentium III 860Mhz with 1GB of RAM. Its large disk is housed in an external enclosure with its own power.
+
+---++ The disk server, Locutus
+
+Locutus is an AMD Opteron 250, dual 2.4Ghz with 2GB of RAM, running Fedora Core 3. It has a 3ware RAID controller running eight (8) 250GB hard drives. The drives are set up in RAID5 configuration, providing 1.7TB of disk space. An extra identical drive is currently sitting on top of Locutus in the rack; if a disk fails we can go into the 3ware firmware (during reboot) and rebuild the array using the extra disk.
+
+The RAID controller presents a single large disk ( =sda=) to the operating system. This is partitioned into =/boot=, swap, and the remaining to an LVM (Logical Volume Manager) partition. Via the LVM tools, this is then partitioned with =/= and =/home= of type =ext3=. The large =/home= partition is shared via NFS to the Queen and Generations 2 and 3, where it is mounted as =/net/locutus=. To write to Locutus, users must possess an account on Locutus as well as the Borg (that is, they use separate =/etc/passwd= files). To make permissions work, the UID on Borg and Locutus must match; when creating a new user choose the UID manually with an option to =useradd=, or change it later with =usermod=.
+
+Locutus gets its IP address via DHCP from the Queen.
+
+Graeme installed Locutus in 2005, his notes from the install are in =~gwl/borg/locutus/notes=.
+
+---++ The Compute Nodes
+
+The compute nodes have BIOS that support netbooting; on boot their network cards ask to be configured via DHCP, and are given an IP address and a kernel to boot. They then mount (via NFS from the Queen) a node-specific filesystem as their =/= partition. This share contains node-specific information, such as hostnames in config files in =/etc= and a separate =/dev= hierarchy. The Queen also exports a common share of =/usr= which is overlayed onto each compute node's filesystem.
+
+The node-specific filesystems are in =/netboot/tftpboot= on the Queen, in a separate directory for each node. These hierarchies are created with a script from a template, that writes the correct hostname into the files =etc/fstab= and =ets/sysconfig/network=. The script also adds entries to the =/netboot/tftpboot/pxelinux.cfg= directory. Each node must have a file there with name being the IP address in hex; the file contains the hostname, specifies which kernel to boot and where to mount the root filesystem. The script =/netboot/tftpboot/create_template.py= is currently set to create templates for the Generation 3 nodes; it must be modified for the next generation.
+
+---++ Networking
+
+The Borg currently has two network switches, a 100Mbit and a Gigabit. The Queen has three network cards: one gigabit to the department switch; one gigabit and one 100Mbit to the gigabit switch. The 100Mbit switch uplinks to the gigabit switch. The Gen 1 nodes have 100Mbit cards wired to the 100Mbit switch; these nodes have hostnames =borg1 ... borg24= (many of which are now offline). The Gen 2 nodes have two network cards, a 100Mbit to the 100Mbit switch given hostname =borg25 ... borg40=, and a gigabit card to the gigabit switch given hostname =bg25 ... bg40=. The Gen 3 nodes have one gigabit card to the gigabit switch, with hostnames =borg41 ... borg53=. Locutus has a gigabit card to the gigabit switch.
+
+The compute nodes and Locutus all get their IP addresses via DHCP. The Queen runs the DHCP server, configured in =/etc/dhcpd.conf=. This file maps MAC addresses to internal (10.0.*.*) IP addresses and specifies which kernels to supply to the compute nodes when they netboot.
+
+The Queen provides file shares via NFS, as described in =/etc/exports=. These include the =/netboot/tftpboot= hierarchy, which contains the kernels and node-specific hierarchies, and =/netboot/tftpcommon= which provides the common filesystem to the compute nodes. It also shares its large disk =a1=. The permissions for accessing NFS shares are controlled by =/etc/netgroup=, which makes groups for 100Mbit and gigabit hostnames. The hostnames are statically kept in =/etc/hosts=; when new nodes are added the updated version of this file should be pushed to all the compute nodes.
+
+-- Main.GraemeLufkin - 30 Mar 2006

@@ -1,0 +1,70 @@
+%META:TOPICINFO{author="adhabal" date="1505794101" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+---+ How to screen share remotely using a VNC server.
+
+(Or how to watch hulu from abroad)
+
+Using a VNC server, you can view the local screen of a Maryland astronomy computer while working remotely on your laptop. Below are instructions for setting up a VNC server, which will allow you to connect (and disconnect, then reconnect without interruption) to a session on a Maryland server.
+
+1) Log in to your server of choice, in this example, *minerva*.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+laptop% ssh -Y demerese@minerva
+
+You must also follow minerva with the astro.umd.edu designation.
+</blockquote>
+
+2) Create a vncserver password when setting up VNC for the first time.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+minerva% vncpasswd
+
+Password:
+
+Verify:
+</blockquote>
+
+3) Start a vncserver session with a specific geometry adjusted to your monitor size.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+minerva% vncserver -geometry 1900x1180
+
+This will start a new vncserver whose name should be '1'. There are ways to change the name, just refer to 'man vncserver'). Every time you type this command, it will create a new session (named '2', '3', '4', etc).
+</blockquote>
+
+4) Now that you have started it, you can check the Xvnc sessions that are running under your name.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+minerva% ps ax | grep Xvnc | grep demerese
+</blockquote>
+
+5) Now, on your own laptop you will need to create a vnc tunnel.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+laptop% ssh -L 5901:localhost:5901 demerese@minerva
+
+This tunnel depends on the name of the server that you just created, so '5901' for vncserver '1' and '590n' for vncserver 'n'. Normally just one vncserver is sufficient, in which case, you will always be connecting to 5901. Also, if you skip this step, nothing will show up in the next step.
+</blockquote>
+
+6) In the MAC Finder application, find the 'Go' menu tab and then click on 'Connect to Server&hellip;' (or simply use 'Command+K' from the keyboard).
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+Here the server address is vnc://localhost:5901
+
+Press 'Connect' and enter your vnc password, which was created in step 2. You should see a screen pop up that shows you the desktop of your remote machine. You might need to reconfigure a couple of things to get a nice desktop look.
+
+If you close this 'Screen Sharing' window, then your session will not be lost and you can reconnect once again by repeating step 6.
+</blockquote>
+
+7) When you are finished, you can stop the vncserver.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+minerva% vncserver -kill :n
+
+where n is the session name (i.e. '1', '2', etc).
+
+</blockquote>
+
+(These instructions courtesy of Laura Perez).
+
+-- Main.DemereseSalter - 2012-03-08

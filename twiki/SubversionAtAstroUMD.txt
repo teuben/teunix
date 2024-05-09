@@ -1,0 +1,26 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354135595" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="SoftWare"}%
+---++ Subversion in the Astronomy Department
+[[http://subversion.tigris.org][Subversion]] is a version control system designed to replace CVS.
+It is often used as a repository for source code.
+There is ample online documentation, including a book: http://svnbook.red-bean.com
+A few groups in the Astronomy department are using Subversion to host different projects.
+[[http://www.astro.umd.edu/~teuben/svn/svn-simple.html][here]] is a very simple example how to use
+SVN for your own personal project.
+
+
+---+++ Dynamics Group
+Derek is using a Subversion repository to hold the source code of =pkdgrav= and various related tools.
+The Subversion clients are installed in AstroMake, and the server is running under Apache on the machine =riemann.astro.umd.edu=.
+The notes from this installation are in =~gwl/Projects/reconcile_pkdgrav/subversion_notes=.
+This installation required root/boss access.
+
+The repository can be accessed by any web browser at http://riemann.astro.umd.edu/viewvc
+This interface is an add-on program that provides access to past revisions, history, and log messages.
+
+To use this repository to work on =pkdgrav= or related programs in =ss_core=, read the instructions in =~gwl/Projects/reconcile_pkdgrav/pkdgrav_with_subversion=.
+
+-- Main.GraemeLufkin - 18 Jul 2006
+
+<nop>CentOS 5 comes with svn version 1.4.2
+-- Main.MarcPound - 14 Dec 2007

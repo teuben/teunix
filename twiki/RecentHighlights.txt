@@ -1,0 +1,12 @@
+%META:TOPICINFO{author="teuben" date="1668780886" format="1.1" version="1.7"}%
+%META:TOPICPARENT{name="WebHome"}%
+Here we list some recent changes. For a full list, see the automatically generated [[WebChanges][WebChanges]] list
+
+   * (16-nov-2022) *astro04..06* have now replaced<strong> yorp14..16</strong> (limited rackspace if you wondered)
+   * (28-oct-2022) *astro04..06* are on order, replacing *yorp14..16*, while *yorp05* was decommisioned due to hardware failures.
+   * (23-oct-2022) *lab01..04* have been replaced with new faster machines, bringing them alongside the other 9 <strong>lab05..13 </strong>machines
+   * (oct-2022) If you use a certificate for eduroam wifi, you will need to download a new one. We also keep a copy [[https://www.astro.umd.edu/twiki/pub/AstroUMD/OverView/digicertglobalrootca_jdk.cer][here]]. In [[OverView][this OverView]] we discuss how to connect to the UMD wireless
+   * (sep-2022) *yorp05* and *yorp12* are unstable and may have to be removed
+   * (spring-2022) *astra01*, *astro02*, *astra03* have been added. *yorp* and *astra* are synonyms of the same login node to the yorp cluster, yorp nodes have been renumbered due to removing bad nodes
+   * (fall-2021?) lab05...lab13 have been upgraded, lab01...lab04 will come later
+-- Main.PeterTeuben - 2022-10-23

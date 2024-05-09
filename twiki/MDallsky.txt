@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="teuben" date="1440009383" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="LocalCodes"}%
+Maryland All Sky Network grew out of a fundraising campaign ...
+
+There is an official webpage: http://mdallsky.astro.umd.edu/
+
+Some pictures: https://plus.google.com/u/0/photos/103756179659025357501/albums/6163920337826356369?authkey=CKzW8MiNwsWP5QE
+
+-- Main.PeterTeuben - 2015-08-03

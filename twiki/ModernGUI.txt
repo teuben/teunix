@@ -1,0 +1,23 @@
+%META:TOPICINFO{author="adhabal" date="1505789658" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---++ How do I use a modern looking GUI?
+
+By default, you are setup to use FVWM as your window manager. In Linux, there are two main choices, Gnome and KDE. There are differences between them, but basically they don't matter for now. Both are more modern looking and menu-based then FVWM (but slower on low-end hardware). To use one of them, do the following:
+   * Inside a terminal window, type cd to ensure you are in your home directory.
+   * Type: mv .xinitrc .xinitrc-solaris
+   * Type: pico .desktop
+   * Now you should have a clear screen with a new text file to edit. Type in the following line: DESKTOP <pre>=</pre> GNOME
+   * Save and exit by typing ^O (That's control+O). Hit return when it prompts you for a filename. Then type ^X to exit.
+   * now logout of FVWM and start Gnome by typing startx
+   * If you don't like Gnome, you can try KDE, ICEWM, or some other crappy ones that I don't like. Just change your .desktop file accordingly.
+There is however another way to do this if you would like to retain the ability to log onto a Sun with an older window manager and a Linux machine with a newer desktop.
+   * open the .xinitrc file with the editor of your choice
+   * comment out the line xtoolwait fvwm2 -cmd "FvwmCpp $HOME/.fvwm2rc" (put a # in front of it).
+   * place the following block of code in its place <pre><br />   if [ "$ARCH" != "Linux" ] <br />         then<br />            xtoolwait fvwm2 -cmd "FvwmCpp $HOME/.fvwm2rc"<br />         else<br />             exec gnome-session<br />    fi<br />    </pre>
+   * You may replace gnome-session with the desktop/window manager of your choice ( xfce4-session for example)
+   * The next time you log in and type startx you should get the desktop you want on a Linux machine and fvwm on a Sun.
+-- Main.RandallPerrine - 23 Oct 2008
+
+-- Main.JohnVernaleo - 29 Feb 2008
+
+-- Main.NicholasChapman - 20 Sep 2007

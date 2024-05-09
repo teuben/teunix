@@ -1,0 +1,40 @@
+%META:TOPICINFO{author="teuben" date="1666276396" format="1.1" version="1.12"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ Department Information
+
+This page contains department-specific information that doesn't fall under the other categories (e.g. [[HardWare][Hardware]], [[SoftWare][Software]], [[Remote Access]]).
+
+   * [[Wireless]] - How to use campus wireless and guest wireless
+   * [[Email Info]] - How to send and receive e-mails on the Astronomy computing network, including spam tips and configuring clients! 
+      * NEW: <a target="_blank" href="HowtosetupyourcourseemailinGooglegroups">Information on setting up class exploders with Google Groups.</a>
+   * [[WebPages][Webpages]] - How to create your departmental and personal webpages within the department website.
+   * [[BackUps][Backups]] - A description of the department backup system.
+   * [[Power Outage Procedures]] - Procedures and schedule for power outages.
+   * [[Computer Security]] - Info on computer security and safety practices as well as acceptable use from the University.
+<span style="white-space: pre;"> <span style="white-space: pre;"> </span> *How Tos* </span>
+   * [[Change Your Password]] - Instructions on how to change your password on the Astronomy Department Linux system
+   * [[Password Protected Webpages][Password Protect Webpages]] - Example of how to enable password-only access to a web page(s).
+   * [[Get disk quota]]
+   * [[ModernGUI][Use a modern looking GUI]]
+   * [[Digital Portrait][Get a Digital Portrait]]<span style="background-color: transparent;"> - Where to find the digital versions of your department portraits.</span>
+   * [[Past Seminars][Get list of Past Seminars]] - How to find lists of past seminars, colloquia, and other events.
+   * [[UsingELF][Submitting Travel Requests / TAR and TES in ELF]] - How to update your recipient list[now deprecated]
+   * [[UsingConcur][Using Concur]] - Our new (Sep 26, 2022) travel request system, replacing ELF
+<span style="white-space: pre; background-color: transparent;"> </span> *Departmental Resources and Events*
+   * [[Conference Rooms]]<span style="background-color: transparent;"> - Policies and A/V user guides for the department's conference rooms.</span>
+   * [[PublicWorkstations]] - Names, locations and details of workstations in the department
+   * [[SummaryOfCurrentPrinters][Printers]] - Name/IPs of printers in department
+   * <span style="white-space: pre;">[[Weekly Events]]</span><span style="background-color: transparent;"> - The (mostly) weekly events within the department.</span>
+   * [[http://carma.astro.umd.edu/wiki/][<span style="background-color: transparent;">CARMA/LMA wiki]]</span><span style="background-color: transparent;"> This is the other wiki in the department, set up and run by </span><span style="background-color: transparent;">Main.PeterTeuben</span><span style="background-color: transparent;">.</span>
+   * <span style="background-color: transparent;">[[BuildingGuide]] - Ever wondered about room numbers in our buildings?</span>
+<span style="background-color: transparent;"> </span>
+
+<span style="color: blue; text-decoration-line: underline; background-color: transparent;"> </span>
+
+<span style="color: blue; text-decoration-line: underline; background-color: transparent;"> </span>
+
+<span style="background-color: transparent;"> </span>
+
+-- Main.EricMcKenzie - 2012-11-28
+
+%META:TOPICMOVED{by="adhabal" date="1505786826" from="AstroUMD.DepartmentInfo" to="AstroUMD.DeptInfoHowTo"}%

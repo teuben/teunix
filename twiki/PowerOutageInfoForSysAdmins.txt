@@ -1,0 +1,27 @@
+%META:TOPICINFO{author="DerekRichardson" date="1337269211" format="1.1" reprev="1.10" version="1.10"}%
+%META:TOPICPARENT{name="PowerOutageProcedures"}%
+---++ User Notification
+
+First notice should be sent one week prior to the scheduled outage (see PowerOutageSchedule). Normally Main.DerekRichardson will do this, with broadcast to 'allaccounts'. The second (and usually final) notice will be sent one day prior to the outage. For the first outage only, there will be a third notice three hours prior. Users will be encouraged to turn off their own machines (see PowerOutageInfoForUsers). Once power has been restored, users should be notified (whoever notices the power is up first can do this, to allastro; obviously only those forwarding their e-mail from earth to a private non-astro account will benefit from this). Users will normally be responsible for powering up their own machines. NOTE: users should log off/shut down at least 1 hour prior to the outage, to give Bill's kill script time to run and for untended equipment to be unplugged.
+---++ Procedures
+   1 Run the kill script, at least 45 mins prior to the outage.
+   1 Unplug untended machines (or by request).
+   1 After everything is down, run "umount -lf" on all dead /n/partionname's
+   1 When power is restored, plug in and start up untended/requested machines.
+---++ Equipment Requiring Administrator Handling
+
+All public machines (i.e. not assigned to a particular user), any sensitive equipment (including switches), and special requests (machines needed by someone not present either before or after the shutdown), will be the responsibility of an administrator (although in some instances no special handling will be performed). Please sign up on the PowerOutageSchedule to indicate whether you will be available to assist during a given outage (for each outage, locate the column under your initials and indicate "Y/Y" if you are available for both the power down and power up, "Y/N" if power down only, "N/Y" if power up only, "N/N" if neither).
+---+++ Equipment Checklist
+| *Equipment* | *Location* | *Description* | *Who Unplugs/Powers On* |
+| diary, diary2 | CSS 0228A (0246) | RAID backup | any administrator |
+| lab machines | CSS 1220 | undergrad lab machines | Waqaas |
+| grad machines | CSS 0246 | public grad machines | grad student volunteer(s) |
+| yorp/borg | CSS 1256 | computing cluster | any administrator WITH ACCESS |
+| chara | CSS 0237 | CARMA server | Peter/any administrator |
+
+Where possible, switches should be powered off prior to an outage, as they tend to be tempermental. Generally printers and other non-critical accessories will be left plugged in. It is possible some of these will not power on automatically after power has been restored (even if otherwise functional).
+---++ OBSOLETE: Accessing the Servers in the SDC
+
+Call OIT Operations at x51093 and ask for an escort to the SDC for the purpose of accessing the Astronomy/EPOXI servers. You will need your university ID. Only certain people have access. You know who you are.
+
+-- Main.DerekRichardson - 2010-07-09

@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="adhabal" date="1505794101" format="1.1" version="1.6"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+First, the University has attempted to combine and brand the acceptable use policies as [[http://it.umd.edu/security/Nethics][Project Nethics]]. The Astronomy department follows this as well, so it is worth a read, especially if you have doubts about an activity.
+
+Moving on to actual computer security, the topic becomes a little more complicated. Department GNU/Linux machines are updated by the computer staff. Personal laptops, Apple computers, and Windows machines are not as lucky. It is extremely important to keep these systems up to date. OS X users may apply updates from the apple menu in the upper left corner or the "softwareupdate" command. Non-system software must also be updated although there is no centralized way to do it. GNU/Linux systems should be regularly updated by the distributions package manager. If you do not know how, there is almost certainly someone else around who uses the same distribution as you who knows (especially if you use Fedora, Ubuntu, or Gentoo). Windows users must use windows update and also update individual software. Do not assume that just because you use a "safe" system such as GNU/Linux or OS X you can skip updates. UNIX systems get compromised too.
+
+To avoid email viruses and phishing attempts, consider a spam filter. Directions for SpamAssassin are available.
+
+More information is available in the attachment below.
+
+---++ Choosing A Password
+
+Passwords should be "strong". There is a [[http://en.wikipedia.org/wiki/Password_strength][nice article at Wikipedia]] on password strength with specific examples. Read it!
+
+%META:FILEATTACHMENT{name="deptpolicy.pdf" attachment="deptpolicy.pdf" attr="" comment="Department policy on computer security as of March 14, 2014." date="1453243328" path="deptpolicy.pdf" size="54311" user="dcr" version="1"}%

@@ -1,0 +1,30 @@
+%META:TOPICINFO{author="teuben" date="1663181170" format="1.1" version="1.12"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ Software Packages and Tools
+
+This page contains general information about department software packages, as well as specific information about individual tools below. If you've got some info you'd like to share which is not already available here, just write up a page and link it to this page.
+
+   * [[Software Map]]: A list of available software packages, with instructions on how to use them.
+   * [[AstroMake]] - How to use the astromake tool to access its available software.
+   * [[Local Codes]] - A variety of numerical codes are in use or development locally. Here we will try to list them, give some contact info, and if possible give some other useful info.
+   * [[Software Licensing]] - Information on various software the University or Department has licenses for.
+   * [[PythonEcosystem]] - the python eco-system can be complex for first time users, we devote this special page to python
+---++++ Version Control
+
+   * [[Subversion At AstroUMD]] - A version control system designed to replace CVS. ( *deprecated*)
+   * [[Git At AstroUMD]] - A version control system designed to replace CVS and Subversion.See also https://github.com/astroumd/ for private git repositories
+---++++ Individual Tools
+   * [[Installing Iraf]]
+   * [[Installing Pyraf]]
+   * [[LateX Knowledge]] - Misc. tips and tricks.
+   * [[LaTeX Beamer Presentations]] - An alternative to Powerpoint/Openoffice presentations for Latex users.
+   * [[Using Open Office]] - Alternatives to Microsoft Office.- now called LibreOffice actually.
+   * [[Image Manipulation]] - Gimp, Image Magick, etc.
+   * [[X2Go][X2Go]] - Remote graphical login to department Linux computers.(the recommended VNC type solution)
+---+++++ Obsolete
+
+<span style="color: #0000ff;"><span style="text-decoration: underline;"> </span></span>
+   * [[BurningDVDs]]
+<span style="color: #0000ff;"><span style="text-decoration: underline;"> </span></span>
+
+-- Main.PeterTeuben - 2022-01-19

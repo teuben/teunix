@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="teuben" date="1670603476" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="HardWare"}%
+If you bring in your own hardware, be it a laptop, or be it a desktop permanently in your office, here are some thoughts:
+
+   1 Enable DHCP for networking, and you should be set.
+   1 Printers will need to be found, we use CUPS.  There is a page describing this....
+   1 On a mac desktop, you might want to enable it to boot automatically after a power failure: https://www.wikihow.com/Make-Your-Mac-Restart-Automatically-After-a-Power-Failure
+   1 
+
+-- Main.PeterTeuben - 2022-12-09

@@ -1,0 +1,33 @@
+%META:TOPICINFO{author="JohnVernaleo" date="1205864400" format="1.0" version="1.6"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ How this TWiki Was Set Up
+The installation of the TWiki at the University of Maryland Astronomy Department was done by Main.GraemeLufkin in late 2004.  This page documents the where and how of the installation, in case you need to change something.  Check out TWiki.TWikiInstallationGuide and read about deviations from it here.
+
+---+++ Installation Location
+I installed the TWiki to =~gwl/programs/twiki=.  This has since been moved to =~www/twiki-old/= with the cgi-bin files still in the same place.  This allows it to exist without requiring a user's directory.
+The executable scripts that make a TWiki work were copied to a new directory, =/home/www/cgi-bin/twiki=.
+In that directory, the file =setlib.cfg= points to the data installation, and =.htaccess= controls user authentication and restricts viewing to =astro.umd.edu=, =umd.edu=,  and =gsfc.nasa.gov= domains.  If people see the need to extend this further, we can can expand this.  Both =/home/www/cgi-bin/twiki/.htaccess= and =~gwl/programs/twiki/pub/.htaccess= must be edited to properly control access.  This restriction has been lifted, but see below.
+
+---+++ Notes
+The notes I took during the installation are located in =~www/twiki-old/notes=.
+This file also documents security updates I made, and changes to access restrictions.
+
+---+++ Changing Things
+To make big changes to the TWiki, you must be a member of the Main.TWikiAdminGroup.
+Once a member, you can edit the WebPreferences of each web, and the TWiki.TWikiPreferences of the whole site.
+
+---+++ Passwords
+If a user loses their password, the can use the password change form on the TWiki.  This sends an email with the encrypted password to the admin.  The admin must then put that encrypted password in the file ~www/twiki-old/data/.htpasswd
+to set the new password.
+
+---+++ Security
+A couple notes about security.  All email addresses are protected (at least somewhat) with the $noSpamPadding variable in TWiki.cfg.
+
+Also, although pages can be viewed from anywhere, but users can only register, edit pages, or add attachments from within astro.umd.edu, umd.edu, and what I think are all the Goddard IP addresses.
+
+-- Main.GraemeLufkin - 07 Jul 2006
+
+-- Main.JohnVernaleo - 19 Jul 2007
+
+-- Main.JohnVernaleo - 18 Mar 2008
+

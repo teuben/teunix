@@ -1,0 +1,41 @@
+%META:TOPICINFO{author="GraemeLufkin" date="1153231349" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="BorgCluster"}%
+---++ Borg Maintenance
+This page describes a few aspects of how the Borg runs, that may need to be tweaked from time to time.
+
+---+++ Tape Backups
+The Queen runs the Amanda tape backup software and uses the attached 4-tape drive.
+Only the Queen's disk array (0.5TB, mounted as =/a1= and =/net=) is backed up, and we have not tried retrieving anything from backup in a long time.
+*You rely on this backup system at your own peril!*
+Derek gets emails from Amanda whenever the tapes need to be changed.
+This process is quite simple, the tapes are numbered and kept in small boxes on top of the wire rack in the computing room.
+	1 Press the "Eject" button on the tape drive.  It may take 2-3 minutes to eject.
+	1 Hold the tape release (bottom left, when looking at the tape carriage face-on) and remove the tapes.
+	1 Take new tapes out of their plastic cases, put old tapes in, put cases in appropriate boxes.
+	1 Insert new tapes into carriage (order is irrelevant).  Gently shake to make sure the tapes are all held in correctly.
+	1 Replace carriage in drive, tape end facing out (push in until mechanism takes it).
+
+---+++ Ganglia Monitoring
+The Borg runs the [[http://ganglia.sourceforge.net][Ganglia]] cluster monitoring suite.  This consists of a daemon on each node that multicasts statistics to a head daemon running on the Queen.  The statistics can be seen at http://borg.astro.umd.edu/ganglia/.
+
+The notes taken during the installation of Ganglia are in =~gwl/programs/ganglia_notes=.
+On each node (including the queen) the daemon =gmond= is set to start on boot.
+On the Queen, the daemon =gmetad= is also running.
+A set of PHP scripts in =/usr/local/apache/htdocs/ganglia= reads the Ganglia info and generates the web interface.
+
+Because the Queen has several network cards, we need to specially direct the =gmond= daemon on the Queen to use the right interface.  Unfortunately, this must be done every time the Queen is rebooted, or else its statistics will not be collected by Ganglia.
+Whenever the Queen is rebooted, as root, execute the following command: =/sbin/route add -host 239.2.11.71 dev eth2=.  This manually alters the routing table to make multicasts go through the gigabit card that is internal to the cluster.
+
+---+++ Locutus Accounts
+Locutus is currently the large disk (1.5TB, not backed up!) for the Borg cluster.
+Unlike the compute nodes, Locutus uses its own local installation of Linux, including the details of user accounts.
+This means that having an account on the Borg does not automatically give you access to the large disk of Locutus.
+To make permissions work, a user's account on Locutus must use the same user-id as the account on the Borg.
+To create a new, working account on Locutus, as root:
+	1 Find the username and user-id from =/etc/passwd= on the Borg (first and third columns).
+	1 On Locutus, create a new account with =useradd -u (Borg user-id) -p (new temporary password) (username)=
+	1 Tell the user the temporary password, tell them to change it.
+If you have already created an account, you can change the user-id with an option to the command =usermod=.
+
+-- Main.GraemeLufkin - 18 Jul 2006
+

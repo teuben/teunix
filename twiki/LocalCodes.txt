@@ -1,0 +1,16 @@
+%META:TOPICINFO{author="teuben" date="1501100474" format="1.1" reprev="1.5" version="1.5"}%
+%META:TOPICPARENT{name="SoftWare"}%
+---++ Locally used or developed code.
+
+   * [[Athena]] - A modern, 3d magnetohydrodynamics code. Although it was initially partially developed here, we currently have mainly users of this code.
+   * [[Gadget]] - A cosmological N-body/SPH that is being used by several groups here.
+   * [[PKDGrav]] - N-body code developed in part by Main.DerekRichardson.
+   * [[HNBody]] - Hierarchical N-Body code written by Doug Hamilton.
+   * [[Zeus3d]] - A non-parallel version of the ZEUS code has been in use here fairly frequently. We do not currently have any fully public versions, but several groups have it and may be willing to put more info here.
+   * <nop>Zeus-MP 1.5 - A parallel version of the 3D magnetohydrodynamics code, ZEUS, is maintained and distributed locally. You can download the code and get more info on my [[http://www.astro.umd.edu/~vernaleo/zeusmp.html][ZeusMP page]].
+   * [[MDallsky]] - Maryland All Sky Network camera. We have some python based software
+If you have more info on any of these codes please feel free to add it to the code specific pages. If you use or develop a numerical code (doesn't have to be nbody or hydro), then please add something about it as well. If people put enough info here, this could significantly shorten the startup time for people to get going on their new numerical projects.
+
+A more complete list of such codes is available on the department website at http://www.astro.umd.edu/rareas/software.html. A number of codes have been moved to our new (2017) https://github.com/astroumd collaboration.
+
+-- Main.JohnVernaleo - 26 Sep 2007

@@ -1,0 +1,23 @@
+%META:TOPICINFO{author="teuben" date="1663207289" format="1.1" version="1.8"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ 
+---++ Remote Access
+
+If you have an account to access the department computers, you can do so from your laptop too, connected on any network. Open a Terminal and type
+
+=ssh -XY &lt;yourAstroID&gt;@&lt;computerName&gt;.astro.umd.edu=
+
+You will be prompted for your ASTRO password. Upon entering it, you will be connected to the machine. We maintain a list of [[Public Workstations]] where you can pick your computerName from. Use the command <strong> =host-info public= </strong>for this.
+
+<span style="background-color: transparent;"><br /></span>
+
+Here are some more resources for advanced users:
+   * [[Passwordless SSH]] - How to set up your account so you can ssh to machines without typing your password every time.
+   * [[Mounting Disks Remotely Using SSH]] - A handy way of accessing files remotely without having to copy them.
+   * [[Surf Securely with an SSH Tunnel]] - How to route all of your Internet traffic securely through a remote SSH server (or how to mask your IP address).
+   * [[VNC Screen Sharing Connection]] - How to use a VNC server to see your desktop work station screen while working remotely on your laptop. X2Go is a better VNC.
+   * [[How To Access Journal Articles From Off Campus]] - An easy way to benefit from campus electronic journal subscriptions.
+   * [[How To Use VPN]] - set up VPN (new in 2022)
+   * http://keepworking.umd.edu/ - great UMD resource if you work from home
+   * AstroLaptop - notes from different users on how they have finetuned their systems for astronomy in general and astroumd specifically
+-- Main.PeterTeuben - 2022-09-14

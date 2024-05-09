@@ -1,0 +1,84 @@
+%META:TOPICINFO{author="mpound" date="1481900311" format="1.1" reprev="1.9" version="1.9"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ I. Dealing with Spam
+---+ <span style="color: #000000; font-size: small; background-color: transparent;">The most important step in ridding yourself of spam is to be </span> =[[https://en.wikipedia.org/wiki/Greylisting][greylisted]]= <span style="color: #000000; font-size: small; background-color: transparent;">. This alone will reduce your spam enormously. Contact Bill Sebok to be added to the greylist.</span>
+---+ <span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;">There are two programs available to help identify and remove spam from your inbox. These are </span><span style="line-height: 1em; font-size: small; background-color: transparent;"><a href=http://spamassassin.apache.org></span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;">SpamAssassin</span><span style="line-height: 1em; font-size: small; background-color: transparent;"></a></span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;"> and </span><span style="line-height: 1em; font-size: small; background-color: transparent;"><a href=http://www.spambouncer.org></span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;">SpamBouncer</span><span style="line-height: 1em; font-size: small; background-color: transparent;"></a></span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;"> . You can use either or both of these to filter spam from your inbox. However, since </span><span style="line-height: 1em; font-size: small; background-color: transparent;">SpamBouncer</span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;"> has not been updated since 2006 and is no longer maintained, it gets less useful with time and is more prone to false positives (that is, identifying non-spam as spam). Furthemore, </span><span style="line-height: 1em; font-size: small; background-color: transparent;">SpamBouncer</span><span style="line-height: 1em; color: #000000; font-size: small; background-color: transparent;"> is a voracious CPU hog and it's use is forbidden if you receive your mail on </span> <em> =earth= </em> *.*
+
+Each program uses different techniques to identify spam. Spambouncer uses regular expression pattern matching against known spam and DNS blocklists, while <a href=http://spamassassin.apache.org>SpamAssassin</a> uses analysis, Bayesian filtering, DNS blocklists, and collaborative filtering databases. In my experience, Spambouncer is better at identifying 419 (aka Nigerian) scams, and is useful for redirecting listserv mail to a bulk folder, although you can easily write your own filters for that. <a href=http://spamassassin.apache.org>SpamAssassin</a> is an Apache project with many participants and continues to be actively developed, so should keep up with new types of spam. It is less CPU intensive than spambouncer.
+
+You can filter your email you can use one or both of these programs. I recommend using both in series. Both programs are executed through <a href=http://www.procmail.org>procmail</a>, a standard Unix autonomous mail processor.
+
+---+ II. Setting up spam filtering
+
+   * If you currently have no spam filtering at all, read <a href=#neverbefore>this</a>.
+   * If you currently use spambouncer and want to add spamassassin, read <a href=#spambouncerbefore>this</a>.
+   * If you currently use spamassassin and want to add spambouncer, read <a href=#spamassassinbefore>this<a>
+   * If you want a lightweight solution using only spamassasin, see John's writeup on SpamAssassin.
+
+---
+
+<a name=neverbefore>
+---+++ If you have never set up spam filtering before
+
+To set up spam filtering you need two files in your home directory: a .forward file and a .procmailrc. There are system templates for each of these which you can copy and edit accordingly.
+   * Copy the system templates to your home directory. <pre>% cp /local/pkg/spambouncer/procmailrc.astro $HOME/.procmailrc % cp /local/pkg/spambouncer/procmailforward.astro $HOME/.forward </pre>
+   * In $HOME/.forward, change "your_username_here" to your username. EXAMPLE: <pre> "|IFS=' ' && exec /local/bin/procmail -t -f- || exit 75 #mpound" </pre> At the top of .procmailrc are a few lines you need to customize for yourself:
+   * In $HOME/.procmailrc, change MAILDIR to point to the subdirectory in your home directory in which you keep mail. This will typically be $HOME/Mail or $HOME/mail. If you don't have one, use Mail.
+   * In $HOME/.procmailrc change DEFAULT to point to your incoming mailbox. This will be either $HOME/Mailbox (if you are set up to have mail processed on your own machine) or /var/mail/yourusername.
+   * In $HOME/.procmailrc, change MYRECIPES to point to the file where you have your own procmail recipes. If you don't have this (or don't even know what a procmail recipe is), ignore this.
+
+   * In $HOME, create the MAILDIR and MAILDIR/backup directories. For instance, if your mail directory is called Mail: <pre>mkdir -p $HOME/Mail/backup </pre> The backup directory will be used to store the last 500 messages you received. This is useful if a message gets deleted, either by you or by spam filtering (Don't Panic: Spam is only deleted if you tell the filters to delete spam rather than put it aside. The default is to put it aside).
+*That's it -- Your email will now be spam filtered!* Be sure to check your block and bulk folders if you think you are missing mail. And delete messages from spam.incoming every once in a while so as not to clog up your home directory.
+
+*What this will do:*
+
+   * Clearly identified spam will get put into $HOME/Mail/spam.incoming.
+   * Possible spam will get "blocked" putting it into $HOME/Mail/block.incoming.
+   * Mail which is larger than 512 KB or which passed spam filtering but which wasn't sent to a recognizable personal email address of yours, gets sent to your bulk mail folder: $HOME/Mail/bulk.incoming.
+The first time spamassassin is run, it will create a directory $HOME/.spamassasin. For details on the contents of this directory see <a href=#advanced>Advanced Usage</a>.
+
+---
+
+---
+
+<a name=spambouncerbefore>
+---+++ If you previously have used spambouncer, but not spamassassin
+
+   * Convert your spambouncer nobounce to spamassassin whitelist. Edit $HOME/.spamassassin/user_prefs and add entries of the form <span style="color: saddlebrown;" class="WYSIWYG_COLOR"> _whitelist_from_rcvd emailaddress_ </span>, one per line. So where, in your spambouncer NOBOUNCE file you had <em><span style="color: saddlebrown;" class="WYSIWYG_COLOR">myfriend@yahoo.com</span></em>, put <span style="color: saddlebrown;" class="WYSIWYG_COLOR"> _whitelist_from_rcvd myfriend@yahoo.com_ </span>.
+
+   * Invoke spamassassin *after* your personal recipes, but *before* spambouncer. By putting spamassassin first, it will catch most of the spam leaving a much smaller set of message for the more CPU-intensive spambouncer to process. In your .procmailrc, add this between INCLUDERC=$MYSBDIR/MyRecipes.rc and INCLUDERC=${SBDIR}/sb-new.rc : <pre> #------------------------------------------------ # Do spamassasin filtering before spambouncer filtering # because spamassassin is less resource intensive. # Let spambouncer to any extra cleanup # :0fw: spamassassin.lock | spamassassin # mail that might be spam goes to the "block" folder :0: * ^X-Spam-Level: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\* ${BLOCKFOLDER} # mail that is judged definitely spam goes to the "spam" folder :0: * ^X-Spam-Status: Yes ${SPAMFOLDER} </pre>
+---
+
+<a name=spamassassinbefore>
+---+++ If you previously have used spamassassin, but not spambouncer
+
+   * Invoke spamassassin *after* your personal recipes, but *before* spambouncer. Look at example procmailrc for the variables that spambouncer wants. Then add these lines *after* the spamassassin invocation <pre>SBDIR=/local/pkg/spambouncer/sb-new INCLUDERC=${SBDIR}/sb-new.rc </pre>
+---
+
+<a name=advanced>
+---+ III. Advanced usage
+
+   * *Spamassassin white lists* A white list is a list of email addresses which you do not want filtered. To create this edit $HOME/.spamassassin/user_prefs and add entries of the form, white_list emailaddress, one per line.
+
+   * *Teaching spamassassin to recognize more spam* Spamassassin will sometimes misclassify email. You can teach it to do better by showing it examples of bad email (spam) and good email (ham). There is a program called sa-learn for this. In your $HOME/.cshrc file, create two aliases: <pre>alias learnspam 'sa-learn --showdots --mbox --spam $HOME/Mail/block.incoming' alias learnham 'sa-learn --showdots --mbox --ham $HOME/Mail/ham' </pre> Then save spam that has gotten through to your inbox to $HOME/Mail/block.incoming and save real email (ham) that has been misclassified as spam to $HOME/Mail/ham. Then type learnspam or learnham accordingly. You will see output like: <pre>% learnspam ...................................................................................................... Learned tokens from 49 message(s) (102 message(s) examined) </pre>
+
+   * *Handling Listserv or group email with spambouncer* Create a file $HOME/.legitlists containing the From or To addresses of group e.g. <pre>owner-interop@eso.org LISTSERV@LISTSERV.UMD.EDU FYI@LISTSERV.UMD.EDU listmgr.cv.nrao.edu ads@cfa.harvard.edu ads@adsfife.cfa.harvard.edu </pre>
+
+   * *Deleting spam instead of sending to spam.incoming*
+To delete spam entirely, in $HOME/.procmailrc change this
+<pre>SPAMFOLDER=${MAILDIR}/spam.incoming   </pre>
+
+to
+<pre>SPAMFOLDER=/dev/null </pre>
+
+*CAVEAT:* While false positives (ham classified as pure spam) are rare, they do happen. I have seen only one in 5 years and John Vernaleo has seen one over a similar period. Redirect mail to /dev/null at your own risk!
+
+   * Forwarding mail to another account Near the bottom of .procmailrc there are lines you can uncomment that will forward mail which has passed spam filtering to an account of your choice. Uncomment the lines: <pre>#:0 h c #* !^FROM_DAEMON # | ${SENDMAIL} -oi other@mailbox </pre> and substitute the address to which you wish for forward email for "other@mailbox". Note this will still redirect mail to block and bulk folders; only mail which would have gone to your inbox will be forwarded.
+
+---
+
+---+ IV. Rolling your own procmail recipes
+
+See details in the <a href=http://www.astro.umd.edu/~mpound/spamtalk/Spam9.html> FAQ</a> and <a href=http://www.astro.umd.edu/~mpound/spamtalk/Spam10.html>recipe examples</a> from my long-ago <a href=http://www.astro.umd.edu/~mpound/spamtalk>ALTS spam talk</a>.
+
+-- Main.MarcPound - 2009-08-21

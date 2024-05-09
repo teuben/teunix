@@ -1,0 +1,14 @@
+%META:TOPICINFO{author="pjteuben" date="1583774586" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+you should probably look at somebody's ~/.muttrc file. The least you have to do it tell mutt the return address is astro.umd.edu, not the machine name you might be using. E.g.
+<blockquote style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-width: initial; border-color: initial; border-style: none; padding: 0px">
+
+<pre>set hdrs                                                       # include `my_hdr' lines in outgoing messages</pre> <pre>set from=xxx@astro.umd.edu</pre> <pre>my_hdr Reply-To: xxx@astro.umd.edu</pre> <pre>set hostname="astro.umd.edu"                     # my DNS domain</pre>
+
+</blockquote>
+
+where you replace 'xxx' with your username ($USER). Most users will use mutt as a local mail client. For those who wish to use IMAP (POP is not supported as of April 2018), please consult your local google expert.
+
+As for the new 2020 G-suite version, there are rumors Kevin is going to try and make it work with OAUTH2.
+
+-- Main.PeterTeuben - 2018-04-04

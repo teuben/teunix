@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="JithinGeorge" date="1253932941" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ For the First Time Wiki User
+
+This Wiki is for the users maintained by the users. Use it as a tool for deciphering the Astronomy Department Network. You can view any of this content freely, but to edit you need to register at TWiki.TWikiRegistration. While you can use the Main.TWikiGuest account, we encourage you to create your own account.
+
+At the moment, you can only register accounts from machines with astro.umd.edu IP addresses. Anyone can view pages, but we currently do not want anyone to edit them (although if people feel otherwise, changes could be considered). For info on how to edit from elsewhere (such as home connections) see AstroUMD.SSHPortForwarding.
+
+The DiscussionStop section of the wiki is a public place where you can post any question you have and someone else in the department will be happy to answer them for you. Also if you have any suggestions for the improvement for the wiki or the department computing general, this would be the place to get your voice heard. Same goes for requests for facilities like a new printer etc.
+
+Once you get the hang of the system, you'll probably want to visit AstroUMD.WebChanges regularly to see what pages have changed recently.
+
+-- Main.JithinGeorge - 2009-09-25

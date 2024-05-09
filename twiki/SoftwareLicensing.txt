@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="teuben" date="1663181982" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="SoftWare"}%
+Although most UNIX systems (GNU/Linux and Mac OS X) have tons of available free software, you may still find a need for some commercial software. The University has licenses for a large amount of software.
+
+Some (IDL, Mathematica, and Matlab for example) are installed on all dept. Linux machines.
+
+For software that is not already installed, you should check the [[https://umd.service-now.com/itsc?id=sc_category&sys_id=0abe8d346f96e20051281ecbbb3ee47d&filter=all&t=so#][OIT Software Licensing Page]]. This page shows mostly everything that the University has. In some cases (mainly Microsoft software such as Office, but also OS X), with a University of Maryland directory id and password you can download the program. In other cases, you have to buy the CD or DVD from OIT, but usually at a much reduced price. This much reduced price is still sometimes very high.
+
+In all cases, you must see the OIT page for what you are allowed to do with this software. Some may only be installed on University installed machines (which may include some laptops). In others you are expressly allowed to install it on personal machines for "work at home" purposes. IF YOU ARE UNSURE, CHECK THE OIT PAGE.
+
+The department computer staff already has CDs for some programs (mostly Adobe or MS Office I think). This means you would not have to pay for the media, but you may still be responsible for licensing. Again, check with the computer staff or the OIT page if you have any questions.
+
+Here are some recent experiences in IDLSoftwareLicensing
+
+-- Main.JohnVernaleo - 10 Sep 2007

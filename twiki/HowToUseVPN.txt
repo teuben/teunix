@@ -1,0 +1,37 @@
+%META:TOPICINFO{author="teuben" date="1660225268" format="1.1" version="1.14"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+VPN is a service by which you can pretend to be a UMD networked computer when you are physically not in College Park. This is essential to use certain campus services.
+---+++ *GlobalProtect*
+
+In the fall of 2021 UMD switched over to a mostly private network (10.x.x.x) for all computers on campus (except some servers), and in order for anybody to access campus from the outside, VPN via a company GlobalProtect is now needed. You will need to install their app, as is explained below.The usual authentication via CAS with it's 2FA will be needed.
+
+Download them via:
+   1 Linux: https://terpware.umd.edu/Linux/Title/4010
+   1 Mac: https://terpware.umd.edu/Mac/Title/4010
+   1 Windows: https://terpware.umd.edu/Windows/Title/4010
+In order to ssh into the department, everybody should use *ssh.astro.umd.edu* as the main entry point, and from there ssh to the machine you want to work on. Via convenient "aliases" in your ~/.ssh/config file you can make this process easier, e.g. "ssh chara" would be the method to ssh into ssh (currently ursa)ss and then into chara would be the following entry in your *~/.ssh/config* file:
+
+<verbatim>
+ Host chara
+         ProxyCommand ssh astro.umd.edu -W %h:%p
+</verbatim>
+
+If your username is not the same on both machines, or it uses a non-standard port (22 being the default), these can all be tailored in this config file. For example a more full example could be:
+<verbatim>
+ Host chara2
+         ProxyCommand ssh -p 12000  fred@ssh.astro.umd.edu -W %h:%p
+</verbatim>
+
+and you might also note that currently the default machine for ssh is ursa.astro.umd.edu
+
+Use the command *host-info public* to find machines you can use for light computing.
+---+++ OpenConnect
+
+On linux the openconnect program (ubuntu packages: openconnect and traceroute) can be used to connect to vpn.umd.edu - DIT claims this will continue to work with GlobalProtect, but you will need to get a document PS-GlobalProtect-OpenSourceClient-111121-0843-82.pdf (or the like). Peter has been experimenting with this (jan 2022)
+---+++ WireGuard
+
+The latest linux kernels support a VPN connection based on wireguard. Probably not supported by UMD yet, but this is an open issue, and it would be nice if like with OpenConnect, we can get this to work.
+---+++ Useful Links:
+
+   * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076 (the instructions for using GlobalProtect)
+-- Main.PeterTeuben - 2022-07-27

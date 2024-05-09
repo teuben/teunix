@@ -1,0 +1,24 @@
+%META:TOPICINFO{author="teuben" date="1663551776" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="PickYourComputingPlatform"}%
+[[https://www.openmp.org/][OpenMP]] (Open Multi-Processing) is a programming technique to use more than one core on a processor. The command *lscpu* (on linux) might say something like this:
+<pre>  <verbatim> Architecture: x86_64 
+ CPU op-mode(s): 32-bit, 64-bit 
+ Byte Order: Little Endian 
+ CPU(s): 32 
+ On-line CPU(s) list: 0-31 
+ Thread(s) per core: 1 
+ Core(s) per socket: 16 
+ Socket(s): 2 
+ NUMA node(s): 2 
+ CPU family: 23 
+ Model: 49 
+ Model name: AMD EPYC 7302 16-Core Processor
+ ...
+</verbatim>
+</pre>
+
+which shows there are two sockets for a CPU, each socket has 16 cores, but each core has 2 threads. So a total of 64 threads is possible in this model, though for most application we can write only 32 threads (i.e. the cores) count in performance.
+
+An alternative for OpenMP is MPI, which can run the code accross many processors. For example, zaratan has almost 400 nodes, each node with 128 cores (when we use the word _core_, we usually ignore that there can be two _threads per core_). To make the field more confusing, there is also OpenMPI
+
+-- Main.PeterTeuben - 2022-09-16

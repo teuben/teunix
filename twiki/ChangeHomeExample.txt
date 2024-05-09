@@ -1,0 +1,20 @@
+%META:TOPICINFO{author="DerekRichardson" date="1280247501" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="PowerOutageInfoForUsers"}%
+---+ Changing Your Home Directory
+
+I maintain two "home" directories: one on the department server, earth (/a1/dcr), and one on my private machine, europa (/n/europa/dcr). I keep essential files (including important web pages) on earth, the rest on europa. When I first log in, my home directory is assigned to /a1/dcr on earth. I use a script to change this automatically to /n/europa/dcr after I log in. My approach is to modify the .tcshrc file that was provided in my account by adding the following lines at the end:
+<verbatim># try to use europa as home directory...
+setenv HOME_START ~
+if (-d /n/europa/dcr) setenv HOME /n/europa/dcr
+if (-e $HOME_START/.mytcshrc) source $HOME_START/.mytcshrc
+if ("$HOME_START" != "$HOME") echo Old Home = $HOME_START New Home = $HOME
+cd 
+</verbatim>
+
+If europa is not available for whatever reason, the script above will either timeout or hang. You can always press CTRL-C to get to a prompt (but not all of your dot files will have been read, so some aliases, etc. may not have been set). It is then possible to read your mail and otherwise manipulate any files in your earth directory, as that will remain as your "home" for the session.
+
+If you use bash instead of tcsh as your shell you can do something similar to the above, but you will need to work out the syntax yourself (unless someone cares to add a bash version here?).
+
+IMPORTANT: your mail and www folders (public_html) will still be assumed to be on earth. You can use "softlinks" (ln -s) if you want large mail folders or web page directories to reside elsewhere (earth has a 1 GB per user disk quota). Also, some dot files are read BEFORE your new home is set, and some AFTER. When in doubt, put the dot file you need on earth and put a softlink to it in your new home directory. For more information, contact Main.DerekRichardson.
+
+-- Main.DerekRichardson - 2010-07-01

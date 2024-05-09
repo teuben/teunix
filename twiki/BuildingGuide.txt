@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="teuben" date="1666316392" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---++ What about those room numbers
+
+Astronomy is currently located in two adjacent buildings, ATL (Atlantic, the older 1960s building formerly called CSS or Computer and Space Sciences) and PSC (Physical Sciences Complex, the newer building). The formal directions we maintain are on https://www.astro.umd.edu/about/contact.html#directions
+
+There is some remarkable logic to how room numbers are assigned on campus.
+
+Room numbers are 4 digits: *&lt;floor&gt;&lt;wing&gt;&lt;number&gt;&lt;number&gt;*. For example ATL 0223 means floor 0, wing 2, room 23. For ATL, if you stand in front of it, wing 2 is on the right, or east, closests to PSC. Wing 1 is in the middle, and Wing 3 on the left. To the left of that is another building, build in the 90s, which was decided to be wing 4 of ATL. For example, our weekly colloq. is usually in ATL 2400, so floor 2 of wing 4.
+
+PSC has two wings (1 and 2) on floor 1 (one floor up from ground level). Wing 1 is the central portion, looking out over the ellipse where most faculty and staff are. Wing 2 is east of this, where the main office and students are.
+
+It also has a basement and sub-basement, but we don't go there (or you might never be able to come back).
+
+There is more logic to room numbers, which somebody should write down here.
+
+-- Main.PeterTeuben - 2022-10-20

@@ -1,0 +1,47 @@
+%META:TOPICINFO{author="teuben" date="1516499888" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="SoftWare"}%
+<strong>git </strong>is a software repository originally written by Linus Torvalds, the author and maintainer of Linux.
+The git is present on the Department of Astronomy linux computers as a part of Scientific Linux 6.<br /><br />
+This is not a tutorial on the git but just a quick note on what has been done in the astronomy department to support the use of the git.
+For a tutorial, read the documentation at http://git-scm.com/doc (I strongly suggest reading Chapters 2 and 3).
+For reference you can also read the man pages on the system.<br /><br />
+Normally one will work on some program in a personal git copy, usually kept in a place like your home directory, and then clone it to a public place. A public place for these repositories has been set up at /n/www/git. Create a directory for yourself in /n/www/git/user (where _user_ is your username) and clone your repository inside that directory. The repository should be<br />a _bare_ repository with just the git files and should end with the suffix _.git_. An example command to create this public repository clone is:
+<pre><verbatim>   git clone --bare /n/www/git/user/myproject.git</verbatim></pre>
+
+This assumes your current directory is in your private repository, your project is named _myproject_, and _user_ is your username.
+ For a group of people using a common public repository, a system administrator can set up the permissions to make that possible.
+ Then, rather than one's username, the directory in which the repository is located can be whatever name the group decides to use.
+<br /><br />
+A list of all repositories that are currently in the public git area can be seen at http://www.astro.umd.edu/git .
+<br /><br />
+Git repositories can be accessed with different protocols.
+The git protocols are described in
+<br/>
+ http://git-scm.com/book/en/Git-on-the-Server-The-Protocols .
+<br /><br />
+For private repositories, two protocols are supported, local and ssh. 
+Both reading and writing are supported.<br /><br />
+For the public git area, an additional two protocols are available, git and http/https. Both of these protocols are read-only.
+<br /><br />
+A url to the public git area using various protocols might look like one of the following:
+  <table>
+  <tr><td>local</td>  <td> /n/www/git/user/myproject.git</td></tr>
+   <tr><td>or</td>     <td>file: ///n/www/git/myproject.git</td></tr>
+   <tr><td>ssh</td>  <td>//user@gaia/www/git/user/myproject.git</td></tr>
+   <tr><td>or</td>     <td>ssh://gaia/www/git/user/myproject.git</td></tr>
+   <tr><td>http</td>  <td>http://git/user/myproject.git</td></tr>
+   <tr><td>git</td>    <td>git://user/myproject.git</td></tr>
+  </table>
+Again, substitute the name of your project for _myproject_ and your own username for _user_.
+
+For the http protocol to work right after creating the public repository by cloning, run these commands:
+<pre><verbatim> 
+   cd /n/www/git/user/myproject.git
+   cd hooks
+   cp post-update.sample post-update
+</verbatim></pre>
+If this is not done, then commands that use the http protocol may not work correctly.
+
+-- Main.WilliamSebok - 2013-12-02
+
+%META:TOPICMOVED{by="wls" date="1386037889" from="Sandbox.GitAtAstroUMD" to="AstroUMD.GitAtAstroUMD"}%

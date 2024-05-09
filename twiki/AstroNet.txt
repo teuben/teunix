@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="teuben" date="1662563346" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICPARENT{name="AstroNetDirectories"}%
+AstroNet is the generic name for the network of astronomy computers at UMD.
+
+We keep a page AstroNetDirectories if you are curious where some of the directories are that we keep in "non-standard" places.
+
+-- Main.PeterTeuben - 2022-08-02

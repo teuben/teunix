@@ -1,0 +1,21 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354131022" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="UsingMPlayer"}%
+---++ The <nop>ImageMagick tools
+ The <nop>ImageMagick suite of tools are for creating and manipulating images in a huge variety of formats. Here we mention some basic uses of a few tools. See the individual man pages and =man <nop>ImageMagick= for more details, or visit the [[http://www.imagemagick.org][ImageMagick]] website.
+
+---+++ Using =convert=
+ =convert= is used, surprisingly enough, to convert single images from one format to another, possibly applying complex changes in the process. For simple uses, just pass the existing filename and the desired filename of the new image; the format will be guessed by the extension you provide: =convert picture.jpeg picture.png= More complex conversions involve using the =-quality= option, useful for handling JPEG compression, and the =-type= option to force true-color images. For example, =convert -quality 100 -type <nop>TrueColor pic.png pic.jpg=
+
+---+++ Using =mogrify=
+ Use =mogrify= to convert many images at once. For example, with a directory full of PNGs you can make JPEG versions with =mogrify -format JPEG frame*.png=
+
+---+++ Other Tools
+ To actually view an image, in any format <nop>ImageMagick knows, use =display=.
+
+Use =identify= to reveal the type, dimensions, color-depth and file-size of an image.
+
+Use =animate= to animate a sequence of images. The first time through will be jumpy as the frames are loaded. Subsequent times should be smooth, you can use the right-click menu to change the speed and direction.
+
+Use =import= to take a screenshot. For example, execute =import screencap.jpeg= in a prompt, then click on a window to capture it to the file.
+
+-- Main.GraemeLufkin - 05 Nov 2004

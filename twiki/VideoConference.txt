@@ -1,0 +1,16 @@
+%META:TOPICINFO{author="prakriti" date="1475608346" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Setting Up a Polycom-Style Videoconference in PSC 1136
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main menu, find 'Videoconference' on the upper horizontal scroll bar and press it.
+   1 Then touch 'Projector' on the lower horizontal scroll bar.
+   1 Select Videoconferencing button on the left side of touchscreen. Then select the (green) 'Call' button. The videoconferencing screen should now display on the projector (which might need a short time to finish warming up).
+   1 Videoconferencing options can be selected using the panel displayed on CRESTRON.
+   1 The 'Camera' button on the right allows you to select the room's front or rear cameras and to zoom or pan. If there are any problems with the cameras, see the Troubleshooting section of AstroUMD.PSC1136AV.
+   1 You can call another party if you know their IP address, or another party can call in to you using the IP for PSC 1136, which is 129.2.92.105.
+   1 You can adjust the volume with a volume control on the right-bottom of the main touchpanel screen.
+   1 When finished, select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344339" from="Sandbox.VideoConference" to="AstroUMD.VideoConference"}%

@@ -1,0 +1,6 @@
+%META:TOPICINFO{author="JohnVernaleo" date="1190820443" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="LocalCodes"}%
+The official Gadget2 page with downloads is [[http://www.mpa-garching.mpg.de/gadget/][here]].
+
+-- Main.JohnVernaleo - 26 Sep 2007
+

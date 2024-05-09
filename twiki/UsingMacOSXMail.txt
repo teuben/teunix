@@ -1,0 +1,27 @@
+%META:TOPICINFO{author="rauch" date="1582826234" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+Instructions for Apple Mail. The following steps worked on OSX 10.11 and 10.12:
+
+- Go to System Preferences;
+
+- Select Internet Accounts;
+
+- Selected Add Account (the plus sign);
+
+- Scroll down the list and click 'Add Other Account';
+
+- Select Mail Account;
+
+- Fill in your username, password and email (ie, &lt;username&gt;@astro.umd.edu, but without &lt;&gt;);
+
+- It will complain it needs more details:
+
+*Account type: IMAP*
+
+*Incoming Mail: mailhost.astro.umd.edu*
+
+*Outgoing mail: mailhost.astro.umd.edu*
+
+That should be it.
+
+-- Sjoert - 2017-10-17

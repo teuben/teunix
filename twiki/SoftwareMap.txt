@@ -1,0 +1,79 @@
+%META:TOPICINFO{author="teuben" date="1662575767" format="1.1" reprev="1.21" version="1.21"}%
+%META:TOPICPARENT{name="SoftWare"}%
+---+ Software Map for UMd Astronomy
+
+This is a (incomplete) list of software packages available on the machines of the Astronomy Department. When you add something, include instructions for accessing it and whether it is available on Linux, Solaris, or Windows.
+
+---++ General
+
+The Linux machines are running the Red Hat Enterprise 8.6 distribution. This contains most of the software you'll need to run on an everyday basis. For help, many programs accept =programname --help=, or you can look at the man pages with =man programname.=
+---++ Local Expertise
+
+The following table lists local experts for popular applications. Generally you should consult these experts before contacting one of the system administrators for issues dealing with these particular software packages. They are happy to help!!
+
+| *Package*  | *Description*  | *Invocation* | *Local Expert(s)*  |
+| AIPS | Astronomical Image Processing System (primarily for radio astronomy) | aips | |
+| IDL | Interactive Data Language (data analysis and visualization) | idl | Main.RobOlling |
+| Mathematica | Package for symbolic computing and function visualization | mathematica | |
+| MATLAB | MATrix LABoratory (numerical and symbolic computing) | matlab | Main.AlbertoBolatto |
+| [[http://www.libreoffice.org][LibreOffice]] | Alternative to MS Office suite | libreoffice | |
+| Perl | General purpose, shell-like programming language | perl | Main.MarcPound |
+| [[http://www.povray.org/][POV-Ray]] | Persistence of Vision Raytracer (visualization) | povray | Main.DerekRichardson |
+| R | Package for statistical computing and plotting | R | Main.AndyHarris |
+| [[http://carma.astro.umd.edu/wip][WIP ]] | Interactive plotting package for publication-quality figures (part of MIRIAD) | astroload miriad; wip | Main.MarcPound |
+| [[http://www.xm1math.net/texmaker/][texmaker]] | GUI Tex/LaTeX development environment | texmaker | |
+
+---++ Astromake
+
+Main.PeterTeuben has developed an easy way to access a suite of popular software packages. For more info, see AstroMake.
+---++ MPI Libraries (for parallel programming)
+
+An MPI (Message Passing Interface) library is a library that can be used to construct a program that uses multiple computers or multiple cores on a single computer. Thus a calculation can be spread among several CPUs. There are multiple versions of MPI libraries available on our computers. On the old Centos 5 OS, the MPI libraries were only available on the yorp cluster. On the newer Scientific Linux 6 OS, the MPI libraries are available on all of the department Linux computers.
+
+There are two ways in Scientific Linux 6 to set which version of the mpi library is used. The newer and preferred method is to use "modules". The older method is to use "mpi-selector". mpi-selector was used in Centos 5 on the yorp cluster. Both the modules and the mpi-selector methods are currently available on all Scientific Linux computers. The modules package comes with Scientific Linux 6. mpi-selector does not come with Scientific Linux 6, but it has been installed; however it may not be supported in the future.
+---+++++ To use the "modules" method:
+
+To see what modules are available, type:<strong> module avail </strong>
+
+To see some information about a module called "modulefile", type: *module show modulefile* (Example: _module show openmpi-icc_ to get some information about the most recent openmpi module compiled with the Intel compiler.)
+
+To load a module called "modulefile", type:<strong> module load modulefile</strong> (Example: _module load openmpi-icc_)
+
+To unload a module called "modulefile" type:<strong> module unload modulefile</strong> (Example:<em> module unload openmpi-icc</em>)
+
+To replace "module1" with "module2" type:<strong> module swap module1 module2</strong> (Example:<em> module swap openmpi-icc openmpi-x86_64</em> &mdash; the module called openmpi-x86_64 is the version of openmpi that comes with Scientific Linux 6. It is compiled with gcc.)
+
+To see what modules are currently loaded type:<strong> module list </strong>
+
+The effect of a "module" command lasts only the life of the current shell. You may have different shells, each with its own module. For more information about the module package, type "man module".
+---+++++ To use the (old) "mpi-selector" method:
+
+To see what versions of mpi are available, type<strong> mpi-selector --list </strong>
+
+To set the version of the mpi library to "mpi" type:<strong> mpi-selector --set mpi</strong> (Example:<em> mpi-selector --set openmpi-icc-1.5.5</em> to set the MPI library to openmpi version 1.5.5 compiled with the Intel compiler.)
+
+To change the version of MPI library to something else, just use *--set* again. (Example:<em> mpi-selector --set openmpi-x86_64</em> to set the MPI library to the version that comes with Scientific Linux 6. This version is compiled with gcc. The current version is remembered so it becomes your default. This is different from the behavior of the "module" command.)
+
+To unset the current default (leaving no default), type<strong> mpi-selector --unset </strong>
+
+For more info on the mpi-selector method, type "man mpi-selector".
+
+There is no way to set a default with the module method other than (say) putting a module command in your .cshrc.
+
+Unlike the old situation with Centos 5 on the yorp cluster, no system default for the MPI library has been set. This is because setting an MPI library or module sets the LD_LIBRARY_PATH environment variable. Because that enviroment variable has some unfortunate side effects it generally should not be set unless necessary. In the old situation, the MPI library was only set on the yorp cluster, and on the yorp cluster it is expected that you would be likely to use MPI programming. Therefore, in that case, the benefits of setting LD_LIBRARY_PATH outweighed the drawbacks. However, in the new situation where the MPI library can be set on all of the other computers as well as the cluster, in most cases a user will not necessarily be using MPI programming. Therefore setting an MPI default for everyone with all the baggage that brings is not appropriate.
+---++ Software Development
+   * The default C/C++ compiler on the Linux machines is gcc v8.5.0 If you don't modify your environment, this is the version that will get called when you use =gcc=, =g++=, =cc=, or =c++= This version of the C++ compiler is much stricter than previous versions and will refuse to compile some code that used to compile fine (e.g., the NCSA hdf4 libraries). If you really need to compile code like that, and cannot fix the errors, you can try an older version of gcc provided in AstroMake
+   * Redhat keeps version 11.3.0 in the standard path as gcc11/g++11/gfortran11
+   * The module command has a number of other compilers (intel 2022.1.0) available. We also have the icc12,icpc12,ifort12 suite, which is an older version of this compiler from 2011.
+   * If you are using an AstroMake version of a compiler, you may want to enable hardcoding of shared library paths so that your programs can be run by people who are not using the same compiler as you. See HardcodeSharedLibraryPaths
+
+---++ Visualization Tools
+   * The media player and encoder MPlayer is available via AstroMake, e.g. =astroload mplayer= See UsingMPlayer
+   * The raytracer POV-Ray is available via AstroMake, e.g. =astroload povray= on the department machines running Mandrake 10.1 
+      * Check out the PovrayTutorial!
+
+---++ Project-specific Software
+
+The astronomy department web pages maintain a list of software that is written by its members. See http://www.astro.umd.edu/rareas/software.html
+
+---++ Education Software

@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="GraemeLufkin" date="1098719496" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="PendingQuestions"}%
+---++ Finding =NaN= in your program
+Code that does arithmetic operations sometimes results in a =NaN=, which stands for Not-A-Number.
+This can happen when, for example, you divide by zero or take the =log= of a negative number.
+=NaN= represents a special value to the processor, and it obeys different rules than any other floating-point number.
+Specifically, it tends to be propagated by any additional calculations.
+So there are often many different mathematical operations between the creation of the =NaN= and the time you output the number and recognize that something has gone wrong.
+
+People usually find =NaN= in their outputs after they make a change to their code or supply different input parameters.
+If you think what you did should be valid, you'll need to track down the source of the =NaN= and decide what to do about it.
+If you're using the Intel compiler, there's a special flag designed for exactly this purpose.
+Compile your code using =-fpstkchk= (it stands for _floating-point stack checking_), which will insert special error-checking code around every floating-point operation.
+The extra code will cause the program to terminate when a =NaN= is first generated, and will tell you where in your code it happened.
+You may notice that floating-point operations slow down slightly with this option, so you will want to remove it again once you've fixed the problem.
+
+-- Main.GraemeLufkin - 25 Oct 2004
+

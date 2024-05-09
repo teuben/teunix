@@ -1,0 +1,26 @@
+%META:TOPICINFO{author="MarcPound" date="1341930929" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+To use spamassassin, edit your .forward file as stated in the EmailInfo page.
+
+Then you just need to edit your .procmailrc file. An example (which is what I use) is provided [[http://www.astro.umd.edu/twiki/pub/AstroUMD/SpamAssassin/procmailrc-example][below]].
+
+To give an example of how well it works, here are some statistics from my mail directory over a few months:
+
+<verbatim>
+% spam-stats.py
+Viewing log file at  /home/vernaleo/.spamassassin/procmail.log
+
+Summary of spamassassin mail filtering:
+
+Covering mail from Wed Apr 18 21:36:25 2007  to Fri Feb 29 13:44:37 2008 
+49543 emails recieved
+1548 pieces of spam were not caught.
+1 pieces of mail were incorrectly labeled as spam.
+31281 emails were spam,  63.1390912944 %
+spamassain caught 95.0513091014 % of the spam
+
+</verbatim>
+
+-- Main.JohnVernaleo - 29 Feb 2008
+
+%META:FILEATTACHMENT{name="procmailrc-example" attr="" comment="" date="1184253903" path="procmailrc-example" size="1666" user="JohnVernaleo" version="1.1"}%

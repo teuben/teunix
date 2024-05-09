@@ -1,0 +1,48 @@
+%META:TOPICINFO{author="adhabal" date="1505794101" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+*Purpose:*
+
+I use Thunderbird because I was able to download messages from the server and collate/archive all of them from my @astro and my @umd accounts. I keep almost nothing on either server because of space restrictions and I do not have have my own server space. So I would dutifully go in each month and delete messages from the servers. But in Thunderbird on my desktop, I have thousands of messages saved in hundreds of folders. In addition, although I have a personal gmail account, I am not impressed with how messages are filed and the filing bar on the left is unwieldy to me.
+
+So, getting the _g.umd.edu_ working was important. After beating my computer and brains, I think I have some simple instructions that will help others in getting Thunderbird to access their _g.umd.edu_ account and not make a huge mess (I managed to download the contents of my _g.umd.edu_ twice yesterday).
+
+So, there are several pieces that must be remembered that are "new" and therefore hard to remember to do if you end up removing and reinstalling an email account in Thunderbird.
+
+*Procedure:*
+
+Presumably, you have already been able to access your account via a browser. You have to do this first and there's something that does have to get activated, but I have not seen that piece again. These notes work on a PC machine running Win8.1:
+
++ In the browser, in the mail (you might have noticed that they don't call it gmail), go into the settings, go to the tab with "Forwarding and POP/IMAP". Enable both (it didn't complain so if you decide to switch later or if you have different devices accessing in different ways, you'll be able to).
+
++ Then go to the tab "Labels" and show/hide your folders (I think this only affects how it appears in the browser in that left bar) and *More Importantly*, select which folders show up in IMAP if you are going to be using that! _Highly recommend that the 'All Mail' does not show up in IMAP!_
+
++ Still in the browser, click on your picture icon (upper right) and then "My account", go to "Sign-in & Security", then go through the enabling of 2-step verification, then go to "App Passwords", generate one for the device you are setting up. Do not hit done! Copy the code, but don't hit done yet!
+
++ Now, go to Thunderbird and start setting up a new account. Put in your email *@umd.edu, but for the password, paste in the code from the browser. If you didn't copy it before, hopefully you still have the window open and can copy it. If not, just generate another one (you can always revoke the previous one).... copy... paste... be sure to check the save password box.
+
++ Then, it will try to auto-configure, but go ahead and click on "Manual config". Use either the IMAP or the POP configuration:
+
+server    IMAP settings      Port                          POP settings     Port
+
+incoming  imap.gmail.com   993                                   pop.gmail.com   995
+
+outgoing    smtp.gmail.com    465                                  smtp.gmail.com  465     (Yes, this is the same for both)
+
++ user id is your full email address for both incoming and outgoing
+
++ Click re-test and it should be happy. Then Done.
+
++ Now, you should be able to open Thunderbird and get your emails!
+
+*THINGS THAT CAN GO WRONG!*
+
+= In the mail settings (back in the browser) you only enabled POP and then you tried to do an IMAP config in the account set up in Thunderbird (or vice versa). This is the most likely culprit.
+
+= forgot to use your entire @umd address for the user id ( [[mailto:ewarner@umd.edu]["ewarner@umd.edu"]] is correct "ewarner" is not)
+
+= for the server settings, you typed google instead of gmail
+
+I hope this helps some... The other alternative is to stop using your @umd and go into your UMD Directory profile and have your email forwarded to your @astro account. (Note that the UMD email address in your profile is *@g.umd.edu, so if you do temporarily switch to forwarding to a different address, but then decide to switch back...)
+<pre>Clear Skies!</pre>
+
+-- Main.ElizabethWarner - 2016-10-20

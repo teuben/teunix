@@ -1,0 +1,29 @@
+%META:TOPICINFO{author="teuben" date="1666316116" format="1.1" version="1.9"}%
+%META:TOPICPARENT{name="SoftWare"}%
+This page describes how to access a graphical login session running on a department workstation from your home computer (Windows, Mac or Linux) using X2Go.
+
+---+ What is !X2Go?
+
+[[https://wiki.x2go.org/][X2Go]] is a software package for running a graphical login session on one (client) computer via a remote SSH connection to another (server) computer---like a graphical version of [[https://www.gnu.org/software/screen/][screen]]. It is very efficient (and adjustable) in its network bandwidth requirements, making it usable even over slow connections. This makes it both more secure and more versatile than VNC, a similar alternative package. !X2Go is installed on all dept-maintained Linux workstations (as are VNC and 'screen').
+
+Unlike Remote Desktop for Windows, !X2Go initiates a *new* graphical login session, independent of any desktop session running on the local console. An !X2Go session can be suspended and resumed on demand---if desired, from a different location or even from a different computer. You cannot hyjack, so if you left one machine connected on an x2go connection, you cannot take it over on another machine, the client on the first machine needs to be killed.
+
+---+ Installing !X2Go
+
+To use !X2Go you only need the *client* software installed on your home computer; it's [[https://wiki.x2go.org/doku.php/download:start][available for download]] for Windows, Mac and Linux. Many Linux distributions provide their own !X2Go packages (repository links for several distros are provided on the download page). All department Linux workstations run an !X2Go server.
+
+---+ Configuring !X2Go
+
+The main !X2Go website contains [[https://wiki.x2go.org/doku.php/doc:newtox2go][instructions for new users]]. To use !X2Go with your department desktop machine, just create a session profile for it, making sure to select a <em>Session type </em>of<strong> KDE </strong>or <strong>XFCE </strong>(GNOME will _not_ work). In the _Connection_ settings, you can experiment with different compression values if you find display response too sluggish using the defaults, or if you have a fast connection and want the highest image quality. Under _Media_ you should *disable* sound support as it tends to fight other login sessions for audio control, but if you really need it (and ideally, _aren't_ already logged in on the department computer's console) you can give it a try.
+---+ 
+---+ Performance Tuning
+
+If your remote sessions are frequently sluggish or unresponsive, you may be able to improve performance using one or more of the following:
+   * increase the compression settings (in the "Connection" tab) of your session profile to reduce its network bandwidth usage
+   * avoid playing videos (watch for web pages with embedded animations!) , viewing 3-D models, and other intrinsically high-bandwidth display applications
+   * programs relying on !OpenGL graphics typically work poorly (if at all) within an !X2Go remote session
+   * if using a KDE desktop session, prefer 'xterm' terminals over 'konsole'---they seem sensitive to bandwidth/latency under certain conditions
+   * try using an XFCE desktop session instead of KDE (the latter has more fancy graphical elements, which consume bandwidth; cf. [[https://userbase.kde.org/Desktop_Effects_Performance][KDE Desktop Effects]])
+   * ensure sound support is <em>disabled </em>in your session profile (see the "Media" tab)
+
+%META:TOPICMOVED{by="rauch" date="1584743086" from="AstroUMD.X2GoClient" to="AstroUMD.X2Go"}%

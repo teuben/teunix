@@ -1,0 +1,14 @@
+%META:TOPICINFO{author="teuben" date="1579368686" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---+ Wireless
+
+UMD faculty, staff and students can connect to wireless connections called 'eduroam' using their UMDDirectory ID (use the full umd_name@umd.edu) and password. For more details see [[https://umd.service-now.com/itsc?id=service&service=70810d7f3708c20041271f9543990e1f][here]]. When you set up your WiFi, be sure to use PEAP for authentication, and MSCHAPv2 for Phase2 (Inner Authentication). A certification is not really required, but you are free to do so. This change was made December 2019, before we were using TTLS/PAP.
+---++ Guest Wireless
+
+UPDATE 1/19/2020: Guests should use the 'umd-guest' SSID, and register. They will need a phone (SMS) to then finish the registration.
+
+<span style="background-color: transparent;">UPDATE 8/23/17: A new campus guest wireless service is available: see </span><a target="_blank" href="https://go.umd.edu/guest-wifi" title="campus guest wifi">go.umd.edu/guest-wifi</a><span style="background-color: transparent;">. For now, the system described below still seems to be available, but it may go away without notice. The advantage of the system below is that authorization can be obtained for more than 1 day at a time, and does not require a personal device for activation.</span>
+
+To obtain a wireless account for a campus visitor, log into <a target="_blank" href="https://www.sims.umd.edu/">https://www.sims.umd.edu/</a> with your campus directory ID and password, then choose "Wireless" from the drop-down menu labeled "Select A System". Next click on the "Request" button, enter a description and expiration date, and click "Submit Create Request". The username and password for the guest account will be shown. The guest should then connect to the "umd-secure" wireless service, open a web browser, and enter the login information when prompted. The guest will then be able to access all web services normally accessible by campus users.
+
+-- Main.PeterTeuben - 2020-01-18

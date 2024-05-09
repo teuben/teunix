@@ -1,0 +1,41 @@
+%META:TOPICINFO{author="eric" date="1491511742" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Making a Video Call Using WebEx
+
+It's generally best to schedule a WebEx videoconference in advance and send an email link to participants.
+   1 Go to https://umd.webex.com.
+   1 Log in using your UMD Directory ID.
+   1 Click on "Meeting Center" on the top, then "Schedule a Meeting" on the left.
+   1 Complete the meeting form. It's fine to keep the system-generated password. You can leave the 'Attendees' box blank and click on "Send a copy of the invitation email to me". This way, you will receive the meeting's URL ("Join the meeting").
+   1 You can forward the URL to anyone who you wish to participate. In your instructions to them, note that they may be asked to install a browser extension if it's their first time using WebEx on their computer's web browser. Next, they'll sign in to WebEx with their name and an email address. Next, under "Audio Connection", they should select "Call Using Computer". They can optionally share their video during the meeting.
+When you're ready for the meeting, then follow the next set of instructions. To use the conference room's cameras, microphones, and speakers, it is generally easiest to run the WebEx video call on the 'Room PC' instead of the Mac or a laptop.
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main menu, select 'Room PC' for input and 'Monitor' for output. Select the Audio checkbox under 'Monitor'.
+   1 If the PC is logged out, then log in with your UMD Directory ID.
+   1 Start a web browser, go to https://umd.webex.com, and log in using your UMD Directory ID.
+   1 Click on "Meeting Center" on the top, then "My Meetings" on the left. Click on the green "Start" button on the right for your meeting.
+   1 Under "Audio Connection", select "Call Using Computer".
+   1 Other participants should appear in the top right window. You can turn their video on/off during the meeting (assuming that they're sharing their video). Likewise, you can mute/unmute them.
+   1 The 'Camera' button on the CRESTRON touchscreen allows you to select the room's front or rear cameras and to zoom or pan. If there are any problems with the cameras (or anything else), see the Troubleshooting section of AstroUMD.PSC1136AV.
+   1 You can adjust the volume with a volume control on the right-bottom of the main touchscreen.
+   1 You can optionally use a wireless mic, which is kept in the cabinet below the drawer by the room entrance. The cabinet can be opened by the key used to enter PSC 1136. The mic needs to be switched on before it can be used.
+   1 When finished, log out of the computer and select 'Shutdown' on the CRESTRON touchscreen.
+
+---+ Making a Video Call Using Skype (possibly outdated)
+
+To use the conference room's cameras, microphones, and speakers, it is generally easiest to run the Skype video call on the 'Room PC'.
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main menu, select 'Room PC' for input and 'Monitor' for output.
+   1 If the PC is logged out, then log in with your University directory account.
+   1 Start Skype.
+   1 Check the A/V settings on Skype. Goto Tools -&gt; Options. In audio settings, the audio 'Speakers' and 'Ringing' should be set to Crestron. In video settings, the video option should be set to Hauppage WinTV. Camera settings can be adjusted in this menu also (See point #8).
+   1 Run a Skype video call as usual.
+   1 The 'Camera' button on the CRESTRON touchscreen allows you to select the room's front or rear cameras and to zoom or pan. If there are any problems with the cameras, see the Troubleshooting section of AstroUMD.PSC1136AV.
+   1 You can adjust the volume with a volume control on the right-bottom of the main touchscreen.
+   1 You can optionally use a wireless mic, which is kept in the cabinet below the drawer by the room entrance. The cabinet can be opened by the key used to enter PSC 1136. The mic needs to be switched on before it can be used.
+   1 When finished, log out of the computer and select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344350" from="Sandbox.SkypeVideoCall" to="AstroUMD.SkypeVideoCall"}%

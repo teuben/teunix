@@ -1,0 +1,32 @@
+%META:TOPICINFO{author="sfrederick" date="1594173641" format="1.1" version="1.10"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+There are many sites to which we have free access while on campus, and we'd like this same access when working from home. The following methods allow this.
+---+++++ 1. Using ResearchPort
+
+The library maintains a portal called Research Port, available at <a href="http://researchport.umd.edu/" title="ResearchPort">http://researchport.umd.edu/</a>. Accessing this site while off campus will bring up a page to select a login institution. If you then select University of Maryland, College Park, then Students, Faculty and Staff, it will allow you to sign in using your directory ID and password. Once, there, you can search for specific journals or, if you know what article specifically you're looking for, you can <br />enter the information into the box on the right hand side of the page (title, journal name, year, volume, issue and starting page number are all available fields). <br /> <br />This should get you if not directly to the article you are looking for (from a pop up window that says 'Read the full text online') then at least to a site that has the archive at which the article is available.
+---++++++ Researchport quick shortcut:
+
+Once you find the link to the journal article/site you want to visit, put this at the end of the domain but BEFORE any subdirectories at the end of the URL:<br />.proxy-um.researchport.umd.edu
+
+You'll need your UMD ID and password, as above, but this method allows you to surf and search as you are used to! (Once you are logged in, you should be able to surf freely without having to log in repeatedly.)
+
+Example: I want to access the journal article located at this URL: http://iopscience.iop.org/0004-637X/778/2/94/pdf/apj_778_2_94.pdf
+
+So I would put the above text into the address bar so the URL now reads like this: http://iopscience.iop.org<strong>.proxy-um.researchport.umd.edu</strong>/0004-637X/778/2/94/pdf/apj_778_2_94.pdf <br /><br />To add a button to your browser that will do this for you, see https://lib.guides.umd.edu/c.php?g=436890&p=2978436
+---+++++ 2. Using an SSH Tunnel:
+
+See the [[SurfSecurelyWithAnSSHTunnel]] How To. Using an SSH tunnel will allow you to route all of your Internet traffic securely through your Maryland computer, thus masking your IP address. You can surf the web as if you were sitting in the department, with full access to journal articles.
+---+++++ 3. Using the LibX Extension
+
+If you are using the Google Chrome web browser, there is an extension you can install that will allow access to journal articles off campus through a proxy. To install it, click the 3 dark lines at the top right of the browser that will open up a menu. Go to Tools --&gt; Extensions which will open up a new tab showing all of the extensions you currently have installed for Chrome. Scroll to the bottom and click "Get more extensions". This will open another tab for the Chrome Web Store. Use the search bar on the left and search for "LibX". An extension called "LibX for Google Chrome" should be found and on the right will be a blue button that says "+ Free". Clicking this will install the extension in your browser.
+
+After installing there will be a new button next to the address bar that should look like a miniature version of the UMD ball logo. When you can't access a journal article off-campus, click this button, then click "Proxies" from the list on the left of the pop up window that opens up. This will provide a link to click that says "Reload page with this proxy" that will take you to the standard UMD login page. After logging in with your UMD login and password the journal article page will reload with full access to the article.
+
+(This extension exists for Firefox, however I currently have not been able to get it to work. If anyone has, feel free to update this Twiki.)
+
+---+++++ 4. Using VPN
+
+When connected through the UMD VPN, a number of UMD services automatically will be available. In fact, for some this may be the only way to access services. The introduction of 2FA has made many services available off-campus in a more secure way. See our description on HowToUseVPN
+---++++++ Other useful links (on the department webpages):
+
+<a href="http://www.astro.umd.edu/facilities/library.html" title="DeptLibraryLinks">http://www.astro.umd.edu/facilities/library.html</a>

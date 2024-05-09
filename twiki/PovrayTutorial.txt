@@ -1,0 +1,79 @@
+%META:TOPICINFO{author="DerekRichardson" date="1277325527" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="SoftwareMap"}%
+---+ POV-Ray Tutorial
+
+This is a quick tutorial to help you get started with the free raytracing software package called POV-Ray. More information is available at the software website <a target="_blank" href="http://www.povray.org/" title="POV-Ray Home Page">povray.org</a>, which includes invaluable <a target="_blank" href="http://www.povray.org/documentation/" title="POV-Ray Documentation">documentation</a>. While you are there, be sure to check out the <a target="_blank" href="http://hof.povray.org/" title="POV-Ray Hall of Fame Pictures">Hall of Fame pictures</a>!
+---+++ Accessing POV-Ray
+
+To access POV-Ray on our system, first do this:
+<verbatim>source /astromake/astromake_start
+astroload povray</verbatim>
+
+---+++ POV-Ray Scene Files
+
+To make a pretty picture, you must at a minimum supply a scene file describing the objects that you wish to visualize along with instructions on where to put the camera and light source(s). This is a human-readable text file; all you have to do is learn the grammar and vocabulary. Here's a simple example (cut and paste the following text into a file called example.pov):
+<verbatim>camera
+{ location <0,0,-10> look_at <0,0,0> }
+
+light_source { <100,200,-200> color 1 }
+
+// A red sphere with phong highlight
+sphere
+{ <0,0,0>,2
+  pigment { rgb <1,0,0> }
+  finish { phong 0.7 phong_size 20 }
+}</verbatim>
+
+This example puts a camera at vector position x=0, y=0, z=-10, "looking at" the origin, where we have placed a shiny, red sphere of radius 2. The scene is illuminated by an omnidirectional white light point source located at (100,200,-200). Physical objects like spheres can have many qualifiers, including pigment (color), texture, and finish. The syntax is invariably "object { required-parameters optional-qualifiers { } }". The quickest way to find what objects and qualifiers are available is to look at the <a target="_blank" href="http://www.povray.org/documentation/" title="POV-Ray Documentation">online documentation</a> (particularly Section 2), but we will also do a few more examples here.
+---+++ Running POV-Ray
+
+First however we need to know how to turn the scene file into an image. Try this:
+<verbatim>povray example.pov</verbatim>
+
+If all goes well, after a bunch of text and a flash of the image to the screen, you should find a PNG file in your directory: example.png. Most standard image viewers understand this format. E.g.
+<verbatim>xv example.png</verbatim>
+
+By default, POV-Ray outputs in PNG format, displays what it's doing on the screen, and makes certain assumptions about the image size and quality. POV-Ray accepts a variety of command-line options to override this behavior. For example,
+<verbatim>povray -w800 -h800 example.pov -Oexample.jpg +A -D</verbatim>
+
+This generates an 800x800 JPEG (without displaying to the screen) and uses antialiasing to smooth over sharp edges. See the documentation for more command-line options, or for how to use so-called ".ini" files to store your rendering preferences more conveniently.
+
+Notice that the image created in the last example appears distorted. This is because POV-Ray assumed a default aspect ratio for rendering. The fix is to modify the camera parameters:
+<verbatim>camera
+{ location <0,0,-10> look_at <0,0,0> right x }</verbatim>
+
+(try it!). The optional "up" and "right" camera qualifiers (vectors) indicate both the orientation and aspect ratio of the image. Here we used the shortcut "x" to represent the vector &lt;1,0,0&gt; (in POV-Ray syntax). By default, "right" has a value of 1.33*x and "up" has a value of y, meaning viewing coordinates are such that x points to the right of the screen (scaled to provide a 4:3 aspect ratio in images), y points up, and z points into the screen. This is in fact a left-handed coordinate system. A simple way to request a square, right-handed system is to replace "x" with "-x" in the example above. The choice is up to you.
+---+++ Another Example
+
+Let's try a more complex example (call it complex.pov):
+
+<verbatim>#include "colors.inc"
+#include "textures.inc"
+
+camera
+{ location <0,2,-15> look_at <0,0,0> right x }
+
+light_source { <10,20,-20>, color 2*White media_interaction off }
+
+light_source { <-20,40,-40>, color 2*Green spotlight point_at <0,1,0> radius 0.5 falloff 3 media_interaction on }
+
+cone
+{ <0,0,0>, 2, <0,3,0>, 0.5 open
+  texture { Aluminum }
+  finish { diffuse 0.1 ambient 0.1 }
+}
+
+plane
+{ <0,1,0>, -0.5
+  texture { White_Marble }
+}
+
+media { scattering { 1, 0.03*White } }
+</verbatim>
+
+Here we have included handy files from the POV-Ray library for colors and textures (look in /astromake/opt/povray/3.6.1/share/povray-3.6/include/ to see all the possibilities), and introduced a spotlight, two new objects, and "media" for generating atmospheric effects. As with anything, experimentation is a great way to learn, but also search the web for examples, and, as a last resort, read the documentation hehe.
+---+++ Caveats
+
+One important note: POV-Ray does not support a large dynamic range in drawing values. It seems it can only handle about 6 orders of magnitude. This means if you're drawing a scene of dimension 1, any objects smaller than ~1e-6 in size (e.g. particle radius) may not be visible. This is an important consideration when visualizing the output from a numerical simulation, for example (you may need to scale the data).
+
+-- Main.DerekRichardson - 2010-06-23

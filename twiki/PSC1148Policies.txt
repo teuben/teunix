@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="eric" date="1468349108" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="AstroUMD.ConferenceRooms"}%
+---+ Policies for PSC 1148 Conference Room
+   1 This conference room holds 12 people boardroom style.
+   1 The room can be reserved between 9am and 4pm, Monday through Friday. [[https://sites.google.com/a/ece.umd.edu/ece-room-reservation/psc-1148][Make reservations here.]]
+   1 Reservations do not appear in the calendar until reviewed by the Physics and Astronomy departments, which is normally done within one business day. You will be notified if there is a problem with your request.
+   1 The available AV equipment are computer (PC and Mac Mini), 80&rdquo; monitor, telephone, Skype.
+   1 Restore the furniture to the original arrangement when done. Please do not add or remove furniture to the room.
+   1 Replace the equipment in a neat and clean condition. It should be in a position to be operated by the next individual/group who would use the facility. Turn the equipment off before you leave the facility, e.g. by using the 'Shutdown' button on the touchpanel and by logging out of the room's computer if you used it.
+   1 Use only dry-erase markers on the boards/glass walls. Please do not forget to erase all the boards with the microfiber cloth before you leave. For tough stains, please use a water spray or an alcohol spray, available from the front office in PSC 1208.
+   1 Food for events is not allowed in the room and should be set up outside the room. Tables can be provided upon early request at the front office in PSC 1208.
+   1 Deposit all trash and recyclables in appropriate receptacles.
+   1 The department maintains the right to charge a fee for any damage to equipment, carpeting, or furniture.
+   1 For AV or computer-related issues contact the Physics help desk, x58582 or physhelp@umd.edu.
+   1 For other issues, contact Ms. Hansborough, x51508 or room PSC 1208.
+-- Main.EricMcKenzie - 2016-07-11
+
+%META:TOPICMOVED{by="eric" date="1468344085" from="Sandbox.PSC1148Policies" to="AstroUMD.PSC1148Policies"}%

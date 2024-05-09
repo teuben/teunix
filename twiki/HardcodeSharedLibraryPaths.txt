@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="teuben" date="1662576434" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="SoftwareMap"}%
+Some tools (astromake is a notorious abuser of this) may modify your $PATH and/or $LD_LIBRARY_PATH. The latter can be especially dangerous, as other tools may then get the wrong version of a library, generally resulting in the operating system complaining, or the program crashing in mysterious ways. One way to circumvent this , is to blank out that environment variable for the execution of the program, e.g
+<pre><verbatim>LD_LIBRARY_PATH= convert foo.pdf foo.png</verbatim>
+</pre>
+
+-- Main.PeterTeuben - 2022-09-07

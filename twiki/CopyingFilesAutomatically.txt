@@ -1,0 +1,48 @@
+%META:TOPICINFO{author="AnneRaugh" date="1280774172" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="PowerOutageInfoForUsers"}%
+---+ Copying Files Automatically
+
+Important: if you are doing this as part of your strategy for handling the planned power outages (see PowerOutageInfoForUsers), you would register your cron entry on earth (i.e. ssh to earth before invoking "crontab" in the tutorial below). BUT, you are advised to REMOVE the crontab entry ("crontab -r") BEFORE the outage, otherwise the script will attempt to run while the power is out, causing a potentially long time-out on earth. If lots of people are doing this, earth's performance may be adversely affected.
+---++ rsync & cron
+
+The standard command "rsync" synchronizes directories (and their subdirectories) so that the copy is an exact duplicate of the source; this can be done remotely across machines as well. The standard command "cron" is a scheduler that will run any job you specify at a certain time, and usually on a periodic basis. Thus, combining rsync and cron allows you to maintain a copy of important files that are updated on your preferred schedule. The following is a very brief tutorial on how to do this. For more information, please search the web or ask a system administrator.
+
+The following tutorial is a simplication of the one given <a target="_blank" href="http://my.opera.com/subjam/blog/simple-backup-in-linux-using-rsync-and-ssh" title="rsync & cron tutorial">here</a>.
+   1 Create a script that cron will run when you want. Doing it this way allows you to modify the script easily as needed. The following example uses the C-shell (csh).<br /><verbatim>#!/bin/tcsh -f
+setenv SOURCEDIR /somewhere/foo
+setenv DESTDIR /home/user/backup
+setenv LOGFILE /home/user/backup.log
+rsync -av --delete $SOURCEDIR $DESTDIR >> $LOGFILE</verbatim>Just edit the environment variables as needed (e.g., in the example, you would replace "user" with your username). The options to rsync specify: archiving (so permissions, symbolic links, etc. are preserved); verbose output; and removing files from the destination backup directory if they are no longer in the source directory.
+   1 Edit the crontab entry on the machine where you want to run the backup. Do this by logging into the machine, typing "crontab -e", and adding an entry like the following (note: crontab defaults to using the "vi" editor -- you can override this by specifying a different editor, such as emacs, in the EDITOR or VISUAL environment variables; you can also simply edit a text file to look like the example below and register it with "crontab file.txt", where "file.txt" is the name of the file you just created -- this will wipe out any existing crontab entries however, so be careful; use "crontab -l" to see what is currently scheduled, if anything).<br /><verbatim>00 05 * * * /home/user/backup.csh
+</verbatim>where "backup.csh" is the name of the script you created in step 1 (you can put it somewhere other that /home/user to keep things tidy). This tells cron to run your script at 05h00 (5 am) every day. To learn more about the crontab format, do "man 5 crontab" (scroll to the examples). IMPORTANT: the backup script must have executable permission, which can be accomplished with "chmod a+x backup.csh"
+   1 That's it! If you want to do remote copying between computers (i.e. for which the disks are not cross-mounted), see the <a target="_blank" href="http://my.opera.com/subjam/blog/simple-backup-in-linux-using-rsync-and-ssh" title="rsync & cron tutorial">original tutorial</a>. Note their examples use the Bourne shell (sh).
+---++++ Some Gory rsync Details
+
+The rsync options mentioned above have the following effects:
+<blockquote>
+
+<strong>-a</strong>
+
+Archive mode. This preserves time stamps, permissions, and ownerships, recurses down through subdirectories and copies symlinks as symlinks (plus a couple more things you probably don't care about).
+
+<strong>-v</strong>
+
+Verbose. This causes your log file to contain a line for every file examined by the rsync command, whether it changes or not. Large files can easily grow to large numbers of megabytes if you're syncing tens of thousands of files with the "-v" option on. Be careful if disk space is tight.
+
+<strong>--delete</strong>
+
+This will cause rsync to delete files on the receiving side that don't exist on the sending side. You might think of this is a "destructive backup" - that is, if you remove file "test.junk" in your working directory, "rsync --delete" will remove "test.junk" from your backup directory as well. Without this option, "test.junk" would live on in your backup - perhaps indefinitely. Note that<em> not</em> using the "--delete" option means that your backup copy could take more space than your original, because of undeleted files no longer in your working directory but retained in the backup.
+</blockquote>
+
+If you don't want a verbose log file but you do want to see error messages and some sort of summary at the end, try this option:
+<blockquote>
+
+<strong>--stats</strong>
+
+This produces a set of summary transfer statitics, including things like the total numbers of files and bytes transferred.
+</blockquote>
+---++ When you just want to copy a few files...
+
+The rsync example above may be overkill for you. If you just want to copy a few files, you can replace the "rsync" in the script example above with a simple "cp" (or as many as you need; actually, rsync can sync individual files too, but most users are far more familiar and comfortable with cp). Then use cron as above to schedule the copies on a regular basis to make sure everything stays up to date. If you have experience shell scripting, you can easily set things up to do versioning (i.e. first copying the copies to a secondary backup, then copying the originals), etc. For an example on how to do this, feel free to contact Main.DerekRichardson. For hardcore users interested in versioning with rsync, see <a target="_blank" href="http://www.mikerubel.org/computers/rsync_snapshots/ " title="rsync snapshots">here</a>.
+
+-- Main.DerekRichardson - 2010-08-02

@@ -1,0 +1,27 @@
+%META:TOPICINFO{author="adhabal" date="1503870625" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="SoftWare"}%
+!PyRAF is a python wrapper for IRAF.  First you need to install IRAF.  For help with that, see InstallingIraf.  Why use !PyRAF?  You can use it just like normal IRAF, except you can call IRAF routines from within python, and use "modern" command shell features like tab completion and up arrows to recall previous commands.  !PyRAF is not installed in our department.  If you want to be a rebel and install it yourself, here is how you do it.  These instruction work 
+stsci_python version 2.2 from November 1st, 2005.  They work on a Mandrake 10.1 system, the current departmental system.
+
+   1. Decide where to install pyraf.  This will be =<install_dir>=.
+   2. =setenv PYTHONPATH <install_dir>= (This should be in your .cshrc file)
+   3. Determine where the =libf2c.a= and =f2c.h= files are installed.  This can usually be done by typing =locate libf2c.a=.  You should get something like so: =/test/usr/lib/libf2c.a=.  =f2c.h= is then located at: =/test/usr/include/f2c.h= .  Your =<f2cdir>= then equals =/test/usr=
+   4. =cd stsci_python/numarray-1.4.1=
+   5. =python setup.py install --gencode --local=<install_dir>=
+   6. =cd ..=
+   7. =python setup.py install --with-f2c=<f2cdir> --local=<install_dir>=
+   8. To test your installation, copy the test script to your home directory: =cp stsci_python/test21.py ~= and run it: =cd; test21.py=.  I got some warning about the Pmw library being missing.  Everything seemed to start up anyway (and I could start the graphical epar).  I downloaded it and copied this into =<install_dir>= just for good measure and the warning went away.
+   9. To run pyraf, use the command =<install_dir>/pyraf/pyraf=
+
+I can start pyraf just fine.  However, when I try to run some (or maybe most) tasks, I get the following message:
+=PANIC in `/iraf/iraf/bin.redhat/x_images.e': Memory has been corrupted=
+
+I do NOT get such an error message when running IRAF directly.
+
+The pyraf people were able to help me solve this issue.  You need to change the stack size in your .cshrc. file.  Add the following line: =limit stacksize unlimited=
+
+Now everything works beautifully.
+
+-- Main.NicholasChapman - 13 Mar 2007
+
+%META:TOPICMOVED{by="adhabal" date="1503870625" from="AstroUMD.HowToInstallPyraf" to="AstroUMD.InstallingPyraf"}%
