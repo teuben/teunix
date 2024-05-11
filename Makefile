@@ -10,7 +10,7 @@ UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
      exfat-fuse tkcvs net-tools ncftp autoconf \
-     python-is-python3 libtirpc-devq
+     python-is-python3 libtirpc-dev
 
 
 UP2 = plasma-widgets-addons kio-gdrive
