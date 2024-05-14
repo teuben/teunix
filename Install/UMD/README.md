@@ -1,10 +1,13 @@
 # UMD specific downloads
 
-These are my Linux debian style downloads
+These are my Linux debian style downloads. The top link is always a good entry point,
+but you may have to drill down. The bottom link is an attempt to give a direct link
+to the file, if applicable (e.g. Webex does not do this).
 
 
 ## Zoom
 
+Version will frequently change, don't use the 2nd link (as seen May 2024)
 
 https://zoom.us/download?os=linux
 
@@ -34,3 +37,10 @@ Version 36.21.0 (as seen May 2024)
 https://terpware.umd.edu/Linux/title/3959
 
 https://terpware.umd.edu/api/file/4794
+
+
+## Misc
+
+* Mathematica
+* IDL (coming soon!)    https://terpware.umd.edu/Linux/title/2807
+* redhat 9.2
