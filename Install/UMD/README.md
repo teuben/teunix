@@ -44,3 +44,17 @@ https://terpware.umd.edu/api/file/4794
 * Mathematica
 * IDL (coming soon!)    https://terpware.umd.edu/Linux/title/2807
 * redhat 9.2
+* 3270 emulator:  http://x3270.bgp.nu/   needed with VPN to connect to umdmvs.umd.edu
+
+  For kicks here's an example compile from source for Linux
+
+        wget http://x3270.bgp.nu/download/04.03/suite3270-4.3ga8-src.tgz
+        tar zxf suite3270-4.3ga8-src.tgz
+        cd
+        ./configure --with-prefix=/tmp/x --disable-tcl3270
+        make
+        make install
+
+   There is some issue left, it wanted access to /usr/share/icons/.... but --prefix should
+   have not copied into system space. But the binary /tmp/x/bin/x3270 seems to work. Perhaps
+   an autoconf bug.
