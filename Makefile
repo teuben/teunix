@@ -57,10 +57,17 @@ apt4:
 	sudo add-apt-repository universe
 	sudo apt-get update
 
-## dnf0:       bootstrap RPMFUSION (takes a while)
+## dnf0:       bootstrap RPMFUSION for fedora (takes a while)
 dnf0:
 	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$$(rpm -E %fedora).noarch.rpm
 	sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf upgrade --refresh
+	sudo dnf groupupdate core
+
+## dnf00       bootstrap RPMFUSION for redhat (takes a while)
+dnf00:
+	sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$$(rpm -E %rhel).noarch.rpm
+	sudo dnf install https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$$(rpm -E %rhel).noarch.rpm
 	sudo dnf upgrade --refresh
 	sudo dnf groupupdate core
 
