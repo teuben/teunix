@@ -4,6 +4,7 @@
 TCPKeepAlive yes
 ServerAliveInterval 60
 
+ForwardAgent yes
 ForwardX11 yes
 ForwardX11Trusted yes
 
@@ -165,3 +166,8 @@ Host kapteyn
 Host bitbucket.org
   AddKeysToAgent yes
   IdentityFile ~/.ssh/bitbucket_work
+
+# for kerberos (krb5-user or krb5-workstation or heimdal-workstation)
+Host *.umd.edu
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
