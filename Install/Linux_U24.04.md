@@ -29,12 +29,13 @@ What I don't like:
 1. snaps. I'd probably prefer AppImage, but enuf said.  https://www.kubuntuforums.net/showthread.php/76713-Confused-about-snaps
 2. flatpak. Same, all these issues with living in a container. Wasted diskspace, etc.
 
-Odd things:
+Oddities in this version:
 
-1. On an older machine with max 4.0GHz , it never go to 4.0 until cpupower-gui was installed and max cpufreq was set to 4
-2. video on my T480 would cause a crash. Trying out the nomodeset kernel parameter, as per suggestion
-3. Old nemobench5 was 548, now it's 675 with gcc 13.2  (PopOs! on same hardware gave me ...)
-4. 
+1. video card causes crash? Trying out the nomodeset kernel option
+2. default cpufreq max was not 4.0, needed cpupower_gui
+3. old nemobench5 was 588, now with gcc 13.2 it seems more like 670-690? even got as high as 721 
+4. same hardware, with gcc-11, PopOS! gave well over 700
+
 
 ## Details
 
