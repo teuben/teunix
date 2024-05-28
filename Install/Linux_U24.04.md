@@ -29,6 +29,13 @@ What I don't like:
 1. snaps. I'd probably prefer AppImage, but enuf said.  https://www.kubuntuforums.net/showthread.php/76713-Confused-about-snaps
 2. flatpak. Same, all these issues with living in a container. Wasted diskspace, etc.
 
+Oddities in this version:
+
+1. video card causes crash? Trying out the nomodeset kernel option
+2. default cpufreq max was not 4.0, needed cpupower_gui
+3. old nemobench5 was 588, now with gcc 13.2 it seems more like 670-690? even got as high as 721 
+4. same hardware, with gcc-11, PopOS! gave well over 700
+
 ## Details
 
 Before we start, there are two ways to install U23:  fresh  or updating from a previous one. My
