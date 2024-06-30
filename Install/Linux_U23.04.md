@@ -258,14 +258,13 @@ ROOT:
   - "sudo" with longer retention
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
-  - faster booting	   
+  - faster booting	   (due to the dreaded "a stop job....")
      /etc/systemd/system.conf
            DefaultTimeoutStopSec=5s
   - "ssh identity"
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
   - ImageMagick does not convert pdf to png without editing a system file
-    (TBD)
-
+    Copy policy.xml to ~/.config/ImageMagick/policy.xml
 
 
 DIGITAL CLOCK CONFIGURE
