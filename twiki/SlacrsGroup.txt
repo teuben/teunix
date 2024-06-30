@@ -1,0 +1,14 @@
+%META:TOPICINFO{author="PeterTeuben" date="1354123901" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ SLACRS Group
+ This is an informal group of computing-interested people at UMD Astronomy Department. It has it's own web page at http://www.astro.umd.edu/~teuben/slacrs and the new defunct webpage Rob Swaters put up on http://www.robswork.net/masol
+
+-- Main.PeterTeuben - 04 Nov 2004
+
+At the moment, the SLACRS Group appears to be no more; we are going on something like two years since the last meeting. However, the Theory Group has a weekly <a href="http://www.astro.umd.edu/~perrine/theory_lunch.html">Theory Lunch</a> which is still active, has many of the people from the former SLACRS meetings, and frequently discusses software and computer issues.
+
+-- Main.JohnVernaleo - 23 Mar 2007
+
+Jonathan has been threatening to restart this group. Also note that incoming graduate students currently incoorporate some of the discussion items of the SLACRS group in their 695 course.
+
+-- Main.PeterTeuben - 2012-11-28

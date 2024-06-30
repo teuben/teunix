@@ -1,0 +1,22 @@
+%META:TOPICINFO{author="teuben" date="1663200278" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="AstroUMD"}%
+<!-- Main.polko - 2016-03-21 -->
+---+ Weekly events at the Department of Astronomy
+
+This is an overview of the mostly weekly events. If there is an event missing, or if the information is out of date, please edit accordingly.
+| *Day* | *Time* | *Location* | *Name* | *Description* |
+| Monday | 11:00 | PSC 1136 | <a target="_blank" href="https://www.astro.umd.edu/events/colloquia/theory.html" title="CTC Lunch">CTC Lunch</a> | Talks by postdocs of other universities, sometimes people from our university |
+| Monday | 11:00 | ATL 1250 | <a target="_blank" href="https://www.astro.umd.edu/events/colloquia/planetary.html" title="PALS">PALS</a> | Planetary Astronomy Lunch Series, discussing small-bodies, planets, exoplanets, satellites, rings, and circumstellar disks |
+| Monday | 16:00 | PSC 1148 | <a target="_blank" href="https://www.astro.umd.edu/twiki/bin/view/GradLife/JournalClub" title="Journal Club">Journal Club</a> | Discussion of a paper by the colloquium speaker by the grad students |
+| Monday | 16:00 | PAC 1136 | <a target="_blank" href="https://jsi.astro.umd.edu/events/upcoming" title="JSI Colloquium">JSI Colloquium</a> | Talk organised by the Joint Space-Science Institute |
+| Tuesday | 16:00 | PSC Lobby | <a target="_blank" href="https://umdphysics.umd.edu/events/physicscolloquia.html" title="Physics Colloquium">Physics Colloquium</a> | The weekly physics colloquium, sometimes on astronomical topics |
+| Wednesday | 10:00 | PSC 1136 | TCAN Seminar | A roughly biweekly seminar organised by the Theoretical and Computational Astrophysics Networks of Chris Reynolds |
+| Wednesday | 13:45 | PSC 1148 | Ice Cream | The ice cream for the colloquium speaker |
+| Wednesday | 16:05 | ATL 2400 | <a target="_blank" href="https://www.astro.umd.edu/events/colloquia/colloquium.html" title="Colloquium">Colloquium</a> | The weekly astronomy colloquium |
+| Thursday | 10:00 | PSC 0/1/2/3 | Coffee Break | The PSC coffee break on a different floor each week, with coffee and pastries |
+| Thursday | 16:00 | PSC 1136 | <a target="_blank" href="https://www.astro.umd.edu/events/colloquia/bang.html" title="BANG Seminar">BANG Seminar</a> | The career path & diversity seminar |
+| Friday | 14:00 | PSC 1136 | <a target="_blank" href="http://www.astro.umd.edu/events/colloquia/hpastroph.html" title="Hot Papers">Hot Papers</a> | A discussion of papers on the arXiv voted for by the department |
+| Friday | 15:00 | PSC 1136 | HEAM | The High Energy Astrophyics Meeting organised by Cole Miller discussing a different topic each week |
+| Friday | 16:00 | PSC 1148 | Unjournal Club | Biweekly meeting where the graduate students present their own research without faculty present |
+
+Furthermore there is the <a target="_blank" href="https://www.astro.umd.edu/events/colloquia/openhouse.html" title="Open House">Open House</a> of the UMD Observatory every 5th and 20th of the month.

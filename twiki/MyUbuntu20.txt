@@ -1,0 +1,8 @@
+%META:TOPICINFO{author="teuben" date="1662656717" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="AstroLaptop"}%
+I am drafting a more general description on doing astronomy on linux here: https://github.com/teuben/teunix/blob/master/docs/astronomy-on-ubuntu.md
+
+my ever changing notes on Ubuntu are here:
+   * https://github.com/teuben/teunix/blob/master/Install/Linux_U20.04.md
+   * https://github.com/teuben/teunix/blob/master/Install/Linux_U22.04.md
+-- Main.PeterTeuben - 2022-06-27

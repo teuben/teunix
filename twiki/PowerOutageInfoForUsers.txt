@@ -1,0 +1,37 @@
+%META:TOPICINFO{author="DerekRichardson" date="1337267306" format="1.1" version="1.11"}%
+%META:TOPICPARENT{name="PowerOutageProcedures"}%
+---+ Power Outage Information For Users
+
+In 2010 and 2011, DIT provided space and emergency power for our servers in their Secondary Data Center for the duration of the power outage "season." However, ongoing construction of the PSC next door is necessitating at least 1 more outage in 2012 for which we will move our servers to temporary space so they stay up. Because the servers will keep running, Astronomy e-mail and web page hosting will continue to function thoughout the outage(s). However, depending on your particular account configuration, you may need to make arrangements in order to have e-mail access during an outage, or to access critical data files; this is discussed below. You are advised to read the *whole* document, so you don't miss anything...
+
+Here is the current PowerOutageSchedule.
+---++ If you want to keep receiving e-mail during an outage
+
+Anyone who has elected to have e-mail redirected to a private Linux workstation will need to make arrangements with Main.WilliamSebok to NOT redirect that mail. Your mailbox (inbox) will be relocated to the server earth during the outage season. Most users do not redirect their mail in this fashion. If you are unsure, type "getMailbox -l" in a network terminal -- if your username is on the list, your mail IS being redirected, and you may want to take action.
+
+Once your mail is being sent to earth (or if it is already), you have two options to keep receiving e-mail during an outage:
+   1 Forward your mail to a non-astro account for the duration of an outage.
+   1 Read your mail on earth.
+---++++ Forwarding your mail to a non-astro account
+
+Edit your .forward file so that it contains the e-mail account to which you want mail redirected (e.g. user@gmail.com), but also keeps a local copy. Here is a MailForwardingExample. Note that if you respond to e-mail on your non-astro account, the return address that the recipient sees will normally be that non-astro account, unless you configure it differently (beyond the scope of this tutorial). Also note that for forwarding to work during an outage, your home directory must be on earth (see next topic).
+---++++ Reading your mail on earth
+
+If you have a directory on earth (i.e. on /a1, /a2, or /a3), you can simply login to earth during an outage and read (and respond to) your e-mail. If you DON'T have a directory on earth, you will need to contact Main.WilliamSebok or Main.MarkWolfire to get one. Note there is a 1 GB quota per user on earth.
+
+If your account is currently configured to use a starting (home) directory on a private machine, that can be changed to your earth directory (ask Main.WilliamSebok). This means you would need to cd to your private disk after logging in. It is possible to configure your account so that if you login to earth or gaia, you start in your earth directory, but otherwise you start in your private machine directory. Alternatively you could add some instructions to your startup scripts to do this: ChangeHomeExample. Either way, if you have a .forward file you should move it to your earth home directory and if you have a .procmailrc file you should move it to your earth home directory. You may wish to move some of your mail folders to your earth home directory. Modifying .procmailrc to keep folders in more than one place is beyond the scope of this page. However, if your procmail script separates your incoming mail into different folders, all of those folders should be in your earth home directory. Otherwise mail that would be placed in those folders will be lost when the computer with your private home directory is down.
+---++ If you need access to data files (including archived mail) during an outage
+
+You will need to copy the files you need to an unaffected machine, such as earth or a laptop/home computer. If you have a directory on earth (see above), you can simply copy the files/directories you need there. This can be done automatically using a "cron" job or "rsync"; see CopyingFilesAutomatically. Note if you have arranged for your mail to be delivered to earth (the default), and you have a home directory on earth, then all your mail folders will normally be on earth too, so you will have access to your archived mail during a power outage. However, there is a 1 GB quota per user on earth, so if your mail folders are large, you may need to store some of your archived mail elsewhere. For an example on how to do this, contact Main.DerekRichardson.
+---++ Precautions to take before each outage
+
+We ask that you *log off* from, *turn off*, and *unplug* your computer if you know you will not need it before the next outage begins. See HowToTurnOffYourComputer. You are asked to unplug your equipment because power surges/spikes may occur during the outage, which could cause damage. You are advised to turn off/unplug accessories too (monitors, speakers, printers, etc.). Even if you have UPS (battery backup), it will not likely last through the outage, so you will need to make these preparations. If you forgot to turn off your computer, a script run by Main.WilliamSebok will automatically turn it off before the power outage, but be advised that your machine will NOT be unplugged in this case, so you risk damage. In exceptional cases (e.g. you are away from campus for an extended period), you can request to have someone unplug your machine/equipment for you. Please contact Main.WilliamSebok in that case, with your machine name(s) and room number(s).
+
+HELPFUL HINT: quit all applications (including open terminals/shells, and especially any that are accessing disks over the network) BEFORE powering down your machine. In fact, it would be really helpful if you could start doing this several hours before the planned outage, leaving only local windows open. This will help minimize the number of network "hangs" we will experience as machines go offline prior to each event.
+---++ Once the power is back on
+
+The next time you are in your office, plug in and power on components, saving your computer for last. If during the reboot of your computer a problem occurs (i.e., if a login prompt does not appear and the computer shows an error or appears to be hung), notify an administrator (Main.MarkWolfire or Main.WilliamSebok). Do NOT attempt to fix the problem yourself, as you may make the situation worse. Unfortunately, computers can be tempermental and sometimes have problems after being turned off. Usually the problem is with a disk, so be sure to backup any critical files before shutting things down (do not rely on the department backup to do this for you).
+
+Again, if you are away from campus for an extended period, you can request to have someone power up your machine for you. Please contact Main.WilliamSebok in that case (with machine name & room number).
+
+-- Main.DerekRichardson - 2010-06-30

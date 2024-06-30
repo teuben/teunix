@@ -1,0 +1,65 @@
+%META:TOPICINFO{author="GraemeLufkin" date="1102957089" format="1.0" version="1.4"}%
+%META:TOPICPARENT{name="SoftwareMap"}%
+---++ Using MPlayer
+[[http://www.mplayerhq.hu][MPlayer]] is a media player program.
+Its key feature is the ability to play just about any format of movie you can find.
+This includes plain old MPEGs, newer <nop>DivXs, and Quicktime.
+It also includes a movie encoder that is very useful for creating small, portable movies from a sequence of image frames.
+
+---+++ Installing
+MPlayer is available via AstroMake, do an =astroload mplayer=
+It is only available on Linux machines.
+
+---+++ Playing movies
+To watch a movie, simply do =mplayer movie_filename=.
+Hit the =f= key to toggle fullscreen, and use the arrow keys to seek within the movie.
+You can also pass =mplayer= a URL to play directly from the web.
+
+_A note about warnings_: =mplayer= and =mencoder= spit out several messages that look like errors, but are really just informational.
+You can safely ignore warnings about 'No such file or directory' for config files and font info and 'Linux RTC init error' stuff.
+When encoding, =mencoder= will tell you that 'frameno.avi' couldn't be found; again, you can ignore this.
+
+Web pages often embed movies, instead of providing a direct link to download them.
+While this works on Windows, it infuriates Linux users.
+To view these movies, get your browser to show you the source of the web page.
+Then search for the embedded movie (searching for =.mov= or =.avi= will usually work).
+Copy the full link (often provided as the =src= or =href= attribute to an =embed= tag) and point =mplayer= at it.
+	* Movie trailers are often released in Quicktime format on the Apple website http://www.apple.com/trailers/  These can be played on Linux with a little work.  Choose the particular trailer you want and the movie size.  Then view the page source and find the link to the movie (search for =.mov=).  You want the one that has a number at the end of the filename (it represents the width of the movie).  Take that URL, and put a lower-case =m= in front of the number.  That's the full URL to the real movie file, which you can download or pass directly to =mplayer=.
+
+---+++ Making movies
+To create a movie from a sequence of frames, use the encoding tool of MPlayer, =mencoder=.
+The encoder can read JPEG and PNG formats.
+If your frames are in another format, use the ImageMagickTools to convert them.
+All frames must be the same size and must use true color, i.e. not a color palette.
+You can verify this using =identify frame.png=: if it says =<nop>PseudoClass= it's a paletted image, you want it to say =<nop>DirectClass=.
+
+You need to name your frames such that a glob of the filenames will produce the desired sequence of frames.
+For example, =frame001.jpeg, frame002.jpeg, frame003.jpeg, ...= will be found by the glob =frame*.jpeg=.
+
+Finally, create your movie with a command like:
+<pre>mencoder "mf://frame*.jpeg" -fps 10 -ovc lavc -lavcopts vcodec=mpeg4 -o my_movie.avi</pre>
+This creates a movie called =my_movie.avi= that is composed of the frames found by the glob =frame*.jpeg= played at 10 frames per second, encoded using the (default) MPEG4 video format.  Substitute the values you want.  The =mf://= business is a URL-like descriptor that lets the encoder know the input source is a sequence of files, specified by the glob you provide.  =lavc= is the name of the library used to do the encoding.  It supports all sorts of technical options that most people should ignore; look in the man page for details.
+
+---++++ Codecs
+=mencoder= can create movies using a variety of codecs, by supplying different values of the =vcodec= parameter.
+=mplayer= can show all of the formats that =mencoder= can create.
+Creating movies that can be played on Windows can be tricky; You should try all three codecs listed here and see which works for you.
+If you're going to use a movie in a talk, *always, every time, no exceptions, TEST* the movie you make on the machine you're going to use for the talk.
+You'll probably want to use either =mpeg4=, =msmpeg4v2=, or =wmv2=.
+	* =mpeg4= is a form of the <nop>DivX codec, which usually produces the highest-quality, smallest file-size movies.  These movies can sometimes be played on Windows if the user has a recent version of Windows Media Player.  Alternatively, they may have to manually install the <nop>DivX codec from www.divx.com  Mac OS X users can use [[http://mplayerosx.sourceforge.net][MPlayer for OS X]].
+	* =msmpeg4v2= is another version of the <nop>DivX codec.  These movies can usually be played on Windows using the default install of Windows Media Player.
+	* =wmv2= (stands for Windows Media Video) is a Microsoft-specified format.  These movies can sometimes be played on Windows using the default install of Windows Media Player.
+
+---++++ Working on a Sun
+If you are using a Sun, you need to remotely login to a Linux machine to use =mencoder=.
+If you try to play a movie over the remote connection, it will work but be slow and the colors will be messed up.
+The movie itself has the correct colors, it is the different X servers that produce the color difference.
+This problem can be avoided in two ways.
+	1 Copy the movie to a Linux or Windows machine and view it there.
+	2 *Stop using a Sun, you hippie!*
+
+---++++ Adding Music to a Movie
+More here.
+
+-- Main.GraemeLufkin - 04 Nov 2004
+

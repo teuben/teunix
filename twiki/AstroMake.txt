@@ -1,0 +1,51 @@
+%META:TOPICINFO{author="teuben" date="1693359865" format="1.1" version="1.16"}%
+%META:TOPICPARENT{name="SoftWare"}%
+---++ Astromake
+
+*astromake* is a small suite of scripts and aliases that allow you to on-the-fly add packages to your interactive shell. The basic usage on our astronomy linux computers is to first set this up in your shell, viz.
+<verbatim>    source /n/astromake/astromake_start.csh</verbatim>
+
+for *(t)csh*, and
+
+<verbatim>
+    source /n/astromake/astromake_start.sh</verbatim>
+
+for <b>bash.   </b>Most likely it is already in your <b>.bash_local</b> file, but commented out. So just remove the comment symbol.<b><br /></b>
+
+After it has been loaded, you can load packages, even specific versions of a package:
+
+<verbatim>
+    astroload python ds9 nemo 
+    astroload -v single nemo 
+    astroload -v 3.4.0 gcc
+    astroload -i gcc</verbatim>
+
+Where the *-i* flag will report which versions of that package exist.
+
+There is a similar tool on linux, called *environment-modules*, which can serve similar purposes, but we are not using this in astromake. astromake can also be used to install your own favorite flavors of tools that you want to override the system with, whereas the *module* command is under control of the sysadmin.astromake is available via github, so you can also install it on your own machine if you are inspired enough.
+
+---+++ How It Works
+
+Astromake works by building different versions of packages and installing them to an isolated location on a network-shared disk. When you ask Astromake to load a package, it finds and runs a script to initialize the package. This usually entails adding directories to your =PATH=, =LD_LIBRARY_PATH= and =MANPATH=. Note that you cannot currently remove a package from an active shell environment, you must create a new shell and reload any still-desired packages.
+
+---+++ Adding a package to Astromake
+
+Right now, you need to contact Main.PeterTeuben and ask for permission, because you need write permission in the $ASTROMAKE/opt tree. You can also install your own packages in your private home directory. Here's a (contrived) example how to install a barebones python (astromake uses this style to install different versions of such packages):
+
+<verbatim>
+  wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+  tar zxf Python-3.6.2.tgz
+  cd Python-3.6.2
+  ./configure --prefix=$ASTROMAKE/opt/python/362
+  make
+  make install</verbatim>
+
+After this you will need to add the new bin to your $PATH, and you have a new python to play with. We don't recommend users to install system packages (often $HOME/opt is part of your quota), unless you really have a specific use for it. For python we actually have a special loader script in $ASTROMAKE/rc/python.*sh
+
+---+++ Background
+
+A full description, including how to install it on your own linux (or mac) machine, is available via https://github.com/astroumd/astromake
+
+---+++ 
+
+-- Main.PeterTeuben - 2022-08-17

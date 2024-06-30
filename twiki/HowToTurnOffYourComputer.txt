@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="DerekRichardson" date="1281731717" format="1.1" reprev="1.5" version="1.5"}%
+%META:TOPICPARENT{name="PowerOutageInfoForUsers"}%
+---+ How To Turn Off Your Computer
+---++ Linux Machines
+
+To initiate a safe shutdown of a Linux machine, first close any open applications to avoid losing any unsaved data, then issue the command "poweroff" (NOT "shutdown" or "reboot") inside an xterm or at any shell prompt (you must physically be at the machine to do this -- regular users do not have remote shutdown privileges). Your computer should then begin a clean shutdown procedure. It may take a few minutes to complete. If there is a problem during the shutdown, contact an administrator as soon as possible.
+
+*LAST-MINUTE UPDATE 8/13*: Apparently the above procedure may not work for some people. Instead, try CTRL-ALT-DEL (i.e. press CTRL, ALT, and DEL simultaneously) to begin the shutdown process (you MAY need to exit the window system entirely and return to the main console to do this). You should see scrolling messages of various services shutting down. When the screen finally goes dark, wait until the computer logo appears (typically showing a progress meter of the computer's memory test), then push the power button on the CPU tower to turn off the machine -- it is safe to do so then. You can then unplug. (Please let Main.DerekRichardson know if the "poweroff" procedure above did NOT work for you -- thanks!)
+
+If you have turned off your computer in preparation for a power outage (see PowerOutageInfoForUsers), you are advised to unplug it and any other components from the wall outlet(s). Of course, you will need to plug everything back in after power is restored (plug in the computer last). Also, if you have a UPS (backup battery), you will probably want to unplug it too.
+---++ Windows (PC) & Mac Machines
+
+To shutdown a machine running Windows, click the "Start" button at the bottom-left of the page then select "Turn Off Computer" from the menu. Select "Turn Off" at the next prompt. Any open windows/applications will automatically be closed (wait until the shutdown procedure is finished in case more input from you is needed, such as saving any open documents that you may have been editing). The procedure on a Mac is very similar: click on the Apple symbol in the upper-left corner, choose "Shut Down...", and confirm. As for a Linux machine, you may wish to unplug your PC/Mac and any components from the wall once the shutdown is compelte.
+
+-- Main.DerekRichardson - 2010-08-02

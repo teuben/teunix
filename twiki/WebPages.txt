@@ -1,0 +1,48 @@
+%META:TOPICINFO{author="teuben" date="1662577897" format="1.1" version="1.12"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+There are two types of web pages for personnel in the Department; one is your "departmental web page" (aka "vanilla web page"), the other is your personal web page. Instructions for creating each are given below. If, *after reading the instructions,* you still need help setting up your page(s), please send email to _webcommittee_ (this is an exploder for the Web Committee).
+
+---+++ Your Departmental Web Page
+
+A departmental web page contains information that pertains to who you are relative to the department and includes information like your phone number, e-mail address, and title, as well as a small picture of you. It may also contain a statement explaining what it is you do within the department. In essence, this page identifies you to the outside world _with respect to the department._ Your departmental web page is auto-generated each night from information in the department database (name, e-mail address, room phone, title) and from information you provide (personal statement, personal picture). _We strongly encourage everyone associated with the department to write up a brief statement for inclusion in their departmental web page._
+
+Your personal statement should be in a file called dept_info.txt in your public_html directory. This file may include HTML tags, but should not include images. An example file is in /n/www/dept_info.txt.
+
+First you must log on to a department Linux server to access the needed files. We recommend using <strong>astro.umd.edu </strong>as this will pick the preferred machine. This should also work from off-campus, where you need to be on VPN:
+<verbatim>ssh astro.umd.edu
+[input your login credentials]</verbatim>
+
+You should now be in your home directory. Then do the following commands to create your public_html directory and to copy the template file into it.
+<verbatim>cd
+chmod a+rx .
+mkdir -p public_html
+chmod 755 public_html
+cd public_html 
+cp /n/www/dept_info.txt .
+chmod 644 dept_info.txt </verbatim>
+
+Then, edit dept_info.txt with your favorite editor to contain your statement.
+
+You can also provide a small image of yourself or your favorite celestial body for use in your departmental home page. This file should be in your public_html directory and be no more than about 200x200 pixels in size. It can be in JPEG, GIF, or PNG format and should be named as given below
+| *Format* | *File name* |
+| JPEG | dept_info.jpg |
+| GIF | dept_info.gif |
+| PNG | dept_info.png |
+
+If you have had your picture taken (DigitalPortrait) for the Rogue's Gallery on the 1st floor, that picture can be used; see the instructions on how to obtain your DigitalPortrait. If you do not provide a picture, then your picture will be a planet chosen randomly each time the web page creation script is run (nightly).
+---++ Personal Web Page
+
+Your personal home page is the place where you can describe yourself in more detail (and more informally if you wish). This page (and links within) are owned by you, so you may change them whenever necessary. To create your own personal web page, create a subdirectory called public_html in your home directory. Then create a file called index.html in this directory to be displayed as your personal home page. This file must be written in HTML.
+<verbatim> cd
+ chmod a+rx .
+ mkdir -p public_html 
+ chmod 755 public_html
+ cd public_html
+ touch index.html
+ chmod 644 index.html 
+</verbatim>
+
+The index.html file will be your main webpage. Feel free to get your creative juices flowing on this one. The following websites are generally useful for creating HTML webpages:
+   * <a href="http://www.htmlcodetutorial.com/" title="HTML Tutorial">HTML:</a> This a webpage which provides a very general overview of the various HTML tags and syntax help.
+   * [[http://www.htmlgoodies.com][HTML Goodies]]: A little more intensive HTML help webpage with some other goodies If you have created a personal home page, a link to it will appear on your departmental web page.
+If you do not want your personal home page to appear as a link in your departmental web page, create a file called =.dont_publish= in your public_html directory.

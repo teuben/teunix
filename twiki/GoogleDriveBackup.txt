@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="adhabal" date="1505827485" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICPARENT{name="BackUps"}%
+---+ Google Drive Backup
+
+<span style="background-color: transparent;">As part of the deal UMD has with google, we all automatically have the "Spanning Backup" app enabled on the (unlimited) google storage that comes with Google Apps For Education. This means your drive storage is backed up automatically, with snapshots, and that you can manually backup and even export at any time.</span>
+
+<br />To access the app, log in to google with your <a rel="noreferrer" target="_blank" href="http://umd.edu/">umd.edu</a> account, click on the upper-right icon of the 3x3 grid of little squares to open the app list, then "More", and finally the crazy black-and-white "S" icon labeled "Spanning Ba...". Note you need to either be on the UMD network or use a VPN (virtual private network) to access the utility.
+
+-- Main.ArnabDhabal - 2017-09-19
+
+%META:TOPICMOVED{by="adhabal" date="1505827472" from="AstroUMD.GoogleBackup" to="AstroUMD.GoogleDriveBackup"}%

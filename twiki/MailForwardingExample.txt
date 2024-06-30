@@ -1,0 +1,43 @@
+%META:TOPICINFO{author="WilliamSebok" date="1278530512" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="PowerOutageInfoForUsers"}%
+---+ Mail Forwarding Examples
+
+Say you have a department account, _me@astro.umd.edu_ and you want to forward things to another account at _me@home.net_. Also, assume that your astro mailbox is stored on _myMailHost._
+
+---+++ With .forward File
+
+The simplest way to do this is with a *.forward* file in your department home directory. If you don't already have one, go ahead and create one and put this line in it:
+
+<blockquote><verbatim>me@home.net</verbatim></blockquote>
+
+This will forward all your _astro.umd.edu_ mail directly to your _home.net_ account. If you want to save a copy in your _astro.umd.edu_ account as well, put this instead:
+
+<blockquote><verbatim>me@home.net,me@myMailHost.astro.umd.edu</verbatim></blockquote>
+
+Yes, you can list more than one forwarding address - just separate them with commas. If your mailbox is on earth (like most people), this would be:
+
+<blockquote><verbatim>me@home.net,me@earth.astro.umd.edu</verbatim></blockquote>
+
+If your *.forward* file already contains a line that looks like this:
+
+<blockquote><verbatim>"|IFS=' ' && exec /usr/bin/procmail -t -f- || exit 75 #me"</verbatim></blockquote>
+
+you can still add forwarding address lines before and after this _procmail_ invocation line.
+
+---+++ With .procmailrc
+
+If you are running a <em>procmail</em>-based spam filter, you can edit the *.procmailrc* file in your home directory rather than your *.forward* file, so you can take advantage of spam filtering to avoid forwarding unwanted messages. Your *.procmailrc* file probably already contains the lines you need, commented out. Try searching for ":0c:". If you find it, uncomment the lines and edit the email address accordingly. If you don't find it, you'll need to type a few extra letters. Either way the result will look something like this:
+
+<blockquote><verbatim>:0c: ! me@home.net</verbatim></blockquote>
+
+(That's a zero - not an uppercase "O".) Put this command after your filtering recipes to avoid forwarding spam (an extremely good idea). This recipe clones the message - keeping a copy at _astro.umd.edu_ as well as forwarding a copy to _home.net_.
+
+---+++ NOTE
+
+In order for forwarding to work, your home directory must be accessible and the *.forward* or *.procmailrc* file must be world-readable.
+
+---+++ WARNING
+
+You should carefully avoid setting up mail forwarding loops (i.e., _me@astro.umd.edu_ forwards to _me@home.net_ which forwards to _me@astro.umd.edu_). I know, it sounds like fun, but while most mail handlers will recognize the loop and cut off the fun relatively quickly, one dumb mail handler could cause a fair amount of grief. Also, putting _me@astro.umd.edu_ in your .forward file creates a forwarding loop if your mailbox is located somewhere other than earth.astro.umd.edu.
+
+-- Main.AnneRaugh - 2010-07-06

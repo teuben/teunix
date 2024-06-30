@@ -1,0 +1,73 @@
+%META:TOPICINFO{author="dcr" date="1563979667" format="1.1" version="1.10"}%
+%META:TOPICPARENT{name="HardWare"}%
+---+ The Visualization Lab
+
+<span style="background-color: transparent;">The Physical Sciences Complex has a room (PSC 1244) dedicated to visualization needs of the department. Outfitted by </span><span style="background-color: transparent;">[[http://www.mechdyne.com/][Mechdyne Corporation]]</span><span style="background-color: transparent;">, the lab consists of 9 flatscreen monitors arranged in a 3-by-3 mosaic and controlled via a remote touch-menu interface. Various display configurations are supported, ranging from showing a single image across all the panels to showing multiple images on individual panels. Four wall-mounted multi-connection ports are available for hooking up laptops or other devices as extra inputs, along with a 4K DVI link. A dedicated Linux/Windows workstation behind the vis wall is also connected directly to the display, accessible via bluetooth keyboard and 3-D mouse. Other features of the room include stadium seating, dimmable lights, and a 5.1 surround sound system.</span>
+
+The original plan called for a second workstation with at least 0.5 TB RAM memory to be connected directly to the vis wall, but so far that has not been implemented.
+
+We are currently testing a dedicated 40-Gbit data link between the vis lab display and the campus supercomputer deepthought2 (see ITComputingCluster).
+---++ Policies
+
+The vislab is an expensive facility and we do not have the budget to make extensive repairs if something is broken, so the following policies are in place.
+
+   1 All users must be trained on the system before getting unsupervised access.
+   1 All users must have a reasonable need for the system. This can include collaborative work, display of visualization content, etc.
+   1 All users must log use of the facility at [[http://ter.ps/vislab][ter.ps/vislab]] and report any problems encountered.
+   1 All users must be extra careful not to touch or brush against the screens, or abuse any of the cables in the room.
+---++ Getting Access
+
+Astronomy professorial faculty already have keycard access to the vislab. All others must apply for access by sending an email to Main.DerekRichardson. The email request must include the following:
+
+   1 Name of the user, and UID if not readily available to Astronomy staff.
+   1 Brief project description, including anticipated end date (keycard access needs an end date, but this can be far in the future).
+   1 The name of the advisor or supervisor, if the user is a student or a postdoc.
+There may eventually be a signup system for the facility. For now, just email Main.DerekRichardson if you plan to use it.
+---++ Hours
+
+Although there is no restriction _per se_ to when you can use the vislab, the air conditioning is normally off (by building policy) between the hours of *10 pm and 6 am* on weekdays, and all day on weekends and university-recognized holidays. For this reason, use of the vislab should be *avoided* during those times, to prevent overheating of equipment (and personnel!).
+
+*NOTE:* around 5:30 pm, if the displays are still on,<span style="background-color: transparent;"> they may automatically turn off. There is a warning </span><span style="background-color: transparent;">before this happens, so if someone is using them at the time they can stay </span><span style="background-color: transparent;">on without interruption. If the displays have been turned </span><span style="background-color: transparent;">off automatically, they can be turned back on using the Creston control unit in the </span><span style="background-color: transparent;">usual way (see below).</span>
+---++ FAQ
+---++++ <span style="background-color: transparent;">What is the basic operating procedure?</span>
+
+<span style="background-color: transparent;">You should already have had training, but as a refresher:</span>
+
+   1 Upon entering the room, the light switches are on the left. One of the switches has a dimmer slider.
+   1 Touch the interface pad and select "On" in the upper left under "Displays".
+   1 Select "Video Wall" at the top of the interface pad, if it's not already selected.
+   1 Choose your display configuration by selecting "Change Layout" on the right of the interface pad. 
+      * Options range from displaying a single input (including the room PC) on all panels to displaying multiple inputs on multiple panels.
+   1 Choose your input source(s) if applicable by tapping the currently "Blank" section(s) on the video layout. 
+      * Options include up to 4 wall plates and/or the dual-link DVI input below the display panels.
+   1 Choose your audio source. 
+      * Control the volume either at the source or using the master volume slider on the left side of the interface pad.
+      * Note only the room PC can make use of full 5.1 sound, and currently only in Windows.
+   1 When done, select "Off" under "Displays" and confirm.
+   1 Remember to record your activity in the [[http://ter.ps/vislab][log]].
+   1 Oh yeah, be sure the bluetooth mouse is returned to its charging station!
+---++++ How can I upload data to the PC?
+
+Below the display screens, on the right, there are several USB ports available for connecting devices to the dual-boot Linux/Windows PC. Alternatively, the PC (vislab1.astro.umd.edu) does have internet access, so the usual methods of transfering data should also work. Please try to keep your files organized on the PC. For example, you could create a suitably named folder for yourself on the desktop.
+
+On the Linux side, Astronomy users can access their networked data in the same way they do from any workstation on the network.
+---++++ <span style="background-color: transparent;">Why don't the HDMI inputs work?</span>
+
+<span style="background-color: transparent;">There is a known issue that many devices will not work with the supplied HDMI cables. This has to do with the display of copyrighted content. The Division of IT needs to make adjustments to our hardware to fix the problem. For now, use the VGA or DVI cables for your laptops or other mobile devices (you may need to bring your own adaptor/connector).</span>
+---++++ The wireless mouse isn't working&mdash;help?
+
+If the mouse has been idle and left off its charging station, it will turn itself off. To turn it back on, push the tiny button labeled "Connect" on the bottom of the mouse. Be sure to return the mouse to the charging station when you're done.
+---++++ The interface pad says "Attempting Reconnect..." (or is otherwise misbehaving)&mdash;what should I do?
+
+The iPad is trying to reestablish its connection with the display control software. With any luck this will only take a minute. If it takes longer, you can try to restart the app on the iPad. To do this, click the home button twice (the circular depression on the right of the iPad), swipe up on the Crestron app so it goes away, then tap on the app icon to start it again. *Wait at least two minutes* for everything to resynchronize before attempting to use the system. If after that time the system does not seem to be behaving properly, you may have to reboot (see below).
+---++++ The sound isn't working&mdash;help!
+
+Remember to select the correct audio source on the interface pad to match your display configuration, and make sure the system is neither muted nor at low volume by checking the master controls on the left of the interface pad. For the wallplate inputs, if you are using any connector other than HDMI, you also need to connect the audio cable to your device. If all else fails, and particularly if the interface pad does not respond to button presses for the audio controls (even after restarting the Crestron app), you may have to reboot (see below).
+---++++ How do I reboot the system?
+
+This is a *last resort* and should only be attempted if you know what you are doing. Besides, you'll need key card access to the back room, which most users do not have. Once in the back room, the light switches are to your right. Open the rack in front of you and locate the Graphstream component in the middle of the rack. This is the display computer. There is a little red button on the left that you need to push once to shut down the machine; wait a minute or so for the green lights below that button to settle down into a simple pattern, then push the button again. Wait for the green light directly below the button to become steady again before continuing. Now reboot the Windows/Linux PC by power cycling the bottommost computer in the rack. Return to the main room and verify that everything has rebooted. You may find that the system ends up showing the Meeting Canvas window&mdash;if so, use the mouse to select the preset with the most panels (you may need to select Meeting Canvas for the USB source on the touchpad). With any luck, everything should now come up and function correctly (remember to switch the USB source back to the Linux/Windows PC if you plan to use the mouse and keyboard).
+---++++ Where do I go for help?
+
+There is a manual on one of the desks in the vislab. If that (or one of the answers above) does not answer your question, email Main.DerekRichardson. Also, Main.DennisWellnitz is responsible currently for the hardware in the vislab and can be contacted in an emergency.
+
+<span style="background-color: transparent;"> </span><span style="color: #000000; font-size: small; background-color: transparent;">-- </span><span style="font-size: small; background-color: transparent;">Main.DerekRichardson</span><span style="color: #000000; font-size: small; background-color: transparent;"> - 2015-05-28</span>

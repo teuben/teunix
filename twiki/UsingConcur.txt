@@ -1,0 +1,14 @@
+%META:TOPICINFO{author="teuben" date="1695838828" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+(September 26, 2022) More or less out of the blue the university dumped Concur on us, a new cloud based service to request (and later get refunded) for travels etc. It replaces the now old ELF system. There was a lot of confusion predicted, and here we assemble some tips as encountered by our users:
+
+   * First thing to do: [[https://purchase.umd.edu/travel/concur/concur-login][logging in]] (needs the usual UMD credentials) and setting your profile. You can add your frequent flyers and even personal credit card, if you wish. Read up on the concept of "ghost card".
+   * You may need to "take a class" for this (to be confirmed)- there is weekly training mentioned on https://purchase.umd.edu/travel/concur/concur-help-center
+   * Air and Rail (read: amtrak) will need to get booked using [[https://purchase.umd.edu/travel/concur/travel-agency][CTP]] via the concur portal, with a min. charge of 3.50 per booking (probably air + rail would be 7.00). You can try and find something cheap on e.g. expedia, but if you cannot find it via concur, SOL.
+   * Foreign rail can be done with your own resources
+   * Unclear if you can use MARC or any non-amtrak train (to be confirmed)
+   * Hotel and Rental cars can be done either via concur, or via your own resources
+   * The issue that premium upgrades are not allowed is complicated by the fact that different airlines have different levels of premium. Add to this that baggage fees can be different in different classes,and optimizing your trip cost is getting tricky. But lets be clear, saving the traveller money does not seem the highest priority to concur.
+   * TSA pre is available, but not Global Entry (to be confirmed)
+   * TripLink assists UMD travelers who want to book directly with airlines and hotels. Find it on their "App Center"
+-- Main.PeterTeuben - 2022-10-04

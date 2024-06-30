@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="teuben" date="1666048047" format="1.1" reprev="1.18" version="1.18"}%
+%META:TOPICPARENT{name="HardWare"}%
+Although an increasing number of people have their own laptops, the department has laptops that may be checked out for short-term use when needed (for observing runs or talks, or your own is under repair, for example).
+
+There are currently three laptops:
+   1 14" Dell Latitude E5450 with 2.3GHz dual-core Intel i5-5300U, 8GB RAM. Runs Windows 7 Pro. Purchased 2016.
+   1 15" !MacBook Pro with 2.5GHz quad-core Intel i7, 16GB RAM, and Retina display. Vislab users have first priority, as it is capable of using the vislab's full resolution when attached to the dual-link DVI input below the screens. Purchased 2015.
+   1 15" !MacBook Pro with 2.6GHz quad-core Intel i7, 16GB RAM, and Retina display. Purchased 2013.
+   1 15" Dell Precision 3551 (tag 251155) - i5-10400H, 16GB RAM. Runs Ubuntu22.04LTS. Purchased ~2018. [oops, this is a gradmap laptop, there are 2 or 3 more]
+   1 MacBook Pro. Purchased ~2018
+To check out a laptop, inquire at the front desk. There is a sign-up binder. Any current graduate student, faculty member, or staff member is able to take one out. This is also how you sign up for either LCD projector.
+
+-- Main.PeterTeuben - 2022-09-07
+
+%META:TOPICMOVED{by="JithinGeorge" date="1257554175" from="AstroUMD.DepartmenttLaptop" to="AstroUMD.DepartmentLaptop"}%

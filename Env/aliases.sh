@@ -6,7 +6,7 @@
 #  bash only
 [[ $SHELL == *bash* ]] && shopt -s direxpand
 
-alias teunix='(cd ~/teunix; git pull)'
+alias teunix='(cd ~/teunix; git status -uno; git pull)'
 alias yraid='(echo pull yraid;cd ~/Diary/yraid; git pull)'
 alias diary='(echo push this diary;cd ~/Diary/yraid; make upd)'
 alias astronet='source ~/teunix/sysadmin/files/common/root/.bash_alias'
@@ -75,9 +75,11 @@ mkzip() {
 alias zdir='zoo -list'
 rc () {
     if [ ! $1 ]; then
-	echo No project listed, known ones are:
+	echo No project name given, known ones from ~/rc are:
 	cd ~/rc
-	ls *.rc | sed s/.rc//g
+	for rc in $(ls *.rc | sed s/.rc//g); do
+	    echo "$(printf %-10s $rc) -- $(head -1 ~/rc/$rc.rc)"
+	done
     elif [ ! $2 ]; then
          source ~/rc/$1.rc
     else

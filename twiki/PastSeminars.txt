@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="adhabal" date="1505794101" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="Trash.AstroUMDHowTos"}%
+---+ Past Seminars
+
+To find lists of past seminars, colloquia, and other events:
+
+   1 <span style="background-color: transparent;">ssh gaia</span>
+   1 <span style="background-color: transparent;">cd /www/docs/events/past</span>
+
+-- Main.DerekRichardson - 2016-01-15

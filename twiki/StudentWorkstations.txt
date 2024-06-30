@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="teuben" date="1662564444" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICPARENT{name="HardWare"}%
+---+ Student Workstations
+
+<div id="_mcePaste">On entering our program, any graduate student who requests a workstation for <span style="background-color: transparent;">their desk will be given one. If the Department is supplying the </span><span style="background-color: transparent;">workstation, it will be a public workstation, meaning it is still available </span><span style="background-color: transparent;">for remote running of jobs by other members of the department (see PublicWorkstations).</span></div>
+
+Advisers are expected to furnish students of third year or higher with a <span style="background-color: transparent;">private workstation. If that is not possible, the adviser is requested to </span><span style="background-color: transparent;">cover the administrative costs of a public machine via the recharge center, </span><span style="background-color: transparent;">but if there is demonstrated need, and if the student remains in good </span><span style="background-color: transparent;">standing, the Department will provide and support a public workstation at </span><span style="background-color: transparent;">the adviser's request.</span>
+
+New public department machines currently enter our system via technology <span style="background-color: transparent;">fees that the campus charges students. This resource may go away, at which </span><span style="background-color: transparent;">time the above policy will need to be revisited.</span>
+
+Note there will continue to be public machines available in the Astronomy <span style="background-color: transparent;">Computer Lab (ATL 0224).</span>
+
+-- Main.PeterTeuben - 2022-09-07

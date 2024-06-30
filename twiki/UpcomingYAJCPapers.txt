@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="PeterTeuben" date="1315515863" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="YetAnotherJournalClub"}%
+---+++ On this page anybody can add papers for YAJC to be considered for discussion:
+
+   1 *An extremely primitive star in the Galactic halo:* http://www.nature.com/nature/journal/v477/n7362/full/nature10377.html
+   1 Hyabusa sample return by the Japanese Itokawa mission. Science 333, 2011 (Jess suggested 9/16).
+   1 SN in M101
+   1 CRESST results on dark matter candidates : http://arxiv.org/abs/1109.0702 and blogged at [[http://blogs.discovermagazine.com/cosmicvariance/2011/09/05/more-hints-of-dark-matter/][Discover Magazine]]
+
+-- Main.PeterTeuben - 2011-09-06

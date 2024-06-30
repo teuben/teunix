@@ -1,0 +1,46 @@
+%META:TOPICINFO{author="adhabal" date="1503870588" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="SoftWare"}%
+IRAF is a large data processing package for reducing imaging and spectra data.    In the department, we already have IRAF installed on our system.  However, if you have a home laptop or desktop, you will need to do it yourself.  I figured all this out once, and here is what you do:
+
+   0. You need to obtain three files for your linux distribution.  They are located here: http://iraf.noao.edu/iraf/ftp/iraf/v212/PCIX/
+   The files are:
+      * as.pcix.gen.gz (same for every distribution)
+      * ib.rhux.x86.gz (For Red Hat)
+      * nb.rhux.x86.gz (For Red Hat)
+   If you can't find your distribution, try getting the generic 'lnux' files.
+   1. Create new user iraf (user iraf must use c shell; use =chsh= to change).  To create a user, you must be root, and use the command =useradd=.  For my computer, it is located in =/usr/sbin/useradd=
+   2. login as iraf
+   3. make an iraf directory in =/home/iraf=
+   4. make a directory called =irafbin= in =/home/iraf=
+   5. make a directory called =local= in =/home/iraf/iraf=
+   6. make a directory called =bin.redhat= in =irafbin=
+   7. make a directory called =noao.bin.redhat= in =irafbin=
+   8. Make default login directory for user =iraf= be =/home/iraf/iraf/local=.  Edit =/etc/passwd= so the line with the user =iraf= looks something like: =iraf:x:518:518::/home/iraf/iraf/local:/bin/csh=
+   9. Still as root, cd to /
+   10. create a symbolic link: =ln -s /home/iraf iraf=
+   11. logout as root, but still make sure you are user iraf
+   12. set environment variable $iraf to /home/iraf/iraf: =setenv $iraf /home/iraf/iraf=
+   13. cd to =$iraf=
+   14. copy/move =as.pcix.gen.gz= to =$iraf=
+   15. type: =cat as.pcix.gen.gz | zcat |tar -xpf -= (this will fail if iraf does not have read permission on the =as.pcix.gen.gz= file).
+   16. cd to =/home/iraf/irafbin/bin.redhat=
+   17. move/copy =ib.rhux.x86.gz= to =/home/iraf/irafbin/bin.redhat= and type: =cat ib.rhux.x86.gz | zcat |tar -xpf -= (this will fail if iraf does not have read permission on file)
+   18. cd to =/home/iraf/irafbin/noao.bin.redhat=
+   19. move/copy =nb.rhux.x86.gz= to =/home/iraf/irafbin/noao.bin.redhat= and type: =cat nb.rhux.x86.gz | zcat |tar -xpf -= (this will fail if iraf does not have read permission on file)
+   20. =cd $iraf/unix/hlib= (i.e. =/home/iraf/iraf/unix/hlib=)
+   21. type: =source irafuser.csh=
+   22. login as root
+   23. type: =./install -n=
+   24. The iraf root directory should be =/home/iraf/iraf=. Once you are happy with the install script (though networking may not configure), type: =./install= (NO -n option.  This will do the REAL install).  I am not completely sure if this is needed.
+   25. If you are using Fedora, move the =xgterm.fedora= binary to =/usr/bin/xgterm=.
+   25. logout as root
+   26. as yourself, cd somewhere
+   27. make a directory called =iraf=
+   28. =cd iraf=
+   29. type =mkiraf=.  I always say terminal type is =xgterm=, even though it is not true.
+   30. create an =xgterm= by typing =xgterm &=
+   31. Within the new =xgterm=, start IRAF by typing =cl=.
+
+-- Main.NicholasChapman - 13 Mar 2007
+
+%META:TOPICMOVED{by="adhabal" date="1503870588" from="AstroUMD.InstallIraf" to="AstroUMD.InstallingIraf"}%

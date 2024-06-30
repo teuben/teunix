@@ -1,0 +1,33 @@
+%META:TOPICINFO{author="teuben" date="1664457009" format="1.1" version="1.6"}%
+%META:TOPICPARENT{name="HardWare"}%
+---+ Pick your Computing Platform
+
+Picking the ideal platform for your computing problem from among our available resources is a judgment call, but despite that we want to give some guidelines how to more optimally pick a workflow. This can be particularly important if you need to run a lot of similar programs.
+
+First of all, if you want to optimize your workflow, it will be very helpful to have the following:
+
+   1 If your code needs a compiler, make sure you have an efficient way to compile the code with a different compiler/version/compile options, as this can sometimes make huge differences in the performance. Even if your code is python or julia, a more recent version can make a difference. <br />Currently we have gcc11 in addition to the default (v8.5) gcc, as well as some compilers you will see listed with the "<strong>module avail</strong>" command.
+   1 Make sure you have a benchmark, so you can compare timings where you varied parameters from the previous item.
+   1 Make sure your benchmark produces some kind of answer, so you can see if the results are the same if you varied the previous two item.
+Having taking care of these basics, now you can better decide where to run your code. You can also consult [[https://browser.geekbench.com/][geekbench5 benchmarks]] , but nothing goes above making your own FooBench5 :-)
+
+   * Is your code single core? If yes, just find the fastest core (i7/i9 are often faster than the big Xeon's/AMD's). At UMD currently the *lab05..13* machines are best, but they are shared with student labs, so be sure to run during quiet hours and don't exhaust the number of cores.
+   * Some codes may look single core, but hyjack cores and threads. Python is notorious for this, and by fixing the number of cores you often find improved performance, e.g.<br /> <verbatim>     OMP_NUM_THREADS=1 python my_script.py</verbatim>
+   * Can you run your code in parallel? If so, GNU parallel might be an effective way to get more single core codes run through your pipeline, e.g.<br /> <verbatim>     parallel --jobs 8 < my_runs.txt</verbatim> where each line in the input file is a command to be run. It is not a shell script, though bash should be able to run it directly too.<br />Be sure that the product of cores and memory does not exceed physical memory, and most often you should not use the threads, only cores. Often each core has 2 threads.
+   * Do you need a GPU? We have two public GPU machines. *gpu1* is for development, short runs, benchmarks etc. *gpu2* is for production and requires a signup (honor system)
+   * Can your code scale up with OpenMP and/or MPI ? The scaling of the efficiency of your code with cores is important, where you may need to fix the number of cores. How important is I/O? If important, you may need to use real HPC systems such as zaratan. If not, our local cluster (yorp/astra) might be sufficient.
+The table in ClusterComputing might be a good check for you to match your code with, though summarizing some single core geekbench5/nemobench5 values here for a few selected machines:
+
+| *Description* | *Processor*  | *Geekbench5* | *nemobench5* |
+| lma (private)  | AMD EPYC 7302 |  ~900 |  628 |
+| jansky (private)  | i9-12900K |  ~2000 |  1345 |
+| astraN  | AMD EPYC 7313 |  ~1300 |  755 |
+| yorpN | old AMD's |  ~460 |  239-250 |
+| labN  | i7-12700K  |  ~1800 |  1288 |
+| gpuN  | Xeon E5-2687W |  ~600 |  372 |
+| zaratan (DIT)  | AMD EPYC 7763 |  ~1300 |  1057 |
+
+---++ Notes
+   1 How do you know if your code is single core? Most compiled codes will be single core, unless you have compiled it with OpenMP or linked with MPI (the latter case you need to run programs with *mpirun*). OpenMP codes are under control of a set of *OMP_** envirionment variable, OMP_NUM_THREADS being one of them. There are some other hand-tuned codes that can use multiple threads. Python can also use the thread pool, in which case the writer probably had some special method to set the maximum number of cores. In short: RTFM. You can also look at programs like *top*, and see if the CPU usage is over 100%.
+   1 ...
+-- Main.PeterTeuben - 2022-09-15

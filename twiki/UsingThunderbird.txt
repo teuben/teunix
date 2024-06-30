@@ -1,0 +1,40 @@
+%META:TOPICINFO{author="teuben" date="1697489014" format="1.1" version="1.35"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+---++ Your new (2020) umd email
+
+On March 20, 2020 (but now corona-delayed) your old astro.umd.edu email was remapped to your official umd.edu email, run within the google universe. I have recently set up my (linux) thunderbird client with umd.edu, and followed the guidelines posted at https://umd.service-now.com/itsupport?id=kb_article_view&sysparm_article=KB0015113 (search for: _Use Thunderbird for UMD Email_ in case the link goes stale)
+
+Potentially useful is mozilla's own gmail setup guidelines:  https://support.mozilla.org/en-US/kb/thunderbird-and-gmail
+
+Note: do <strong>NOT </strong>enter your password on the initial setup screen, or OAuth setup will fail; wait until it asks you for it later on in the setup. Otherwise the instructions worked fine with me.
+
+This is version 2 of their document, and it describes (for Win and Mac) the OAuth2 method, which worked for me on Linux. The older document described the "app password" method, and was considerably more complex. But it did work. Just make sure you don't have an entry with the same IMAP/SMTP server, you will need to modify it to make thunderbird allow your new entry.
+
+<span style="background-color: transparent;">For the ASTRO users were given an option to migrate their mailboxes. I will attempt to summarize issues around this, as I chose for this options. My opinions may evolve over time as I learn more from others</span>
+
+   1 <span style="background-color: transparent;">Your astro INBOX will be merged into your umd INBOX. I would advice to clean up both your INBOX and file them into folders (on astro), and on umd perhaps "archive" everything.</span>
+   1 <span style="background-color: transparent;">In retrospect it would have been wiser to copy your astro mailboxes (not your INBOX though) manually to your umd account instead of having them do it.</span>
+   1 <span style="background-color: transparent;">Unsubscribe from the "Gmail/All Mail" box, it can be big, and will hyjack your thunderbird (can become cpu and memory hog this way). It covers all your folders, so you don't need it. It would also duplicate your drive space.</span>
+   1 <span style="background-color: transparent;">Regularly empty the trash and compact folders, as G-suite does not seem to advertise basic cleanup very well. Or just wait the 30 days they use to remove trash?</span>
+   1 <span style="background-color: transparent;">Gmail labels are hierchical, you will find them in e.g. Mail-Nemo-rotcur, which came from your Mail/Nemo/rotcur mailbox file (which some call a folder)</span>
+   1 <span style="background-color: transparent;">There is a useful plugin for thunderbird called "Gmail Buttons", which also shows the gmail labels to an email</span>
+   1 <span style="background-color: transparent;">The Archives folder works for me in UMD's gmail, but not in GMAIL itself. This is tricky, as this means in gmail it will go to "All Mail", which you want to unsubscribe from. But when you archive, it will subscribe again. Bug?</span>
+   1 
+A few items I find very useful in thunderbird:
+
+   1 sort a mailbox by many things, size being one (try that in gmail)
+   1 move a mail (or selection, or whole folders) transparently between mail servers
+   1 pick which folders you want on the hard drive, the so-called subscribe. also useful to check old emails off-line
+   1 easy to find your mail app when you have too many browsers and tabs open (some browsers have good tab managers)
+   1 "Loading..."
+And let's be honest, or at least let me jot down some things I don't like:
+
+   1 Unsubscribing from the "All Mail" means it becomes a little harder to search for an email
+   1 The "Archive" button in GMAIL seems to auto-subscribe to the "All Mail". UMD account does not have this for me, as it has an "Archives" folder
+
+And last but not least, there are a few useful plugins in Thunderbird that you might find useful:
+
+   1 Lightning: this allows integration of calendar gmail. You can also convert an email to an event via the "message right click" -&gt; Convert to
+   1 Google Provider: this adds buttons so you can Archive and Delete more easily (i found I sometimes need ot restart thunderbird if they don't show up)
+
+-- Main.PeterTeuben - 2020-03-15

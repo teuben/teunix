@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="PeterTeuben" date="1203361956" format="1.0" version="1.2"}%
+%META:TOPICPARENT{name="WebHome"}%
+Thanks to one of the more advanced features of openssh, it is possible to access webpages as if you were in a different place than you really are.  The example I'm going to give here is for editing this wiki from somewhere outside the umd network, but it is also useful for accessing journal articles from home with the university subscription (and possibly other similar things).
+
+This requires two things.  First, you must have a (shell) account on a computer with an IP address that is allowed to access the website in question.  In the case of this wiki, that would mean either an account on an astro.umd.edu machine, or possibly a wam or glue account.  Second, the computer you are using must be either GNU/Linux or Mac OS X (or probably any other UNIX).  Sorry Windows users, but you're on your own.
+
+	* Open a terminal
+	* In the terminal type: ssh -L 8080:www.astro.umd.edu:80 username@machinename
+	* DO NOT CLOSE THIS TERMINAL.
+	* (obviously, replace username and machinename with values of your own)
+	* In your web browser enter the following URL: http://localhost:8080/cgi-bin/twiki/view/AstroUMD/WebHome
+	* That's it.  When you're done, exit the terminal and the connection will go away.
+
+An alternative to this is to use the VpnMethod
+
+-- Main.JohnVernaleo - 18 Oct 2007
+

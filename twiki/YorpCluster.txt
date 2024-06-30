@@ -1,0 +1,59 @@
+%META:TOPICINFO{author="teuben" date="1677705507" format="1.1" reprev="1.53" version="1.53"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ The Yorp Cluster
+---++ NOTE: Logging into astra.astro.umd.edu will show a list of current machines, some of which are new. You can sign up for time by editing the text file =/n/yorp/RESERVE= from anywhere on the network.
+
+The yorp cluster began as part of a [[http://www.it.umd.edu/techfee/][Technology Fee]] grant to the Department in 2008. It has since been augmented by individual contributions, mostly from the Department's [[http://www.astro.umd.edu/rareas/ctc/][Center for Theory and Computation (CTC)]]. For a while yorp hosted nodes from the old BorgCluster, but those have since been retired. The most recent upgrade was the conversion to the much more powerful astro nodes. Following is an overview of yorp/astra, including the current configuration and usage policies.
+---++ Configuration
+
+Yorp consists of the head node, astra, plus a heterogeneous mix of worker nodes, as follows:
+
+(cores, RAM, and disk are _per node_...)
+|  *<strong>old -&gt; new name</strong>*  |  *nodes*  |  *<strong>cores</strong>*  |  *<strong>processor set per node</strong>*  |  *<strong>RAM</strong>*  |  *disk*  |  *<strong>notes</strong>*  |  *<strong>rating </strong>*  | *nemobench5* |
+|  yorp  | 0 |  8  |  Intel Xeon E5420 2.5 GHz (2CPU 4core)  |  8 GB  |  2 TB  |  retired, see astra  |  —  |  —  |
+|  yorp01-04  |  4  |  32  |  AMD Opteron 6380 2.5 GHz (2CPU 16core)  |  64 GB  |  1.5 TB  |  bought by CTC  |  0.78  |  230  |
+|  yorp05 -&gt; dead  | 0 |  12  |  Intel Xeon X5670 2.9 GHz (2CPU 6core)  |  0 GB  |  0 TB  |  campus tech fee  |  1.00  |  n/a  |
+|  yorp14-16 -&gt; removed  | 0 |  12  |  Intel Xeon X5670 2.9 GHz (2CPU 6core)  |  24 GB  |  4 TB  |  bought by CTC  |  1.00  |  252  |
+|  yorp10 ?  |  1  |  24  |  AMD Opteron 6180 SE 2.5 GHz (2CPU 12core)  |  64 GB  |  2 TB  |  campus tech fee  |  0.75  |  n/a  |
+|  yorp08-13  |  6  |  32  |  AMD Opteron 6284 SE 2.7 GHz (2CPU 16core)  |  64 GB  |  2.3 TB  |  bought by CTC  |  0.82  |  240  |
+|  yorp06-07  |  2  |  32  |  AMD Opteron 6380 2.5 GHz (2CPU 16core)  |  64 GB  |  1.5 TB  |  bought by CTC  |  0.78  |  230  |
+| astra  |  1  |  8  |  Intel Xeon E-2378G 2.8 GHz (1CPU 8core)  |  128 GB  |  ?  |  new head node, no jobs  |  —  |  976  |
+| astra01-06  |  6  |  32  |  AMD EPYC 7313  |  256 GB  |  ??  |  ACC?  |  &gt; 1 |  747  |
+(Cores, RAM, and disk listed are per node. Total number of cores in the cluster = 540 across 21 nodes; total amount of RAM = 1.09 TB; total disk capacity = approx. 47.6 TB). The rating indicates the per-core performance of the nodes in that row compared to yorp05. Ratings with an asterix ( *) are estimates. *rating* provided by Main.DouglasHamilton. *nemobench5* values provided by Main.PeterTeuben
+
+<strong>NOTE 2022: </strong>yorp numbering is currently incorrect due to reshuffling<strong>, </strong>we have 12 nodes left, with<strong> yorp05 </strong>dead.<strong><br /></strong>
+---++ Logging In
+
+All nodes are accessible from any department machine using your existing account (just "ssh yorpXX" to login, where XX is the node number). Generally there should be no need to login to the head node ("yorp")—its role is to keep networking running smoothly on the cluster, so please do NOT run jobs on it.
+---++ Disks (Storage)
+
+Most astronomy network disks, including /home, are visible from every node in the cluster. Ideally however your jobs should use local disk on the cluster to ensure the best performance. Each yorp node has its own disk—for example, yorp01 has /yorp01/scratch along with /yorp01a and /yorp01b. All users have write privileges to these spaces, which are also visible anywhere on the network as /n/yorp01/scratch, /n/yorp01a, etc. Be aware *THESE SPACES ARE NOT BACKED UP*. To see what's available, ssh to a node and type "df". Where possible, write to a disk belonging to either the run node or, in the case of a parallel job, the master node. Please try to clean up after yourself promptly!
+---++ astra
+
+Three astra nodes have recently been added, and we expect three more in 2022.
+
+Each node contains 32 cores (64 threads), 256 GB RAM and several TB of RAID-5 storage (NOT backed up---no long-term storage allowed!) The latter is not uniform among nodes---astra01 and astra02 offer 6 TB of SSD-based storage, while astra03 contains 18 TB of HDD-based storage. Most will not notice a performance difference (only those with I/O-heavy simulations), but if you generally find one or the other configuration more useful please let us know; it may affect how we outfit additional nodes.
+
+The reservation process remains very similar to the yorp cluster---simply edit /n/astra/RESERVE and enter your username in the appropriate slot---but has been structured to promote equitable sharing among users. In particular, time slots are fixed bi-monthly intervals that advance automatically (do NOT add/remove columns from the reservation table!), and you may NOT reserve more than one time slot in the entire table. (Exception: beginning Jul 1 2022, if a node is idle---unreserved for immediate use---anyone may do so.) Free time slots are indicated by user 'nobody'; replace with your username to reserve it. Only graduate students may reserve future time slots; idle nodes are open to anyone in the department.
+---++ Cluster Status
+
+To check the status of any node, just ssh to it and type "top". A graph of the temperature over time in the yorp room can be viewed [[http://www.astro.umd.edu/cgi-bin/yorpTemperature][here]].
+---++ Usage Policies
+
+The yorp cluster operates under the honor system: users sign up for the resources they want (by editing the file /etc/motd on yorp) and agree to play fair. If you want to run a job, and everything is booked, but you see some idle cores, try to sort things out by email with your fellow users. Be sure to choose the right node(s) for the job; for example, consider the total memory requirement and make sure there is sufficient RAM on the node(s) you choose (leave some for the operating system!). Otherwise both your job and possibly the cluster network will underperform.
+
+<strong style="background-color: transparent;">REMEMBER: </strong><span style="background-color: transparent;">never run jobs on the head node!</span>
+---++ Software
+
+Generally anything available on the astronomy network is also available on yorp, including the Intel compiler icc (64-bit) and anything requiring a site license (like IDL). Also available on yorp are the Open MPI parallel libraries. More information is available on the SoftwareMap page.
+---++ Acknowledging Yorp
+
+If you use the yorp cluster in your research and this leads to a publication, we would appreciate it if you would acknowledge this use. Here's a sample statement to include in your publication: "<span style="background-color: transparent;">Simulations were [or Analysis was] performed on the YORP cluster </span><span style="background-color: transparent;">administered by the Center for Theory and Computation, part of the Department of Astronomy at the University of </span><span style="background-color: transparent;">Maryland."</span>
+---++ Mailing List
+
+There is an in-department mailing list for all things HPC: hpc-users@astro.umd.edu. Contact Kevin or Peter if you like to be added/deleted from this list.
+---++ Campus HPCC
+
+The campus also provides cluster computing resources: ITComputingCluster.
+
+-- Main.DerekRichardson - 2010-04-07

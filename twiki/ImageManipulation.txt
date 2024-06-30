@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354135601" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="SoftWare"}%
+The main image manipulation program in Linux is [[http://www.gimp.org/ The Gimp]]. Just type gimp at the command line to bring it up. It has similar capabilities as Photoshop and therefore is similarly complex. If you need to manipulate an image graphically (as opposed to batch manipulations), Gimp is probably your best bet.
+
+On the command line, Image Magick is a very powerful set of tools. It is capable of converting nearly any image format to nearly any other format (convert file.png file.jpg for example). To actually modify (rescale, etc.,) use the command mogrify. Both have extensive man pages. See ImageMagickTools for more details.
+
+The one thing I have not been able to do with the free image tools above is convert a standard RGB image to CMYK which is the color format that is required for journal printing. It is rumored that Photoshop can do this, but for now, I just let journal take care of the conversion for me. Of course if someone has a way to do this conversion reliably with Gimp, imagemagick, or any other normal Linux/UNIX tool, that would be very interesting.
+
+The are a wide array of more specific tools for dealing with postscript and pdf files which someone may want to discuss at some point (pdftk, epstopdf, and so on).
+
+-- Main.JohnVernaleo - 21 Jun 2007

@@ -1,0 +1,92 @@
+%META:TOPICINFO{author="diemer" date="1695214945" format="1.1" version="1.55"}%
+%META:TOPICPARENT{name="WebHome"}%
+<span style="background-color: transparent; color: #630000; font-size: 22.75px;">The DIT Computing Cluster</span>
+
+The Division of Information Technology (DIT) administers a high-performance computing (HPC) cluster on campus called [[https://hpcc.umd.edu/hpcc/zaratan.html][Zaratan]]. The College (CMNS) and the Astronomy Department both contribute to Zaratan, providing priority access for all campus-based Astronomy users.
+---++ <span style="background-color: #f6f6f6; color: #630000; font-size: 18.85px;">Getting Access</span>
+
+To get access to Zaratan, you must:
+   * Be a local member of the Astronomy department (see below) and have a university directory ID.
+   * If you are a member of the TTK or PTK faculty, you will lead your own "PI Project." Please send your UMD account name to Benedikt Diemer, who will request an account from HPCC and send further instructions.
+   * If you are a graduate student or postdoc, you will be member of someone else's PI project. Please send your UMD account name to the PI in question. (For the PI: you can add users in the [[https://coldfront.zaratan.umd.edu/][ColdFront]] tool; you must use the university's <a href="HowToUseVPN" target="_blank">VPN</a> even if you are on campus. Note that you need to separately add a user to *both your project and at least one allocation*.)
+   * Please make sure that you receive email sent to your university account.
+Once your account is set up, there are a few ways to access the cluster:
+   * <span style="background-color: transparent;">You can ssh to login.zaratan.umd.edu using your account name. Instructions on </span><span style="background-color: transparent;">PasswordlessSSH</span><span style="background-color: transparent;"> are still TBD because the new cluster uses a Kerberos system.</span>
+   * <span style="background-color: transparent;">You can log in via browser using the [[https://portal.zaratan.umd.edu][HPC Portal]] (as with ColdFront, you must be logged into your VPN even when on campus).</span>
+---++ Computing time allocations
+
+<span style="background-color: transparent;">Any local member of the Department of Astronomy is entitled to use our Zaratan allocation. Although exceptions may be considered, since local resources went (and continuously go) into securing our priority access to the cluster, and the facility is maintained by the University, generally only those members of the Department who are located on campus and who pay (or whose supervisors pay) on-campus overhead will be granted access. </span>
+
+<span style="background-color: transparent;">As of 2022, the Department of Astronomy has 8.3 million service units (SUs, or CPU hours) per quarter on Zaratan (or 33.3 MSU per year). The allocations are distributed quarterly, with quarters beginning on January 1st, April 1st, July 1st, and October 1st. The SUs do not roll over to the next quarter. </span><span style="background-color: transparent;">We are still working on an official fair-use policy. Currently, the PIs collect information as to their group's needs and relay it to Benedikt Diemer. We will come up with a more formal distribution scheme towards the end of the first quarter (December 2022).</span>
+
+In addition to the astronomy allocation<span style="background-color: transparent;">, you can also apply for time on the cluster directly with your University ID; you can log into your [[https://umd.service-now.com/hpc][HPC allocations portal]] or consult the help pages on </span><span style="background-color: transparent;"> [[https://www.glue.umd.edu/hpcc/getting-access.html#grants][submitting a proposal]]</span><span style="background-color: transparent;">. This procedure probably only makes sense if you need a very large allocation that cannot be accommodated from the astronomy budget. The University has stated that allocations up to 550 kSU (0.5 MSU) may be granted for free, but that larger allocations will likely incur a cost.</span>
+---++ <span style="background-color: transparent;">Disk space allocations</span>
+
+Besides SUs, you/your PI have also been allocated a certain amount of disk space. On Zaratan, there are two separate file systems:
+   * *scratch* (or high-performance file system, HPFS): this disk space is connected to the compute nodes. You need to read from and write to it while running jobs.
+   * *SHELL* (long-term storage): that's where you leave your larger files that you do not directly need to run jobs at the moment.
+<span style="background-color: transparent;">In your home directory, you should find symbolic links to your space on both (assuming you have been added to at least one allocation). These links should read scratch.&lt;pi-project&gt;-prj and scratch.astr, and the same for SHELL.</span>
+
+We currently have allocations of 114 TB on scratch and 609 TB on SHELL for the entire astronomy department, making scratch a somewhat scarce resource. Each PI project receives a fair-share allocation based on need and availability.
+
+For the SHELL storage, <strong>PIs need to set sub-allocations </strong>for each user directory, and for other directories in their project (such as /shared). Otherwise, each directory is limited to 1 TB by default. These allocations are made via ticket to HPCC.
+---++ Useful Tips/FAQ
+
+DIT maintains documentation for Zaratan [[https://hpcc.umd.edu/hpcc/zaratan.html][here]], which you should read (or at least skim) before submitting jobs. If your question cannot be answered by the documentation, have a look at the FAQ below. If your question still has not been answered, feel free to submit a request for help (a "ticket") via an online form or email (see [[https://hpcc.umd.edu/hpcc/help.html][instructions]]).
+---++++ What allocation account should I use?
+
+In your slurm jobs, you will need to specify an account to which your consumption will be charged. This should generally be your PI's allocation from the overall astronomy pool, which will be called &lt;pi_name&gt;-prj-astr (and the same if you are the PI). Your PI may also have other allocations. For example, all PIs were given an initial startup allocation (50 kSU) when we switched to Zaratan; these allocations are called &lt;pi_name&gt;-prj-aac (for the allocation committee, the AAC). By default, each user appears to be using the -aac allocation, which is generally not desirable. You can see your default account by executing
+
+<verbatim>sacctmgr list user <your_username> Format=User,DefaultAccount%20,Account%20 WithAssoc</verbatim>
+
+You can switch the default to the astronomy pool allocation by executing
+
+<verbatim>sacctmgr modify user <your_username> set DefaultAccount=<pi-prj>-astr</verbatim>
+
+<span style="background-color: transparent;">By default, your job will enter the "standard" queue. There is also a "scavenger" queue, where your job might take longer to run but you/your PI will not be charged. You can choose this partition by setting --partition=scavenger in your job file.</span>
+---++++ I was charged a lot more than I expected, why?
+
+There is an important change from Deepthought2: jobs are now charged by both CPU time and memory! Specifically, if your job exceeds the average 4GB/core, it will be charged double/triple etc for each multiple of 4GB that you request. For example, a job with 4 MPI processes, 2 cores per process, 7GB of memory per core, and a runtime of 3 hours will cost you
+
+4 * 2 * (7 % 4) * 3<span style="background-color: transparent;"> = 8 * 2 * 3 = 48 SUs</span>
+---++++ How much time remains in the account(s)?
+
+Execute the "sbalance" command to see an accounting of the time consumed by you and other users in your PI's allocation. Note that the allocation is per quarter!
+---++++ How do I know how much time I can use?
+
+Please talk to your PI to make sure your resource needs are met by their allocation. If not, we might well be able to increase that allocation. You can also ask in the Astronomy HPC <a href="https://slack.com/" target="_blank">Slack</a> channel.
+---++++ I cannot access the SHELL file system
+
+Try executing the "renew" command. (This has to do with the AFS file system that SHELL is based on -- more information soon.)
+---++++ <span style="background-color: transparent;">How can I use a different compiler?</span>
+
+The various available software packages are listed [[https://www.glue.umd.edu/hpcc/help/software.html#software][here]]. When choosing a new compiler, say the Intel C compiler (icc), it's important to link with any correspondingly compiled libraries you need (e.g., MPI). From experience, the following is the preferred way to do this (place in your .bashrc file and submit script):
+   * module unload gcc
+   * module load intel
+---++++ How can I install my own python packages?
+
+If your package is not part of the default python distribution, you can install it with
+
+<verbatim>pip3 install --user <package></verbatim>
+
+Note the pip3 instead of pip command, and the --user, which makes sure that the package into your home directory (~/.local) rather than the main operating system, where you obviously don't have write permissions.
+---++++ I get a strange error, I need to submit a ticket...
+
+If you suspect the problem is not due to your code, you can try sending a help request see [[https://hpcc.umd.edu/hpcc/help.html][instructions]]). Be sure to describe the problem in detail, including why you think it may be due to something other than a bug in your code, and also provide the following information in the email:
+<div id="_mcePaste">
+
+   1 Your login name.
+   1 The job(s) that had issues.
+   1 The path to the script you gave to sbatch to run the job.
+   1 The path to the Slurm outputs.
+<span style="background-color: transparent;">(they want the paths to the files above, not attachments, because they </span><span style="background-color: transparent;">often need to look at files referenced that cannot be found easily when </span><span style="background-color: transparent;">you attach files, but can when you give the paths).</span></div>
+---++++ Can I still access the campus clusters if I'm no longer at the university?
+
+It depends. There needs to be a compelling reason for continued access, usually to finish up a project started while you were here. In all cases, the work should support the research interests of the Department and the research mission of the University, be of direct benefit to the Department, and be acknowledged by including a Department affiliation in any publications resulting from the work. Normally when you leave, your directory ID will be suspended, but you need that account to be active in order to continue having access to deepthought2. With a local Department of Astronomy sponsor, you may be able to become a [[https://umd.service-now.com/itsupport/?id=service&service=7e572f8b6fcb2a0051281ecbbb3ee4e2][campus affiliate]], so long as you are a U.S. citizen or permanent resident (follow the instructions at that link, which are fairly involved and require action by both your sponsor and our business staff). If you are not a U.S. citizen or permanent resident, the process is more complex and requires that you have a non-paid appointment, which must be coordinated through the business office and may not be granted because it is generally not allowed. Contact Main.DerekRichardson for assistance. Note that this process needs to be repeated every year to maintain access if you are no longer on campus.
+---++ Acknowledging Use of the Cluster
+
+Please read about how to do this [[https://www.glue.umd.edu/hpcc/faq.html#acknowledge][here]].
+
+-- Main.DerekRichardson & Benedikt Diemer (last updated 09/2022)
+
+%META:TOPICMOVED{by="DerekRichardson" date="1353852212" from="AstroUMD.OITComputingCluster" to="AstroUMD.ITComputingCluster"}%

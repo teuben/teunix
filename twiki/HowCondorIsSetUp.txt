@@ -1,0 +1,58 @@
+%META:TOPICINFO{author="JohnVernaleo" date="1192804631" format="1.0" version="1.5"}%
+%META:TOPICPARENT{name="UsingCondor"}%
+---+ How Condor is Set Up at UMD
+This page describes how Condor was installed to the desktop machines in the Astronomy Department.
+
+---++ Installation Notes
+Graeme did a reinstall of Condor on the department machines in late 2005.
+His notes of this process are in =~condor/install_notes=.
+This process required root access on the central master, =riemann=, and access to the =condor= user.
+Adding machines to the pool requires brief root access on each machine; a script described below allows Sebok to do this with minimal effort.
+
+---++ Basic Setup
+Condor runs several daemons on each machine in the pool.
+They must be started by root so that they may change to the individual user who owns the job; they will appear (in =top=, for example) to be running as user =condor=.
+The central master runs the collector, managing the pool.
+Our central master is =riemann=.
+Compute nodes run daemons that allow submitting and running jobs.
+The binaries for the daemons (and all the Condor tools) are on an NFS share mounted by all the members of the pool.
+This share is at =/local/pkg/condor/release=; all subsequent paths are relative to this.
+Each member of the pool has an entry in =etc/roster= and a (usually empty) host-specific configuration file =etc/&lt;hostname&gt;.local=
+When Condor starts on a machine, it reads the global configuration file =~condor/condor_config=, which directs it to use =~condor/hosts/&lt;hostname&gt;= for logs, spool, pid files, etc.
+
+---++ Adding A Machine To The Pool
+There is a Python script =~condor/add_machine.py= that facilitates adding a machine to the existing Condor pool.  This script must be run as user =condor=, and requires the root password of the machine to be added.
+Invoke it with =add_machine.py hostname [hostname ...]=
+The script does the following things:
+	1 Add the new hostnames to the roster
+	1 Create an empty host-specific config file in =etc=
+	1 Create the host's log/execute/spool directories in =~condor/hosts= from an empty template
+	1 ssh to the host, as root, and do the remaining steps
+	1 Create a lock file directory, and change its ownership to user =condor=
+	1 Add a symlinked entry in =/etc/init.d= to the init script that will boot Condor
+	1 Using =chkconfig=, add the condor service to the appropriate runlevels
+	1 Start the condor service
+
+Because Condor needs to start as root, if for some reason the Condor daemons on a compute node die, you must be root (or reboot) to restart them.
+
+---++ Restarting CONDOR after an outage etc.
+If CONDOR is completely down, verified by finding no processes of user condor on Riemann, then it needs to be completely restarted. The restart process is quite simple, as user condor, logged in on the master (Riemann for now), simply run the command =condor_master=. This gets the condor_master daemon running. If all daemons do not start immediately, a =condor_restart= might be needed to get everything running properly again.
+
+Currently there are some machines which have been off the list due to various problems:
+	* some lab machines have issues, but they go down often enough we are leaving them on.
+	* akash
+	* pegasus
+	* columba
+
+If a machine needs to be removed from condor, put it here, and remove its entry from ~condor/hosts/
+
+The output of the command ls -1 ~condor/hosts/ will give a list of all machines that should have condor running on them.
+
+---++ Being User =condor=
+The =condor= user owns the =/local/pkd/condor= hierarchy, and (appears) to run the Condor daemons.
+You must become this user (via =su=) to edit the configuration files, upgrade the system, or add machines to the pool.
+The password is known by Kayhan, Kevin, John, and Graeme.  Of course, root can become =condor= without the password.
+
+-- Main.GraemeLufkin - 31 Mar 2006
+-- Main.JohnVernaleo - 19 Oct 2007
+

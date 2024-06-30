@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="teuben" date="1382013435" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICPARENT{name="YetAnotherJournalClub"}%
+There are many ways to keep up with the literature. We mention a few:
+
+   1 Come to [[YetAnotherJournalClub]] (this is obviously a recursive definition)
+   1 Visit your local library and see what's on the shelves
+   1 Subscribe to [[http://xxx.lanl.gov/archive/astro-ph][astro-ph]] (it will send you daily emails). You can also use their RSS feed (see below) and for both iPhone and Android an app is available.
+   1 Use the [[http://adsabs.harvard.edu/ads_abstracts.html][ADS Services]] (in particular, myADS)
+   1 %BLACK%Use [[http://en.wikipedia.org/wiki/RSS][RSS feeds]] and subscribe using your favorite RSS reader (e.g. [[http://www.google.com/reader/][Google Reader]] or _Thunderbird_ or even _Firefox_)<em>. </em>Most journals, astro-ph etc. have them available these days.%ENDCOLOR%
+   1 %BLACK%Use popular blogs such as [[http://astrobites.com/][astrobites]] (an astro-ph digest)%ENDCOLOR%
+   1 Visit a [[http://www.sciencecafes.org/cosmic_cafes/][Cosmic Cafe]]
+   1 [[http://maryland.voxcharta.org][UMD VoxCharta]] (our Friday 2pm discussion group)
+   1 [[http://cosmochemistry-papers.com/]] (view and discuss CosmoChemistry papers from the press)
+   1 [[http://arxiver.wordpress.com/][the latest astronomy papers uploaded to astro-ph]] (a wordpress figure centric service)
+   1 [[http://www.ifa.hawaii.edu/~reipurth/newsletter.htm][The Star Formation Newsletter]]
+   1 [[http://www.aoc.nrao.edu/~gcnews/home/gcnews.shtml][GCNEWS]] : a Newsletter for Galactic Center Research
+-- Main.PeterTeuben - 2013-10-17

@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="JohnVernaleo" date="1191855619" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="LocalCodes"}%
+Athena is a relative new, high-order Godunov MHD code developed by Jim Stone (Princeton University), Tom Gardiner (Cray Research), Main.PeterTeuben (University of Maryland), and John Hawley (University of Virginia).
+
+It is in use by several people here and can be downloaded from [[http://www.astro.princeton.edu/~jstone/athena.html][this site]] at Princeton.
+
+A plugin for the [[http://www.llnl.gov/visit/][VisIt]] graphics package for Athena output data is provided below.  It was written by Aaron Skinner and is provided under the same terms as <nop>VisIt.  AstroMake users don't need to do anything as this plugin is provided in the AstroMake install of <nop>VisIt.
+
+-- Main.JohnVernaleo - 08 Oct 2007
+
+%META:FILEATTACHMENT{name="visath.tar.gz" attr="" comment="Athena plugin for <nop>VisIt" date="1191855488" path="visath.tar.gz" size="6599" user="JohnVernaleo" version="1.1"}%

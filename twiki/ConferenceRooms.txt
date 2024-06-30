@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="eric" date="1488477013" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="ConferenceRooms"}%
+---+ Policies
+   * AstroUMD.PSC1136Policies (large conference room, up to 49 seats)
+   * AstroUMD.PSC1148Policies (small conference room, 12 seats)
+---+ AV Guides and Tips
+   * AstroUMD.PSC1136AV (large conference room, up to 49 seats)
+   * AstroUMD.PSC1148AV (small conference room, 12 seats)
+-- Main.EricMcKenzie - 2016-07-11
+
+%META:TOPICMOVED{by="eric" date="1468343938" from="Sandbox.ConferenceRooms" to="AstroUMD.ConferenceRooms"}%

@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="adhabal" date="1505786826" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---++ Power Outage Procedures and Schedule
+
+This portion of the TWiki is dedicated to assisting users and administrators with anticipated Computer & Space Sciences Building power outages. Check back often for updates.
+
+   1 PowerOutageInfoForUsers -- this is intended for regular astronomy network users.
+   1 PowerOutageInfoForSysAdmins -- this is a checklist for network system administrators.
+   1 PowerOutageSchedule
+
+-- Main.DerekRichardson - 2010-06-30

@@ -1,0 +1,32 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354135459" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="HardWare"}%
+---+ Connecting Wirelessly to the TV in the Library
+
+[transcribed from an e-mail by Main.StuartVogel on 9/5/12]
+
+Many of you have already been using it, but for several months we've had a $99 Apple TV in the library that makes it easy to put the contents of almost any laptop, as well as newer iPhones and iPads, on the TV screen&mdash;sound included&mdash;without cables.
+
+Note that there is software that makes this possible from any laptop, not just Apple.
+
+Instructions:
+
+   1 Turn on the TV (not the projector) and make sure that the TV input is set to "HDMI 1".
+   1 Connect your iPhone/iPad to the wireless network "libwire", password "Astronomy".
+   1 NOTE: if you see more than one Apple TV listed, select "Astronomy Apple TV". The password is also "Astronomy".
+   1 The next step depends on your equipment:
+<ul> <li>
+---++++++ iPhone 4S, iPad 2 or 3, or Mac that was produced from mid-2011 onwards...
+   * Click on the !AirPlay icon (it looks like <a href="http://3.bp.blogspot.com/-jsN2Tn75WW8/T8U3rs8btWI/AAAAAAAADgM/cjrV3859wA4/s1600/airplay.png" title="AirPlay icon">this</a>).
+   * Select the "Astronomy Apple TV" and turn on "Airplay mirroring" (google "airplay mirroring" if you don't know how to access the mirroring button).
+   * In most cases, you'll see your screen mirrored on the TV. A few applications show one thing on the TV and controls on your device.
+</li> </ul><ul> <li>
+---++++++ Older iPhones or iPads...
+   * Unless jailbroken, only selected applications will be able to use !AirPlay.
+</li> <li>
+---++++++ Linux, Windows, or older Macs...
+   * There is an application called "AirParrot" that will mirror your screen or individual application window to the TV. It's free to use for 20 minutes; if you want to use it for longer than 20 minutes at a time, you have to buy it (it's $10). It's much more configurable than the Apple version (which is simple and looks great). !AirParrot requires that you pick a sensible resolution. Since it is encoding a video stream in software, it requires decent horsepower from your laptop, so you may need to adjust the resolution accordingly. (Recent Apple laptops and devices have the encoder built into the chip.)
+</li> </ul>
+
+We've asked people in the know at DIT whether there are similar non-Apple devices, but so far apparently not.
+
+-- Main.DerekRichardson - 2012-09-05

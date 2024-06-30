@@ -1,0 +1,35 @@
+%META:TOPICINFO{author="dcr" date="1617389561" format="1.1" reprev="1.6" version="1.6"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+---++ Using GMail for your UMD email
+
+This is now the default email that the university provides, as we were forced to abandon the astro.umd.edu system in the Spring of 2020 (June 1, 2020 was the hard cutoff).
+
+Here are some tuning tips gathered by some of us:
+   1 <p> _How to make the reply window bigger. It is a little square at the bottom of the_ _screen. How can I move it or enlarge it?_ </p> <p>If you click on the arrow in the square icon in the upper left, it will pop the reply window out of the browser.<br /><br /></p>
+   1 <p><em>If I want to include only a portion of the original e-mail in a reply I have to select and delete it, but it will only select the portion of e-mail that is shown in the little box. It does not scroll down to unseen portions, so that you can only select and cut bits at time. It expects all responses to be lumped at the beginning instead of putting it where it makes sense.<br /></em><br />Click on the three little dots in the reply window to expand the thread. Then you can scroll through all the replies in the thread.<br /><br /></p>
+   1 <p> _If you are working on a draft response and then scroll up to see the previous e-mail you can't find_ _the frikin draft you are working on. You have to search around to find where you left off._ </p> <p>I usually just click on *Drafts* in the left panel to get back to a saved draft including the one I was just working on.<br /><br /></p>
+   1 <p><em>If you cut and paste text from a terminal or previous e-mail the fonts are foobar'd.<br /></em></p> <p>Try the drop-down-menu command *Edit --&gt; Paste and Match Style* or equivalent for your interface. <br /><br /></p>
+   1 <p><em>If you want to move a sent e-mail to a label/folder you have to send it to the inbox first and then move it elsewhere? Huh?<br /></em></p> <p>Click on <strong>Sent </strong>in left panel. Select email (checkbox), click the label icon. No inbox involved.<br />Also, you can assign the email a label as you are composing it by clicking on the 3 vertical dots next to the trash can in the lower-right of the compose window and selecting *Label*.<br /><br /></p>
+   1 <p><em>How can you send your email using a different *From* address?<br /></em><br />Select the *gear icon* in the upper-right of your Gmail window then select *See all settings* followed by *Accounts*. There you can configure different "From" accounts. To use an account you have configured, when you are composing email, click on the drop-down icon to the right of your address in the From field and select the one you want.<br /><br /></p>
+   1 <p><em>How can I sort labeled threads so that the one with the most recent activity is shown on top?<br /></em><br />Unfortunately there does not appear to be a way to do this at present. Instead, the threads are shown in order of the *first* activity in the thread, from newest to oldest.</p>
+---++ 
+---++ Using GMail (webmail) to check your Astro Mail
+
+An increasing amount of people are getting dependent on their daily fix of GMail and if that includes you this is for you. The following will describe how to setup your Astro Mail so that it can be accessed through GMail. It will also describe how to even send Astro Mail via GMail. Read on...
+---++++ Note On Forwarding
+
+If what you really want to do is forward all your astro mail to a gmail (or other) account, see the <a target="_self" href="EmailInfo#Forwarding_Email">instructions on e-mail forwarding</a>. Do <strong>not </strong>enable external polling as described below!
+---+++ The Process
+
+So first log onto GMail...
+
+   1 Click _Settings_ link on the top right of the page. In the new page, go the _Accounts & Import_ tab.
+   1 In the <em>Check mail using POP3 </em>section, click on the _Add POP3 email account_ button.
+   1 In the new window that pops up, type your email address '&lt;name&gt;@astro.umd.edu' and hit _Next_ _Step._
+   1 First make sure that your _Email Address_ is indeed right. Then type in your username and password. For the <em>POP Server </em>type in <em><strong>mailhost.astro.umd.edu </strong>and port <strong>110. </strong></em>I would also recommend labelling the incoming messages; this can be done by checking the corresponding radio button.
+   1 For maximum usage, once can also setup GMail to send mail as if they are coming from your Astro account. For this choose the corresponding radio button and hit _Next Step._
+   1 You should be able to get to the page "<em>Send mail through your SMTP server?"</em>. Here check the radio button which corresponds to sending mail through astro.umd.edu SMTP servers. Here for _SMTP server_ put in <strong><em>mailhost.astro.umd.edu </em><span style="font-weight: normal">and choose port number __587__. Also put in your own username and password. </span></strong>
+   1 <strong><span style="font-weight: normal">The above step will send an email to your astro email which will seek confirmation for the step. Just click the link in there and you are DONE!</span></strong>
+You may now have a larger fix of the awesomeness that is GMail.
+
+-- Main.JithinGeorge - 2010-03-24

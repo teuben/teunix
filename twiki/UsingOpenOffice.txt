@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="teuben" date="1662576701" format="1.1" version="1.6"}%
+%META:TOPICPARENT{name="SoftWare"}%
+A recent version of Libre Office (a fork of Open Office) is available on all department Linux machines with the command:
+
+<literal>libreoffice</literal>
+
+though the old command ==oofice== still exists and calls ==libreoffice==.
+
+This is capable of reading and writing nearly all Microsoft Office documents (Word, Powerpoint, and Excel). Great for dealing with those times people send you Word documents. Or if you happen to like powerpoint-style presentations.
+
+Apple OS X users can download [[http://www.neooffice.org NeoOffice]]. This is a port of Open Office to the Apple windowing system (so you don't need to run Open Office as an X11 application). This is helpful if you have to deal with MSoffice files but don't want to spend the money on Microsoft products (which you shouldn't).
+
+We keep some template of department letterheads in OpenOffice/LibreOffice/Word in [[http://www.astro.umd.edu/resources/internal/]].

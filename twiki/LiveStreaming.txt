@@ -1,0 +1,34 @@
+%META:TOPICINFO{author="eric" date="1481303207" format="1.1" reprev="1.8" version="1.8"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Livestreaming a Presentation Using Google Hangouts On Air
+
+The Physics Help Desk recommends using Google Hangouts On Air for livestreaming. GHOA is also able to save a videorecording of your livestream to your Youtube channel. (Note that you will need to have a Google account in order to be able to use GHOA.)
+
+Google Hangouts on Air should work automatically with Google Chrome. Other browsers require a plugin which may not be installed on the conference room's computer.
+
+*Setup Procedure (usually in advance):*
+   1 On any computer, go to [[https://www.youtube.com/my_live_events]].
+   1 If not already verified, you would have to authenticate your account using a phone number.
+   1 Once verified, select &lsquo;Enable Live Streaming&rsquo; and then &lsquo;Create New Event&rsquo; (if live streaming is already enabled, you will be directed towards 'Create New Event' option).
+   1 If your account is already verified, select 'New Live Event' from upper right corner).
+   1 In the &lsquo;Create New Event&rsquo; page, enter the title of event, the scheduled start time, and (optionally) a description of the event and tags.
+   1 You have the option of a 'Public', 'Unlisted', or 'Private' livestream. Typically, you will want Unlisted, in which anyone with the link can view the event but it will not be publicly listed.
+   1 Under 'Type', be sure to select "Quick (using Google Hangouts On Air)".
+   1 There is an 'Advanced Settings' tab with more options. For typical livestreams, you'll likely want to uncheck the 'Promotions' options. Unless your remote audience will be actively participating, you'll likely want to optimize for less viewer buffering under 'Stream Optimizations'.
+   1 When done, click 'Create Event'. You'll be taken to a list of your Events. You can manually start the Hangout here, or you can return to the [[https://www.youtube.com/my_live_events][Events list]] at a later time to start it. To obtain the link which you can give to remote viewers so that they can watch via Youtube, click on the title of your event to go to the event page, then click the page's 'Share' button.
+   1 (To also obtain a link for remote people to participate like a videoconference, click 'Start Hangout on Air' for your event on the [[https://www.youtube.com/my_live_events][Events list]], then click on the 'Invite People' button near the top of the Hangout screen. It may help to use *Google Chrome* for this step.)
+*Starting the Hangout:*
+   1 To use the conference room's cameras and microphones, it is generally easiest to run the Hangout on the room's PC. On the CRESTRON touchscreen, select 'PC' for input and 'Monitor' for output. If the PC is logged out, then log in with your University directory account. Start *Google Chrome* (important) and go to your [[https://www.youtube.com/my_live_events][Events list]], then click 'Start Hangout on Air' for your event. A new window will open showing the room's camera display and various options.
+   1 To switch between front and rear cameras and to adjust the camera angle and zoom, touch the 'Camera & Mic Control' button on the CRESTRON touchscreen. Don't be concerned if the camera image is horizontally flipped. This is a Google Hangouts 'feature', and the image will appear normally to your viewers. If there are any problems with the cameras, see the Troubleshooting section of PSC1136AV.
+   1 You may need to click the Cameraman icon on the Google Hangouts left sidebar to control whether participants' audio and video are muted. (If you want them muted, click 'Y' on all 3 Broadcast settings.)
+   1 You should also click on the sidebar's Control Room icon to ensure that your volume level is raised to the maximum. You can optionally use a wireless mic, which is kept in a drawer by the room entrance.
+   1 Start your broadcast when you are ready by clicking on the green button at the bottom of the screen.
+   1 Do not click "Stop Broadcast" unless you're really done! After 5 minutes, you will be unable to restart the broadcast and will need to create a new one with different links for sharing. If you need to interrupt a broadcast (e.g. for restricted discussions), the best option is probably to use the Control Room icon to mute your audio and video feeds.
+   1 When finished, log out of the computer and select 'Shutdown' on the CRESTRON touchscreen.
+Be aware that YouTube creates an archive of the video by default, and people can subsequently use the URL link to view the recording. If you do not want an archive, visit your [[https://www.youtube.com/my_videos][Videos]] page after the livestream is over and select 'Delete' from the dropdown menu. If you want an archive that only you and select individuals can view, select 'Info & Settings' from the dropdown menu, and change the 'Unlisted' setting to 'Private'.
+
+For more details about Google Hangouts on Air on Youtube Live, see:<br /> https://support.google.com/youtube/answer/7083786<br /> https://support.google.com/youtube/answer/2853700
+
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344365" from="Sandbox.LiveStreaming" to="AstroUMD.LiveStreaming"}%

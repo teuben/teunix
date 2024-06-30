@@ -1,0 +1,25 @@
+%META:TOPICINFO{author="EricMcKenzie" date="1354135575" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="SoftWare"}%
+The <nop>LaTeX beamer package provides an alternative to the usual powerpoint/openoffice presentations for <nop>LaTeX users.
+
+Local astronomy users will find the package in astronmake (astroload latex-beamer), but it is readily available for any system that has <nop>LaTeX available.
+
+To give you an idea of what you can do with Beamer, you can see some [[http://www.astro.umd.edu/~vernaleo/research.html#talks][examples of talks here]].  These talks include embedded, cross-platform animations!
+
+There are several reasons one might consider Beamer over powerpoint/openoffice slides.
+
+   * If you already use <nop>LaTeX for most things, then it fits into your normal workflow much better than the alternatives.
+
+   * Math.  <nop>LaTeX is simply the best system for typesetting math.
+
+   * Embedded Animations.  Using the very simple [[http://www-user.uni-bremen.de/~skupin/pdfanim/][pdfanim]] package, you can include animations in your talk.  These animations are embedded, so you only have a single pdf file containing everything and it works exactly the same on ANY system that has Acrobat Reader 7 or above.  From what I've seen, these animations are far more reliable than what people using powerpoint/openoffice have to deal with.
+
+   * Cross-platform.  If a platform can read a pdf (and even my cellphone can do that), then it can display your slides.  If you don't use animations, xpdf is all you need.  If you have animations, then you need Acrobat Reader, but that is available on   nearly any Windows, Mac, GNU/Linux, or Solaris machine you are likely to encounter.  This takes away much of the uncertainty of doing a presentation on a computer that is not your own.
+
+   * CVS.  Since <nop>LaTeX is text based, these presentations fit very nicely into any revision control system like CVS or svn that you may happen to use.
+
+When using beamer, you may include your figures as nearly any file format except postscript.  This is a limitation of pdflatex which you must use.
+
+More info on how to actually use Beamer to follow.  But, what you already know about <nop>LaTeX will get you pretty far even without much in the way of specific instructions.
+
+-- Main.JohnVernaleo - 21 Sep 2007

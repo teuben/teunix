@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="GraemeLufkin" date="1098308827" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="WebHome"}%
+---++ The Astronomy Department at the University of Maryland
+That's where this web site is based.
+
+-- Main.GraemeLufkin - 20 Oct 2004
+

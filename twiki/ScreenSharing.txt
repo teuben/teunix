@@ -1,0 +1,27 @@
+%META:TOPICINFO{author="eric" date="1497373508" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Sharing Your Computer Screen with a Remote Party
+<p dir="ltr">You can share a presentation by sharing your screen or window using Skype, Hangouts or a Webex meeting. If you want to have good audio, it&rsquo;s best to use one of these on the conference room PC, which provides much better microphone and speakers, especially in the big conference room.</p> <p dir="ltr"> *Using Webex to share screen:* </p>
+
+<a target="_blank" href="https://umd.webex.com/mw3000/mywebex/default.do?siteurl=umd">UMD WebEx</a> (<a target="_blank" href="https://umd.webex.com/mw3000/mywebex/default.do?siteurl=umd">https://umd.webex.com</a>) is a Web-based meeting and conferencing system, powered by Cisco Systems, Inc., that facilitates collaboration over the Internet using multi-party video conferencing and screen sharing. It is designed to work on PCs, Macs, smartphones, and tablets. If using the room computer, Webex supports video through the room&rsquo;s camera(s), voice and audio through room&rsquo;s microphone(s) and speakers. Webex also supports audio participation through on-campus phone calls to extension x33000, and through phone calls to a global network of dial-in numbers. Please note that toll charges may apply to off-campus dial-in.
+
+To set up a webex meeting:
+   1 Go to umd.webex.com
+   1 Login using your directory ID and password. Login button is located in upper right corner of screen.
+   1 If logging in for the first time, you will see a pop up. Select Try It and download the webex add on.
+   1 To schedule a meeting, go to Meeting Center - &gt; Host a Meeting -&gt; Schedule a Meeting.
+   1 Enter a meeting topic, password, date, time and attendees. System generates a random password which will be used by attendees to enter the meeting. You can also enter a new password here.
+   1 Select Schedule a meeting. The meeting is now set up. All attendees will receive a mail with login credentials to join the meeting.
+   1 An option to start the meeting will be given. If you wish to start the meeting at a later time, select the scheduled meeting from Meeting Center -&gt; Host a Meeting -&gt; My meetings.
+   1 Select the desired meeting and click &lsquo;Start&rsquo;.
+   1 Once in the meeting, to set up audio connection, select &lsquo;Connect to Audio&rsquo;. You can call into the meeting using number the provided (Click on &lsquo;I will Call in&rsquo;) or select &lsquo;Call using computer&rsquo; to use the conference room speakers and microphone.
+   1 To switch on the video, select the video icon, next to your name on the right side of screen.
+   1 Webex also provides functionality to chat with members, to use whiteboard and recording meetings.
+<p dir="ltr"> *Using Skype to share screen:* </p> <p dir="ltr">If you're using the room PC for your presentation, connect skype using your account. Make a video call to the remote party and once it begins, select the share your screen option.</p> <p dir="ltr">If you're using the room Mac or your laptop, then</p> <p dir="ltr"> </p>
+   1 Run Skype from a different user account on the room PC
+   1 Using the CRESTRON panel, put the room PC display on the secondary monitor
+   1 Using the CRESTRON panel, have the room PC be the audio machine.
+
+<p dir="ltr">Start a group call from the room PC to the remote party and the laptop being used for presentation. Once the group call is active, select screen sharing option from the skype account being used to give presentation. The laptop display will now be visible to the remote party.</p> <p dir="ltr">Note that for this to work, you are running Skype on two different computers in the room (your laptop for presentation and screen sharing) and the room PC for sound/mic and video of people. Also, you must mute the mic and sound output on your presentation computer. And the instances of Skype on the room and presentation PC need to be logged into different Skype accounts.</p>
+
+%META:TOPICMOVED{by="eric" date="1468344220" from="Sandbox.ScreenSharing" to="AstroUMD.ScreenSharing"}%

@@ -1,0 +1,44 @@
+%META:TOPICINFO{author="teuben" date="1663195636" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="SoftWare"}%
+---+ Python Ecosystem
+
+The python scripting language has evolved a lot in the past decade, and has been adopted by many in their science workflow. If you want to incoorporate 3rd party packages, or use your own, it will be useful to know how to extend your python.An extreme, but not to be discarded, method is to install your own python, for example [[https://www.anaconda.com/][anaconda3]]. It is assumed that *python* implies *python3*, though different python implementations still have different ideas about allowing old *python2*.
+---++ Step 1: setting up your python
+
+By default, you will probably have a system python, the command *which python* should tell you. More than likely you will not have write permission to install packages this way, other than setting up a virtual environment within your python.
+
+Another option would be to install your own python, for example [[https://www.anaconda.com/][anaconda3]] after which you have general write permission in that python.
+
+Once your python has been set up, you can set up a virtual environment, for example
+<verbatim>   python -m venv my_env</verbatim> <pre><verbatim>   source my_env/bin/activate</verbatim>
+</pre>
+
+By setting up a special virtual environment you protect yourself against possible cross-contamination of version skews, e.g. one application may require numy version 1.9 or below, another might need 1.10 or above. python is still not mature enough to solve this. It also means you will need to remember for each package what environment you need. Not too much unlike AstroMake.
+
+Here are a few references to community guidelines how to set up your python:
+   1 https://astroconda.readthedocs.io/en/latest/getting_started.html
+   1 
+---++ Step 2: installing packages
+
+Assuming now you have a python (and commands *conda* and/or *pip*), packages can be installed. There are several ways, given via the examples below
+   1 Directly via pip, this is the most common method <br /> <verbatim>pip install glueviz
+</verbatim> <p>This is however an unpleasant example of when the package "glue" and the package name "glueviz" differ. After installation "import glue"</p>
+   1 Grabbing the source from for example github, and installing the package while using the source code directly for any potential editing/debugging. <br /> <verbatim>git clone https://github.com/teuben/gbtgridder
+pip install -e gbtgridder
+</verbatim> <p>It is important to note that only works if there is the appropriate gbtgridder/setup.py (or similar)</p>
+   1 Some packages require you to install other packages. They often have made that easy by listing those packages (and sometimes a version requirement) in a file *requirements.txt*. Find that file and install all the required packages using:<br /> <verbatim>pip install -r requirements.txt</verbatim>
+   1 
+
+---++ Step 3: Running python
+
+Here there are several ways to run python:
+   1 As a script<br /> <verbatim>python my_script.py</verbatim>
+   1 Interactive terminal, <br /> <verbatim>ipython</verbatim>
+   1 Jupyter Notebook, using your browser<br /> <verbatim>jupyter notebook</verbatim>
+   1 Remote jupyter notebook. Important if you just want to locally display, but have the computations done at a remote server (called "lma" here):<br /> <verbatim>remote> jupyter notebook --no-browser --port=8889
+local> ssh -N -f -L localhost:8888:localhost:8889 teuben@lma.astro.umd.edu
+local> firefox http://localhost:8888/?token=.......
+</verbatim> <p>where the token value has been taken from the output of the first **jupyter notebook** step</p>
+A special case of running remote jupyter notebooks
+
+-- Main.PeterTeuben - 2022-09-14

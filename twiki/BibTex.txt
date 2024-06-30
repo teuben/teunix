@@ -1,0 +1,72 @@
+%META:TOPICINFO{author="adhabal" date="1503878624" format="1.1" version="1.5"}%
+%META:TOPICPARENT{name="GradLife.HowToWriteADissertation"}%
+---+!! BibTex
+
+BibTex is a very useful way to organize and automate your citations in Latex with natbib.  It allows you to use a uniform method of citing works in Latex documents even though the style is different (e.g., numerical for _Nature_, concise for _ApJ_, and verbose for _Icarus_). This way you don't have to change the way you write your document; you just use a different bibliography style file. You also don't need to keep track of what you have cited in the document:  BibTex will put everything in the reference list for you.
+
+%TOC%
+
+---++ Preamble
+
+If you are using AASTex, you probably don't need the following. The following are commands to the natbib package to format the bibliography the right way
+<pre>
+\usepackage[authoryear,round,sort]{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{natbibspacing}
+%% \usepackage{chapterbib}
+</pre>
+which is a complicated bit of gobbledegook.  The first line tells Latex to use natbib with options for using Einstein 1905 style citations in the text (numeric being the alternative), round brackets (parentheses) are used to set off the citation when wanted, and the sort option tells natbib to put the citations in the order that they are found in the bibliography.  The =bibpunct= command tells natbib what punctuation marks to use for setting off the citations, which in this case give citation like (see these Einstein 1905a,b; Einstein 1915, and others).  Notice no punctuation after "see these." The format used above is what is used for !ApJ. The =chapterbib= is only necessary for dissertations, books, and theses.
+
+Not really the Latex preamble really (it doesn't come before the =\begin{document}= command) but at the end of the document (where your references go), you have to put 
+<pre>
+\bibliographystyle{style}
+\bibliography{myrefs}
+</pre>
+where =style.bst= is the Bib Style File and =myrefs.bib= is the Bib File (see below).
+
+---++ The Bib Style File
+
+The Bib Style File is something that is made for each journal or publication style.  It is written in a lispish language, and editing it is not for the faint of heart. You are best off downloading the files for your particular publication: apj.bst, astroads.bst (a couple of nifty link features), astroadswithlinks.bst (awesome but kludgey link features). If anyone has them, please upload the Bib Style Files for _Icarus_ and _Nature_.
+
+---++ The Bib File
+
+The Bib File is your personal file that contains a formatted list of everything you might want to cite or have already cited.  You needn't have more than one of these, and if you maintain consistency, you only need to add references to it.  If a paper goes from preprint to submitted to accepted to published, you will have to make small changes.  One nice way to start out your bib file is to use ADS's ability to return entries as bibtex entries.  Here is a typical entry:
+<pre>
+@ARTICLE{gmh04,
+   author = {{G{\"u}ltekin}, K. and {Miller}, M.~C. and {Hamilton}, D.~P.},
+    title = "{Growth of Intermediate-Mass Black Holes in Globular Clusters}",
+  journal = {\apj},
+     year = 2004,
+    month = nov,
+   volume = 616,
+    pages = {221-230},
+   adsurl = {http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=2004ApJ...616..221G&db_key=AST},
+   adskey = {2004ApJ...616..221G},
+  adsnote = {Provided by the NASA Astrophysics Data System}
+}
+</pre>
+Since bibtex is an extensible format (if it were being written today, it would be in XML), you can have extra lines in the entry.  Some people put a summary and/or the abstract:
+<pre>
+ mysumm = {Awesome paper}
+ myabst = {This paper does the following awesome awesomenesses....}
+</pre>
+or whatever other metadata you want to include.  The important element in the above example is the thing at the top: *gmh04*, which is the *key* for this entry.  This is what you will use to refer to the paper in your latex document. You should come up with your own key for each paper.  The key has to be unique, and it should be easy to remember and as short as possible.  The adskey element above is the key that ADS makes for it. It is unique but neither memorable nor short. Some people use the key that ADS provides and some sort of Perl or Python script to go from easy to remember to ADS version.  Using the ADS key has the advantage that when multiple authors are adding papers, there is an agreed-upon standard. Barring that, coming up with your own standard way of keying the entries is best.
+
+---++ Citing
+
+In your latex document, you will cite papers in two different ways for the majority of the time.  The first is parenthetical (Example et al. 1999).  To do this, use =\citep{example99}=. The second, as shown by Smith & Wesson (2000), is within the text. To do this, you need to do =\citet{sw00}=. For either, you can do multiple references so that =\citep{example99,sw00}= would produce (Example et al. 1999; Smith & Wesson 2000). This can be done with in text citations, but it doesn't work as well.
+
+You will frequently want to write text in the parentheses. You can do this with =\citep[and references therein]{hubble1930}=, which will produce something like (Hubble 1930, and references therein). To put text _before_ the reference do =\citep[e.g.,][]{hubble1930}= to get (e.g., Hubble 1930). Note that you need to write the comma unless you changed defaults.  To get text before and after, use both square brackets.
+
+For both parenthetical and in text, there are alternate versions: =\citealp{}= and =\citealt{}=, and for each of these there exists a starred version: =\citep*{}=, =\citet*{}=, etc. Check out the [[http://merkel.zoneo.net/Latex/natbib.php?lang=en][Natbib reference sheet]] to see what each of those does as well as more stuff.
+
+---++ Incorporation with ADS
+
+Using BibTex with ADS is where you make all of your money back. Creating a verbose entry for each paper you might ever want to cite to put in your Bib File would be a pain. But you don't need to! Let ADS do the work for you. Whenever you read a paper or look up a paper on ADS, you have the option on the page for that paper of returning the entry as a bibtex entry.  When you are just starting out, the best way to proceed is to work with a recent paper you or someone else wrote, especially a review paper. If the paper is only on astro-ph or if ADS doesn't yet know that the !ApJ paper is the same, you can do the following.   Find the astro-ph paper on ADS. Click on the References link. Then click on the select all references button, select return BIBTEX references, and even sort by first author name. Voila! You're on your way!
+
+---++ Misc. Tricks
+
+
+---++ Links for Further Reading
+
+-- Main.KayhanGultekin - 19 May 2006

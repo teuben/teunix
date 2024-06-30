@@ -1,0 +1,34 @@
+%META:TOPICINFO{author="GraemeLufkin" date="1100033482" format="1.0" version="1.1"}%
+%META:TOPICPARENT{name="EmailInfo"}%
+---++ Using the Evolution email/contact/calendar application
+Evolution is a personal imformation management application using Gnome on Linux.
+It provides functionality similar to Outlook on Windows.
+It is available on the version of Mandrake Linux the department has installed.
+
+---+++ Configuring for the Astronomy mail spool
+This description is for the preferences tabs under =Tools-&gt;Mail Settings ...=, choosing =Edit=.
+First use =Add= to create the account via a wizard, which will ask the same questions.
+
+Under =Receiving Mail=, choose =Server Type: Standard Unix mbox spools= and specify your personal spool location =/var/spool/mail/{username}= 
+
+Under =Receiving Options= you probably want to enable automatic checking with a reasonable interval.
+
+For =Sending Mail=, choose =Server Type: SMTP= with host =mailhost.astro.umd.edu=.
+Check the boxes for =Use secure connection (SSL)= and =Server requires authentication=.
+Choose =Authentication Type: Password= and supply your username.
+Personal choice on =Remember this password=.
+
+Under =Special Folders= you can specify where drafts and sent messages go.
+This can be useful to coordinate between different email clients that, by default, put such messages in different places.
+
+---+++ Configuring for UMD IMAP mail
+Under =Receiving Mail=, choose =Server Type: IMAP= and specify the host =mail.umd.edu= and supply your username (note, your UMD and Astronomy usernames may be different, here use your UMD account username).
+Enable =Use secure connection (SSL)= and choose =Authentication Type: Password=.
+Personal choice on =Remember this password=.
+
+Under =Receiving Options= do NOT enable =Show only subscribed folders= or =Override server-supplied folder namespace=.
+
+For =Sending Mail=, use the Astronomy department SMTP server, described above.
+
+-- Main.GraemeLufkin - 09 Nov 2004
+

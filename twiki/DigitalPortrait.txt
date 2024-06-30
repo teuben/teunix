@@ -1,0 +1,32 @@
+%META:TOPICINFO{author="warnerem" date="1661443259" format="1.1" version="1.7"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---+ Digital Portraits
+
+At the beginning of each semester (Fall, Spring, Summer), we usually try to update the bulletin board with the photos of new faculty, staff, graduates and student staff as well as retaking photos for anyone with an outdated image. Pictures can also be taken throughout the semester, just contact [[mailto:warnerem@astro.umd.edu][Elizabeth Warner]]!
+
+Those digtal images are then available at <br /> <br />local path: _/ftp/pub/warnerem/facgradstaff_pics/_ <br />(works from gaia)
+
+browser: [[https://ftp.astro.umd.edu/pub/warnerem/facgradstaff_pics/][ftp.astro.umd.edu/pub/warnerem/facgradstaff_pics/]] <br /> <br /> <br />There are 4 subdirectories:
+
+   * <span style="background-color: transparent;">faculty,</span>
+   * <span style="background-color: transparent;">grads,</span>
+   * staff, and
+   * <span style="background-color: transparent;">ug-staff_mailroom_TAs</span>
+<span style="background-color: transparent;">which then contain individual subdirectories ordered LAST_FIRST .</span><br /> <br /> <br />What your directory contains
+
+   * the original digital photo(s) that I took OR
+   * a scan of the hardcopy print photograph (LAST-scan.jpg)
+   * a processed photoshop file (LAST_FIRST.psd)
+   * print quality jpg (LAST_FIRST.jpg) [This is what is printed for the bulletin Board]
+   * web quality jpg with your name cropped off (web_LAST_FIRST.jpg)
+_This last image is particularly useful_ since you can grab it, save it to your home directory, rename it, and have it for your department profile picture (instead of the random planet pic) as described on WebPages.
+
+Some comments
+   * Many of the directories contain more images (ie, I took several potential headshots and only used one of them for your portrait, I've retaken your picture so the one with a higher number is the more recent... Halloween pictures...)
+
+   * Feel free to grab the pictures of you. I would respectfully ask that you not download another's pictures.
+
+   * I make these freely available for your _personal use_. If you do send them off for some magazine/publication, I would ask that you include the credit to me...
+
+   * If there is not a directory for you or it does not contain the photos mentioned, then that means that I haven't taken a recent picture of you or you haven't provided a recent digital picture or there wasn't a scan of your old hardcopy print... Please email me and we can very quickly rectify the situation!
+-- -- Main.ElizabethWarner - 2022-08-25

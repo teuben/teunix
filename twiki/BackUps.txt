@@ -1,0 +1,54 @@
+%META:TOPICINFO{author="teuben" date="1592873455" format="1.1" version="1.15"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---+ The Department of Astronomy Automatic Backup System
+
+The Department of Astronomy uses a large disk array (in a RAID configuration) to do nightly backups of designated storage on the network. This includes all users home directories, as well as most disks that do not have end their name with "nb" (for "no backup").
+---++ Are your files being backed up?
+
+Not all disk partitions are automatically backed up. In particular, <strong>any partition whose name ends in "nb" is not backed up </strong>(nb means "no backup"). For instance, /lupus4nb is not backed up. You should use "nb" partitions principally for "scratch" areas where you write temporary files.
+
+To confirm whether the files you care about are being backed up, "cd" (change directory) to the location where your files of interest are (e.g. your home directory), then type "pwd". The result will be of the form "/disk/path" or "/n/disk/path", where "disk" is the disk or partition name (like "a1" or "europa") and "path" is where your files are located on that disk. (The "/n", if present, indicates that the disk is not local to the machine you are currently logged into; it is being "mounted" over the network.) Once you know where your files are being stored, you can easily check if they are being backed up. Look at the contents of /disk/BACKUP.log (or /n/disk/BACKUP.log). If the file exists, the disk or partition is included on the backup list. The last entry of the log indicates the time and date of the last backup. It ought to be within the last day or so. If not, or if BACKUP.log doesn't exist and you think it ought to, please contact Main.PeterTeuben.
+---++ Where are your backup files located?
+
+Your backed-up files are stored in /n/backup/disk/path (e.g. the backup for the file /n/europa/dcr/TODO is /n/backup/europa/dcr/TODO). If you want to revert to the backup version of a file, simply copy it; e.g.,
+<verbatim> 
+    cp -p /n/backup/europa/dcr/TODO ~
+</verbatim>
+
+(the "-p" preserves the permissions and access/modification times; the "~" is shorthand for your home directory). You can copy an entire directory too, or even a hierarchy of directories, e.g..
+<verbatim> 
+    cp -pR /n/backup/europa/dcr/ /n/europa/dcr/
+</verbatim>
+
+would overwrite user dcr's existing /n/europa/dcr/ directory hierarchy, including file permissions, dates, hidden files, etc. (Note this will NOT delete any NEW files in /n/europa/dcr/ created AFTER the backup.) IMPORTANT: you are strongly advised to copy a backup somewhere temporary first, before committing to overwriting your existing data!
+
+You cannot modify or delete files on the /n/backup disk. However, the read permissions are exactly as they are on your original. If other users can read the original files (though please note permission should be requested before accessing other user files), they can also read them on the /backup disk.
+---++ Is my mailbox backed up?
+
+No, as of Spring 2020 we don't keep a mail server on astro anymore.
+---++ How do I get a new disk backed up?
+
+Note that we do not automatically include new disks in the backup. However, the backup scripts do check for disks on each computer in the department and e-mail the system administrators if new disks (or broken disks) are found. Currently, non-exported disks on individual machines generally do not appear in /n/backup. If you still want the data backed up, ask Main.DerekRichardson (or whoever the current chair of the computer committee is). Please also note that purchasers of very large new disks may be required to supply a duplicate disk if they wish backup; the exact threshold has not yet been set.
+
+---++ Daily home directory backups (introduced May 2016)
+
+Home directories are now backed up daily, using hard links, and rotated through about 5 weeks. The current implementation places a daily tree in /n/backup2/home/teuben (for that user 'teuben'). Most home directories are on backup2, some on backup1 and backup3. A near-future scheme will make it easy to find your daily tree (e.g. /daily/home/teuben), but until then, maintain your own daily link in your home directory, e.g. "ln -s /n/backup2/home/teuben daily".
+
+Well, this is under discussion.
+---++ Are there alternatives to these backups?
+
+[[KeepingBackups]]
+
+Apart from keeping your own backups on USB sticks, CD/DVD/BD's or an Apple TimeCapsule (Time Machine), the University has options to use the cloud via Box and [[GoogleDriveBackup][Google]]. You can also use your personal (apple) iCloud or (windows) OneDrive account. There are commercial solutions as well. Dropbox (which has a free component) is just one of many.
+
+---++ How does it all work? (And important caveats!)
+
+The RAID backup is done nightly, meaning *all backup data is overwritten each night*. So, if you messed up a file 2 days ago, or you only recently noticed some files becoming corrupted, it may be too late for recovery (but see below). But, if your disk fails outright, you are likely fully protected, since nothing will get overwritten. Therefore, except for outright disk failure, the RAID only fully protects you if you discover and recover from the problem the same day it occurred. If you're unsure how to recover, consult with an expert. By the way, if you DELETE a file, you have until the weekend (specifically, Sunday 1 am) before the system begins to delete the backup versions.
+
+It is also worthwhile noting that a backup is made "as is"; for example, symbolic links remain symbolic links (watch out if they are an absolute reference). Since "rsync -a" is used, hard links are broken. If you don't know what this means, don't worry about it.
+
+We perform regular tape backups of the RAID. It takes about 3 weeks to do a complete dump; we have 3 rotating batches of complete dumps, meaning we may be able to recover files as far back as a month-and-a-half or so. But recovering from tape is very inconvenient (and it interrupts the dump process), so it should only be used as a last resort for critical data. Plus, there's no guarantee that the version on tape is the one you want, since the dumps are incremental in nature. It is up to you to be vigilant with your data! It is recommended that you copy critical files on your own, say to a laptop, a USB stick, or your home computer (or all three!). More importantly, please note that this is not, nor is it intended to be, an archival backup. Sooner or later, if you modify, delete, or lose a file, the backup system will lose it too.
+
+By the way, at least 1 tape batch will always be stored off-site, in case of a major disaster in our building that causes massive loss of data. Also, the backup disk array is configured as a RAID-5 system, which protects against failure of one of the RAID disks, but if 2 (or more) disks fail simultaneously, all data is completely unrecoverable; hence part of the need for tape backups.
+
+Main.PeterTeuben has [[http://www.astro.umd.edu/~teuben/raid/][technical notes on the RAID backup system]].

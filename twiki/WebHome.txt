@@ -1,0 +1,21 @@
+%META:TOPICINFO{author="teuben" date="1715085426" format="1.1" version="1.77"}%
+---++ Department of Astronomy Computing TWiki Pages
+
+Welcome to the *2024 Astronomy Computing TWiki Pages*. This is a web-based collaboration area for preserving computing-related knowledge and expertise. If you're new to the TWiki concept, you may want to learn how use a TWiki site, by reading and following WikiFirstUser. You can always come back here by choosing AstroUMD from the list in the left-hand sidebar.
+
+For those new to the department: "<strong>astro.umd.edu</strong>" is our (linux) network and has many useful resources, where "<strong>umd.edu</strong>" is essentially our ISP (for email, HPC etc.). Although they may share the username, they do not share the password!
+
+The *help@astro.umd.edu* email can be used (internally) to get help where these wiki pages may not give you the help you were looking for.
+
+   * [[OverView][Overview]]: Introductory information about the department's computing resources and support staff. See also AstroUMD101 for those who just need a refresher.
+   * [[HardWare][Hardware]]: Public workstations, printers, scanners, computing clusters, vislab, laptops, etc.
+   * [[SoftWare][Software]]: Information about software packages and tools.
+   * [[Remote Access]]: Pages related to accessing department computers and UMD resources remotely. Some notes on setting up your laptop.
+   * [[DeptInfoHowTo][Department Info and How Tos]]: Other department-specific information like email (& spam), backups, what to do if there is a power outage, personal webpages, conference room AV, General tips and tricks that don't fall under the above categories
+   * [[Miscellaneous]]: All Kinds Of
+[[WebIndex][Here's]] an alphabetical list of all the topics. We also maintain a list of [[RecentHighlights]].
+
+We maintain a private google group for notification of network-related emergencies among computer administration personnel: <a href="https://groups.google.com/forum/#!forum/umcp-astronet-sos" title="UMCP Astronomy Network SOS Google Group">UMCP Astronomy Network SOS</a> (only registered users can access this group and share notifications within it—if you have a legitimate need for access, contact Main.DerekRichardson).
+---++ Site Tools of the %WEB% Web
+
+%INCLUDE{"%TWIKIWEB%.WebSiteTools"}%

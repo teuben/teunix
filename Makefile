@@ -9,8 +9,9 @@ SHELLS = csh tcsh bash zsh
 UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld tkcvs htop gitg gitk git-cvs \
-     wget unzip curl exfat-fuse tkcvs net-tools ncftp autoconf \
-	python-is-python3
+     exfat-fuse tkcvs net-tools ncftp autoconf \
+     python-is-python3 libtirpc-dev
+
 
 UP2 = plasma-widgets-addons kio-gdrive
 
@@ -51,10 +52,22 @@ apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
 
-## dnf0:       bootstrap RPMFUSION (takes a while)
+## apt4:       1d. Enable universe
+apt4:
+	sudo add-apt-repository universe
+	sudo apt-get update
+
+## dnf0:       bootstrap RPMFUSION for fedora (takes a while)
 dnf0:
 	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$$(rpm -E %fedora).noarch.rpm
 	sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$$(rpm -E %fedora).noarch.rpm
+	sudo dnf upgrade --refresh
+	sudo dnf groupupdate core
+
+## dnf00       bootstrap RPMFUSION for redhat (takes a while)
+dnf00:
+	sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$$(rpm -E %rhel).noarch.rpm
+	sudo dnf install https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$$(rpm -E %rhel).noarch.rpm
 	sudo dnf upgrade --refresh
 	sudo dnf groupupdate core
 
@@ -181,3 +194,10 @@ diary:
 	mkdir -p ~/Diary
 	(cd ~/Diary; git clone https://github.com/teuben/yraid)
 
+## brew:      13. Install Homebrew
+brew:
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh > brew.sh
+	bash brew.sh
+# - run these two commmands
+#    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/teuben/.bashrc
+#    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

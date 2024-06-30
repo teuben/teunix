@@ -1,0 +1,41 @@
+%META:TOPICINFO{author="adhabal" date="1503870657" format="1.1" version="1.8"}%
+%META:TOPICPARENT{name="SoftWare"}%
+I highly recommend using =tex2pdf= to handle your Latex compilation, especially if you prefer PDF as your final document.  It is a little slow, but it takes care of everything for you (<nop>BibTeX, hyperrefs, converting (encapsulated) Post Scripts to PDFs for =pdflatex=, makes thumbnails, makes bookmarks, as well as other nifty things like glossaries, indices, and author indices).
+
+You can download it from [[%ATTACHURL%/tex2pdf][tex2pdf]] which includes my hack to get it to handle the aastex =\plotone= and =\plottwo= commands properly.  
+
+The code is a big (3000 lines) perl script, and it does have a couple of odd, unimportant bugs in it (most notably, its usage functions don't tell you the allowed arguments when it fails on your incorrect arguments). 
+
+The first time you run it, it will force you to answer a lot of questions to create a =~/.tex2pdf3rc= file.  If you want, you can skip this by downloading [[%ATTACHURL%/tex2pdf3rc][tex2pdf3rc]] and renaming it to put a dot in front.  You may not like my defaults (like zero verbosity, only black colors, and Helvetica font), and you can redo the configure process whenever you want by running =tex2pdf --configure=.  
+
+You can get a good feel for what's possible with the help page: =tex2pdf --help=, and if you're having trouble finding out what is causing trouble, try =tex2pdf --debug mymanuscript.tex=.  This will create a bunch of =mymanuscript-pdf.tex= files and a lot of verbose output.  You can see what the problem is by where it chokes.  The Latex line numbers that it gives you will be from =mymanuscript-pdf.tex= as it makes some changes to your source code.
+
+Note that if you're submitting to astro-ph (or any arXiv.org preprent server), you should probably submit the =mymanuscript-pdf.tex= version so that they have all of the extra stuff online.
+
+---++ Notes on Figures
+   * The =\plottwo= command will work, but you have to convert the second eps or ps file to pdf by hand (e.g. using ps2pdf), then explicitly include the two pdf files in the arguments for plottwo.
+   * If you use \includegraphics, which can rotate figures, you can center the Figure by using \centerline: e.g. \centerline{\includegraphics[scale=0.75,angle=90]{fig.ps}} 
+---++ 
+
+---++ An Alternative Method
+
+To directly make pdf files from your <nop>LaTeX, there is an alternative to tex2pdf.  Somewhere in the preamble of you document, put the line:
+
+=\usepackage{epstopdf}=
+
+Then you can use the command:
+
+=pdflatex -shell-escape=
+
+in place of the usual latex command (you may want to use an alias or a Makefile).  All your eps or ps files will be automatically converted.  This works just fine with the funny aastex commands and with the umd thesis files.  If you do not include the extension to your image filenames (e.g.,  =\plotone{figures}= instead of =\plotone{figure.eps}=) then pdflatex will only make pdf versions of your figures when it needs to instead of every time (which can speed things up significantly for documents with lots of figures).  This allows you all the nice pdf features while staying closer to the traditional latex workflow.
+
+-- Main.JohnVernaleo - 12 Feb 2008
+
+-- Main.KayhanGultekin - 23 Apr 2006
+   * [[%ATTACHURL%/tex2pdf][tex2pdf]]: The tex2pdf Perl script
+
+   * [[%ATTACHURL%/tex2pdf3rc][tex2pdf3rc]]: The tex2pdf Configuration file.
+
+%META:FILEATTACHMENT{name="tex2pdf" attr="" comment="The tex2pdf Perl script" date="1147807408" path="tex2pdf" size="117272" user="KayhanGultekin" version="1.1"}%
+%META:FILEATTACHMENT{name="tex2pdf3rc" attr="" comment="The tex2pdf Configuration file." date="1147808721" path="tex2pdf3rc" size="710" user="KayhanGultekin" version="1.1"}%
+%META:TOPICMOVED{by="adhabal" date="1503870657" from="AstroUMD.LatexKnowledge" to="AstroUMD.LateXKnowledge"}%

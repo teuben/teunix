@@ -1,0 +1,35 @@
+%META:TOPICINFO{author="adhabal" date="1505789612" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---++ How can I figure out my disk quota?
+
+First of all, there are two disk quotas. One is for your main account, and another is for spare space.
+
+*"Main" account space*
+
+The path for this space is '/n/a/&lt;yourUserName&gt;' (or perhaps a1, a2, or a3). This is located on the "Earth" computer.
+
+Quota: 1 GB (as of 10/20/08)
+
+*"Spare" space*
+
+The path to access this disk space is '/n/b/&lt;yourUserName&gt;'. It is located on "Virgo".
+
+Quota: ~3GB (as of 10/20/08)
+
+*Checking your usage:*
+
+1. Log into the relevant computer (Earth or Virgo). Eg: "slogin Earth"
+
+2. Type "quota"
+
+3. Understand the output.
+
+You only need to look at columns 2-4. These numbers are all in kB (divide by 1000 for MB, etc).
+
+blocks = user's current disk usage
+
+quota = first warning (When your "blocks" exceeds this, you need to delete files.)
+
+limit = absolute limit (If your "blocks" is close to this, the machines won't let you write ANYTHING -- bad news)
+
+-- Main.ArnabDhabal - 2017-09-18

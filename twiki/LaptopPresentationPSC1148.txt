@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="eric" date="1468344189" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1148AV"}%
+---+ Giving a Presentation in PSC 1148 Using Your Laptop
+   1 Connect your laptop using the VGA or HDMI cables on the table labelled 'Table HDMI/VGA'.
+   1 Touch the CRESTRON touchscreen to wake up the system.
+   1 Press the start button.
+   1 On the main menu, find 'Table HDMI/VGA' on the upper horizontal bar and press it.
+   1 Then touch 'Monitor' on the lower horizontal bar. Your laptop screen should now display on the monitor.
+   1 You can select the 'Lights' tab on the right to change the lighting in the room. Select any of the Presets or turn off all the lights.
+   1 When finished, select 'Shutdown' on the CRESTRON touchscreen.
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344189" from="Sandbox.LaptopPresentationPSC1148" to="AstroUMD.LaptopPresentationPSC1148"}%

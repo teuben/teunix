@@ -1,0 +1,28 @@
+%META:TOPICINFO{author="eric" date="1493319297" format="1.1" version="1.10"}%
+%META:TOPICPARENT{name="AstroUMD.ConferenceRooms"}%
+---+ A/V Guide for PSC 1136
+
+_For routine requests, contact the front office in PSC 1208 (x51508). For serious technical problems, contact the Physics Help Desk at x58582, physhelp@umd.edu._
+---++ Overview<em><br /></em>
+
+AstroUMD.OverviewPSC1136: A general overview of the A/V resources and procedures in PSC 1136.
+---++ I want to do a...
+   * AstroUMD.LaptopPresentationPSC1136: Basic instructions for giving a presentation from your laptop.
+   * AstroUMD.VideoConference: Setting up a Polycom-style videoconference.
+   * VideoCall: Making a video call using WebEx or Skype with the room's cameras/microphones.
+   * AstroUMD.LiveStreaming: Livestreaming a presentation using the room's cameras/microphones.
+   * AstroUMD.ScreenSharing: Share your computer screen with a remote party, e.g. for presentations.
+   * AstroUMD.TeleConferencePSC: Holding a teleconference with the room's phone.
+---++ Troubleshooting
+   * *No sound from the room's speakers:* On the CRESTRON touchscreen, be sure to select the "Audio Source" checkbox under 'Projector', 'LCD', or 'Monitor' that corresponds to your desired audio source. E.g. if you're using the Room PC, and the PC's icon is visible in the 'Monitor' box, then select the "Audio Source" checkbox under 'Monitor'.
+   * *Audio echos:* <span style="background-color: transparent;"> If the Polycom is in presentation mode, there will be an audio loop. On the CRESTRON touchscreen, switch to the 'Video Conference Controls', and then press Presentation Mode to turn it off.</span>
+   * *No video feed from the room's camera(s):* If Skype is on, quit and restart it. Else, switch on Skype. (The capture card goes into some kind of sleep mode, and Skype seems to be the only thing that can wake it up). You can then quit Skype and use a different video program if you wish. If this doesn't work, powercycling the Polycom unit in the cabinet may restore functionality. Hold the Power button in until it flashes yellow, wait for it to turn off entirely, then press it again. The camera bootup sequence can take 2-3 minutes to complete.
+   * *Black & white feed from the room's camera(s):* This may be due to a bad cable. Contact the Physics Help Desk at x58582.
+   * *Room camera doesn't switch between front and rear views:* If not urgent, contact the Physics Help Desk at x58582. If urgent, restart the Polycom unit in the middle of the hardware cabinet. The unit has a small panel which flips down to reveal a power button. Press and hold the button until the Polycom powers off, then press it again to power the Polycom (and cameras) back on. This can take a few minutes.
+   * *Everything (projector, screens, audio, controller) turns off after 3.5 to 4 hours:* This is by design and will not be changed, since too many users forget to turn off the projector. You can reset the timer by touching the CRESTRON touchscreen, e.g. every couple of hours.
+   * <strong>Phone has no dial tone: </strong>It sometimes works to reboot the phone by unplugging it and replugging it, though the boot process takes a couple of minutes.
+   * <strong>Wireless mouse and keyboard aren't working: </strong>Make sure they're turned on. Check the CRESTRON touchscreen; it has a 'USB Source' button that controls whether the mouse and keyboard are working with the room PC or the room Mac Mini.
+   * _A reboot of the PC can sometimes fix problems._
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344120" from="Sandbox.PSC1136AV" to="AstroUMD.PSC1136AV"}%

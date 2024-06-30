@@ -1,0 +1,31 @@
+%META:TOPICINFO{author="teuben" date="1661822083" format="1.1" version="1.22"}%
+%META:TOPICPARENT{name="HardWare"}%
+---++ Public Workstations
+
+NEW 2022:  the command *host-info public* will give you public machines and their owners. The information below is outdated.
+
+-- Main.PeterTeuben - 2022-08-29
+
+The department supports a number of public machines that anyone with a department account can use. The following is a list of those machines, their locations, their specs, and any special features. Please observe the usual etiquette when using a public machine: "nice" all background jobs to lowest priority, 19 (i.e., nice +19 ./myjob &); do not lock the screen for any longer than it takes to go to the bathroom and back; and if you're using a lot of machines, give someone else a chance if they ask. If there are any issues, please contact the chair of the Astronomy Computer Committee (see OverView).
+---+++ Please be "low-impact" (a note on public disk use and availability)
+
+A note regarding disk operations: although many users have their home directory on the main server, earth, it is bad for everybody if you run a job on a remote machine that does a lot of read and/or write access to earth's disks. Instead, please use local space as much as possible. For example, most of the machines in the list below have their own disk space. E.g., on blackhole, you can use /blackhole1 (or, to access this space without logging into blackhole, /n/blackhole1). Just make a directory there, e.g. "mkdir $user", and start your run! When you're done, you can always move the results to your home space on earth in one operation -- that has much less impact on other users.
+   * To see what disks are available on a particular machine, log into it and type "df -h" (note: disks with "nb" at the end of their names are NOT backed up).
+   * For now there are no quotas on these disks; please be courteous in their use so it stays that way. Thanks!
+
+| *Machine Name(s)* | *Location* | *Specifications* | *Notes* |
+| aegaeon | remote access only (0246 back room) | Dell Precision 3.5-GHz 12-processor 8-GB | No monitor |
+| blackhole | Rm 0246 | Dell Precision T3400 3-GHz 1-CPU 2-core 8-GB | Dual monitor jumbo screen |
+| cygnus | Rm 0246 | Dell Precision T1650 3.5-GHz 2-CPU 4-core 16-GB | Dual monitor |
+| lab001 to lab003 | Rm 1220 | Dell Precision T1600 3.4-GHz 2-CPU 4-core 8-GB | Dual-boot; undergrad priority |
+| lab004 to lab005 | Rm 1220 | Dell Precision T1600 3.5-GHz 2-CPU 4-core 8-GB | Dual-boot; undergrad priority |
+| lab006 to lab010 | Rm 1220 | Dell Precision T1650 3.4-GHz 2-CPU 4-core 16-GB | Dual-boot; undergrad priority |
+| lab012 | Rm 1220 | Dell XPS720 2.4-GHz 1-CPU 4-core 2-GB | Dual-boot; undergrad priority |
+| mars | Rm 0246 | Dell Intel i7-4770 @ 3.4GHz 8-core 16-GB | |
+| mercury | Rm 0246 | Dell Intel i7-4770 @ 3.4GHz 8-core 16-GB | |
+| neptune | Rm 0246 | Dell Precision T1650 3.5-GHz 2-CPU 4-core 16-GB | Dual monitor |
+| pluto | Rm 0246 | Dell Precision T1500 2.9-GHz 2-CPU 4-core 16-GB | Dual monitor |
+| scorpius | Rm 0246 | Dell Precision T1650 3.5-GHz 2-CPU 4-core 16-GB | Dual monitor |
+| yorp cluster | remote access only | various | research cluster; see AstroUMD.YorpCluster for more info |
+
+-- Main.MarcPound - 2013-09-04

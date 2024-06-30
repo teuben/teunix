@@ -1,0 +1,59 @@
+%META:TOPICINFO{author="teuben" date="1663197325" format="1.1" version="1.10"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ Using Condor in the Astronomy Department(deprecated)
+
+[[http://www.cs.wisc.edu/condor/][Condor]] is a system for distributing jobs across scattered computers, and is particularly useful in reclaiming idle time when people aren't using their own computers. Condor has been deployed on many desktop machines in the department, as well as on the BorgCluster. This page explains how to use Condor as a computing resource. The local astronomy (not borg) condor pool is called VAMPIRE and currently has 51 CPUs, providing a total of around 37 GFlops of computing power (compared to 60 for the Borg).
+
+---+++ Background
+
+Condor handles idle-time scheduling of serial runs of any program, even if you do not have the source code. It is not suitable for parallel runs; it is ideal for many serial runs, each with different arguments or input files. It is only available on Linux machines in the department. The binaries for the program you want to run must be available via NFS to all the machines in the pool. You use the Condor system by creating a *submit file* that details your job run, including the location of the executable, arguments to supply, what to do with standard output, etc. There is a sample submit file attached to this page that can be easily changed to your uses. When you submit a job to the Condor scheduler, it goes into a queue of waiting jobs. Depending on how many machines are free, how heavily you have used Condor compared to other active users, and ranking you may have requested in your submit file, your job will eventually go to an idle machine and start running. If a person starts using that machine (e.g. coming back from lunch), your job will be suspended. If the interactive use continues for a long time, your job will be *evicted* and placed back in the queue. If your code does not checkpoint its progress, and you have not used Condor's custom checkpointing, the job will eventually start over from the beginning, losing all previous progress. If your jobs are relatively short, this is not a real problem. When your job does finish, possibly after being run on several machines, you will receive an email. You can then verify that the job ran correctly, and produced the outputs you were expecting.
+
+Follow the steps below to get your programs running under Condor, and enjoy!
+
+---+++ Step 1: Add the Condor programs to your path
+
+The binaries needed to use Condor are located in =/local/pkg/condor/release/bin=. To add this directory to your path, in flavors of =csh=, add the following to your =.cshrc= file: =set path = (/local/pkg/condor/release/bin $path)= You should now be able to, e.g., use =condor_status= to see the pool. You can also use AstroMake to do this, with =astroload condor=.
+
+---+++ Step 2: Create a submit file for your job
+
+You tell Condor how to run your job with a submit file. This is a text file of key-value pairs, with =#= starting one-line comments. At the bottom of this page is a link to a sample submit file. Download this file and edit it to reflect your program. It contains many explanatory comments, and you can read the [[http://www.cs.wisc.edu/condor/quick-start.html][Condor submit file quick start guide]] for more details.
+
+A simple config example config file is [[http://www.astro.umd.edu/~gwl/twiki/pub/AstroUMD/UsingCondor/condor-simple.cfg][provided here]].
+
+Here is a [[http://www.astro.umd.edu/~gwl/twiki/pub/AstroUMD/UsingCondor/submit_file.cfg][more complicated example]].
+
+Finally, it may be useful to have a wrapper script for your executable. An [[http://www.astro.umd.edu/~gwl/twiki/pub/AstroUMD/UsingCondor/wrap_zeus][example in perl]] for zeus3d is available.
+
+---+++ Step 3: Submit your job
+
+Submit your job to the Condor scheduler with =condor_submit &lt;submit filename&gt;=. Upon success, this will tell you the *cluster ID* of the jobs you just submitted. You will use this to identify your jobs when monitoring them.
+
+---+++ Step 4: Monitor your jobs
+
+The command =condor_status= reveals the state of the whole pool, telling you which machines are being used by someone other than Condor ( =Owned=), idle and unused by Condor ( =Unclaimed=), and actively running someone's Condor job ( =Claimed=). The command =condor_q= shows you the state of the queue, giving for each job its: cluster and process IDs; which user owns it; whether it is running, idle, held; how long it has been running in the last match; its resident memory size; and other things. If you have submitted jobs from more than one machine, you can use =condor_q -g= (for global) to see all jobs submitted by anyone, from any machine. When your job completes, you will receive an email (you can disable this notification in your submit file). You specified a log file in the submit file, which you can look at to see where the job has run, when it gets evicted, etc.
+
+---+++ More Information
+
+All the Condor binaries support the argument =-help= for basic usage information. If you add the directory =/local/pkg/condor/release/man= to your =MANPATH=, you can read the man pages. The [[http://www.cs.wisc.edu/condor/][Condor web site]] has lots of online documentation including tutorials; we are running the 6.8 branch. Florida State also has a very helpful TWiki, at [[https://www.scs.fsu.edu/twiki/bin/view/Computing/UsingCondor][FSU TWiki]]
+
+If your job produces lots of output, and you are writing back to your personal machine via NFS, it may sometimes choke the network. This can manifest itself as short hangs on the machine holding the target disk. As the network is upgraded to gigabit, this problem should go away.
+
+If your code does not have checkpointing facilities, Condor can (probably) provide it for you, if your code is in C and you've got the source. To use this method, you must =condor_compile= your code; see the official documentation for more details.
+
+---+++ Will putting my desktop machine in the Condor pool prevent me from using it?
+
+No. Condor only runs jobs on a computer if two conditions are met: 1 - the keyboard and mouse have been idle for a long time (indicating nobody is sitting at it); 2 - the load average on the CPU is low. This means that any jobs you start by yourself (foreground or background, even those at =nice 19=) will be noticed by Condor, and that machine will be left alone. Until your job completes and the machine goes idle, at which point Condor will jump in and start running someone's (it could even be you!) job.
+
+If you think Condor is running wild on your machine, talk to one of the local maintainers (Main.KevinWalsh, Main.JohnVernaleo) to get it sorted out.
+
+---+++ Condor on the Borg
+
+The Condor daemons are running on all the nodes of the BorgCluster. You can submit and monitor jobs from the head node (the Queen). Condor on the Borg does not send email. Although Borg nodes can be "reserved" for individual use, this policy cannot be observed by Condor, so if you aren't actively running on your reserved nodes, Condor will use them. When you start your jobs, Condor will vacate the nodes. If you believe this is not working correctly, contact the Borg maintainers (Derek, Graeme).
+
+---+++ Maintainer Info
+
+If you want to learn how to maintain Condor, check out HowCondorIsSetUp
+
+%META:FILEATTACHMENT{name="submit_file.cfg" attr="" comment="" date="1182280146" path="submit_file.cfg" size="2487" user="JohnVernaleo" version="1.3"}%
+%META:FILEATTACHMENT{name="condor-simple.cfg" attr="" comment="" date="1184255140" path="condor-simple.cfg" size="216" user="JohnVernaleo" version="1.1"}%
+%META:FILEATTACHMENT{name="wrap_zeus" attr="" comment="" date="1184255153" path="wrap_zeus" size="921" user="JohnVernaleo" version="1.1"}%

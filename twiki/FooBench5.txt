@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="teuben" date="1663612031" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="PickYourComputingPlatform"}%
+---+ FooBench5 : a joke?
+
+No, this is not really a joke. If you write your own code, or even if you need to run hundreds of [[https://ascl.net/9910.001][cloudy]] models, it pays off to write yourself a simple benchmark that does:
+
+   1 Gives some indication of computing time or speed (cf. geekbench5)
+   1 Gives some indication if the results are the same (regression testing)
+My own example in [[https://github.com/teuben/nemo][NEMO]] is dubbed [[https://teuben.github.io/nemo/man_html/nemobench.5.html][nemobench5]] and has saved me many times from compilation problem and optimizing the code, or even collaborators who ran into problems compiling NEMO.
+
+-- Main.PeterTeuben - 2022-09-15

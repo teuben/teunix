@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="eric" date="1491509714" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="AstroUMD.PSC1136AV"}%
+---+ Holding a Teleconference in PSC Conference Rooms
+
+The Cisco phone can be used for teleconferences, although the microphone and speakers may not suffice for your needs. Here is the [[http://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cuipph/8831/10_3_1/english/UserGuide/CS38_BK_U841D454_00_userguide-8831/CS38_BK_U841D454_00_userguide-8831_chapter_0101.html#CS38_TP_CE1FCD1B_00][phone manual]], and here are DIT's instructions for setting up a [[https://umd.service-now.com/itsc/?id=service&service=8e7efc3f3708c20041271f9543990edc&t=so][conference call]]. (Some of you may be more familiar with this [[https://umd.service-now.com/itsc?id=kb_article&sys_id=736b76a33790020041271f9543990e66][alternate procedure]], which works for up to 6 participants.)
+
+-- Main.EricMcKenzie - 2016-07-12
+
+%META:TOPICMOVED{by="eric" date="1468344240" from="Sandbox.TeleConferencePSC" to="AstroUMD.TeleConferencePSC"}%
