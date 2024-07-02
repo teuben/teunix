@@ -20,6 +20,15 @@ First rule of desktops:
 Favorite Desktop Features
 =========================
 
+- mouse focus fully configurable, i prefer:
+  - focus follows mouse (after something lke 500ms delay)
+  - scrolling should be not 'natural' but classic "reverse"
+- multiple desktops
+- windows need to be able to pin to all desktops (e.g my emacs)
+- a window should be resizeable from all sides and corners
+- screenlock should have configurable timeout (I prefer 10-20 mins)
+
+
 I've had a long history of window managers
 - (that windows competitor)
 - 3b1
@@ -35,15 +44,7 @@ I've had a long history of window managers
 - kde (my current one)
 
 
-My Fav Features
-===============
-- mouse focus fully configurable, i prefer:
-  - focus follows mouse (after something lke 500ms delay)
-  - scrolling should be not 'natural' but classic "reverse"
-- multiple desktops
-- windows need to be able to pin to all desktops (e.g my emacs)
-- a window should be resizeable from all sides and corners
-- screenlock should have configurable timeout (I prefer 10-20 mins)
+
 
 
 Favorite Applications:
