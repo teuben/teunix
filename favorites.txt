@@ -1,0 +1,80 @@
+Favorite laptop features ( a hardware checklist )
+=================================================
+
+- charging port should be usb-C only, and be left and right
+- mouse pad should have 3 button mouse. sure, middle click works with gestures too.  [lenovo]
+- ethernet port, ideally 2.5Gb 
+- screen should be able to fold flat (180 degrees)   [lenovo]
+- batteries should be 70+Wh , ideally easily replacable [system76]
+- two slots for SSD 
+- simple keyboard, no numeric.   Ctrl-Fn-Win-Alt now the default
+- function keys should doing volume, screen brightness etc. without need for Fn  (Lenovo X1 Yoga)
+- no fingerprint logon
+- SD card slot
+First rule of desktops:
+ "don't be fooled how it feels the first few minutes, how does it keep up when
+  you are working in multiple desktops and many windows and apps open"
+
+
+
+Favorite Desktop Features
+=========================
+
+- mouse focus fully configurable, i prefer:
+  - focus follows mouse (after something lke 500ms delay)
+  - scrolling should be not 'natural' but classic "reverse"
+- multiple desktops
+- windows need to be able to pin to all desktops (e.g my emacs)
+- a window should be resizeable from all sides and corners
+- screenlock should have configurable timeout (I prefer 10-20 mins)
+
+
+I've had a long history of window managers
+- (that windows competitor)
+- 3b1
+- sunos
+- solaris/cde
+- twm (that was 1995, both linux and solaris could run it)
+- fvwm (solaris still ran this)
+- enlightenment (used that for a while, sad it went, but it's back now)
+- xfce4 (wind up never using it, but some of my best friends use it)
+- gnome2
+- unity (used this until 2017/18?; Ubuntu will kill it off)
+- gnome3 (i think it sucks, too configurable, too hard to bootstrap, too many things die)
+- kde (my current one)
+
+
+
+
+
+Favorite Applications:
+======================
+- emacs (and ec to launch them into emacs)
+- bash (yup, I broke up with tcsh)
+- vnc (x2go)
+- vpn 
+- latex
+- libreOffice 
+- python (anaconda3)
+- make/autoconf/cmake
+- c/c++/fortran compilers
+- various astro tools:
+  - ds9
+  - casa, carta
+  - gipsy
+  - nemo
+  - miriad
+  - karma (might die soon if no source)
+  - montage, wcstools
+  - topcat, glue, yt,
+- gimp, digikam, darktable
+- zoom
+- thunderbird 
+- chrome/chromium/firefox
+- rhythmbox (and so many others)
+
+
+Online tools:
+-------------
+- rss reader   (feedly)
+- github
