@@ -35,3 +35,4 @@ Big Sur         11                 nov-2020
 Monterey        12                 oct-2021
 Ventura         13                 oct-2022
 Sonoma          14                 sep-2023
+Sequoia         15                 ???-2024
