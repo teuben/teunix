@@ -803,6 +803,19 @@ and can be an effective way to clean up your drive space.
       sudo apt install k4dirstat qdirstat baobab -y
 
 
+## 15. Default Applications
+
+Each desktop manager has a GUI to get/set the default applications. Here's a CLI method to do this:
+
+      xdg-settings get default-web-browser
+
+and to set
+
+      xdg-settings set default-web-browser <browser-name.desktop>
+
+where you can find the various desktop items in /usr/share/applications. For example, for chrome you would
+
+      xdg-settings set default-web-browser google-chrome.desktop
 
 
 
