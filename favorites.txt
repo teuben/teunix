@@ -9,8 +9,9 @@ Favorite laptop features ( a hardware checklist )
 - two slots for SSD 
 - simple keyboard, no numeric.   Ctrl-Fn-Win-Alt now the default
 - function keys should doing volume, screen brightness etc. without need for Fn  (Lenovo X1 Yoga)
-- no fingerprint logon
-- SD card slot
+- no fingerprint logon  (legal issues)
+- a keyboard that doesn't deteriorate keys (one Dell was really bad)
+- SD card slot (microSD still sucks for photography, plus there are adaptors)
 First rule of desktops:
  "don't be fooled how it feels the first few minutes, how does it keep up when
   you are working in multiple desktops and many windows and apps open"
