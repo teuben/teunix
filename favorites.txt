@@ -1,9 +1,11 @@
 Favorite laptop features ( a hardware checklist )
 =================================================
 
-- charging port should be usb-C only, and be left and right
+- charging port should be usb-C only, and be left and right. No proprietary 'barrel" charger
 - mouse pad should have 3 button mouse. sure, middle click works with gestures too.  [lenovo]
-- ethernet port, ideally 2.5Gb 
+- ethernet port, ideally 2.5Gb
+- ethernet port should have status lights (k2 and d76 don't)
+- there should be standard plug for headphones (mic too?)
 - screen should be able to fold flat (180 degrees)   [lenovo]
 - batteries should be 70+Wh , ideally easily replacable [system76]
 - two slots for SSD 
