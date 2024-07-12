@@ -3,9 +3,11 @@ Favorite laptop features ( a hardware checklist )
 
 None of these are showstoppers. But too many of them lacking will be for me.
 
-- charging port should be usb-C only, and be left and right
+- charging port should be usb-C only, and be left and right. No proprietary 'barrel" charger
 - mouse pad should have 3 button mouse. sure, middle click works with gestures too.  [lenovo]
-- ethernet port, ideally 2.5Gb 
+- ethernet port, ideally 2.5Gb
+- ethernet port should have status lights (k2 and d76 don't)
+- there should be standard plug for headphones (mic too?)
 - screen should be able to fold flat (180 degrees)   [lenovo]
 - batteries should be 70+Wh , ideally easily replacable [system76]
 - two slots for SSD 
@@ -46,10 +48,9 @@ I've had a long history of window managers
 - gnome2
 - unity (used this until 2017/18?; Ubuntu will kill it off)
 - gnome3 (i think it sucks, too configurable, too hard to bootstrap, too many things die)
+  - tried out PopOS!, but too close to gnome3
+  - upcoming COSMIC-alpha
 - kde (my current one)
-
-
-
 
 
 Favorite Applications:
