@@ -1,6 +1,8 @@
 Favorite laptop features ( a hardware checklist )
 =================================================
 
+None of these are showstoppers. But too many of them lacking will be for me.
+
 - charging port should be usb-C only, and be left and right
 - mouse pad should have 3 button mouse. sure, middle click works with gestures too.  [lenovo]
 - ethernet port, ideally 2.5Gb 
@@ -12,10 +14,6 @@ Favorite laptop features ( a hardware checklist )
 - no fingerprint logon  (legal issues)
 - a keyboard that doesn't deteriorate keys (one Dell was really bad)
 - SD card slot (microSD still sucks for photography, plus there are adaptors)
-First rule of desktops:
- "don't be fooled how it feels the first few minutes, how does it keep up when
-  you are working in multiple desktops and many windows and apps open"
-
 
 
 Favorite Desktop Features
@@ -29,14 +27,20 @@ Favorite Desktop Features
 - a window should be resizeable from all sides and corners
 - screenlock should have configurable timeout (I prefer 10-20 mins)
 
+First rule of comparing desktops:
+ "don't be fooled how it feels the first few minutes, how does it keep up when
+  you are working in multiple desktops and many windows and apps open"
+
 
 I've had a long history of window managers
+
 - (that windows competitor)
 - 3b1
 - sunos
 - solaris/cde
 - twm (that was 1995, both linux and solaris could run it)
 - fvwm (solaris still ran this)
+- fvwm2
 - enlightenment (used that for a while, sad it went, but it's back now)
 - xfce4 (wind up never using it, but some of my best friends use it)
 - gnome2
