@@ -7,7 +7,9 @@ Tiger Lake      gen-11                   Q4 2020
 Rocket Lake                        mar-2021
 Alder Lake      gen-12 intel       oct-2021
 Raptor Lake     gen-13 intel       oct-2022
-Meteor Lake     gen-12
+Meteor Lake     gen-14 (core ultra)            ~11 TOPS
+Lunar Lake      gen-15?                        ~45 TOPS
+
 
 00:02.0 VGA compatible controller: Intel Corporation CometLake-U GT2 [UHD Graphics] (rev 02)
 
@@ -33,3 +35,4 @@ Big Sur         11                 nov-2020
 Monterey        12                 oct-2021
 Ventura         13                 oct-2022
 Sonoma          14                 sep-2023
+Sequoia         15                 ???-2024

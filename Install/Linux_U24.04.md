@@ -292,6 +292,17 @@ ROOT:
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
   - ImageMagick does not convert pdf to png without editing a system file
     (TBD)
+  - boot menu:   check /etc/default/grub to make sure you see
+           GRUB_TIMEOUT_STYLE=menu
+           GRUB_TIMEOUT=5
+    if not, edit it, and update-grub:
+           sudo update-grub
+  - if cpu scaling is not working (e.g. on some dells) the command
+       sudo cpupower -u 4600mhz
+    would not work  Check if you see "intel_pstate" in
+       /sys/devices/system/cpu/cpufreq/policy0/scaling_driver
+    it should be acpi-cpufreq. You can get that by adding
+       intel_pstate=disable to the cmdline at boot (see /etc/default/grub)
 
 
 

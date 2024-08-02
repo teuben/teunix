@@ -201,3 +201,8 @@ brew:
 # - run these two commmands
 #    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/teuben/.bashrc
 #    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+## zsh2:       14. Install oh-my-zsh
+zsh2:
+	sh -c `wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -`
+	#sh -c `curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`
