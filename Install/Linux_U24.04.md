@@ -73,6 +73,12 @@ First install a few very essential packages
 Every now and then I add another version to dpkgN.list. Usually kubuntu starts just
 below 2000 packages, and this usually grows to about 4000 for me.
 
+Add universe: https://itsfoss.com/ubuntu-repositories/
+Main, Universe, Multiverse, Restricted and Partner
+
+       sudo add-apt-repository universe
+
+
 
 ## My KDE Setup
 
