@@ -1,6 +1,6 @@
 # Linux Kfocus XE Gen 2 w/ Kubuntu 22.04 LTS
 
-*Draft version 9-dec-2023*
+*Draft version 10-dec-2023*
 
 I got this pre-installed linux laptop in July 2023 from
 https://kfocus.org - though a few weeks before I had installed their
@@ -78,7 +78,7 @@ After a few months of use, what's the bottom line for me?
 6. There are still issues with the mouse or desktop. I then need to use ctrl-alt-F2 and F1 to get back to plasma.
 
 7. The ethernet port is NOT 2.5Gb, tested with USB-c dongle that does give me 281 MB/s, where the builtin
-   gave me 113 MB/s. Clearly just a 1000Mbit.
+   gave me 113 MB/s. Clearly just a 1000Mbit.gi
 
 
 ## Unboxing
@@ -92,7 +92,7 @@ but not really interesting to share here. Here are some impressions from the fir
    got me into the BIOS.   F2 gets you directly into the BIOS setup.  F1 seems to run the verbose
    boot mode? The system is announced at **NV4xPZ** (e.g. on geekbench)
    BTW, the BIOS has very few options, like very few.
-
+   
 3. The SSD is a 970 EVO plus. The 2nd slot is used by the WiFi, and is the usual short one. The maximum disk size is whatever
    your hardware can fit on one slot.  Might have to be single sided though ???
    SDD is 2000 MB/sec (as measured with hdparm) - website claims it should be 3500 MB/sec, hmmm.
@@ -340,6 +340,13 @@ Both processors were released Q1/2022
                          1756/9118            1622/8410
      Geekbench6          2151/7655	      n/a
 
+## Upgrading
+
+Eventually I did upgrade the 256GB to a 2TB M.2.   I used 'dd' to copy the
+/dev/nvme0n1 to the now externally mounted 2TB (this took a long time,
+as for some reason that interface only ran at 50MB/sec, and the 'dd'
+even less by several factors. 
+
 
 ## Bizarre Things
 
@@ -347,5 +354,17 @@ Both processors were released Q1/2022
 
 - one time now the active desktop would do the focus switch of windows, but could not
   switch desktops, until I did a "restart_kde"
+
+- under heavy load when I use the USB-barrel converter the battery goes on and off.
+  this includes a beep
+
+- i cannot get to the grub menu anymore...   turns out the /etc/default/grub file
+  wasn't using the menu, and a timeout=0, so changed that to menu/5
+
+- the grub entry "uefi settings" takes me to the bios. is that meant to be?
+
+- sleep (S3) vs. hibernation (S4) state. - only does sleep
+
+- When sleeping too long, it will not wake up.
 
 
