@@ -36,7 +36,7 @@ First rule of comparing desktops:
 
 I've had a long history of window managers
 
-- (that windows competitor)
+- BeOS (I think I got a 386SX based computer with this pre-installed)
 - 3b1
 - sunos
 - solaris/cde
