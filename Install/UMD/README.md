@@ -4,7 +4,6 @@ These are my Linux debian style downloads. The top link is always a good entry p
 but you may have to drill down. The bottom link is an attempt to give a direct link
 to the file, if applicable (e.g. Webex does not do this).
 
-
 ## Zoom
 
 Version will frequently change, don't use the 2nd link (as seen May 2024)
@@ -38,6 +37,32 @@ https://terpware.umd.edu/Linux/title/3959
 
 https://terpware.umd.edu/api/file/4794
 
+## eduroam
+
+Certificates needed now. See also https://www.astro.umd.edu/twiki/bin/view/AstroUMD/Wireless but
+basically connect to https://setup.wireless.umd.edu , download the shell script, execute it,
+perform 2FA and it should have connected you. Here's the dialog example as it was presented
+September 2024:
+
+     $ bash SecureW2_JoinNow.run 
+     ERROR:dbus.proxies:Introspect error on :1.32:/org/freedesktop/secrets/collection/login: dbus.exceptions.DBusException: org.freedesktop.DBus.Error.UnknownObject: No such object path '/org/freedesktop/secrets/collection/login'
+     Verification successful
+
+     We are now launching a separate dialog to continue sign-in at your account provider website.
+
+     When you have successfully signed-in, the application will continue.
+     Next/Cancel? [Next] 
+
+     Generating Key...
+     Enrolling Certificate...
+     Issued
+
+     Connecting...
+
+     Joining completed
+
+
+This method works on all major platforms.
 
 ## Misc
 
@@ -58,3 +83,6 @@ https://terpware.umd.edu/api/file/4794
    There is some issue left, it wanted access to /usr/share/icons/.... but --prefix should
    have not copied into system space. But the binary /tmp/x/bin/x3270 seems to work. Perhaps
    an autoconf bug.
+
+
+
