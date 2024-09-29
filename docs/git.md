@@ -34,46 +34,45 @@ convenient to do this via a shared git account (short of going
 to github or gitlab)
           
 
-Add a new user on SERVER
+1. Add a new user on SERVER
 
-     sudo adduser git
-     su git
-     cd
-     mkdir .ssh
-     chmod 700 .ssh
-     touch .ssh/authorized_keys
-     chmod 600 .ssh/authorized_keys
+       sudo adduser git
+       su git
+       cd
+       mkdir .ssh
+       chmod 700 .ssh
+       touch .ssh/authorized_keys
+       chmod 600 .ssh/authorized_keys
 
 
-Assemble public key files from your users:
+2. Assemble public key files from your users:
 
-     cat /home/USER/.ssh/id_rsa.pub
+       cat /home/USER/.ssh/id_rsa.pub
          (otherwise:  use ssh-keygen to create then)
 
-Add public keys to this file on SERVER
+3. Add public keys to this file on SERVER
 
-     nano /home/git/.ssh/authorized_keys
+       nano /home/git/.ssh/authorized_keys
 
-Bootstrap an empty repo
+4. Bootstrap an empty repo
 
-     mkdir /home/git/repository
-     cd /home/git/repository
-     mkdir my_project
-     cd my_project
-     git init --bare --shared
+       mkdir /home/git/repository
+       cd /home/git/repository
+       mkdir my_project
+       cd my_project
+       git init --bare --shared
 
-Clients can now clone and push/pull
+5. Clients can now clone and push/pull
 
-     git clone git@SERVER:/home/git/repository/my_project
-     git remote -v
+       git clone git@SERVER:/home/git/repository/my_project
+       git remote -v
 
 
 ## Some References
 
-* http://blog.hasmanythrough.com/2008/12/18/agile-git-and-the-story-branch-pattern
-	Agile git and the story branch pattern
-* http://whygitisbetterthanx.com
-	Why Git is Better than X
 
-* https://thenewstack.io/git-set-up-a-local-repository-accessible-by-lan/
-  Git: Set Up a Local Repository Accessible by LAN 
+* https://docs.github.com/en/github/getting-started-with-github/fork-a-repo
+* https://www.atlassian.com/git/tutorials/comparing-workflows
+* https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+* https://how-to.dev/how-git-stores-data
+* https://docs.astropy.org/en/latest/development/development_details.html
