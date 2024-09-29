@@ -1,6 +1,6 @@
 # Linux Kfocus XE Gen 2 w/ Kubuntu 22.04 LTS
 
-*Draft version 9-dec-2023*
+*version 12-jul-2024*
 
 I got this pre-installed linux laptop in July 2023 from
 https://kfocus.org - though a few weeks before I had installed their
@@ -78,7 +78,7 @@ After a few months of use, what's the bottom line for me?
 6. There are still issues with the mouse or desktop. I then need to use ctrl-alt-F2 and F1 to get back to plasma.
 
 7. The ethernet port is NOT 2.5Gb, tested with USB-c dongle that does give me 281 MB/s, where the builtin
-   gave me 113 MB/s. Clearly just a 1000Mbit.
+   gave me 113 MB/s. Clearly just a 1000Mbit.gi
 
 
 ## Unboxing
@@ -92,7 +92,7 @@ but not really interesting to share here. Here are some impressions from the fir
    got me into the BIOS.   F2 gets you directly into the BIOS setup.  F1 seems to run the verbose
    boot mode? The system is announced at **NV4xPZ** (e.g. on geekbench)
    BTW, the BIOS has very few options, like very few.
-
+   
 3. The SSD is a 970 EVO plus. The 2nd slot is used by the WiFi, and is the usual short one. The maximum disk size is whatever
    your hardware can fit on one slot.  Might have to be single sided though ???
    SDD is 2000 MB/sec (as measured with hdparm) - website claims it should be 3500 MB/sec, hmmm.
@@ -151,9 +151,10 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
    Nice addition is that there is *nothing* on this laptop. 
    even the battery is labeled "Vendor: Notebook" with "Serial Number: 0001" and "Model: BAT"
    
-3. The screen opens to about 130 degrees, not the full 180. My lifestyle is that I regularly
+3. The screen only opens to about 130 degrees, not the full 180. My lifestyle is that I regularly
    lie down, knee up, and the laptop resting between stomach and knee. This often results in a
-   partially collapsing screen. My xps13 is the same. Two other laptops open to 180, and don't
+   partially collapsing screen if the hinges are too weak.
+   My xps13 is the same. Two other laptops open to 180, and don't
    suffer from this. Also the hinges are not stiff enough. That could also prevent the collapse.
    
 4. After the first boot the laptop worked fine for 6 days, but then the bluetoooth failed, and a
@@ -169,7 +170,9 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
    I will need to monitor this, as you do expect to see a slow  decline. Here are some Last Full Charges:
    1. Aug 1:  56.42
    2. Sep 27:  52.29
-   3. Dec 8: 49.14 
+   3. Dec 8: 49.14
+   4. Jul 12: 47.41 (92%)
+   5. Sep 4:  47.03  (74% ???)
    
 7. ??? While on zoom, the colors in my image seem to vary a lot between red-ish tint and blue-ish tint.
    Is that auto-coloring, or a problem in the hardware?  None of my other laptops with zoom do this. And I've
@@ -186,7 +189,8 @@ A few new things I learned from the ever so helpfull and responsive kfocus staff
     laptop, so be careful with walking around with it.
     Website says: 1 x 6-in-1 Card Reader (MMC / RSMMC / SD / mini SD / SDHC / SDXC)
 
-11. Iris Xe graphics is listed online, this is Intel's marketing term. You might find KDE reporting it as a Mesa Intel Graphics.
+11. Iris Xe graphics is listed online, this is Intel's marketing term.
+    You might find KDE reporting it as a Mesa Intel Graphics.
     To add to the confusion, **lscpi** reported *Alder Lake-P Integrated Graphics Controller*
 
 12. Ethernet port does not have the comforting green/orange lights to tell me what speed it's at. Still have to test if it
@@ -340,6 +344,13 @@ Both processors were released Q1/2022
                          1756/9118            1622/8410
      Geekbench6          2151/7655	      n/a
 
+## Upgrading
+
+Eventually I did upgrade the 256GB to a 2TB M.2.   I used 'dd' to copy the
+/dev/nvme0n1 to the now externally mounted 2TB (this took a long time,
+as for some reason that interface only ran at 50MB/sec, and the 'dd'
+even less by several factors. 
+
 
 ## Bizarre Things
 
@@ -348,4 +359,27 @@ Both processors were released Q1/2022
 - one time now the active desktop would do the focus switch of windows, but could not
   switch desktops, until I did a "restart_kde"
 
+- under heavy load when I use the USB-barrel converter the battery goes on and off.
+  this includes a beep
 
+- i cannot get to the grub menu anymore...   turns out the /etc/default/grub file
+  wasn't using the menu, and a timeout=0, so changed that to menu/5
+
+- the grub entry "uefi settings" takes me to the bios. is that meant to be?
+
+- sleep (S3) vs. hibernation (S4) state. - only does sleep
+
+- When sleeping too long, it will not wake up.
+
+=======
+- Power and Fan  doesn't automatically go from Low to Normal when power is connected
+  (works fine on the X1Y4)
+
+
+- firefox sometimes looses its window manager border, can't even resize it. just move
+  it around using WIN+left_mouse
+
+         More Tools ->  Customize toolbar
+
+  at bottom make sure "title bar" is enable, or tinker with reset.  Or try "Restore Defaults"
+  followed by enabling "Title Bar".  Also can have issues resizing before it's restored. Annoying.

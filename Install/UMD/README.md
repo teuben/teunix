@@ -21,7 +21,7 @@ https://www.webex.com/downloads.html
 
 ## GlobalProtect
 
-Version 6.1.1.0-49 (as seen May 2024)
+Version 6.1.1.0-49 (as seen May 2024). Watch out for versions, they are often bound to certain OS versions.
 
 https://terpware.umd.edu/Linux/Title/4010
 

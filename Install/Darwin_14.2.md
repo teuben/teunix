@@ -6,7 +6,7 @@ Upgrade took a while, but then came back where I left off, even the two
 
 There was some message coming 
 
-xcode-select --install
+      xcode-select --install
 
 
 Now it's clang 15.0.0, with the usual apple version inflation.
