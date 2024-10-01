@@ -78,3 +78,11 @@ worked, and gyrfalcON would compile with the new rpc.h - there was some python c
 install, but it seemed to have installed it properly.
 
 
+## Window Manager
+
+### Gnome
+
+By default they use gnome. Ny favorite quick patches are:
+
+1. (left click) Settings -> Power -> Screenblank -> Never
+2. Focus follows Mouse (complicated, needs some plugin
