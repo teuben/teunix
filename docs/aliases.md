@@ -1,5 +1,7 @@
 # Aliases
 
+See also https://en.wikipedia.org/wiki/List_of_Intel_processors#All_processors
+
 Sky Lake        gen-6                   2015
 Ice Lake        gen-10 intel       sep-2019
 Comet Lake                         aug-2019
