@@ -44,7 +44,8 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
            -  Screen Energy Saving (switch off after 20 mins)
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
-	Workspace Bahavior -> Screen Locking
+	Workspace Behavior -> Screen Locking
+	   - uncheck automatic locking after (15) mins
 
 5. Configure Icons-only Task Manager Settting
    - Appearance
@@ -70,6 +71,15 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
      - check    "show filter bar"
      - uncheck  "Open new folders in tabs"
      - check 2x "show full path..."
+
+9. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
+      - Open System Settings
+      - Go to Window Management -> Window Rules
+      - Match on "Window class (application)" with "Exact Match" on "zoom"
+      - "Match whole window class": "no"
+      - Add property "No titlebar and frame", set it to "No"
+
+I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
  
 ## My KDE Setup (confusing long version from latest Install*md)
