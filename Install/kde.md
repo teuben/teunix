@@ -44,7 +44,8 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
            -  Screen Energy Saving (switch off after 20 mins)
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
-	Workspace Bahavior -> Screen Locking
+	Workspace Behavior -> Screen Locking
+	   - uncheck automatic locking after (15) mins
 
 5. Configure Icons-only Task Manager Settting
    - Appearance
