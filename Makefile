@@ -7,10 +7,10 @@ SHELLS = csh tcsh bash zsh
 
 # kubuntu (22) packages we really need to bootstrap teunix
 UP = git emacs tcsh wget curl unzip openssh-server \
-     build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
-     meld tkcvs htop gitg gitk git-cvs \
+     build-essential gfortran cmake pgplot5 pgplot5-dev xorg-dev libncurses-dev \
+     meld htop gitg gitk git-cvs \
      exfat-fuse tkcvs net-tools ncftp autoconf \
-     python-is-python3 libtirpc-dev
+     python-is-python3 libtirpc-dev time libpng-dev
 
 
 UP2 = plasma-widgets-addons kio-gdrive

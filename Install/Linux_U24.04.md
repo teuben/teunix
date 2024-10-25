@@ -192,6 +192,8 @@ not applied until you hit the Apply button on each screen.
      6. Applications
       File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
       this can be the default and is annoying.
+     6. KDE Wallet
+        disable it
      7. Online Accounts
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
@@ -520,7 +522,6 @@ there are some kubuntu applicable tips in there as well, YMMV
 
 ## issues (some are upstream issues)
 
-- gwenview loads very slow (sometimes, not clear when/how)
 - darktable doesn't load after the first image? (seems similar to gwenview, but just doesn't recover) -
   running it via strace seems to work
 - k4dirstat crashes - seems to work now, used to crash a lot
@@ -537,7 +538,7 @@ there are some kubuntu applicable tips in there as well, YMMV
 - PID's can now go over 32767, but I noted some apps (digikam, slack) that are not trivial
   to kill. They seem to linger in the processtable. Is there some auto-restart when it crashes?
 - (feature) application names launched from the iconic view do not match those from the terminal.
-- thunderbird often needs to be started twice (or more), otherwise the Google Buttons (Archive/Delete) don't show
+
 - some windows (thunderbird, my hard disk I/O monitor widget) go flashing or update wrong portions of windows sometimes)
 
 - thinkpad docking station: seems to forget 2nd screen after timeout, also doesn't latte-dock back (i placed it on the other screen)

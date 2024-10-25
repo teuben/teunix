@@ -5,6 +5,7 @@ URL2 = https://github.com/astroumd/miriad
 URL3 = https://github.com/astroumd/lmtoy
 URL4 = https://github.com/GreenbankObservatory/dysh
 URL5 = https://github.com/teuben/GBT-EDGE
+URL6 = https://github.com/Smithsonian/SMA-Software
 
 ALL = nemo miriad lmtoy dysh
 
@@ -34,3 +35,6 @@ dysh:
 
 GBT-EDGE:
 	git clone $(URL5)
+
+SMA-Software:
+	git clone $(URL6)
