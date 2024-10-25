@@ -51,6 +51,7 @@ This follows Ubuntu 22.04 - KDE Plasma 5.27.9 / Frameworks 5.104.0
      i don't understand what max.rows and the checked item do ??
    - Behavior     
        - Clicking grouped task:   Show large window previews   [this is different in U23]
+                                  Show "Present Windows' effect [in U22 ?]
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
@@ -336,4 +337,16 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 
 A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
+
+
+## Misc KDE notes
+
+- if you save your desktop, this is maintained in a file ~/.config/ksmserverrc
+- if you use kdewallet, some system files (e.g /etc/NetworkManager/system-connections/) will
+  not be maintained by the system, but by the wallet
+- if you use gdm3 (e.v. via PopOS!) it will not set up ssh-agent for you
+  it seems using sddm  will do this (see /etc/sddm/), which is the KDE default in most cases
+- mounting encrypted (luks) drives magically worked
+
+
 
