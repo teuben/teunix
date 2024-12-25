@@ -2,7 +2,11 @@
 
 See also https://en.wikipedia.org/wiki/List_of_Intel_processors#All_processors
 
-Sky Lake        gen-6                   2015
+Broadwell                          oct-2014
+Sky Lake        gen-6              aug-2015
+Kaby Lake       gen-7              aug-2016
+Coffee Lake     gen-8              oct-2017
+Cannon Lake     gen-9              may-2018
 Ice Lake        gen-10 intel       sep-2019
 Comet Lake                         aug-2019
 Tiger Lake      gen-11                   Q4 2020
