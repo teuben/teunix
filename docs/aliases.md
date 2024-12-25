@@ -10,7 +10,8 @@ Rocket Lake                        mar-2021
 Alder Lake      gen-12 intel       oct-2021
 Raptor Lake     gen-13 intel       oct-2022
 Meteor Lake     gen-14 (core ultra)            ~11 TOPS
-Lunar Lake      gen-15? U2xx                   ~45 TOPS
+Lunar Lake      gen-15? U2xx                   ~45 TOPS   efficiency
+Arrow Lake      U2xx               oct-2024               power
 Panther Lake    U3xx
 
 00:02.0 VGA compatible controller: Intel Corporation CometLake-U GT2 [UHD Graphics] (rev 02)
