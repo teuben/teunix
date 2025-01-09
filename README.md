@@ -34,4 +34,4 @@ My current favorite tools are:
 * linux distro: Kubuntu
 * python: anaconda3
 * git: mostly via github.com, but also 'gh'
-
+* ...
