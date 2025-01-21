@@ -8,7 +8,8 @@ host=terra.astro.umd.edu
 host=lma.astro.umd.edu
 
 for f in $*; do
-   scp $f ${host}:/tmp ; ssh $host lpr -P$PRINTER /tmp/$f; ssh $host lpq -P$PRINTER; ssh $host rm /tmp/$f
+   f1=$(basename $f)
+   scp $f ${host}:/tmp ; ssh $host lpr -P$PRINTER /tmp/$f1; ssh $host lpq -P$PRINTER; ssh $host rm /tmp/$f1
 done
 
 echo "lpr: Using $PRINTER on $host"
