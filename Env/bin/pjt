@@ -59,6 +59,9 @@ fi
 
 if [ $os == Linux ]; then
     echo "OS_release:  $os $(lsb_release  -d)"
+    if [ -d /home/linuxbrew ]; then
+	echo "             /home/linuxbrew present!"
+    fi
 elif [ $os == Darwin ]; then
     echo "OS_release:  $os $(sw_vers -productVersion)"
 else
