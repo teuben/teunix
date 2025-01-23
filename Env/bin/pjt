@@ -64,6 +64,9 @@ if [ $os == Linux ]; then
     fi
 elif [ $os == Darwin ]; then
     echo "OS_release:  $os $(sw_vers -productVersion)"
+    if [ -d /opt/homebrew ]; then
+	echo "             /opt/homebrew present!"
+    fi
 else
     echo "OS_release:  $os (unknown)"
 fi
