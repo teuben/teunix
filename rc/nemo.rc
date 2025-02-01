@@ -1,7 +1,7 @@
 # standard NEMO in NEMO/nemo or teunix/nemo
 
 for s in ~/NEMO/nemo/nemo_start.sh ~/teunix/nemo/nemo_start.sh; do
-    if [ -e $d ]; then
+    if [ -e $s ]; then
        source $s
        echo "Found $s"
        break
