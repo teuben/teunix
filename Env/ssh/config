@@ -139,11 +139,11 @@ Host gbt3
      ProxyCommand ssh pteuben@ssh.cv.nrao.edu -W %h:%p
      User pteuben
 
-Host sma
-     Hostname 128.171.166.10
-     PubkeyAcceptedAlgorithms +ssh-rsa
-     HostKeyAlgorithms +ssh-rsa
-     IdentityFile ~/.ssh/id_sma
+#Host sma
+#     Hostname 128.171.166.10
+#     PubkeyAcceptedAlgorithms +ssh-rsa
+#     HostKeyAlgorithms +ssh-rsa
+#     IdentityFile ~/.ssh/id_sma
 
 #  AAS237 workshop  pw: AASMachineLearningWorkshop
 #  ssh -L 9888:localhost:9888 mlworkshop_usr@52.38.134.207

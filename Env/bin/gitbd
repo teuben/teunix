@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+#
+#   cleanup branches
+
+echo Cleanup Branches $*
+# git branch -r
+
+log=/tmp/gitbd_$$.log
+
+for b in $*; do
+  echo Branch $b
+  git branch -r | grep -w $b > $log
+  nb=$(cat $log | wc -l)
+  if [ $nb = 1 ]; then
+      git branch -d $b
+      git push origin --delete $b
+  else
+      echo Cannot delete $b:
+      cat $log
+  fi
+done
+
+echo $log
+
+rm -f $log
+
+# clean up dead branches that were removed on the rote
+# git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do echo "git branch -D $branch"; done
