@@ -13,3 +13,9 @@ means there should be a file ~/rc/name.rc, such that
 
 is successfull. This also implies you pick a shell. There is no
 restriction to csh or sh, just be consistent to what you are using.
+
+If you place a use comment/reminder on the first line, the command
+
+         rc
+
+by itself will list these one liners for all rc files.
