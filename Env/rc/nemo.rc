@@ -1,0 +1,9 @@
+# ~/NEMO/nemo or ~/teunix/nemo
+if [ -e   ~/NEMO/nemo/nemo_start.sh ]; then
+   source ~/NEMO/nemo/nemo_start.sh
+elif [ -e ~/teunix/nemo/nemo_start.sh ]; then
+   source ~/teunix/nemo/nemo_start.sh
+else
+   echo no NEMO found here
+fi
+
