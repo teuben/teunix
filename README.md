@@ -33,6 +33,6 @@ My current favorite tools are:
 * shell:  bash
 * window manager: KDE/Plasma
 * linux distro: Kubuntu
-* python: anaconda3
-* git: mostly via github.com, but also 'gh'
+* python: anaconda3 (and some spyder and JupyterLab Desktop)
+* git: mostly via github.com, but also 'gh' and Github Desktop
 * ...

@@ -108,7 +108,8 @@ rc:  $(HOME)/rc
 
 $(HOME)/rc:
 	@if [ ! -d ~/rc ]; then mkdir ~/rc; fi
-	@touch ~/rc/none.rc
+	@cp Env/rc/README Env/rc/nemo.rc ~/rc
+
 
 # See various comments in Env/README
 
