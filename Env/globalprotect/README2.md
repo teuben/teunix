@@ -19,6 +19,10 @@ to launch the app via Firefox on my machine, despite that I've told
 it that Chrome is my default browser, and my default app to open html
 files (these are two different settings)
 
+first time now it's doesn't prefill access.umd.edu
+
+
+
 In the Systems Settings app
    - default applications
    - file associations for text/html
@@ -33,7 +37,9 @@ If you have "mouse follows focus" this has the annoying side effect that
 the GP app will disapper as you move out of the window , accidental or not,
 to do something else
 
+## Machines
 
+- U24/k2 ok: Linux k2 6.8.0-51-kfocus
 
 ## Notes:
 
