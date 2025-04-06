@@ -7,7 +7,7 @@ our DIT, who often don't understand our linux needs.
 Their most recent version, GlobalProtect_UI_deb-6.2.1.1-276.deb,
 seems to do better. 
 
-One GP is on your system, it seems to leave information on the system
+Once GP is on your system, it seems to leave information on the system
 making problems difficult to understand. One eample is my U20 laptop,
 where nothing works. And an U22 box where it claims the certificate
 is not valid (like, which certificate).
