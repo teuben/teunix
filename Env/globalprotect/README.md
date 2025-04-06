@@ -92,3 +92,4 @@ the resolvectl command gives the DNS servers.
    your non-UMD routing, but will still the UMD DNS. For example if you're on zoom,  it should continue to run if you happen to loose VPN
    after 7 days. With TunnelAll you would loose them.
 
+5. The latest version GlobalProtect_UI_deb-6.2.1.1-276.deb according to https://terpware.umd.edu/Linux/Package/4863
