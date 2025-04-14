@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+#
+#     report all anaconda3 python's you may have lying around without knowning....
+#
+
+for p in $(locate python_start.sh); do
+    source $p
+    printf "%-20s   %s\n"  "$(python --version)"  $p
+done
