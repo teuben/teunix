@@ -51,6 +51,12 @@ if [ ! -z $DYSH ]; then
     echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
 fi
 
+if [ ! -z $SLAMA ]; then
+    gitbv $SLAMA
+    echo "SLAMA:       $SLAMA"
+    echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+fi
+
 if [ ! -z $ADMIT ]; then
     gitbv $ADMIT
     echo "ADMIT:       $ADMIT"

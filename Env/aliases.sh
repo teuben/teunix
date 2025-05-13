@@ -42,6 +42,8 @@ alias detar='tar xvf'
 alias    ni='nemoinp'
 # micro-emacs needs to capture ^S-^Q flow, so disable it in terminal
 alias mem='stty -ixon; mem'
+# spyder (somewhere in 2025) needs to be told not to accellerate 
+alias spyder='export QT_XCB_GL_INTEGRATION=none; /usr/bin/env spyder'
 
 
 sleepers() {
