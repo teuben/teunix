@@ -33,10 +33,10 @@ Lion            10.7
 Mountain Lion   10.8
 Mavericks       10.9
 Yosemite        10.10
-El Capitan      10.11
-Sierra          10.12
-High Sierra     10.13
-Mojave          10.14
+El Capitan      10.11              sep-2015
+Sierra          10.12                  2016
+High Sierra     10.13                  2017
+Mojave          10.14                  2018
 Catalina        10.15              oct-2019    deprecated fall-2023
 Big Sur         11                 nov-2020
 Monterey        12                 oct-2021
