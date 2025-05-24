@@ -1,36 +1,41 @@
 # KDE
 
 My KDE setup. See also more details in the various Linux*md installation notes.
+
 Typically my desktop has:
 
 - KDE
 - focus follows mouse with auto-raise
 - single click opens files and directories
 - kdeconnect for the phone
-- krunner for desktop/browser searching
+- krunner for desktop/browser searching (needs plugin per browser)
 - 3H x 2V virtual desktops, single activity
+- very few widgets (maybe a clock)
+- some desktop effects
 
+## Issues
 
+- Wayland seems to prevent emacs-gui from resizing
 
 ## My KDE Setup (short version)
 
-This follows Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
+Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
+                                    6.3.4              6.12.0      6.8.3    may-21
+		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
 
 1. Mouse & Touchpad
-       Screen Edges
-           - TL:   Desktop Grid
-           - TR:   Present windows current desktop
-           - BR:   Present windows all desktops
-           but now:
-           - TL:   Present windows current desktop
-           - TR:   Overview
+       Screen Edges need some tuning:
+           - TL:   Overview
+           - TR:   Present windows - current desktop
+	   - MR:   Present windows - all desktops
            - BR:   Desktop Grid
 	   - TM:   Krunner
                    https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
 	   	   this will enable krunning to find tabs in mozilla
 		   See also: https://community.kde.org/Plasma/Browser_Integration
-		   2023note:   
-		   
+		   chrome:
+		   https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai
+		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
 
@@ -79,7 +84,8 @@ This follows Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
    - Touchpad
      - Tapping:  tap-to-click
      - make sure not to invert scrolling
-     -  ?	  [middle mouse is missing???]
+     - Two-finger tap: select Middle-click via 3-finger tap to right click)
+     
 
 
 
@@ -95,7 +101,7 @@ This follows Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
            -  Screen Energy Saving (switch off after 20 mins)
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
-        (see also Screen Lockign earlier)
+        (see also Screen Locking earlier)
 
 
 =5. Configure Icons-only Task Manager Settting
@@ -308,7 +314,10 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 
 and there are plenty of websites with ideas/reviews. Here are a few:
 
-* https://store.kde.org/browse/cat/418/order/latest/
+* https://store.kde.org/browse
+* 2024: https://www.ubuntubuzz.com/2025/03/what-to-do-after-installing-kubuntu-2404-and-kde-plasma-527.html#google_vignette
+* 2024: https://www.cosmoscalibur.com/en/blog/2024/que-hacer-despues-de-instalar-manjaro/
+* 2020: https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
 * 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
 * 2018: https://www.linuxlinks.com/excellent-kde-plasma-widgets/
 * 2018: https://www.osradar.com/the-best-kde-plasma-widgets/
@@ -329,7 +338,21 @@ ROOT:
     (TBD)
 
 
+KDE WALLET ?
 
+Open System Settings -> KDE Wallet -> Disable Enable the KDE Wallet subsystem -> Apply.
+
+controversial if it's useful or in the way.  I tried it with blowfish. some error with the other opton.
+
+FILE INDEXOR?
+
+also controversal.
+
+Open System Settings -> Search -> File Search -> Disable Also index file content -> Apply.
+
+FIREWALl
+
+Open Firewall Configuration -> Enable Firewall.
 
 DOLPHIN
      Settings -> Configure Dolphin -> Startup:
