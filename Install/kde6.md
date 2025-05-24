@@ -7,6 +7,7 @@ Typically my desktop has:
 - KDE
 - focus follows mouse with auto-raise
 - single click opens files and directories
+- put application menu top left
 - kdeconnect for the phone
 - krunner for desktop/browser searching (needs plugin per browser)
 - 3H x 2V virtual desktops, single activity

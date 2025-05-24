@@ -174,6 +174,19 @@ phone() {
     fi
     
 }
+faq() {
+    _faq=~/teunix/docs/faq.txt
+    if [ -e $_faq ]; then
+	if [ ! $2 ]; then
+	    grep -i $1 $_faq
+	else
+	    grep -i $1 $_faq | grep -i $2	
+	fi
+    else
+	echo No $_faq
+    fi
+    unset _faq
+}
 #FIX alias email 'grep -i \!* ~/.addressbook ~/.mailaliases'
 #alias addphone='echo \!* >> ~/.phone'
 #alias comment='echo \!* > /dev/null'
