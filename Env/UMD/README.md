@@ -10,8 +10,10 @@ Several useful apps when you in the UMD sytem
 2. GlobalProtect VPN
 
 * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076
-* https://terpware.umd.edu/Linux/Title/4010
 * https://www.paloaltonetworks.com/sase/globalprotect
+
+Some issues on some machines.  My ubuntu writes a ~/GP_HTML/saml.html file, which
+contains the link to run the right key.  
 
 3. zoom
 
@@ -26,5 +28,5 @@ As an alternative to ssh key based authentication ...  TBD.
 
 5. Printing
 
-CUPS.  Autodetected when in the internal 10.x astro.umd.edu network,
+CUPS.  Autodetected when in the internal 10.225.24.x or 10.225.25.x network
 but harder when on eduroam.   TBD.
