@@ -1,1 +1,13 @@
 git remote add upstream https://github.com/teuben/nemo
+while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
+pdftk 1.pdf 2.pdf 3.pdf cat output 123_merged.pdf
+sudo apt install pv         [On Debian, Ubuntu and Mint]
+sudo yum install pv         [On RHEL/CentOS/Fedora and Rocky/AlmaLinux]
+sudo emerge -a sys-apps/pv  [On Gentoo Linux]
+sudo apk add pv             [On Alpine Linux]
+sudo pacman -S pv           [On Arch Linux]
+sudo zypper install pv      [On OpenSUSE]    
+sudo pkg install pv         [On FreeBSD]
+mount | column -t   # neatly align columns
+pr -Tn file.txt     # add line numbers
+gh gist create -p -d "description" -f "file.txt" file.txt ; git clone https://gist.github.com/teuben/xyz
