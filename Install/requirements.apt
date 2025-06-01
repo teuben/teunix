@@ -1,4 +1,4 @@
-# sudo apt install $(cat requirements.apt|grep -v ^#)
+# sudo apt install $(cat requirements.apt|grep -v ^# | awk '{print $1}')
 saods9
 xpa-tools
 ftools-fv
@@ -20,3 +20,4 @@ zeal
 texlive-science
 exfat-fuse
 # zoom
+# pgplot5-dev      only on U25 and up
