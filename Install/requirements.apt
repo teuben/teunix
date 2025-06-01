@@ -16,7 +16,7 @@ hfsprogs
 ddd
 rman
 mandoc
-zeal
+# zeal             not in U25
 texlive-science
 exfat-fuse
 # zoom
