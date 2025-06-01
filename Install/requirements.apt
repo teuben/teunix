@@ -1,0 +1,22 @@
+# sudo apt install $(cat requirements.apt|grep -v ^#)
+saods9
+xpa-tools
+ftools-fv
+topcat 
+aladin
+montage
+x2goclient
+k4dirstat
+chromium-browser
+bleachbit
+valgrind
+pdftk
+enscript
+hfsprogs
+ddd
+rman
+mandoc
+zeal
+texlive-science
+exfat-fuse
+# zoom
