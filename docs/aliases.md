@@ -43,3 +43,4 @@ Monterey        12                 oct-2021
 Ventura         13                 oct-2022
 Sonoma          14                 sep-2023
 Sequoia         15                 ???-2024
+Tahoe           26                     2025
