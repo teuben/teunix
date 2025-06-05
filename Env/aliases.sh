@@ -4,7 +4,8 @@
 # echo 'test -f ~/teunix/Env/aliases.sh  && source ~/teunix/Env/aliases.sh' >> ~/.zshrc
 
 #  bash only
-[[ $SHELL == *bash* ]] && shopt -s direxpand
+#[[ $SHELL == *bash* ]] && shopt -s direxpand
+[[ -z $ZSH_VERSION ]] && shopt -s direxpand
 
 alias teunix='(cd ~/teunix; git status -uno; git pull)'
 alias yraid='(echo pull yraid;cd ~/Diary/yraid; git pull)'
@@ -78,10 +79,11 @@ alias zdir='zoo -list'
 rc () {
     if [ ! $1 ]; then
 	echo No project name given, known ones from ~/rc are:
-	cd ~/rc
+	pushd ~/rc   > /dev/null
 	for rc in $(ls *.rc | sed s/.rc//g); do
 	    echo "$(printf %-10s $rc) -- $(head -1 ~/rc/$rc.rc)"
 	done
+	popd > /dev/null
     elif [ ! $2 ]; then
          source ~/rc/$1.rc
     else
@@ -176,14 +178,18 @@ phone() {
 }
 faq() {
     _faq=~/teunix/docs/faq.txt
-    if [ -e $_faq ]; then
-	if [ ! $2 ]; then
-	    grep -i $1 $_faq
-	else
-	    grep -i $1 $_faq | grep -i $2	
-	fi
+    if [ ! $1 ]; then
+	echo No query for $_faq
     else
-	echo No $_faq
+	if [ -e $_faq ]; then
+	    if [ ! $2 ]; then
+		grep -i $1 $_faq
+	    else
+		grep -i $1 $_faq | grep -i $2	
+	    fi
+	else
+	    echo No $_faq
+	fi
     fi
     unset _faq
 }
