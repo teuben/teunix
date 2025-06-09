@@ -52,6 +52,7 @@ Host lmt
      Hostname 187.248.54.231
      User     lmtslr
 
+# at LMT known as "nike"
 Host malt
      Hostname malt
      ProxyCommand ssh lmtslr@187.248.54.231 -W %h:%p
@@ -141,7 +142,7 @@ Host gbt3
 
 #Host sma
 #     Hostname 128.171.166.10
-#     PubkeyAcceptedAlgorithms +ssh-rsa
+#     PubkeyAccepted		Algorithms +ssh-rsa
 #     HostKeyAlgorithms +ssh-rsa
 #     IdentityFile ~/.ssh/id_sma
 
@@ -173,9 +174,15 @@ Host bitbucket.org
   AddKeysToAgent yes
   IdentityFile ~/.ssh/bitbucket_work
 
+# zaratan and glue follow VPN now?
 Host zaratan
      Hostname login.zaratan.umd.edu
      User teuben
+
+Host glue
+     Hostname glue.umd.edu
+     User teuben
+
 
 # for kerberos (krb5-user or krb5-workstation or heimdal-workstation)
 Host *.umd.edu
