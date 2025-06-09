@@ -360,3 +360,4 @@ most are called Breeze. There are probably 10^18 different combinations, if not 
 
 
 
+- switching windows via mouse scroll often locks the computer,, reboot is needed
