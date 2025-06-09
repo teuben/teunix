@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="teuben" date="1716919182" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="Refresh2024"}%
+---+ GlobalProtect
+
+GlobalProtect provides a VPN service for the campus community. You need a UMD/CAS login to be able to use it. See more on HowToUseVPN
+
+More info on their coorporate website https://docs.paloaltonetworks.com/globalprotect
+
+-- %USERSIG{teuben - 2024-05-13}%
+
+---++ Comments
+
+%COMMENT%

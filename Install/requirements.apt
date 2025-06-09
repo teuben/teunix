@@ -1,0 +1,23 @@
+# sudo apt install $(cat requirements.apt|grep -v ^# | awk '{print $1}')
+saods9
+xpa-tools
+ftools-fv
+topcat 
+aladin
+montage
+x2goclient
+k4dirstat
+chromium-browser
+bleachbit
+valgrind
+pdftk
+enscript
+hfsprogs
+ddd
+rman
+mandoc
+# zeal             not in U25
+texlive-science
+exfat-fuse
+# zoom
+# pgplot5-dev      only on U25 and up

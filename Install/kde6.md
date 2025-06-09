@@ -7,12 +7,12 @@ Typically my desktop has:
 - KDE
 - focus follows mouse with auto-raise
 - single click opens files and directories
-- put application menu top left
+- [ put application menu top left ]
 - kdeconnect for the phone
 - krunner for desktop/browser searching (needs plugin per browser)
 - 3H x 2V virtual desktops, single activity
 - very few widgets (maybe a clock)
-- some desktop effects
+- some desktop effects (wobbly windows, broken windows on kill)
 
 ## Issues
 
@@ -144,7 +144,7 @@ I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
 
 
-## My KDE Setup (confusing long version from latest Install*md)
+## My KDE Setup (old notes)
 
 Before you do anything, get the PlasmaConfigSaver from the widget
 store. Whatever you do, this way you can save a configuration and
@@ -409,6 +409,15 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
 
+## Tailoring
+
+Things I often wind up adding:
+
+- add 'Analog Clock' widget to the desktop, usually top right corner
+- add 'Memory Usage' widget to the Icons-Only Task Manager at the bottom.
+- add 'New Window' (New Tab/Split View already there) to the top bar of Konsole
+
+
 
 ## Other things to do
 
@@ -427,5 +436,9 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   it seems using sddm  will do this (see /etc/sddm/), which is the KDE default in most cases
 - mounting encrypted (luks) drives magically worked
 
+## Troubleshooting
 
-
+  reset plasma?
+  If you just want to reset your Plasmashell settings, you can delete
+    ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+    ~/.config/plasmashellrc

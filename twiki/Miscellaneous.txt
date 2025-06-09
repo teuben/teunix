@@ -1,9 +1,10 @@
-%META:TOPICINFO{author="teuben" date="1715090168" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICINFO{author="teuben" date="1725656644" format="1.1" version="1.4"}%
 %META:TOPICPARENT{name="WebHome"}%
 ---+ Miscellaneous
    * Campus URL shortener (feb 2023) : https://omc.umd.edu/bitly *[to be deprecated]*
    * New campus shortener (may 2024) : https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0018382
    * UM libraries online access to New York Time (dec 2023): https://lib.guides.umd.edu/UMDNYTAccessPass
    * BSOS centric list of resources: https://sites.google.com/umd.edu/bsos-ds
+   * Overleaf is now supported at UMD (sep 2024): https://it.umd.edu/news/overleaf-collaborative-writing-and-publishing-tool-now-available
    * 
 -- %USERSIG{teuben - 2023-02-28}%

@@ -155,9 +155,9 @@ Host aws
      User mlworkshop_usr
 
 
-Host nova1
-     Hostname nova1.astro.umass.edu
-     HostKeyAlgorithms +ssh-dss
+#Host nova1
+#     Hostname nova1.astro.umass.edu
+#     HostKeyAlgorithms +ssh-dss
 Host cln_old
      ProxyJump nova1
 # only works from astro.umd.edu

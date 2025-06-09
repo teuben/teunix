@@ -1,0 +1,59 @@
+%META:TOPICINFO{author="teuben" date="1741290393" format="1.1" reprev="1.11" version="1.11"}%
+%META:TOPICPARENT{name="AstroUMD101"}%
+---+ UMD Refresh 2024 (still a draft)
+
+The last major refresh in 2022 took the department to a private network with a small number of public IPs. UMD is again undergoing a refresh of their network during Summer/Fall 2024. Most of this is transparent (better networking, more security) but there are some important caveats to know about. For some of your work you will need HowToUseVPN and depending on which type of computer you are working, your access to resources may be restricted. This seems to be the new industry standard.
+
+   * *tier-1* network (ethernet) is only provided to certificate carrying machines. Usually UMD owned that have been properly set up. More on that below.
+   * *tier-2* network (eduroam wireless) provided to those with the right credentials. Some limited services, e.g. printing within astronomy, is possible, as well as ssh access to our servers.
+   * *tier-3* network (guest wireless) provided for anybody with a phone and/or email that can verify their existence. The usual thing you get in public places like hotels and airports. Some more port blocking is likely going on here.
+   * *tier-4* network is off-campus working (home or really away). VPN might be needed for some services.
+The basic requirements to get on to *tier-1* networking are to have an encrypted drive, regularly run fireeye virus-checker, have a UMD certified logon system and perhaps more. To be summarize here, and details in the sections below because it depends on your OS.
+
+The new security standard (active per July 2025) is dubbed IT-20:  https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0019166 and there is an FAQ: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0019209
+---++ 
+---++ Your UMD mac laptop
+
+*Jamf* will do it all for you. Only Mac 11.x (Big Sur, 2020) and above are currently allowed, but this is a moving target. CHECK IF THAT"S CORRECT VERSION.
+
+Sonoma is version 14.x and is the current release from 2023.
+
+https://umd-dit.atlassian.net/wiki/spaces/DMS/pages/45285422/JAMF+Pro
+
+https://umd-dit.atlassian.net/wiki/spaces/DMS/pages/447512585/Manually+enrolling+macOS+computers+into+Jamf
+
+Notes for new UMD-managed MAC laptops:
+
+   * Must login with UM directory ID/password. The first time you login, a working network connection is required; this will create an eponymous local account. For future logins, if you do not have network access, select "Local login" to enter your account username/password.
+   * Accounts do not have administrator rights by default. To temporarily give your account admin rights (e.g., to install new software) run the 'Privileges' app (its green/yellow padlock icon in the dock indicates current status).
+   * There is an "IT Self-Support" app containing common campus-provided software packaged for easy installation (admin rights NOT required to install them!) The GlobalProtect VPN client and [[UmdTrellix][UMDTrellix]] security scanner are pre-installed.
+
+---++ Your UMD windows laptop
+
+*Intune* will do it all for you. Only Windows 10/11 are currently allowed.
+
+https://umd-dit.atlassian.net/wiki/spaces/DMS/pages/45285467/Intune
+---++ Your UMD linux laptop
+
+Watch this space. SecureW2 will do the "onboarding", but your MAC address will also need to be registered. Experiments with CrowdStrike are ongoing (jan 2025)
+
+---++ BYOD (Bring Your Own Device)
+
+This could be a laptop, but special cases like a Raspberry Pi for our all-sky camera could be captured here as well. More to come here.
+
+Visitors also fall under this section.
+
+---++ Some known nuisances
+
+   1 VPN will timeout on your home machine (overnight?)
+   1 VPN may not give you printer access, and/or loss of access to your local net at home
+   1 VPN gives 25-50% of your download speed on copying files. Apps like speedtest.net don't measure real life copy.
+   1 The GlobalProtect icons(s) in a KDE task bar with focus follows mouse are VERY confusing if not work against you. more research needed here.
+   1 Some CAS access is not cashed on your machine (VPN used to be, seems fixed now, but WebEx still has this not enabled)
+   1 Disc encryption can affect your I/O speed, especially for fast disks. One documented case: 2600 MB/s went to 1800 MB/s
+
+-- %USERSIG{teuben - 2024-05-13}%
+
+---++ Comments
+
+<br />%COMMENT%

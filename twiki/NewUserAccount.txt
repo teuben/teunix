@@ -1,0 +1,33 @@
+%META:TOPICINFO{author="teuben" date="1727278713" format="1.1" version="1.3"}%
+%META:TOPICPARENT{name="DeptInfoHowTo"}%
+---+ New User Accounts
+
+When you have received a new _astronet_ user account, your username (called USER below) is normally the same as your UMD ID, but the password is not shared. You first need to set a password if you want to logon a workstation. See Peter (ATL0223) or Kevin (ATL0213) how to set your initial password. To (re)set your password, you need to be a machine *terra*, viz.
+
+ssh USER@terra.astro.umd.edu
+
+where you can (re)set your password using the *passwd* command.  It can take up to an hour to distribute your account info to all other machines, but after this you can ssh to any linux machine in the department. A list is maintained on PublicWorkstations or get an approved machine via your advisor.
+
+There is also a login method using ssh keys if all you want is remote access. On RemoteAccess we describe how to set an ssh key-pair on for example your laptop, and if you email Peter or Kevin the PUBLIC key ( *~/.ssh/id_ed25519.pub*), you will be able ssh into the astronet computing system with the command:
+
+    ssh USER@astro.umd.edu
+
+although it is still advised to set your password if you ever need to logon via a console in an office. The RemoteAccess also explains how to set yourself up for password logins from your remote machine(s) without sending up your PUBLIC key.
+
+Be aware that your home directory has limited disk space, and should not be used for large computations or disk I/O. Use a dedicated machine and disk for this.
+---++ See also
+   * WebHome : top level of this twiki
+   * RemoteAccess : how to gain remote access to astronet
+   * AstroUMD101 : refresher for more experienced unix users
+   * HowToUseVPN : VPN is needed for some UMD services
+   * PublicWorkstations : list of public workstations you can logon to
+
+---++ Deleting your account
+
+After your affiliation with UMD has ended, we will normally remove your account and delete all data associated with your account. Please secure any data you may want to keep, or arrange to transfer some data to somebody else in the department.
+
+-- %USERSIG{teuben - 2024-08-06}%
+
+---++ Comments
+
+%COMMENT%
