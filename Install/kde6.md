@@ -410,6 +410,14 @@ A word on tinkering here: For the current Kubuntu the basic default setting for
 most are called Breeze. There are probably 10^18 different combinations, if not more.
 
 
+## Other things to do
+
+Somewhat less urgent for immediate use, I often wind up doing some of the following:
+
+- add a cpufreq monitor to the System Monitor
+- install **K4DirStar** to monitor disk space usage
+
+
 ## Misc KDE notes
 
 - if you save your desktop, this is maintained in a file ~/.config/ksmserverrc
