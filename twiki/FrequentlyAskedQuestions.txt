@@ -1,0 +1,13 @@
+%META:TOPICINFO{author="teuben" date="1734975933" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+ Frequently Asked Questions (FAQ)
+   1 <b>With remote access, some of my programs complain there is no $DISPLAY environment variable</b><br />This occurs when you used ssh without the -X or -Y option. You can also add this option automatically to your ~/.ssh/config file as<br /> <verbatim>ForwardAgent yes 
+ForwardX11 yes 
+ForwardX11Trusted yes</verbatim>
+   1 
+   1 
+-- %USERSIG{teuben - 2024-12-23}%
+
+---++ Comments
+
+%COMMENT%

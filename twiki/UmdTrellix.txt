@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="teuben" date="1735669773" format="1.1" reprev="1.1" version="1.1"}%
+%META:TOPICPARENT{name="Refresh2024"}%
+---+ Trelix
+
+Trellix (formerly known as FireEye Endpoint Security) is a modern endpoint protection (antivirus) software that can detect and prevent malicious digital threats that infiltrate our devices before they spread to our most critical data.
+
+By default, Trellix Endpoint includes several firewall rules to allow the most commonly used inbound connections.
+
+History: In 2022, Symphony Technology Group (STG) acquired McAfee Enterprise and FireEye and rebranded them as Trellix.
+
+-- %USERSIG{teuben - 2024-12-31}%
+
+---++ Comments
+
+<br />%COMMENT%

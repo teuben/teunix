@@ -1,8 +1,8 @@
-%META:TOPICINFO{author="teuben" date="1692221378" format="1.1" version="1.11"}%
+%META:TOPICINFO{author="teuben" date="1718305542" format="1.1" reprev="1.12" version="1.12"}%
 %META:TOPICPARENT{name="WebHome"}%
 Here we list some of the more major recent changes. For a full list, see the automatically generated [[WebChanges]] list
 
-   * 
+   * 13-jun-2024: [[Refresh2024]] is happening
    * 18-may-2023: *lab01-04* upgraded to 128GB RAM, *astra07* on order, *yorp08..13* to be decommissioned this summer; use the command *hpc-reserve* to allocate your time
    * 28-feb-2023: a new [[Miscellaneous]] page was created, placeholder for things that don't have another good place yet
    * 14-dec-2022: twiki-5.1.2 has been replaced by twiki-6.1.0 - authentication is not enabled yet.

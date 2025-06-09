@@ -1,16 +1,20 @@
-%META:TOPICINFO{author="teuben" date="1692210576" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICINFO{author="teuben" date="1726007150" format="1.1" version="1.7"}%
 %META:TOPICPARENT{name="DeptInfoHowTo"}%
 ---+ Wireless
 
-On 17-aug-2023 new eduroam certificates are needed. As i navigated through the SecureW2 app, and had it download a certificate (in ~/joinme) - it stopped working. The ssid name also changed to <b>eduroam [hex_number]. </b>I could only get my old eduroam back by blanking the certificate entry (the pem file), and rubbing out the [hex_number] part on the SSID....Tomorrow he 17th we know more.<b><br /></b>
+Since 17-aug-2023 new eduroam certificates are needed!<b><br /></b>
 
-UMD faculty, staff and students can connect to wireless connections called 'eduroam' using their UMDDirectory ID (use the full umd_name@umd.edu) and password. For more details see [[https://umd.service-now.com/itsc?id=service&service=70810d7f3708c20041271f9543990e1f][here]]. When you set up your WiFi, be sure to use PEAP for authentication, and MSCHAPv2 for Phase2 (Inner Authentication). A certification is not really required, but you are free to do so. This change was made December 2019, before we were using TTLS/PAP.
+UMD faculty, staff and students can connect to wireless connections called '<b>eduroam</b>' using their UMDDirectory ID (use your full umd_name@umd.edu) and password. For more details see
+[[https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0011963][here]].
+When you set up your WiFi, be sure to use PEAP for authentication, and MSCHAPv2 for Phase2 (Inner Authentication), domain wireless.umd.edu and the appropriate certificate. You can also visit https://setup.wireless.umd.edu to get your certificate manually. Once the certificate is downloaded, don't forget it may need to be installed manually! This could be a catch-22 situation if you cannot get to wireless. In that case the guest network '<b>umd-guest'</b> should be your rescue.
+
+Related pages: HowToUseVPN and GlobalProtect
 ---++ Guest Wireless
 
-UPDATE 1/19/2020: Guests should use the 'umd-guest' SSID, and register. They will need a phone (SMS) to then finish the registration.
+UPDATE 1-jan-2020: Guests should use the '<b>umd-guest</b>' SSID, and register. They will need a phone (SMS) or email to then finish the registration.
 
-<span style="background-color: transparent;">UPDATE 8/23/17: A new campus guest wireless service is available: see </span><a href="https://go.umd.edu/guest-wifi" target="_blank" title="campus guest wifi">go.umd.edu/guest-wifi</a><span style="background-color: transparent;">. For now, the system described below still seems to be available, but it may go away without notice. The advantage of the system below is that authorization can be obtained for more than 1 day at a time, and does not require a personal device for activation.</span>
+<span style="background-color: transparent;">UPDATE 23-aug-2017: A new campus guest wireless service is available: see </span><a href="https://go.umd.edu/guest-wifi" target="_blank" title="campus guest wifi">go.umd.edu/guest-wifi</a><span style="background-color: transparent;">. For now, the system described below still seems to be available, but it may go away without notice. The advantage of the system below is that authorization can be obtained for more than 1 day at a time, and does not require a personal device for activation.</span>
 
-To obtain a wireless account for a campus visitor, log into <a href="https://www.sims.umd.edu/" target="_blank">https://www.sims.umd.edu/</a> with your campus directory ID and password, then choose "Wireless" from the drop-down menu labeled "Select A System". Next click on the "Request" button, enter a description and expiration date, and click "Submit Create Request". The username and password for the guest account will be shown. The guest should then connect to the "umd-secure" wireless service, open a web browser, and enter the login information when prompted. The guest will then be able to access all web services normally accessible by campus users.
+The old system to obtain a wireless account for a campus visitor, log into <a href="https://www.sims.umd.edu/" target="_blank">https://www.sims.umd.edu/</a> with your campus directory ID and password, then choose "Wireless" from the drop-down menu labeled "Select A System". Next click on the "Request" button, enter a description and expiration date, and click "Submit Create Request". The username and password for the guest account will be shown. The guest should then connect to the "umd-secure" wireless service, open a web browser, and enter the login information when prompted. The guest will then be able to access all web services normally accessible by campus users.
 
--- Main.PeterTeuben - 2020-01-18
+-- Main.PeterTeuben - 2024-06-13

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="diemer" date="1695214945" format="1.1" version="1.55"}%
+%META:TOPICINFO{author="teuben" date="1724430593" format="1.1" reprev="1.60" version="1.60"}%
 %META:TOPICPARENT{name="WebHome"}%
 <span style="background-color: transparent; color: #630000; font-size: 22.75px;">The DIT Computing Cluster</span>
 
@@ -11,7 +11,10 @@ To get access to Zaratan, you must:
    * If you are a graduate student or postdoc, you will be member of someone else's PI project. Please send your UMD account name to the PI in question. (For the PI: you can add users in the [[https://coldfront.zaratan.umd.edu/][ColdFront]] tool; you must use the university's <a href="HowToUseVPN" target="_blank">VPN</a> even if you are on campus. Note that you need to separately add a user to *both your project and at least one allocation*.)
    * Please make sure that you receive email sent to your university account.
 Once your account is set up, there are a few ways to access the cluster:
-   * <span style="background-color: transparent;">You can ssh to login.zaratan.umd.edu using your account name. Instructions on </span><span style="background-color: transparent;">PasswordlessSSH</span><span style="background-color: transparent;"> are still TBD because the new cluster uses a Kerberos system.</span>
+   * <span style="background-color: transparent;">You can ssh to *login.zaratan.umd.edu* using your account name. </span>
+      * Instructions on PasswordlessSSH are Kerberos based, see the [[https://hpcc.umd.edu/help/basics.html#kinit][HPCC help site]].
+      * If you have our GlobalProtect VPN running, you can also use ssh keys (e.g. via ssh-copy-id) in the usual way, no need for kerberos.
+      * In the department you should not have to use VPN, but using "kinit username@UMD.EDU" the kerberos ticket should give you access to zaratan. (to be confirmed)
    * <span style="background-color: transparent;">You can log in via browser using the [[https://portal.zaratan.umd.edu][HPC Portal]] (as with ColdFront, you must be logged into your VPN even when on campus).</span>
 ---++ Computing time allocations
 
@@ -60,7 +63,7 @@ Please talk to your PI to make sure your resource needs are met by their allocat
 Try executing the "renew" command. (This has to do with the AFS file system that SHELL is based on -- more information soon.)
 ---++++ <span style="background-color: transparent;">How can I use a different compiler?</span>
 
-The various available software packages are listed [[https://www.glue.umd.edu/hpcc/help/software.html#software][here]]. When choosing a new compiler, say the Intel C compiler (icc), it's important to link with any correspondingly compiled libraries you need (e.g., MPI). From experience, the following is the preferred way to do this (place in your .bashrc file and submit script):
+The various available software packages are listed [[https://www.glue.umd.edu/hpcc/help/software.html#software][here]], or use the command "<b>module avail</b>". When choosing a new compiler, say the Intel C compiler (icc), it's important to link with any correspondingly compiled libraries you need (e.g., MPI). From experience, the following is the preferred way to do this (place in your .bashrc file and submit script):
    * module unload gcc
    * module load intel
 ---++++ How can I install my own python packages?
@@ -70,6 +73,8 @@ If your package is not part of the default python distribution, you can install 
 <verbatim>pip3 install --user <package></verbatim>
 
 Note the pip3 instead of pip command, and the --user, which makes sure that the package into your home directory (~/.local) rather than the main operating system, where you obviously don't have write permissions.
+
+An alternative is to install your own (anaconda3) python.
 ---++++ I get a strange error, I need to submit a ticket...
 
 If you suspect the problem is not due to your code, you can try sending a help request see [[https://hpcc.umd.edu/hpcc/help.html][instructions]]). Be sure to describe the problem in detail, including why you think it may be due to something other than a bug in your code, and also provide the following information in the email:
