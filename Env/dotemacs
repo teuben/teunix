@@ -3,6 +3,9 @@
 ; Start up font lock mode on everything
 (global-font-lock-mode t)
 
+; Work around Wayland problem
+(setq frame-resize-pixelwise t)
+
 ; Start the server
 (server-start)
 
