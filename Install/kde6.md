@@ -452,3 +452,7 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   If you just want to reset your Plasmashell settings, you can delete
     ~/.config/plasma-org.kde.plasma.desktop-appletsrc
     ~/.config/plasmashellrc
+
+  Lost your firefox decorations?
+  In firefox, check the title bar setting: click on the hambruger, More tools, Customise toolbar,
+  and there's check box at the bottom left. save it. it should get things like resizing etc. back
