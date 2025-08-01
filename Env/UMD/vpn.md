@@ -1,6 +1,8 @@
 # GlobalProtect (GP) VPN
 
-Summary: Very unstable on linux. Also can limit your download speed for high-speed internet providers.
+UMD is using Palo Alto Networks VPN tool "GlobalProtect'
+
+In summary: Very unstable on my kubuntu linux. Also can limit your download speed for high-speed internet providers.
 
 ## GP Icon
 
@@ -14,7 +16,7 @@ when you open it,  there's a check mark icon inside the earth globe icon when it
 
 1. Not Connected
 2. 
-
+3. Yellow "still working" is bad news.
 
 IP range:   "best available"  - 10.206.37.128
 "tunnel all" - 10.206.96.142
@@ -27,6 +29,16 @@ IP range:   "best available"  - 10.206.37.128
 ## launch
 
 Executes: globalprotect launch-ui
+
+## annoying icon
+
+## weird scenario
+
+nothing works, not evern restar.
+
+manually killed all GP tasks, then manually did 'globalprotect launch-ui', but still neeeded to\ click on the GP ikcon.  now it worked.
+
+
 
 ## many failing scenarios
 
