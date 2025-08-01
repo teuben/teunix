@@ -18,6 +18,16 @@ Typically my desktop has:
 
 - Wayland seems to prevent emacs-gui from resizing
 
+- Icons from System Tray seem to disappear sometimes....  do these help:
+     sudo service bluetooth restart
+     sudo systemctl restart bluetooth
+  or I can use
+     restart_kde
+
+- Serious issue sometimes when switching desktops too fast, scrollbar can do it,
+  should be disabled or binding to another action?  It will otherwise lock the
+  system, only reboot comes out.
+
 ## My KDE Setup (short version)
 
 Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
