@@ -204,7 +204,10 @@ again on version 1050.
 ## CLI upgrading
 
 ```
-sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
+sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb
+```
+and
+```
 (Reading database ... 455271 files and directories currently installed.)
 Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
 gp service is running and we need to stop it...
