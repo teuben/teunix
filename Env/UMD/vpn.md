@@ -12,14 +12,19 @@ when you open it,  there's a check mark icon inside the earth globe icon when it
   there's a home icon when it's not connected
   anything else is trouble
 
+When you open
 
+1. Not Connected. OK
+2. Connecting ... { Connecting ... <check> }_repeating    -- bad news
+3. Yellow "still working" --  bad news
+4. Connected. OK
 
-1. Not Connected
-2. Connecting ... { Connecting ... <check> }_repeating   
-3. Yellow "still working" is bad news.
+At the bottom the gateway is displayed. One of two states:
 
-* BA = "best available"  - 10.206.x.x
-* TA = "tunnel all" - 10.206.x.x
+1. BA = "best available"  - 10.206.x.x
+2. TA = "tunnel all" - 10.206.x.x
+
+Switching from BA (the initial default) to TA works fine, but from TA back to BA needs another CAS confirmation.  
 
 ## CAS tricks
 
@@ -37,23 +42,24 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
 
-## info
-
-on debian, libqt5webkit5 is needed
+Note, on debian, libqt5webkit5 is needed
 
 
-## launch
+## CLI
 
-Executes: globalprotect launch-ui
+```
+   globalprotect launch-ui
+```
 
 ## annoying icon
+
+the GP icon looses focus when my mouse hovers away.
 
 ## weird scenario
 
 nothing works, not evern restar.
 
 manually killed all GP tasks, then manually did 'globalprotect launch-ui', but still neeeded to\ click on the GP ikcon.  now it worked.
-
 
 
 ## many failing scenarios
@@ -98,7 +104,6 @@ teuben   2075054  0.0  0.0   3476  1692 pts/70   S+   17:13   0:00 grep --color=
 ## another
 
 1. It keeps a launch file in ~/GP_HTML/saml.html - in some cases the GP
-
 
 
 note sometimes one needs to execute the ~/GP_HTML/saml.html file kif the browser doesn't pick it up.
@@ -158,6 +163,8 @@ TA: 10.206.96.36
 
 # when things looks good
 
+
+```
 root        1581  0.3  0.0 1301948 45880 ?       Ssl  17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPS
 teuben      4160  0.0  0.0   6500  2432 ?        Ss   17:56   0:00 /usr/bin/dbus-run-session /opt/paloaltonetworks/globalprotect/PanGPUI
 teuben      4196  0.0  0.1 820812 111884 ?       Sl   17:56   0:00 /opt/paloaltonetworks/globalprotect/PanGPUI
@@ -165,6 +172,15 @@ teuben      4572  0.3  0.3 2685728 242936 ?      Sl   17:56   0:01 /opt/paloalto
 teuben      4838  0.3  0.3 2681040 237436 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000175237953900000039850007_1754085351_389241
 teuben      4898  0.3  0.3 2681044 237520 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000174727495000000029120006_1754085351_389235
 teuben      5205  0.0  0.0 473516 42796 ?        Ssl  17:56   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
+```
+and
+
+```
+1050:  ps aux | grep GP
+root        1583  0.2  0.0 786292 23704 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
+teuben      3636  0.2  0.0 408368 27556 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
+teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloaltonetworks/globalprotect//PanGPUI -session 106b3200000175409761100000039690028_1754097978_210703
+```
 
 
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
@@ -227,3 +243,33 @@ Processing triggers for man-db (2.12.0-4build2) ...
 
 
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back.
+
+
+### one more upgrade, on k2
+
+```
+sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
+[sudo] password for teuben: 
+(Reading database ... 325356 files and directories currently installed.)
+Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
+gp service is running and we need to stop it...
+Disable service...
+PanGPA is running and we need to stop it...
+stop gpa for sudo user teuben
+Disable gpa user service...
+Start upgrading gp...
+Unpacking globalprotect (6.2.7-1050) over (6.2.1-276) ...
+systemd is detected.
+Setting up globalprotect (6.2.7-1050) ...
+Enable gp service...
+Starting gp service...
+Set default browser, errors other than gp.desktop can be ignored ...
+Starting gpa...
+start GPA for sudo user teuben
+start PanGPUI for sudo teuben
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-teuben'
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+```
+
