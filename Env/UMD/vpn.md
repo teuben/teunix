@@ -2,8 +2,12 @@
 
 UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access to the UMD network.
 
-For me GP has been quite unstable on my kubuntu linux.
-Also can limit your download speed for high-speed internet providers.
+For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
+
+For me GP has been quite unstable on my kubuntu linux, with some additional anekdotal issues:
+
+1. can limit your download speed for high-speed internet providers.
+2. printing from home may not work to auto-detected printers (not re-tested recently)
 
 ## GlobalProtect Icon
 
@@ -46,7 +50,7 @@ On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP
 your IP providers address, in TA mode it will be a UMD address, as all your traffic is now routed through
 UMD.
 
-Also has link to OpenStreetMaps where you are "located" on the planet.
+Also has a link to OpenStreetMaps where you are "located" on the planet.
 
 
 ## CAS tricks
@@ -191,6 +195,11 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 ## Connection speeds
 
 Evolving story that scp a file between UMD and home suffers from being on VPN.
+
+## Local printing
+
+This never worked on auto-detected printed on linux. Seemed fine on mac. Needs to be tested
+again on version 1050.
  
 ## CLI upgrading
 
