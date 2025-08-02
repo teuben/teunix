@@ -41,14 +41,14 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
+  * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
 
 Note, on debian, libqt5webkit5 is needed
 
-
-## CLI
+## CLI 
 
 ```
-   globalprotect launch-ui
+globalprotect launch-ui
 ```
 
 ## annoying icon
@@ -211,11 +211,6 @@ at this speed, there's no penalty on VPN
 
 ## CLI interface
 
-apt-get install libqt5webkit5
-
-GlobalProtect_UI_deb-6.2.7.1-1050.deb
-
-
 ```
 sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
 (Reading database ... 455271 files and directories currently installed.)
@@ -244,32 +239,4 @@ Processing triggers for man-db (2.12.0-4build2) ...
 
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back.
 
-
-### one more upgrade, on k2
-
-```
-sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
-[sudo] password for teuben: 
-(Reading database ... 325356 files and directories currently installed.)
-Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
-gp service is running and we need to stop it...
-Disable service...
-PanGPA is running and we need to stop it...
-stop gpa for sudo user teuben
-Disable gpa user service...
-Start upgrading gp...
-Unpacking globalprotect (6.2.7-1050) over (6.2.1-276) ...
-systemd is detected.
-Setting up globalprotect (6.2.7-1050) ...
-Enable gp service...
-Starting gp service...
-Set default browser, errors other than gp.desktop can be ignored ...
-Starting gpa...
-start GPA for sudo user teuben
-start PanGPUI for sudo teuben
-Processing triggers for desktop-file-utils (0.27-2build1) ...
-QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-teuben'
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-```
 
