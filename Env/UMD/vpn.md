@@ -1,6 +1,6 @@
 # GlobalProtect (GP) VPN
 
-UMD is using Palo Alto Networks VPN tool "GlobalProtect'
+UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access to the UMD network.
 
 In summary: Very unstable on my kubuntu linux. Also can limit your download speed for high-speed internet providers.
 
@@ -15,7 +15,7 @@ when you open it,  there's a check mark icon inside the earth globe icon when it
 
 
 1. Not Connected
-2. 
+2. Connecting ... { Connecting ... <check> }_repeating   
 3. Yellow "still working" is bad news.
 
 IP range:   "best available"  - 10.206.37.128
@@ -25,6 +25,11 @@ IP range:   "best available"  - 10.206.37.128
 
 * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076
 * https://www.paloaltonetworks.com/sase/globalprotect
+
+## info
+
+on debian, libqt5webkit5 is needed
+
 
 ## launch
 
@@ -176,3 +181,38 @@ on VPN:   ~ 6MB /sec while on VPN
 
 at this speed, there's no penalty on VPN
 
+
+## CLI interface
+
+apt-get install libqt5webkit5
+
+GlobalProtect_UI_deb-6.2.7.1-1050.deb
+
+
+```
+sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
+(Reading database ... 455271 files and directories currently installed.)
+Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
+gp service is running and we need to stop it...
+Disable service...
+PanGPA is running and we need to stop it...
+stop gpa for sudo user teuben
+Disable gpa user service...
+Start upgrading gp...
+Unpacking globalprotect (6.2.7-1050) over (6.2.1-276) ...
+systemd is detected.
+Setting up globalprotect (6.2.7-1050) ...
+Enable gp service...
+Starting gp service...
+Set default browser, errors other than gp.desktop can be ignored ...
+Starting gpa...
+start GPA for sudo user teuben
+start PanGPUI for sudo teuben
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-teuben'
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+```
+
+
+after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back.
