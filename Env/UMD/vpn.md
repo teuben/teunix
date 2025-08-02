@@ -36,7 +36,7 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
-  * GlobalProtect_UI_deb-6.2.7.1-1050.deb
+  * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
 
 On debian based systems, the package libqt5webkit5 needs to be installed.
 
