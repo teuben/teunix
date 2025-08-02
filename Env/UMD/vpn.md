@@ -1,23 +1,31 @@
-# GlobalProtect (GP) VPN
+# GlobalProtect VPN
 
 UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access to the UMD network.
 
-In summary: Very unstable on my kubuntu linux. Also can limit your download speed for high-speed internet providers.
+For me GP has been quite unstable on my kubuntu linux.
+Also can limit your download speed for high-speed internet providers.
 
-## GP Icon
+## GlobalProtect Icon
 
-The icon on the desktop is fixed, it doens't show your connection status.
+This launches `globalprotect launch-ui`
 
-when you open it,  there's a check mark icon inside the earth globe icon when it connected
-  there's a home icon when it's not connected
-  anything else is trouble
+```
+globalprotect show --version
+GlobalProtect: 6.2.7-1050
+Copyright 2009-2025 Palo Alto Networks, Inc.
+```
 
-When you open
+The icon on the desktop does not show the connection status, instead
+you have to open it to see that. There's a check mark icon inside the earth globe
+icon when it connected there's a home icon when it's not connected
+anything else is trouble.  
+
+Here are the states I noticed:
 
 1. Not Connected. OK
 2. Connecting ... { Connecting ... <check> }_repeating    -- bad news
 3. Yellow "still working" --  bad news
-4. Connected. OK
+4. Connected. OK. You can disconnect or switch between BA or TA.x
 
 At the bottom the gateway is displayed. One of two states:
 
@@ -25,6 +33,21 @@ At the bottom the gateway is displayed. One of two states:
 2. TA = "tunnel all" - 10.206.x.x
 
 Switching from BA (the initial default) to TA works fine, but from TA back to BA needs another CAS confirmation.  
+
+### annoying icon lifetime
+
+the GP icon looses focus when my mouse hovers away. Sometimes it disappears from I can take action. It is also
+related that I use "mouse follows focus", which clearly is something engineers at PA never heard of.
+
+
+### KDE widget
+
+On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP adress. In BA mode it will show
+your IP providers address, in TA mode it will be a UMD address, as all your traffic is now routed through
+UMD.
+
+Also has link to OpenStreetMaps where you are "located" on the planet.
+
 
 ## CAS tricks
 
@@ -43,39 +66,63 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
   * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
 
-Note, on debian, libqt5webkit5 is needed
+Note, on debian, libqt5webkit5 is needed as well.
 
-## CLI 
-
-```
-globalprotect launch-ui
-```
-
-## annoying icon
-
-the GP icon looses focus when my mouse hovers away.
-
-## weird scenario
-
-nothing works, not evern restar.
-
-manually killed all GP tasks, then manually did 'globalprotect launch-ui', but still neeeded to\ click on the GP ikcon.  now it worked.
+This is an issue with Ubuntu 25.05 and up, where Qt6 is the default. So the current
+versions of GP won't work.
 
 
-## many failing scenarios
+## Weird Scenarios
+
+Some frustrating side-effects of GP getting stuck in some endless loop
+
+### Reloading browser
+
+the address `https://access.umd.edu/SAML20/SP/ACS` kept on being
+added into a tab of my browser. Happened more than once. Never found out why this happened.
+
+### Killing GP tasks
+
+when nothing works, not even restarting using `sudo systemctl restart gpd`
+
+manually killed all GP tasks, then manually did 'globalprotect launch-ui', but still neeeded to click on the GP ikcon.
+but now it worked.
+
+### not connecting to the browser
+
+It keeps a launch file in ~/GP_HTML/saml.html - in some cases the GP doesn't seem to load that
+into your default browser. Manually loading it (e.g. via a desktop link) can save you.
+
+the GUI on linux is awkward, but it may also be due to the different window managers.
+Especially those that use focus follows mouse have a hard time with the window disappearing all the time.
+
+- sometimes it claims it's up (gpd0  is up with an IP), but ssh to lma reveals it's not.
+  status window bad.  took longer time.
+
+- switching to TA (from BA) is not akways reliable.    yelow "still working..." comes up and usually doesn't 
+  get to a proper connection.
 
 
-1) access.umd.edu window comes up, browser comes up, paloalto comes up to click on link, 
-   but no gpd0, 
-   GP window :  { Connecting ... <check> }_repeating
+### browsers
+
+Sometimes I see the PanGPUI come up. In earlier releases it would use PanGPUI on the first time,
+but this funky browser will not remember the password like chrome/firefox/.... do
+
+### Default Browser
+
+Something odd on Kubuntu. There was a time it would always go to chromium. Could be a Kubuntu problem.
+Add to this when on a new system their disfunctional GP browser came up.
+
+### gpd0 up?
+
+I do see cases where gpd0 is "up", i see a 10.206.x.x IP, but it won't let me on.
+The GUI claims i'm up.
 
 
-2) restart?
+## Processes
 
-- sudo systemctl restart gpd
-
-
-See also  /opt/paloaltonetworks/globalprotect/pre_exec_gps.sh
+This may also depend on the version.  Older versions seems to have more processes running. Why does PanGPUI have so many sessions, even
+after a reboot?
 
 ```
     ps aux | grep GP
@@ -101,67 +148,7 @@ teuben   2075054  0.0  0.0   3476  1692 pts/70   S+   17:13   0:00 grep --color=
 
 ```
 
-## another
-
-1. It keeps a launch file in ~/GP_HTML/saml.html - in some cases the GP
-
-
-note sometimes one needs to execute the ~/GP_HTML/saml.html file kif the browser doesn't pick it up.
-
-the GUI on linux is awkward, but it may also be due to the different window managers.
-Especially those that use focus follows mouse have a hard time with the window disappearing all the time.
-
-- sometimes it claims it's up (gpd0  is up with an IP), but ssh to lma reveals it's not.
-  status window bad.  took longer time.
-
-- switching to TA (from BA) is not reliable.    yelow "still working..." comes up and usually doesn't 
-  get to a proper connection.
-
-- often I have to "ssh lma" and check with "who" where i came from and find out I wasnt on vpn. 
-
-- sudo systemctl restart gpd
-
-
-## another
-
-https://access.umd.edu/SAML20/SP/ACS
-
-is reloading every minute or so
-
-## browsers
-
-Sometimes in a cafe I see the PanGPUI come up.
-
-## gpd0 up?
-
-I do see cases where gpd0 is "up", i see a 10.206.x.x IP, but it won't let me on.
-The GUI claims i'm up.
-
--> why do I need to click on a gui to see the VPN status, why is
-
-the icon has a link on it.
-* <2025-08-01 Fri>
-
-globalprotect show --version
-GlobalProtect: 6.2.1-276
-Copyright 2009-2024 Palo Alto Networks, Inc.
-
-
-BA: 10.206.37.155
-TA: 10.206.96.36
-
-
-- what does it do on suspend?
-  -> seems to work on a short suspend
-
-- what does it do on a reboot?
-  -> will not re-connect
-
-
-- also note the two useless icons that seem to come up
-
-
-# when things looks good
+and when things looks good
 
 
 ```
@@ -173,43 +160,39 @@ teuben      4838  0.3  0.3 2681040 237436 ?      Sl   17:56   0:01 /opt/paloalto
 teuben      4898  0.3  0.3 2681044 237520 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000174727495000000029120006_1754085351_389235
 teuben      5205  0.0  0.0 473516 42796 ?        Ssl  17:56   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
 ```
-and
+
+and the latest version seems to make more sense with just 3 processes:
 
 ```
-1050:  ps aux | grep GP
 root        1583  0.2  0.0 786292 23704 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
 teuben      3636  0.2  0.0 408368 27556 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
 teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloaltonetworks/globalprotect//PanGPUI -session 106b3200000175409761100000039690028_1754097978_210703
 ```
 
 
+## FAQ
+
+
+
+
+- what does it do on suspend?
+  -> seems to work on a suspend
+
+- what does it do on a reboot?
+  -> will not re-connect
+
+
+- also note the two useless icons that seem to come up, seems to be fixed in 1050
+
+
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
 
-- widgets that show the public IP on the desktop still tell me my comcast IP. Only in "TA" mode will it use the UMD.
 
-  explain BA->TA is free.   but TA->BA needs another login.
+## Connection speeds
 
-
-
- 10.206.37.162
- 10.206.96.39 
- 10.206.37.162
-
- pulic ip address 1.1
-
- has maps to
-
+Evolving story that scp a file between UMD and home suffers from being on VPN.
  
-https://cdimage.ubuntu.com/kubuntu/releases/25.04/release/kubuntu-25.04-desktop-amd64.iso
-
-at  umd  - 52 MB/sec
-
-on VPN:   ~ 6MB /sec while on VPN
-
-at this speed, there's no penalty on VPN
-
-
-## CLI interface
+## CLI upgrading
 
 ```
 sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
@@ -237,6 +220,6 @@ Processing triggers for man-db (2.12.0-4build2) ...
 ```
 
 
-after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back.
+after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
 
 
