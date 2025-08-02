@@ -131,41 +131,7 @@ after a reboot?
 ```
     ps aux | grep GP
 
-root        1801  0.0  0.0 1318004 56564 ?       Ssl  Jul18   3:02 /opt/paloaltonetworks/globalprotect/PanGPS
-teuben      3024  0.0  0.0   6496  1524 ?        Ss   Jul18   0:00 /usr/bin/dbus-run-session /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      3030  0.0  0.3 3043068 248884 ?      Sl   Jul18   1:36 /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      3038  0.0  0.0 473220 41536 ?        Ssl  Jul18   2:34 /opt/paloaltonetworks/globalprotect/PanGPA start
-teuben      3183  0.0  0.3 3029228 233168 ?      Sl   Jul18   1:33 /opt/paloaltonetworks/globalprotect/PanGPUI -session 10767c3534000175201257400000032110004_1752851470_959150
-teuben      3207  0.0  0.1 1170280 125716 ?      Sl   Jul18   0:42 /opt/paloaltonetworks/globalprotect/PanGPUI -session 10767c3534000175253380500000047650006_1752851470_959971
-
-
-
-
-teuben      3024  0.0  0.0   6496  1524 ?        Ss   Jul18   0:00 /usr/bin/dbus-run-session /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      3030  0.0  0.3 3043068 248888 ?      Sl   Jul18   1:37 /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      3038  0.0  0.0 538756 46988 ?        Ssl  Jul18   2:35 /opt/paloaltonetworks/globalprotect/PanGPA start
-teuben      3183  0.0  0.3 3029228 233168 ?      Sl   Jul18   1:33 /opt/paloaltonetworks/globalprotect/PanGPUI -session 10767c3534000175201257400000032110004_1752851470_959150
-teuben      3207  0.0  0.1 1170280 125716 ?      Sl   Jul18   0:42 /opt/paloaltonetworks/globalprotect/PanGPUI -session 10767c3534000175253380500000047650006_1752851470_959971
-
-root     2074967  3.2  0.0 785496 28044 ?        Ssl  17:13   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
-teuben   2075054  0.0  0.0   3476  1692 pts/70   S+   17:13   0:00 grep --color=auto GP
-
-```
-
-and when things looks good
-
-
-```
-root        1581  0.3  0.0 1301948 45880 ?       Ssl  17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPS
-teuben      4160  0.0  0.0   6500  2432 ?        Ss   17:56   0:00 /usr/bin/dbus-run-session /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      4196  0.0  0.1 820812 111884 ?       Sl   17:56   0:00 /opt/paloaltonetworks/globalprotect/PanGPUI
-teuben      4572  0.3  0.3 2685728 242936 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000175357758400000039590007_1754085351_389207
-teuben      4838  0.3  0.3 2681040 237436 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000175237953900000039850007_1754085351_389241
-teuben      4898  0.3  0.3 2681044 237520 ?      Sl   17:56   0:01 /opt/paloaltonetworks/globalprotect/PanGPUI -session 106b3200000174727495000000029120006_1754085351_389235
-teuben      5205  0.0  0.0 473516 42796 ?        Ssl  17:56   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
-```
-
-and the latest version seems to make more sense with just 3 processes:
+on the latest version seems to make more sense with just 3 processes. Earlier versions had different PanGPUI sessions.
 
 ```
 root        1583  0.2  0.0 786292 23704 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
@@ -180,7 +146,7 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 
 
 - what does it do on suspend?
-  -> seems to work on a suspend
+  -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe.
 
 - what does it do on a reboot?
   -> will not re-connect
