@@ -36,15 +36,16 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
+  * GlobalProtect_UI_deb-6.2.7.1-1050.deb
 
-## info
+On debian based systems, the package libqt5webkit5 needs to be installed.
 
-on debian, libqt5webkit5 is needed
+## CLI 
 
+```
+globalprotect launch-ui
+```
 
-## launch
-
-Executes: globalprotect launch-ui
 
 ## annoying icon
 
@@ -194,11 +195,6 @@ at this speed, there's no penalty on VPN
 
 
 ## CLI interface
-
-apt-get install libqt5webkit5
-
-GlobalProtect_UI_deb-6.2.7.1-1050.deb
-
 
 ```
 sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
