@@ -4,10 +4,12 @@ UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access
 
 For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
 
-For me GP has been quite unstable on my kubuntu linux, with some additional anekdotal issues:
+For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional anekdotal issues
+still remain to be resolved:
 
 1. can limit your download speed for high-speed internet providers.
 2. printing from home may not work to auto-detected printers (not re-tested recently)
+3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
 
 ## GlobalProtect Icon
 
@@ -40,8 +42,9 @@ Switching from BA (the initial default) to TA works fine, but from TA back to BA
 
 ### annoying icon lifetime
 
-the GP icon looses focus when my mouse hovers away. Sometimes it disappears from I can take action. It is also
-related that I use "mouse follows focus", which clearly is something engineers at PA never heard of.
+the GP icon is destroyed when something else gets focus. Very annoying for those who prefer focus follows mouse.
+Clearly something engineers at PA never heard of.
+Sometimes it disappears from I can take action. Similar effects seen on both mac and win
 
 
 ### KDE widget
@@ -122,6 +125,8 @@ Add to this when on a new system their disfunctional GP browser came up.
 I do see cases where gpd0 is "up", i see a 10.206.x.x IP, but it won't let me on.
 The GUI claims i'm up.
 
+There has even been cases wehre 'ssh lma' just hangs.... not even the request for the password. A reboot solved this, grrr.
+
 
 ## Processes
 
@@ -130,7 +135,7 @@ after a reboot?
 
 ```
     ps aux | grep GP
-
+```
 on the latest version seems to make more sense with just 3 processes. Earlier versions had different PanGPUI sessions.
 
 ```
@@ -146,7 +151,7 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 
 
 - what does it do on suspend?
-  -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe.
+  -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe. But there is a timeout where your UMD IP can be retained.
 
 - what does it do on a reboot?
   -> will not re-connect
@@ -201,3 +206,11 @@ Processing triggers for man-db (2.12.0-4build2) ...
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
 
 
+
+
+# GP on Mac and Win
+
+On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
+of being connected or not. Nice.  There is no *gpd0* interface, in fact, no difference was noted with and without VPN.
+
+On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
