@@ -8,7 +8,7 @@ For me GP has been quite unstable (call it brittle) on my kubuntu linux, with so
 still remain to be resolved:
 
 1. can limit your download speed for high-speed internet providers.
-2. printing from home may not work to auto-detected printers (not re-tested recently)
+2. printing from home may not work to auto-detected (bonjour) printers. not sure about fixed IP printers.
 3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
 
 ## GlobalProtect Icon
@@ -142,6 +142,7 @@ on the latest version seems to make more sense with just 3 processes. Earlier ve
 root        1583  0.2  0.0 786292 23704 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
 teuben      3636  0.2  0.0 408368 27556 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
 teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloaltonetworks/globalprotect//PanGPUI -session 106b3200000175409761100000039690028_1754097978_210703
+
 ```
 
 
@@ -169,8 +170,7 @@ Evolving story that scp a file between UMD and home suffers from being on VPN.
 
 ## Local printing
 
-This never worked on auto-detected printed on linux. Seemed fine on mac. Needs to be tested
-again on version 1050.
+This never worked on auto-detected printed on linux. Seemed fine on mac though.
  
 ## CLI upgrading
 
