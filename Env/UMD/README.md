@@ -30,3 +30,7 @@ As an alternative to ssh key based authentication ...  TBD.
 
 CUPS.  Autodetected when in the internal 10.225.24.x or 10.225.25.x network
 but harder when on eduroam.   TBD.
+
+6. Secure W2-managed EAP-TLS certificates
+
+https://www.securew2.com/blog/what-is-eap-tls
