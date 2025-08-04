@@ -4,12 +4,13 @@ UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access
 
 For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
 
-For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional anekdotal issues
+For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional issues
 still remain to be resolved:
 
 1. can limit your download speed for high-speed internet providers.
 2. printing from home may not work to auto-detected (bonjour) printers. not sure about fixed IP printers.
 3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
+4. round trip using ssh agents? and/or kerberos?
 
 ## GlobalProtect Icon
 
