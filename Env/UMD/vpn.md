@@ -154,6 +154,8 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 - what does it do on suspend?
   -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe. But there is a timeout where your UMD IP can be retained.
 
+Your GlobalProtect session has been disconnected due to network connectivity issues or session timeouts.
+
 - what does it do on a reboot?
   -> will not re-connect
 
