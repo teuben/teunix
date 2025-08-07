@@ -33,8 +33,9 @@ Typically my desktop has:
 Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
                                     6.3.4              6.12.0      6.8.3    may-21
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
+				    6.4.3              6.16.0      6.9.1    fedora-42
 
-1. Mouse & Touchpad
+=1. Mouse & Touchpad
        Screen Edges need some tuning:
            - TL:   Overview
            - TR:   Present windows - current desktop
@@ -50,20 +51,20 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
 
-1. Workspace Bahavior
+=1. Workspace Bahavior
        General Behavior
            clicking files or folders:
 	       select "Opens Them" (this will cause single click to enter directory or open file)
 
 
-1. Security & Privacy
+=1. Security & Privacy
        Screen Locking
            uncheck automatic locking after (15) mins -> Never
 
-1. Appearance & Style
+=1. Appearance & Style
        color & themes
            Window Decorations
-	      configure Titlebar Buttons
+	      configure Titlebar Buttons (may need to widen screen to see)
 	        - put application menu top left (hit Apply after each action)
            Splash Screen
 	   Login Screen (SDDM)
@@ -75,23 +76,23 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
        Window Management
            Window Behavior
                Focus -> Focus follows mouse (mouse precedence)
-               Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
+=               Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
 
-           Desktop Effects (lost a lot of options???)
+=           Desktop Effects (lost a lot of options???)
 	       =Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	       ?Magic Lamp (vs. squash)
 	       ?Fall Apart (can be a bit distracting)
 	       ?Translucency (nice if you want to match figures)
-	       ?wobbly windows
+	       ?wobbly windows (one below max)
 
-           Virtual Desktop
+=           Virtual Desktop
                4 desktops in 2 rows              (navigation shortcuts come later)
 	           -> give the desktop unique names/numbers such that taskbar can identify
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
        
 
-3. Input Devices
+=3. Input Devices
    - Touchpad
      - Tapping:  tap-to-click
      - make sure not to invert scrolling
@@ -100,7 +101,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 
 
 
-4. System -> Power Management
+=4. System -> Power Management
 
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -133,7 +134,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
 
-8. CONFIGURE DOLPHIN
+=8. CONFIGURE DOLPHIN
    * Settings -> Configure Dolphin -> Startup:
      =- check    "make location bar editable" (the checkmark toggles edit mode)
      =- check    "show filter bar"
@@ -456,3 +457,69 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   Lost your firefox decorations?
   In firefox, check the title bar setting: click on the hambruger, More tools, Customise toolbar,
   and there's check box at the bottom left. save it. it should get things like resizing etc. back
+
+
+## ssh in KDE wallet
+
+
+how to add ssh-agent to KDE wallet?
+
+~/.bash_profile
+export SSH_ASKPASS="/usr/bin/ksshaskpass"
+export SSH_ASKPASS_REQUIRE=prefer
+
+Create a file named ssh-agent.service in ~/.config/systemd/user/ with contents similar to:
+
+
+
+~/.config/systemd/user/ssh-agent.service
+
+            [Unit]
+            Description=SSH Agent
+
+            [Service]
+            Type=simple
+            EnvironmentFile=%h/.ssh-agent-info
+            ExecStart=/usr/bin/ssh-agent -D -a %t/ssh-agent-socket
+            ExecStopPost=/usr/bin/ssh-agent -k
+            Restart=on-failure
+
+            [Install]
+            WantedBy=default.target
+
+~/.config/systemd/user/ssh-add.service
+
+
+            [Unit]
+            Description=Add SSH keys to agent
+            After=ssh-agent.service
+            Requires=ssh-agent.service
+
+            [Service]
+            Type=oneshot
+            ExecStart=/usr/bin/ssh-add
+            Environment=SSH_ASKPASS=/usr/bin/ksshaskpass
+            Environment=SSH_ASKPASS_REQUIRE=prefer
+
+            [Install]
+            WantedBy=default.target
+
+
+
+
+
+Enable and start these services.
+
+systemctl --user daemon-reload
+systemctl --user enable ssh-agent.service ssh-add.service
+systemctl --user start ssh-agent.service ssh-add.service
+
+Using KDE Autostart scripts (alternative):
+
+~/.config/autostart-scripts/ssh-add-keys.sh
+
+#!/bin/bash
+SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS
+#ssh-add ~/.ssh/id_ed25519    # your private key path
+echo SSH_ASKPASS > /tmp/teuben_ssh.log
