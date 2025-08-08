@@ -1,16 +1,17 @@
 # GlobalProtect VPN
 
-UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access to the UMD network.
+UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for more secure access to the UMD network.
 
-For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
+For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN.
 
-For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional issues
-still remain to be resolved:
+For me GP has not always been stable, with the following issue remaining:
 
 1. can limit your download speed for high-speed internet providers.
-2. printing from home may not work to auto-detected (bonjour) printers. not sure about fixed IP printers.
-3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
-4. round trip using ssh agents? and/or kerberos?
+2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
+3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
+4. round trip using ssh agents? and/or kerberos? use ssh tunnel?
+5. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
+   better to manually disable GP if you need to speed.
 
 ## GlobalProtect Icon
 
@@ -32,12 +33,12 @@ Here are the states I noticed:
 1. Not Connected. OK
 2. Connecting ... { Connecting ... <check> }_repeating    -- bad news
 3. Yellow "still working" --  bad news
-4. Connected. OK. You can disconnect or switch between BA or TA.x
+4. Connected. OK. You can disconnect or switch between BA or TA.
 
 At the bottom the gateway is displayed. One of two states:
 
 1. BA = "best available"  - 10.206.x.x
-2. TA = "tunnel all" - 10.206.x.x
+2. TA = "tunnel all" - 10.206.y.y
 
 Switching from BA (the initial default) to TA works fine, but from TA back to BA needs another CAS confirmation.  
 
@@ -45,12 +46,12 @@ Switching from BA (the initial default) to TA works fine, but from TA back to BA
 
 the GP icon is destroyed when something else gets focus. Very annoying for those who prefer focus follows mouse.
 Clearly something engineers at PA never heard of.
-Sometimes it disappears from I can take action. Similar effects seen on both mac and win
+Sometimes it disappears before I can take action. Similar effects seen on both mac and win.
 
 
 ### KDE widget
 
-On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP adress. In BA mode it will show
+On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP adress. In BA mode it will still show
 your IP providers address, in TA mode it will be a UMD address, as all your traffic is now routed through
 UMD.
 
@@ -61,7 +62,9 @@ Also has a link to OpenStreetMaps where you are "located" on the planet.
 
 The CAS interface will remember you for  (5?) days. If once every 5 days you would
 jump the gun and deliberately engage CAS, then things will not get in your way when
-you need to jump on zoom, or VPN or .... 
+you need to jump on zoom, or VPN or ....
+
+GP locks you in for 7 days.
 
 ## Links
 
@@ -73,6 +76,8 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
   * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
+  * GlobalProtect_UI_deb-6.2.9.1-407.deb  - testing 6-aug
+
 
 Note, on debian, libqt5webkit5 is needed as well.
 
@@ -151,11 +156,12 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 
 
 
-
 - what does it do on suspend?
   -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe. But there is a timeout where your UMD IP can be retained.
 
 Your GlobalProtect session has been disconnected due to network connectivity issues or session timeouts.
+
+The lifetime of GP is 7 days.
 
 - what does it do on a reboot?
   -> will not re-connect
@@ -165,6 +171,8 @@ Your GlobalProtect session has been disconnected due to network connectivity iss
 
 
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
+
+- Network icon disappeared from tray.  This one saved me:   `sudo systemctl restart NetworkManager`
 
 
 ## Connection speeds
@@ -214,6 +222,33 @@ after upgrading, it failed connecting.  Eventually with some hocus-pocus got it 
 # GP on Mac and Win
 
 On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
-of being connected or not. Nice.  There is no *gpd0* interface, in fact, no difference was noted with and without VPN.
+of being connected or not. Nice.  There is no **gpd0** interface, in fact, no difference was noted with and without VPN, they
+are using an existing interface, in my case **utun4**.  version 6.2.8-223
 
 On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
+
+
+# ssh tunnel
+
+
+Tunneling SSH keys works. Start the tunnel this way:
+
+```
+  ssh -TNL localhost:2222:localhost:22 lma.astro.umd.edu
+``
+Then I put this in my home ~/.ssh/config:
+
+```
+  Host lma.local
+  Hostname localhost
+  Port     2222
+```
+Now I can 'ssh lma.local' using an SSH key, once the tunnel is running; no VPN
+needed because the tunneled login originates inside lma itself. It probably
+involves double-encrypted traffic though, as both the tunnel traffic and SSH
+session traffic will be encrypted individually (I think).
+
+# Oddities
+
+1. The routing table `route` is nuts.
+2. same ip for some time, e.g. overnight down
