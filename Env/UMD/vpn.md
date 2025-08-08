@@ -4,12 +4,29 @@ UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access
 
 For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
 
-For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional anekdotal issues
+For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional issues
 still remain to be resolved:
 
 1. can limit your download speed for high-speed internet providers.
-2. printing from home may not work to auto-detected printers (not re-tested recently)
+2. printing from home may not work to auto-detected (bonjour) printers. not sure about fixed IP printers.
 3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
+4. round trip using ssh agents? and/or kerberos?
+
+## Workflow
+
+Here's a pretty close to ideal workflow, where typing an ssh passphrase is needed once per reboot.
+
+1. reboot laptop
+2. login (local password needed)
+3. start globalprotect (not automated) 
+4. this will open window in your browser, but no need to click here, assuming you set this up right
+   once every 5/7 days you will need your UMD password
+5. "ssh astro", enter your ssh passphrase, make sure you check the "remember me" button.
+   -> this assume you have done the usual ssh-keygen and ssh-copy-id
+6. "ssh astro" subsequent windows automated now
+7. suspend plaptop
+8. open laptop.  GP should start automatically. "ssh astro" should not need a password either
+
 
 ## GlobalProtect Icon
 
@@ -145,6 +162,7 @@ on the latest version seems to make more sense with just 3 processes. Earlier ve
 root        1583  0.2  0.0 786292 23704 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPS
 teuben      3636  0.2  0.0 408368 27556 ?        Ssl  21:26   0:00 /opt/paloaltonetworks/globalprotect/PanGPA start
 teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloaltonetworks/globalprotect//PanGPUI -session 106b3200000175409761100000039690028_1754097978_210703
+
 ```
 
 
@@ -162,9 +180,6 @@ Your GlobalProtect session has been disconnected due to network connectivity iss
   -> will not re-connect
 
 
-- also note the two useless icons that seem to come up, seems to be fixed in 1050
-
-
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
 
 
@@ -174,8 +189,7 @@ Evolving story that scp a file between UMD and home suffers from being on VPN.
 
 ## Local printing
 
-This never worked on auto-detected printed on linux. Seemed fine on mac. Needs to be tested
-again on version 1050.
+This never worked on auto-detected (bonjour) printed on linux. Seemed fine on mac though.
  
 ## CLI upgrading
 

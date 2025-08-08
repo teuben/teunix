@@ -17,7 +17,23 @@ ddd
 rman
 mandoc
 # zeal             not in U25
-texlive-science
+texlive-science   # should trigger all of latex
 exfat-fuse
+fzf               # fuzzy search
 # zoom
 # pgplot5-dev      only on U25 and up
+# qman - manual install https://github.com/plp13/qman/
+#    pick OpenMPI or MPICH
+# libopenmpi-dev
+# openmpi-bin
+# mpich
+# libmpich-dev 
+# libgsl-dev
+# libfftw3-dev
+libgmp3-dev        # <amuse> but pick OpenMPI or MPICH
+libmpfr6
+libmpfr-dev
+libhdf5-serial-dev
+hdf5-tools
+libblas-dev
+liblapack-dev      # </amuse>
