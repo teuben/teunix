@@ -1,6 +1,6 @@
 #  UMD Setup
 
-Several useful apps when you in the UMD sytem
+Several useful apps when you are in the UMD sytem
 
 1. eduroam for wifi
 
