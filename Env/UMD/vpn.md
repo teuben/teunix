@@ -123,6 +123,8 @@ into your default browser. Manually loading it (e.g. via a desktop link) can sav
 the GUI on linux is awkward, but it may also be due to the different window managers.
 Especially those that use focus follows mouse have a hard time with the window disappearing all the time.
 
+- is KDE default browser honored?  What is this ~/GP_HTML/defaultbrowser
+
 - sometimes it claims it's up (gpd0  is up with an IP), but ssh to lma reveals it's not.
   status window bad.  took longer time.
 
@@ -227,6 +229,10 @@ Processing triggers for man-db (2.12.0-4build2) ...
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
 
 
+## Keyring?
+
+Using the *KDE Wallet* one can bypass the VPN requirements for ssh. The equivalent in Gnome is called the Gnome keyring,
+and for MacOS it should be the Keychain. Windows has something called the Credentials Manager. 
 
 
 # GP on Mac and Win
@@ -235,3 +241,5 @@ On a *Mac* a persistent icon appears on the top right of the menu, and you toggl
 of being connected or not. Nice.  There is no *gpd0* interface, in fact, no difference was noted with and without VPN.
 
 On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
+
+
