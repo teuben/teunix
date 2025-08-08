@@ -33,6 +33,7 @@ Typically my desktop has:
 Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
                                     6.3.4              6.12.0      6.8.3    may-21
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
+				    6.4.3              6.16.0      6.9.1    fedora-42
 
 1. Mouse & Touchpad
        Screen Edges need some tuning:
@@ -49,6 +50,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
+           Never lock screen, but keep lock when waking from sleep
 
 1. Workspace Bahavior
        General Behavior
@@ -63,7 +65,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 1. Appearance & Style
        color & themes
            Window Decorations
-	      configure Titlebar Buttons
+	      configure Titlebar Buttons (may need to widen screen to see)
 	        - put application menu top left (hit Apply after each action)
            Splash Screen
 	   Login Screen (SDDM)
@@ -82,7 +84,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 	       ?Magic Lamp (vs. squash)
 	       ?Fall Apart (can be a bit distracting)
 	       ?Translucency (nice if you want to match figures)
-	       ?wobbly windows
+	       ?wobbly windows (one below max)
 
            Virtual Desktop
                4 desktops in 2 rows              (navigation shortcuts come later)
@@ -115,7 +117,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
         (see also Screen Locking earlier)
 
 
-=5. Configure Icons-only Task Manager Settting
+5. Configure Icons-only Task Manager Settting
    - Appearance
      i don't understand what max.rows and the checked item do ?? - now finally working
    - Behavior     
@@ -124,7 +126,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-=6. CONFIGURE DIGITAL CLOCK
+6. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
@@ -456,3 +458,69 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   Lost your firefox decorations?
   In firefox, check the title bar setting: click on the hambruger, More tools, Customise toolbar,
   and there's check box at the bottom left. save it. it should get things like resizing etc. back
+
+
+## ssh in KDE wallet
+
+
+how to add ssh-agent to KDE wallet?
+
+~/.bash_profile
+export SSH_ASKPASS="/usr/bin/ksshaskpass"
+export SSH_ASKPASS_REQUIRE=prefer
+
+Create a file named ssh-agent.service in ~/.config/systemd/user/ with contents similar to:
+
+
+
+~/.config/systemd/user/ssh-agent.service
+
+            [Unit]
+            Description=SSH Agent
+
+            [Service]
+            Type=simple
+            EnvironmentFile=%h/.ssh-agent-info
+            ExecStart=/usr/bin/ssh-agent -D -a %t/ssh-agent-socket
+            ExecStopPost=/usr/bin/ssh-agent -k
+            Restart=on-failure
+
+            [Install]
+            WantedBy=default.target
+
+~/.config/systemd/user/ssh-add.service
+
+
+            [Unit]
+            Description=Add SSH keys to agent
+            After=ssh-agent.service
+            Requires=ssh-agent.service
+
+            [Service]
+            Type=oneshot
+            ExecStart=/usr/bin/ssh-add
+            Environment=SSH_ASKPASS=/usr/bin/ksshaskpass
+            Environment=SSH_ASKPASS_REQUIRE=prefer
+
+            [Install]
+            WantedBy=default.target
+
+
+
+
+
+Enable and start these services.
+
+systemctl --user daemon-reload
+systemctl --user enable ssh-agent.service ssh-add.service
+systemctl --user start ssh-agent.service ssh-add.service
+
+Using KDE Autostart scripts (alternative):
+
+~/.config/autostart-scripts/ssh-add-keys.sh
+
+#!/bin/bash
+SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS
+#ssh-add ~/.ssh/id_ed25519    # your private key path
+echo SSH_ASKPASS > /tmp/teuben_ssh.log

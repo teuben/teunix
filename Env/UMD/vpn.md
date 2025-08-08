@@ -13,6 +13,22 @@ For me GP has not always been stable, with the following issue remaining:
 5. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
    better to manually disable GP if you need to speed.
 
+## Workflow
+
+Here's a pretty close to ideal workflow, where typing an ssh passphrase is needed once per reboot.
+
+1. reboot laptop
+2. login (local password needed)
+3. start globalprotect (not automated) 
+4. this will open window in your browser, but no need to click here, assuming you set this up right
+   once every 5/7 days you will need your UMD password
+5. "ssh astro", enter your ssh passphrase, make sure you check the "remember me" button.
+   -> this assume you have done the usual ssh-keygen and ssh-copy-id
+6. "ssh astro" subsequent windows automated now
+7. suspend plaptop
+8. open laptop.  GP should start automatically. "ssh astro" should not need a password either
+
+
 ## GlobalProtect Icon
 
 This launches `globalprotect launch-ui`
@@ -64,12 +80,16 @@ The CAS interface will remember you for  (5?) days. If once every 5 days you wou
 jump the gun and deliberately engage CAS, then things will not get in your way when
 you need to jump on zoom, or VPN or ....
 
-GP locks you in for 7 days.
+
+GP locks you in for 7 days, but GP will time out if no connection to
+UMD is made..... 15min? 30min?  it's fairly short.
+
 
 ## Links
 
 * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076
 * https://www.paloaltonetworks.com/sase/globalprotect
+* https://github.com/yuezk/GlobalProtect-openconnect   (not tested recently)
 * Some recent debian packages
   * GlobalProtect_UI_deb-6.1.1.0-49.deb
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
@@ -79,10 +99,10 @@ GP locks you in for 7 days.
   * GlobalProtect_UI_deb-6.2.9.1-407.deb  - testing 6-aug
 
 
-Note, on debian, libqt5webkit5 is needed as well.
+Note that on debian, libqt5webkit5 is needed.
 
 This is an issue with Ubuntu 25.05 and up, where Qt6 is the default. So the current
-versions of GP won't work.
+versions of GP won't work. Supposedly one needs QtWebEngine
 
 
 ## Weird Scenarios
@@ -108,6 +128,8 @@ into your default browser. Manually loading it (e.g. via a desktop link) can sav
 
 the GUI on linux is awkward, but it may also be due to the different window managers.
 Especially those that use focus follows mouse have a hard time with the window disappearing all the time.
+
+- is KDE default browser honored?  What is this ~/GP_HTML/defaultbrowser
 
 - sometimes it claims it's up (gpd0  is up with an IP), but ssh to lma reveals it's not.
   status window bad.  took longer time.
@@ -167,9 +189,6 @@ The lifetime of GP is 7 days.
   -> will not re-connect
 
 
-- also note the two useless icons that seem to come up, seems to be fixed in 1050
-
-
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
 
 - Network icon disappeared from tray.  This one saved me:   `sudo systemctl restart NetworkManager`
@@ -181,14 +200,16 @@ Evolving story that scp a file between UMD and home suffers from being on VPN.
 
 ## Local printing
 
-This never worked on auto-detected printed on linux. Seemed fine on mac though.
+This never worked on auto-detected (bonjour) printed on linux. Seemed fine on mac though.
  
 ## CLI upgrading
+
+Here's an example of upgrading:
 
 ```
 sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb
 ```
-and
+gives:
 ```
 (Reading database ... 455271 files and directories currently installed.)
 Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
@@ -217,18 +238,12 @@ Processing triggers for man-db (2.12.0-4build2) ...
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
 
 
+## Keyring?
 
+Using the *KDE Wallet* one can bypass the VPN requirements for ssh. The equivalent in Gnome is called the Gnome keyring,
+and for MacOS it should be the Keychain. Windows has something called the Credentials Manager. 
 
-# GP on Mac and Win
-
-On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
-of being connected or not. Nice.  There is no **gpd0** interface, in fact, no difference was noted with and without VPN, they
-are using an existing interface, in my case **utun4**.  version 6.2.8-223
-
-On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
-
-
-# ssh tunnel
+## ssh tunnel
 
 
 Tunneling SSH keys works. Start the tunnel this way:
@@ -248,7 +263,20 @@ needed because the tunneled login originates inside lma itself. It probably
 involves double-encrypted traffic though, as both the tunnel traffic and SSH
 session traffic will be encrypted individually (I think).
 
+
+# GP on Mac and Win
+
+On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
+of being connected or not. Nice.  There is no **gpd0** interface, in fact, no difference was noted with and without VPN, they
+are using an existing interface, in my case **utun4**.  version 6.2.8-223
+
+On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
+
+
+
 # Oddities
 
 1. The routing table `route` is nuts.
 2. same ip for some time, e.g. overnight down
+
+

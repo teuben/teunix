@@ -5,6 +5,7 @@ URL3 = https://github.com/astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
 URL5 = https://github.com/ohmybash/oh-my-bash
 URL6 = https://github.com/ohmyzsh/ohmyzsh
+URL7 = https://github.com/teuben/teuben
 
 TEUNIX = `pwd`
 
@@ -212,6 +213,11 @@ omz:
 	sh -c `wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -`
 	#sh -c `curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`
 	@echo bash -c ohmyzsh/tools/install.sh
+
+## teuben:     my github pages
+teuben:
+	git clone $(URL7) teuben
+
 
 ## omb:       15. Install oh-my-bash  (should be before "env1")
 omb:
