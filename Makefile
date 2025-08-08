@@ -1,4 +1,4 @@
-#
+ #
 
 
 TEUNIX = `pwd`
@@ -24,6 +24,7 @@ URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
 URL2 = https://github.com/torvalds/uemacs
 URL3 = https://github.com/astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
+URL5 = https://github.com/teuben/teuben
 
 
 ## help:       This Help for given HOST
@@ -211,3 +212,7 @@ brew:
 zsh2:
 	sh -c `wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -`
 	#sh -c `curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`
+
+## teuben:     my github pages
+teuben:
+	git clone $(URL5) teuben
