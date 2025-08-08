@@ -60,12 +60,15 @@ Also has a link to OpenStreetMaps where you are "located" on the planet.
 
 The CAS interface will remember you for  (5?) days. If once every 5 days you would
 jump the gun and deliberately engage CAS, then things will not get in your way when
-you need to jump on zoom, or VPN or .... 
+you need to jump on zoom, or VPN or ....
+
+GP will time out if no connection to UMD is made..... 15min? 30min?  it's fairly short.
 
 ## Links
 
 * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076
 * https://www.paloaltonetworks.com/sase/globalprotect
+* https://github.com/yuezk/GlobalProtect-openconnect   (not tested recently)
 * Some recent debian packages
   * GlobalProtect_UI_deb-6.1.1.0-49.deb
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
