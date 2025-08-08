@@ -35,7 +35,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
 				    6.4.3              6.16.0      6.9.1    fedora-42
 
-=1. Mouse & Touchpad
+1. Mouse & Touchpad
        Screen Edges need some tuning:
            - TL:   Overview
            - TR:   Present windows - current desktop
@@ -50,18 +50,19 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
        Screen Locking
+           Never lock screen, but keep lock when waking from sleep
 
-=1. Workspace Bahavior
+1. Workspace Bahavior
        General Behavior
            clicking files or folders:
 	       select "Opens Them" (this will cause single click to enter directory or open file)
 
 
-=1. Security & Privacy
+1. Security & Privacy
        Screen Locking
            uncheck automatic locking after (15) mins -> Never
 
-=1. Appearance & Style
+1. Appearance & Style
        color & themes
            Window Decorations
 	      configure Titlebar Buttons (may need to widen screen to see)
@@ -76,23 +77,23 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
        Window Management
            Window Behavior
                Focus -> Focus follows mouse (mouse precedence)
-=               Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
+               Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
 
-=           Desktop Effects (lost a lot of options???)
+           Desktop Effects (lost a lot of options???)
 	       =Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
 	       ?Magic Lamp (vs. squash)
 	       ?Fall Apart (can be a bit distracting)
 	       ?Translucency (nice if you want to match figures)
 	       ?wobbly windows (one below max)
 
-=           Virtual Desktop
+           Virtual Desktop
                4 desktops in 2 rows              (navigation shortcuts come later)
 	           -> give the desktop unique names/numbers such that taskbar can identify
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
        
 
-=3. Input Devices
+3. Input Devices
    - Touchpad
      - Tapping:  tap-to-click
      - make sure not to invert scrolling
@@ -101,7 +102,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 
 
 
-=4. System -> Power Management
+4. System -> Power Management
 
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -116,7 +117,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
         (see also Screen Locking earlier)
 
 
-=5. Configure Icons-only Task Manager Settting
+5. Configure Icons-only Task Manager Settting
    - Appearance
      i don't understand what max.rows and the checked item do ?? - now finally working
    - Behavior     
@@ -125,7 +126,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-=6. CONFIGURE DIGITAL CLOCK
+6. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
@@ -134,7 +135,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
 
-=8. CONFIGURE DOLPHIN
+8. CONFIGURE DOLPHIN
    * Settings -> Configure Dolphin -> Startup:
      =- check    "make location bar editable" (the checkmark toggles edit mode)
      =- check    "show filter bar"
