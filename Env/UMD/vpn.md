@@ -66,10 +66,10 @@ you need to jump on zoom, or VPN or ....
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
   * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
 
-Note, on debian, libqt5webkit5 is needed as well.
+Note that on debian, libqt5webkit5 is needed.
 
 This is an issue with Ubuntu 25.05 and up, where Qt6 is the default. So the current
-versions of GP won't work.
+versions of GP won't work. Supposedly one needs QtWebEngine
 
 
 ## Weird Scenarios
@@ -194,8 +194,16 @@ Evolving story that scp a file between UMD and home suffers from being on VPN.
  
 ## CLI upgrading
 
+Here's an example of upgrading:
+
 ```
-sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb 
+sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb
+```
+
+gives:
+
+```
+
 (Reading database ... 455271 files and directories currently installed.)
 Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
 gp service is running and we need to stop it...
