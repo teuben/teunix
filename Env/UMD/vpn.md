@@ -1,37 +1,39 @@
 # GlobalProtect VPN
 
-UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for more secure access to the UMD network.
+UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for a more secure access to the UMD network.
 
-For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN.
+For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN, although
+there's a way with keyring type solutions to work around ssh.
 
 For me GP has not always been stable, with the following issue remaining:
 
 1. can limit your download speed for high-speed internet providers.
 2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
 3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
-4. round trip using ssh agents? and/or kerberos? use ssh tunnel?
-5. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
-   better to manually disable GP if you need to speed.
+4. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
+   better to manually disable GP if you need to speed. Maybe related to previous item.
+5. round trip using ssh agents? and/or kerberos? use ssh tunnel?
 
-## Workflow
+
+##  Summary
 
 Here's a pretty close to ideal workflow, where typing an ssh passphrase is needed once per reboot.
 
 1. reboot laptop
 2. login (local password needed)
-3. start globalprotect (not automated) 
-4. this will open window in your browser, but no need to click here, assuming you set this up right
-   once every 5/7 days you will need your UMD password
+3. start globalprotect (normally not automated) 
+4. this will open window in your browser, but no need to click here, assuming you did set this up right
+   [ once every 5/7 days you will need your UMD password ]
 5. "ssh astro", enter your ssh passphrase, make sure you check the "remember me" button.
    -> this assume you have done the usual ssh-keygen and ssh-copy-id
 6. "ssh astro" subsequent windows automated now
-7. suspend plaptop
+7. suspend laptop
 8. open laptop.  GP should start automatically. "ssh astro" should not need a password either
 
 
-## GlobalProtect Icon
+## GlobalProtect Icon(s)
 
-This launches `globalprotect launch-ui`
+This desktop icon launches `globalprotect launch-ui`, the executable can show the version:
 
 ```
 globalprotect show --version
@@ -56,20 +58,30 @@ At the bottom the gateway is displayed. One of two states:
 1. BA = "best available"  - 10.206.x.x
 2. TA = "tunnel all" - 10.206.y.y
 
-Switching from BA (the initial default) to TA works fine, but from TA back to BA needs another CAS confirmation.  
+Switching from BA (the initial default) to TA works fine, but from TA
+back to BA needs another CAS confirmation.
+
+On KDE the `PanGPUI` icon is persistently visible on the `Icons-only
+Task Manager`. There is also a subtle difference in the appearance of
+the icon, which can be used to glean the status if VPN is up or
+down. You would not need the desktop icon anymore.
+
+
 
 ### annoying icon lifetime
 
-the GP icon is destroyed when something else gets focus. Very annoying for those who prefer focus follows mouse.
-Clearly something engineers at PA never heard of.
-Sometimes it disappears before I can take action. Similar effects seen on both mac and win.
+the GP icon is destroyed when something else gets focus. Very annoying
+for those who prefer focus follows mouse.  Clearly something engineers
+at PA never heard of.  Sometimes it disappears before one can take
+action. Similar effects seen on both mac and win.
 
 
-### KDE widget
+### KDE IP status widget
 
-On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP adress. In BA mode it will still show
-your IP providers address, in TA mode it will be a UMD address, as all your traffic is now routed through
-UMD.
+On KDE there is a useful widget `Public IP Address 1.1` that shows the
+public IP adress. In BA mode it will still show your IP providers
+address, in TA mode it will be a UMD address, as all your traffic is
+now routed through UMD.
 
 Also has a link to OpenStreetMaps where you are "located" on the planet.
 
@@ -99,7 +111,7 @@ UMD is made..... 15min? 30min?  it's fairly short.
   * GlobalProtect_UI_deb-6.2.9.1-407.deb  - testing 6-aug
 
 
-Note that on debian, libqt5webkit5 is needed.
+Note that on debian-like systems, libqt5webkit5 is needed.
 
 This is an issue with Ubuntu 25.05 and up, where Qt6 is the default. So the current
 versions of GP won't work. Supposedly one needs QtWebEngine
@@ -138,27 +150,30 @@ Especially those that use focus follows mouse have a hard time with the window d
   get to a proper connection.
 
 
-### browsers
+### Browser
 
-Sometimes I see the PanGPUI come up. In earlier releases it would use PanGPUI on the first time,
-but this funky browser will not remember the password like chrome/firefox/.... do
+Sometimes I've seen the PanGPUI come up instead of my default
+browser. In earlier releases it would use PanGPUI on the first time,
+but this funky browser will not remember the password like
+chrome/firefox/.... 
 
-### Default Browser
-
-Something odd on Kubuntu. There was a time it would always go to chromium. Could be a Kubuntu problem.
-Add to this when on a new system their disfunctional GP browser came up.
+Default browser?  Something odd on Kubuntu? There was a time it would always go to
+chromium. Could be a Kubuntu problem.  Add to this when on a new
+system their disfunctional GP browser came up.
 
 ### gpd0 up?
 
 I do see cases where gpd0 is "up", i see a 10.206.x.x IP, but it won't let me on.
 The GUI claims i'm up.
 
-There has even been cases wehre 'ssh lma' just hangs.... not even the request for the password. A reboot solved this, grrr.
+There has even been cases wehre 'ssh lma' just hangs.... not even the
+request for the password. A reboot solved this, grrr.
 
 
 ## Processes
 
-This may also depend on the version.  Older versions seems to have more processes running. Why does PanGPUI have so many sessions, even
+This may also depend on the version.  Older versions seems to have
+more processes running. Why does PanGPUI have so many sessions, even
 after a reboot?
 
 ```
@@ -240,8 +255,10 @@ after upgrading, it failed connecting.  Eventually with some hocus-pocus got it 
 
 ## Keyring?
 
-Using the *KDE Wallet* one can bypass the VPN requirements for ssh. The equivalent in Gnome is called the Gnome keyring,
-and for MacOS it should be the Keychain. Windows has something called the Credentials Manager. 
+Another option is *KDE Wallet* for ssh access.
+The equivalent in Gnome is called the Gnome keyring,
+and for MacOS it should be the Keychain.
+Windows has something called the Credentials Manager. 
 
 ## ssh tunnel
 
@@ -266,11 +283,14 @@ session traffic will be encrypted individually (I think).
 
 # GP on Mac and Win
 
-On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
-of being connected or not. Nice.  There is no **gpd0** interface, in fact, no difference was noted with and without VPN, they
-are using an existing interface, in my case **utun4**.  version 6.2.8-223
+On a *Mac* a persistent icon appears on the top right of the menu, and
+you toggle it from there.  The icon will reflect status of being
+connected or not. Nice.  There is no **gpd0** interface, in fact, no
+difference was noted with and without VPN, they are using an existing
+interface, in my case **utun4**.  version 6.2.8-223
 
-On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
+On *Windows* the application has to be started. Icon doesn't change
+visually when status changes, only Mac seems to do this.
 
 
 
