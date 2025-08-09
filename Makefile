@@ -21,6 +21,8 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 
 UP2 = plasma-widgets-addons kio-gdrive
 
+UP3 = pgplot5-dev
+
 # fedora packages
 FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel
 FP1 = pgplot pgplot-devel
@@ -83,13 +85,16 @@ all: $(SHELLS)
 
 csh:
 	@test -f $(HOME)/.cshrc && echo You have a csh
+	@test -f $(HOME)/.login && echo You have a login
 
 tcsh:
 	@test -f $(HOME)/.tcshrc && echo You have a tcsh
 
 bash:
-	@test -f $(HOME)/.bashrc && echo You have a bashrc
-	@test -f $(HOME)/.bash_login && echo You have a bash_login
+	-@for fn in .bashrc .bash_profile .bash_login .profile; do\
+	   (test -f $(HOME)/$$fn && echo You have a $$fn);\
+	done
+	# order ~/.bash_profile ~/.bash_login ~/.profile  seems not what I found
 
 zsh:
 	@if test -f $(HOME)/.zshrc; then\
