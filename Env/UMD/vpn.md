@@ -1,20 +1,39 @@
 # GlobalProtect VPN
 
-UMD is using Palo Alto Networks' VPN tool "GlobalProtect' for more secure access to the UMD network.
+UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for a more secure access to the UMD network.
 
-For some workflows you'll need to be on VPN, but ssh keys only work when on VPN.
+For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN, although
+there's a way with keyring type solutions to work around ssh.
 
-For me GP has been quite unstable (call it brittle) on my kubuntu linux, with some additional issues
-still remain to be resolved:
+For me GP has not always been stable, with the following issue remaining:
 
 1. can limit your download speed for high-speed internet providers.
-2. printing from home may not work to auto-detected (bonjour) printers. not sure about fixed IP printers.
-3. occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
-4. round trip using ssh agents? and/or kerberos?
+2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
+3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
+4. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
+   better to manually disable GP if you need to speed. Maybe related to previous item.
+5. round trip using ssh agents? and/or kerberos? use ssh tunnel?
 
-## GlobalProtect Icon
 
-This launches `globalprotect launch-ui`
+##  Summary
+
+Here's a pretty close to ideal workflow, where typing an ssh passphrase is needed once per reboot.
+
+1. reboot laptop
+2. login (local password needed)
+3. start globalprotect (normally not automated) 
+4. this will open window in your browser, but no need to click here, assuming you did set this up right
+   [ once every 5/7 days you will need your UMD password ]
+5. "ssh astro", enter your ssh passphrase, make sure you check the "remember me" button.
+   -> this assume you have done the usual ssh-keygen and ssh-copy-id
+6. "ssh astro" subsequent windows automated now
+7. suspend laptop
+8. open laptop.  GP should start automatically. "ssh astro" should not need a password either
+
+
+## GlobalProtect Icon(s)
+
+This desktop icon launches `globalprotect launch-ui`, the executable can show the version:
 
 ```
 globalprotect show --version
@@ -32,27 +51,37 @@ Here are the states I noticed:
 1. Not Connected. OK
 2. Connecting ... { Connecting ... <check> }_repeating    -- bad news
 3. Yellow "still working" --  bad news
-4. Connected. OK. You can disconnect or switch between BA or TA.x
+4. Connected. OK. You can disconnect or switch between BA or TA.
 
 At the bottom the gateway is displayed. One of two states:
 
 1. BA = "best available"  - 10.206.x.x
-2. TA = "tunnel all" - 10.206.x.x
+2. TA = "tunnel all" - 10.206.y.y
 
-Switching from BA (the initial default) to TA works fine, but from TA back to BA needs another CAS confirmation.  
+Switching from BA (the initial default) to TA works fine, but from TA
+back to BA needs another CAS confirmation.
+
+On KDE the `PanGPUI` icon is persistently visible on the `Icons-only
+Task Manager`. There is also a subtle difference in the appearance of
+the icon, which can be used to glean the status if VPN is up or
+down. You would not need the desktop icon anymore.
+
+
 
 ### annoying icon lifetime
 
-the GP icon is destroyed when something else gets focus. Very annoying for those who prefer focus follows mouse.
-Clearly something engineers at PA never heard of.
-Sometimes it disappears from I can take action. Similar effects seen on both mac and win
+the GP icon is destroyed when something else gets focus. Very annoying
+for those who prefer focus follows mouse.  Clearly something engineers
+at PA never heard of.  Sometimes it disappears before one can take
+action. Similar effects seen on both mac and win.
 
 
-### KDE widget
+### KDE IP status widget
 
-On KDE there is a useful widget `Public IP Address 1.1` that shows the public IP adress. In BA mode it will show
-your IP providers address, in TA mode it will be a UMD address, as all your traffic is now routed through
-UMD.
+On KDE there is a useful widget `Public IP Address 1.1` that shows the
+public IP adress. In BA mode it will still show your IP providers
+address, in TA mode it will be a UMD address, as all your traffic is
+now routed through UMD.
 
 Also has a link to OpenStreetMaps where you are "located" on the planet.
 
@@ -61,23 +90,31 @@ Also has a link to OpenStreetMaps where you are "located" on the planet.
 
 The CAS interface will remember you for  (5?) days. If once every 5 days you would
 jump the gun and deliberately engage CAS, then things will not get in your way when
-you need to jump on zoom, or VPN or .... 
+you need to jump on zoom, or VPN or ....
+
+
+GP locks you in for 7 days, but GP will time out if no connection to
+UMD is made..... 15min? 30min?  it's fairly short.
+
 
 ## Links
 
 * https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076
 * https://www.paloaltonetworks.com/sase/globalprotect
+* https://github.com/yuezk/GlobalProtect-openconnect   (not tested recently)
 * Some recent debian packages
   * GlobalProtect_UI_deb-6.1.1.0-49.deb
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
   * GlobalProtect_UI_deb-6.2.7.1-1050.deb - superfluous bottom icons fixed
+  * GlobalProtect_UI_deb-6.2.9.1-407.deb  - testing 6-aug
 
-Note, on debian, libqt5webkit5 is needed as well.
+
+Note that on debian-like systems, libqt5webkit5 is needed.
 
 This is an issue with Ubuntu 25.05 and up, where Qt6 is the default. So the current
-versions of GP won't work.
+versions of GP won't work. Supposedly one needs QtWebEngine
 
 
 ## Weird Scenarios
@@ -104,6 +141,8 @@ into your default browser. Manually loading it (e.g. via a desktop link) can sav
 the GUI on linux is awkward, but it may also be due to the different window managers.
 Especially those that use focus follows mouse have a hard time with the window disappearing all the time.
 
+- is KDE default browser honored?  What is this ~/GP_HTML/defaultbrowser
+
 - sometimes it claims it's up (gpd0  is up with an IP), but ssh to lma reveals it's not.
   status window bad.  took longer time.
 
@@ -111,27 +150,30 @@ Especially those that use focus follows mouse have a hard time with the window d
   get to a proper connection.
 
 
-### browsers
+### Browser
 
-Sometimes I see the PanGPUI come up. In earlier releases it would use PanGPUI on the first time,
-but this funky browser will not remember the password like chrome/firefox/.... do
+Sometimes I've seen the PanGPUI come up instead of my default
+browser. In earlier releases it would use PanGPUI on the first time,
+but this funky browser will not remember the password like
+chrome/firefox/.... 
 
-### Default Browser
-
-Something odd on Kubuntu. There was a time it would always go to chromium. Could be a Kubuntu problem.
-Add to this when on a new system their disfunctional GP browser came up.
+Default browser?  Something odd on Kubuntu? There was a time it would always go to
+chromium. Could be a Kubuntu problem.  Add to this when on a new
+system their disfunctional GP browser came up.
 
 ### gpd0 up?
 
 I do see cases where gpd0 is "up", i see a 10.206.x.x IP, but it won't let me on.
 The GUI claims i'm up.
 
-There has even been cases wehre 'ssh lma' just hangs.... not even the request for the password. A reboot solved this, grrr.
+There has even been cases wehre 'ssh lma' just hangs.... not even the
+request for the password. A reboot solved this, grrr.
 
 
 ## Processes
 
-This may also depend on the version.  Older versions seems to have more processes running. Why does PanGPUI have so many sessions, even
+This may also depend on the version.  Older versions seems to have
+more processes running. Why does PanGPUI have so many sessions, even
 after a reboot?
 
 ```
@@ -151,20 +193,20 @@ teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloalto
 
 
 
-
 - what does it do on suspend?
   -> seems to work after a suspend. Even if you switch locations, e.g. home to cafe. But there is a timeout where your UMD IP can be retained.
 
 Your GlobalProtect session has been disconnected due to network connectivity issues or session timeouts.
 
+The lifetime of GP is 7 days.
+
 - what does it do on a reboot?
   -> will not re-connect
 
 
-- also note the two useless icons that seem to come up, seems to be fixed in 1050
-
-
 - why do I need to re-certified by CAS for every type of app?    eg. chrome, firefox, 
+
+- Network icon disappeared from tray.  This one saved me:   `sudo systemctl restart NetworkManager`
 
 
 ## Connection speeds
@@ -173,14 +215,16 @@ Evolving story that scp a file between UMD and home suffers from being on VPN.
 
 ## Local printing
 
-This never worked on auto-detected printed on linux. Seemed fine on mac though.
+This never worked on auto-detected (bonjour) printed on linux. Seemed fine on mac though.
  
 ## CLI upgrading
+
+Here's an example of upgrading:
 
 ```
 sudo dpkg -i GlobalProtect_UI_deb-6.2.7.1-1050.deb
 ```
-and
+gives:
 ```
 (Reading database ... 455271 files and directories currently installed.)
 Preparing to unpack GlobalProtect_UI_deb-6.2.7.1-1050.deb ...
@@ -209,11 +253,50 @@ Processing triggers for man-db (2.12.0-4build2) ...
 after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
 
 
+## Keyring?
+
+Another option is *KDE Wallet* for ssh access.
+The equivalent in Gnome is called the Gnome keyring,
+and for MacOS it should be the Keychain.
+Windows has something called the Credentials Manager. 
+
+## ssh tunnel
+
+
+Tunneling SSH keys works. Start the tunnel this way:
+
+```
+  ssh -TNL localhost:2222:localhost:22 lma.astro.umd.edu
+``
+Then I put this in my home ~/.ssh/config:
+
+```
+  Host lma.local
+  Hostname localhost
+  Port     2222
+```
+Now I can 'ssh lma.local' using an SSH key, once the tunnel is running; no VPN
+needed because the tunneled login originates inside lma itself. It probably
+involves double-encrypted traffic though, as both the tunnel traffic and SSH
+session traffic will be encrypted individually (I think).
 
 
 # GP on Mac and Win
 
-On a *Mac* a persistent icon appears on the top right of the menu, and you toggle it from there.  The icon will reflect status
-of being connected or not. Nice.  There is no *gpd0* interface, in fact, no difference was noted with and without VPN.
+On a *Mac* a persistent icon appears on the top right of the menu, and
+you toggle it from there.  The icon will reflect status of being
+connected or not. Nice.  There is no **gpd0** interface, in fact, no
+difference was noted with and without VPN, they are using an existing
+interface, in my case **utun4**.  version 6.2.8-223
 
-On *Windows* the application has to be started. Icon doesn't change visually when status changes, only Mac seems to do this.
+On *Windows* the application has to be started. Icon doesn't change
+visually when status changes, only Mac seems to do this.
+
+
+
+# Oddities
+
+1. The routing table `route` is nuts.
+2. same ip for some time, e.g. overnight down
+
+

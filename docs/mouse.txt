@@ -1,0 +1,7 @@
+Mouse-1
+           Button-1      Button-2     Button-3
+------------------------------------------------
+Mouse-1    .             dl5xxx       .
+Mouse-2    x1y2          .            d76
+Mouse-3    .             .            k2
+

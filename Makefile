@@ -1,5 +1,11 @@
 #
-
+URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
+URL2 = https://github.com/torvalds/uemacs
+URL3 = https://github.com/astroumd/sysadmin
+URL4 = https://github.com/teuben/nemo
+URL5 = https://github.com/ohmybash/oh-my-bash
+URL6 = https://github.com/ohmyzsh/ohmyzsh
+URL7 = https://github.com/teuben/teuben
 
 TEUNIX = `pwd`
 
@@ -15,15 +21,11 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 
 UP2 = plasma-widgets-addons kio-gdrive
 
+UP3 = pgplot5-dev
+
 # fedora packages
 FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel
 FP1 = pgplot pgplot-devel
-
-
-URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
-URL2 = https://github.com/torvalds/uemacs
-URL3 = https://github.com/astroumd/sysadmin
-URL4 = https://github.com/teuben/nemo
 
 
 ## help:       This Help for given HOST
@@ -83,13 +85,16 @@ all: $(SHELLS)
 
 csh:
 	@test -f $(HOME)/.cshrc && echo You have a csh
+	@test -f $(HOME)/.login && echo You have a login
 
 tcsh:
 	@test -f $(HOME)/.tcshrc && echo You have a tcsh
 
 bash:
-	@test -f $(HOME)/.bashrc && echo You have a bashrc
-	@test -f $(HOME)/.bash_login && echo You have a bash_login
+	-@for fn in .bashrc .bash_profile .bash_login .profile; do\
+	   (test -f $(HOME)/$$fn && echo You have a $$fn);\
+	done
+	# order ~/.bash_profile ~/.bash_login ~/.profile  seems not what I found
 
 zsh:
 	@if test -f $(HOME)/.zshrc; then\
@@ -207,7 +212,19 @@ brew:
 #    (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/teuben/.bashrc
 #    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-## zsh2:       14. Install oh-my-zsh
-zsh2:
+## omz:       14. Install oh-my-zsh
+omz:
+	-git clone $(URL6)
 	sh -c `wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -`
 	#sh -c `curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`
+	@echo bash -c ohmyzsh/tools/install.sh
+
+## teuben:     my github pages
+teuben:
+	git clone $(URL7) teuben
+
+
+## omb:       15. Install oh-my-bash  (should be before "env1")
+omb:
+	-git clone $(URL5)
+	@echo bash -c oh-my-bash/tools/install.sh

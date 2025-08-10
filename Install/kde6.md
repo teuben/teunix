@@ -10,7 +10,7 @@ Typically my desktop has:
 - [ put application menu top left ]
 - kdeconnect for the phone
 - krunner for desktop/browser searching (needs plugin per browser)
-- 3H x 2V virtual desktops, single activity
+- 2H x 2V virtual desktops, single activity
 - very few widgets (maybe a clock)
 - some desktop effects (wobbly windows, broken windows on kill)
 
@@ -33,6 +33,7 @@ Typically my desktop has:
 Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
                                     6.3.4              6.12.0      6.8.3    may-21
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
+				    6.4.3              6.16.0      6.9.1    fedora-42
 
 1. Mouse & Touchpad
        Screen Edges need some tuning:
@@ -48,7 +49,9 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 		   https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai
 		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
+	   
        Screen Locking
+           Never lock screen, but keep lock when waking from sleep
 
 1. Workspace Bahavior
        General Behavior
@@ -63,7 +66,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 1. Appearance & Style
        color & themes
            Window Decorations
-	      configure Titlebar Buttons
+	      configure Titlebar Buttons (may need to widen screen to see)
 	        - put application menu top left (hit Apply after each action)
            Splash Screen
 	   Login Screen (SDDM)
@@ -80,7 +83,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 	       ?Magic Lamp (vs. squash)
 	       ?Fall Apart (can be a bit distracting)
 	       ?Translucency (nice if you want to match figures)
-	       ?wobbly windows
+	       ?wobbly windows (one below max)
 
            Virtual Desktop
                4 desktops in 2 rows              (navigation shortcuts come later)
@@ -112,7 +115,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
         (see also Screen Locking earlier)
 
 
-=5. Configure Icons-only Task Manager Settting
+5. Configure Icons-only Task Manager Settting
    - Appearance
      i don't understand what max.rows and the checked item do ?? - now finally working
    - Behavior     
@@ -121,7 +124,7 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-=6. CONFIGURE DIGITAL CLOCK
+6. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
@@ -132,10 +135,10 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 
 8. CONFIGURE DOLPHIN
    * Settings -> Configure Dolphin -> Startup:
-     =- check    "make location bar editable" (the checkmark toggles edit mode)
-     =- check    "show filter bar"
+     - check    "make location bar editable" (the checkmark toggles edit mode)
+     - check    "show filter bar"
      - uncheck  "Open new folders in tabs"
-     =- check 2x "show full path..."
+     - check 2x "show full path..."
 
 8  Configure Konsole
 
@@ -151,8 +154,10 @@ Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
 I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
 
+## Things I don't wind up using
 
-
+- activities.  I find virtual desktops enough.
+- clipboard
 
 
 ## My KDE Setup (old notes)
@@ -215,12 +220,6 @@ not applied until you hit the Apply button on each screen.
 	   	   this will enable krunning to find tabs in mozilla
 		   See also: https://community.kde.org/Plasma/Browser_Integration
 		   2023note:   
-		   
-	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
-       Screen Locking
-
-       Activities
-           ->make a new activity   [U22: I don't use this option anymore]
    
    
      2. Window Management
@@ -308,13 +307,13 @@ SAVING YOUR SESSION
 
 ADDING WIDGETS : have a field day, here are my favorites
 
-    NOTE1:  autoraising focus could be making it harder than it should
-    NOTE2:  already existing widgets on the screen are market with a blue dot (1)
-
 Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
 
+* Memory Usage - put it on the Task Manager
+* Individual Core Usage
+* Network Speed
+* Screen Layout
 * Analog Clock - Show seconds, 24-Hour Time display, Custom Date format "ddd MMM d"
-* Display Configuration - useful if you give talks or switch monitors a  lot (e.g. between home and work on a laptop)
 * Lock/Logout
 * Quick Share
 * Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
@@ -327,6 +326,7 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 and there are plenty of websites with ideas/reviews. Here are a few:
 
 * https://store.kde.org/browse
+       
 * 2024: https://www.ubuntubuzz.com/2025/03/what-to-do-after-installing-kubuntu-2404-and-kde-plasma-527.html#google_vignette
 * 2024: https://www.cosmoscalibur.com/en/blog/2024/que-hacer-despues-de-instalar-manjaro/
 * 2020: https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
@@ -346,8 +346,13 @@ ROOT:
            DefaultTimeoutStopSec=5s
   - "ssh identity"
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
-  - ImageMagick does not convert pdf to png without editing a system file
-    (TBD)
+  - ImageMagick might not convert pdf to png without editing a system file
+  
+    Make sure you can convert a pdf to png, on some machines the file /etc/ImageMagick-6/policy.xml did not give
+    mortal users enough permission.
+               <policy domain="coder" rights="read | write" pattern="PDF" />
+    this requires root priviliges. There is also a way for each user to do it.
+               cp etc/policy.xml ~/.config/ImageMagick/policy.xml
 
 
 KDE WALLET ?
@@ -366,12 +371,7 @@ FIREWALl
 
 Open Firewall Configuration -> Enable Firewall.
 
-DOLPHIN
-     Settings -> Configure Dolphin -> Startup:
-          uncheck  "make location bar editable"
-	  check    "show filter bar"
-          uncheck  "Open new folders in tabs"
-	  check 2x "show full path..." 
+
 
      Network
          google drive now shows up - be sure to first install kio-gdrive and
@@ -417,9 +417,6 @@ but you can also get access to them via the Discover -> Plasma Addons program (t
 17. System Settings -> Regional Settings -> Language -> Add languages (BUG: flashing when clicked)
 
 
-A word on tinkering here: For the current Kubuntu the basic default setting for
-most are called Breeze. There are probably 10^18 different combinations, if not more.
-
 ## Tailoring
 
 Things I often wind up adding:
@@ -443,9 +440,9 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
 - if you save your desktop, this is maintained in a file ~/.config/ksmserverrc
 - if you use kdewallet, some system files (e.g /etc/NetworkManager/system-connections/) will
   not be maintained by the system, but by the wallet
-- if you use gdm3 (e.v. via PopOS!) it will not set up ssh-agent for you
+- if you use gdm3 (e.g. via PopOS!) it will not set up ssh-agent for you
   it seems using sddm  will do this (see /etc/sddm/), which is the KDE default in most cases
-- mounting encrypted (luks) drives magically worked
+- mounting encrypted (luks) drives magically worked - but where are they hidden in PopOS!
 
 ## Troubleshooting
 
@@ -457,3 +454,70 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   Lost your firefox decorations?
   In firefox, check the title bar setting: click on the hambruger, More tools, Customise toolbar,
   and there's check box at the bottom left. save it. it should get things like resizing etc. back
+
+
+## ssh in KDE wallet
+
+
+how to add ssh-agent to KDE wallet?
+
+~/.bash_profile or ~/.bash_login or ~/.profile [whichever comes first ???] -- seems wrong order
+since ~/.profile was first on my machine
+export SSH_ASKPASS="/usr/bin/ksshaskpass"
+export SSH_ASKPASS_REQUIRE=prefer
+
+
+Using KDE Autostart scripts (alternative):
+
+~/.config/autostart-scripts/ssh-add-keys.sh
+
+#!/bin/bash
+SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS
+ssh-add ~/.ssh/id_ed25519    # your private key path
+
+
+
+
+
+2. Customize the Desktop:
+Widgets:
+Add widgets to the desktop or panel to display information like weather, system monitor, or media controls. 
+Icons:
+Customize the appearance of desktop icons, including their size, style, and behavior. 
+Desktop effects:
+Enable visual effects like window animations, desktop cube, or other visual enhancements. 
+Themes:
+Choose a global theme and customize individual elements like colors, fonts, and icons. 
+Activities:
+Create different desktop activities, each with its own set of applications and settings.
+
+
+
+3. Install Applications:
+Software Center:
+.
+Opens in new tab
+Use the built-in software manager (Discover on KDE) to browse and install applications. 
+Office Suite:
+.
+Opens in new tab
+Consider installing LibreOffice or Calligra as a comprehensive office suite. 
+Multimedia:
+.
+Opens in new tab
+Install codecs and media players like VLC or Clementine for handling various audio and video formats. 
+Other essential applications:
+.
+Opens in new tab
+Choose your preferred web browser, email client, and other tools based on your needs. 
+
+
+
+
+4. Advanced Customization (Optional):
+KDE Wallet: Consider configuring KDE Wallet to securely store passwords and sensitive information. 
+Firewall: Enable a firewall to enhance security, especially if you connect to public networks. 
+Input devices: Adjust mouse and touchpad settings to your preference. 
+File management: Explore features like Dolphin file manager and its integration with other applications. 
+Keyboard shortcuts: Customize keyboard shortcuts for frequently used actions. 
