@@ -13,7 +13,7 @@ Typically my KDE desktop has the following features added/changed:
 - very few widgets (maybe a clock)
 - some desktop effects (wobbly windows, broken windows on kill)
 
-## Issues
+## Current Issues
 
 - Wayland seems to prevent emacs-gui from resizing (see my .emacs patch)
   (setq frame-resize-pixelwise t)
@@ -66,11 +66,7 @@ Notes for Ubuntu 25.04 -
 	       select "Opens Them" (this will cause single click to enter directory or open file)
 
 
-3. Security & Privacy
-       Screen Locking
-           uncheck automatic locking after (15) mins -> Never
-
-4. Appearance & Style
+3. Appearance & Style
        color & themes
            Window Decorations
 	      configure Titlebar Buttons (may need to widen screen to see)
@@ -79,7 +75,7 @@ Notes for Ubuntu 25.04 -
 	   Login Screen (SDDM)
 	   Boot splash screen
 
-5. Apps & Windows
+4. Apps & Windows
        Window Management
            Window Behavior
                Focus -> Focus follows mouse (mouse precedence)
@@ -98,14 +94,15 @@ Notes for Ubuntu 25.04 -
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
        
-6. Input Devices
+5. Input Devices
    - Touchpad
      - Tapping:  tap-to-click
      - make sure not to invert scrolling
      - Two-finger tap: select Middle-click via 3-finger tap to right click)
-     
 
-
+6. Security & Privacy
+       Screen Locking
+           uncheck automatic locking after (15) mins -> Never
 
 7. System -> Power Management
 
@@ -120,7 +117,6 @@ Notes for Ubuntu 25.04 -
            -  Suspend session:  check this off (i.e. do it manually) - this way screen stays on
 
         (see also Screen Locking earlier)
-
 
 8. Configure Icons-only Task Manager Settting
    - Appearance
@@ -149,7 +145,7 @@ Notes for Ubuntu 25.04 -
 
 12  Configure Konsole
 
-   - Settings -> Configure Toolbars -> move 'New Window' to right in Main Toolbar
+     - Settings -> Configure Toolbars -> move 'New Window' to right in Main Toolbar
 
 13. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
       - Open System Settings
@@ -158,73 +154,46 @@ Notes for Ubuntu 25.04 -
       - "Match whole window class": "no"
       - Add property "No titlebar and frame", set it to "No"
 
-I currently have set it to "force". Maybe a more relaxed setting can work, too.
+    I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
 
-## Things I don't wind up using
+14. KDE Connect
+        Set your phone on the same network, see it show up in the list, select and "Request pair"
+        - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
+        - Set up a file system to share if you want to see them on the laptop
+
+
+
+## Things I don't wind up using much, if any
 
 - activities.  I find virtual desktops enough.
 - clipboard
 - PlasmaConfigSaver widget
-
-## My KDE Setup (old notes)
-
-
-   
-     2. Window Management
-       Window Behavior
-           Focus -> Focus follows mouse (mouse precedence)
-           Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
-       Task Switcher
-       KWin Scripts
-?           +MinimizeAll (useful to have a button to minimize all windows)
-       Window Rules
-       
-     3. Shortcuts
-       Global Shortcuts
-           Kwin 
-               Switch One Desktop Down -> Ctrl-Alt-Down (suggested is meta+ctrl+down)
-               Switch One Desktop Left    Ctrl-Alt-Left
-               Switch One Desktop Right   Ctrl-Alt-Right
-               Switch One Desktop Up      Ctrl-Alt-Up
-	       Toggle Present Windows (Current Desktop) -> Meta+D   (was assigned Ctrl+F9)
-
-     (Personalization)
-     6. Applications
-      File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
-      this can be the default and is annoying.
-     7. Online Accounts
+- online accounts (app seems to be blocked now, 2025?)
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
-
-     (Hardware)
-     1. Input Devices
-
-       Keyboard -
-          advanced
-	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
-	                            or:  Disabled
-              position of compose key:    Right Alt				    
-	      
-
-       Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
-             (this way   <Right-Alt> a ` gives à)
+      Network
+         google drive now shows up - be sure to first install kio-gdrive and
+         open a browser tab in google drive
 
 
 
-     6. KDE Connect
-        Set your phone on the same network, see it show up in the list, select and "Request pair"
-        - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
-        - Set up a file system to share if you want to see them on the laptop
-    
+## Saving your Session
 
-TO BE RESOLVED:
+It is useful to start with a session that has populated some windows, in my
+case emacs with the files I was working on, and at least a terminal. Ideally
+not browsers, since they bloat memory. They generally have their own recovery.
 
-https://github.com/shalva97/kde-configuration-files/
+  - System Settings -> Startup and Shutdown -> Desktop Session 
+      - On last logout (originaldefault)
+      - When session was manually saved   [pick this]
+      - Start with an empty session
 
+### Configuration
 
-SAVING YOUR SESSION
+It might be nice to clone a configuration to another laptop. this seems to be hard.
 
+  - See also https://github.com/shalva97/kde-configuration-files/
   - there is no good tool, there is kwriteconfig5/kreadconfig5
   - best is to save ?
   
@@ -236,7 +205,7 @@ SAVING YOUR SESSION
 
   - Using "cp -al " to make hard links to a backup directory
 
-ADDING WIDGETS : have a field day, here are my favorites
+## ADDING WIDGETS
 
 Too many widgets is quickly becoming useless, as your normal windows are on top of them. Here's a few of the ones I tried:
 
@@ -254,21 +223,11 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 * Condensed Weather -
 * Advanced Radio Players - install your own radiostations
 
-and there are plenty of websites with ideas/reviews. Here are a few:
 
-* https://store.kde.org/browse
-       
-* 2024: https://www.ubuntubuzz.com/2025/03/what-to-do-after-installing-kubuntu-2404-and-kde-plasma-527.html#google_vignette
-* 2024: https://www.cosmoscalibur.com/en/blog/2024/que-hacer-despues-de-instalar-manjaro/
-* 2020: https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
-* 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
-* 2018: https://www.linuxlinks.com/excellent-kde-plasma-widgets/
-* 2018: https://www.osradar.com/the-best-kde-plasma-widgets/
-* 2017: https://opensource.com/article/17/5/7-cool-kde-tweaks-will-improve-your-life
+## ROOT:
 
-ROOT:
-  If you are an admin, it might be useful to inherit this from your old ubuntu,
-  or set them now:
+Some useful settings that need to be done as root
+
   - "sudo" with longer retention
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
@@ -279,7 +238,8 @@ ROOT:
         copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
   - ImageMagick might not convert pdf to png without editing a system file
   
-    Make sure you can convert a pdf to png, on some machines the file /etc/ImageMagick-6/policy.xml did not give
+    Make sure you can convert a pdf to png, on some machines
+    the file /etc/ImageMagick-6/policy.xml did not give
     mortal users enough permission.
                <policy domain="coder" rights="read | write" pattern="PDF" />
     this requires root priviliges. There is also a way for each user to do it.
@@ -287,32 +247,12 @@ ROOT:
 
 
 
-FIREWALl
+##  FIREWALL
 
 Open Firewall Configuration -> Enable Firewall.
 
 
-
-     Network
-         google drive now shows up - be sure to first install kio-gdrive and
-         open a browser tab in google drive
-
-OLD STUFF....
-
-1. sometimes loose the KDE window manager. It can be restarted from
-   the commandline with
-
-       kstart plasmashell
-
-   or
-
-       kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
-
-3. the directory .local/share/baloo can get pretty big, this is for finding files (like the finder on Mac)
-   but the "locate" command does functionally something very similar.
-   You could turn it off.
-
-## Get New ...
+## New Stuff
 
 In quite a few places new "things" can be loaded into KDE. Overwhelming and fun. You often see them in the
 lower right corner of a setting that can be tailored by adding new ones. Here's a list as I encountered them,
@@ -375,7 +315,7 @@ Things I often wind up adding:
     ~/.config/plasmashellrc
 
   Lost your firefox decorations?
-  In firefox, check the title bar setting: click on the hambruger, More tools, Customise toolbar,
+  In firefox, check the title bar setting: click on the hamburger, More tools, Customise toolbar,
   and there's check box at the bottom left. save it. it should get things like resizing etc. back
 
 
@@ -400,31 +340,50 @@ Using KDE Autostart scripts (alternative):
       export SSH_ASKPASS
       ssh-add ~/.ssh/id_ed25519    # your private key path
 
+## LINKS
+
+plenty of websites and youtubes with ideas/reviews. Here are a few:
+
+* https://store.kde.org/browse
+       
+* 2024: https://www.ubuntubuzz.com/2025/03/what-to-do-after-installing-kubuntu-2404-and-kde-plasma-527.html#google_vignette
+* 2024: https://www.cosmoscalibur.com/en/blog/2024/que-hacer-despues-de-instalar-manjaro/
+* 2020: https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
+* 2019: https://www.addictivetips.com/ubuntu-linux-tips/best-kde-plasma-5-widgets/
+* 2018: https://www.linuxlinks.com/excellent-kde-plasma-widgets/
+* 2018: https://www.osradar.com/the-best-kde-plasma-widgets/
+* 2017: https://opensource.com/article/17/5/7-cool-kde-tweaks-will-improve-your-life
 
 
-======
+## OLD STUFF....
 
-2. Customize the Desktop:
-Widgets:
-Add widgets to the desktop or panel to display information like weather, system monitor, or media controls. 
-Icons:
-Customize the appearance of desktop icons, including their size, style, and behavior. 
-Desktop effects:
-Enable visual effects like window animations, desktop cube, or other visual enhancements. 
-Themes:
-Choose a global theme and customize individual elements like colors, fonts, and icons. 
-Activities:
-Create different desktop activities, each with its own set of applications and settings.
+1. sometimes loose the KDE window manager. It can be restarted from
+   the commandline with
 
+       kstart plasmashell
 
+   or
 
+       kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 
+3. the directory .local/share/baloo can get pretty big, this is for finding files (like the finder on Mac)
+   but the "locate" command does functionally something very similar.
+   You could turn it off.
 
+4. Applications
+    File Associations:  search for html, and make sure firefox is the first, if you install an E-book editor,
+    this can be the default and is annoying.
 
+5.  (Hardware)
+     1. Input Devices
 
-4. Advanced Customization (Optional):
-KDE Wallet: Consider configuring KDE Wallet to securely store passwords and sensitive information. 
-Firewall: Enable a firewall to enhance security, especially if you connect to public networks. 
-Input devices: Adjust mouse and touchpad settings to your preference. 
-File management: Explore features like Dolphin file manager and its integration with other applications. 
-Keyboard shortcuts: Customize keyboard shortcuts for frequently used actions. 
+       Keyboard -
+          advanced
+	      caps lock behavior:   Make caps lock an additional backspace (TRYING)
+	                            or:  Disabled
+              position of compose key:    Right Alt				    
+	      
+
+       Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
+             (this way   <Right-Alt> a ` gives à)
+
