@@ -5,14 +5,17 @@ UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for a more secure acce
 For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN, although
 there's a way with keyring type solutions to work around ssh.
 
-For me GP has not always been stable, with the following issue remaining:
+This writeup is somewhat focused on Linux, Ubuntu Linux in particular.
+
+Here are my remaining issues running GP:
 
 1. can limit your download speed for high-speed internet providers.
 2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
+   seems to work on a mac though.
 3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
 4. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
    better to manually disable GP if you need to speed. Maybe related to previous item.
-5. round trip using ssh agents? and/or kerberos? use ssh tunnel?
+5. can we do round trip using ssh agents? and/or kerberos? use ssh tunnel?
 
 
 ##  Summary
@@ -250,7 +253,8 @@ Processing triggers for man-db (2.12.0-4build2) ...
 ```
 
 
-after upgrading, it failed connecting.  Eventually with some hocus-pocus got it back. reboot normally also works.
+after upgrading, it failed connecting.  Eventually with some
+hocus-pocus got it back. reboot normally also works.
 
 
 ## Keyring?
