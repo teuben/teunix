@@ -24,20 +24,23 @@ Typically my KDE desktop has the following features added/changed:
   or I can use my script
      restart_kde
 
-- Serious issue sometimes when switching desktops too fast, scrollbar can do it,
+- Serious issue sometimes when switching desktops too fast, scrollbar can trigger it,
   should be disabled or binding to another action?  It will otherwise lock the
   system, only reboot comes out.
 
 - i get the impression current video drivers for i915 are curropting memory with
-  video is used for long times. 
+  video is used for long times.  Several laptops have this issue.
 
-## My KDE Setup (short version)
+## My KDE Setup
 
 Notes for Ubuntu 25.04 -
+
+```
                          KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
                                     6.3.4              6.12.0      6.8.3    may-21
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
 				    6.4.3              6.16.0      6.9.1    fedora-42
+```
 
 1. Mouse & Touchpad
        Screen Edges need some tuning:
@@ -57,17 +60,17 @@ Notes for Ubuntu 25.04 -
        Screen Locking
            Never lock screen, but keep lock when waking from sleep
 
-1. Workspace Bahavior
+2. Workspace Bahavior
        General Behavior
            clicking files or folders:
 	       select "Opens Them" (this will cause single click to enter directory or open file)
 
 
-1. Security & Privacy
+3. Security & Privacy
        Screen Locking
            uncheck automatic locking after (15) mins -> Never
 
-1. Appearance & Style
+4. Appearance & Style
        color & themes
            Window Decorations
 	      configure Titlebar Buttons (may need to widen screen to see)
@@ -76,7 +79,7 @@ Notes for Ubuntu 25.04 -
 	   Login Screen (SDDM)
 	   Boot splash screen
 
-2. Apps & Windows
+5. Apps & Windows
        Window Management
            Window Behavior
                Focus -> Focus follows mouse (mouse precedence)
@@ -95,7 +98,7 @@ Notes for Ubuntu 25.04 -
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
        
-3. Input Devices
+6. Input Devices
    - Touchpad
      - Tapping:  tap-to-click
      - make sure not to invert scrolling
@@ -104,7 +107,7 @@ Notes for Ubuntu 25.04 -
 
 
 
-4. System -> Power Management
+7. System -> Power Management
 
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -119,7 +122,7 @@ Notes for Ubuntu 25.04 -
         (see also Screen Locking earlier)
 
 
-5. Configure Icons-only Task Manager Settting
+8. Configure Icons-only Task Manager Settting
    - Appearance
      i don't understand what max.rows and the checked item do ?? - now finally working
    - Behavior     
@@ -128,27 +131,27 @@ Notes for Ubuntu 25.04 -
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-6. CONFIGURE DIGITAL CLOCK
+9. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
 
-7. root things: "sudo" with longer retention
+10. root things: "sudo" with longer retention
      /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
 
-8. CONFIGURE DOLPHIN
+11. CONFIGURE DOLPHIN
    * Settings -> Configure Dolphin -> Startup:
      - check    "make location bar editable" (the checkmark toggles edit mode)
      - check    "show filter bar"
      - uncheck  "Open new folders in tabs"
      - check 2x "show full path..."
 
-8  Configure Konsole
+12  Configure Konsole
 
    - Settings -> Configure Toolbars -> move 'New Window' to right in Main Toolbar
 
-9. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
+13. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
       - Open System Settings
       - Go to Window Management -> Window Rules
       - Match on "Window class (application)" with "Exact Match" on "zoom"
@@ -162,69 +165,11 @@ I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
 - activities.  I find virtual desktops enough.
 - clipboard
-
+- PlasmaConfigSaver widget
 
 ## My KDE Setup (old notes)
 
-Before you do anything, get the PlasmaConfigSaver from the widget
-store. Whatever you do, this way you can save a configuration and
-easily come back to it, or build on top of that.  This should be
-standard part of KDE.
 
-
-KDE can be confusing, for one, some settings appear in different
-places if you switch a version of KDE. Some of this work is painful if
-you have to repeat it many times, so it would be nice to have a
-programmatic way to do this for a virgin account. You can also copy
-the correct files in your ~/.config tree, but the key word is "correct".
-This appears to be a moving target.
-
-Also to note: during tuning, unlike in GNOME, changing a setting is
-not applied until you hit the Apply button on each screen.
-
-  A. Configure Desktop (right click on the Desktop background)
-  
-      Desktop & Wallpaper -> Layout -> pick:  'Desktop' or 'Folder View'
-           it seems picking a background has to be done for each screen (if > 1 screen attached)
-      Mouse Actions ->  Add Action -> Left Button -> Switch Activity -> Apply
-                                      Middle Button -> Paste -> Apply
-
-  B. System Settings
-
-     (Appearence)
-     1. Global Theme
-     2. Plasma Style
-     3. Application Style
-          Application Style
-          Window Decorations
-              Theme
-	      Titlebar Buttons
-	        - put application menu top left (hit Apply after each action)
-
-     (Workspace)
-     1. Workspace Bahavior
-       General Behavior
-           clicking files or folders:
-	       select "Opens Them" (this will cause single click to enter directory or open file)
-       Desktop Effect
-           Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
-	   Magic Lamp (vs. squash)
-	   Fall Apart (can be a bit distracting)
-	   Translucency (nice if you want to match figures)
-       Screen Edges
-           - TL:   Desktop Grid
-           - TR:   Present windows current desktop
-           - BR:   Present windows all desktops
-           but now:
-           - TL:   Present windows current desktop
-           - TR:   Overview
-           - BR:   Desktop Grid
-	   - TM:   Krunner
-                   https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
-	   	   this will enable krunning to find tabs in mozilla
-		   See also: https://community.kde.org/Plasma/Browser_Integration
-		   2023note:   
-   
    
      2. Window Management
        Window Behavior
@@ -265,31 +210,13 @@ not applied until you hit the Apply button on each screen.
        Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
              (this way   <Right-Alt> a ` gives à)
 
-       Mouse - make sure scrolling is not inverted (or natural as some call it)
-       Touchpad
-          Tapping:  tap-to-click
-	  make sure not to invert scrolling
-?	  [middle mouse is missing???]
 
-     4. Power Management
-        Energy Saving : on my laptop they did not get properly populated at all, that was bad.
-           -  Dim Screen    1-5 min (was default)
-           -  Screen Energy Saving (switch off after 
-           -  Suspend session:  check this off (i.e. do it manually)
 
      6. KDE Connect
         Set your phone on the same network, see it show up in the list, select and "Request pair"
         - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
         - Set up a file system to share if you want to see them on the laptop
-     7. Printers
-
-     - Icons-only Task Manager Settting -> Appearance
-	  ?  i don't understand what max.rows and the checked item do ??
-     - Icons-only Task Manager Settting -> Behavior     
-       Clicking grouped task:   Show large window previews   [this is different in U23]
-        
-       Sort:                    "By Desktop"
-       Show only tasks:         (only) "from current activity"
+    
 
 TO BE RESOLVED:
 
@@ -359,17 +286,6 @@ ROOT:
                cp etc/policy.xml ~/.config/ImageMagick/policy.xml
 
 
-KDE WALLET ?
-
-Open System Settings -> KDE Wallet -> Disable Enable the KDE Wallet subsystem -> Apply.
-
-controversial if it's useful or in the way.  I tried it with blowfish. some error with the other opton.
-
-FILE INDEXOR?
-
-also controversal.
-
-Open System Settings -> Search -> File Search -> Disable Also index file content -> Apply.
 
 FIREWALl
 
@@ -431,13 +347,16 @@ Things I often wind up adding:
 
 
 
-## Other things to do
+## Other things to do?
 
 - add a cpufreq monitor to the System Monitor
 - install **K4DirStat** to monitor disk space usage
 - try cairo-dock
 - learn about autostart
 - learn about how to snapshot a session for restart
+- file indexor. i tend to rely on updatedb, live ones impact too much
+  System Settings -> Search -> File Search -> (Disabled by default)
+
 
 ## Misc KDE notes
 
@@ -462,8 +381,6 @@ Things I often wind up adding:
 
 ## ssh in KDE wallet
 
-
-how to add ssh-agent to KDE wallet?
 
 Add the two env.var's to one of the followining files?
 
