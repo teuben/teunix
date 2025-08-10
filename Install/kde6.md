@@ -76,8 +76,6 @@ Notes for Ubuntu 25.04 -
 	   Login Screen (SDDM)
 	   Boot splash screen
 
-
-
 2. Apps & Windows
        Window Management
            Window Behavior
@@ -97,7 +95,6 @@ Notes for Ubuntu 25.04 -
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
        
-
 3. Input Devices
    - Touchpad
      - Tapping:  tap-to-click
@@ -146,6 +143,10 @@ Notes for Ubuntu 25.04 -
      - check    "show filter bar"
      - uncheck  "Open new folders in tabs"
      - check 2x "show full path..."
+
+8  Configure Konsole
+
+   - Settings -> Configure Toolbars -> move 'New Window' to right in Main Toolbar
 
 9. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
       - Open System Settings
@@ -426,7 +427,7 @@ Things I often wind up adding:
 
 - add 'Analog Clock' widget to the desktop, usually top right corner
 - add 'Memory Usage' widget to the Icons-Only Task Manager at the bottom.
-- add 'New Window' (New Tab/Split View already there) to the top bar of Konsole
+- add 'New Window' (New Tab/Split View already there) to the top bar of Konsole:
 
 
 
