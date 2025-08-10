@@ -1,17 +1,16 @@
 # KDE
 
-My KDE setup. See also more details in the various Linux*md installation notes.
-
 Typically my KDE desktop has the following features added/changed:
 
 - focus follows mouse with auto-raise
 - single click opens files and directories
 - add application menu on top left
-- kdeconnect for the phone
+- kdeconnect for ineractions with/via the phone
 - krunner for desktop/browser searching (needs plugin per browser)
-- 2H x 2V virtual desktops, single activity
-- very few widgets (maybe a clock)
+- multiple 2H x 2V virtual desktops, but single activity
+- a few widgets (maybe a clock, cpu monitor, network speed)
 - some desktop effects (wobbly windows, broken windows on kill)
+- start from a given saved desktop session
 
 ## Current Issues
 
@@ -133,15 +132,30 @@ Notes for Ubuntu 25.04 -
    * Time Zones: add , use scroll to change
 
 10. root things: "sudo" with longer retention
-     /etc/sudoers:         edit this with: sudo visudo 
+   - /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
 
-11. CONFIGURE DOLPHIN
-   * Settings -> Configure Dolphin -> Startup:
-     - check    "make location bar editable" (the checkmark toggles edit mode)
-     - check    "show filter bar"
-     - uncheck  "Open new folders in tabs"
-     - check 2x "show full path..."
+   - faster booting	   
+     /etc/systemd/system.conf
+           DefaultTimeoutStopSec=5s
+   - "ssh identity"
+        copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
+   - ImageMagick might not convert pdf to png without editing a system file
+  
+     Make sure you can convert a pdf to png, on some machines
+     the file /etc/ImageMagick-6/policy.xml did not give
+     mortal users enough permission.
+               <policy domain="coder" rights="read | write" pattern="PDF" />
+     this requires root priviliges. There is also a way for each user to do it.
+               cp etc/policy.xml ~/.config/ImageMagick/policy.xml
+
+
+11. Configure Dolphin 
+    * Settings -> Configure Dolphin -> Startup:
+      - check    "make location bar editable" (the checkmark toggles edit mode)
+      - check    "show filter bar"
+      - uncheck  "Open new folders in tabs"
+      - check 2x "show full path..."
 
 12  Configure Konsole
 
@@ -189,6 +203,11 @@ not browsers, since they bloat memory. They generally have their own recovery.
       - When session was manually saved   [pick this]
       - Start with an empty session
 
+  - Sessions are saved in ~/.config/ksmserverrc
+
+There doesn't appear to be an option to store the last session though, that has
+to be done via the manually saving option.
+
 ### Configuration
 
 It might be nice to clone a configuration to another laptop. this seems to be hard.
@@ -204,6 +223,8 @@ It might be nice to clone a configuration to another laptop. this seems to be ha
        ~/local/share
 
   - Using "cp -al " to make hard links to a backup directory
+
+
 
 ## ADDING WIDGETS
 
@@ -222,29 +243,6 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 * Event Calendar - weather, calendar
 * Condensed Weather -
 * Advanced Radio Players - install your own radiostations
-
-
-## ROOT:
-
-Some useful settings that need to be done as root
-
-  - "sudo" with longer retention
-     /etc/sudoers:         edit this with: sudo visudo 
-           Defaults        env_reset,timestamp_timeout=3600
-  - faster booting	   
-     /etc/systemd/system.conf
-           DefaultTimeoutStopSec=5s
-  - "ssh identity"
-        copy the /etc/ssh/{ssh_host*,ssh_import_id} from your old to new
-  - ImageMagick might not convert pdf to png without editing a system file
-  
-    Make sure you can convert a pdf to png, on some machines
-    the file /etc/ImageMagick-6/policy.xml did not give
-    mortal users enough permission.
-               <policy domain="coder" rights="read | write" pattern="PDF" />
-    this requires root priviliges. There is also a way for each user to do it.
-               cp etc/policy.xml ~/.config/ImageMagick/policy.xml
-
 
 
 ##  FIREWALL
@@ -353,6 +351,9 @@ plenty of websites and youtubes with ideas/reviews. Here are a few:
 * 2018: https://www.linuxlinks.com/excellent-kde-plasma-widgets/
 * 2018: https://www.osradar.com/the-best-kde-plasma-widgets/
 * 2017: https://opensource.com/article/17/5/7-cool-kde-tweaks-will-improve-your-life
+
+
+* 2025: https://www.youtube.com/watch?v=dKotBAKPKn4  - Customizing KDE Plasma 6 | Winter Serenity Desktop [8:26]
 
 
 ## OLD STUFF....
