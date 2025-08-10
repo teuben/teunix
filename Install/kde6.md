@@ -2,12 +2,11 @@
 
 My KDE setup. See also more details in the various Linux*md installation notes.
 
-Typically my desktop has:
+Typically my KDE desktop has the following features added/changed:
 
-- KDE
 - focus follows mouse with auto-raise
 - single click opens files and directories
-- [ put application menu top left ]
+- add application menu on top left
 - kdeconnect for the phone
 - krunner for desktop/browser searching (needs plugin per browser)
 - 2H x 2V virtual desktops, single activity
@@ -16,21 +15,26 @@ Typically my desktop has:
 
 ## Issues
 
-- Wayland seems to prevent emacs-gui from resizing
+- Wayland seems to prevent emacs-gui from resizing (see my .emacs patch)
+  (setq frame-resize-pixelwise t)
 
 - Icons from System Tray seem to disappear sometimes....  do these help:
      sudo service bluetooth restart
      sudo systemctl restart bluetooth
-  or I can use
+  or I can use my script
      restart_kde
 
 - Serious issue sometimes when switching desktops too fast, scrollbar can do it,
   should be disabled or binding to another action?  It will otherwise lock the
   system, only reboot comes out.
 
+- i get the impression current video drivers for i915 are curropting memory with
+  video is used for long times. 
+
 ## My KDE Setup (short version)
 
-Notes for Ubuntu 25.04 - KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
+Notes for Ubuntu 25.04 -
+                         KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
                                     6.3.4              6.12.0      6.8.3    may-21
 		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
 				    6.4.3              6.16.0      6.9.1    fedora-42
@@ -428,11 +432,11 @@ Things I often wind up adding:
 
 ## Other things to do
 
-Somewhat less urgent for immediate use, I often wind up doing some of the following:
-
 - add a cpufreq monitor to the System Monitor
-- install **K4DirStar** to monitor disk space usage
-
+- install **K4DirStat** to monitor disk space usage
+- try cairo-dock
+- learn about autostart
+- learn about how to snapshot a session for restart
 
 ## Misc KDE notes
 
@@ -441,7 +445,7 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
   not be maintained by the system, but by the wallet
 - if you use gdm3 (e.g. via PopOS!) it will not set up ssh-agent for you
   it seems using sddm  will do this (see /etc/sddm/), which is the KDE default in most cases
-- mounting encrypted (luks) drives magically worked - but where are they hidden in PopOS!
+- mounting encrypted (luks) drives magically worked - but where are they hidden in PopOS?
 
 ## Troubleshooting
 
@@ -460,24 +464,27 @@ Somewhat less urgent for immediate use, I often wind up doing some of the follow
 
 how to add ssh-agent to KDE wallet?
 
-~/.bash_profile or ~/.bash_login or ~/.profile [whichever comes first ???] -- seems wrong order
-since ~/.profile was first on my machine
-export SSH_ASKPASS="/usr/bin/ksshaskpass"
-export SSH_ASKPASS_REQUIRE=prefer
+Add the two env.var's to one of the followining files?
+
+       ~/.bash_profile or ~/.bash_login or ~/.profile [whichever comes first ???] -- seems wrong order
+       since ~/.profile was first on my machine
+
+      export SSH_ASKPASS="/usr/bin/ksshaskpass"
+      export SSH_ASKPASS_REQUIRE=prefer
 
 
 Using KDE Autostart scripts (alternative):
 
 ~/.config/autostart-scripts/ssh-add-keys.sh
 
-#!/bin/bash
-SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_ASKPASS
-ssh-add ~/.ssh/id_ed25519    # your private key path
+      #!/bin/bash
+      SSH_ASKPASS=/usr/bin/ksshaskpass
+      export SSH_ASKPASS
+      ssh-add ~/.ssh/id_ed25519    # your private key path
 
 
 
-
+======
 
 2. Customize the Desktop:
 Widgets:
@@ -493,23 +500,6 @@ Create different desktop activities, each with its own set of applications and s
 
 
 
-3. Install Applications:
-Software Center:
-.
-Opens in new tab
-Use the built-in software manager (Discover on KDE) to browse and install applications. 
-Office Suite:
-.
-Opens in new tab
-Consider installing LibreOffice or Calligra as a comprehensive office suite. 
-Multimedia:
-.
-Opens in new tab
-Install codecs and media players like VLC or Clementine for handling various audio and video formats. 
-Other essential applications:
-.
-Opens in new tab
-Choose your preferred web browser, email client, and other tools based on your needs. 
 
 
 
