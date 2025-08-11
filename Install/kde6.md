@@ -12,24 +12,6 @@ Typically my KDE desktop has the following features added/changed:
 - some desktop effects (wobbly windows, broken windows on kill)
 - start from a given saved desktop session
 
-## Current Issues
-
-- Wayland seems to prevent emacs-gui from resizing (see my .emacs patch)
-  (setq frame-resize-pixelwise t)
-
-- Icons from System Tray seem to disappear sometimes....  do these help:
-     sudo service bluetooth restart
-     sudo systemctl restart bluetooth
-  or I can use my script
-     restart_kde
-
-- Serious issue sometimes when switching desktops too fast, scrollbar can trigger it,
-  should be disabled or binding to another action?  It will otherwise lock the
-  system, only reboot comes out.
-
-- i get the impression current video drivers for i915 are curropting memory with
-  video is used for long times.  Several laptops have this issue.
-
 ## My KDE Setup
 
 Notes for Ubuntu 25.04 -
@@ -41,8 +23,20 @@ Notes for Ubuntu 25.04 -
 				    6.4.3              6.16.0      6.9.1    fedora-42
 ```
 
+### System Settings
+
+The following are accessible from the System Settings, but keep in mind these were re-arranged
+in KDE6.  In KDE5 most of these are present, but many are in a different hierarchy.
+
+=. Input & Output
 1. Mouse & Touchpad
-       Screen Edges need some tuning:
+       Mouse
+       Touchpad
+          - Tapping:  tap-to-click
+          - make sure not to invert scrolling
+          - Two-finger tap: select Middle-click via 3-finger tap to right click)
+       
+       Screen Edges:
            - TL:   Overview
            - TR:   Present windows - current desktop
 	   - MR:   Present windows - all desktops
@@ -55,55 +49,94 @@ Notes for Ubuntu 25.04 -
 		   https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai
 		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
-	   
-       Screen Locking
-           Never lock screen, but keep lock when waking from sleep
 
-2. Workspace Bahavior
-       General Behavior
-           clicking files or folders:
-	       select "Opens Them" (this will cause single click to enter directory or open file)
+2. Keyboard
+      Keyboard
+      Shortcuts  ?
+
+3. Display & Monitor
+
+=. Connected Devices
+4. Disks & Cameras
+       Device Auto Mount
+           -> select 'On Attach' for All Known Devices
+
+5. KDE Connect
+        Set your phone on the same network, see it show up in the list, select and "Request pair"
+        - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
+        - Set up a file system to share if you want to see them on the laptop
+
+=. Networking
+6. online accounts (app seems to be blocked now, 2025?)
+      make a google account, this will give you access to google Drive etc.
+      make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
+      Network
+         google drive now shows up - be sure to first install kio-gdrive and
+         open a browser tab in google drive
 
 
-3. Appearance & Style
-       color & themes
-           Window Decorations
+
+=. Appearance & Style
+7. Color & Themes
+      Global Theme
+         Window Decorations
 	      configure Titlebar Buttons (may need to widen screen to see)
-	        - put application menu top left (hit Apply after each action)
-           Splash Screen
-	   Login Screen (SDDM)
-	   Boot splash screen
+	         - put application menu top left (hit Apply after each action)
+         Splash Screen
+         Login Screen (SDDM)
+	 Boot splash screen (does this even work?)
+8. Animations
+      - global animation speed: 0 to 16;  8 seems about right
+      - window minimize -> Magic Lamps
 
-4. Apps & Windows
-       Window Management
-           Window Behavior
-               Focus -> Focus follows mouse (mouse precedence)
-               Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
 
-           Desktop Effects (lost a lot of options???)
-	       =Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
-	       ?Magic Lamp (vs. squash)
-	       ?Fall Apart (can be a bit distracting)
-	       ?Translucency (nice if you want to match figures)
-	       ?wobbly windows (one below max)
+=. Apps & Windows
+9. Window Management
+      Window Behavior
+         Focus -> Focus follows mouse (mouse precedence)
+         Raising Windows -> Raise on hover [750ms is the default, perhaps 500ms better)
 
-           Virtual Desktop
+      Task Switcher
+
+      Desktop Effects
+	       - Fall Apart (can be a bit distracting)
+	       - Mouse Mark (shift-meta to draw, shift-meta-F11/F12 to erase)
+	       - Translucency (nice if you want to match figures)
+	       - wobbly windows (one below max)
+	       ? Magic Lamp (vs. squash) -> now somewhere else
+
+      Kwin Scripts
+
+      Virtual Desktop
                4 desktops in 2 rows              (navigation shortcuts come later)
 	           -> give the desktop unique names/numbers such that taskbar can identify
                navigation *do not* wrap around (is actually the default)
                show on-screen display when switching
-       
-5. Input Devices
-   - Touchpad
-     - Tapping:  tap-to-click
-     - make sure not to invert scrolling
-     - Two-finger tap: select Middle-click via 3-finger tap to right click)
 
-6. Security & Privacy
-       Screen Locking
+
+=. Workspace
+10. General Behavior
+           clicking files or folders:
+	       select "Opens Them" (this will cause single click to enter directory or open file)
+11. Search
+       File Search
+       Plasma Search
+
+
+=. Security & Privacy
+12. Screen Locking 
+           Never lock screen, but keep lock when waking from sleep
            uncheck automatic locking after (15) mins -> Never
 
-7. System -> Power Management
+13. KDE Wallet
+   show manager in system tray
+
+
+=. System
+14. About this System
+14. Power Management
+        on AC power don't sleep after 15 mins... "do nothing"
+
 
         Energy Saving : on my laptop they did not get properly populated at all, that was bad.
            -  Dim Screen    1-5 min (was default)
@@ -117,7 +150,18 @@ Notes for Ubuntu 25.04 -
 
         (see also Screen Locking earlier)
 
-8. Configure Icons-only Task Manager Settting
+
+
+15. Autostart
+       ssh-add-keys.sh for KDE Wallet
+
+16. Session
+       Session Restore -> When Session was manually saved
+
+
+### Other Interesting Settings
+
+1. Configure Icons-only Task Manager Settting
    - Appearance
      i don't understand what max.rows and the checked item do ?? - now finally working
    - Behavior     
@@ -126,12 +170,12 @@ Notes for Ubuntu 25.04 -
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-9. CONFIGURE DIGITAL CLOCK
+2. CONFIGURE DIGITAL CLOCK
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
 
-10. root things: "sudo" with longer retention
+3. root things: "sudo" with longer retention
    - /etc/sudoers:         edit this with: sudo visudo 
            Defaults        env_reset,timestamp_timeout=3600
 
@@ -171,11 +215,6 @@ Notes for Ubuntu 25.04 -
     I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
 
-14. KDE Connect
-        Set your phone on the same network, see it show up in the list, select and "Request pair"
-        - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
-        - Set up a file system to share if you want to see them on the laptop
-
 
 
 ## Things I don't wind up using much, if any
@@ -183,13 +222,6 @@ Notes for Ubuntu 25.04 -
 - activities.  I find virtual desktops enough.
 - clipboard
 - PlasmaConfigSaver widget
-- online accounts (app seems to be blocked now, 2025?)
-      make a google account, this will give you access to google Drive etc.
-      make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
-      Network
-         google drive now shows up - be sure to first install kio-gdrive and
-         open a browser tab in google drive
-
 
 
 ## Saving your Session
@@ -337,6 +369,23 @@ Using KDE Autostart scripts (alternative):
       SSH_ASKPASS=/usr/bin/ksshaskpass
       export SSH_ASKPASS
       ssh-add ~/.ssh/id_ed25519    # your private key path
+## Current Issues
+
+- Wayland seems to prevent emacs-gui from resizing (see my .emacs patch)
+  (setq frame-resize-pixelwise t)
+
+- Icons from System Tray seem to disappear sometimes....  do these help:
+     sudo service bluetooth restart
+     sudo systemctl restart bluetooth
+  or I can use my script
+     restart_kde
+
+- Serious issue sometimes when switching desktops too fast, scrollbar can trigger it,
+  should be disabled or binding to another action?  It will otherwise lock the
+  system, only reboot comes out.
+
+- i get the impression current video drivers for i915 are curropting memory with
+  video is used for long times.  Several laptops have this issue.
 
 ## LINKS
 
