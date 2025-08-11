@@ -17,10 +17,11 @@ Typically my KDE desktop has the following features added/changed:
 Notes for Ubuntu 25.04 -
 
 ```
-                         KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
-                                    6.3.4              6.12.0      6.8.3    may-21
-		                    6.3.90             6.14.0      6.8.3    6.4 beta-1
-				    6.4.3              6.16.0      6.9.1    fedora-42
+    KDE Plasma 6.3.3 / Frameworks 6.12.0 / Qt 6.8.2
+               6.3.4              6.12.0      6.8.3    may-21
+               6.3.90             6.14.0      6.8.3    6.4 beta-1
+               6.4.3              6.16.0      6.9.1    fedora-42
+               6.3.5              6.15.0      6.8.3    ku25.10
 ```
 
 ### System Settings
@@ -28,7 +29,7 @@ Notes for Ubuntu 25.04 -
 The following are accessible from the System Settings, but keep in mind these were re-arranged
 in KDE6.  In KDE5 most of these are present, but many are in a different hierarchy.
 
-=. Input & Output
+#### Input & Output
 1. Mouse & Touchpad
        Mouse
        Touchpad
@@ -56,7 +57,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
 3. Display & Monitor
 
-=. Connected Devices
+#### Connected Devices
 4. Disks & Cameras
        Device Auto Mount
            -> select 'On Attach' for All Known Devices
@@ -66,7 +67,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
         - Approve on phone - test e.g. with "Remote Input" on phone, it should move mouse on laptop
         - Set up a file system to share if you want to see them on the laptop
 
-=. Networking
+#### Networking
 6. online accounts (app seems to be blocked now, 2025?)
       make a google account, this will give you access to google Drive etc.
       make sure you first login the browers to Drive, otherwise your Browser window will/might hang.
@@ -76,7 +77,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
 
 
-=. Appearance & Style
+#### Appearance & Style
 7. Color & Themes
       Global Theme
          Window Decorations
@@ -85,12 +86,12 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
          Splash Screen
          Login Screen (SDDM)
 	 Boot splash screen (does this even work?)
-8. Animations
+8. Animations [may have disappeared in later versions]
       - global animation speed: 0 to 16;  8 seems about right
       - window minimize -> Magic Lamps
 
 
-=. Apps & Windows
+#### Apps & Windows
 9. Window Management
       Window Behavior
          Focus -> Focus follows mouse (mouse precedence)
@@ -114,7 +115,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
                show on-screen display when switching
 
 
-=. Workspace
+#### Workspace
 10. General Behavior
            clicking files or folders:
 	       select "Opens Them" (this will cause single click to enter directory or open file)
@@ -123,7 +124,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
        Plasma Search
 
 
-=. Security & Privacy
+#### Security & Privacy
 12. Screen Locking 
            Never lock screen, but keep lock when waking from sleep
            uncheck automatic locking after (15) mins -> Never
@@ -132,7 +133,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
    show manager in system tray
 
 
-=. System
+#### System
 14. About this System
 14. Power Management
         on AC power don't sleep after 15 mins... "do nothing"
@@ -170,7 +171,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
        - Sort:                    "By Desktop"
        - Show only tasks:         (only) "from current activity"
 
-2. CONFIGURE DIGITAL CLOCK
+2. Configure Digital Clock
    * Appearance: Show seconds "Always"    Time display "24 Hour"   Date format Custom "ddd MMM d"
    * Calendar: Show week numbers
    * Time Zones: add , use scroll to change
