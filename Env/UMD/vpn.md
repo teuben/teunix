@@ -12,10 +12,10 @@ Here are my remaining issues running GP:
 1. can limit your download speed for high-speed internet providers.
 2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
    seems to work on a mac though.
-3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
+3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
 4. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
    better to manually disable GP if you need to speed. Maybe related to previous item.
-5. can we do round trip using ssh agents? and/or kerberos? use ssh tunnel?
+5. TODO: can we do round trip using ssh agents? and/or kerberos? use ssh tunnel?
 
 
 ##  Summary
@@ -67,13 +67,13 @@ back to BA needs another CAS confirmation.
 On KDE the `PanGPUI` icon is persistently visible on the `Icons-only
 Task Manager`. There is also a subtle difference in the appearance of
 the icon, which can be used to glean the status if VPN is up or
-down. You would not need the desktop icon anymore.
+down. You would not need to use the desktop icon anymore.
 
 
 
-### annoying icon lifetime
+### Annoying icon lifetime
 
-the GP icon is destroyed when something else gets focus. Very annoying
+The GP icon is destroyed when something else gets focus. Very annoying
 for those who prefer focus follows mouse.  Clearly something engineers
 at PA never heard of.  Sometimes it disappears before one can take
 action. Similar effects seen on both mac and win.
@@ -91,7 +91,7 @@ Also has a link to OpenStreetMaps where you are "located" on the planet.
 
 ## CAS tricks
 
-The CAS interface will remember you for  (5?) days. If once every 5 days you would
+The CAS interface will remember you for 5 days. If once every 5 days you would
 jump the gun and deliberately engage CAS, then things will not get in your way when
 you need to jump on zoom, or VPN or ....
 
@@ -172,6 +172,49 @@ The GUI claims i'm up.
 There has even been cases wehre 'ssh lma' just hangs.... not even the
 request for the password. A reboot solved this, grrr.
 
+### cannot verify the server certificate
+
+This can happen on some "non-standard" Linux systems (e.g. Mint, Rocky, PopOS!)
+
+If you try this, it will install and run happily, but when you try to
+connect, it will tell you that it cannot verify the server certificate
+and it won't let you connect.
+
+As it turns out, the issue isn't with the cert at all.  The issue is
+that the GP client is stupid about how it figures out where the cert
+path is on the OS - it looks at /etc/lsb-release and then based on
+what it finds there, it picks the cert path.  The only OSes that GP
+currently knows about are Ubuntu, RedHat, CentOS, and Debian.
+
+Two way to hack it:
+
+1. Use a binary hex-editor on
+/opt/paloaltonetworks/globalprotect/PanGPS and replace the one
+occurrence of /etc/lsb-release with something else (/etc/pan-release
+is what I used).  Make sure you don't change the length of the
+filename.
+
+Then create the file /etc/pan-release and put one line in there- use
+one of the distributions mentioned above that's related to whatever
+you're running- DISTRIB_DESCRIPTION="Ubuntu"
+
+2. Hack the /etc/lsb-release file and make sure there's a line
+
+     DISTRIB_DESCRIPTION="ubuntu"
+
+
+     systemctl restart gpd
+
+Log out and back in and you'll be good to go.
+
+
+
+Apparently acceptable values for DISTRIB_DESCRIPTION are:
+'Ubuntu', 'Red Hat', 'CentOS', 'Debian', 'Fedora'.
+
+Also note that for some OSes, /etc/lsb-release doesn't exist.  That's
+ok, as GP looks for it anyway, so this method still works.
+
 
 ## Processes
 
@@ -190,6 +233,10 @@ teuben      3636  0.2  0.0 408368 27556 ?        Ssl  21:26   0:00 /opt/paloalto
 teuben      5245  4.8  0.3 2685160 241480 ?      Sl   21:26   0:00 /opt/paloaltonetworks/globalprotect//PanGPUI -session 106b3200000175409761100000039690028_1754097978_210703
 
 ```
+
+## odd state
+
+GP claimed the IP was <this>, but `ifconfig gpd0` show another <that> ip. effectively GP was not running.
 
 
 ## FAQ
@@ -284,6 +331,21 @@ needed because the tunneled login originates inside lma itself. It probably
 involves double-encrypted traffic though, as both the tunnel traffic and SSH
 session traffic will be encrypted individually (I think).
 
+## Kerberos
+
+An alternative to ssh keys can be kerberos tickets. Make sure your
+ssh config file a
+
+On lma for  
+
+      # for /etc/ssh/sshd_config
+      GSSAPIAuthentication     yes
+      GSSAPICleanupCredentials yes
+
+In your .ssh/config file hosts need
+
+      GSSAPIAuthentication yes
+      GSSAPIDelegateCredentials yes
 
 # GP on Mac and Win
 
@@ -301,6 +363,6 @@ visually when status changes, only Mac seems to do this.
 # Oddities
 
 1. The routing table `route` is nuts.
-2. same ip for some time, e.g. overnight down
+2. same ip for some time, e.g. overnight down, still got the same IP.
 
 
