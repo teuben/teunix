@@ -1,37 +1,39 @@
 # GlobalProtect VPN
 
-UMD is using Palo Alto Networks' VPN tool "GlobalProtect" for a more secure access to the UMD network.
+UMD is using Palo Alto Networks' 
+[VPN tool "GlobalProtect](https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0016076)
+for a more secure access to the UMD network.
+
+##  Summary
+
+1. You don't need to be on VPN for everything
+2. This VPN comes in two modes:  Best Access (BA) and Tunnel All (TA). The former only
+   send UMD traffic through VPN, but leaves the rest alone.  In TA mode all traffic
+   goes via VPN.
+3. Unless you put this in your autostart, on a reboot GP needs to be manually started.
+4. If a laptop is suspended, upon resume GP comes back. This is independant if you
+   switched from wifi to ethernet.
+   
 
 For some workflows you'll need to be on VPN, e.g. ssh keys only work when on VPN, although
 there's a way with keyring type solutions to work around ssh.
 
-This writeup is somewhat focused on Linux, Ubuntu Linux in particular.
+This writeup is somewhat focused on Linux, Kubuntu Linux in particular.
 
 Here are my remaining issues running GP:
 
-1. can limit your download speed for high-speed internet providers.
-2. printing from home may not work to auto-detected (bonjour) printers. seems fixed IP printers are better.
-   seems to work on a mac though.
-3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop.
+
+1. can limit your download speed for high-speed internet providers. (tested on linux and mac)
+
+2. printing from home may not work to auto-detected (bonjour) printers.
+   seems fixed IP printers are better. seems to work on a mac though, but not on linux.
+
+3. <SERIOUS> occasional change of state in GP will cause it to hang. Do your magic or reboot laptop. 
+
 4. WARNING:   when on eduroam and switching to wired can cause eduroam to keep the default route.
    better to manually disable GP if you need to speed. Maybe related to previous item.
+
 5. TODO: can we do round trip using ssh agents? and/or kerberos? use ssh tunnel?
-
-
-##  Summary
-
-Here's a pretty close to ideal workflow, where typing an ssh passphrase is needed once per reboot.
-
-1. reboot laptop
-2. login (local password needed)
-3. start globalprotect (normally not automated) 
-4. this will open window in your browser, but no need to click here, assuming you did set this up right
-   [ once every 5/7 days you will need your UMD password ]
-5. "ssh astro", enter your ssh passphrase, make sure you check the "remember me" button.
-   -> this assume you have done the usual ssh-keygen and ssh-copy-id
-6. "ssh astro" subsequent windows automated now
-7. suspend laptop
-8. open laptop.  GP should start automatically. "ssh astro" should not need a password either
 
 
 ## GlobalProtect Icon(s)
@@ -71,13 +73,10 @@ down. You would not need to use the desktop icon anymore.
 
 
 
-### Annoying icon lifetime
+### Iconc Lifetime
 
-The GP icon is destroyed when something else gets focus. Very annoying
-for those who prefer focus follows mouse.  Clearly something engineers
-at PA never heard of.  Sometimes it disappears before one can take
-action. Similar effects seen on both mac and win.
-
+The GP icon is destroyed when something else gets focus. Can be annoying
+for those who prefer focus follows mouse.  
 
 ### KDE IP status widget
 
@@ -88,6 +87,8 @@ now routed through UMD.
 
 Also has a link to OpenStreetMaps where you are "located" on the planet.
 
+Would be better if we develop a special widget for UMD so it also
+shows the IP in BA mode.
 
 ## CAS tricks
 
@@ -106,7 +107,7 @@ UMD is made..... 15min? 30min?  it's fairly short.
 * https://www.paloaltonetworks.com/sase/globalprotect
 * https://github.com/yuezk/GlobalProtect-openconnect   (not tested recently)
 * Some recent debian packages
-  * GlobalProtect_UI_deb-6.1.1.0-49.deb
+  * GlobalProtect_UI_deb-6.1.1.0-49.deb    or GlobalProtect_UI_rpm-6.2.7.1-1050.rpm 
   * GlobalProtect_UI_deb-6.1.3.0-703.deb
   * GlobalProtect_UI_deb-6.2.0.1-265.deb
   * GlobalProtect_UI_deb-6.2.1.1-276.deb
@@ -363,6 +364,6 @@ visually when status changes, only Mac seems to do this.
 # Oddities
 
 1. The routing table `route` is nuts.
-2. same ip for some time, e.g. overnight down, still got the same IP.
+2. You may get the same ip for some time, e.g. overnight, or travel home-work
 
 
