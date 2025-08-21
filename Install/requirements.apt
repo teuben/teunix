@@ -37,3 +37,4 @@ libhdf5-serial-dev
 hdf5-tools
 libblas-dev
 liblapack-dev      # </amuse>
+retext
