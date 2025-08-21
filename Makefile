@@ -21,7 +21,7 @@ UP = git emacs tcsh wget curl unzip openssh-server \
 
 UP2 = plasma-widgets-addons kio-gdrive
 
-UP3 = pgplot5-dev
+UP3 = pgplot5-dev krb5-user
 
 # fedora packages
 FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel
