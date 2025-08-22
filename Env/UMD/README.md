@@ -4,7 +4,10 @@ Several useful apps when you are in the UMD sytem
 
 1. eduroam for wifi
 
-* https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0011963
+Onboarding is needed.
+
+* tool: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0011963
+* manual: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0014926 or better:
 * https://www.astro.umd.edu/twiki/bin/view/AstroUMD/Wireless
 
 2. GlobalProtect VPN
