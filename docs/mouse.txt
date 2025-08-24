@@ -1,7 +1,6 @@
-Mouse-1
            Button-1      Button-2     Button-3
 ------------------------------------------------
-Mouse-1    .             dl5xxx       .
+Mouse-1    .             dl5420       .
 Mouse-2    x1y2          .            d76
-Mouse-3    .             .            k2
+Mouse-3    .             p14          k2
 
