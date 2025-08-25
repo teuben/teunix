@@ -6,6 +6,7 @@ URL4 = https://github.com/teuben/nemo
 URL5 = https://github.com/ohmybash/oh-my-bash
 URL6 = https://github.com/ohmyzsh/ohmyzsh
 URL7 = https://github.com/teuben/teuben
+URL8 = https://github.com/astroumd/astronet
 
 TEUNIX = `pwd`
 
@@ -228,3 +229,8 @@ teuben:
 omb:
 	-git clone $(URL5)
 	@echo bash -c oh-my-bash/tools/install.sh
+
+
+## astronet:  16. AstroNet info
+astronet:
+	git clone $(URL8)
