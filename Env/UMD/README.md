@@ -4,7 +4,7 @@ Several useful apps when you are in the UMD sytem
 
 1. eduroam for wifi
 
-Onboarding is needed.
+Onboarding is needed. Basically go to https://it.umd.edu/connect and set yourself up
 
 * tool: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0011963
 * manual: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0014926 or better:
