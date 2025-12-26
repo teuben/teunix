@@ -2,7 +2,7 @@
 
 This is my home away from home!
 
-It's a collection of scripts to get my environment set up on a new
+This is a collection of scripts to get my environment set up on a new
 Unix account. For the shell I keep both -csh an -sh flavors, although I've
 mostly switched to bash. I cover both Linux and Darwin flavors of Unix.
 I used to be fluent in Solaris and a few others, but that's long gone.
