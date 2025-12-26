@@ -36,3 +36,24 @@ My current favorite tools are:
 * python: anaconda3 (and some spyder and JupyterLab Desktop)
 * git: mostly via github.com, but also 'gh' and Github Desktop
 * ...
+
+## Typical install
+
+Since I do this so often, this is a typical Ubuntu install:
+
+```
+  sudo apt install git make
+  git clone https://github.com/teuben/teunix
+  cd teunix
+  make dpkg apt apt2 apt3 apt4
+  make rc env mem
+  source ~/.bashrc
+```
+
+and just for me: my home setup
+
+```
+  make nemo
+  make hosts diary pjteunix
+```  
+  
