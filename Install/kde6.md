@@ -381,6 +381,11 @@ Using KDE Autostart scripts (alternative):
   or I can use my script
      restart_kde
 
+- networking icon also seems to disappear sometimes:f
+
+     sudo systemctl restart NetworkManager
+     
+
 - Serious issue sometimes when switching desktops too fast, scrollbar can trigger it,
   should be disabled or binding to another action?  It will otherwise lock the
   system, only reboot comes out.
