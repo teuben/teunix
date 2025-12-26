@@ -4,8 +4,10 @@ Several useful apps when you are in the UMD sytem
 
 1. eduroam for wifi
 
+
 Onboarding is needed, this will place a UMD certificate on your device, and you will
 need to go through CAS authentication.
+
 
 * tool: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0011963
 * manual: https://itsupport.umd.edu/itsupport?id=kb_article_view&sysparm_article=KB0014926 or better:
