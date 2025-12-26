@@ -11,6 +11,7 @@ Typically my KDE desktop has the following features added/changed:
 - a few widgets (maybe a clock, cpu monitor, network speed)
 - some desktop effects (wobbly windows, broken windows on kill)
 - start from a given saved desktop session
+- my UMD security specfic things
 
 ## My KDE Setup
 
@@ -40,7 +41,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
        Screen Edges:
            - TL:   Overview
            - TR:   Present windows - current desktop
-	   - MR:   Present windows - all desktops
+	   - MR:   Present windows - all desktops   (this can easily mess up 2nd window to your right)
            - BR:   Desktop Grid
 	   - TM:   Krunner
                    https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
@@ -370,6 +371,13 @@ Using KDE Autostart scripts (alternative):
       SSH_ASKPASS=/usr/bin/ksshaskpass
       export SSH_ASKPASS
       ssh-add ~/.ssh/id_ed25519    # your private key path
+
+## UMD specific things
+
+- set up eduroam. Onboarding need a certificate
+
+- install VPN with the GlobalProtect software from Palo Alto
+
 ## Current Issues
 
 - Wayland seems to prevent emacs-gui from resizing (see my .emacs patch)

@@ -1,6 +1,5 @@
 # teunix
 
-
 This is my home away from home!
 
 It's a collection of scripts to get my environment set up on a new
@@ -29,7 +28,7 @@ course.
 
 My current favorite tools are:
 
-* editor: ec (a logging emacsclient script), mem (micro-emacs) and in pure desparation vim
+* editor: ec (my logging emacsclient script), mem (micro-emacs) and in pure desparation vim or nano
 * shell:  bash
 * window manager: KDE/Plasma
 * linux distro: Kubuntu
