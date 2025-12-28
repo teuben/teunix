@@ -11,7 +11,7 @@ Typically my KDE desktop has the following features added/changed:
 - a few widgets (maybe a clock, cpu monitor, network speed)
 - some desktop effects (wobbly windows, broken windows on kill)
 - start from a given saved desktop session
-- my UMD security specfic things
+- my UMD security specfic things, including KDE wallet and maybe kerberos
 
 ## My KDE Setup
 
@@ -155,7 +155,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
 
 15. Autostart
-       ssh-add-keys.sh for KDE Wallet
+       ssh-add-keys.sh for KDE Wallet (optional, see below)
 
 16. Session
        Session Restore -> When Session was manually saved
@@ -372,11 +372,19 @@ Using KDE Autostart scripts (alternative):
       export SSH_ASKPASS
       ssh-add ~/.ssh/id_ed25519    # your private key path
 
+On the next ssh to any machine, make sure you select "Remember Password" when the SSH credentials (password)
+are asked for.
+
 ## UMD specific things
 
 - set up eduroam. Onboarding need a certificate
 
 - install VPN with the GlobalProtect software from Palo Alto
+
+## kerberos
+
+If this works as advertised, one should be able to ssh to nrao, and scp files back. Only lma was
+enabled to have the krb setup done for this.   zaratan may also
 
 ## Current Issues
 
@@ -400,6 +408,9 @@ Using KDE Autostart scripts (alternative):
 
 - i get the impression current video drivers for i915 are curropting memory with
   video is used for long times.  Several laptops have this issue.
+
+- sometimes waking up from suspend causes mouse not to being able to pick up windows.
+  sleep-suspend might help.   going to a virtual console (ctrl-alt-F1/F2) may work.
 
 ## LINKS
 
