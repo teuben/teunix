@@ -56,8 +56,4 @@ and just for me: my home setup
   make hosts diary pjteunix
 ```  
   
-<<<<<<< HEAD
 ... more to come
-=======
-..
->>>>>>> d76d136c18b0cbf21df115b87486034ece2c1bef
