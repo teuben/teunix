@@ -133,6 +133,7 @@ env0: apt-cache0.list apt-cache1.list dpkg0.list
 
 env1:
 	-@echo '[ -e  ~/teunix/Env/aliases.sh ] && source ~/teunix/Env/aliases.sh' >> ~/.bashrc
+	-@cat ~/teunix/Env/dotbash_profile >> ~/.bash_profile
 
 env2:
 	-@[ ! -e  ~/.emacs ] && ln -s ~/teunix/Env/dotemacs ~/.emacs
