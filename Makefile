@@ -17,7 +17,7 @@ UP = git emacs tcsh wget curl unzip openssh-server \
      build-essential gfortran cmake pgplot5 xorg-dev libncurses-dev \
      meld htop gitg gitk git-cvs \
      exfat-fuse tkcvs net-tools ncftp autoconf \
-     python-is-python3 libtirpc-dev time libpng-dev
+     python-is-python3 libtirpc-dev time libpng-dev libhunspell-dev
 
 
 UP2 = plasma-widgets-addons kio-gdrive
@@ -54,6 +54,7 @@ apt2:
 apt3:
 	@echo 'This is a DIY list:'
 	@echo 'ZOOM:    https://zoom.us/download?os=linux'
+	sudo apt install $(UP3) -y
 
 ## apt4:       1d. Enable universe
 apt4:
