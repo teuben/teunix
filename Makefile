@@ -159,8 +159,8 @@ env9:
 ## uemacs:     2. micro-emacs quick source install
 uemacs:
 	git clone $(URL2)
-	@echo "Needs package libncurses-dev on Ubuntu"
-	@echo "              ncurses-devel on Fedora"
+	@echo "Needs package libncurses-dev libhunspell-dev on Ubuntu"
+	@echo "              ncurses-devel  hunspell-devel  on Fedora"
 	@echo 'cd uemacs; make'
 
 ## mem:        2. install micro-emacs at ~/bin/mem
