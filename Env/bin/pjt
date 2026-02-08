@@ -47,8 +47,8 @@ fi
 if [ ! -z $DYSH ]; then
     gitbv $DYSH
     echo "DYSH:        $DYSH"
-    echo "DYSH_DATA:   $DYSH_DATA"
     echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
+    echo "DYSH_DATA:   $DYSH_DATA"
 fi
 
 if [ ! -z $SLAMA ]; then
