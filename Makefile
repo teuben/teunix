@@ -1,7 +1,8 @@
 #
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
 URL2 = https://github.com/torvalds/uemacs
-URL3 = https://github.com/astroumd/sysadmin
+URL3o= https://github.com/astroumd/sysadmin
+URL3 = git@github.com:astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
 URL5 = https://github.com/ohmybash/oh-my-bash
 URL6 = https://github.com/ohmyzsh/ohmyzsh
