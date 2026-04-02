@@ -164,6 +164,7 @@ uemacs:
 	git clone $(URL2)
 	@echo "Needs package libncurses-dev libhunspell-dev on Ubuntu"
 	@echo "              ncurses-devel  hunspell-devel  on Fedora"
+	@echo "Might need CC='gcc -std=c2x'"
 	@echo 'cd uemacs; make'
 
 ## mem:        2. install micro-emacs at ~/bin/mem
