@@ -8,6 +8,8 @@ URL5 = https://github.com/ohmybash/oh-my-bash
 URL6 = https://github.com/ohmyzsh/ohmyzsh
 URL7 = https://github.com/teuben/teuben
 URL8 = https://github.com/astroumd/astronet
+URL9 = https://github.com/teuben/teuben.github.io
+
 
 TEUNIX = `pwd`
 
@@ -225,7 +227,8 @@ omz:
 
 ## teuben:     my github pages
 teuben:
-	git clone $(URL7) teuben
+	git clone $(URL7) 
+	git clone $(URL9) 
 
 
 ## omb:       15. Install oh-my-bash  (should be before "env1")
