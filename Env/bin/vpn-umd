@@ -1,6 +1,7 @@
 #! /bin/csh -f
 #
 #  see also: https://www.astro.umd.edu/twiki/bin/view/AstroUMD/HowToUseVPN
+#   and now: https://wiki.astro.umd.edu/en/computing/vpn
 
 echo '======================================='
 echo 'NEW:'

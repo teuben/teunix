@@ -1,12 +1,15 @@
 #
 URL1 = https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git
 URL2 = https://github.com/torvalds/uemacs
-URL3 = https://github.com/astroumd/sysadmin
+URL3o= https://github.com/astroumd/sysadmin
+URL3 = git@github.com:astroumd/sysadmin
 URL4 = https://github.com/teuben/nemo
 URL5 = https://github.com/ohmybash/oh-my-bash
 URL6 = https://github.com/ohmyzsh/ohmyzsh
 URL7 = https://github.com/teuben/teuben
 URL8 = https://github.com/astroumd/astronet
+URL9 = https://github.com/teuben/teuben.github.io
+
 
 TEUNIX = `pwd`
 
@@ -161,6 +164,7 @@ uemacs:
 	git clone $(URL2)
 	@echo "Needs package libncurses-dev libhunspell-dev on Ubuntu"
 	@echo "              ncurses-devel  hunspell-devel  on Fedora"
+	@echo "Might need CC='gcc -std=c2x'"
 	@echo 'cd uemacs; make'
 
 ## mem:        2. install micro-emacs at ~/bin/mem
@@ -224,7 +228,8 @@ omz:
 
 ## teuben:     my github pages
 teuben:
-	git clone $(URL7) teuben
+	git clone $(URL7) 
+	git clone $(URL9) 
 
 
 ## omb:       15. Install oh-my-bash  (should be before "env1")

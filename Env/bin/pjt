@@ -1,10 +1,12 @@
 #! /usr/bin/env bash
 #
-#    report my typical environment
+#    report my typical environment, the projects loaded,
+#    important related env.variables etc.
 #
 
 os=$(uname -s)
 
+#   set some global variables related to the git repo (which has to be the 1st argument)
 gitbv() {
     _branch=$(cd $1;git branch --show-current)
     _counter=$(cd $1;git rev-list --count HEAD)
@@ -84,6 +86,7 @@ else
     echo "module not available"
 fi
 
+echo XDG_SESSION_TYPE=$XDG_SESSION_TYPE
 
 if [ "$1" == dev ]; then
     echo "----------------------------------------------------------"
