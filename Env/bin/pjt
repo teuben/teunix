@@ -49,6 +49,7 @@ if [ ! -z $DYSH ]; then
     echo "DYSH:        $DYSH"
     echo "             Branch:$_branch Counter:$_counter Date: $_lastdate"    
     echo "DYSH_DATA:   $DYSH_DATA"
+    echo "SDFITS_DATA: $SDFITS_DATA"
 fi
 
 if [ ! -z $SLAMA ]; then
