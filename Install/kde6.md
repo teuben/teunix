@@ -4,8 +4,8 @@ Typically my KDE desktop has the following features added/changed:
 
 - focus follows mouse with auto-raise
 - single click opens files and directories
-- add application menu on top left
-- kdeconnect for ineractions with/via the phone
+- add application menu on top left of windows
+- kdeconnect for interactions with/via the phone
 - krunner for desktop/browser searching (needs plugin per browser)
 - multiple 2H x 2V virtual desktops, but single activity
 - a few widgets (maybe a clock, cpu monitor, network speed)
@@ -51,6 +51,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 		   https://chrome.google.com/webstore/detail/plasma-integration/cimiefiiaegbelhefglklhhakcgmhkai
 		    
 	   Switch desktop on edge:  Only when moving windows (fun shortcut to move [new] window)
+	                            Disabled is the better way with multiple screens.
 
 2. Keyboard
       Keyboard
