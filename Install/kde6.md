@@ -217,6 +217,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
     I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
+    Note for firefox and chromium there are builtin solutions 
 
 
 
@@ -272,7 +273,7 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 * Analog Clock - Show seconds, 24-Hour Time display, Custom Date format "ddd MMM d"
 * Lock/Logout
 * Quick Share
-* Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops
+* Touchpad - useful if you need to turn off touchpad temporarely - useful on laptops  [disappeared in 26?]
 * - and the following ones will need a download
 * Luna II - phase of the moon
 * Event Calendar - weather, calendar
@@ -284,6 +285,17 @@ Too many widgets is quickly becoming useless, as your normal windows are on top 
 
 Open Firewall Configuration -> Enable Firewall.
 
+
+sudo ufw enable
+sudo ufw status verbose
+sudo ufw allow ssh
+sudo ufw allow 22/tcp
+
+
+### Firefox firewal
+
+Settings > Privacy & Security. Scroll to the DNS over HTTPS section and select Max Protection.
+scroll to the section HTTPS-Only mode and choose Enable HTTPS-Only mode 
 
 ## New Stuff
 
@@ -351,6 +363,10 @@ Things I often wind up adding:
   In firefox, check the title bar setting: click on the hamburger, More tools, Customise toolbar,
   and there's check box at the bottom left. save it. it should get things like resizing etc. back
 
+  Firefox seems to be ok with copy-paste via mouse
+  Chromium not !!!
+
+  Chromium:  right click -> use system title bar and borders
 
 ## ssh in KDE wallet
 
@@ -397,6 +413,8 @@ enabled to have the krb setup done for this.   zaratan may also
      sudo systemctl restart bluetooth
   or I can use my script
      restart_kde
+
+- not an issue, but on multi-boot linux, make sure you sync /var/lib/bluetooth
 
 - networking icon also seems to disappear sometimes:f
 

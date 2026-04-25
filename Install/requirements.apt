@@ -16,6 +16,7 @@ hfsprogs
 ddd
 rman
 mandoc
+npm
 # zeal             not in U25
 texlive-science   # should trigger all of latex
 exfat-fuse
@@ -38,3 +39,5 @@ hdf5-tools
 libblas-dev
 liblapack-dev      # </amuse>
 retext
+shellcheck
+libfuse2
