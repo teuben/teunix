@@ -23,6 +23,7 @@ Notes for Ubuntu 25.04 -
                6.3.90             6.14.0      6.8.3    6.4 beta-1
                6.4.3              6.16.0      6.9.1    fedora-42
                6.3.5              6.15.0      6.8.3    ku25.10
+	       6.6.4              6.24.0      6.10.2   ku26.04
 ```
 
 ### System Settings
@@ -37,6 +38,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
           - Tapping:  tap-to-click
           - make sure not to invert scrolling
           - Two-finger tap: select Middle-click via 3-finger tap to right click)
+	  [these all seem to be the default now]
        
        Screen Edges:
            - TL:   Overview
@@ -203,6 +205,10 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
       - check    "show filter bar"
       - uncheck  "Open new folders in tabs"
       - check 2x "show full path..."
+
+      Under K26 different:
+      - Interface -> Status & Location bars -> make location bar editable + show full path
+      - View 
 
 12  Configure Konsole
 
@@ -425,7 +431,7 @@ enabled to have the krb setup done for this.   zaratan may also
   should be disabled or binding to another action?  It will otherwise lock the
   system, only reboot comes out.
 
-- i get the impression current video drivers for i915 are curropting memory with
+- i get the impression current video drivers for i915 are currupting memory with
   video is used for long times.  Several laptops have this issue.
 
 - sometimes waking up from suspend causes mouse not to being able to pick up windows.
@@ -436,7 +442,8 @@ enabled to have the krb setup done for this.   zaratan may also
 plenty of websites and youtubes with ideas/reviews. Here are a few:
 
 * https://store.kde.org/browse
-       
+
+* 2026: 
 * 2024: https://www.ubuntubuzz.com/2025/03/what-to-do-after-installing-kubuntu-2404-and-kde-plasma-527.html#google_vignette
 * 2024: https://www.cosmoscalibur.com/en/blog/2024/que-hacer-despues-de-instalar-manjaro/
 * 2020: https://averagelinuxuser.com/things-to-do-after-installing-kde-neon-2020/
@@ -480,4 +487,4 @@ plenty of websites and youtubes with ideas/reviews. Here are a few:
 
        Keyboard -> Advanced -> Position of Compose Key -> Right-Alt
              (this way   <Right-Alt> a ` gives à)
-
+       => this is different in KDE6
