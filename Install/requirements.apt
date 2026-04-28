@@ -41,3 +41,5 @@ liblapack-dev      # </amuse>
 retext
 shellcheck
 libfuse2
+#
+k4dirstat
