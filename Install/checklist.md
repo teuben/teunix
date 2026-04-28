@@ -19,7 +19,7 @@
 - [ ] system monitor with cpufreq monitor
 - [ ] three finger tap is middle click
 - [ ] animations: window minimize -> magic lamps
-- [ ] 
+- [ ] icons-only task manager
 
 
 ## Apps / Fixes
@@ -31,4 +31,6 @@
 - [ ] Slack
 - [ ] ImageMagick: pdf permission
 - [ ] KDE Connect
-
+- [ ] VS code
+- [ ] obsidion - crash
+- [ ] notion - crash
