@@ -41,6 +41,10 @@ install:
 	@echo Some typical install notes
 	@echo teunix=$(TEUNIX)
 
+## update:     apt update + upgrade
+update:
+	sudo apt update && sudo apt upgrade -y
+
 ## dpkg:       0. make a listing of the after installed packages
 dpkg: dpkg0.list
 
