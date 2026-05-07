@@ -14,7 +14,7 @@ FILES and their final locations:
      3b.   /usr/libexec/openconnect/hipreport.sh       check path in your vpn.service file
 
 If your distribution uses sudo instead of PolicyKit's pkexec, change the argument --pkexec-openconnect to --sudo-openconnect.
-(i didn't need that)
+(i didn't need that) - normally sudo better for CLI, pkexec better for GUI
 
 See also https://github.com/dlenski/gp-saml-gui/blob/master/README.md for info on gp-saml-gui and installation guidelines.
 
@@ -59,6 +59,12 @@ Jan 13 20:22:18 T480 gp-saml-gui[334961]: ESP tunnel connected; exiting HTTPS ma
      Job for vpn.service failed because the control process exited with error code.
      See "systemctl --user status vpn.service" and "journalctl --user -xe" for details.
 
+## and this in 2026
+
+Unacceptable TLS certificate
+https://itsfoss.com/unacceptable-tls-certificate-error-linux/
+
+- install in /usr/local/share/ca-certificates
 
 
 # Interesting (?) notes:
