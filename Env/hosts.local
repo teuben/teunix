@@ -21,12 +21,14 @@
 192.168.1.13   epson                        # F8:D0:27:37:85:A8
 192.168.1.14   d76   pop-os                 # 58:6D:67:A0:3A:ED
 
-192.168.1.21   fast1                        # 00:e0:4c:69:d7:6a
-192.168.1.22   fast2                        # 00:e0:4c:69:de:ff
+192.168.1.21   fast1                        # 00:e0:4c:69:d7:6a   Fairikabe 2.5Gb
+192.168.1.22   fast2                        # 00:e0:4c:69:de:ff   Fairikabe 2.5Gb
+192.168.1.25   fast5                        # 6c:1f:f7:5b:93:e7   Ugreen CM848 5Gb (not working well)
 
 192.168.1.104  rach104
 
 # https://mydevices.umd.edu
+#
 # Google-Nest-Mini  CC:F4:11:A5:D4:7A
 # Google-Nest-Hub   D8:8C:79:53:54:90
 # Galaxy-A36-5G     BA:46:95:B4:63:3B 
@@ -35,15 +37,21 @@
 # Nexus 7 (2013)    08:60:6E:43:3F:23 
 # printer           90:0F:0C:32:62:1E
 # P14s              AC:F2:3C:61:02:63
-# Falwedi USB hub   00-E0-4C-68-04-4A
+# Falwedi USB hub   00-E0-4C-68-04-4A   teuben-1
+# Lasuney USB hub   00:E0:4C:68:02:35   teuben-2
+# Anker USB hub     -no ether-          teuben-3
 # DELL P3223DE mon  B0-4F-13-E8-14-B4
 
 # 10-jan-2022: astro has private IPs here we lists the ones left
-129.2.14.56    lma   lma.astro.umd.edu
 129.2.14.2     ursa  ursa.astro.umd.edu
 129.2.14.4     sol   sol.astro.umd.edu
 129.2.14.5     terra terra.astro.umd.edu
 129.2.14.6     luna  luna.astro.umd.edu
+129.2.14.11  diary1.astro.umd.edu diary1
+129.2.14.12  diary2.astro.umd.edu diary2
+129.2.14.13  diary3.astro.umd.edu diary3
+129.2.14.56    lma   lma.astro.umd.edu
+
 # 10.225.25.145 nemo nemo.astro.umd.edu
 
 # local edge hack for http:// access ?
@@ -52,15 +60,6 @@
 # configDNS (Services)
 128.8.74.2  recursns1.umd.edu
 128.8.76.2  recursns2.umd.edu
-
-129.2.14.4      sol.astro.umd.edu sol
-129.2.14.5    terra.astro.umd.edu terra
-129.2.14.6     luna.astro.umd.edu luna
-129.2.14.11  diary1.astro.umd.edu diary1
-129.2.14.12  diary2.astro.umd.edu diary2
-129.2.14.13  diary3.astro.umd.edu diary3
-129.2.14.56     lma.astro.umd.edu lma
-129.2.14.89    ursa.astro.umd.edu ursa
 
 # now only on local IP
 # chara  10.225.25.42
