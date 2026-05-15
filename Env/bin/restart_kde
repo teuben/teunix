@@ -1,3 +1,5 @@
 kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 echo "If this doesn't work, try:"
 echo 'kwin_x11 --replace & plasmashell --replace & '
+echo 'or just'
+echo 'plasmashell --replace &'
