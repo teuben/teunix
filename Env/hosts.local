@@ -21,8 +21,8 @@
 192.168.1.13   epson                        # F8:D0:27:37:85:A8
 192.168.1.14   d76   pop-os                 # 58:6D:67:A0:3A:ED
 
-192.168.1.21   fast1                        # 00:e0:4c:69:d7:6a   Fairikabe 2.5Gb
-192.168.1.22   fast2                        # 00:e0:4c:69:de:ff   Fairikabe 2.5Gb
+192.168.1.21   fast1                        # 00:e0:4c:69:de:ff   Fairikabe 2.5Gb
+192.168.1.22   fast2                        # 00:e0:4c:69:d7:6a   Fairikabe 2.5Gb
 192.168.1.25   fast5                        # 6c:1f:f7:5b:93:e7   Ugreen CM848 5Gb (not working well)
 
 192.168.1.104  rach104
