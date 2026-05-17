@@ -44,5 +44,5 @@ install_dysh: dysh nemo
 	@echo Now more
 	(cd dysh;\
 	../nemo/src/scripts/install_anaconda3 wget=wgetc;\
-	source anaconda3/python_start.sh;\
+	. anaconda3/python_start.sh;\
 	pip install -e .)
