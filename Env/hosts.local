@@ -37,9 +37,9 @@
 # Nexus 7 (2013)    08:60:6E:43:3F:23 
 # printer           90:0F:0C:32:62:1E
 # P14s              AC:F2:3C:61:02:63
-# Falwedi USB hub   00-E0-4C-68-04-4A   teuben-1
+# Falwedi USB hub   00-E0-4C-68-04-4A   teuben-1 power issue?
 # Lasuney USB hub   00:E0:4C:68:02:35   teuben-2
-# Anker USB hub     -no ether-          teuben-3
+# Anker USB hub     -no ether-          teuben-3 at office
 # DELL P3223DE mon  B0-4F-13-E8-14-B4
 
 # 10-jan-2022: astro has private IPs here we lists the ones left
