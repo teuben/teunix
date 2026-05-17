@@ -19,7 +19,7 @@
 192.168.1.11   beelink                      # B0:41:6F:0A:CD:F6  eth
 192.168.1.12   k2                           # 74:04:f1:a1:c7:d7
 192.168.1.13   epson                        # F8:D0:27:37:85:A8
-192.168.1.14   d76   pop-os                 # 58:6D:67:A0:3A:ED
+192.168.1.14   d76_w                        # 58:6D:67:A0:3A:ED
 
 192.168.1.21   fast1                        # 00:e0:4c:69:de:ff   Fairikabe 2.5Gb
 192.168.1.22   fast2                        # 00:e0:4c:69:d7:6a   Fairikabe 2.5Gb
@@ -27,6 +27,7 @@
 #              t480_w                       # 94:b8:6d:59:9a:70   
 #              beelink_w                    # 58:1c:f8:a7:b5:02   wl
 #              t530_w                       # 60:67:20:f6:91:e4   wl
+#              d76                          # d4:93:90:3e:0d:11   eth
 192.168.1.104  rach104
 
 # https://mydevices.umd.edu
