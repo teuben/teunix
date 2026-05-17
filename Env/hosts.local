@@ -21,18 +21,24 @@
 192.168.1.13   epson                        #= F8:D0:27:37:85:A8  printer
 192.168.1.14   d76_w                        #= 58:6D:67:A0:3A:ED  wl
 
-192.168.1.21   fast1                        #= 00:e0:4c:69:de:ff  Fairikabe 2.5Gb
-192.168.1.22   fast2                        #= 00:e0:4c:69:d7:6a  Fairikabe 2.5Gb
-192.168.1.25   fast5                        #= 6c:1f:f7:5b:93:e7  Ugreen CM848 5Gb (not working well)
-
 192.168.1.15   t480_w                       #= 94:b8:6d:59:9a:70  wl
 192.168.1.16   beelink_w                    #= 58:1c:f8:a7:b5:02  wl
 192.168.1.17   t530_w                       #= 60:67:20:f6:91:e4  wl
 192.168.1.18   d76                          #= d4:93:90:3e:0d:11  eth
 192.168.1.19   k2                           #= d4:93:90:21:79:3b  eth
+192.168.1.20   m4 m4_w                      #= 12:8D:97:70:A0:1B  wl  (has no eth)
+
+192.168.1.21   fast1                        #= 00:e0:4c:69:de:ff  Fairikabe 2.5Gb
+192.168.1.22   fast2                        #= 00:e0:4c:69:d7:6a  Fairikabe 2.5Gb
+192.168.1.25   fast5                        #= 6c:1f:f7:5b:93:e7  Ugreen CM848 5Gb (not working well)
+
+
 
 192.168.1.30   p14s                         #= c8:53:09:f9:62:9f  eth
 192.168.1.31   p14s_w                       #= AC:F2:3C:61:02:63  wl
+
+192.168.1.41   teuben-1 hub-1               #= 00:E0:4C:68:04:4A  falwedi
+192.168.1.42   teuben-2 hub-2               #= 00:E0:4C:68:02:35  lasuney
 
 192.168.1.104  rach104
 
@@ -46,7 +52,7 @@
 # Nexus 7 (2013)    08:60:6E:43:3F:23 
 # printer           90:0F:0C:32:62:1E
 # P14s              AC:F2:3C:61:02:63
-# Falwedi USB hub   00-E0-4C-68-04-4A   teuben-1 power issue?
+# Falwedi USB hub   00:E0:4C:68:04:4A   teuben-1 power issue?
 # Lasuney USB hub   00:E0:4C:68:02:35   teuben-2
 # Anker USB hub     -no ether-          teuben-3 at office
 # DELL P3223DE mon  B0-4F-13-E8-14-B4
