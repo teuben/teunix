@@ -1,6 +1,8 @@
         |  Button-1      Button-2     Button-3
 ------------------------------------------------
 Mouse-1 |  m4            dl5420       .
-Mouse-2 |  x1y2          t480         d76
+Mouse-2 |  -             t480         d76
 Mouse-3 |  t530          p14          k2
 ------------------------------------------------
+
+not assigned:     chromebook, old intel-mac
