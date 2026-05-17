@@ -28,6 +28,7 @@
 #              beelink_w                    # 58:1c:f8:a7:b5:02   wl
 #              t530_w                       # 60:67:20:f6:91:e4   wl
 #              d76                          # d4:93:90:3e:0d:11   eth
+#              k2                           # d4:93:90:21:79:3b   eth
 192.168.1.104  rach104
 
 # https://mydevices.umd.edu
