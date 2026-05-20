@@ -43,3 +43,4 @@ shellcheck
 libfuse2
 #
 k4dirstat
+libheif-plugin-libde265
