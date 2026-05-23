@@ -28,7 +28,7 @@ UP2 = plasma-widgets-addons kio-gdrive
 UP3 = pgplot5-dev krb5-user
 
 # fedora packages
-FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel
+FP = make gcc gcc-gfortran gcc-g++ tcsh ncurses-devel libtirpc-devel libXext-devel libpng-devel emacs-gtk+x11
 FP1 = pgplot pgplot-devel
 
 
@@ -214,6 +214,7 @@ diary:
 ## pjteunix:  13. My home teunix
 pjteunix:
 	git clone ssh://beelink/home/teuben/teunix/gitbare pjteunix
+	(cd pjteunix; make)
 
 ## brew:      13. Install Homebrew
 brew:
