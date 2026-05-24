@@ -13,14 +13,24 @@
 - [ ] screen locking - never lock
 - [ ] power management - on AC power don't sleep, only on battery, after 15 min
 - [ ] KDE wallet - add ssh-add-key.sh ; show in system tray
-- [ ] titlebar
 - [ ] digital clock: 'ddd MMM d'; add seconds;
 - [ ] firewall
 - [ ] system monitor with cpufreq monitor
 - [ ] three finger tap is middle click
 - [ ] animations: window minimize -> magic lamps
 - [ ] icons-only task manager
+- [ ] clipboard
 
+## Wigets
+
+- [ ] analog clock
+- [ ] hard disk activity
+- [ ] network speed
+- [ ] individual core usage
+- [ ] memory usage (in the task manager)
+- [ ] clipboard
+- [ ] screen layout
+- [ ] Time Keeper Evolution 
 
 ## Apps / Fixes
 
@@ -31,6 +41,6 @@
 - [ ] Slack
 - [ ] ImageMagick: pdf permission
 - [ ] KDE Connect
-- [ ] VS code
+- [ ] VS code (or: codium)
 - [ ] obsidion - crash
 - [ ] notion - crash

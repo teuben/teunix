@@ -243,9 +243,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 ## Things I don't wind up using much, if any
 
 - activities.  I find virtual desktops enough.
-- clipboard:  
 - PlasmaConfigSaver widget
-
 
 ## Saving your Session
 
