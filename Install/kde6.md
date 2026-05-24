@@ -235,11 +235,15 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
     But we don't need it for zoom anymore. Nice to see there is a native KDE solution for this.
 
+15. Clipboard
+    - keep clipboard and selection the same
+     (unclear if keeping them in history is useful)
+
 
 ## Things I don't wind up using much, if any
 
 - activities.  I find virtual desktops enough.
-- clipboard
+- clipboard:  
 - PlasmaConfigSaver widget
 
 
