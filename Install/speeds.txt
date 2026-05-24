@@ -1,4 +1,10 @@
 
+Raw measurements can be taken with
+
+https://speedtest.net
+
+but in reality downloads with scp or wget can be a lot slower. Notably on VPN, especially from UMD and UMD traffic.
+
 # Sample commands to measure speed
 # fedora can be slow, kubuntu faster, and anaconda usually quite good
 
