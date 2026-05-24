@@ -214,7 +214,17 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
      - Settings -> Configure Toolbars -> move 'New Window' to right in Main Toolbar
 
-13. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
+13. Native Titlebar Setting
+
+    zoom:     settings -> accessibility -> use system title and borders
+
+    firefox:   tools -> customize toolbar -> bottom Toolbar
+
+    chromium:  settings -> use system titlebar and borders
+
+    thunderbird:   settings -> appearance - uncheck "Hide system window title bar"
+
+14. Fixing (electron?) apps that don't keep the KDE window markup - e.g. new 2024 zoom does this
       - Open System Settings
       - Go to Window Management -> Window Rules
       - Match on "Window class (application)" with "Exact Match" on "zoom"
@@ -223,8 +233,7 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
     I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
-    Note for firefox and chromium there are builtin solutions 
-
+    But we don't need it for zoom anymore. Nice to see there is a native KDE solution for this.
 
 
 ## Things I don't wind up using much, if any
