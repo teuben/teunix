@@ -1,0 +1,12 @@
+
+# Sample commands to measure speed
+# fedora can be slow, kubuntu faster, and anaconda usually quite good
+
+wget https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/x86_64/iso/Fedora-Workstation-Live-44-1.7.x86_64.iso
+wget https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso
+wget https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Linux-x86_64.sh
+
+
+# i've seen wget at 5 MB/s and scp at 33 MB/s (off VPN)
+wget https://pages.astro.umd.edu/~teuben/99713/99718.tar
+scp  lma:/home/teuben/public_html/99713/99718.tar .
