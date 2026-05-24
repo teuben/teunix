@@ -42,13 +42,17 @@ https://www.securew2.com/blog/what-is-eap-tls
 7. Thunderbird
 
 File -> New -> Existing Mail Account
-Enter name/email and use Configure Manually
+Enter name/email and use Configure Manually (don't need to fill in password)
 Incoming server: imap.gmail.com, port 993, security SSL/TLS, authentication OAuth2
 Outgoing server: smtp.gmai.com, port 465, security SSL/TLS, authentication OAuth2
+
+When OAuth2 does not show up as an option, use the advanced config.
+
 
 If you run into trouble, have a look at the official Use Thunderbird for UMD email writeup,
 on https://umd.service-now.com/itsupport?id=kb_article_view&sysparm_article=KB0017929
 or https://support.mozilla.org/en-US/kb/thunderbird-and-gmail.
+
 
 There are a few useful plugins in Thunderbird that you might find useful:
 
@@ -60,6 +64,14 @@ There are a few useful plugins in Thunderbird that you might find useful:
   Delete more easily (i found I sometimes need to restart thunderbird
   if they don't show up)
 
+
+Different versions of thunderbird may store the .thunderbird tree in different locations.
+In snap, it will be in ~/snap/thunderbird/common/.thunderbird/, but in native mode
+it will be in ~/.thunderbird
+
+To import a profile, use command line "thunderbird -P"
+
+ 
 ## Workflow
 
 
