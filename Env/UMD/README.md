@@ -38,6 +38,28 @@ but harder when on eduroam.   TBD.
 
 https://www.securew2.com/blog/what-is-eap-tls
 
+
+7. Thunderbird
+
+File -> New -> Existing Mail Account
+Enter name/email and use Configure Manually
+Incoming server: imap.gmail.com, port 993, security SSL/TLS, authentication OAuth2
+Outgoing server: smtp.gmai.com, port 465, security SSL/TLS, authentication OAuth2
+
+If you run into trouble, have a look at the official Use Thunderbird for UMD email writeup,
+on https://umd.service-now.com/itsupport?id=kb_article_view&sysparm_article=KB0017929
+or https://support.mozilla.org/en-US/kb/thunderbird-and-gmail.
+
+There are a few useful plugins in Thunderbird that you might find useful:
+
+* Lightning: this allows integration of calendar gmail. You can also
+  convert an email to an event via the "message right click" ->
+  Convert to
+
+* Google Provider: this adds buttons so you can Archive and
+  Delete more easily (i found I sometimes need to restart thunderbird
+  if they don't show up)
+
 ## Workflow
 
 
