@@ -223,7 +223,12 @@ in KDE6.  In KDE5 most of these are present, but many are in a different hierarc
 
     I currently have set it to "force". Maybe a more relaxed setting can work, too.
 
-    Note for firefox and chromium there are builtin solutions 
+    Note for firefox and chromium there are builtin solutions
+
+14. Clipboard 2b
+    - keep selection and clipboard the same
+    - always save in history
+
 
 
 
