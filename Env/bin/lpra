@@ -3,7 +3,7 @@
 #     printing for lazy laptop lusers
 #
 
-export PRINTER=bima2
+export PRINTER=astro2
 host=terra.astro.umd.edu
 host=lma.astro.umd.edu
 
