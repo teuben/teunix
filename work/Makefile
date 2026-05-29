@@ -46,3 +46,7 @@ install_dysh: dysh nemo
 	../nemo/src/scripts/install_anaconda3 wget=wgetc;\
 	. anaconda3/python_start.sh;\
 	pip install -e .)
+
+claude:
+	curl -fsSL https://claude.ai/install.sh | bash
+	@echo "claude was installed" > claude
