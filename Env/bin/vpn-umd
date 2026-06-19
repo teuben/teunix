@@ -12,3 +12,7 @@ echo 'systemctl --user daemon-reload'
 echo 'systemctl --user start vpn'
 echo 'systemctl --user status vpn'
 echo 'systemctl --user stop vpn'
+
+echo "or"
+
+echo "globalprotect launch-ui --recover"
