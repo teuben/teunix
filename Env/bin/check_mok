@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+#   June 2026 expiration risk
+
+sudo mokutil --sb-state
+sudo mokutil --kek | grep -i "2023"
+
+echo 'to update certs, try this:'
+echo 'sudo fwupdmgr refresh && sudo fwupdmgr update '
+
